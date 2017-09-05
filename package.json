@@ -1,0 +1,28 @@
+{
+  "name": "sfcc-client",
+  "version": "0.0.1",
+  "description": "Node.js client for Salesforce Commerce Cloud",
+  "main": "index.js",
+  "scripts": {
+    "test": "tsc && node dist/index.js"
+  },
+  "keywords": [
+    "node",
+    "sfcc",
+    "ocapi",
+    "salesforce-commerce",
+    "salesforce",
+    "demandware"
+  ],
+  "author": "Mobify",
+  "license": "ISC",
+  "dependencies": {
+    "@types/request": "^2.0.3",
+    "@types/request-promise": "^4.1.37",
+    "request": "^2.81.0",
+    "request-promise": "^4.2.1"
+  },
+  "devDependencies": {
+    "typescript": "^2.5.2"
+  }
+}
