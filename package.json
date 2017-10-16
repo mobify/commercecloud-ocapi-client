@@ -1,19 +1,30 @@
 {
-  "name": "test-demandware",
-  "version": "1.0.0",
-  "description": "",
-  "main": "index.js",
+  "name": "shop_api",
+  "version": "0.17.8",
+  "description": "ERROR_UNKNOWN",
+  "license": "Unlicense",
+  "main": "src/index.js",
   "scripts": {
-    "start": "node client.js",
-    "start:debug": "node --inspect --debug-brk client.js"
+    "test": "mocha --compilers js:babel-core/register --recursive",
+    "build": "babel src --out-dir lib"
   },
-  "author": "",
-  "license": "ISC",
+  "browser": {
+    "fs": false
+  },
   "dependencies": {
-    "request": "^2.81.0",
-    "request-promise": "^4.2.1",
+    "babel": "^6.23.0",
+    "babel-cli": "^6.24.1",
+    "cors-anywhere": "^0.4.0",
+    "express": "^4.16.2",
+    "http-proxy-middleware": "^0.17.4",
+    "superagent": "3.5.2"
   },
   "devDependencies": {
-    "nodemon": "^1.11.0"
+    "babel-core": "6.18.0",
+    "babel-preset-es2015": "^6.24.1",
+    "babel-preset-stage-0": "^6.24.1",
+    "expect.js": "~0.3.1",
+    "mocha": "~2.3.4",
+    "sinon": "1.17.3"
   }
 }
