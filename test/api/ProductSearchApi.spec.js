@@ -67,11 +67,11 @@
             )
         })
 
-        describe('getProductSearchAvailability', () => {
-            it('should call getProductSearchAvailability successfully', () =>
-                instance.getProductSearchAvailability({})
+        describe('getProductSearch', () => {
+            it('should call getProductSearch for all products in root successfully', () =>
+                instance.getProductSearch({refine: ['cgid=root']})
                     .then((productSearchResult) => {
-                        expect(productSearchResult.constructor.name).to.be('ProductSearchResultModel')
+                        expect(productSearchResult.count).to.above(0)
                     })
                     .catch((error) => {
                         throw error
@@ -79,38 +79,57 @@
             )
         })
 
-        // describe('getProductSearchImages', function() {
-        //     it('should call getProductSearchImages successfully', function(done) {
-        //         //uncomment below and update the code to test getProductSearchImages
-        //         //instance.getProductSearchImages(function(error) {
-        //         //  if (error) throw error;
-        //         //expect().to.be();
-        //         //});
-        //         done();
-        //     });
-        // });
-        //
-        // describe('getProductSearchPrices', function() {
-        //     it('should call getProductSearchPrices successfully', function(done) {
-        //         //uncomment below and update the code to test getProductSearchPrices
-        //         //instance.getProductSearchPrices(function(error) {
-        //         //  if (error) throw error;
-        //         //expect().to.be();
-        //         //});
-        //         done();
-        //     });
-        // });
-        //
-        // describe('getProductSearchVariations', function() {
-        //     it('should call getProductSearchVariations successfully', function(done) {
-        //         //uncomment below and update the code to test getProductSearchVariations
-        //         //instance.getProductSearchVariations(function(error) {
-        //         //  if (error) throw error;
-        //         //expect().to.be();
-        //         //});
-        //         done();
-        //     });
-        // });
+        describe('getProductSearchAvailability', () => {
+            it('should call getProductSearchAvailability successfully', () =>
+                instance.getProductSearchAvailability({refine: ['cgid=root'], count: 1})
+                    .then((productSearchResult) => {
+                        expect(productSearchResult.constructor.name).to.be('ProductSearchResultModel')
+                        expect(productSearchResult.hits[0].orderable).not.to.be(undefined)
+                    })
+                    .catch((error) => {
+                        throw error
+                    })
+            )
+        })
+
+        describe('getProductSearchImages', () => {
+            it('should call getProductSearchImages successfully', () =>
+                instance.getProductSearchImages({refine: ['cgid=root'], count: 1})
+                    .then((productSearchResult) => {
+                        expect(productSearchResult.constructor.name).to.be('ProductSearchResultModel')
+                        expect(productSearchResult.hits[0].image).to.be.an('object')
+                    })
+                    .catch((error) => {
+                        throw error
+                    })
+            )
+        })
+
+        describe('getProductSearchPrices', () => {
+            it('should call getProductSearchPrices successfully', () =>
+                instance.getProductSearchPrices({refine: ['cgid=root'], count: 1})
+                    .then((productSearchResult) => {
+                        expect(productSearchResult.constructor.name).to.be('ProductSearchResultModel')
+                        expect(productSearchResult.hits[0].price).not.to.be(undefined)
+                    })
+                    .catch((error) => {
+                        throw error
+                    })
+            )
+        })
+
+        describe('getProductSearchVariations', () => {
+            it('should call getProductSearchVariations successfully', () =>
+                instance.getProductSearchVariations({refine: ['cgid=root'], count: 1})
+                    .then((productSearchResult) => {
+                        expect(productSearchResult.constructor.name).to.be('ProductSearchResultModel')
+                        expect(productSearchResult.hits[0].variation_attributes).to.be.an('object')
+                    })
+                    .catch((error) => {
+                        throw error
+                    })
+            )
+        });
 
     })
 
