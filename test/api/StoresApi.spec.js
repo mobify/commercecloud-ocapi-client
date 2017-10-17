@@ -66,6 +66,7 @@
             it('call getStores without country code', () =>
                 instance.getStores({postalCode: '90210'})
                     .catch((error) => {
+                        console.log('helloooo')
                         expect(error.fault.type).to.be('MissingCountryCodeException')
                     })
             )

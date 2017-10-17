@@ -238,7 +238,7 @@ export default class ApiClient {
         }
 
         return newParams
-    }
+    };
 
     /**
     * Enumeration of collection format separator strategies.
