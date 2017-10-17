@@ -63,18 +63,19 @@
                     })
             )
 
-            it('call getStores without country code', () =>
+            it('call getStores without country code expects error', () =>
                 instance.getStores({postalCode: '90210'})
                     .catch((error) => {
-                        console.log('helloooo')
-                        expect(error.fault.type).to.be('MissingCountryCodeException')
+                        const data = JSON.parse(error.response.text)
+                        expect(data.fault.type).to.be('MissingCountryCodeException')
                     })
             )
 
-            it('call getStores without postal code', () =>
+            it('call getStores without postal code expects error', () =>
                 instance.getStores({countryCode: 'US'})
                     .catch((error) => {
-                        expect(error.fault.type).to.be('MissingPostalCodeException')
+                        const data = JSON.parse(error.response.text)
+                        expect(data.fault.type).to.be('MissingPostalCodeException')
                     })
             )
         })
