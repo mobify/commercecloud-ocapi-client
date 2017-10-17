@@ -1,2 +1,3 @@
 --timeout 10000
 --ui bdd
+-R spec
