@@ -10,6 +10,7 @@
  * Do not edit the class manually.
  *
  */
+import {clientId, proxyUrl, baseUrl} from '../config.json'
 
 (function(root, factory) {
     if (typeof define === 'function' && define.amd) {
@@ -32,9 +33,9 @@
 
         const defaultClient = ShopApi.ApiClient.instance
         defaultClient.defaultHeaders = {
-            'x-dw-client-id': '5640cc6b-f5e9-466e-9134-9853e9f9db93'
+            'x-dw-client-id': clientId
         }
-        defaultClient.basePath = 'https://thingproxy.freeboard.io/fetch/https://mobify-tech-prtnr-na03-dw.demandware.net/s/2017refresh/dw/shop/v17_8'.replace(/\/+$/, '')
+        defaultClient.basePath = `${proxyUrl}/${baseUrl}`.replace(/\/+$/, '')
     })
 
     const getProperty = (object, getter, property) => {
