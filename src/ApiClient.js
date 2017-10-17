@@ -469,7 +469,8 @@ export default class ApiClient {
                 if (error) {
 
                     // Looks like there was an fault returned from the API
-                    if (error.status === 400) {
+                    const hasErrorMessage = error.response && error.response.text
+                    if (hasErrorMessage) {
                         const fault = FaultModel.constructFromObject(JSON.parse(error.response.text).fault)
                         reject(fault)
                     }

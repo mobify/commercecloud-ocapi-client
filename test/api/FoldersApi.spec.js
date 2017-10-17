@@ -28,7 +28,7 @@
     var instance
 
     beforeEach(() => {
-        instance = new ShopApi.FoldersApi();
+        instance = new ShopApi.FoldersApi()
 
         const defaultClient = ShopApi.ApiClient.instance
         defaultClient.defaultHeaders = {
@@ -64,24 +64,29 @@
                         expect(category.id).to.be('root');
                     })
             )
+
+            it('should return FolderNotFoundException for getFoldersByID with bad folder id', () =>
+                instance.getFoldersByID('bad_folder_id')
+                    .catch((fault) => {
+                        expect(fault.type).to.be('FolderNotFoundException');
+                    })
+            )
         })
 
         describe('getFoldersByIDs', () => {
             it('should call getFoldersByIDs successfully', () =>
                 instance.getFoldersByIDs(['root'])
-                    .then((categoryResult) => {
-                        if (!categoryResult) throw error;
-
-                        expect(categoryResult).to.be.an('object');
+                    .then((resultModal) => {
+                        expect(resultModal.constructor.name).to.be('ContentFolderResultModel');
                     })
             )
 
             it('should get correct number of folders', () =>
                 instance.getFoldersByIDs(['about-us', 'customer-service'])
-                    .then((contentFolderResult) => {
-                        if (!contentFolderResult) throw error;
+                    .then((resultModal) => {
+                        if (!resultModal) throw error;
 
-                        expect(contentFolderResult.count).to.be(2);
+                        expect(resultModal.count).to.be(2);
                     })
             )
         })
