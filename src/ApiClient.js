@@ -14,6 +14,8 @@
 import superagent from "superagent";
 import querystring from "querystring";
 
+import FaultModel from "./models/FaultModel"
+
 /**
 * @module ApiClient
 * @version 17.8
@@ -465,6 +467,14 @@ export default class ApiClient {
         return new Promise((resolve, reject) => {
             request.end((error, response) => {
                 if (error) {
+
+                    // Looks like there was an fault returned from the API
+                    if (error.status === 400) {
+                        const fault = FaultModel.constructFromObject(JSON.parse(error.response.text).fault)
+                        reject(fault)
+                    }
+
+                    // Most likely a network error has happened here so include entire error.
                     reject(error)
                 } else {
                     try {

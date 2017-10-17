@@ -49,6 +49,7 @@ import CustomerProductListRegistrantModel from './models/CustomerProductListRegi
 import CustomerProductListResultModel from './models/CustomerProductListResultModel'
 import CustomerRegistrationModel from './models/CustomerRegistrationModel'
 import DiscountModel from './models/DiscountModel'
+import FaultModel from './models/FaultModel'
 import FilteredQueryModel from './models/FilteredQueryModel'
 import GiftCertificateItemModel from './models/GiftCertificateItemModel'
 import GiftCertificateModel from './models/GiftCertificateModel'
@@ -420,6 +421,12 @@ export {
      * @property {module:models/DiscountModel}
      */
     DiscountModel,
+
+    /**
+     * The FaultModel model constructor.
+     * @property {module:models/FaultModel}
+     */
+    FaultModel,
 
     /**
      * The FilteredQueryModel model constructor.
