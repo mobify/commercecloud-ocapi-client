@@ -10,6 +10,7 @@
  * Do not edit the class manually.
  *
  */
+import {clientId, proxyUrl, baseUrl} from '../config.json'
 
 (function(root, factory) {
     if (typeof define === 'function' && define.amd) {
@@ -25,11 +26,15 @@
 }(this, function(expect, ShopApi) {
     'use strict'
 
-    var instance;
+    var instance
+    const client = new ShopApi.ApiClient(
+        `${proxyUrl}/${baseUrl}`,
+        { 'x-dw-client-id': clientId }
+    )
 
     beforeEach(() => {
-        instance = new ShopApi.ContentSearchApi();
-    });
+        instance = new ShopApi.ContentSearchApi(client)
+    })
 
     var getProperty = (object, getter, property) => {
         // Use getter method if present; otherwise, get the property directly.
@@ -47,17 +52,15 @@
             object[property] = value;
     }
 
-    describe('ContentSearchApi', function() {
-        describe('getContentSearch', function() {
-            it('should call getContentSearch successfully', function(done) {
-                //uncomment below and update the code to test getContentSearch
-                //instance.getContentSearch(function(error) {
-                //  if (error) throw error;
-                //expect().to.be();
-                //});
-                done();
-            });
-        });
-    });
+    describe('ContentSearchApi', () => {
+        describe('getContentSearch', () => {
+            it('should call getContentSearch successfully', () =>
+                instance.getContentSearch({q: ''})
+                    .then((result) => {
+                        expect(result.constructor.name).to.be('ContentSearchResultModel')
+                    })
+            )
+        })
+    })
 
-}));
+}))

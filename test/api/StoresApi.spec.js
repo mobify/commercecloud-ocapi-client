@@ -27,15 +27,13 @@ import {clientId, proxyUrl, baseUrl} from '../config.json'
     'use strict'
 
     var instance
+    const client = new ShopApi.ApiClient(
+        `${proxyUrl}/${baseUrl}`,
+        { 'x-dw-client-id': clientId }
+    )
 
     beforeEach(() => {
-        instance = new ShopApi.StoresApi();
-
-        const defaultClient = ShopApi.ApiClient.instance
-        defaultClient.defaultHeaders = {
-            'x-dw-client-id': clientId
-        }
-        defaultClient.basePath = `${proxyUrl}/${baseUrl}`.replace(/\/+$/, '')
+        instance = new ShopApi.StoresApi(client)
     })
 
     const getProperty = (object, getter, property) => {
@@ -80,25 +78,21 @@ import {clientId, proxyUrl, baseUrl} from '../config.json'
         })
 
         describe('getStoresByID', () => {
-            it('should call getStoresByID successfully', (done) => {
-                //uncomment below and update the code to test getStoresByID
-                //instance.getStoresByID(function(error) {
-                //  if (error) throw error;
-                //expect().to.be();
-                //});
-                done()
-            })
+            it('should call getStoresByID successfully', () =>
+                instance.getStoresByID('flagship')
+                    .then((store) => {
+                        expect(store.constructor.name).to.be('StoreModel')
+                    })
+            )
         })
 
         describe('getStoresByIDs', () => {
-            it('should call getStoresByIDs successfully', (done) => {
-                //uncomment below and update the code to test getStoresByIDs
-                //instance.getStoresByIDs(function(error) {
-                //  if (error) throw error;
-                //expect().to.be();
-                //});
-                done()
-            })
+            it('should call getStoresByIDs successfully', () =>
+                instance.getStoresByIDs(['flagship'])
+                    .then((result) => {
+                        expect(result.constructor.name).to.be('StoreResultModel')
+                    })
+            )
         })
 
     })

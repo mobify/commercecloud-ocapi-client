@@ -52,28 +52,32 @@ import {clientId, proxyUrl, baseUrl} from '../config.json'
             object[property] = value;
     }
 
-    describe('ContentApi', function() {
-        describe('getContentByID', function() {
-            it('should call getContentByID successfully', () => {
-                instance.getContentByID('')
-                    .then((content) => {
-                        console.log('here:', content)
-                        if (!content) throw error
-                        console.log('here:', content)
-                        expect(content.id).to.be('')
-                    })
-            })
-        });
-        describe('getContentByIDs', function() {
-            it('should call getContentByIDs successfully', function(done) {
-                //uncomment below and update the code to test getContentByIDs
-                //instance.getContentByIDs(function(error) {
-                //  if (error) throw error;
-                //expect().to.be();
-                //});
-                done();
-            });
-        });
-    });
+    describe('ContentApi', () => {
 
-}));
+        describe('getContentByID', () => {
+            it('should return fault when calling getContentByID with invalid id', () =>
+                instance.getContentByID('INVALID_CONTENT_ID')
+                    .catch((fault) => {
+                        expect(fault.type).to.be('ContentAssetNotFoundException')
+                    })
+            )
+
+            it('should return content when calling getContentByID with valid id', () =>
+                instance.getContentByID('about-us')
+                    .then((content) => {
+                        expect(content.id).to.be('about-us')
+                    })
+            )
+        })
+
+        describe('getContentByIDs', () => {
+            it('should return content result when calling getContentByIDs with valid id list', () =>
+                instance.getContentByIDs(['about-us', 'account-help'])
+                    .then((result) => {
+                        expect(result.total).to.be(2)
+                    })
+            )
+        })
+
+    })
+}))

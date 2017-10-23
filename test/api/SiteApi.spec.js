@@ -10,6 +10,7 @@
  * Do not edit the class manually.
  *
  */
+import {clientId, proxyUrl, baseUrl} from '../config.json'
 
 (function(root, factory) {
     if (typeof define === 'function' && define.amd) {
@@ -25,11 +26,15 @@
 }(this, function(expect, ShopApi) {
     'use strict'
 
-    var instance;
+    var instance
+    const client = new ShopApi.ApiClient(
+        `${proxyUrl}/${baseUrl}`,
+        { 'x-dw-client-id': clientId }
+    )
 
     beforeEach(() => {
-        instance = new ShopApi.SiteApi();
-    });
+        instance = new ShopApi.SiteApi(client)
+    })
 
     var getProperty = (object, getter, property) => {
         // Use getter method if present; otherwise, get the property directly.
@@ -47,17 +52,15 @@
             object[property] = value;
     }
 
-    describe('SiteApi', function() {
-        describe('getSite', function() {
-            it('should call getSite successfully', function(done) {
-                //uncomment below and update the code to test getSite
-                //instance.getSite(function(error) {
-                //  if (error) throw error;
-                //expect().to.be();
-                //});
-                done();
-            });
-        });
-    });
+    describe('SiteApi', () => {
+        describe('getSite', () => {
+            it('should call getSite successfully', () =>
+                instance.getSite()
+                    .then((site) => {
+                        expect(site.constructor.name).to.be('SiteModel')
+                    })
+            )
+        })
+    })
 
-}));
+}))

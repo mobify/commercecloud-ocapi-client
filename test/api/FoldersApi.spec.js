@@ -75,17 +75,15 @@ import {clientId, proxyUrl, baseUrl} from '../config.json'
         describe('getFoldersByIDs', () => {
             it('should call getFoldersByIDs successfully', () =>
                 instance.getFoldersByIDs(['root'])
-                    .then((resultModal) => {
-                        expect(resultModal.constructor.name).to.be('ContentFolderResultModel');
+                    .then((result) => {
+                        expect(result.constructor.name).to.be('ContentFolderResultModel');
                     })
             )
 
             it('should get correct number of folders', () =>
                 instance.getFoldersByIDs(['about-us', 'customer-service'])
-                    .then((resultModal) => {
-                        if (!resultModal) throw error;
-
-                        expect(resultModal.count).to.be(2);
+                    .then((result) => {
+                        expect(result.count).to.be(2);
                     })
             )
         })

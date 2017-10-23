@@ -10,31 +10,36 @@
  * Do not edit the class manually.
  *
  */
+import {clientId, proxyUrl, baseUrl} from '../config.json'
 
 (function(root, factory) {
     if (typeof define === 'function' && define.amd) {
         // AMD.
-        define(['expect.js', '../../src/index'], factory);
+        define(['expect.js', '../../src/index'], factory)
     } else if (typeof module === 'object' && module.exports) {
         // CommonJS-like environments that support module.exports, like Node.
-        factory(require('expect.js'), require('../../src/index'));
+        factory(require('expect.js'), require('../../src/index'))
     } else {
         // Browser globals (root is window)
-        factory(root.expect, root.ShopApi);
+        factory(root.expect, root.ShopApi)
     }
 }(this, function(expect, ShopApi) {
     'use strict'
 
-    var instance;
+    var instance
+    const client = new ShopApi.ApiClient(
+        `${proxyUrl}/${baseUrl}`,
+        { 'x-dw-client-id': clientId }
+    )
 
     beforeEach(() => {
-        instance = new ShopApi.ProductsApi();
-    });
+        instance = new ShopApi.ProductsApi(client)
+    })
 
     var getProperty = (object, getter, property) => {
         // Use getter method if present; otherwise, get the property directly.
         if (typeof object[getter] === 'function')
-            return object[getter]();
+            return object[getter]()
         else
             return object[property];
     }
@@ -42,122 +47,117 @@
     var setProperty = (object, setter, property, value) => {
         // Use setter method if present; otherwise, set the property directly.
         if (typeof object[setter] === 'function')
-            object[setter](value);
+            object[setter](value)
         else
             object[property] = value;
     }
 
-    describe('ProductsApi', function() {
-        describe('getProductsByID', function() {
-            it('should call getProductsByID successfully', function(done) {
-                //uncomment below and update the code to test getProductsByID
-                //instance.getProductsByID(function(error) {
-                //  if (error) throw error;
-                //expect().to.be();
-                //});
-                done();
-            });
-        });
-        describe('getProductsByIDAvailability', function() {
-            it('should call getProductsByIDAvailability successfully', function(done) {
-                //uncomment below and update the code to test getProductsByIDAvailability
-                //instance.getProductsByIDAvailability(function(error) {
-                //  if (error) throw error;
-                //expect().to.be();
-                //});
-                done();
-            });
-        });
-        describe('getProductsByIDBundledProducts', function() {
-            it('should call getProductsByIDBundledProducts successfully', function(done) {
-                //uncomment below and update the code to test getProductsByIDBundledProducts
-                //instance.getProductsByIDBundledProducts(function(error) {
-                //  if (error) throw error;
-                //expect().to.be();
-                //});
-                done();
-            });
-        });
-        describe('getProductsByIDImages', function() {
-            it('should call getProductsByIDImages successfully', function(done) {
-                //uncomment below and update the code to test getProductsByIDImages
-                //instance.getProductsByIDImages(function(error) {
-                //  if (error) throw error;
-                //expect().to.be();
-                //});
-                done();
-            });
-        });
-        describe('getProductsByIDLinks', function() {
-            it('should call getProductsByIDLinks successfully', function(done) {
-                //uncomment below and update the code to test getProductsByIDLinks
-                //instance.getProductsByIDLinks(function(error) {
-                //  if (error) throw error;
-                //expect().to.be();
-                //});
-                done();
-            });
-        });
-        describe('getProductsByIDOptions', function() {
-            it('should call getProductsByIDOptions successfully', function(done) {
-                //uncomment below and update the code to test getProductsByIDOptions
-                //instance.getProductsByIDOptions(function(error) {
-                //  if (error) throw error;
-                //expect().to.be();
-                //});
-                done();
-            });
-        });
-        describe('getProductsByIDPrices', function() {
-            it('should call getProductsByIDPrices successfully', function(done) {
-                //uncomment below and update the code to test getProductsByIDPrices
-                //instance.getProductsByIDPrices(function(error) {
-                //  if (error) throw error;
-                //expect().to.be();
-                //});
-                done();
-            });
-        });
-        describe('getProductsByIDPromotions', function() {
-            it('should call getProductsByIDPromotions successfully', function(done) {
-                //uncomment below and update the code to test getProductsByIDPromotions
-                //instance.getProductsByIDPromotions(function(error) {
-                //  if (error) throw error;
-                //expect().to.be();
-                //});
-                done();
-            });
-        });
-        describe('getProductsByIDShippingMethods', function() {
-            it('should call getProductsByIDShippingMethods successfully', function(done) {
-                //uncomment below and update the code to test getProductsByIDShippingMethods
-                //instance.getProductsByIDShippingMethods(function(error) {
-                //  if (error) throw error;
-                //expect().to.be();
-                //});
-                done();
-            });
-        });
-        describe('getProductsByIDVariations', function() {
-            it('should call getProductsByIDVariations successfully', function(done) {
-                //uncomment below and update the code to test getProductsByIDVariations
-                //instance.getProductsByIDVariations(function(error) {
-                //  if (error) throw error;
-                //expect().to.be();
-                //});
-                done();
-            });
-        });
-        describe('getProductsByIDs', function() {
-            it('should call getProductsByIDs successfully', function(done) {
-                //uncomment below and update the code to test getProductsByIDs
-                //instance.getProductsByIDs(function(error) {
-                //  if (error) throw error;
-                //expect().to.be();
-                //});
-                done();
-            });
-        });
-    });
+    const VALID_PRODUCT_ID = '008884303989'
+    const INVALID_PRODUCT_ID = '-1'
 
-}));
+    describe('ProductsApi', () => {
+
+        describe('getProductsByID', () => {
+            it('should return product when calling getProductsByID with valid product id', () =>
+                instance.getProductsByID(VALID_PRODUCT_ID)
+                    .then((product) => {
+                        expect(product.id).to.be(VALID_PRODUCT_ID);
+                    })
+            )
+
+            it('should return fault calling getProductsByID with invalid product id', () =>
+                instance.getProductsByID(INVALID_PRODUCT_ID)
+                    .catch((fault) => {
+                        expect(fault.type).to.be('ProductNotFoundException');
+                    })
+            )
+        })
+
+        describe('getProductsByIDAvailability', () => {
+            it('should call getProductsByIDAvailability successfully', () =>
+                instance.getProductsByIDAvailability(VALID_PRODUCT_ID)
+                    .then((product) => {
+                        expect(product.inventory).to.be.an('object');
+                    })
+            )
+        })
+
+        describe('getProductsByIDBundledProducts', () => {
+            it('should call getProductsByIDBundledProducts successfully', () =>
+                instance.getProductsByIDBundledProducts(VALID_PRODUCT_ID)
+                    .then((product) => {
+                        expect(product.constructor.name).to.be('ProductModel')
+                    })
+            )
+        })
+
+        describe('getProductsByIDImages', () => {
+            it('should call getProductsByIDImages successfully', () =>
+                instance.getProductsByIDImages(VALID_PRODUCT_ID)
+                    .then((product) => {
+                        expect(product.image_groups).to.be.an('array');
+                    })
+            )
+        })
+
+        describe('getProductsByIDLinks', () => {
+            it('should call getProductsByIDLinks successfully', () =>
+                instance.getProductsByIDLinks(VALID_PRODUCT_ID)
+                    .then((product) => {
+                        expect(product.constructor.name).to.be('ProductModel')
+                    })
+            )
+        })
+
+
+        describe('getProductsByIDOptions', () => {
+            it('should call getProductsByIDOptions successfully', () =>
+                instance.getProductsByIDOptions(VALID_PRODUCT_ID)
+                    .then((product) => {
+                        expect(product.constructor.name).to.be('ProductModel')
+                    })
+            )
+        })
+
+        describe('getProductsByIDPrices', () => {
+            it('should call getProductsByIDPrices successfully', () =>
+                instance.getProductsByIDPrices(VALID_PRODUCT_ID)
+                    .then((product) => {
+                        expect(product.constructor.name).to.be('ProductModel')
+                        expect(product.prices).to.be.an('object')
+                    })
+            )
+        })
+
+        describe('getProductsByIDPromotions', () => {
+            it('should call getProductsByIDPromotions successfully', () =>
+                instance.getProductsByIDPromotions(VALID_PRODUCT_ID)
+                    .then((product) => {
+                        expect(product.constructor.name).to.be('ProductModel')
+                    })
+            )
+        })
+
+        describe('getProductsByIDVariations', () => {
+            it('should call getProductsByIDVariations successfully', () =>
+                instance.getProductsByIDVariations(VALID_PRODUCT_ID)
+                    .then((product) => {
+                        expect(product.constructor.name).to.be('ProductModel')
+                        expect(product.variants).to.be.an('array')
+                    })
+            )
+        })
+
+        describe('getProductsByIDs', () => {
+            it('should call getProductsByIDs successfully', () =>
+                instance.getProductsByIDs(['008884303996', '008884304009'])
+                    .then((result) => {
+                        expect(result.constructor.name).to.be('ProductResultModel')
+                        expect(result.total).to.be(2)
+                    })
+            )
+        })
+
+    })
+
+}))
