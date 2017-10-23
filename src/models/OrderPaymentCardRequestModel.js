@@ -88,7 +88,7 @@ export default class OrderPaymentCardRequestModel {
                 obj['valid_from_year'] = ApiClient.convertToType(data['valid_from_year'], 'Number')
             }
         }
-        return obj;
+        return obj
     }
 
     /**

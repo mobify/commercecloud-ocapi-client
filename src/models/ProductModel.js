@@ -333,7 +333,7 @@ export default class ProductModel {
                 obj['variation_values'] = ApiClient.convertToType(data['variation_values'], {'String': 'String'});
             }
         }
-        return obj;
+        return obj
     }
 
     /**

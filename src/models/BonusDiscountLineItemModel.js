@@ -56,7 +56,7 @@ export default class BonusDiscountLineItemModel {
             }
         }
 
-        return obj;
+        return obj
     }
 
     /**

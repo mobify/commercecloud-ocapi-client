@@ -70,7 +70,7 @@ export default class CustomerProductListRegistrantModel {
                 obj['role'] = ApiClient.convertToType(data['role'], 'String')
             }
         }
-        return obj;
+        return obj
     }
 
     /**

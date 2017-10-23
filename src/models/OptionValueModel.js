@@ -71,7 +71,7 @@ export default class OptionValueModel {
                 obj['price'] = ApiClient.convertToType(data['price'], 'Number')
             }
         }
-        return obj;
+        return obj
     }
 
     /**

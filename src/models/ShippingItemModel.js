@@ -95,7 +95,7 @@ export default class ShippingItemModel {
                 obj['tax_rate'] = ApiClient.convertToType(data['tax_rate'], 'Number')
             }
         }
-        return obj;
+        return obj
     }
 
     /**

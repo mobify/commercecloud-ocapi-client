@@ -81,7 +81,7 @@ export default class Range2FilterModel {
                 obj['to_value'] = ApiClient.convertToType(data['to_value'], Object);
             }
         }
-        return obj;
+        return obj
     }
 
     /**

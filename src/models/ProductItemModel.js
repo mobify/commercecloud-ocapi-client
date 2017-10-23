@@ -123,7 +123,7 @@ export default class ProductItemModel {
             }
         }
 
-        return obj;
+        return obj
     }
 
     /**

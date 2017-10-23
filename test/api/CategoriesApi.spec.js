@@ -27,15 +27,13 @@ import {clientId, proxyUrl, baseUrl} from '../config.json'
     'use strict'
 
     var instance
+    const client = new ShopApi.ApiClient(
+        `${proxyUrl}/${baseUrl}`,
+        { 'x-dw-client-id': clientId }
+    )
 
     beforeEach(() => {
-        instance = new ShopApi.StoresApi();
-
-        const defaultClient = ShopApi.ApiClient.instance
-        defaultClient.defaultHeaders = {
-            'x-dw-client-id': clientId
-        }
-        defaultClient.basePath = `${proxyUrl}/${baseUrl}`.replace(/\/+$/, '')
+        instance = new ShopApi.CategoriesApi(client)
     })
 
     const getProperty = (object, getter, property) => {

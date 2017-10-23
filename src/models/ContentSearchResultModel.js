@@ -90,7 +90,7 @@ export default class ContentSearchResultModel {
                 obj['total'] = ApiClient.convertToType(data['total'], 'Number')
             }
         }
-        return obj;
+        return obj
     }
 
     /**

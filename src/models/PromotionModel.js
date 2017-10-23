@@ -85,7 +85,7 @@ export default class PromotionModel {
                 obj['start_date'] = ApiClient.convertToType(data['start_date'], 'Date')
             }
         }
-        return obj;
+        return obj
     }
 
     /**

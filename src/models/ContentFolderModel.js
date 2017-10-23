@@ -70,7 +70,7 @@ export default class ContentFolderModel {
                 obj['parent_folder_id'] = ApiClient.convertToType(data['parent_folder_id'], 'String')
             }
         }
-        return obj;
+        return obj
     }
 
     /**

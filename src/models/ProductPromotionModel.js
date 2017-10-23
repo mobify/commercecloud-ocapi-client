@@ -70,7 +70,7 @@ export default class ProductPromotionModel {
                 obj['promotional_price'] = ApiClient.convertToType(data['promotional_price'], 'Number')
             }
         }
-        return obj;
+        return obj
     }
 
     /**

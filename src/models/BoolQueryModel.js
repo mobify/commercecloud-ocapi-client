@@ -50,7 +50,7 @@ export default class BoolQueryModel {
             }
         }
 
-        return obj;
+        return obj
     }
 
     /**

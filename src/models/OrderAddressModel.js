@@ -115,7 +115,7 @@ export default class OrderAddressModel {
                 obj['title'] = ApiClient.convertToType(data['title'], 'String')
             }
         }
-        return obj;
+        return obj
     }
 
     /**

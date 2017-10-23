@@ -88,7 +88,7 @@ export default class LocaleModel {
                 obj['name'] = ApiClient.convertToType(data['name'], 'String')
             }
         }
-        return obj;
+        return obj
     }
 
     /**

@@ -70,7 +70,7 @@ export default class PaymentBankAccountRequestModel {
                 obj['number'] = ApiClient.convertToType(data['number'], 'String')
             }
         }
-        return obj;
+        return obj
     }
 
     /**

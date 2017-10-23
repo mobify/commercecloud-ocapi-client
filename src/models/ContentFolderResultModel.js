@@ -51,7 +51,7 @@ export default class ContentFolderResultModel {
             }
         }
 
-        return obj;
+        return obj
     }
 
     /**

@@ -75,7 +75,7 @@ export default class CustomerPaymentInstrumentRequestModel {
                 obj['payment_method_id'] = ApiClient.convertToType(data['payment_method_id'], 'String')
             }
         }
-        return obj;
+        return obj
     }
 
     /**

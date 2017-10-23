@@ -64,7 +64,7 @@ export default class ProductSearchSortingOptionModel {
                 obj['label'] = ApiClient.convertToType(data['label'], 'String')
             }
         }
-        return obj;
+        return obj
     }
 
     /**

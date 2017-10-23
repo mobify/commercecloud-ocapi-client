@@ -64,7 +64,7 @@ export default class RecommendationTypeModel {
                 obj['value'] = ApiClient.convertToType(data['value'], 'Number')
             }
         }
-        return obj;
+        return obj
     }
 
     /**

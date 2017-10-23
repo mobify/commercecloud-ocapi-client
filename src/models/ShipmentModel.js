@@ -120,7 +120,7 @@ export default class ShipmentModel {
                 obj['tracking_number'] = ApiClient.convertToType(data['tracking_number'], 'String')
             }
         }
-        return obj;
+        return obj
     }
 
     /**

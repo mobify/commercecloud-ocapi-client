@@ -26,17 +26,15 @@ import {clientId, proxyUrl, baseUrl} from '../config.json'
 }(this, function(expect, ShopApi) {
     'use strict'
 
-    var instance;
+    var instance
+    const client = new ShopApi.ApiClient(
+        `${proxyUrl}/${baseUrl}`,
+        { 'x-dw-client-id': clientId }
+    )
 
-    beforeEach(function() {
-        instance = new ShopApi.StoresApi();
-
-        const defaultClient = ShopApi.ApiClient.instance
-        defaultClient.defaultHeaders = {
-            'x-dw-client-id': clientId
-        }
-        defaultClient.basePath = `${proxyUrl}/${baseUrl}`.replace(/\/+$/, '')
-    });
+    beforeEach(() => {
+        instance = new ShopApi.ContentApi(client)
+    })
 
     var getProperty = function(object, getter, property) {
         // Use getter method if present; otherwise, get the property directly.
@@ -59,9 +57,10 @@ import {clientId, proxyUrl, baseUrl} from '../config.json'
             it('should call getContentByID successfully', () => {
                 instance.getContentByID('')
                     .then((content) => {
-                        if (!content) throw error;
-
-                        expect(content.id).to.be('');
+                        console.log('here:', content)
+                        if (!content) throw error
+                        console.log('here:', content)
+                        expect(content.id).to.be('')
                     })
             })
         });

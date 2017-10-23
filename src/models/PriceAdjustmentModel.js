@@ -98,7 +98,7 @@ export default class PriceAdjustmentModel {
                 obj['reason_code'] = ApiClient.convertToType(data['reason_code'], 'String')
             }
         }
-        return obj;
+        return obj
     }
 
     /**

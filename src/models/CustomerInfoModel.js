@@ -74,7 +74,7 @@ export default class CustomerInfoModel {
                 obj['email'] = ApiClient.convertToType(data['email'], 'String')
             }
         }
-        return obj;
+        return obj
     }
 
     /**

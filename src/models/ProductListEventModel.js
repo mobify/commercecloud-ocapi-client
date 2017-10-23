@@ -73,7 +73,7 @@ export default class ProductListEventModel {
                 obj['type'] = ApiClient.convertToType(data['type'], 'String')
             }
         }
-        return obj;
+        return obj
     }
 
     /**

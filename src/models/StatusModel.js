@@ -67,7 +67,7 @@ export default class StatusModel {
                 obj['status'] = ApiClient.convertToType(data['status'], 'Number')
             }
         }
-        return obj;
+        return obj
     }
 
     /**

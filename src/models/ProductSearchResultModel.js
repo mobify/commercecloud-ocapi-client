@@ -104,7 +104,7 @@ export default class ProductSearchResultModel {
                 obj['total'] = ApiClient.convertToType(data['total'], 'Number')
             }
         }
-        return obj;
+        return obj
     }
 
     /**

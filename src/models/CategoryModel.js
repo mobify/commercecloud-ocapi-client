@@ -100,7 +100,7 @@ export default class CategoryModel {
             }
         }
 
-        return obj;
+        return obj
     }
 
     /**

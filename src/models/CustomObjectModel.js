@@ -70,7 +70,7 @@ export default class CustomObjectModel {
                 obj['object_type'] = ApiClient.convertToType(data['object_type'], 'String')
             }
         }
-        return obj;
+        return obj
     }
 
     /**

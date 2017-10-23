@@ -46,7 +46,7 @@ export default class FilterModel {
             }
         }
 
-        return obj;
+        return obj
     }
 
     /**

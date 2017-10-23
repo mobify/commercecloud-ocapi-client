@@ -53,7 +53,7 @@ export default class PaymentMethodResultModel {
                 obj['applicable_payment_methods'] = ApiClient.convertToType(data['applicable_payment_methods'], [PaymentMethodModel]);
             }
         }
-        return obj;
+        return obj
     }
 
     /**

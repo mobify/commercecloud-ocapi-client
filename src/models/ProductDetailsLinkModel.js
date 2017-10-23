@@ -74,7 +74,7 @@ export default class ProductDetailsLinkModel {
                 obj['title'] = ApiClient.convertToType(data['title'], 'String')
             }
         }
-        return obj;
+        return obj
     }
 
     /**

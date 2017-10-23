@@ -64,7 +64,7 @@ export default class ResultPageModel {
                 obj['start'] = ApiClient.convertToType(data['start'], 'Number')
             }
         }
-        return obj;
+        return obj
     }
 
     /**

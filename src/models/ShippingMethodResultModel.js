@@ -65,7 +65,7 @@ export default class ShippingMethodResultModel {
                 obj['default_shipping_method_id'] = ApiClient.convertToType(data['default_shipping_method_id'], 'String')
             }
         }
-        return obj;
+        return obj
     }
 
     /**

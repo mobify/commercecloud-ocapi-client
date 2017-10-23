@@ -67,7 +67,7 @@ export default class CustomerAddressLinkModel {
                 obj['title'] = ApiClient.convertToType(data['title'], 'String')
             }
         }
-        return obj;
+        return obj
     }
 
     /**

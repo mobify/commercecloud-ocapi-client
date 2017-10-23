@@ -51,7 +51,7 @@ export default class BundledProductModel {
             }
         }
 
-        return obj;
+        return obj
     }
 
     /**

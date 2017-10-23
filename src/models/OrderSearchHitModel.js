@@ -56,7 +56,7 @@ export default class OrderSearchHitModel {
                 obj['relevance'] = ApiClient.convertToType(data['relevance'], 'Number')
             }
         }
-        return obj;
+        return obj
     }
 
     /**

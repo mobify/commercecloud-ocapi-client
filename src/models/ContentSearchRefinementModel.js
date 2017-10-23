@@ -52,7 +52,7 @@ export default class ContentSearchRefinementModel {
                 obj['values'] = ApiClient.convertToType(data['values'], [ContentSearchRefinementValueModel]);
             }
         }
-        return obj;
+        return obj
     }
 
     /**

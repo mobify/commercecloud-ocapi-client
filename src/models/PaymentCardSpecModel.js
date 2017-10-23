@@ -82,7 +82,7 @@ export default class PaymentCardSpecModel {
                 obj['security_code_length'] = ApiClient.convertToType(data['security_code_length'], 'Number')
             }
         }
-        return obj;
+        return obj
     }
 
     /**

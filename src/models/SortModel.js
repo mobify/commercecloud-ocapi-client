@@ -64,7 +64,7 @@ export default class SortModel {
                 obj['sort_order'] = ApiClient.convertToType(data['sort_order'], 'String')
             }
         }
-        return obj;
+        return obj
     }
 
     /**

@@ -94,7 +94,7 @@ export default class ProductSearchHitModel {
                 obj['variation_attributes'] = ApiClient.convertToType(data['variation_attributes'], [VariationAttributeModel]);
             }
         }
-        return obj;
+        return obj
     }
 
     /**

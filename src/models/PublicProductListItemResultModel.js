@@ -68,7 +68,7 @@ export default class PublicProductListItemResultModel {
                 obj['total'] = ApiClient.convertToType(data['total'], 'Number')
             }
         }
-        return obj;
+        return obj
     }
 
     /**

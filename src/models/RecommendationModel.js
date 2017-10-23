@@ -84,7 +84,7 @@ export default class RecommendationModel {
                 obj['short_description'] = ApiClient.convertToType(data['short_description'], 'String')
             }
         }
-        return obj;
+        return obj
     }
 
     /**

@@ -129,7 +129,7 @@ export default class OptionItemModel {
             }
         }
 
-        return obj;
+        return obj
     }
 
     /**

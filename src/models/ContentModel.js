@@ -70,7 +70,7 @@ export default class ContentModel {
             }
         }
 
-        return obj;
+        return obj
     }
 
     /**

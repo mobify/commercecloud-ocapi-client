@@ -75,7 +75,7 @@ export default class PaymentMethodModel {
                 obj['name'] = ApiClient.convertToType(data['name'], 'String')
             }
         }
-        return obj;
+        return obj
     }
 
     /**

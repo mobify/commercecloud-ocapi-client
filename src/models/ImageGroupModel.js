@@ -69,7 +69,7 @@ export default class ImageGroupModel {
                 obj['view_type'] = ApiClient.convertToType(data['view_type'], 'String')
             }
         }
-        return obj;
+        return obj
     }
 
     /**

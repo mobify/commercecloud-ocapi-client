@@ -110,7 +110,7 @@ export default class SiteModel {
                 obj['timezone_offset'] = ApiClient.convertToType(data['timezone_offset'], 'Number')
             }
         }
-        return obj;
+        return obj
     }
 
     /**

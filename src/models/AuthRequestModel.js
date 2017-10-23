@@ -45,7 +45,7 @@ export default class AuthRequestModel {
             }
         }
 
-        return obj;
+        return obj
     }
 
     /**

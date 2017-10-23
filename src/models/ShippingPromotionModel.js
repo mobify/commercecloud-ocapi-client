@@ -70,7 +70,7 @@ export default class ShippingPromotionModel {
                 obj['promotion_name'] = ApiClient.convertToType(data['promotion_name'], 'String')
             }
         }
-        return obj;
+        return obj
     }
 
     /**

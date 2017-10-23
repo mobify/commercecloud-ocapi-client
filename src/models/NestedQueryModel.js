@@ -70,7 +70,7 @@ export default class NestedQueryModel {
                 obj['score_mode'] = ApiClient.convertToType(data['score_mode'], 'String')
             }
         }
-        return obj;
+        return obj
     }
 
     /**

@@ -71,7 +71,7 @@ export default class CouponItemModel {
                 obj['valid'] = ApiClient.convertToType(data['valid'], 'Boolean')
             }
         }
-        return obj;
+        return obj
     }
 
     /**

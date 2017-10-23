@@ -73,7 +73,7 @@ export default class NoteModel {
                 obj['text'] = ApiClient.convertToType(data['text'], 'String')
             }
         }
-        return obj;
+        return obj
     }
 
     /**

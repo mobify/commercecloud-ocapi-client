@@ -180,7 +180,7 @@ export default class OrderModel {
                 obj['taxation'] = ApiClient.convertToType(data['taxation'], 'String')
             }
         }
-        return obj;
+        return obj
     }
 
     /**

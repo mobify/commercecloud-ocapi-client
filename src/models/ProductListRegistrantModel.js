@@ -67,7 +67,7 @@ export default class ProductListRegistrantModel {
                 obj['role'] = ApiClient.convertToType(data['role'], 'String')
             }
         }
-        return obj;
+        return obj
     }
 
     /**

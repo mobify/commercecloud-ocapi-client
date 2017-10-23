@@ -131,7 +131,7 @@ export default class StoreModel {
                 obj['store_locator_enabled'] = ApiClient.convertToType(data['store_locator_enabled'], 'Boolean')
             }
         }
-        return obj;
+        return obj
     }
 
     /**

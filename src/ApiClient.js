@@ -29,13 +29,24 @@ import FaultModel from "./models/FaultModel"
 * @class
 */
 export default class ApiClient {
-    constructor() {
+    constructor(
+        basePath,
+        defaultHeaders = {},
+        timeout = 60000,
+        cache = true,
+        enableCookies = false,
+    ) {
+        // verify the required parameter 'basepath' is set
+        if (basePath === undefined || basePath === null || basePath === '') {
+            throw new Error("Missing the required parameter 'basePath' when calling constructing ApiClient")
+        }
+
         /**
          * The base URL against which to resolve every API call's (relative) path.
          * @type {String}
          * @default https://mobify-tech-prtnr-na03-dw.demandware.net/s/2017refresh/dw/shop/v17_8
          */
-        this.basePath = 'https://mobify-tech-prtnr-na03-dw.demandware.net/s/2017refresh/dw/shop/v17_8'.replace(/\/+$/, '')
+        this.basePath = basePath.replace(/\/+$/, '')
 
         /**
          * The authentication methods to be included for all API calls.
@@ -52,14 +63,14 @@ export default class ApiClient {
          * @type {Array.<String>}
          * @default {}
          */
-        this.defaultHeaders = {}
+        this.defaultHeaders = defaultHeaders
 
         /**
          * The default HTTP timeout for all API calls.
          * @type {Number}
          * @default 60000
          */
-        this.timeout = 60000
+        this.timeout = timeout
 
         /**
          * If set to false an additional timestamp parameter is added to all API GET calls to
@@ -67,14 +78,14 @@ export default class ApiClient {
          * @type {Boolean}
          * @default true
          */
-        this.cache = true
+        this.cache = cache
 
         /**
          * If set to true, the client will save the cookies from each server
          * response, and return them in the next request.
          * @default false
          */
-        this.enableCookies = false
+        this.enableCookies = enableCookies
 
         /*
          * Used to save and return cookies in a node.js (non-browser) setting,
@@ -594,4 +605,4 @@ export default class ApiClient {
 * The default API client implementation.
 * @type {module:ApiClient}
 */
-ApiClient.instance = new ApiClient()
+ApiClient.instance = new ApiClient('https://mobify-tech-prtnr-na03-dw.demandware.net/s/2017refresh/dw/shop/v17_8')

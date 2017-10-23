@@ -63,7 +63,7 @@ export default class QueryFilterModel {
                 obj['query'] = QueryModel.constructFromObject(data['query']);
             }
         }
-        return obj;
+        return obj
     }
 
     /**

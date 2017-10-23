@@ -76,7 +76,7 @@ export default class ProductListLinkModel {
                 obj['type'] = ApiClient.convertToType(data['type'], 'String')
             }
         }
-        return obj;
+        return obj
     }
 
     /**

@@ -71,7 +71,7 @@ export default class ProductListShippingAddressModel {
                 obj['last_name'] = ApiClient.convertToType(data['last_name'], 'String')
             }
         }
-        return obj;
+        return obj
     }
 
     /**

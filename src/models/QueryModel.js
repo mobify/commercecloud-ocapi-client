@@ -51,7 +51,7 @@ export default class QueryModel {
             }
         }
 
-        return obj;
+        return obj
     }
 
     /**

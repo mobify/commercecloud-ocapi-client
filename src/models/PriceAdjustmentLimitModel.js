@@ -55,7 +55,7 @@ export default class PriceAdjustmentLimitModel {
                 obj['type'] = ApiClient.convertToType(data['type'], 'String')
             }
         }
-        return obj;
+        return obj
     }
 
     /**

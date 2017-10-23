@@ -63,7 +63,7 @@ export default class BasketPaymentInstrumentRequestModel {
             }
         }
 
-        return obj;
+        return obj
     }
 
     /**

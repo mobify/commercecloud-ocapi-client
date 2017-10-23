@@ -140,7 +140,7 @@ export default class BasketModel {
                 obj['taxation'] = ApiClient.convertToType(data['taxation'], 'String')
             }
         }
-        return obj;
+        return obj
     }
 
     /**

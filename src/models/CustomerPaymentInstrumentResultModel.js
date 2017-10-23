@@ -68,7 +68,7 @@ export default class CustomerPaymentInstrumentResultModel {
                 obj['total'] = ApiClient.convertToType(data['total'], 'Number')
             }
         }
-        return obj;
+        return obj
     }
 
     /**

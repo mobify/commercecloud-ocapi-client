@@ -82,7 +82,7 @@ export default class ShippingMethodModel {
                 obj['shipping_promotions'] = ApiClient.convertToType(data['shipping_promotions'], [ShippingPromotionModel]);
             }
         }
-        return obj;
+        return obj
     }
 
     /**

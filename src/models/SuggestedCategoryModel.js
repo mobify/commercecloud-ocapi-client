@@ -69,7 +69,7 @@ export default class SuggestedCategoryModel {
                 obj['parent_category_name'] = ApiClient.convertToType(data['parent_category_name'], 'String')
             }
         }
-        return obj;
+        return obj
     }
 
     /**

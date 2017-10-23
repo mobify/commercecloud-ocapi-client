@@ -61,7 +61,7 @@ export default class GiftCertificateRequestModel {
                 obj['gift_certificate_code'] = ApiClient.convertToType(data['gift_certificate_code'], 'String')
             }
         }
-        return obj;
+        return obj
     }
 
     /**

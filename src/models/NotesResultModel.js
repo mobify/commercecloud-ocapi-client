@@ -62,7 +62,7 @@ export default class NotesResultModel {
                 obj['notes'] = ApiClient.convertToType(data['notes'], [NoteModel]);
             }
         }
-        return obj;
+        return obj
     }
 
     /**

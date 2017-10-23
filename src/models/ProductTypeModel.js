@@ -79,7 +79,7 @@ export default class ProductTypeModel {
                 obj['variation_group'] = ApiClient.convertToType(data['variation_group'], 'Boolean')
             }
         }
-        return obj;
+        return obj
     }
 
     /**

@@ -74,7 +74,7 @@ export default class RangeFilterModel {
                 obj['to_inclusive'] = ApiClient.convertToType(data['to_inclusive'], 'Boolean')
             }
         }
-        return obj;
+        return obj
     }
 
     /**

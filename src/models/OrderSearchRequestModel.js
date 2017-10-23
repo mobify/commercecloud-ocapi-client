@@ -79,7 +79,7 @@ export default class OrderSearchRequestModel {
                 obj['start'] = ApiClient.convertToType(data['start'], 'Number')
             }
         }
-        return obj;
+        return obj
     }
 
     /**

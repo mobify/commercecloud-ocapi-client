@@ -49,7 +49,7 @@ export default class BoolFilterModel {
                 obj['operator'] = ApiClient.convertToType(data['operator'], 'String')
             }
         }
-        return obj;
+        return obj
     }
 
     /**

@@ -80,7 +80,7 @@ export default class InventoryModel {
                 obj['stock_level'] = ApiClient.convertToType(data['stock_level'], 'Number')
             }
         }
-        return obj;
+        return obj
     }
 
     /**

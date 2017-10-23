@@ -76,7 +76,7 @@ export default class PaymentBankAccountModel {
                 obj['number_last_digits'] = ApiClient.convertToType(data['number_last_digits'], 'String')
             }
         }
-        return obj;
+        return obj
     }
 
     /**

@@ -50,7 +50,7 @@ export default class CategoryResultModel {
             }
         }
 
-        return obj;
+        return obj
     }
 
     /**

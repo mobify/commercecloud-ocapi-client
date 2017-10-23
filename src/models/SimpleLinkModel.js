@@ -61,7 +61,7 @@ export default class SimpleLinkModel {
                 obj['link'] = ApiClient.convertToType(data['link'], 'String')
             }
         }
-        return obj;
+        return obj
     }
 
     /**

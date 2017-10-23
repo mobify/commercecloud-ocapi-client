@@ -87,7 +87,7 @@ export default class CustomerProductListItemModel {
                 obj['type'] = ApiClient.convertToType(data['type'], 'String')
             }
         }
-        return obj;
+        return obj
     }
 
     /**

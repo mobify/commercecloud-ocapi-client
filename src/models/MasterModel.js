@@ -77,7 +77,7 @@ export default class MasterModel {
                 obj['prices'] = ApiClient.convertToType(data['prices'], {'String': 'Number'});
             }
         }
-        return obj;
+        return obj
     }
 
     /**

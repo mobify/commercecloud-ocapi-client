@@ -66,7 +66,7 @@ export default class CustomerRegistrationModel {
                 obj['password'] = ApiClient.convertToType(data['password'], 'String')
             }
         }
-        return obj;
+        return obj
     }
 
     /**
