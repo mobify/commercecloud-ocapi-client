@@ -27,11 +27,11 @@
 
   var instance;
 
-  beforeEach(function() {
+  beforeEach(() => {
     instance = new ShopApi.OptionValueModel()
   });
 
-  var getProperty = function(object, getter, property) {
+  var getProperty = (object, getter, property) => {
     // Use getter method if present; otherwise, get the property directly.
     if (typeof object[getter] === 'function')
       return object[getter]();
@@ -39,7 +39,7 @@
       return object[property];
   }
 
-  var setProperty = function(object, setter, property, value) {
+  var setProperty = (object, setter, property, value) => {
     // Use setter method if present; otherwise, set the property directly.
     if (typeof object[setter] === 'function')
       object[setter](value);
