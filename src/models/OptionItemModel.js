@@ -11,7 +11,6 @@
  *
  */
 import ApiClient from '../ApiClient'
-// import OptionItemModel from './OptionItemModel'
 import PriceAdjustmentModel from './PriceAdjustmentModel'
 import ProductItemModel from './ProductItemModel'
 import ProductListItemReferenceModel from './ProductListItemReferenceModel'
@@ -32,7 +31,7 @@ export default class OptionItemModel {
     */
 
     constructor(optionId, optionValueId) {
-        this['option_id'] = optionId;this['option_value_id'] = optionValueId;
+        this['option_id'] = optionId;this['option_value_id'] = optionValueId
     }
 
     /**

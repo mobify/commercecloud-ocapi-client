@@ -10,7 +10,6 @@
  * Do not edit the class manually.
  *
  */
-
 import ApiClient from '../ApiClient'
 import QueryModel from './QueryModel'
 

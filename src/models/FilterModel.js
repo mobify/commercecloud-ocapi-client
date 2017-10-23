@@ -27,7 +27,7 @@ export default class FilterModel {
     */
 
     constructor(operator) {
-        this['operator'] = operator;
+        this['operator'] = operator
     }
 
     /**
@@ -79,5 +79,5 @@ export default class FilterModel {
          * @const
          */
         "not": "not"
-    };
+    }
 }

@@ -10,14 +10,8 @@
  * Do not edit the class manually.
  *
  */
-
-
 import ApiClient from '../ApiClient'
 import PaymentMethodModel from './PaymentMethodModel'
-
-
-
-
 
 /**
 * The PaymentMethodResultModel model module.
@@ -31,7 +25,6 @@ export default class PaymentMethodResultModel {
     * @alias module:models/PaymentMethodResultModel
     * @class
     */
-
     constructor() {}
 
     /**
@@ -45,14 +38,11 @@ export default class PaymentMethodResultModel {
         if (data) {
             obj = obj || new PaymentMethodResultModel()
 
-
-
-
-
             if (data.hasOwnProperty('applicable_payment_methods')) {
                 obj['applicable_payment_methods'] = ApiClient.convertToType(data['applicable_payment_methods'], [PaymentMethodModel]);
             }
         }
+
         return obj
     }
 
@@ -61,12 +51,4 @@ export default class PaymentMethodResultModel {
     * @member {Array.<module:models/PaymentMethodModel>} applicable_payment_methods
     */
     applicable_payment_methods = undefined
-
-
-
-
-
-
-
-
 }

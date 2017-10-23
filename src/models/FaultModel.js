@@ -10,7 +10,6 @@
  * Do not edit the class manually.
  *
  */
-
 import ApiClient from '../ApiClient'
 
 /**
@@ -62,5 +61,4 @@ export default class FaultModel {
     * @member {String} type
     */
     type = undefined
-
 }

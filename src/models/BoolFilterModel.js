@@ -10,7 +10,6 @@
  * Do not edit the class manually.
  *
  */
-
 import ApiClient from '../ApiClient'
 import FilterModel from './FilterModel'
 
@@ -28,7 +27,7 @@ export default class BoolFilterModel {
     * @param operator {module:models/BoolFilterModel.OperatorEnum} The logical operator the filters are combined with.
     */
     constructor(operator) {
-        this['operator'] = operator;
+        this['operator'] = operator
     }
 
     /**
@@ -43,7 +42,7 @@ export default class BoolFilterModel {
             obj = obj || new BoolFilterModel()
 
             if (data.hasOwnProperty('filters')) {
-                obj['filters'] = ApiClient.convertToType(data['filters'], [FilterModel]);
+                obj['filters'] = ApiClient.convertToType(data['filters'], [FilterModel])
             }
             if (data.hasOwnProperty('operator')) {
                 obj['operator'] = ApiClient.convertToType(data['operator'], 'String')

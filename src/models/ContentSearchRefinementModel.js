@@ -10,7 +10,6 @@
  * Do not edit the class manually.
  *
  */
-
 import ApiClient from '../ApiClient'
 import ContentSearchRefinementValueModel from './ContentSearchRefinementValueModel'
 
@@ -28,7 +27,7 @@ export default class ContentSearchRefinementModel {
     * @param attributeId {String} The id of the search refinement attribute. In the case of an attribute refinement, this is the  attribute id. Custom attributes are marked by the prefix \"c_\".
     */
     constructor(attributeId) {
-        this['attribute_id'] = attributeId;
+        this['attribute_id'] = attributeId
     }
 
     /**

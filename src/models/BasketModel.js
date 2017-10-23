@@ -10,7 +10,6 @@
  * Do not edit the class manually.
  *
  */
-
 import ApiClient from '../ApiClient'
 import BonusDiscountLineItemModel from './BonusDiscountLineItemModel'
 import CouponItemModel from './CouponItemModel'
@@ -65,16 +64,13 @@ export default class BasketModel {
                 obj['billing_address'] = OrderAddressModel.constructFromObject(data['billing_address']);
             }
             if (data.hasOwnProperty('bonus_discount_line_items')) {
-                obj['bonus_discount_line_items'] = ApiClient.convertToType(data['bonus_discount_line_items'], [BonusDiscountLineItemModel]);
-            }
-            if (data.hasOwnProperty('c_sessionAddressBook')) {
-                obj['c_sessionAddressBook'] = ApiClient.convertToType(data['c_sessionAddressBook'], 'String')
+                obj['bonus_discount_line_items'] = ApiClient.convertToType(data['bonus_discount_line_items'], [BonusDiscountLineItemModel])
             }
             if (data.hasOwnProperty('channel_type')) {
                 obj['channel_type'] = ApiClient.convertToType(data['channel_type'], 'String')
             }
             if (data.hasOwnProperty('coupon_items')) {
-                obj['coupon_items'] = ApiClient.convertToType(data['coupon_items'], [CouponItemModel]);
+                obj['coupon_items'] = ApiClient.convertToType(data['coupon_items'], [CouponItemModel])
             }
             if (data.hasOwnProperty('creation_date')) {
                 obj['creation_date'] = ApiClient.convertToType(data['creation_date'], 'Date')
@@ -83,10 +79,10 @@ export default class BasketModel {
                 obj['currency'] = ApiClient.convertToType(data['currency'], 'String')
             }
             if (data.hasOwnProperty('customer_info')) {
-                obj['customer_info'] = CustomerInfoModel.constructFromObject(data['customer_info']);
+                obj['customer_info'] = CustomerInfoModel.constructFromObject(data['customer_info'])
             }
             if (data.hasOwnProperty('gift_certificate_items')) {
-                obj['gift_certificate_items'] = ApiClient.convertToType(data['gift_certificate_items'], [GiftCertificateItemModel]);
+                obj['gift_certificate_items'] = ApiClient.convertToType(data['gift_certificate_items'], [GiftCertificateItemModel])
             }
             if (data.hasOwnProperty('inventory_reservation_expiry')) {
                 obj['inventory_reservation_expiry'] = ApiClient.convertToType(data['inventory_reservation_expiry'], 'Date')
@@ -98,19 +94,19 @@ export default class BasketModel {
                 obj['merchandize_total_tax'] = ApiClient.convertToType(data['merchandize_total_tax'], 'Number')
             }
             if (data.hasOwnProperty('notes')) {
-                obj['notes'] = SimpleLinkModel.constructFromObject(data['notes']);
+                obj['notes'] = SimpleLinkModel.constructFromObject(data['notes'])
             }
             if (data.hasOwnProperty('order_price_adjustments')) {
-                obj['order_price_adjustments'] = ApiClient.convertToType(data['order_price_adjustments'], [PriceAdjustmentModel]);
+                obj['order_price_adjustments'] = ApiClient.convertToType(data['order_price_adjustments'], [PriceAdjustmentModel])
             }
             if (data.hasOwnProperty('order_total')) {
                 obj['order_total'] = ApiClient.convertToType(data['order_total'], 'Number')
             }
             if (data.hasOwnProperty('payment_instruments')) {
-                obj['payment_instruments'] = ApiClient.convertToType(data['payment_instruments'], [OrderPaymentInstrumentModel]);
+                obj['payment_instruments'] = ApiClient.convertToType(data['payment_instruments'], [OrderPaymentInstrumentModel])
             }
             if (data.hasOwnProperty('product_items')) {
-                obj['product_items'] = ApiClient.convertToType(data['product_items'], [ProductItemModel]);
+                obj['product_items'] = ApiClient.convertToType(data['product_items'], [ProductItemModel])
             }
             if (data.hasOwnProperty('product_sub_total')) {
                 obj['product_sub_total'] = ApiClient.convertToType(data['product_sub_total'], 'Number')
@@ -119,10 +115,10 @@ export default class BasketModel {
                 obj['product_total'] = ApiClient.convertToType(data['product_total'], 'Number')
             }
             if (data.hasOwnProperty('shipments')) {
-                obj['shipments'] = ApiClient.convertToType(data['shipments'], [ShipmentModel]);
+                obj['shipments'] = ApiClient.convertToType(data['shipments'], [ShipmentModel])
             }
             if (data.hasOwnProperty('shipping_items')) {
-                obj['shipping_items'] = ApiClient.convertToType(data['shipping_items'], [ShippingItemModel]);
+                obj['shipping_items'] = ApiClient.convertToType(data['shipping_items'], [ShippingItemModel])
             }
             if (data.hasOwnProperty('shipping_total')) {
                 obj['shipping_total'] = ApiClient.convertToType(data['shipping_total'], 'Number')
@@ -173,10 +169,6 @@ export default class BasketModel {
     * @member {Array.<module:models/BonusDiscountLineItemModel>} bonus_discount_line_items
     */
     bonus_discount_line_items = undefined
-    /**
-    * @member {String} c_sessionAddressBook
-    */
-    c_sessionAddressBook = undefined
     /**
     * The sales channel for the order.
     * @member {module:models/BasketModel.ChannelTypeEnum} channel_type

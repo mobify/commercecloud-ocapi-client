@@ -10,7 +10,6 @@
  * Do not edit the class manually.
  *
  */
-
 import ApiClient from '../ApiClient'
 
 /**
@@ -26,9 +25,8 @@ export default class ContentFolderModel {
     * @class
     * @param id {String} The id of the content folder.
     */
-
     constructor(id) {
-        this['id'] = id;
+        this['id'] = id
     }
 
     /**
@@ -42,14 +40,11 @@ export default class ContentFolderModel {
         if (data) {
             obj = obj || new ContentFolderModel()
 
-            if (data.hasOwnProperty('c_customCSSFile')) {
-                obj['c_customCSSFile'] = ApiClient.convertToType(data['c_customCSSFile'], 'String')
-            }
             if (data.hasOwnProperty('description')) {
                 obj['description'] = ApiClient.convertToType(data['description'], 'String')
             }
             if (data.hasOwnProperty('folders')) {
-                obj['folders'] = ApiClient.convertToType(data['folders'], [ContentFolderModel]);
+                obj['folders'] = ApiClient.convertToType(data['folders'], [ContentFolderModel])
             }
             if (data.hasOwnProperty('id')) {
                 obj['id'] = ApiClient.convertToType(data['id'], 'String')
@@ -70,14 +65,10 @@ export default class ContentFolderModel {
                 obj['parent_folder_id'] = ApiClient.convertToType(data['parent_folder_id'], 'String')
             }
         }
+
         return obj
     }
 
-    /**
-    * Use this attribute to apply custom styles for this category.
-    * @member {String} c_customCSSFile
-    */
-    c_customCSSFile = undefined
     /**
     * The localized content folder description.
     * @member {String} description

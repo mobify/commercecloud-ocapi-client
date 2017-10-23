@@ -10,7 +10,6 @@
  * Do not edit the class manually.
  *
  */
-
 import ApiClient from '../ApiClient'
 
 /**
@@ -26,8 +25,7 @@ export default class QueryModel {
     * @class
     */
 
-    constructor() {
-    }
+    constructor() {}
 
     /**
     * Constructs a <code>QueryModel</code> from a plain JavaScript object, optionally creating a new instance.
@@ -41,13 +39,13 @@ export default class QueryModel {
             obj = obj || new QueryModel()
 
             if (data.hasOwnProperty('must')) {
-                obj['must'] = ApiClient.convertToType(data['must'], [QueryModel]);
+                obj['must'] = ApiClient.convertToType(data['must'], [QueryModel])
             }
             if (data.hasOwnProperty('must_not')) {
-                obj['must_not'] = ApiClient.convertToType(data['must_not'], [QueryModel]);
+                obj['must_not'] = ApiClient.convertToType(data['must_not'], [QueryModel])
             }
             if (data.hasOwnProperty('should')) {
-                obj['should'] = ApiClient.convertToType(data['should'], [QueryModel]);
+                obj['should'] = ApiClient.convertToType(data['should'], [QueryModel])
             }
         }
 

@@ -25,9 +25,8 @@ export default class ContentModel {
     * @class
     * @param id {String} The id of the content asset.
     */
-
     constructor(id) {
-        this['id'] = id;
+        this['id'] = id
     }
 
     /**
@@ -41,15 +40,6 @@ export default class ContentModel {
         if (data) {
             obj = obj || new ContentModel()
 
-            if (data.hasOwnProperty('c_Year')) {
-                obj['c_Year'] = ApiClient.convertToType(data['c_Year'], 'String')
-            }
-            if (data.hasOwnProperty('c_body')) {
-                obj['c_body'] = ApiClient.convertToType(data['c_body'], 'String')
-            }
-            if (data.hasOwnProperty('c_customCSSFile')) {
-                obj['c_customCSSFile'] = ApiClient.convertToType(data['c_customCSSFile'], 'String')
-            }
             if (data.hasOwnProperty('description')) {
                 obj['description'] = ApiClient.convertToType(data['description'], 'String')
             }
@@ -73,19 +63,6 @@ export default class ContentModel {
         return obj
     }
 
-    /**
-    * @member {String} c_Year
-    */
-    c_Year = undefined
-    /**
-    * @member {String} c_body
-    */
-    c_body = undefined
-    /**
-    * Use this attribute to apply custom styles for this content asset.
-    * @member {String} c_customCSSFile
-    */
-    c_customCSSFile = undefined
     /**
     * The localized content asset description.
     * @member {String} description

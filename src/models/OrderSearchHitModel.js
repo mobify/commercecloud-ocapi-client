@@ -10,14 +10,8 @@
  * Do not edit the class manually.
  *
  */
-
-
 import ApiClient from '../ApiClient'
 import OrderModel from './OrderModel'
-
-
-
-
 
 /**
 * The OrderSearchHitModel model module.
@@ -31,7 +25,6 @@ export default class OrderSearchHitModel {
     * @alias module:models/OrderSearchHitModel
     * @class
     */
-
     constructor() {}
 
     /**
@@ -45,10 +38,6 @@ export default class OrderSearchHitModel {
         if (data) {
             obj = obj || new OrderSearchHitModel()
 
-
-
-
-
             if (data.hasOwnProperty('data')) {
                 obj['data'] = OrderModel.constructFromObject(data['data']);
             }
@@ -56,6 +45,7 @@ export default class OrderSearchHitModel {
                 obj['relevance'] = ApiClient.convertToType(data['relevance'], 'Number')
             }
         }
+
         return obj
     }
 
@@ -69,12 +59,4 @@ export default class OrderSearchHitModel {
     * @member {Number} relevance
     */
     relevance = undefined
-
-
-
-
-
-
-
-
 }

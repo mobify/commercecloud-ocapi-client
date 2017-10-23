@@ -10,13 +10,7 @@
  * Do not edit the class manually.
  *
  */
-
-
 import ApiClient from '../ApiClient'
-
-
-
-
 
 /**
 * The ProductLinkModel model module.
@@ -30,7 +24,6 @@ export default class ProductLinkModel {
     * @alias module:models/ProductLinkModel
     * @class
     */
-
     constructor() {}
 
     /**
@@ -43,10 +36,6 @@ export default class ProductLinkModel {
     static constructFromObject(data, obj) {
         if (data) {
             obj = obj || new ProductLinkModel()
-
-
-
-
 
             if (data.hasOwnProperty('source_product_id')) {
                 obj['source_product_id'] = ApiClient.convertToType(data['source_product_id'], 'String')
@@ -64,6 +53,7 @@ export default class ProductLinkModel {
                 obj['type'] = ApiClient.convertToType(data['type'], 'String')
             }
         }
+
         return obj
     }
 
@@ -92,11 +82,6 @@ export default class ProductLinkModel {
     * @member {module:models/ProductLinkModel.TypeEnum} type
     */
     type = undefined
-
-
-
-
-
 
     /**
     * Allowed values for the <code>type</code> property.
@@ -152,8 +137,5 @@ export default class ProductLinkModel {
          * @const
          */
         "other": "other"
-    };
-
-
-
+    }
 }

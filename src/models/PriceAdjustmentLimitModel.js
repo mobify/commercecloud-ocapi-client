@@ -10,7 +10,6 @@
  * Do not edit the class manually.
  *
  */
-
 import ApiClient from '../ApiClient'
 
 /**
@@ -38,10 +37,6 @@ export default class PriceAdjustmentLimitModel {
         if (data) {
             obj = obj || new PriceAdjustmentLimitModel()
 
-
-
-
-
             if (data.hasOwnProperty('amount')) {
                 obj['amount'] = ApiClient.convertToType(data['amount'], 'Number')
             }
@@ -55,6 +50,7 @@ export default class PriceAdjustmentLimitModel {
                 obj['type'] = ApiClient.convertToType(data['type'], 'String')
             }
         }
+
         return obj
     }
 
@@ -78,11 +74,6 @@ export default class PriceAdjustmentLimitModel {
     * @member {module:models/PriceAdjustmentLimitModel.TypeEnum} type
     */
     type = undefined
-
-
-
-
-
 
     /**
     * Allowed values for the <code>type</code> property.
@@ -108,8 +99,5 @@ export default class PriceAdjustmentLimitModel {
          * @const
          */
         "order": "order"
-    };
-
-
-
+    }
 }

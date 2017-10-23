@@ -10,7 +10,6 @@
  * Do not edit the class manually.
  *
  */
-
 import ApiClient from '../ApiClient'
 import ContentFolderModel from './ContentFolderModel'
 
@@ -26,7 +25,6 @@ export default class ContentFolderResultModel {
     * @alias module:models/ContentFolderResultModel
     * @class
     */
-
     constructor() {}
 
     /**

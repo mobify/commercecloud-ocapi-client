@@ -10,7 +10,6 @@
  * Do not edit the class manually.
  *
  */
-
 import ApiClient from '../ApiClient'
 import ProductModel from './ProductModel'
 
@@ -26,7 +25,6 @@ export default class BundledProductModel {
     * @alias module:models/BundledProductModel
     * @class
     */
-
     constructor() {}
 
     /**

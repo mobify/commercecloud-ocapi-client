@@ -10,8 +10,6 @@
  * Do not edit the class manually.
  *
  */
-
-
 import ApiClient from '../ApiClient'
 
 /**
@@ -59,6 +57,7 @@ export default class ProductSearchRefinementValueModel {
                 obj['values'] = ApiClient.convertToType(data['values'], [ProductSearchRefinementValueModel]);
             }
         }
+
         return obj
     }
 
@@ -92,5 +91,4 @@ export default class ProductSearchRefinementValueModel {
     * @member {Array.<module:models/ProductSearchRefinementValueModel>} values
     */
     values = undefined
-
 }

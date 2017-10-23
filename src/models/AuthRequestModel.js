@@ -84,5 +84,5 @@ export default class AuthRequestModel {
          * @const
          */
         "session": "session"
-    };
+    }
 }

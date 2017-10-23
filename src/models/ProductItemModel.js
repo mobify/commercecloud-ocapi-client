@@ -29,7 +29,7 @@ export default class ProductItemModel {
      * @param quantity {Number} The quantity of the products represented by this item.
      */
     constructor(quantity) {
-        this['quantity'] = quantity;
+        this['quantity'] = quantity
     }
 
     /**
@@ -56,10 +56,7 @@ export default class ProductItemModel {
                 obj['bonus_product_line_item'] = ApiClient.convertToType(data['bonus_product_line_item'], 'Boolean')
             }
             if (data.hasOwnProperty('bundled_product_items')) {
-                obj['bundled_product_items'] = ApiClient.convertToType(data['bundled_product_items'], [ProductItemModel]);
-            }
-            if (data.hasOwnProperty('c_fromStoreId')) {
-                obj['c_fromStoreId'] = ApiClient.convertToType(data['c_fromStoreId'], 'String')
+                obj['bundled_product_items'] = ApiClient.convertToType(data['bundled_product_items'], [ProductItemModel])
             }
             if (data.hasOwnProperty('gift')) {
                 obj['gift'] = ApiClient.convertToType(data['gift'], 'Boolean')
@@ -155,12 +152,6 @@ export default class ProductItemModel {
      * @member {Array.<module:models/ProductItemModel>} bundled_product_items
      */
     bundled_product_items = undefined
-
-    /**
-     * Links the store to the product line item for grouping shipments in the checkout process.
-     * @member {String} c_fromStoreId
-     */
-    c_fromStoreId = undefined
 
     /**
      * Returns true if the item is a gift.

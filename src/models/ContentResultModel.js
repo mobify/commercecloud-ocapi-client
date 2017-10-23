@@ -10,7 +10,6 @@
  * Do not edit the class manually.
  *
  */
-
 import ApiClient from '../ApiClient'
 import ContentModel from './ContentModel'
 
@@ -43,12 +42,13 @@ export default class ContentResultModel {
                 obj['count'] = ApiClient.convertToType(data['count'], 'Number')
             }
             if (data.hasOwnProperty('data')) {
-                obj['data'] = ApiClient.convertToType(data['data'], [ContentModel]);
+                obj['data'] = ApiClient.convertToType(data['data'], [ContentModel])
             }
             if (data.hasOwnProperty('total')) {
                 obj['total'] = ApiClient.convertToType(data['total'], 'Number')
             }
         }
+
         return obj
     }
 

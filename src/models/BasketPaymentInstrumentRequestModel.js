@@ -10,7 +10,6 @@
  * Do not edit the class manually.
  *
  */
-
 import ApiClient from '../ApiClient'
 import OrderPaymentCardRequestModel from './OrderPaymentCardRequestModel'
 import PaymentBankAccountRequestModel from './PaymentBankAccountRequestModel'
@@ -53,10 +52,10 @@ export default class BasketPaymentInstrumentRequestModel {
                 obj['gift_certificate_code'] = ApiClient.convertToType(data['gift_certificate_code'], 'String')
             }
             if (data.hasOwnProperty('payment_bank_account')) {
-                obj['payment_bank_account'] = PaymentBankAccountRequestModel.constructFromObject(data['payment_bank_account']);
+                obj['payment_bank_account'] = PaymentBankAccountRequestModel.constructFromObject(data['payment_bank_account'])
             }
             if (data.hasOwnProperty('payment_card')) {
-                obj['payment_card'] = OrderPaymentCardRequestModel.constructFromObject(data['payment_card']);
+                obj['payment_card'] = OrderPaymentCardRequestModel.constructFromObject(data['payment_card'])
             }
             if (data.hasOwnProperty('payment_method_id')) {
                 obj['payment_method_id'] = ApiClient.convertToType(data['payment_method_id'], 'String')

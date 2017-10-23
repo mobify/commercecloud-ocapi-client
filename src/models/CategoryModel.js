@@ -24,7 +24,6 @@ export default class CategoryModel {
     * @alias module:models/CategoryModel
     * @class
     */
-
     constructor() {}
 
     /**
@@ -38,36 +37,6 @@ export default class CategoryModel {
         if (data) {
             obj = obj || new CategoryModel()
 
-            if (data.hasOwnProperty('c_alternativeUrl')) {
-                obj['c_alternativeUrl'] = ApiClient.convertToType(data['c_alternativeUrl'], 'String')
-            }
-            if (data.hasOwnProperty('c_catBannerID')) {
-                obj['c_catBannerID'] = ApiClient.convertToType(data['c_catBannerID'], 'String')
-            }
-            if (data.hasOwnProperty('c_customCSSFile')) {
-                obj['c_customCSSFile'] = ApiClient.convertToType(data['c_customCSSFile'], 'String')
-            }
-            if (data.hasOwnProperty('c_enableCompare')) {
-                obj['c_enableCompare'] = ApiClient.convertToType(data['c_enableCompare'], 'Boolean')
-            }
-            if (data.hasOwnProperty('c_headerMenuBanner')) {
-                obj['c_headerMenuBanner'] = ApiClient.convertToType(data['c_headerMenuBanner'], 'String')
-            }
-            if (data.hasOwnProperty('c_headerMenuOrientation')) {
-                obj['c_headerMenuOrientation'] = ApiClient.convertToType(data['c_headerMenuOrientation'], 'String')
-            }
-            if (data.hasOwnProperty('c_showInMenu')) {
-                obj['c_showInMenu'] = ApiClient.convertToType(data['c_showInMenu'], 'Boolean')
-            }
-            if (data.hasOwnProperty('c_sizeChartID')) {
-                obj['c_sizeChartID'] = ApiClient.convertToType(data['c_sizeChartID'], 'String')
-            }
-            if (data.hasOwnProperty('c_slotBannerHtml')) {
-                obj['c_slotBannerHtml'] = ApiClient.convertToType(data['c_slotBannerHtml'], 'String')
-            }
-            if (data.hasOwnProperty('c_slotBannerImage')) {
-                obj['c_slotBannerImage'] = ApiClient.convertToType(data['c_slotBannerImage'], 'String')
-            }
             if (data.hasOwnProperty('categories')) {
                 obj['categories'] = ApiClient.convertToType(data['categories'], [CategoryModel]);
             }
@@ -103,54 +72,6 @@ export default class CategoryModel {
         return obj
     }
 
-    /**
-    * Renders an alternative URL in main navigation. Uses Salesforce Commerce Cloud content url notation. For example: $url('Account-Show')$ or normal URL http://xchange.demandware.com
-    * @member {String} c_alternativeUrl
-    */
-    c_alternativeUrl = undefined
-    /**
-    * Used to define the content asset used to populate a grid page banner for a category. This value is applied to all sub-category navigation (cascading) if no specific catBannerID has been defined for  a sub-category.
-    * @member {String} c_catBannerID
-    */
-    c_catBannerID = undefined
-    /**
-    * Use this attribute to apply custom styles for this category.
-    * @member {String} c_customCSSFile
-    */
-    c_customCSSFile = undefined
-    /**
-    * Used to define if/when the Compare feature is to be visualized in the storefront based on navigation. If enableCompare = FALSE, no Compare checkboxes will be displayed in the grid view. If enableCompare = TRUE, the category (and its children) will support the Compare feature.
-    * @member {Boolean} c_enableCompare
-    */
-    c_enableCompare = undefined
-    /**
-    * @member {String} c_headerMenuBanner
-    */
-    c_headerMenuBanner = undefined
-    /**
-    * Which way to orient the menu and optional header menu HTML. Vertical will list all in one line. Horizontal will list in columns.
-    * @member {module:models/CategoryModel.CHeaderMenuOrientationEnum} c_headerMenuOrientation
-    */
-    c_headerMenuOrientation = undefined
-    /**
-    * Used to indicate that a category (such as Mens -> Footwear -> Boots) will display in the roll-over navigation. A sub-category only shows if also the parent category is marked as showInMenu. Up to three category levels are shown in roll-over navigation.
-    * @member {Boolean} c_showInMenu
-    */
-    c_showInMenu = undefined
-    /**
-    * Used to define the content asset ID of the Size Chart that is appropriate for products whose PRIMARY category is the associated category (and its children). Whenever a product detail page (or quick view) is rendered, the Size Chart link is populated based on the value of this attribute for the products primary categorization. If not defined, NO size chart link is displayed.
-    * @member {String} c_sizeChartID
-    */
-    c_sizeChartID = undefined
-    /**
-    * @member {String} c_slotBannerHtml
-    */
-    c_slotBannerHtml = undefined
-    /**
-    * Image used on either the top or bottom slot on the category landing pages.
-    * @member {String} c_slotBannerImage
-    */
-    c_slotBannerImage = undefined
     /**
     * Array of subcategories. Can be empty.
     * @member {Array.<module:models/CategoryModel>} categories
@@ -201,24 +122,4 @@ export default class CategoryModel {
     * @member {String} thumbnail
     */
     thumbnail = undefined
-
-    /**
-    * Allowed values for the <code>c_headerMenuOrientation</code> property.
-    * @enum {String}
-    * @readonly
-    */
-    static CHeaderMenuOrientationEnum = {
-
-        /**
-         * value: "Horizontal"
-         * @const
-         */
-        "Horizontal": "Horizontal",
-
-        /**
-         * value: "Vertical"
-         * @const
-         */
-        "Vertical": "Vertical"
-    };
 }

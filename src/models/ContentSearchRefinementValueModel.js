@@ -53,9 +53,10 @@ export default class ContentSearchRefinementValueModel {
                 obj['value'] = ApiClient.convertToType(data['value'], 'String')
             }
             if (data.hasOwnProperty('values')) {
-                obj['values'] = ApiClient.convertToType(data['values'], [ContentSearchRefinementValueModel]);
+                obj['values'] = ApiClient.convertToType(data['values'], [ContentSearchRefinementValueModel])
             }
         }
+
         return obj
     }
 
@@ -89,12 +90,4 @@ export default class ContentSearchRefinementValueModel {
     * @member {Array.<module:models/ContentSearchRefinementValueModel>} values
     */
     values = undefined
-
-
-
-
-
-
-
-
 }
