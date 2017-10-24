@@ -10,6 +10,7 @@
  * Do not edit the class manually.
  *
  */
+import {clientId, proxyUrl, baseUrl} from '../config.json'
 
 (function(root, factory) {
     if (typeof define === 'function' && define.amd) {
@@ -25,39 +26,44 @@
 }(this, function(expect, ShopApi) {
     'use strict'
 
-    var instance;
+    var instance
+    const client = new ShopApi.ApiClient(
+        `${proxyUrl}/${baseUrl}`,
+        { 'x-dw-client-id': clientId }
+    )
 
     beforeEach(() => {
-        instance = new ShopApi.CustomObjectsApi();
-    });
+        instance = new ShopApi.CustomObjectsApi(client)
+    })
 
     var getProperty = (object, getter, property) => {
         // Use getter method if present; otherwise, get the property directly.
         if (typeof object[getter] === 'function')
-            return object[getter]();
+            return object[getter]()
         else
-            return object[property];
+            return object[property]
     }
 
     var setProperty = (object, setter, property, value) => {
         // Use setter method if present; otherwise, set the property directly.
         if (typeof object[setter] === 'function')
-            object[setter](value);
+            object[setter](value)
         else
-            object[property] = value;
+            object[property] = value
     }
 
-    describe('CustomObjectsApi', function() {
-        describe('getCustomObjectsByIDByID', function() {
-            it('should call getCustomObjectsByIDByID successfully', function(done) {
-                //uncomment below and update the code to test getCustomObjectsByIDByID
-                //instance.getCustomObjectsByIDByID(function(error) {
-                //  if (error) throw error;
-                //expect().to.be();
-                //});
-                done();
-            });
-        });
-    });
+    const INVALID_OBJECT_TYPE = '__INVALID__'
+    const INVALID_KEY_NAME = '__INVALID__'
 
-}));
+    describe('CustomObjectsApi', () => {
+        describe('getCustomObjectsByIDByID', () => {
+            it('should return fault when calling getCustomObjectsByIDByID with invalid type and key', () =>
+                instance.getCustomObjectsByIDByID(INVALID_OBJECT_TYPE, INVALID_KEY_NAME)
+                    .catch((fault) => {
+                        expect(fault.type).to.be('ObjectTypeNotFoundException')
+                    })
+            )
+        })
+    })
+
+}))

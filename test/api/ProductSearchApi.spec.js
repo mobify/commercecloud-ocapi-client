@@ -26,17 +26,15 @@ import {clientId, proxyUrl, baseUrl} from '../config.json'
 }(this, function(expect, ShopApi) {
     'use strict'
 
-    var instance;
+    var instance
+    const client = new ShopApi.ApiClient(
+        `${proxyUrl}/${baseUrl}`,
+        { 'x-dw-client-id': clientId }
+    )
 
     beforeEach(() => {
-        instance = new ShopApi.ProductSearchApi()
-
-        const defaultClient = ShopApi.ApiClient.instance
-        defaultClient.defaultHeaders = {
-            'x-dw-client-id': clientId
-        }
-        defaultClient.basePath = `${proxyUrl}/${baseUrl}`.replace(/\/+$/, '')
-    });
+        instance = new ShopApi.ProductSearchApi(client)
+    })
 
     var getProperty = (object, getter, property) => {
         // Use getter method if present; otherwise, get the property directly.
@@ -62,9 +60,6 @@ import {clientId, proxyUrl, baseUrl} from '../config.json'
                     .then((productSearchResult) => {
                         expect(productSearchResult.constructor.name).to.be('ProductSearchResultModel')
                     })
-                    .catch((error) => {
-                        throw error
-                    })
             )
         })
 
@@ -73,9 +68,6 @@ import {clientId, proxyUrl, baseUrl} from '../config.json'
                 instance.getProductSearch({refine: ['cgid=root']})
                     .then((productSearchResult) => {
                         expect(productSearchResult.count).to.above(0)
-                    })
-                    .catch((error) => {
-                        throw error
                     })
             )
         })
@@ -87,9 +79,6 @@ import {clientId, proxyUrl, baseUrl} from '../config.json'
                         expect(productSearchResult.constructor.name).to.be('ProductSearchResultModel')
                         expect(productSearchResult.hits[0].orderable).not.to.be(undefined)
                     })
-                    .catch((error) => {
-                        throw error
-                    })
             )
         })
 
@@ -99,9 +88,6 @@ import {clientId, proxyUrl, baseUrl} from '../config.json'
                     .then((productSearchResult) => {
                         expect(productSearchResult.constructor.name).to.be('ProductSearchResultModel')
                         expect(productSearchResult.hits[0].image).to.be.an('object')
-                    })
-                    .catch((error) => {
-                        throw error
                     })
             )
         })
@@ -113,9 +99,6 @@ import {clientId, proxyUrl, baseUrl} from '../config.json'
                         expect(productSearchResult.constructor.name).to.be('ProductSearchResultModel')
                         expect(productSearchResult.hits[0].price).not.to.be(undefined)
                     })
-                    .catch((error) => {
-                        throw error
-                    })
             )
         })
 
@@ -126,11 +109,8 @@ import {clientId, proxyUrl, baseUrl} from '../config.json'
                         expect(productSearchResult.constructor.name).to.be('ProductSearchResultModel')
                         expect(productSearchResult.hits[0].variation_attributes).to.be.an('object')
                     })
-                    .catch((error) => {
-                        throw error
-                    })
             )
-        });
+        })
 
     })
 

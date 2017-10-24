@@ -61,7 +61,7 @@ import {clientId, proxyUrl, baseUrl} from '../config.json'
             it('should return product when calling getProductsByID with valid product id', () =>
                 instance.getProductsByID(VALID_PRODUCT_ID)
                     .then((product) => {
-                        expect(product.id).to.be(VALID_PRODUCT_ID);
+                        expect(product.id).to.be(VALID_PRODUCT_ID)
                     })
             )
 
