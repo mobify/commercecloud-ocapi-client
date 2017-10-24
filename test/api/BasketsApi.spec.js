@@ -11,6 +11,7 @@
  *
  */
 import {clientId, proxyUrl, baseUrl} from '../config.json'
+import * as utils from '../utils'
 
 (function(root, factory) {
     if (typeof define === 'function' && define.amd) {
@@ -27,14 +28,20 @@ import {clientId, proxyUrl, baseUrl} from '../config.json'
     'use strict'
 
     var instance
-    const client = new ShopApi.ApiClient(
-        `${proxyUrl}/${baseUrl}`,
-        { 'x-dw-client-id': clientId }
-    )
+    let client
 
     beforeEach(() => {
+        client = new ShopApi.ApiClient(
+            `${proxyUrl}/${baseUrl}`,
+            { 'x-dw-client-id': clientId }
+        )
         instance = new ShopApi.BasketsApi(client)
+
+        return utils.getGuestUserAuth(client)
+
     })
+
+    afterEach(() => utils.clearUserAuth(instance.apiClient))
 
     var getProperty = (object, getter, property) => {
         // Use getter method if present; otherwise, get the property directly.
@@ -65,8 +72,8 @@ import {clientId, proxyUrl, baseUrl} from '../config.json'
         //     )
         // })
 
-        // describe('deleteBasketsByIDCouponsByID', function() {
-        //     it('should call deleteBasketsByIDCouponsByID successfully', function(done) {
+        // describe('deleteBasketsByIDCouponsByID', () => {
+        //     it('should call deleteBasketsByIDCouponsByID successfully', (done) => {
         //         //uncomment below and update the code to test deleteBasketsByIDCouponsByID
         //         //instance.deleteBasketsByIDCouponsByID(function(error) {
         //         //  if (error) throw error;
@@ -76,8 +83,8 @@ import {clientId, proxyUrl, baseUrl} from '../config.json'
         //     })
         // })
         //
-        // describe('deleteBasketsByIDItemsByID', function() {
-        //     it('should call deleteBasketsByIDItemsByID successfully', function(done) {
+        // describe('deleteBasketsByIDItemsByID', () => {
+        //     it('should call deleteBasketsByIDItemsByID successfully', (done) => {
         //         //uncomment below and update the code to test deleteBasketsByIDItemsByID
         //         //instance.deleteBasketsByIDItemsByID(function(error) {
         //         //  if (error) throw error;
@@ -87,8 +94,8 @@ import {clientId, proxyUrl, baseUrl} from '../config.json'
         //     })
         // })
         //
-        // describe('deleteBasketsByIDNotesByID', function() {
-        //     it('should call deleteBasketsByIDNotesByID successfully', function(done) {
+        // describe('deleteBasketsByIDNotesByID', () => {
+        //     it('should call deleteBasketsByIDNotesByID successfully', (done) => {
         //         //uncomment below and update the code to test deleteBasketsByIDNotesByID
         //         //instance.deleteBasketsByIDNotesByID(function(error) {
         //         //  if (error) throw error;
@@ -98,8 +105,8 @@ import {clientId, proxyUrl, baseUrl} from '../config.json'
         //     })
         // })
         //
-        // describe('deleteBasketsByIDPaymentInstrumentsByID', function() {
-        //     it('should call deleteBasketsByIDPaymentInstrumentsByID successfully', function(done) {
+        // describe('deleteBasketsByIDPaymentInstrumentsByID', () => {
+        //     it('should call deleteBasketsByIDPaymentInstrumentsByID successfully', (done) => {
         //         //uncomment below and update the code to test deleteBasketsByIDPaymentInstrumentsByID
         //         //instance.deleteBasketsByIDPaymentInstrumentsByID(function(error) {
         //         //  if (error) throw error;
@@ -109,8 +116,8 @@ import {clientId, proxyUrl, baseUrl} from '../config.json'
         //     })
         // })
         //
-        // describe('deleteBasketsByIDShipmentsByID', function() {
-        //     it('should call deleteBasketsByIDShipmentsByID successfully', function(done) {
+        // describe('deleteBasketsByIDShipmentsByID', () => {
+        //     it('should call deleteBasketsByIDShipmentsByID successfully', (done) => {
         //         //uncomment below and update the code to test deleteBasketsByIDShipmentsByID
         //         //instance.deleteBasketsByIDShipmentsByID(function(error) {
         //         //  if (error) throw error;
@@ -120,8 +127,8 @@ import {clientId, proxyUrl, baseUrl} from '../config.json'
         //     })
         // })
         //
-        // describe('getBasketsByID', function() {
-        //     it('should call getBasketsByID successfully', function(done) {
+        // describe('getBasketsByID', () => {
+        //     it('should call getBasketsByID successfully', (done) => {
         //         //uncomment below and update the code to test getBasketsByID
         //         //instance.getBasketsByID(function(error) {
         //         //  if (error) throw error;
@@ -131,8 +138,8 @@ import {clientId, proxyUrl, baseUrl} from '../config.json'
         //     })
         // })
         //
-        // describe('getBasketsByIDNotes', function() {
-        //     it('should call getBasketsByIDNotes successfully', function(done) {
+        // describe('getBasketsByIDNotes', () => {
+        //     it('should call getBasketsByIDNotes successfully', (done) => {
         //         //uncomment below and update the code to test getBasketsByIDNotes
         //         //instance.getBasketsByIDNotes(function(error) {
         //         //  if (error) throw error;
@@ -142,8 +149,8 @@ import {clientId, proxyUrl, baseUrl} from '../config.json'
         //     })
         // })
         //
-        // describe('getBasketsByIDPaymentMethods', function() {
-        //     it('should call getBasketsByIDPaymentMethods successfully', function(done) {
+        // describe('getBasketsByIDPaymentMethods', () => {
+        //     it('should call getBasketsByIDPaymentMethods successfully', (done) => {
         //         //uncomment below and update the code to test getBasketsByIDPaymentMethods
         //         //instance.getBasketsByIDPaymentMethods(function(error) {
         //         //  if (error) throw error;
@@ -152,20 +159,21 @@ import {clientId, proxyUrl, baseUrl} from '../config.json'
         //         done()
         //     })
         // })
-        //
-        // describe('getBasketsByIDShipmentsByIDShippingMethods', function() {
-        //     it('should call getBasketsByIDShipmentsByIDShippingMethods successfully', function(done) {
-        //         //uncomment below and update the code to test getBasketsByIDShipmentsByIDShippingMethods
-        //         //instance.getBasketsByIDShipmentsByIDShippingMethods(function(error) {
-        //         //  if (error) throw error;
-        //         //expect().to.be()
-        //         //})
-        //         done()
-        //     })
-        // })
-        //
-        // describe('patchBasketsByID', function() {
-        //     it('should call patchBasketsByID successfully', function(done) {
+
+        describe('getBasketsByIDShipmentsByIDShippingMethods', () => {
+            it('should call getBasketsByIDShipmentsByIDShippingMethods successfully', () =>
+                instance.postBaskets()
+                    .then((basket) => {
+                        return instance.getBasketsByIDShipmentsByIDShippingMethods(basket.basket_id, 'me')
+                    })
+                    .then((result) => {
+                        expect(result.constructor.name).to.be('ShippingMethodResultModel')
+                    })
+            )
+        })
+
+        // describe('patchBasketsByID', () => {
+        //     it('should call patchBasketsByID successfully', (done) => {
         //         //uncomment below and update the code to test patchBasketsByID
         //         //instance.patchBasketsByID(function(error) {
         //         //  if (error) throw error;
@@ -175,8 +183,8 @@ import {clientId, proxyUrl, baseUrl} from '../config.json'
         //     })
         // })
         //
-        // describe('patchBasketsByIDItemsByID', function() {
-        //     it('should call patchBasketsByIDItemsByID successfully', function(done) {
+        // describe('patchBasketsByIDItemsByID', () => {
+        //     it('should call patchBasketsByIDItemsByID successfully', (done) => {
         //         //uncomment below and update the code to test patchBasketsByIDItemsByID
         //         //instance.patchBasketsByIDItemsByID(function(error) {
         //         //  if (error) throw error;
@@ -186,8 +194,8 @@ import {clientId, proxyUrl, baseUrl} from '../config.json'
         //     })
         // })
         //
-        // describe('patchBasketsByIDPaymentInstrumentsByID', function() {
-        //     it('should call patchBasketsByIDPaymentInstrumentsByID successfully', function(done) {
+        // describe('patchBasketsByIDPaymentInstrumentsByID', () => {
+        //     it('should call patchBasketsByIDPaymentInstrumentsByID successfully', (done) => {
         //         //uncomment below and update the code to test patchBasketsByIDPaymentInstrumentsByID
         //         //instance.patchBasketsByIDPaymentInstrumentsByID(function(error) {
         //         //  if (error) throw error;
@@ -197,8 +205,8 @@ import {clientId, proxyUrl, baseUrl} from '../config.json'
         //     })
         // })
         //
-        // describe('patchBasketsByIDShipmentsByID', function() {
-        //     it('should call patchBasketsByIDShipmentsByID successfully', function(done) {
+        // describe('patchBasketsByIDShipmentsByID', () => {
+        //     it('should call patchBasketsByIDShipmentsByID successfully', (done) => {
         //         //uncomment below and update the code to test patchBasketsByIDShipmentsByID
         //         //instance.patchBasketsByIDShipmentsByID(function(error) {
         //         //  if (error) throw error;
@@ -207,108 +215,172 @@ import {clientId, proxyUrl, baseUrl} from '../config.json'
         //         done()
         //     })
         // })
-        //
-        // describe('postBaskets', function() {
-        //     it('should call postBaskets successfully', function(done) {
-        //         //uncomment below and update the code to test postBaskets
-        //         //instance.postBaskets(function(error) {
-        //         //  if (error) throw error;
-        //         //expect().to.be()
-        //         //})
-        //         done()
-        //     })
+
+        describe('postBaskets', () => {
+            it('should call postBaskets successfully', () =>
+                instance.postBaskets()
+                    .then((basket) => {
+                        expect(basket.constructor.name).to.be('BasketModel')
+                    })
+            )
+        })
+
+        describe('postBasketsByIDCoupons', () => {
+            it('should call postBasketsByIDCoupons successfully', () =>
+                instance.postBaskets()
+                    .then((basket) =>
+                        instance.postBasketsByIDCoupons(basket.basket_id, {
+                            code: 'AMAZE'
+                        })
+                    )
+                    .then((basket) => {
+                        expect(basket.coupon_items[0].code).to.be('AMAZE')
+                    })
+            )
+        })
+
+        describe('postBasketsByIDGiftCertificateItems', () => {
+            it('should call postBasketsByIDGiftCertificateItems successfully', () =>
+                instance.postBaskets()
+                    .then((basket) =>
+                        instance.postBasketsByIDGiftCertificateItems(basket.basket_id, {
+                            "recipient_email" : "ben.chypak@mobify.com",
+                            "recipient_name" : "Ben Chypak",
+                            "sender_name" : "John Boxall",
+                            "message" : "Present from your boss",
+                            "amount" : 200.00
+                        })
+                    )
+                    .then((basket) => {
+                        expect(basket.gift_certificate_items.length).to.be(1)
+                    })
+            )
+        })
+
+        describe('postBasketsByIDItems', () => {
+            it('should call postBasketsByIDItems successfully', () =>
+                instance.postBaskets()
+                    .then((basket) =>
+                        instance.postBasketsByIDItems(basket.basket_id, [{
+                            "product_id" : "008884303996",
+                            "quantity" : 1.00
+                        }])
+                    )
+                    .then((basket) => {
+                        expect(basket.product_items.length).to.be(1)
+                        expect(basket.product_items[0].product_id).to.be('008884303996')
+                    })
+            )
+        })
+
+        // NOTE: We need to be authenticated to test this, we'll have to think of how to constuct
+        // the tests before we can run this one.
+        // describe('postBasketsByIDNotes', () => {
+        //     it('should call postBasketsByIDNotes successfully', () =>
+        //         instance.postBaskets()
+        //             .then((basket) =>
+        //                 instance.postBasketsByIDNotes(basket.basket_id, {
+        //                     "subject" : "this is an example subject",
+        //                     "text" : "This is a note because the customer was not very happy."
+        //                 })
+        //             )
+        //             .then((basket) => {
+        //                 expect(basket.notes).to.an('object')
+        //             })
+        //     )
         // })
-        //
-        // describe('postBasketsByIDCoupons', function() {
-        //     it('should call postBasketsByIDCoupons successfully', function(done) {
-        //         //uncomment below and update the code to test postBasketsByIDCoupons
-        //         //instance.postBasketsByIDCoupons(function(error) {
-        //         //  if (error) throw error;
-        //         //expect().to.be()
-        //         //})
-        //         done()
-        //     })
+
+        describe('postBasketsByIDPaymentInstruments', () => {
+            it('should call postBasketsByIDPaymentInstruments successfully', () =>
+                instance.postBaskets()
+                    .then((basket) =>
+                        instance.postBasketsByIDPaymentInstruments(basket.basket_id, {
+                            "amount": 1.0,
+                            "payment_card": {
+                                "number": "411111111111111",
+                                "security_code": "121",
+                                "holder": "John Doe",
+                                "card_type": "Visa",
+                                "expiration_month": 1,
+                                "expiration_year": 2021
+                            },
+                            "payment_method_id": "CREDIT_CARD"
+                        })
+                    )
+                    .then((basket) => {
+                        expect(basket.payment_instruments.length).to.be(1)
+                    })
+            )
+        })
+
+        describe('postBasketsByIDShipments', () => {
+            it('should call postBasketsByIDShipments successfully', () =>
+                instance.postBaskets()
+                    .then((basket) =>
+                        instance.postBasketsByIDShipments(basket.basket_id, {
+                            "gift": true,
+                            "gift_message": "Happy Birthday",
+                            "shipping_method": {
+                                "id": "standardshipping"
+                            },
+                            "shipping_address": {
+                                "first_name": "John",
+                                "last_name": "Smith",
+                                "city": "Boston",
+                                "country_code": "US",
+                             }
+                        })
+                    )
+                    .then((basket) => {
+                        expect(basket.shipments).to.be.an('array')
+                    })
+            )
+        })
+
+        describe('putBasketsByIDBillingAddress', () => {
+            it('should call putBasketsByIDBillingAddress successfully', () =>
+                instance.postBaskets()
+                    .then((basket) =>
+                        instance.putBasketsByIDBillingAddress(basket.basket_id, {
+                            useAsShipping: true,
+                            body: {
+                                "first_name": "John",
+                                "last_name": "Smith",
+                                "city": "Boston",
+                                "country_code": "US"
+                            }
+                        })
+                    )
+                    .then((basket) => {
+                        expect(basket.billing_address).to.be.an('object')
+                        expect(basket.billing_address.city).to.be('Boston')
+                    })
+            )
+        })
+
+        // NOTE: I have not figure out how to test this yet. Need to know when a basket
+        // can be in the state of not having customer info before being able to set it.
+        // describe('putBasketsByIDCustomer', () => {
+        //     it('should call putBasketsByIDCustomer successfully', () =>
+        //     instance.postBaskets()
+        //         .then((basket) => {
+        //             console.log('basket: ', basket)
+        //             return instance.putBasketsByIDCustomer(basket.basket_id, {
+        //                 "customer_no": "00022002",
+        //                 "email": "mobifyqa@gmail.com"
+        //             })
+        //         })
+        //         .then((basket) => {
+        //             console.log('basket')
+        //             expect(basket.customer_info).to.be.an('object')
+        //             expect(basket.customer_info.customer_no).to.be('00022002')
+        //             expect(basket.customer_info.email).to.be('mobifyqa@gmail.com')
+        //         })
+        //     )
         // })
-        //
-        // describe('postBasketsByIDGiftCertificateItems', function() {
-        //     it('should call postBasketsByIDGiftCertificateItems successfully', function(done) {
-        //         //uncomment below and update the code to test postBasketsByIDGiftCertificateItems
-        //         //instance.postBasketsByIDGiftCertificateItems(function(error) {
-        //         //  if (error) throw error;
-        //         //expect().to.be()
-        //         //})
-        //         done()
-        //     })
-        // })
-        //
-        // describe('postBasketsByIDItems', function() {
-        //     it('should call postBasketsByIDItems successfully', function(done) {
-        //         //uncomment below and update the code to test postBasketsByIDItems
-        //         //instance.postBasketsByIDItems(function(error) {
-        //         //  if (error) throw error;
-        //         //expect().to.be()
-        //         //})
-        //         done()
-        //     })
-        // })
-        //
-        // describe('postBasketsByIDNotes', function() {
-        //     it('should call postBasketsByIDNotes successfully', function(done) {
-        //         //uncomment below and update the code to test postBasketsByIDNotes
-        //         //instance.postBasketsByIDNotes(function(error) {
-        //         //  if (error) throw error;
-        //         //expect().to.be()
-        //         //})
-        //         done()
-        //     })
-        // })
-        //
-        // describe('postBasketsByIDPaymentInstruments', function() {
-        //     it('should call postBasketsByIDPaymentInstruments successfully', function(done) {
-        //         //uncomment below and update the code to test postBasketsByIDPaymentInstruments
-        //         //instance.postBasketsByIDPaymentInstruments(function(error) {
-        //         //  if (error) throw error;
-        //         //expect().to.be()
-        //         //})
-        //         done()
-        //     })
-        // })
-        //
-        // describe('postBasketsByIDShipments', function() {
-        //     it('should call postBasketsByIDShipments successfully', function(done) {
-        //         //uncomment below and update the code to test postBasketsByIDShipments
-        //         //instance.postBasketsByIDShipments(function(error) {
-        //         //  if (error) throw error;
-        //         //expect().to.be()
-        //         //})
-        //         done()
-        //     })
-        // })
-        //
-        // describe('putBasketsByIDBillingAddress', function() {
-        //     it('should call putBasketsByIDBillingAddress successfully', function(done) {
-        //         //uncomment below and update the code to test putBasketsByIDBillingAddress
-        //         //instance.putBasketsByIDBillingAddress(function(error) {
-        //         //  if (error) throw error;
-        //         //expect().to.be()
-        //         //})
-        //         done()
-        //     })
-        // })
-        //
-        // describe('putBasketsByIDCustomer', function() {
-        //     it('should call putBasketsByIDCustomer successfully', function(done) {
-        //         //uncomment below and update the code to test putBasketsByIDCustomer
-        //         //instance.putBasketsByIDCustomer(function(error) {
-        //         //  if (error) throw error;
-        //         //expect().to.be()
-        //         //})
-        //         done()
-        //     })
-        // })
-        //
-        // describe('putBasketsByIDShipmentsByIDShippingAddress', function() {
-        //     it('should call putBasketsByIDShipmentsByIDShippingAddress successfully', function(done) {
+
+        // describe('putBasketsByIDShipmentsByIDShippingAddress', () => {
+        //     it('should call putBasketsByIDShipmentsByIDShippingAddress successfully', (done) => {
         //         //uncomment below and update the code to test putBasketsByIDShipmentsByIDShippingAddress
         //         //instance.putBasketsByIDShipmentsByIDShippingAddress(function(error) {
         //         //  if (error) throw error;
@@ -318,8 +390,8 @@ import {clientId, proxyUrl, baseUrl} from '../config.json'
         //     })
         // })
         //
-        // describe('putBasketsByIDShipmentsByIDShippingMethod', function() {
-        //     it('should call putBasketsByIDShipmentsByIDShippingMethod successfully', function(done) {
+        // describe('putBasketsByIDShipmentsByIDShippingMethod', () => {
+        //     it('should call putBasketsByIDShipmentsByIDShippingMethod successfully', (done) => {
         //         //uncomment below and update the code to test putBasketsByIDShipmentsByIDShippingMethod
         //         //instance.putBasketsByIDShipmentsByIDShippingMethod(function(error) {
         //         //  if (error) throw error;

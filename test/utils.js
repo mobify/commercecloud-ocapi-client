@@ -5,7 +5,7 @@ import btoa from 'btoa'
 const VALID_USER_NAME = 'mobifyqa@gmail.com'
 const VALID_USER_PASS = 'p4ssword'
 
-export const getGuestUserAuth = (client) => {
+export const getRegisteredUserAuth = (client) => {
     const instance = new ShopApi.CustomersApi(client)
 
     return instance.postCustomersAuth(
@@ -15,8 +15,14 @@ export const getGuestUserAuth = (client) => {
 
 }
 
-export const getRegisteredUserAuth = (client) => {
+export const getGuestUserAuth = (client) => {
     const instance = new ShopApi.CustomersApi(client)
 
     return instance.postCustomersAuth({ type: 'guest' })
+}
+
+export const clearUserAuth = (client) => {
+    const instance = new ShopApi.CustomersApi(client)
+
+    return instance.deleteCustomersAuth({ type: 'guest' })
 }
