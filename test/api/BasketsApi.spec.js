@@ -163,9 +163,9 @@ import * as utils from '../utils'
         describe('getBasketsByIDShipmentsByIDShippingMethods', () => {
             it('should call getBasketsByIDShipmentsByIDShippingMethods successfully', () =>
                 instance.postBaskets()
-                    .then((basket) => {
-                        return instance.getBasketsByIDShipmentsByIDShippingMethods(basket.basket_id, 'me')
-                    })
+                    .then((basket) =>
+                        instance.getBasketsByIDShipmentsByIDShippingMethods(basket.basket_id, 'me')
+                    )
                     .then((result) => {
                         expect(result.constructor.name).to.be('ShippingMethodResultModel')
                     })
@@ -379,27 +379,44 @@ import * as utils from '../utils'
         //     )
         // })
 
-        // describe('putBasketsByIDShipmentsByIDShippingAddress', () => {
-        //     it('should call putBasketsByIDShipmentsByIDShippingAddress successfully', (done) => {
-        //         //uncomment below and update the code to test putBasketsByIDShipmentsByIDShippingAddress
-        //         //instance.putBasketsByIDShipmentsByIDShippingAddress(function(error) {
-        //         //  if (error) throw error;
-        //         //expect().to.be()
-        //         //})
-        //         done()
-        //     })
-        // })
-        //
-        // describe('putBasketsByIDShipmentsByIDShippingMethod', () => {
-        //     it('should call putBasketsByIDShipmentsByIDShippingMethod successfully', (done) => {
-        //         //uncomment below and update the code to test putBasketsByIDShipmentsByIDShippingMethod
-        //         //instance.putBasketsByIDShipmentsByIDShippingMethod(function(error) {
-        //         //  if (error) throw error;
-        //         //expect().to.be()
-        //         //})
-        //         done()
-        //     })
-        // })
+        // NOTE: Make sure we refactor this sample data into it's own file.
+        describe('putBasketsByIDShipmentsByIDShippingAddress', () => {
+            it('should call putBasketsByIDShipmentsByIDShippingAddress successfully', () =>
+                instance.postBaskets()
+                    .then((basket) =>
+                        instance.putBasketsByIDShipmentsByIDShippingAddress(basket.basket_id, 'me', {
+                            "first_name": "John",
+                            "last_name": "Smith",
+                            "city": "Boston",
+                            "country_code": "US"
+                        })
+                    )
+                    .then((basket) => {
+                        expect(basket.shipments).to.be.an('array')
+                        expect(basket.shipments.length).to.be(1)
+                        expect(basket.shipments[0].shipping_address).to.be.an('object')
+                        expect(basket.shipments[0].shipping_address.city).to.be('Boston')
+                        expect(basket.shipments[0].shipping_address.country_code).to.be('US')
+                    })
+            )
+        })
+
+        describe('putBasketsByIDShipmentsByIDShippingMethod', () => {
+            it('should call putBasketsByIDShipmentsByIDShippingMethod successfully', () =>
+                instance.postBaskets()
+                    .then((basket) =>
+                        instance.putBasketsByIDShipmentsByIDShippingMethod(basket.basket_id, 'me', {
+                            "id": "standardshipping"
+                        })
+                    )
+                    .then((basket) => {
+                        expect(basket.shipments).to.be.an('array')
+                        expect(basket.shipments.length).to.be(1)
+                        expect(basket.shipments[0].shipping_method).to.be.an('object')
+                        expect(basket.shipments[0].shipping_method.id).to.be('standardshipping')
+                    })
+            )
+        })
 
     })
 
