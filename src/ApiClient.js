@@ -545,7 +545,18 @@ export default class ApiClient {
                     return data
                 } else if (typeof type === 'function') {
                     // for model type like: User
-                    return type.constructFromObject(data)
+                    const model = type.constructFromObject(data)
+
+                    // add support for custom properties
+                    // NOTE: We'll have to expand on this further as this only suports
+                    // simple typed values
+                    for (var k in data) {
+                        if (data.hasOwnProperty(k) && /^c_/.test(k)) {
+                            model[k] = data[k]
+                        }
+                    }
+
+                    return model
                 } else if (Array.isArray(type)) {
                     // for array type like: ['String']
                     var itemType = type[0]
