@@ -1,0 +1,73 @@
+import * as ShopApi from '../src/index'
+
+export const validCustomerProductList = ShopApi.CustomerProductListModel.constructFromObject({
+    type: 'wish_list',
+    name: 'OurProductList',
+    description: 'our productlist',
+    public: false,
+    co_registrant: {
+        email: 'janedoe@example.com',
+        first_name: 'Jane',
+        last_name: 'Doe',
+        role: 'Bride'
+    },
+    registrant: {
+        email: 'johndoe@example.com',
+        first_name: 'John',
+        last_name: 'Doe',
+        role: 'Groom'
+    },
+    'event': {
+        city: 'Washington',
+        country: 'US',
+        date: '2015-07-30T00:00Z',
+        state: 'DC',
+        type: 'Wedding'
+    }
+})
+
+export const validCustomerPaymentInstrument = ShopApi.CustomerPaymentInstrumentModel.constructFromObject({
+    expiration_year: 2047,
+    expiration_month: 7,
+    valid_from_month: 8,
+    valid_from_year: 2007,
+    issue_number: 'i117',
+    number: '1234567',
+    holder: 'Joe Doe',
+    card_type: 'MasterCard'
+})
+
+export const validCustomerPaymentInstrumentRequest = ShopApi.CustomerPaymentInstrumentRequestModel.constructFromObject({
+    payment_card: validCustomerPaymentInstrument,
+    gift_certificate_code: 'gift_code7',
+    payment_method_id: 'OCAPI_Payment_Simple',
+    bank_routing_number: 'bankrouting3776',
+})
+
+export const validCustomerAddress = ShopApi.CustomerAddressModel.constructFromObject({
+    address_id: 'work',
+    address1: '725 Granville Steet',
+    address2: 'Suite 420',
+    city: 'Vancouver',
+    company_name: 'Mobify',
+    country_code: 'CA',
+    first_name: 'Ben',
+    job_title: 'Developer',
+    last_name: 'Chypak',
+    phone: '1-866-502-5880',
+    postal_code: 'V7Y1C6',
+    preferred: false,
+    state_code: 'BC'
+})
+
+export const validCustomer = ShopApi.CustomerModel.constructFromObject({
+    login: `automated.user_${Date.now()}`,
+    email: `automated.user_${Date.now()}@mobify.com`,
+    first_name: 'automated',
+    last_name: 'user'
+})
+
+export const validCustomerRegistration = ShopApi.CustomerRegistrationModel.constructFromObject({
+    password: '12345!aBcD:',
+    customer: validCustomer
+})

@@ -5,15 +5,18 @@
   "license": "Unlicense",
   "main": "src/index.js",
   "scripts": {
-    "test": "mocha --compilers js:babel-core/register --recursive",
+    "test": "mocha --compilers js:babel-core/register $(find test -name 'CustomersApi.spec.js')",
     "build": "babel src --out-dir lib"
   },
   "browser": {
     "fs": false
   },
   "dependencies": {
+    "atob": "^2.0.3",
     "babel": "^6.23.0",
     "babel-cli": "^6.24.1",
+    "base-64": "^0.1.0",
+    "btoa": "^1.1.2",
     "cors-anywhere": "^0.4.0",
     "express": "^4.16.2",
     "http-proxy-middleware": "^0.17.4",

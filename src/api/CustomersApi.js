@@ -1608,11 +1608,11 @@ export default class CustomersApi {
 
     /**
      * Creates a customer product list.
-     * @param {module:models/CustomerProductListModel} body
      * @param {String} customerId The customer id.
+     * @param {module:models/CustomerProductListModel} body
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:models/CustomerProductListModel}
      */
-    postCustomersByIDProductLists(body, customerId) {
+    postCustomersByIDProductLists(customerId, body) {
       return this.postCustomersByIDProductListsWithHttpInfo(body, customerId)
         .then(function(response_and_data) {
           return response_and_data.data
