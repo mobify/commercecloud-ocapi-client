@@ -10,144 +10,139 @@
  * Do not edit the class manually.
  *
  */
+import expect from 'expect.js'
+import * as ShopApi from '../../src/index'
 
-(function(root, factory) {
-    if (typeof define === 'function' && define.amd) {
-        // AMD.
-        define(['expect.js', '../../src/index'], factory);
-    } else if (typeof module === 'object' && module.exports) {
-        // CommonJS-like environments that support module.exports, like Node.
-        factory(require('expect.js'), require('../../src/index'));
-    } else {
-        // Browser globals (root is window)
-        factory(root.expect, root.ShopApi);
-    }
-}(this, function(expect, ShopApi) {
-    'use strict'
+var instance
 
-    var instance;
+beforeEach(() => {
+    instance = new ShopApi.OrdersApi()
+})
 
-    beforeEach(() => {
-        instance = new ShopApi.OrdersApi();
-    });
+var getProperty = (object, getter, property) => {
+    // Use getter method if present; otherwise, get the property directly.
+    if (typeof object[getter] === 'function')
+        return object[getter]()
+    else
+        return object[property]
+}
 
-    var getProperty = (object, getter, property) => {
-        // Use getter method if present; otherwise, get the property directly.
-        if (typeof object[getter] === 'function')
-            return object[getter]();
-        else
-            return object[property];
-    }
+var setProperty = (object, setter, property, value) => {
+    // Use setter method if present; otherwise, set the property directly.
+    if (typeof object[setter] === 'function')
+        object[setter](value)
+    else
+        object[property] = value
+}
 
-    var setProperty = (object, setter, property, value) => {
-        // Use setter method if present; otherwise, set the property directly.
-        if (typeof object[setter] === 'function')
-            object[setter](value);
-        else
-            object[property] = value;
-    }
+describe('OrdersApi', () => {
+    describe('deleteOrdersByIDNotesByID', () => {
+        it('should call deleteOrdersByIDNotesByID successfully', () => {
+            //uncomment below and update the code to test deleteOrdersByIDNotesByID
+            //instance.deleteOrdersByIDNotesByID(function(error) {
+            //  if (error) throw error;
+            //expect().to.be()
+            //})
+            return Promise.resolve()
+        })
+    })
 
-    describe('OrdersApi', function() {
-        describe('deleteOrdersByIDNotesByID', function() {
-            it('should call deleteOrdersByIDNotesByID successfully', function(done) {
-                //uncomment below and update the code to test deleteOrdersByIDNotesByID
-                //instance.deleteOrdersByIDNotesByID(function(error) {
-                //  if (error) throw error;
-                //expect().to.be();
-                //});
-                done();
-            });
-        });
-        describe('deleteOrdersByIDPaymentInstrumentsByID', function() {
-            it('should call deleteOrdersByIDPaymentInstrumentsByID successfully', function(done) {
-                //uncomment below and update the code to test deleteOrdersByIDPaymentInstrumentsByID
-                //instance.deleteOrdersByIDPaymentInstrumentsByID(function(error) {
-                //  if (error) throw error;
-                //expect().to.be();
-                //});
-                done();
-            });
-        });
-        describe('getOrdersByID', function() {
-            it('should call getOrdersByID successfully', function(done) {
-                //uncomment below and update the code to test getOrdersByID
-                //instance.getOrdersByID(function(error) {
-                //  if (error) throw error;
-                //expect().to.be();
-                //});
-                done();
-            });
-        });
-        describe('getOrdersByIDNotes', function() {
-            it('should call getOrdersByIDNotes successfully', function(done) {
-                //uncomment below and update the code to test getOrdersByIDNotes
-                //instance.getOrdersByIDNotes(function(error) {
-                //  if (error) throw error;
-                //expect().to.be();
-                //});
-                done();
-            });
-        });
-        describe('getOrdersByIDPaymentMethods', function() {
-            it('should call getOrdersByIDPaymentMethods successfully', function(done) {
-                //uncomment below and update the code to test getOrdersByIDPaymentMethods
-                //instance.getOrdersByIDPaymentMethods(function(error) {
-                //  if (error) throw error;
-                //expect().to.be();
-                //});
-                done();
-            });
-        });
-        describe('patchOrdersByID', function() {
-            it('should call patchOrdersByID successfully', function(done) {
-                //uncomment below and update the code to test patchOrdersByID
-                //instance.patchOrdersByID(function(error) {
-                //  if (error) throw error;
-                //expect().to.be();
-                //});
-                done();
-            });
-        });
-        describe('patchOrdersByIDPaymentInstrumentsByID', function() {
-            it('should call patchOrdersByIDPaymentInstrumentsByID successfully', function(done) {
-                //uncomment below and update the code to test patchOrdersByIDPaymentInstrumentsByID
-                //instance.patchOrdersByIDPaymentInstrumentsByID(function(error) {
-                //  if (error) throw error;
-                //expect().to.be();
-                //});
-                done();
-            });
-        });
-        describe('postOrders', function() {
-            it('should call postOrders successfully', function(done) {
-                //uncomment below and update the code to test postOrders
-                //instance.postOrders(function(error) {
-                //  if (error) throw error;
-                //expect().to.be();
-                //});
-                done();
-            });
-        });
-        describe('postOrdersByIDNotes', function() {
-            it('should call postOrdersByIDNotes successfully', function(done) {
-                //uncomment below and update the code to test postOrdersByIDNotes
-                //instance.postOrdersByIDNotes(function(error) {
-                //  if (error) throw error;
-                //expect().to.be();
-                //});
-                done();
-            });
-        });
-        describe('postOrdersByIDPaymentInstruments', function() {
-            it('should call postOrdersByIDPaymentInstruments successfully', function(done) {
-                //uncomment below and update the code to test postOrdersByIDPaymentInstruments
-                //instance.postOrdersByIDPaymentInstruments(function(error) {
-                //  if (error) throw error;
-                //expect().to.be();
-                //});
-                done();
-            });
-        });
-    });
+    describe('deleteOrdersByIDPaymentInstrumentsByID', () => {
+        it('should call deleteOrdersByIDPaymentInstrumentsByID successfully', () => {
+            //uncomment below and update the code to test deleteOrdersByIDPaymentInstrumentsByID
+            //instance.deleteOrdersByIDPaymentInstrumentsByID(function(error) {
+            //  if (error) throw error;
+            //expect().to.be()
+            //})
+            return Promise.resolve()
+        })
+    })
 
-}));
+    describe('getOrdersByID', () => {
+        it('should call getOrdersByID successfully', () => {
+            //uncomment below and update the code to test getOrdersByID
+            //instance.getOrdersByID(function(error) {
+            //  if (error) throw error;
+            //expect().to.be()
+            //})
+            return Promise.resolve()
+        })
+    })
+
+    describe('getOrdersByIDNotes', () => {
+        it('should call getOrdersByIDNotes successfully', () => {
+            //uncomment below and update the code to test getOrdersByIDNotes
+            //instance.getOrdersByIDNotes(function(error) {
+            //  if (error) throw error;
+            //expect().to.be()
+            //})
+            return Promise.resolve()
+        })
+    })
+
+    describe('getOrdersByIDPaymentMethods', () => {
+        it('should call getOrdersByIDPaymentMethods successfully', () => {
+            //uncomment below and update the code to test getOrdersByIDPaymentMethods
+            //instance.getOrdersByIDPaymentMethods(function(error) {
+            //  if (error) throw error;
+            //expect().to.be()
+            //})
+            return Promise.resolve()
+        })
+    })
+
+    describe('patchOrdersByID', () => {
+        it('should call patchOrdersByID successfully', () => {
+            //uncomment below and update the code to test patchOrdersByID
+            //instance.patchOrdersByID(function(error) {
+            //  if (error) throw error;
+            //expect().to.be()
+            //})
+            return Promise.resolve()
+        })
+    })
+
+    describe('patchOrdersByIDPaymentInstrumentsByID', () => {
+        it('should call patchOrdersByIDPaymentInstrumentsByID successfully', () => {
+            //uncomment below and update the code to test patchOrdersByIDPaymentInstrumentsByID
+            //instance.patchOrdersByIDPaymentInstrumentsByID(function(error) {
+            //  if (error) throw error;
+            //expect().to.be()
+            //})
+            return Promise.resolve()
+        })
+    })
+
+    describe('postOrders', () => {
+        it('should call postOrders successfully', () => {
+            //uncomment below and update the code to test postOrders
+            //instance.postOrders(function(error) {
+            //  if (error) throw error;
+            //expect().to.be()
+            //})
+            return Promise.resolve()
+        })
+    })
+
+    describe('postOrdersByIDNotes', () => {
+        it('should call postOrdersByIDNotes successfully', () => {
+            //uncomment below and update the code to test postOrdersByIDNotes
+            //instance.postOrdersByIDNotes(function(error) {
+            //  if (error) throw error;
+            //expect().to.be()
+            //})
+            return Promise.resolve()
+        })
+    })
+
+    describe('postOrdersByIDPaymentInstruments', () => {
+        it('should call postOrdersByIDPaymentInstruments successfully', () => {
+            //uncomment below and update the code to test postOrdersByIDPaymentInstruments
+            //instance.postOrdersByIDPaymentInstruments(function(error) {
+            //  if (error) throw error;
+            //expect().to.be()
+            //})
+            return Promise.resolve()
+        })
+    })
+})

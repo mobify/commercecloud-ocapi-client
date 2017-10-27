@@ -64,10 +64,10 @@ describe('PromotionsApi', () => {
                 })
         )
 
-        it('should return result when calling getPromotions with invalid campaign id', () =>
+        it('should return fault when calling getPromotions with invalid campaign id', () =>
             instance.getPromotions(INVALID_PROMOTION_ID)
-                .then((result) => {
-                    expect(result.type).to.be('PromotionResultModel')
+                .catch((fault) => {
+                    expect(fault.type).to.be('PromotionNotFoundException')
                 })
         )
 

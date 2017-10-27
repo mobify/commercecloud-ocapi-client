@@ -18,6 +18,10 @@ export const getNewRegisteredUser = (client) => {
 
     const {customer, password} = validCustomerRegistration
 
+    // Update the registrant's values so we don't duplicate users.
+    customer.login = `${customer.first_name}.${customer.last_name}-${Date.now()}`
+    customer.email = `${customer.first_name}.${customer.last_name}-${Date.now()}@${customer.company_name}.com`
+
     let newCustomer
     let newProductLists
     return getGuestUserAuth(client)

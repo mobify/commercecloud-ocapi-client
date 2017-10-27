@@ -79,10 +79,11 @@ export const validCustomerAddress = ShopApi.CustomerAddressModel.constructFromOb
 })
 
 export const validCustomer = ShopApi.CustomerModel.constructFromObject({
-    login: `automated.user_${Date.now()}`,
-    email: `automated.user_${Date.now()}@mobify.com`,
+    login: `automated.user`,
+    email: `automated.user@mobify.com`,
     first_name: 'automated',
-    last_name: 'user'
+    last_name: 'user',
+    company_name: 'mobify'
 })
 
 export const validCustomerRegistration = ShopApi.CustomerRegistrationModel.constructFromObject({

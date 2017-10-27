@@ -10,54 +10,40 @@
  * Do not edit the class manually.
  *
  */
+import expect from 'expect.js'
+import * as ShopApi from '../../src/index'
 
-(function(root, factory) {
-    if (typeof define === 'function' && define.amd) {
-        // AMD.
-        define(['expect.js', '../../src/index'], factory);
-    } else if (typeof module === 'object' && module.exports) {
-        // CommonJS-like environments that support module.exports, like Node.
-        factory(require('expect.js'), require('../../src/index'));
-    } else {
-        // Browser globals (root is window)
-        factory(root.expect, root.ShopApi);
-    }
-}(this, function(expect, ShopApi) {
-    'use strict'
+var instance
 
-    var instance;
+beforeEach(() => {
+    instance = new ShopApi.OrderSearchApi()
+})
 
-    beforeEach(() => {
-        instance = new ShopApi.OrderSearchApi();
-    });
+var getProperty = (object, getter, property) => {
+    // Use getter method if present; otherwise, get the property directly.
+    if (typeof object[getter] === 'function')
+        return object[getter]()
+    else
+        return object[property]
+}
 
-    var getProperty = (object, getter, property) => {
-        // Use getter method if present; otherwise, get the property directly.
-        if (typeof object[getter] === 'function')
-            return object[getter]();
-        else
-            return object[property];
-    }
+var setProperty = (object, setter, property, value) => {
+    // Use setter method if present; otherwise, set the property directly.
+    if (typeof object[setter] === 'function')
+        object[setter](value)
+    else
+        object[property] = value
+}
 
-    var setProperty = (object, setter, property, value) => {
-        // Use setter method if present; otherwise, set the property directly.
-        if (typeof object[setter] === 'function')
-            object[setter](value);
-        else
-            object[property] = value;
-    }
-
-    describe('OrderSearchApi', function() {
-        describe('postOrderSearch', function() {
-            it('should call postOrderSearch successfully', function(done) {
-                //uncomment below and update the code to test postOrderSearch
-                //instance.postOrderSearch(function(error) {
-                //  if (error) throw error;
-                //expect().to.be();
-                //});
-                done();
-            });
-        });
-    });
-
-}));
+describe('OrderSearchApi', () => {
+    describe('postOrderSearch', () => {
+        it('should call postOrderSearch successfully', () => {
+            //uncomment below and update the code to test postOrderSearch
+            //instance.postOrderSearch(function(error) {
+            //  if (error) throw error;
+            //expect().to.be();
+            //});
+            return Promise.resolve()
+        })
+    })
+})
