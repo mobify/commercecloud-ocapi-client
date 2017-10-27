@@ -5,7 +5,7 @@
   "license": "Unlicense",
   "main": "src/index.js",
   "scripts": {
-    "test": "mocha --compilers js:babel-core/register $(find test -name 'CustomersApi.spec.js')",
+    "test": "mocha --compilers js:babel-core/register $(find test -name 'BasketsApi.spec.js')",
     "build": "babel src --out-dir lib"
   },
   "browser": {

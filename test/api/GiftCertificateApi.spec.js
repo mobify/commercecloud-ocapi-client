@@ -10,76 +10,67 @@
  * Do not edit the class manually.
  *
  */
+import expect from 'expect.js'
+import * as ShopApi from '../../src/index'
+
 import {clientId, proxyUrl, baseUrl} from '../config.json'
 import * as utils from '../utils'
 
-(function(root, factory) {
-    if (typeof define === 'function' && define.amd) {
-        // AMD.
-        define(['expect.js', '../../src/index'], factory);
-    } else if (typeof module === 'object' && module.exports) {
-        // CommonJS-like environments that support module.exports, like Node.
-        factory(require('expect.js'), require('../../src/index'));
-    } else {
-        // Browser globals (root is window)
-        factory(root.expect, root.ShopApi);
-    }
-}(this, function(expect, ShopApi) {
-    'use strict'
+var instance
+let client
 
-    var instance
-    const client = new ShopApi.ApiClient(
-        `${proxyUrl}/${baseUrl}`,
-        {'x-dw-client-id': clientId}
+before(() => {
+    client = new ShopApi.ApiClient(
+        `${baseUrl}`,
+        { 'x-dw-client-id': clientId }
     )
+})
 
-    beforeEach(() => {
-        instance = new ShopApi.GiftCertificateApi(client)
+beforeEach(() => {
+    instance = new ShopApi.GiftCertificateApi(client)
+})
+
+var getProperty = (object, getter, property) => {
+    // Use getter method if present; otherwise, get the property directly.
+    if (typeof object[getter] === 'function')
+        return object[getter]();
+    else
+        return object[property];
+}
+
+var setProperty = (object, setter, property, value) => {
+    // Use setter method if present; otherwise, set the property directly.
+    if (typeof object[setter] === 'function')
+        object[setter](value);
+    else
+        object[property] = value;
+}
+
+const VALID_CODE = 'DSIYIAYFARMJISZV'
+const INVALID_CODE = 'AAAAAAAAAAAAAAAA'
+
+describe('GiftCertificateApi', () => {
+
+    describe('postGiftCertificate', () => {
+        it('should return giftCertificate when calling postGiftCertificate with valid code.', () =>
+            utils.getGuestUserAuth(client)
+                .then(() =>
+                    instance.postGiftCertificate({body: {gift_certificate_code: VALID_CODE}})
+                        .then((giftCertificate) => {
+                            expect(giftCertificate.masked_gift_certificate_code.slice(-4)).to.be(VALID_CODE.slice(-4))
+                        })
+                )
+        )
+
+        it('should return fault when calling postGiftCertificate with invalid code.', () =>
+            utils.getGuestUserAuth(client)
+                .then(() =>
+                    instance.postGiftCertificate({body: {gift_certificate_code: INVALID_CODE}})
+                        .catch((fault) => {
+                            expect(fault.type).to.be('GiftCertificateNotFoundException')
+                        })
+                )
+        )
     })
 
-    var getProperty = (object, getter, property) => {
-        // Use getter method if present; otherwise, get the property directly.
-        if (typeof object[getter] === 'function')
-            return object[getter]();
-        else
-            return object[property];
-    }
-
-    var setProperty = (object, setter, property, value) => {
-        // Use setter method if present; otherwise, set the property directly.
-        if (typeof object[setter] === 'function')
-            object[setter](value);
-        else
-            object[property] = value;
-    }
-
-    const VALID_CODE = 'DSIYIAYFARMJISZV'
-    const INVALID_CODE = 'AAAAAAAAAAAAAAAA'
-
-    describe('GiftCertificateApi', () => {
-
-        describe('postGiftCertificate', () => {
-            it('should return giftCertificate when calling postGiftCertificate with valid code.', () =>
-                utils.getGuestUserAuth(client)
-                    .then(() =>
-                        instance.postGiftCertificate({body: {gift_certificate_code: VALID_CODE}})
-                            .then((giftCertificate) => {
-                                expect(giftCertificate.masked_gift_certificate_code.slice(-4)).to.be(VALID_CODE.slice(-4))
-                            })
-                    )
-            )
-
-            it('should return fault when calling postGiftCertificate with invalid code.', () =>
-                utils.getGuestUserAuth(client)
-                    .then(() =>
-                        instance.postGiftCertificate({body: {gift_certificate_code: INVALID_CODE}})
-                            .catch((fault) => {
-                                expect(fault.type).to.be('GiftCertificateNotFoundException')
-                            })
-                    )
-            )
-        })
-
-    })
-
-}))
+})

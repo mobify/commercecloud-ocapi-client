@@ -1,10 +1,28 @@
 import * as ShopApi from '../src/index'
 
+export const validProduct = ShopApi.ProductModel.constructFromObject({
+    id: '008884303989'
+})
+
+export const validCustomerProductListItemLink = ShopApi.CustomerProductListItemLinkModel.constructFromObject({
+    link: `https://mobify-tech-prtnr-na03-dw.demandware.net/s/2017refresh/dw/shop/v17_8/products/${validProduct.id}`,
+    title: 'Platinum Blue Stripes Easy Care Fitted Shirt'
+})
+
+export const validCustomerProductListItem = ShopApi.CustomerProductListItemModel.constructFromObject({
+    product: validProduct,
+    product_details_link: validCustomerProductListItemLink,
+    product_id: validProduct.id,
+    public: true,
+    quantity: 1,
+    type: 'product'
+})
+
 export const validCustomerProductList = ShopApi.CustomerProductListModel.constructFromObject({
     type: 'wish_list',
     name: 'OurProductList',
     description: 'our productlist',
-    public: false,
+    public: true,
     co_registrant: {
         email: 'janedoe@example.com',
         first_name: 'Jane',

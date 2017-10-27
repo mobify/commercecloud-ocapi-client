@@ -10,83 +10,75 @@
  * Do not edit the class manually.
  *
  */
+import expect from 'expect.js'
+import * as ShopApi from '../../src/index'
+
 import {clientId, proxyUrl, baseUrl} from '../config.json'
 
-(function(root, factory) {
-    if (typeof define === 'function' && define.amd) {
-        // AMD.
-        define(['expect.js', '../../src/index'], factory);
-    } else if (typeof module === 'object' && module.exports) {
-        // CommonJS-like environments that support module.exports, like Node.
-        factory(require('expect.js'), require('../../src/index'));
-    } else {
-        // Browser globals (root is window)
-        factory(root.expect, root.ShopApi);
-    }
-}(this, function(expect, ShopApi) {
-    'use strict'
 
-    var instance
-    const client = new ShopApi.ApiClient(
-        `${proxyUrl}/${baseUrl}`,
+var instance
+let client
+
+before(() => {
+    client = new ShopApi.ApiClient(
+        `${baseUrl}`,
         { 'x-dw-client-id': clientId }
     )
+})
 
-    beforeEach(() => {
-        instance = new ShopApi.FoldersApi(client)
+beforeEach(() => {
+    instance = new ShopApi.FoldersApi(client)
+})
+
+const getProperty = (object, getter, property) => {
+    // Use getter method if present; otherwise, get the property directly.
+    if (typeof object[getter] === 'function')
+        return object[getter]()
+    else
+        return object[property]
+}
+
+const setProperty = (object, setter, property, value) => {
+    // Use setter method if present; otherwise, set the property directly.
+    if (typeof object[setter] === 'function')
+        object[setter](value)
+    else
+        object[property] = value
+}
+
+describe('FoldersApi', () => {
+
+    describe('getFoldersByID', () => {
+        it('should call getFoldersByID successfully', () =>
+            instance.getFoldersByID('root')
+                .then((category) => {
+                    if (!category) throw error;
+
+                    expect(category.id).to.be('root');
+                })
+        )
+
+        it('should return FolderNotFoundException for getFoldersByID with bad folder id', () =>
+            instance.getFoldersByID('bad_folder_id')
+                .catch((fault) => {
+                    expect(fault.type).to.be('FolderNotFoundException');
+                })
+        )
     })
 
-    const getProperty = (object, getter, property) => {
-        // Use getter method if present; otherwise, get the property directly.
-        if (typeof object[getter] === 'function')
-            return object[getter]()
-        else
-            return object[property]
-    }
+    describe('getFoldersByIDs', () => {
+        it('should call getFoldersByIDs successfully', () =>
+            instance.getFoldersByIDs(['root'])
+                .then((result) => {
+                    expect(result.constructor.name).to.be('ContentFolderResultModel');
+                })
+        )
 
-    const setProperty = (object, setter, property, value) => {
-        // Use setter method if present; otherwise, set the property directly.
-        if (typeof object[setter] === 'function')
-            object[setter](value)
-        else
-            object[property] = value
-    }
-
-    describe('FoldersApi', () => {
-
-        describe('getFoldersByID', () => {
-            it('should call getFoldersByID successfully', () =>
-                instance.getFoldersByID('root')
-                    .then((category) => {
-                        if (!category) throw error;
-
-                        expect(category.id).to.be('root');
-                    })
-            )
-
-            it('should return FolderNotFoundException for getFoldersByID with bad folder id', () =>
-                instance.getFoldersByID('bad_folder_id')
-                    .catch((fault) => {
-                        expect(fault.type).to.be('FolderNotFoundException');
-                    })
-            )
-        })
-
-        describe('getFoldersByIDs', () => {
-            it('should call getFoldersByIDs successfully', () =>
-                instance.getFoldersByIDs(['root'])
-                    .then((result) => {
-                        expect(result.constructor.name).to.be('ContentFolderResultModel');
-                    })
-            )
-
-            it('should get correct number of folders', () =>
-                instance.getFoldersByIDs(['about-us', 'customer-service'])
-                    .then((result) => {
-                        expect(result.count).to.be(2);
-                    })
-            )
-        })
+        it('should get correct number of folders', () =>
+            instance.getFoldersByIDs(['about-us', 'customer-service'])
+                .then((result) => {
+                    expect(result.count).to.be(2);
+                })
+        )
     })
-
-}))
+})

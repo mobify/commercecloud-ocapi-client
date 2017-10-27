@@ -10,60 +10,51 @@
  * Do not edit the class manually.
  *
  */
+import expect from 'expect.js'
+import * as ShopApi from '../../src/index'
+
 import {clientId, proxyUrl, baseUrl} from '../config.json'
 
-(function(root, factory) {
-    if (typeof define === 'function' && define.amd) {
-        // AMD.
-        define(['expect.js', '../../src/index'], factory);
-    } else if (typeof module === 'object' && module.exports) {
-        // CommonJS-like environments that support module.exports, like Node.
-        factory(require('expect.js'), require('../../src/index'));
-    } else {
-        // Browser globals (root is window)
-        factory(root.expect, root.ShopApi);
-    }
-}(this, function(expect, ShopApi) {
-    'use strict'
+var instance
+let client
 
-    var instance
-    const client = new ShopApi.ApiClient(
-        `${proxyUrl}/${baseUrl}`,
+before(() => {
+    client = new ShopApi.ApiClient(
+        `${baseUrl}`,
         { 'x-dw-client-id': clientId }
     )
+})
 
-    beforeEach(() => {
-        instance = new ShopApi.CustomObjectsApi(client)
+beforeEach(() => {
+    instance = new ShopApi.CustomObjectsApi(client)
+})
+
+var getProperty = (object, getter, property) => {
+    // Use getter method if present; otherwise, get the property directly.
+    if (typeof object[getter] === 'function')
+        return object[getter]()
+    else
+        return object[property]
+}
+
+var setProperty = (object, setter, property, value) => {
+    // Use setter method if present; otherwise, set the property directly.
+    if (typeof object[setter] === 'function')
+        object[setter](value)
+    else
+        object[property] = value
+}
+
+const INVALID_OBJECT_TYPE = '__INVALID__'
+const INVALID_KEY_NAME = '__INVALID__'
+
+describe('CustomObjectsApi', () => {
+    describe('getCustomObjectsByIDByID', () => {
+        it('should return fault when calling getCustomObjectsByIDByID with invalid type and key', () =>
+            instance.getCustomObjectsByIDByID(INVALID_OBJECT_TYPE, INVALID_KEY_NAME)
+                .catch((fault) => {
+                    expect(fault.type).to.be('ObjectTypeNotFoundException')
+                })
+        )
     })
-
-    var getProperty = (object, getter, property) => {
-        // Use getter method if present; otherwise, get the property directly.
-        if (typeof object[getter] === 'function')
-            return object[getter]()
-        else
-            return object[property]
-    }
-
-    var setProperty = (object, setter, property, value) => {
-        // Use setter method if present; otherwise, set the property directly.
-        if (typeof object[setter] === 'function')
-            object[setter](value)
-        else
-            object[property] = value
-    }
-
-    const INVALID_OBJECT_TYPE = '__INVALID__'
-    const INVALID_KEY_NAME = '__INVALID__'
-
-    describe('CustomObjectsApi', () => {
-        describe('getCustomObjectsByIDByID', () => {
-            it('should return fault when calling getCustomObjectsByIDByID with invalid type and key', () =>
-                instance.getCustomObjectsByIDByID(INVALID_OBJECT_TYPE, INVALID_KEY_NAME)
-                    .catch((fault) => {
-                        expect(fault.type).to.be('ObjectTypeNotFoundException')
-                    })
-            )
-        })
-    })
-
-}))
+})

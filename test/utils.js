@@ -19,6 +19,7 @@ export const getNewRegisteredUser = (client) => {
     const {customer, password} = validCustomerRegistration
 
     let newCustomer
+    let newProductLists
     return getGuestUserAuth(client)
         .then(() => instance.postCustomers(validCustomerRegistration))
         .then(() => instance.postCustomersAuth(
@@ -29,7 +30,15 @@ export const getNewRegisteredUser = (client) => {
         .then(() => instance.postCustomersByIDAddresses(newCustomer.customer_id, validCustomerAddress))
         .then(() => instance.postCustomersByIDPaymentInstruments(newCustomer.customer_id, validCustomerPaymentInstrumentRequest))
         .then(() => instance.postCustomersByIDProductLists(newCustomer.customer_id, validCustomerProductList))
+        .then((productList) => {
+            // Append product list for testing purposes later
+            newProductLists = [productList]
+        })
         .then(() => instance.getCustomersByID(newCustomer.customer_id, { expand: ['addresses', 'paymentinstruments']}))
+        .then((customer) => {
+            customer.product_lists = newProductLists
+            return customer
+        })
 }
 
 export const getNewRegisteredUserWithPayment = (client) => {

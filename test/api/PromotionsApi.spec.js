@@ -10,106 +10,97 @@
  * Do not edit the class manually.
  *
  */
+import expect from 'expect.js'
+import * as ShopApi from '../../src/index'
+
 import {clientId, proxyUrl, baseUrl} from '../config.json'
 
-(function(root, factory) {
-    if (typeof define === 'function' && define.amd) {
-        // AMD.
-        define(['expect.js', '../../src/index'], factory);
-    } else if (typeof module === 'object' && module.exports) {
-        // CommonJS-like environments that support module.exports, like Node.
-        factory(require('expect.js'), require('../../src/index'));
-    } else {
-        // Browser globals (root is window)
-        factory(root.expect, root.ShopApi);
-    }
-}(this, function(expect, ShopApi) {
-    'use strict'
+var instance
+let client
 
-    var instance
-    const client = new ShopApi.ApiClient(
-        `${proxyUrl}/${baseUrl}`,
+before(() => {
+    client = new ShopApi.ApiClient(
+        `${baseUrl}`,
         { 'x-dw-client-id': clientId }
     )
+})
 
-    beforeEach(() => {
-        instance = new ShopApi.PromotionsApi(client)
-    })
+beforeEach(() => {
+    instance = new ShopApi.PromotionsApi(client)
+})
 
-    var getProperty = (object, getter, property) => {
-        // Use getter method if present; otherwise, get the property directly.
-        if (typeof object[getter] === 'function')
-            return object[getter]();
-        else
-            return object[property];
-    }
+var getProperty = (object, getter, property) => {
+    // Use getter method if present; otherwise, get the property directly.
+    if (typeof object[getter] === 'function')
+        return object[getter]();
+    else
+        return object[property];
+}
 
-    var setProperty = (object, setter, property, value) => {
-        // Use setter method if present; otherwise, set the property directly.
-        if (typeof object[setter] === 'function')
-            object[setter](value);
-        else
-            object[property] = value;
-    }
+var setProperty = (object, setter, property, value) => {
+    // Use setter method if present; otherwise, set the property directly.
+    if (typeof object[setter] === 'function')
+        object[setter](value);
+    else
+        object[property] = value;
+}
 
 
-    const VALID_CAMPAIGN_ID = 'AMAZE coupon code campaign'
-    const INVALID_CAMPAIGN_ID = '_invalid_'
-    const EMPTY_CAMPAIGN_ID = ''
+const VALID_CAMPAIGN_ID = 'AMAZE coupon code campaign'
+const INVALID_CAMPAIGN_ID = '_invalid_'
+const EMPTY_CAMPAIGN_ID = ''
 
-    const VALID_PROMOTION_ID = 'Buy 100 get 5 dollars off'
-    const INVALID_PROMOTION_ID = '_invalid_'
-    const EMPTY_PROMOTION_ID = ''
+const VALID_PROMOTION_ID = 'Buy 100 get 5 dollars off'
+const INVALID_PROMOTION_ID = '_invalid_'
+const EMPTY_PROMOTION_ID = ''
 
-    describe('PromotionsApi', () => {
-        describe('getPromotions', () => {
-            it('should return fault when calling getPromotions with empty campaign id', () =>
-                instance.getPromotions(EMPTY_PROMOTION_ID)
+describe('PromotionsApi', () => {
 
-                    .catch((fault) => {
-                        expect(fault.type).to.be('StringConstraintViolationException')
-                    })
-            )
-
-            it('should return result when calling getPromotions with invalid campaign id', () =>
-                instance.getPromotions(INVALID_PROMOTION_ID)
-                    .then((result) => {
-                        expect(result.type).to.be('PromotionResultModel')
-                    })
-            )
-
-            it('should return promotion result when calling getPromotions with valid campaign id', () =>
-                instance.getPromotions(VALID_CAMPAIGN_ID)
-                    .then((result) => {
-                        expect(result.constructor.name).to.be('PromotionResultModel')
-                    })
-            )
-        })
-
-        describe('getPromotionsByID', () => {
-            it('should return promotion when calling getPromotionsByID with valid promotion id', () =>
-                instance.getPromotionsByID(VALID_PROMOTION_ID)
-                    .then((promotion) => {
-                        expect(promotion.constructor.name).to.be('PromotionModel')
-                    })
-            )
-
-            it('should return fault when calling getPromotionsByID with valid promotion id', () =>
-                instance.getPromotionsByID(INVALID_PROMOTION_ID)
-                    .catch((fault) => {
-                        expect(fault.type).to.be('PromotionNotFoundException')
-                    })
-            )
-        })
-
-        describe('getPromotionsByIDs', () => {
-            it('should call getPromotionsByIDs successfully', () =>
-            instance.getPromotionsByIDs([VALID_PROMOTION_ID])
-                .catch((result) => {
-                    expect(promotion.constructor.name).to.be('PromotionResultModel')
+    describe('getPromotions', () => {
+        it('should return fault when calling getPromotions with empty campaign id', () =>
+            instance.getPromotions(EMPTY_PROMOTION_ID)
+                .catch((fault) => {
+                    expect(fault.type).to.be('StringConstraintViolationException')
                 })
-            )
-        })
+        )
+
+        it('should return result when calling getPromotions with invalid campaign id', () =>
+            instance.getPromotions(INVALID_PROMOTION_ID)
+                .then((result) => {
+                    expect(result.type).to.be('PromotionResultModel')
+                })
+        )
+
+        it('should return promotion result when calling getPromotions with valid campaign id', () =>
+            instance.getPromotions(VALID_CAMPAIGN_ID)
+                .then((result) => {
+                    expect(result.constructor.name).to.be('PromotionResultModel')
+                })
+        )
     })
 
-}))
+    describe('getPromotionsByID', () => {
+        it('should return promotion when calling getPromotionsByID with valid promotion id', () =>
+            instance.getPromotionsByID(VALID_PROMOTION_ID)
+                .then((promotion) => {
+                    expect(promotion.constructor.name).to.be('PromotionModel')
+                })
+        )
+
+        it('should return fault when calling getPromotionsByID with valid promotion id', () =>
+            instance.getPromotionsByID(INVALID_PROMOTION_ID)
+                .catch((fault) => {
+                    expect(fault.type).to.be('PromotionNotFoundException')
+                })
+        )
+    })
+
+    describe('getPromotionsByIDs', () => {
+        it('should call getPromotionsByIDs successfully', () =>
+        instance.getPromotionsByIDs([VALID_PROMOTION_ID])
+            .catch((result) => {
+                expect(promotion.constructor.name).to.be('PromotionResultModel')
+            })
+        )
+    })
+})

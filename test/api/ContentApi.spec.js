@@ -10,74 +10,67 @@
  * Do not edit the class manually.
  *
  */
+import expect from 'expect.js'
+import * as ShopApi from '../../src/index'
+
 import {clientId, proxyUrl, baseUrl} from '../config.json'
 
-(function(root, factory) {
-    if (typeof define === 'function' && define.amd) {
-        // AMD.
-        define(['expect.js', '../../src/index'], factory);
-    } else if (typeof module === 'object' && module.exports) {
-        // CommonJS-like environments that support module.exports, like Node.
-        factory(require('expect.js'), require('../../src/index'));
-    } else {
-        // Browser globals (root is window)
-        factory(root.expect, root.ShopApi);
-    }
-}(this, function(expect, ShopApi) {
-    'use strict'
+var instance
+let client
+let newCustomer
 
-    var instance
-    const client = new ShopApi.ApiClient(
-        `${proxyUrl}/${baseUrl}`,
+before(() => {
+    client = new ShopApi.ApiClient(
+        `${baseUrl}`,
         { 'x-dw-client-id': clientId }
     )
+})
 
-    beforeEach(() => {
-        instance = new ShopApi.ContentApi(client)
+beforeEach(() => {
+    instance = new ShopApi.ContentApi(client)
+})
+
+var getProperty = (object, getter, property) => {
+    // Use getter method if present; otherwise, get the property directly.
+    if (typeof object[getter] === 'function')
+        return object[getter]();
+    else
+        return object[property];
+}
+
+var setProperty = (object, setter, property, value) => {
+    // Use setter method if present; otherwise, set the property directly.
+    if (typeof object[setter] === 'function')
+        object[setter](value);
+    else
+        object[property] = value;
+}
+
+describe('ContentApi', () => {
+
+    describe('getContentByID', () => {
+        it('should return fault when calling getContentByID with invalid id', () =>
+            instance.getContentByID('INVALID_CONTENT_ID')
+                .catch((fault) => {
+                    expect(fault.type).to.be('ContentAssetNotFoundException')
+                })
+        )
+
+        it('should return content when calling getContentByID with valid id', () =>
+            instance.getContentByID('about-us')
+                .then((content) => {
+                    expect(content.id).to.be('about-us')
+                })
+        )
     })
 
-    var getProperty = (object, getter, property) => {
-        // Use getter method if present; otherwise, get the property directly.
-        if (typeof object[getter] === 'function')
-            return object[getter]();
-        else
-            return object[property];
-    }
-
-    var setProperty = (object, setter, property, value) => {
-        // Use setter method if present; otherwise, set the property directly.
-        if (typeof object[setter] === 'function')
-            object[setter](value);
-        else
-            object[property] = value;
-    }
-
-    describe('ContentApi', () => {
-
-        describe('getContentByID', () => {
-            it('should return fault when calling getContentByID with invalid id', () =>
-                instance.getContentByID('INVALID_CONTENT_ID')
-                    .catch((fault) => {
-                        expect(fault.type).to.be('ContentAssetNotFoundException')
-                    })
-            )
-
-            it('should return content when calling getContentByID with valid id', () =>
-                instance.getContentByID('about-us')
-                    .then((content) => {
-                        expect(content.id).to.be('about-us')
-                    })
-            )
-        })
-
-        describe('getContentByIDs', () => {
-            it('should return content result when calling getContentByIDs with valid id list', () =>
-                instance.getContentByIDs(['about-us', 'account-help'])
-                    .then((result) => {
-                        expect(result.total).to.be(2)
-                    })
-            )
-        })
-
+    describe('getContentByIDs', () => {
+        it('should return content result when calling getContentByIDs with valid id list', () =>
+            instance.getContentByIDs(['about-us', 'account-help'])
+                .then((result) => {
+                    expect(result.total).to.be(2)
+                })
+        )
     })
-}))
+
+})

@@ -10,84 +10,105 @@
  * Do not edit the class manually.
  *
  */
+import expect from 'expect.js'
+import * as ShopApi from '../../src/index'
 
-(function(root, factory) {
-    if (typeof define === 'function' && define.amd) {
-        // AMD.
-        define(['expect.js', '../../src/index'], factory);
-    } else if (typeof module === 'object' && module.exports) {
-        // CommonJS-like environments that support module.exports, like Node.
-        factory(require('expect.js'), require('../../src/index'));
-    } else {
-        // Browser globals (root is window)
-        factory(root.expect, root.ShopApi);
-    }
-}(this, function(expect, ShopApi) {
-    'use strict'
+import {clientId, proxyUrl, baseUrl} from '../config.json'
+import * as utils from '../utils'
 
-    var instance;
+var instance
+let client
+let newCustomer
 
-    beforeEach(() => {
-        instance = new ShopApi.ProductListsApi();
-    });
+before(() => {
+    client = new ShopApi.ApiClient(
+        `${baseUrl}`,
+        { 'x-dw-client-id': clientId }
+    )
+    return utils.getNewRegisteredUser(client)
+        .then((customer) => {
+            newCustomer = customer
+            return Promise.resolve()
+        })
+})
 
-    var getProperty = (object, getter, property) => {
-        // Use getter method if present; otherwise, get the property directly.
-        if (typeof object[getter] === 'function')
-            return object[getter]();
-        else
-            return object[property];
-    }
+beforeEach(() => {
+    instance = new ShopApi.ProductListsApi(client)
+})
 
-    var setProperty = (object, setter, property, value) => {
-        // Use setter method if present; otherwise, set the property directly.
-        if (typeof object[setter] === 'function')
-            object[setter](value);
-        else
-            object[property] = value;
-    }
+var getProperty = (object, getter, property) => {
+    // Use getter method if present; otherwise, get the property directly.
+    if (typeof object[getter] === 'function')
+        return object[getter]()
+    else
+        return object[property];
+}
 
-    describe('ProductListsApi', function() {
-        describe('getProductLists', function() {
-            it('should call getProductLists successfully', function(done) {
-                //uncomment below and update the code to test getProductLists
-                //instance.getProductLists(function(error) {
-                //  if (error) throw error;
-                //expect().to.be();
-                //});
-                done();
-            });
-        });
-        describe('getProductListsByID', function() {
-            it('should call getProductListsByID successfully', function(done) {
-                //uncomment below and update the code to test getProductListsByID
-                //instance.getProductListsByID(function(error) {
-                //  if (error) throw error;
-                //expect().to.be();
-                //});
-                done();
-            });
-        });
-        describe('getProductListsByIDItems', function() {
-            it('should call getProductListsByIDItems successfully', function(done) {
-                //uncomment below and update the code to test getProductListsByIDItems
-                //instance.getProductListsByIDItems(function(error) {
-                //  if (error) throw error;
-                //expect().to.be();
-                //});
-                done();
-            });
-        });
-        describe('getProductListsByIDItemsByID', function() {
-            it('should call getProductListsByIDItemsByID successfully', function(done) {
-                //uncomment below and update the code to test getProductListsByIDItemsByID
-                //instance.getProductListsByIDItemsByID(function(error) {
-                //  if (error) throw error;
-                //expect().to.be();
-                //});
-                done();
-            });
-        });
-    });
+var setProperty = (object, setter, property, value) => {
+    // Use setter method if present; otherwise, set the property directly.
+    if (typeof object[setter] === 'function')
+        object[setter](value)
+    else
+        object[property] = value;
+}
 
-}));
+describe('ProductListsApi', () => {
+    describe('getProductLists', () => {
+        it('calling getProductLists with no options returns fault', () =>
+            instance.getProductLists()
+                .catch((fault) => {
+                    expect(fault.type).to.be('ProductListSearchTermException')
+                })
+        )
+
+        it('calling getProductLists with valid options returns successfully', () =>
+            instance.getProductLists({ email: newCustomer.email })
+                .then((result) => {
+                    expect(result.constructor.name).to.be('PublicProductListResultModel')
+                })
+        )
+    })
+
+    describe('getProductListsByID', () => {
+        it('calling getProductListsByID with valid product list id should return successfully', () =>
+            // NOTE: The cusomer model doesn't have the product lists assigned to it,
+            // this has been added only  for testing purposes
+            instance.getProductListsByID(newCustomer.product_lists[0].id)
+                .then((productList) => {
+                    expect(productList.constructor.name).to.be('PublicProductListModel')
+                })
+        )
+
+        it('calling getProductListsByID with invalid product list id should return fault', () =>
+            // NOTE: The cusomer model doesn't have the product lists assigned to it,
+            // this has been added only  for testing purposes
+            instance.getProductListsByID('-1')
+                .catch((fault) => {
+                    expect(fault.type).to.be('ProductListNotFoundException')
+                })
+        )
+    })
+
+    describe('getProductListsByIDItems', () => {
+        it('should call getProductListsByIDItems successfully', () =>
+            // NOTE: The cusomer model doesn't have the product lists assigned to it,
+            // this has been added only  for testing purposes
+            instance.getProductListsByIDItems(newCustomer.product_lists[0].id)
+                .then((result) => {
+                    expect(result.constructor.name).to.be('PublicProductListItemResultModel')
+                })
+        )
+    })
+
+    // describe('getProductListsByIDItemsByID', () => {
+    //     it('should call getProductListsByIDItemsByID successfully', () => {
+    //         //uncomment below and update the code to test getProductListsByIDItemsByID
+    //         //instance.getProductListsByIDItemsByID(function(error) {
+    //         //  if (error) throw error;
+    //         //expect().to.be()
+    //         //})
+    //
+    //     })
+    // })
+
+})

@@ -10,90 +10,82 @@
  * Do not edit the class manually.
  *
  */
+import expect from 'expect.js'
+import * as ShopApi from '../../src/index'
+
 import {clientId, proxyUrl, baseUrl} from '../config.json'
 
-(function(root, factory) {
-    if (typeof define === 'function' && define.amd) {
-        // AMD.
-        define(['expect.js', '../../src/index'], factory);
-    } else if (typeof module === 'object' && module.exports) {
-        // CommonJS-like environments that support module.exports, like Node.
-        factory(require('expect.js'), require('../../src/index'));
-    } else {
-        // Browser globals (root is window)
-        factory(root.expect, root.ShopApi);
-    }
-}(this, function(expect, ShopApi) {
-    'use strict'
+var instance
+let client
 
-    var instance
-    const client = new ShopApi.ApiClient(
-        `${proxyUrl}/${baseUrl}`,
+before(() => {
+    client = new ShopApi.ApiClient(
+        `${baseUrl}`,
         { 'x-dw-client-id': clientId }
     )
+})
 
-    beforeEach(() => {
-        instance = new ShopApi.StoresApi(client)
+beforeEach(() => {
+    instance = new ShopApi.StoresApi(client)
+})
+
+const getProperty = (object, getter, property) => {
+    // Use getter method if present; otherwise, get the property directly.
+    if (typeof object[getter] === 'function')
+        return object[getter]()
+    else
+        return object[property]
+}
+
+const setProperty = (object, setter, property, value) => {
+    // Use setter method if present; otherwise, set the property directly.
+    if (typeof object[setter] === 'function')
+        object[setter](value)
+    else
+        object[property] = value
+}
+
+describe('StoresApi', () => {
+
+    describe('getStores', () => {
+        it('should call getStores successfully', () =>
+            instance.getStores({countryCode: 'US', postalCode: '90210'})
+                .catch((error) => {
+                    throw error
+                })
+        )
+
+        it('call getStores without country code expects error', () =>
+            instance.getStores({postalCode: '90210'})
+                .catch((fault) => {
+                    expect(fault.type).to.be('MissingCountryCodeException')
+                })
+        )
+
+        it('call getStores without postal code expects error', () =>
+            instance.getStores({countryCode: 'US'})
+                .catch((fault) => {
+                    expect(fault.type).to.be('MissingPostalCodeException')
+                })
+        )
     })
 
-    const getProperty = (object, getter, property) => {
-        // Use getter method if present; otherwise, get the property directly.
-        if (typeof object[getter] === 'function')
-            return object[getter]()
-        else
-            return object[property]
-    }
-
-    const setProperty = (object, setter, property, value) => {
-        // Use setter method if present; otherwise, set the property directly.
-        if (typeof object[setter] === 'function')
-            object[setter](value)
-        else
-            object[property] = value
-    }
-
-    describe('StoresApi', () => {
-
-        describe('getStores', () => {
-            it('should call getStores successfully', () =>
-                instance.getStores({countryCode: 'US', postalCode: '90210'})
-                    .catch((error) => {
-                        throw error
-                    })
-            )
-
-            it('call getStores without country code expects error', () =>
-                instance.getStores({postalCode: '90210'})
-                    .catch((fault) => {
-                        expect(fault.type).to.be('MissingCountryCodeException')
-                    })
-            )
-
-            it('call getStores without postal code expects error', () =>
-                instance.getStores({countryCode: 'US'})
-                    .catch((fault) => {
-                        expect(fault.type).to.be('MissingPostalCodeException')
-                    })
-            )
-        })
-
-        describe('getStoresByID', () => {
-            it('should call getStoresByID successfully', () =>
-                instance.getStoresByID('flagship')
-                    .then((store) => {
-                        expect(store.constructor.name).to.be('StoreModel')
-                    })
-            )
-        })
-
-        describe('getStoresByIDs', () => {
-            it('should call getStoresByIDs successfully', () =>
-                instance.getStoresByIDs(['flagship'])
-                    .then((result) => {
-                        expect(result.constructor.name).to.be('StoreResultModel')
-                    })
-            )
-        })
-
+    describe('getStoresByID', () => {
+        it('should call getStoresByID successfully', () =>
+            instance.getStoresByID('flagship')
+                .then((store) => {
+                    expect(store.constructor.name).to.be('StoreModel')
+                })
+        )
     })
-}))
+
+    describe('getStoresByIDs', () => {
+        it('should call getStoresByIDs successfully', () =>
+            instance.getStoresByIDs(['flagship'])
+                .then((result) => {
+                    expect(result.constructor.name).to.be('StoreResultModel')
+                })
+        )
+    })
+
+})
