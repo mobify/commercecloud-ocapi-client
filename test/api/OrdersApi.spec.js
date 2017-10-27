@@ -13,7 +13,7 @@
 import expect from 'expect.js'
 import * as ShopApi from '../../src/index'
 
-var instance
+let instance
 
 beforeEach(() => {
     instance = new ShopApi.OrdersApi()

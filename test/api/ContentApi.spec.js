@@ -15,7 +15,7 @@ import * as ShopApi from '../../src/index'
 
 import {clientId, proxyUrl, baseUrl} from '../config.json'
 
-var instance
+let instance
 let client
 let newCustomer
 

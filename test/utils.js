@@ -24,6 +24,7 @@ export const getNewRegisteredUser = (client) => {
 
     let newCustomer
     let newProductLists
+
     return getGuestUserAuth(client)
         .then(() => instance.postCustomers(validCustomerRegistration))
         .then(() => instance.postCustomersAuth(
