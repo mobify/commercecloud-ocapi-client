@@ -46,9 +46,6 @@ export const getNewRegisteredUser = (client) => {
         })
 }
 
-export const getNewRegisteredUserWithPayment = (client) => {
-    return getNewRegisteredUser(client, {ignore})
-}
 export const getAuthPayload = (client) => {
     // NOTE: This function needs to to do error checking
     const {authorization} = client.defaultHeaders
