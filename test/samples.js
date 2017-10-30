@@ -1,4 +1,4 @@
-import * as ShopApi from '../src/index'
+import ShopApi from '../src/index'
 
 export const validOrderSearchRequest = ShopApi.ProductModel.constructFromObject({
    query: {

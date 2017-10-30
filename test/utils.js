@@ -1,4 +1,4 @@
-import * as ShopApi from '../src/index'
+import ShopApi from '../src/index'
 import {clientId, proxyUrl, baseUrl} from './config.json'
 import btoa from 'btoa'
 import atob from 'atob'

@@ -11,7 +11,7 @@
  *
  */
 import expect from 'expect.js'
-import * as ShopApi from '../../src/index'
+import ShopApi from '../../src/index'
 
 import {clientId, proxyUrl, baseUrl} from '../config.json'
 import * as utils from '../utils'
@@ -21,10 +21,10 @@ let client
 let newCustomer
 
 before(() => {
-    client = new ShopApi.ApiClient(
-        `${baseUrl}`,
-        { 'x-dw-client-id': clientId }
-    )
+    client = new ShopApi.ApiClient({
+        basePath: `${baseUrl}`,
+        defaultHeaders: { 'x-dw-client-id': clientId }
+    })
 })
 
 beforeEach(() => {

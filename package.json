@@ -1,7 +1,7 @@
 {
-  "name": "shop_api",
-  "version": "0.17.8",
-  "description": "ERROR_UNKNOWN",
+  "name": "sfcc-shop-api",
+  "version": "0.1.0",
+  "description": "An ES6 JavaScript Client for Salesforce Open Commerce API",
   "license": "Unlicense",
   "main": "src/index.js",
   "scripts": {

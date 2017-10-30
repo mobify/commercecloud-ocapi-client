@@ -11,12 +11,30 @@
  *
  */
 import expect from 'expect.js'
-import * as ShopApi from '../../src/index'
+import ShopApi from '../../src/index'
+
+import {clientId, proxyUrl, baseUrl} from '../config.json'
+import * as utils from '../utils'
 
 let instance
+let client
+let newCustomer
+
+before(() => {
+    client = new ShopApi.ApiClient({
+        basePath: `${baseUrl}`,
+        defaultHeaders: { 'x-dw-client-id': clientId }
+    })
+
+    return utils.getNewRegisteredUser(client)
+        .then((customer) => {
+            newCustomer = customer
+            return Promise.resolve()
+        })
+})
 
 beforeEach(() => {
-    instance = new ShopApi.PriceAdjustmentLimitsApi()
+    instance = new ShopApi.PriceAdjustmentLimitsApi(client)
 })
 
 var getProperty = (object, getter, property) => {
@@ -43,6 +61,13 @@ describe('PriceAdjustmentLimitsApi', () => {
             //  if (error) throw error;
             //expect().to.be();
             //});
+            instance.getPriceAdjustmentLimits()
+                .then((thing) => {
+                    console.log('thing: ', thing)
+                })
+                .catch((fault) => {
+                    console.log('fault: ', fault)
+                })
             return Promise.resolve()
         })
     })

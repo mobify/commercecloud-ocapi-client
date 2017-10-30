@@ -193,7 +193,7 @@ import StoresApi from './api/StoresApi'
 * @module index
 * @version 17.8
 */
-export {
+export default {
     /**
      * The ApiClient constructor.
      * @property {module:ApiClient}

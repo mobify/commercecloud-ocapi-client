@@ -21,6 +21,14 @@ import FaultModel from "./models/FaultModel"
 * @version 17.8
 */
 
+const defaultConfig = {
+    basePath: 'https://mobify-tech-prtnr-na03-dw.demandware.net/s/2017refresh/dw/shop/v17_8',
+    defaultHeaders: {},
+    timeout: 60000,
+    cache: true,
+    enableCookies: false,
+}
+
 /**
 * Manages low level client-server communications, parameter marshalling, etc. There should not be any need for an
 * application to use this class directly - the *Api and model classes provide the public API for the service. The
@@ -29,13 +37,20 @@ import FaultModel from "./models/FaultModel"
 * @class
 */
 export default class ApiClient {
-    constructor(
-        basePath,
-        defaultHeaders = {},
-        timeout = 60000,
-        cache = true,
-        enableCookies = false,
-    ) {
+
+    constructor(config = defaultConfig) {
+
+        const {
+            basePath,
+            defaultHeaders,
+            timeout,
+            cache,
+            enableCookies,
+            clientUsername,
+            clientPassword,
+            oauth2AccessToken
+        } = Object.assign(defaultConfig, config)
+
         // verify the required parameter 'basepath' is set
         if (basePath === undefined || basePath === null || basePath === '') {
             throw new Error("Missing the required parameter 'basePath' when calling constructing ApiClient")
@@ -57,6 +72,18 @@ export default class ApiClient {
             'customers_auth': {type: 'basic'},
             'oauth2_application': {type: 'oauth2'}
         }
+
+        if (oauth2AccessToken) {
+            const oauth2_application = this.authentications['oauth2_application'];
+            oauth2_application.accessToken = oauth2AccessToken
+        }
+
+        if (clientUsername && clientPassword) {
+            const customers_auth = this.authentications['customers_auth'];
+            customers_auth.username = clientUsername
+            customers_auth.password = clientPassword
+        }
+
 
         /**
          * The default HTTP headers to be included for all API calls.
@@ -616,4 +643,4 @@ export default class ApiClient {
 * The default API client implementation.
 * @type {module:ApiClient}
 */
-ApiClient.instance = new ApiClient('https://mobify-tech-prtnr-na03-dw.demandware.net/s/2017refresh/dw/shop/v17_8')
+ApiClient.instance = new ApiClient(defaultConfig)

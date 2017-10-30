@@ -11,7 +11,7 @@
  *
  */
 import expect from 'expect.js'
-import * as ShopApi from '../../src/index'
+import ShopApi from '../../src/index'
 
 let instance
 
