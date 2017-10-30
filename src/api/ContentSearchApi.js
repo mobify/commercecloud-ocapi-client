@@ -12,7 +12,7 @@
  */
 
 
-import ApiClient from "../ApiClient";
+import ApiClient from '../ApiClient'
 import ContentSearchResultModel from '../models/ContentSearchResultModel'
 
 /**
@@ -47,31 +47,31 @@ export default class ContentSearchApi {
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:models/ContentSearchResultModel} and HTTP response
      */
     getContentSearchWithHttpInfo(opts) {
-      opts = opts || {}
-      let postBody = null
+        opts = opts || {}
+        const postBody = null
 
 
-      let pathParams = {
-      }
-      let queryParams = {
-        'q': opts['q'],
-        'refine': this.apiClient.buildCollectionParam(opts['refine'], 'csv'),
-        'sort': this.apiClient.buildCollectionParam(opts['sort'], 'csv'),
-        'start': opts['start'],
-        'count': opts['count'],
-        'locale': opts['locale']
-      }
-      let headerParams = {
-      }
-      let formParams = {
-      }
+        const pathParams = {
+        }
+        const queryParams = {
+            q: opts.q,
+            refine: this.apiClient.buildCollectionParam(opts.refine, 'csv'),
+            sort: this.apiClient.buildCollectionParam(opts.sort, 'csv'),
+            start: opts.start,
+            count: opts.count,
+            locale: opts.locale
+        }
+        const headerParams = {
+        }
+        const formParams = {
+        }
 
-      let authNames = ['client_id', 'customers_auth']
-      let contentTypes = ['application/json', 'text/xml', 'application/xml']
-      let accepts = ['application/json', 'text/xml', 'application/xml']
-      let returnType = ContentSearchResultModel
+        const authNames = ['client_id', 'customers_auth']
+        const contentTypes = ['application/json', 'text/xml', 'application/xml']
+        const accepts = ['application/json', 'text/xml', 'application/xml']
+        const returnType = ContentSearchResultModel
 
-      return this.apiClient.callApi(
+        return this.apiClient.callApi(
         '/content_search', 'GET',
         pathParams, queryParams, headerParams, formParams, postBody,
         authNames, contentTypes, accepts, returnType
@@ -90,9 +90,9 @@ export default class ContentSearchApi {
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:models/ContentSearchResultModel}
      */
     getContentSearch(opts) {
-      return this.getContentSearchWithHttpInfo(opts)
-        .then(function(response_and_data) {
-          return response_and_data.data
+        return this.getContentSearchWithHttpInfo(opts)
+        .then((response_and_data) => {
+            return response_and_data.data
         })
     }
 

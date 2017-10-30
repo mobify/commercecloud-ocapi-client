@@ -11,7 +11,7 @@
  *
  */
 
-import ApiClient from "../ApiClient";
+import ApiClient from '../ApiClient'
 import BasketModel from '../models/BasketModel'
 import BasketPaymentInstrumentRequestModel from '../models/BasketPaymentInstrumentRequestModel'
 import CouponItemModel from '../models/CouponItemModel'
@@ -50,24 +50,24 @@ export default class BasketsApi {
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing HTTP response
      */
     deleteBasketsByIDWithHttpInfo(basketId) {
-        let postBody = null
+        const postBody = null
 
         // verify the required parameter 'basketId' is set
         if (basketId === undefined || basketId === null) {
-            throw new Error("Missing the required parameter 'basketId' when calling deleteBasketsByID")
+            throw new Error('Missing the required parameter \'basketId\' when calling deleteBasketsByID')
         }
 
-        let pathParams = {
-            'basket_id': basketId
+        const pathParams = {
+            basket_id: basketId
         }
-        let queryParams = {}
-        let headerParams = {}
-        let formParams = {}
+        const queryParams = {}
+        const headerParams = {}
+        const formParams = {}
 
-        let authNames = ['customers_auth', 'oauth2_application']
-        let contentTypes = ['application/json', 'text/xml', 'application/xml']
-        let accepts = ['application/json', 'text/xml', 'application/xml']
-        let returnType = null
+        const authNames = ['customers_auth', 'oauth2_application']
+        const contentTypes = ['application/json', 'text/xml', 'application/xml']
+        const accepts = ['application/json', 'text/xml', 'application/xml']
+        const returnType = null
 
         return this.apiClient.callApi(
             '/baskets/{basket_id}', 'DELETE',
@@ -83,7 +83,7 @@ export default class BasketsApi {
      */
     deleteBasketsByID(basketId) {
         return this.deleteBasketsByIDWithHttpInfo(basketId)
-            .then(function(response_and_data) {
+            .then((response_and_data) => {
                 return response_and_data.data
             })
     }
@@ -96,31 +96,31 @@ export default class BasketsApi {
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:models/BasketModel} and HTTP response
      */
     deleteBasketsByIDCouponsByIDWithHttpInfo(basketId, couponItemId) {
-        let postBody = null
+        const postBody = null
 
         // verify the required parameter 'basketId' is set
         if (basketId === undefined || basketId === null) {
-            throw new Error("Missing the required parameter 'basketId' when calling deleteBasketsByIDCouponsByID")
+            throw new Error('Missing the required parameter \'basketId\' when calling deleteBasketsByIDCouponsByID')
         }
 
         // verify the required parameter 'couponItemId' is set
         if (couponItemId === undefined || couponItemId === null) {
-            throw new Error("Missing the required parameter 'couponItemId' when calling deleteBasketsByIDCouponsByID")
+            throw new Error('Missing the required parameter \'couponItemId\' when calling deleteBasketsByIDCouponsByID')
         }
 
 
-        let pathParams = {
-            'basket_id': basketId,
-            'coupon_item_id': couponItemId
+        const pathParams = {
+            basket_id: basketId,
+            coupon_item_id: couponItemId
         }
-        let queryParams = {}
-        let headerParams = {}
-        let formParams = {}
+        const queryParams = {}
+        const headerParams = {}
+        const formParams = {}
 
-        let authNames = ['customers_auth', 'oauth2_application']
-        let contentTypes = ['application/json', 'text/xml', 'application/xml']
-        let accepts = ['application/json', 'text/xml', 'application/xml']
-        let returnType = BasketModel
+        const authNames = ['customers_auth', 'oauth2_application']
+        const contentTypes = ['application/json', 'text/xml', 'application/xml']
+        const accepts = ['application/json', 'text/xml', 'application/xml']
+        const returnType = BasketModel
 
         return this.apiClient.callApi(
             '/baskets/{basket_id}/coupons/{coupon_item_id}', 'DELETE',
@@ -137,7 +137,7 @@ export default class BasketsApi {
      */
     deleteBasketsByIDCouponsByID(basketId, couponItemId) {
         return this.deleteBasketsByIDCouponsByIDWithHttpInfo(basketId, couponItemId)
-            .then(function(response_and_data) {
+            .then((response_and_data) => {
                 return response_and_data.data
             })
     }
@@ -150,31 +150,31 @@ export default class BasketsApi {
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:models/BasketModel} and HTTP response
      */
     deleteBasketsByIDItemsByIDWithHttpInfo(basketId, itemId) {
-        let postBody = null
+        const postBody = null
 
         // verify the required parameter 'basketId' is set
         if (basketId === undefined || basketId === null) {
-            throw new Error("Missing the required parameter 'basketId' when calling deleteBasketsByIDItemsByID")
+            throw new Error('Missing the required parameter \'basketId\' when calling deleteBasketsByIDItemsByID')
         }
 
         // verify the required parameter 'itemId' is set
         if (itemId === undefined || itemId === null) {
-            throw new Error("Missing the required parameter 'itemId' when calling deleteBasketsByIDItemsByID")
+            throw new Error('Missing the required parameter \'itemId\' when calling deleteBasketsByIDItemsByID')
         }
 
 
-        let pathParams = {
-            'basket_id': basketId,
-            'item_id': itemId
+        const pathParams = {
+            basket_id: basketId,
+            item_id: itemId
         }
-        let queryParams = {}
-        let headerParams = {}
-        let formParams = {}
+        const queryParams = {}
+        const headerParams = {}
+        const formParams = {}
 
-        let authNames = ['customers_auth', 'oauth2_application']
-        let contentTypes = ['application/json', 'text/xml', 'application/xml']
-        let accepts = ['application/json', 'text/xml', 'application/xml']
-        let returnType = BasketModel
+        const authNames = ['customers_auth', 'oauth2_application']
+        const contentTypes = ['application/json', 'text/xml', 'application/xml']
+        const accepts = ['application/json', 'text/xml', 'application/xml']
+        const returnType = BasketModel
 
         return this.apiClient.callApi(
             '/baskets/{basket_id}/items/{item_id}', 'DELETE',
@@ -191,7 +191,7 @@ export default class BasketsApi {
      */
     deleteBasketsByIDItemsByID(basketId, itemId) {
         return this.deleteBasketsByIDItemsByIDWithHttpInfo(basketId, itemId)
-            .then(function(response_and_data) {
+            .then((response_and_data) => {
                 return response_and_data.data
             })
     }
@@ -204,31 +204,31 @@ export default class BasketsApi {
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:models/BasketModel} and HTTP response
      */
     deleteBasketsByIDNotesByIDWithHttpInfo(basketId, noteId) {
-        let postBody = null
+        const postBody = null
 
         // verify the required parameter 'basketId' is set
         if (basketId === undefined || basketId === null) {
-            throw new Error("Missing the required parameter 'basketId' when calling deleteBasketsByIDNotesByID")
+            throw new Error('Missing the required parameter \'basketId\' when calling deleteBasketsByIDNotesByID')
         }
 
         // verify the required parameter 'noteId' is set
         if (noteId === undefined || noteId === null) {
-            throw new Error("Missing the required parameter 'noteId' when calling deleteBasketsByIDNotesByID")
+            throw new Error('Missing the required parameter \'noteId\' when calling deleteBasketsByIDNotesByID')
         }
 
 
-        let pathParams = {
-            'basket_id': basketId,
-            'note_id': noteId
+        const pathParams = {
+            basket_id: basketId,
+            note_id: noteId
         }
-        let queryParams = {}
-        let headerParams = {}
-        let formParams = {}
+        const queryParams = {}
+        const headerParams = {}
+        const formParams = {}
 
-        let authNames = ['customers_auth', 'oauth2_application']
-        let contentTypes = ['application/json', 'text/xml', 'application/xml']
-        let accepts = ['application/json', 'text/xml', 'application/xml']
-        let returnType = BasketModel
+        const authNames = ['customers_auth', 'oauth2_application']
+        const contentTypes = ['application/json', 'text/xml', 'application/xml']
+        const accepts = ['application/json', 'text/xml', 'application/xml']
+        const returnType = BasketModel
 
         return this.apiClient.callApi(
             '/baskets/{basket_id}/notes/{note_id}', 'DELETE',
@@ -245,7 +245,7 @@ export default class BasketsApi {
      */
     deleteBasketsByIDNotesByID(basketId, noteId) {
         return this.deleteBasketsByIDNotesByIDWithHttpInfo(basketId, noteId)
-            .then(function(response_and_data) {
+            .then((response_and_data) => {
                 return response_and_data.data
             })
     }
@@ -258,31 +258,31 @@ export default class BasketsApi {
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:models/BasketModel} and HTTP response
      */
     deleteBasketsByIDPaymentInstrumentsByIDWithHttpInfo(basketId, paymentInstrumentId) {
-        let postBody = null
+        const postBody = null
 
         // verify the required parameter 'basketId' is set
         if (basketId === undefined || basketId === null) {
-            throw new Error("Missing the required parameter 'basketId' when calling deleteBasketsByIDPaymentInstrumentsByID")
+            throw new Error('Missing the required parameter \'basketId\' when calling deleteBasketsByIDPaymentInstrumentsByID')
         }
 
         // verify the required parameter 'paymentInstrumentId' is set
         if (paymentInstrumentId === undefined || paymentInstrumentId === null) {
-            throw new Error("Missing the required parameter 'paymentInstrumentId' when calling deleteBasketsByIDPaymentInstrumentsByID")
+            throw new Error('Missing the required parameter \'paymentInstrumentId\' when calling deleteBasketsByIDPaymentInstrumentsByID')
         }
 
 
-        let pathParams = {
-            'basket_id': basketId,
-            'payment_instrument_id': paymentInstrumentId
+        const pathParams = {
+            basket_id: basketId,
+            payment_instrument_id: paymentInstrumentId
         }
-        let queryParams = {}
-        let headerParams = {}
-        let formParams = {}
+        const queryParams = {}
+        const headerParams = {}
+        const formParams = {}
 
-        let authNames = ['customers_auth', 'oauth2_application']
-        let contentTypes = ['application/json', 'text/xml', 'application/xml']
-        let accepts = ['application/json', 'text/xml', 'application/xml']
-        let returnType = BasketModel
+        const authNames = ['customers_auth', 'oauth2_application']
+        const contentTypes = ['application/json', 'text/xml', 'application/xml']
+        const accepts = ['application/json', 'text/xml', 'application/xml']
+        const returnType = BasketModel
 
         return this.apiClient.callApi(
             '/baskets/{basket_id}/payment_instruments/{payment_instrument_id}', 'DELETE',
@@ -299,7 +299,7 @@ export default class BasketsApi {
      */
     deleteBasketsByIDPaymentInstrumentsByID(basketId, paymentInstrumentId) {
         return this.deleteBasketsByIDPaymentInstrumentsByIDWithHttpInfo(basketId, paymentInstrumentId)
-            .then(function(response_and_data) {
+            .then((response_and_data) => {
                 return response_and_data.data
             })
     }
@@ -312,31 +312,31 @@ export default class BasketsApi {
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:models/BasketModel} and HTTP response
      */
     deleteBasketsByIDShipmentsByIDWithHttpInfo(basketId, shipmentId) {
-        let postBody = null
+        const postBody = null
 
         // verify the required parameter 'basketId' is set
         if (basketId === undefined || basketId === null) {
-            throw new Error("Missing the required parameter 'basketId' when calling deleteBasketsByIDShipmentsByID")
+            throw new Error('Missing the required parameter \'basketId\' when calling deleteBasketsByIDShipmentsByID')
         }
 
         // verify the required parameter 'shipmentId' is set
         if (shipmentId === undefined || shipmentId === null) {
-            throw new Error("Missing the required parameter 'shipmentId' when calling deleteBasketsByIDShipmentsByID")
+            throw new Error('Missing the required parameter \'shipmentId\' when calling deleteBasketsByIDShipmentsByID')
         }
 
 
-        let pathParams = {
-            'basket_id': basketId,
-            'shipment_id': shipmentId
+        const pathParams = {
+            basket_id: basketId,
+            shipment_id: shipmentId
         }
-        let queryParams = {}
-        let headerParams = {}
-        let formParams = {}
+        const queryParams = {}
+        const headerParams = {}
+        const formParams = {}
 
-        let authNames = ['customers_auth', 'oauth2_application']
-        let contentTypes = ['application/json', 'text/xml', 'application/xml']
-        let accepts = ['application/json', 'text/xml', 'application/xml']
-        let returnType = BasketModel
+        const authNames = ['customers_auth', 'oauth2_application']
+        const contentTypes = ['application/json', 'text/xml', 'application/xml']
+        const accepts = ['application/json', 'text/xml', 'application/xml']
+        const returnType = BasketModel
 
         return this.apiClient.callApi(
             '/baskets/{basket_id}/shipments/{shipment_id}', 'DELETE',
@@ -353,7 +353,7 @@ export default class BasketsApi {
      */
     deleteBasketsByIDShipmentsByID(basketId, shipmentId) {
         return this.deleteBasketsByIDShipmentsByIDWithHttpInfo(basketId, shipmentId)
-            .then(function(response_and_data) {
+            .then((response_and_data) => {
                 return response_and_data.data
             })
     }
@@ -365,25 +365,25 @@ export default class BasketsApi {
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:models/BasketModel} and HTTP response
      */
     getBasketsByIDWithHttpInfo(basketId) {
-        let postBody = null
+        const postBody = null
 
         // verify the required parameter 'basketId' is set
         if (basketId === undefined || basketId === null) {
-            throw new Error("Missing the required parameter 'basketId' when calling getBasketsByID")
+            throw new Error('Missing the required parameter \'basketId\' when calling getBasketsByID')
         }
 
 
-        let pathParams = {
-            'basket_id': basketId
+        const pathParams = {
+            basket_id: basketId
         }
-        let queryParams = {}
-        let headerParams = {}
-        let formParams = {}
+        const queryParams = {}
+        const headerParams = {}
+        const formParams = {}
 
-        let authNames = ['customers_auth', 'oauth2_application']
-        let contentTypes = ['application/json', 'text/xml', 'application/xml']
-        let accepts = ['application/json', 'text/xml', 'application/xml']
-        let returnType = BasketModel
+        const authNames = ['customers_auth', 'oauth2_application']
+        const contentTypes = ['application/json', 'text/xml', 'application/xml']
+        const accepts = ['application/json', 'text/xml', 'application/xml']
+        const returnType = BasketModel
 
         return this.apiClient.callApi(
             '/baskets/{basket_id}', 'GET',
@@ -399,7 +399,7 @@ export default class BasketsApi {
      */
     getBasketsByID(basketId) {
         return this.getBasketsByIDWithHttpInfo(basketId)
-            .then(function(response_and_data) {
+            .then((response_and_data) => {
                 return response_and_data.data
             })
     }
@@ -411,25 +411,25 @@ export default class BasketsApi {
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:models/NotesResultModel} and HTTP response
      */
     getBasketsByIDNotesWithHttpInfo(basketId) {
-        let postBody = null
+        const postBody = null
 
         // verify the required parameter 'basketId' is set
         if (basketId === undefined || basketId === null) {
-            throw new Error("Missing the required parameter 'basketId' when calling getBasketsByIDNotes")
+            throw new Error('Missing the required parameter \'basketId\' when calling getBasketsByIDNotes')
         }
 
 
-        let pathParams = {
-            'basket_id': basketId
+        const pathParams = {
+            basket_id: basketId
         }
-        let queryParams = {}
-        let headerParams = {}
-        let formParams = {}
+        const queryParams = {}
+        const headerParams = {}
+        const formParams = {}
 
-        let authNames = ['customers_auth', 'oauth2_application']
-        let contentTypes = ['application/json', 'text/xml', 'application/xml']
-        let accepts = ['application/json', 'text/xml', 'application/xml']
-        let returnType = NotesResultModel
+        const authNames = ['customers_auth', 'oauth2_application']
+        const contentTypes = ['application/json', 'text/xml', 'application/xml']
+        const accepts = ['application/json', 'text/xml', 'application/xml']
+        const returnType = NotesResultModel
 
         return this.apiClient.callApi(
             '/baskets/{basket_id}/notes', 'GET',
@@ -445,7 +445,7 @@ export default class BasketsApi {
      */
     getBasketsByIDNotes(basketId) {
         return this.getBasketsByIDNotesWithHttpInfo(basketId)
-            .then(function(response_and_data) {
+            .then((response_and_data) => {
                 return response_and_data.data
             })
     }
@@ -457,25 +457,25 @@ export default class BasketsApi {
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:models/PaymentMethodResultModel} and HTTP response
      */
     getBasketsByIDPaymentMethodsWithHttpInfo(basketId) {
-        let postBody = null
+        const postBody = null
 
         // verify the required parameter 'basketId' is set
         if (basketId === undefined || basketId === null) {
-            throw new Error("Missing the required parameter 'basketId' when calling getBasketsByIDPaymentMethods")
+            throw new Error('Missing the required parameter \'basketId\' when calling getBasketsByIDPaymentMethods')
         }
 
 
-        let pathParams = {
-            'basket_id': basketId
+        const pathParams = {
+            basket_id: basketId
         }
-        let queryParams = {}
-        let headerParams = {}
-        let formParams = {}
+        const queryParams = {}
+        const headerParams = {}
+        const formParams = {}
 
-        let authNames = ['customers_auth', 'oauth2_application']
-        let contentTypes = ['application/json', 'text/xml', 'application/xml']
-        let accepts = ['application/json', 'text/xml', 'application/xml']
-        let returnType = PaymentMethodResultModel
+        const authNames = ['customers_auth', 'oauth2_application']
+        const contentTypes = ['application/json', 'text/xml', 'application/xml']
+        const accepts = ['application/json', 'text/xml', 'application/xml']
+        const returnType = PaymentMethodResultModel
 
         return this.apiClient.callApi(
             '/baskets/{basket_id}/payment_methods', 'GET',
@@ -491,7 +491,7 @@ export default class BasketsApi {
      */
     getBasketsByIDPaymentMethods(basketId) {
         return this.getBasketsByIDPaymentMethodsWithHttpInfo(basketId)
-            .then(function(response_and_data) {
+            .then((response_and_data) => {
                 return response_and_data.data
             })
     }
@@ -504,31 +504,31 @@ export default class BasketsApi {
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:models/ShippingMethodResultModel} and HTTP response
      */
     getBasketsByIDShipmentsByIDShippingMethodsWithHttpInfo(basketId, shipmentId) {
-        let postBody = null
+        const postBody = null
 
         // verify the required parameter 'basketId' is set
         if (basketId === undefined || basketId === null) {
-            throw new Error("Missing the required parameter 'basketId' when calling getBasketsByIDShipmentsByIDShippingMethods")
+            throw new Error('Missing the required parameter \'basketId\' when calling getBasketsByIDShipmentsByIDShippingMethods')
         }
 
         // verify the required parameter 'shipmentId' is set
         if (shipmentId === undefined || shipmentId === null) {
-            throw new Error("Missing the required parameter 'shipmentId' when calling getBasketsByIDShipmentsByIDShippingMethods")
+            throw new Error('Missing the required parameter \'shipmentId\' when calling getBasketsByIDShipmentsByIDShippingMethods')
         }
 
 
-        let pathParams = {
-            'basket_id': basketId,
-            'shipment_id': shipmentId
+        const pathParams = {
+            basket_id: basketId,
+            shipment_id: shipmentId
         }
-        let queryParams = {}
-        let headerParams = {}
-        let formParams = {}
+        const queryParams = {}
+        const headerParams = {}
+        const formParams = {}
 
-        let authNames = ['customers_auth', 'oauth2_application']
-        let contentTypes = ['application/json', 'text/xml', 'application/xml']
-        let accepts = ['application/json', 'text/xml', 'application/xml']
-        let returnType = ShippingMethodResultModel
+        const authNames = ['customers_auth', 'oauth2_application']
+        const contentTypes = ['application/json', 'text/xml', 'application/xml']
+        const accepts = ['application/json', 'text/xml', 'application/xml']
+        const returnType = ShippingMethodResultModel
 
         return this.apiClient.callApi(
             '/baskets/{basket_id}/shipments/{shipment_id}/shipping_methods', 'GET',
@@ -545,7 +545,7 @@ export default class BasketsApi {
      */
     getBasketsByIDShipmentsByIDShippingMethods(basketId, shipmentId) {
         return this.getBasketsByIDShipmentsByIDShippingMethodsWithHttpInfo(basketId, shipmentId)
-            .then(function(response_and_data) {
+            .then((response_and_data) => {
                 return response_and_data.data
             })
     }
@@ -558,30 +558,30 @@ export default class BasketsApi {
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:models/BasketModel} and HTTP response
      */
     patchBasketsByIDWithHttpInfo(basketId, body) {
-        let postBody = body
+        const postBody = body
 
         // verify the required parameter 'basketId' is set
         if (basketId === undefined || basketId === null) {
-            throw new Error("Missing the required parameter 'basketId' when calling patchBasketsByID")
+            throw new Error('Missing the required parameter \'basketId\' when calling patchBasketsByID')
         }
 
         // verify the required parameter 'body' is set
         if (body === undefined || body === null) {
-            throw new Error("Missing the required parameter 'body' when calling patchBasketsByID")
+            throw new Error('Missing the required parameter \'body\' when calling patchBasketsByID')
         }
 
 
-        let pathParams = {
-            'basket_id': basketId
+        const pathParams = {
+            basket_id: basketId
         }
-        let queryParams = {}
-        let headerParams = {}
-        let formParams = {}
+        const queryParams = {}
+        const headerParams = {}
+        const formParams = {}
 
-        let authNames = ['customers_auth', 'oauth2_application']
-        let contentTypes = ['application/json', 'text/xml', 'application/xml']
-        let accepts = ['application/json', 'text/xml', 'application/xml']
-        let returnType = BasketModel
+        const authNames = ['customers_auth', 'oauth2_application']
+        const contentTypes = ['application/json', 'text/xml', 'application/xml']
+        const accepts = ['application/json', 'text/xml', 'application/xml']
+        const returnType = BasketModel
 
         return this.apiClient.callApi(
             '/baskets/{basket_id}', 'PATCH',
@@ -598,7 +598,7 @@ export default class BasketsApi {
      */
     patchBasketsByID(basketId, body) {
         return this.patchBasketsByIDWithHttpInfo(basketId, body)
-            .then(function(response_and_data) {
+            .then((response_and_data) => {
                 return response_and_data.data
             })
     }
@@ -612,36 +612,36 @@ export default class BasketsApi {
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:models/BasketModel} and HTTP response
      */
     patchBasketsByIDItemsByIDWithHttpInfo(basketId, itemId, body) {
-        let postBody = body
+        const postBody = body
 
         // verify the required parameter 'basketId' is set
         if (basketId === undefined || basketId === null) {
-            throw new Error("Missing the required parameter 'basketId' when calling patchBasketsByIDItemsByID")
+            throw new Error('Missing the required parameter \'basketId\' when calling patchBasketsByIDItemsByID')
         }
 
         // verify the required parameter 'itemId' is set
         if (itemId === undefined || itemId === null) {
-            throw new Error("Missing the required parameter 'itemId' when calling patchBasketsByIDItemsByID")
+            throw new Error('Missing the required parameter \'itemId\' when calling patchBasketsByIDItemsByID')
         }
 
         // verify the required parameter 'body' is set
         if (body === undefined || body === null) {
-            throw new Error("Missing the required parameter 'body' when calling patchBasketsByIDItemsByID")
+            throw new Error('Missing the required parameter \'body\' when calling patchBasketsByIDItemsByID')
         }
 
 
-        let pathParams = {
-            'basket_id': basketId,
-            'item_id': itemId
+        const pathParams = {
+            basket_id: basketId,
+            item_id: itemId
         }
-        let queryParams = {}
-        let headerParams = {}
-        let formParams = {}
+        const queryParams = {}
+        const headerParams = {}
+        const formParams = {}
 
-        let authNames = ['customers_auth', 'oauth2_application']
-        let contentTypes = ['application/json', 'text/xml', 'application/xml']
-        let accepts = ['application/json', 'text/xml', 'application/xml']
-        let returnType = BasketModel
+        const authNames = ['customers_auth', 'oauth2_application']
+        const contentTypes = ['application/json', 'text/xml', 'application/xml']
+        const accepts = ['application/json', 'text/xml', 'application/xml']
+        const returnType = BasketModel
 
         return this.apiClient.callApi(
             '/baskets/{basket_id}/items/{item_id}', 'PATCH',
@@ -659,7 +659,7 @@ export default class BasketsApi {
      */
     patchBasketsByIDItemsByID(basketId, itemId, body) {
         return this.patchBasketsByIDItemsByIDWithHttpInfo(basketId, itemId, body)
-            .then(function(response_and_data) {
+            .then((response_and_data) => {
                 return response_and_data.data
             })
     }
@@ -673,36 +673,36 @@ export default class BasketsApi {
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:models/BasketModel} and HTTP response
      */
     patchBasketsByIDPaymentInstrumentsByIDWithHttpInfo(basketId, paymentInstrumentId, body) {
-        let postBody = body
+        const postBody = body
 
         // verify the required parameter 'basketId' is set
         if (basketId === undefined || basketId === null) {
-            throw new Error("Missing the required parameter 'basketId' when calling patchBasketsByIDPaymentInstrumentsByID")
+            throw new Error('Missing the required parameter \'basketId\' when calling patchBasketsByIDPaymentInstrumentsByID')
         }
 
         // verify the required parameter 'paymentInstrumentId' is set
         if (paymentInstrumentId === undefined || paymentInstrumentId === null) {
-            throw new Error("Missing the required parameter 'paymentInstrumentId' when calling patchBasketsByIDPaymentInstrumentsByID")
+            throw new Error('Missing the required parameter \'paymentInstrumentId\' when calling patchBasketsByIDPaymentInstrumentsByID')
         }
 
         // verify the required parameter 'body' is set
         if (body === undefined || body === null) {
-            throw new Error("Missing the required parameter 'body' when calling patchBasketsByIDPaymentInstrumentsByID")
+            throw new Error('Missing the required parameter \'body\' when calling patchBasketsByIDPaymentInstrumentsByID')
         }
 
 
-        let pathParams = {
-            'basket_id': basketId,
-            'payment_instrument_id': paymentInstrumentId
+        const pathParams = {
+            basket_id: basketId,
+            payment_instrument_id: paymentInstrumentId
         }
-        let queryParams = {}
-        let headerParams = {}
-        let formParams = {}
+        const queryParams = {}
+        const headerParams = {}
+        const formParams = {}
 
-        let authNames = ['customers_auth', 'oauth2_application']
-        let contentTypes = ['application/json', 'text/xml', 'application/xml']
-        let accepts = ['application/json', 'text/xml', 'application/xml']
-        let returnType = BasketModel
+        const authNames = ['customers_auth', 'oauth2_application']
+        const contentTypes = ['application/json', 'text/xml', 'application/xml']
+        const accepts = ['application/json', 'text/xml', 'application/xml']
+        const returnType = BasketModel
 
         return this.apiClient.callApi(
             '/baskets/{basket_id}/payment_instruments/{payment_instrument_id}', 'PATCH',
@@ -720,7 +720,7 @@ export default class BasketsApi {
      */
     patchBasketsByIDPaymentInstrumentsByID(basketId, paymentInstrumentId, body) {
         return this.patchBasketsByIDPaymentInstrumentsByIDWithHttpInfo(basketId, paymentInstrumentId, body)
-            .then(function(response_and_data) {
+            .then((response_and_data) => {
                 return response_and_data.data
             })
     }
@@ -734,36 +734,36 @@ export default class BasketsApi {
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:models/BasketModel} and HTTP response
      */
     patchBasketsByIDShipmentsByIDWithHttpInfo(basketId, shipmentId, body) {
-        let postBody = body
+        const postBody = body
 
         // verify the required parameter 'basketId' is set
         if (basketId === undefined || basketId === null) {
-            throw new Error("Missing the required parameter 'basketId' when calling patchBasketsByIDShipmentsByID")
+            throw new Error('Missing the required parameter \'basketId\' when calling patchBasketsByIDShipmentsByID')
         }
 
         // verify the required parameter 'shipmentId' is set
         if (shipmentId === undefined || shipmentId === null) {
-            throw new Error("Missing the required parameter 'shipmentId' when calling patchBasketsByIDShipmentsByID")
+            throw new Error('Missing the required parameter \'shipmentId\' when calling patchBasketsByIDShipmentsByID')
         }
 
         // verify the required parameter 'body' is set
         if (body === undefined || body === null) {
-            throw new Error("Missing the required parameter 'body' when calling patchBasketsByIDShipmentsByID")
+            throw new Error('Missing the required parameter \'body\' when calling patchBasketsByIDShipmentsByID')
         }
 
 
-        let pathParams = {
-            'basket_id': basketId,
-            'shipment_id': shipmentId
+        const pathParams = {
+            basket_id: basketId,
+            shipment_id: shipmentId
         }
-        let queryParams = {}
-        let headerParams = {}
-        let formParams = {}
+        const queryParams = {}
+        const headerParams = {}
+        const formParams = {}
 
-        let authNames = ['customers_auth', 'oauth2_application']
-        let contentTypes = ['application/json', 'text/xml', 'application/xml']
-        let accepts = ['application/json', 'text/xml', 'application/xml']
-        let returnType = BasketModel
+        const authNames = ['customers_auth', 'oauth2_application']
+        const contentTypes = ['application/json', 'text/xml', 'application/xml']
+        const accepts = ['application/json', 'text/xml', 'application/xml']
+        const returnType = BasketModel
 
         return this.apiClient.callApi(
             '/baskets/{basket_id}/shipments/{shipment_id}', 'PATCH',
@@ -781,7 +781,7 @@ export default class BasketsApi {
      */
     patchBasketsByIDShipmentsByID(basketId, shipmentId, body) {
         return this.patchBasketsByIDShipmentsByIDWithHttpInfo(basketId, shipmentId, body)
-            .then(function(response_and_data) {
+            .then((response_and_data) => {
                 return response_and_data.data
             })
     }
@@ -795,18 +795,18 @@ export default class BasketsApi {
      */
     postBasketsWithHttpInfo(opts) {
         opts = opts || {}
-        let postBody = opts['body']
+        const postBody = opts.body
 
 
-        let pathParams = {}
-        let queryParams = {}
-        let headerParams = {}
-        let formParams = {}
+        const pathParams = {}
+        const queryParams = {}
+        const headerParams = {}
+        const formParams = {}
 
-        let authNames = ['customers_auth', 'oauth2_application']
-        let contentTypes = ['application/json', 'text/xml', 'application/xml']
-        let accepts = ['application/json', 'text/xml', 'application/xml']
-        let returnType = BasketModel
+        const authNames = ['customers_auth', 'oauth2_application']
+        const contentTypes = ['application/json', 'text/xml', 'application/xml']
+        const accepts = ['application/json', 'text/xml', 'application/xml']
+        const returnType = BasketModel
 
         return this.apiClient.callApi(
             '/baskets', 'POST',
@@ -823,7 +823,7 @@ export default class BasketsApi {
      */
     postBaskets(opts) {
         return this.postBasketsWithHttpInfo(opts)
-            .then(function(response_and_data) {
+            .then((response_and_data) => {
                 return response_and_data.data
             })
     }
@@ -836,30 +836,30 @@ export default class BasketsApi {
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:models/BasketModel} and HTTP response
      */
     postBasketsByIDCouponsWithHttpInfo(basketId, body) {
-        let postBody = body
+        const postBody = body
 
         // verify the required parameter 'basketId' is set
         if (basketId === undefined || basketId === null) {
-            throw new Error("Missing the required parameter 'basketId' when calling postBasketsByIDCoupons")
+            throw new Error('Missing the required parameter \'basketId\' when calling postBasketsByIDCoupons')
         }
 
         // verify the required parameter 'body' is set
         if (body === undefined || body === null) {
-            throw new Error("Missing the required parameter 'body' when calling postBasketsByIDCoupons")
+            throw new Error('Missing the required parameter \'body\' when calling postBasketsByIDCoupons')
         }
 
 
-        let pathParams = {
-            'basket_id': basketId
+        const pathParams = {
+            basket_id: basketId
         }
-        let queryParams = {}
-        let headerParams = {}
-        let formParams = {}
+        const queryParams = {}
+        const headerParams = {}
+        const formParams = {}
 
-        let authNames = ['customers_auth', 'oauth2_application']
-        let contentTypes = ['application/json', 'text/xml', 'application/xml']
-        let accepts = ['application/json', 'text/xml', 'application/xml']
-        let returnType = BasketModel
+        const authNames = ['customers_auth', 'oauth2_application']
+        const contentTypes = ['application/json', 'text/xml', 'application/xml']
+        const accepts = ['application/json', 'text/xml', 'application/xml']
+        const returnType = BasketModel
 
         return this.apiClient.callApi(
             '/baskets/{basket_id}/coupons', 'POST',
@@ -876,7 +876,7 @@ export default class BasketsApi {
      */
     postBasketsByIDCoupons(basketId, body) {
         return this.postBasketsByIDCouponsWithHttpInfo(basketId, body)
-            .then(function(response_and_data) {
+            .then((response_and_data) => {
                 return response_and_data.data
             })
     }
@@ -889,30 +889,30 @@ export default class BasketsApi {
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:models/BasketModel} and HTTP response
      */
     postBasketsByIDGiftCertificateItemsWithHttpInfo(basketId, body) {
-        let postBody = body
+        const postBody = body
 
         // verify the required parameter 'basketId' is set
         if (basketId === undefined || basketId === null) {
-            throw new Error("Missing the required parameter 'basketId' when calling postBasketsByIDGiftCertificateItems")
+            throw new Error('Missing the required parameter \'basketId\' when calling postBasketsByIDGiftCertificateItems')
         }
 
         // verify the required parameter 'body' is set
         if (body === undefined || body === null) {
-            throw new Error("Missing the required parameter 'body' when calling postBasketsByIDGiftCertificateItems")
+            throw new Error('Missing the required parameter \'body\' when calling postBasketsByIDGiftCertificateItems')
         }
 
 
-        let pathParams = {
-            'basket_id': basketId
+        const pathParams = {
+            basket_id: basketId
         }
-        let queryParams = {}
-        let headerParams = {}
-        let formParams = {}
+        const queryParams = {}
+        const headerParams = {}
+        const formParams = {}
 
-        let authNames = ['customers_auth', 'oauth2_application']
-        let contentTypes = ['application/json', 'text/xml', 'application/xml']
-        let accepts = ['application/json', 'text/xml', 'application/xml']
-        let returnType = BasketModel
+        const authNames = ['customers_auth', 'oauth2_application']
+        const contentTypes = ['application/json', 'text/xml', 'application/xml']
+        const accepts = ['application/json', 'text/xml', 'application/xml']
+        const returnType = BasketModel
 
         return this.apiClient.callApi(
             '/baskets/{basket_id}/gift_certificate_items', 'POST',
@@ -929,7 +929,7 @@ export default class BasketsApi {
      */
     postBasketsByIDGiftCertificateItems(basketId, body) {
         return this.postBasketsByIDGiftCertificateItemsWithHttpInfo(basketId, body)
-            .then(function(response_and_data) {
+            .then((response_and_data) => {
                 return response_and_data.data
             })
     }
@@ -942,30 +942,30 @@ export default class BasketsApi {
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:models/BasketModel} and HTTP response
      */
     postBasketsByIDItemsWithHttpInfo(basketId, body) {
-        let postBody = body
+        const postBody = body
 
         // verify the required parameter 'basketId' is set
         if (basketId === undefined || basketId === null) {
-            throw new Error("Missing the required parameter 'basketId' when calling postBasketsByIDItems")
+            throw new Error('Missing the required parameter \'basketId\' when calling postBasketsByIDItems')
         }
 
         // verify the required parameter 'body' is set
         if (body === undefined || body === null) {
-            throw new Error("Missing the required parameter 'body' when calling postBasketsByIDItems")
+            throw new Error('Missing the required parameter \'body\' when calling postBasketsByIDItems')
         }
 
 
-        let pathParams = {
-            'basket_id': basketId
+        const pathParams = {
+            basket_id: basketId
         }
-        let queryParams = {}
-        let headerParams = {}
-        let formParams = {}
+        const queryParams = {}
+        const headerParams = {}
+        const formParams = {}
 
-        let authNames = ['customers_auth', 'oauth2_application']
-        let contentTypes = ['application/json', 'text/xml', 'application/xml']
-        let accepts = ['application/json', 'text/xml', 'application/xml']
-        let returnType = BasketModel
+        const authNames = ['customers_auth', 'oauth2_application']
+        const contentTypes = ['application/json', 'text/xml', 'application/xml']
+        const accepts = ['application/json', 'text/xml', 'application/xml']
+        const returnType = BasketModel
 
         return this.apiClient.callApi(
             '/baskets/{basket_id}/items', 'POST',
@@ -982,7 +982,7 @@ export default class BasketsApi {
      */
     postBasketsByIDItems(basketId, body) {
         return this.postBasketsByIDItemsWithHttpInfo(basketId, body)
-            .then(function(response_and_data) {
+            .then((response_and_data) => {
                 return response_and_data.data
             })
     }
@@ -995,30 +995,30 @@ export default class BasketsApi {
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:models/BasketModel} and HTTP response
      */
     postBasketsByIDNotesWithHttpInfo(basketId, body) {
-        let postBody = body
+        const postBody = body
 
         // verify the required parameter 'basketId' is set
         if (basketId === undefined || basketId === null) {
-            throw new Error("Missing the required parameter 'basketId' when calling postBasketsByIDNotes")
+            throw new Error('Missing the required parameter \'basketId\' when calling postBasketsByIDNotes')
         }
 
         // verify the required parameter 'body' is set
         if (body === undefined || body === null) {
-            throw new Error("Missing the required parameter 'body' when calling postBasketsByIDNotes")
+            throw new Error('Missing the required parameter \'body\' when calling postBasketsByIDNotes')
         }
 
 
-        let pathParams = {
-            'basket_id': basketId
+        const pathParams = {
+            basket_id: basketId
         }
-        let queryParams = {}
-        let headerParams = {}
-        let formParams = {}
+        const queryParams = {}
+        const headerParams = {}
+        const formParams = {}
 
-        let authNames = ['customers_auth', 'oauth2_application']
-        let contentTypes = ['application/json', 'text/xml', 'application/xml']
-        let accepts = ['application/json', 'text/xml', 'application/xml']
-        let returnType = BasketModel
+        const authNames = ['customers_auth', 'oauth2_application']
+        const contentTypes = ['application/json', 'text/xml', 'application/xml']
+        const accepts = ['application/json', 'text/xml', 'application/xml']
+        const returnType = BasketModel
 
         return this.apiClient.callApi(
             '/baskets/{basket_id}/notes', 'POST',
@@ -1035,7 +1035,7 @@ export default class BasketsApi {
      */
     postBasketsByIDNotes(basketId, body) {
         return this.postBasketsByIDNotesWithHttpInfo(basketId, body)
-            .then(function(response_and_data) {
+            .then((response_and_data) => {
                 return response_and_data.data
             })
     }
@@ -1048,30 +1048,30 @@ export default class BasketsApi {
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:models/BasketModel} and HTTP response
      */
     postBasketsByIDPaymentInstrumentsWithHttpInfo(basketId, body) {
-        let postBody = body
+        const postBody = body
 
         // verify the required parameter 'basketId' is set
         if (basketId === undefined || basketId === null) {
-            throw new Error("Missing the required parameter 'basketId' when calling postBasketsByIDPaymentInstruments")
+            throw new Error('Missing the required parameter \'basketId\' when calling postBasketsByIDPaymentInstruments')
         }
 
         // verify the required parameter 'body' is set
         if (body === undefined || body === null) {
-            throw new Error("Missing the required parameter 'body' when calling postBasketsByIDPaymentInstruments")
+            throw new Error('Missing the required parameter \'body\' when calling postBasketsByIDPaymentInstruments')
         }
 
 
-        let pathParams = {
-            'basket_id': basketId
+        const pathParams = {
+            basket_id: basketId
         }
-        let queryParams = {}
-        let headerParams = {}
-        let formParams = {}
+        const queryParams = {}
+        const headerParams = {}
+        const formParams = {}
 
-        let authNames = ['customers_auth', 'oauth2_application']
-        let contentTypes = ['application/json', 'text/xml', 'application/xml']
-        let accepts = ['application/json', 'text/xml', 'application/xml']
-        let returnType = BasketModel
+        const authNames = ['customers_auth', 'oauth2_application']
+        const contentTypes = ['application/json', 'text/xml', 'application/xml']
+        const accepts = ['application/json', 'text/xml', 'application/xml']
+        const returnType = BasketModel
 
         return this.apiClient.callApi(
             '/baskets/{basket_id}/payment_instruments', 'POST',
@@ -1088,7 +1088,7 @@ export default class BasketsApi {
      */
     postBasketsByIDPaymentInstruments(basketId, body) {
         return this.postBasketsByIDPaymentInstrumentsWithHttpInfo(basketId, body)
-            .then(function(response_and_data) {
+            .then((response_and_data) => {
                 return response_and_data.data
             })
     }
@@ -1101,30 +1101,30 @@ export default class BasketsApi {
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:models/BasketModel} and HTTP response
      */
     postBasketsByIDShipmentsWithHttpInfo(basketId, body) {
-        let postBody = body
+        const postBody = body
 
         // verify the required parameter 'basketId' is set
         if (basketId === undefined || basketId === null) {
-            throw new Error("Missing the required parameter 'basketId' when calling postBasketsByIDShipments")
+            throw new Error('Missing the required parameter \'basketId\' when calling postBasketsByIDShipments')
         }
 
         // verify the required parameter 'body' is set
         if (body === undefined || body === null) {
-            throw new Error("Missing the required parameter 'body' when calling postBasketsByIDShipments")
+            throw new Error('Missing the required parameter \'body\' when calling postBasketsByIDShipments')
         }
 
 
-        let pathParams = {
-            'basket_id': basketId
+        const pathParams = {
+            basket_id: basketId
         }
-        let queryParams = {}
-        let headerParams = {}
-        let formParams = {}
+        const queryParams = {}
+        const headerParams = {}
+        const formParams = {}
 
-        let authNames = ['customers_auth', 'oauth2_application']
-        let contentTypes = ['application/json', 'text/xml', 'application/xml']
-        let accepts = ['application/json', 'text/xml', 'application/xml']
-        let returnType = BasketModel
+        const authNames = ['customers_auth', 'oauth2_application']
+        const contentTypes = ['application/json', 'text/xml', 'application/xml']
+        const accepts = ['application/json', 'text/xml', 'application/xml']
+        const returnType = BasketModel
 
         return this.apiClient.callApi(
             '/baskets/{basket_id}/shipments', 'POST',
@@ -1141,7 +1141,7 @@ export default class BasketsApi {
      */
     postBasketsByIDShipments(basketId, body) {
         return this.postBasketsByIDShipmentsWithHttpInfo(basketId, body)
-            .then(function(response_and_data) {
+            .then((response_and_data) => {
                 return response_and_data.data
             })
     }
@@ -1158,28 +1158,28 @@ export default class BasketsApi {
      */
     putBasketsByIDBillingAddressWithHttpInfo(basketId, opts) {
         opts = opts || {}
-        let postBody = opts['body']
+        const postBody = opts.body
 
         // verify the required parameter 'basketId' is set
         if (basketId === undefined || basketId === null) {
-            throw new Error("Missing the required parameter 'basketId' when calling putBasketsByIDBillingAddress")
+            throw new Error('Missing the required parameter \'basketId\' when calling putBasketsByIDBillingAddress')
         }
 
 
-        let pathParams = {
-            'basket_id': basketId
+        const pathParams = {
+            basket_id: basketId
         }
-        let queryParams = {
-            'use_as_shipping': opts['useAsShipping'],
-            'customer_address_id': opts['customerAddressId']
+        const queryParams = {
+            use_as_shipping: opts.useAsShipping,
+            customer_address_id: opts.customerAddressId
         }
-        let headerParams = {}
-        let formParams = {}
+        const headerParams = {}
+        const formParams = {}
 
-        let authNames = ['customers_auth', 'oauth2_application']
-        let contentTypes = ['application/json', 'text/xml', 'application/xml']
-        let accepts = ['application/json', 'text/xml', 'application/xml']
-        let returnType = BasketModel
+        const authNames = ['customers_auth', 'oauth2_application']
+        const contentTypes = ['application/json', 'text/xml', 'application/xml']
+        const accepts = ['application/json', 'text/xml', 'application/xml']
+        const returnType = BasketModel
 
         return this.apiClient.callApi(
             '/baskets/{basket_id}/billing_address', 'PUT',
@@ -1199,7 +1199,7 @@ export default class BasketsApi {
      */
     putBasketsByIDBillingAddress(basketId, opts) {
         return this.putBasketsByIDBillingAddressWithHttpInfo(basketId, opts)
-            .then(function(response_and_data) {
+            .then((response_and_data) => {
                 return response_and_data.data
             })
     }
@@ -1212,30 +1212,30 @@ export default class BasketsApi {
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:models/BasketModel} and HTTP response
      */
     putBasketsByIDCustomerWithHttpInfo(basketId, body) {
-        let postBody = body
+        const postBody = body
 
         // verify the required parameter 'basketId' is set
         if (basketId === undefined || basketId === null) {
-            throw new Error("Missing the required parameter 'basketId' when calling putBasketsByIDCustomer")
+            throw new Error('Missing the required parameter \'basketId\' when calling putBasketsByIDCustomer')
         }
 
         // verify the required parameter 'body' is set
         if (body === undefined || body === null) {
-            throw new Error("Missing the required parameter 'body' when calling putBasketsByIDCustomer")
+            throw new Error('Missing the required parameter \'body\' when calling putBasketsByIDCustomer')
         }
 
 
-        let pathParams = {
-            'basket_id': basketId
+        const pathParams = {
+            basket_id: basketId
         }
-        let queryParams = {}
-        let headerParams = {}
-        let formParams = {}
+        const queryParams = {}
+        const headerParams = {}
+        const formParams = {}
 
-        let authNames = ['customers_auth', 'oauth2_application']
-        let contentTypes = ['application/json', 'text/xml', 'application/xml']
-        let accepts = ['application/json', 'text/xml', 'application/xml']
-        let returnType = BasketModel
+        const authNames = ['customers_auth', 'oauth2_application']
+        const contentTypes = ['application/json', 'text/xml', 'application/xml']
+        const accepts = ['application/json', 'text/xml', 'application/xml']
+        const returnType = BasketModel
 
         return this.apiClient.callApi(
             '/baskets/{basket_id}/customer', 'PUT',
@@ -1252,7 +1252,7 @@ export default class BasketsApi {
      */
     putBasketsByIDCustomer(basketId, body) {
         return this.putBasketsByIDCustomerWithHttpInfo(basketId, body)
-            .then(function(response_and_data) {
+            .then((response_and_data) => {
                 return response_and_data.data
             })
     }
@@ -1270,39 +1270,39 @@ export default class BasketsApi {
      */
     putBasketsByIDShipmentsByIDShippingAddressWithHttpInfo(basketId, shipmentId, body, opts) {
         opts = opts || {}
-        let postBody = body
+        const postBody = body
 
         // verify the required parameter 'basketId' is set
         if (basketId === undefined || basketId === null) {
-            throw new Error("Missing the required parameter 'basketId' when calling putBasketsByIDShipmentsByIDShippingAddress")
+            throw new Error('Missing the required parameter \'basketId\' when calling putBasketsByIDShipmentsByIDShippingAddress')
         }
 
         // verify the required parameter 'shipmentId' is set
         if (shipmentId === undefined || shipmentId === null) {
-            throw new Error("Missing the required parameter 'shipmentId' when calling putBasketsByIDShipmentsByIDShippingAddress")
+            throw new Error('Missing the required parameter \'shipmentId\' when calling putBasketsByIDShipmentsByIDShippingAddress')
         }
 
         // verify the required parameter 'body' is set
         if (body === undefined || body === null) {
-            throw new Error("Missing the required parameter 'body' when calling putBasketsByIDShipmentsByIDShippingAddress")
+            throw new Error('Missing the required parameter \'body\' when calling putBasketsByIDShipmentsByIDShippingAddress')
         }
 
 
-        let pathParams = {
-            'basket_id': basketId,
-            'shipment_id': shipmentId
+        const pathParams = {
+            basket_id: basketId,
+            shipment_id: shipmentId
         }
-        let queryParams = {
-            'use_as_billing': opts['useAsBilling'],
-            'customer_address_id': opts['customerAddressId']
+        const queryParams = {
+            use_as_billing: opts.useAsBilling,
+            customer_address_id: opts.customerAddressId
         }
-        let headerParams = {}
-        let formParams = {}
+        const headerParams = {}
+        const formParams = {}
 
-        let authNames = ['customers_auth', 'oauth2_application']
-        let contentTypes = ['application/json', 'text/xml', 'application/xml']
-        let accepts = ['application/json', 'text/xml', 'application/xml']
-        let returnType = BasketModel
+        const authNames = ['customers_auth', 'oauth2_application']
+        const contentTypes = ['application/json', 'text/xml', 'application/xml']
+        const accepts = ['application/json', 'text/xml', 'application/xml']
+        const returnType = BasketModel
 
         return this.apiClient.callApi(
             '/baskets/{basket_id}/shipments/{shipment_id}/shipping_address', 'PUT',
@@ -1323,7 +1323,7 @@ export default class BasketsApi {
      */
     putBasketsByIDShipmentsByIDShippingAddress(basketId, shipmentId, body, opts) {
         return this.putBasketsByIDShipmentsByIDShippingAddressWithHttpInfo(basketId, shipmentId, body, opts)
-            .then(function(response_and_data) {
+            .then((response_and_data) => {
                 return response_and_data.data
             })
     }
@@ -1337,36 +1337,36 @@ export default class BasketsApi {
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:models/BasketModel} and HTTP response
      */
     putBasketsByIDShipmentsByIDShippingMethodWithHttpInfo(basketId, shipmentId, body) {
-        let postBody = body
+        const postBody = body
 
         // verify the required parameter 'basketId' is set
         if (basketId === undefined || basketId === null) {
-            throw new Error("Missing the required parameter 'basketId' when calling putBasketsByIDShipmentsByIDShippingMethod")
+            throw new Error('Missing the required parameter \'basketId\' when calling putBasketsByIDShipmentsByIDShippingMethod')
         }
 
         // verify the required parameter 'shipmentId' is set
         if (shipmentId === undefined || shipmentId === null) {
-            throw new Error("Missing the required parameter 'shipmentId' when calling putBasketsByIDShipmentsByIDShippingMethod")
+            throw new Error('Missing the required parameter \'shipmentId\' when calling putBasketsByIDShipmentsByIDShippingMethod')
         }
 
         // verify the required parameter 'body' is set
         if (body === undefined || body === null) {
-            throw new Error("Missing the required parameter 'body' when calling putBasketsByIDShipmentsByIDShippingMethod")
+            throw new Error('Missing the required parameter \'body\' when calling putBasketsByIDShipmentsByIDShippingMethod')
         }
 
 
-        let pathParams = {
-            'basket_id': basketId,
-            'shipment_id': shipmentId
+        const pathParams = {
+            basket_id: basketId,
+            shipment_id: shipmentId
         }
-        let queryParams = {}
-        let headerParams = {}
-        let formParams = {}
+        const queryParams = {}
+        const headerParams = {}
+        const formParams = {}
 
-        let authNames = ['customers_auth', 'oauth2_application']
-        let contentTypes = ['application/json', 'text/xml', 'application/xml']
-        let accepts = ['application/json', 'text/xml', 'application/xml']
-        let returnType = BasketModel
+        const authNames = ['customers_auth', 'oauth2_application']
+        const contentTypes = ['application/json', 'text/xml', 'application/xml']
+        const accepts = ['application/json', 'text/xml', 'application/xml']
+        const returnType = BasketModel
 
         return this.apiClient.callApi(
             '/baskets/{basket_id}/shipments/{shipment_id}/shipping_method', 'PUT',
@@ -1384,7 +1384,7 @@ export default class BasketsApi {
      */
     putBasketsByIDShipmentsByIDShippingMethod(basketId, shipmentId, body) {
         return this.putBasketsByIDShipmentsByIDShippingMethodWithHttpInfo(basketId, shipmentId, body)
-            .then(function(response_and_data) {
+            .then((response_and_data) => {
                 return response_and_data.data
             })
     }

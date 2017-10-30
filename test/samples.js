@@ -1,17 +1,17 @@
 import ShopApi from '../src/index'
 
 export const validOrderSearchRequest = ShopApi.ProductModel.constructFromObject({
-   query: {
-      text_query: {
-          fields: ['customer_email'],
-          search_phrase: 'example@non.existing.com'
-      }
-   },
-   select: '(**)',
-   sorts: [{
-       field: 'customer_name',
-       sort_order: 'asc'
-   }]
+    query: {
+        text_query: {
+            fields: ['customer_email'],
+            search_phrase: 'example@non.existing.com'
+        }
+    },
+    select: '(**)',
+    sorts: [{
+        field: 'customer_name',
+        sort_order: 'asc'
+    }]
 })
 
 export const validProduct = ShopApi.ProductModel.constructFromObject({
@@ -49,7 +49,7 @@ export const validCustomerProductList = ShopApi.CustomerProductListModel.constru
         last_name: 'Doe',
         role: 'Groom'
     },
-    'event': {
+    event: {
         city: 'Washington',
         country: 'US',
         date: '2015-07-30T00:00Z',

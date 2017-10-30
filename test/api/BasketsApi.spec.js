@@ -23,7 +23,7 @@ let newCustomer
 before(() => {
     client = new ShopApi.ApiClient({
         basePath: `${baseUrl}`,
-        defaultHeaders: { 'x-dw-client-id': clientId }
+        defaultHeaders: {'x-dw-client-id': clientId}
     })
 })
 
@@ -39,20 +39,14 @@ beforeEach(() => {
 
 afterEach(() => utils.clearUserAuth(instance.apiClient))
 
-var getProperty = (object, getter, property) => {
+const getProperty = (object, getter, property) => {
     // Use getter method if present; otherwise, get the property directly.
-    if (typeof object[getter] === 'function')
-        return object[getter]()
-    else
-        return object[property];
+    if (typeof object[getter] === 'function') { return object[getter]() } else { return object[property] }
 }
 
-var setProperty = (object, setter, property, value) => {
+const setProperty = (object, setter, property, value) => {
     // Use setter method if present; otherwise, set the property directly.
-    if (typeof object[setter] === 'function')
-        object[setter](value)
-    else
-        object[property] = value;
+    if (typeof object[setter] === 'function') { object[setter](value) } else { object[property] = value }
 }
 
 describe('BasketsApi', () => {
@@ -240,11 +234,11 @@ describe('BasketsApi', () => {
             instance.postBaskets()
                 .then((basket) =>
                     instance.postBasketsByIDGiftCertificateItems(basket.basket_id, {
-                        "recipient_email" : "ben.chypak@mobify.com",
-                        "recipient_name" : "Ben Chypak",
-                        "sender_name" : "John Boxall",
-                        "message" : "Present from your boss",
-                        "amount" : 200.00
+                        recipient_email: 'ben.chypak@mobify.com',
+                        recipient_name: 'Ben Chypak',
+                        sender_name: 'John Boxall',
+                        message: 'Present from your boss',
+                        amount: 200.00
                     })
                 )
                 .then((basket) => {
@@ -258,8 +252,8 @@ describe('BasketsApi', () => {
             instance.postBaskets()
                 .then((basket) =>
                     instance.postBasketsByIDItems(basket.basket_id, [{
-                        "product_id" : "008884303996",
-                        "quantity" : 1.00
+                        product_id: '008884303996',
+                        quantity: 1.00
                     }])
                 )
                 .then((basket) => {
@@ -291,16 +285,16 @@ describe('BasketsApi', () => {
             instance.postBaskets()
                 .then((basket) =>
                     instance.postBasketsByIDPaymentInstruments(basket.basket_id, {
-                        "amount": 1.0,
-                        "payment_card": {
-                            "number": "411111111111111",
-                            "security_code": "121",
-                            "holder": "John Doe",
-                            "card_type": "Visa",
-                            "expiration_month": 1,
-                            "expiration_year": 2021
+                        amount: 1.0,
+                        payment_card: {
+                            number: '411111111111111',
+                            security_code: '121',
+                            holder: 'John Doe',
+                            card_type: 'Visa',
+                            expiration_month: 1,
+                            expiration_year: 2021
                         },
-                        "payment_method_id": "CREDIT_CARD"
+                        payment_method_id: 'CREDIT_CARD'
                     })
                 )
                 .then((basket) => {
@@ -314,17 +308,17 @@ describe('BasketsApi', () => {
             instance.postBaskets()
                 .then((basket) =>
                     instance.postBasketsByIDShipments(basket.basket_id, {
-                        "gift": true,
-                        "gift_message": "Happy Birthday",
-                        "shipping_method": {
-                            "id": "standardshipping"
+                        gift: true,
+                        gift_message: 'Happy Birthday',
+                        shipping_method: {
+                            id: 'standardshipping'
                         },
-                        "shipping_address": {
-                            "first_name": "John",
-                            "last_name": "Smith",
-                            "city": "Boston",
-                            "country_code": "US",
-                         }
+                        shipping_address: {
+                            first_name: 'John',
+                            last_name: 'Smith',
+                            city: 'Boston',
+                            country_code: 'US',
+                        }
                     })
                 )
                 .then((basket) => {
@@ -340,10 +334,10 @@ describe('BasketsApi', () => {
                     instance.putBasketsByIDBillingAddress(basket.basket_id, {
                         useAsShipping: true,
                         body: {
-                            "first_name": "John",
-                            "last_name": "Smith",
-                            "city": "Boston",
-                            "country_code": "US"
+                            first_name: 'John',
+                            last_name: 'Smith',
+                            city: 'Boston',
+                            country_code: 'US'
                         }
                     })
                 )
@@ -381,10 +375,10 @@ describe('BasketsApi', () => {
             instance.postBaskets()
                 .then((basket) =>
                     instance.putBasketsByIDShipmentsByIDShippingAddress(basket.basket_id, 'me', {
-                        "first_name": "John",
-                        "last_name": "Smith",
-                        "city": "Boston",
-                        "country_code": "US"
+                        first_name: 'John',
+                        last_name: 'Smith',
+                        city: 'Boston',
+                        country_code: 'US'
                     })
                 )
                 .then((basket) => {
@@ -402,7 +396,7 @@ describe('BasketsApi', () => {
             instance.postBaskets()
                 .then((basket) =>
                     instance.putBasketsByIDShipmentsByIDShippingMethod(basket.basket_id, 'me', {
-                        "id": "standardshipping"
+                        id: 'standardshipping'
                     })
                 )
                 .then((basket) => {

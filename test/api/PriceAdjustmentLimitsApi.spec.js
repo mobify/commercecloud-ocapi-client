@@ -23,7 +23,7 @@ let newCustomer
 before(() => {
     client = new ShopApi.ApiClient({
         basePath: `${baseUrl}`,
-        defaultHeaders: { 'x-dw-client-id': clientId }
+        defaultHeaders: {'x-dw-client-id': clientId}
     })
 
     return utils.getNewRegisteredUser(client)
@@ -37,30 +37,24 @@ beforeEach(() => {
     instance = new ShopApi.PriceAdjustmentLimitsApi(client)
 })
 
-var getProperty = (object, getter, property) => {
+const getProperty = (object, getter, property) => {
     // Use getter method if present; otherwise, get the property directly.
-    if (typeof object[getter] === 'function')
-        return object[getter]()
-    else
-        return object[property]
+    if (typeof object[getter] === 'function') { return object[getter]() } else { return object[property] }
 }
 
-var setProperty = (object, setter, property, value) => {
+const setProperty = (object, setter, property, value) => {
     // Use setter method if present; otherwise, set the property directly.
-    if (typeof object[setter] === 'function')
-        object[setter](value)
-    else
-        object[property] = value
+    if (typeof object[setter] === 'function') { object[setter](value) } else { object[property] = value }
 }
 
 describe('PriceAdjustmentLimitsApi', () => {
     describe('getPriceAdjustmentLimits', () => {
         it('should call getPriceAdjustmentLimits successfully', () => {
-            //uncomment below and update the code to test getPriceAdjustmentLimits
-            //instance.getPriceAdjustmentLimits(function(error) {
+            // uncomment below and update the code to test getPriceAdjustmentLimits
+            // instance.getPriceAdjustmentLimits(function(error) {
             //  if (error) throw error;
-            //expect().to.be();
-            //});
+            // expect().to.be();
+            // });
             instance.getPriceAdjustmentLimits()
                 .then((thing) => {
                     console.log('thing: ', thing)

@@ -12,7 +12,7 @@
  */
 
 
-import ApiClient from "../ApiClient";
+import ApiClient from '../ApiClient'
 import ContentModel from '../models/ContentModel'
 import ContentResultModel from '../models/ContentResultModel'
 
@@ -42,32 +42,32 @@ export default class ContentApi {
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:models/ContentModel} and HTTP response
      */
     getContentByIDWithHttpInfo(id, opts) {
-      opts = opts || {}
-      let postBody = null
+        opts = opts || {}
+        const postBody = null
 
       // verify the required parameter 'id' is set
-      if (id === undefined || id === null) {
-        throw new Error("Missing the required parameter 'id' when calling getContentByID")
-      }
+        if (id === undefined || id === null) {
+            throw new Error('Missing the required parameter \'id\' when calling getContentByID')
+        }
 
 
-      let pathParams = {
-        'id': id
-      }
-      let queryParams = {
-        'locale': opts['locale']
-      }
-      let headerParams = {
-      }
-      let formParams = {
-      }
+        const pathParams = {
+            id
+        }
+        const queryParams = {
+            locale: opts.locale
+        }
+        const headerParams = {
+        }
+        const formParams = {
+        }
 
-      let authNames = ['client_id', 'customers_auth']
-      let contentTypes = ['application/json', 'text/xml', 'application/xml']
-      let accepts = ['application/json', 'text/xml', 'application/xml']
-      let returnType = ContentModel
+        const authNames = ['client_id', 'customers_auth']
+        const contentTypes = ['application/json', 'text/xml', 'application/xml']
+        const accepts = ['application/json', 'text/xml', 'application/xml']
+        const returnType = ContentModel
 
-      return this.apiClient.callApi(
+        return this.apiClient.callApi(
         '/content/{id}', 'GET',
         pathParams, queryParams, headerParams, formParams, postBody,
         authNames, contentTypes, accepts, returnType
@@ -82,9 +82,9 @@ export default class ContentApi {
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:models/ContentModel}
      */
     getContentByID(id, opts) {
-      return this.getContentByIDWithHttpInfo(id, opts)
-        .then(function(response_and_data) {
-          return response_and_data.data
+        return this.getContentByIDWithHttpInfo(id, opts)
+        .then((response_and_data) => {
+            return response_and_data.data
         })
     }
 
@@ -96,32 +96,32 @@ export default class ContentApi {
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:models/ContentResultModel} and HTTP response
      */
     getContentByIDsWithHttpInfo(ids, opts) {
-      opts = opts || {}
-      let postBody = null
+        opts = opts || {}
+        const postBody = null
 
       // verify the required parameter 'ids' is set
-      if (ids === undefined || ids === null) {
-        throw new Error("Missing the required parameter 'ids' when calling getContentByIDs")
-      }
+        if (ids === undefined || ids === null) {
+            throw new Error('Missing the required parameter \'ids\' when calling getContentByIDs')
+        }
 
 
-      let pathParams = {
-        'ids': ids
-      }
-      let queryParams = {
-        'locale': opts['locale']
-      }
-      let headerParams = {
-      }
-      let formParams = {
-      }
+        const pathParams = {
+            ids
+        }
+        const queryParams = {
+            locale: opts.locale
+        }
+        const headerParams = {
+        }
+        const formParams = {
+        }
 
-      let authNames = ['client_id', 'customers_auth']
-      let contentTypes = ['application/json', 'text/xml', 'application/xml']
-      let accepts = ['application/json', 'text/xml', 'application/xml']
-      let returnType = ContentResultModel
+        const authNames = ['client_id', 'customers_auth']
+        const contentTypes = ['application/json', 'text/xml', 'application/xml']
+        const accepts = ['application/json', 'text/xml', 'application/xml']
+        const returnType = ContentResultModel
 
-      return this.apiClient.callApi(
+        return this.apiClient.callApi(
         '/content/({ids})', 'GET',
         pathParams, queryParams, headerParams, formParams, postBody,
         authNames, contentTypes, accepts, returnType
@@ -135,9 +135,9 @@ export default class ContentApi {
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:models/ContentResultModel}
      */
     getContentByIDs(ids, opts) {
-      return this.getContentByIDsWithHttpInfo(ids, opts)
-        .then(function(response_and_data) {
-          return response_and_data.data
+        return this.getContentByIDsWithHttpInfo(ids, opts)
+        .then((response_and_data) => {
+            return response_and_data.data
         })
     }
 

@@ -28,10 +28,10 @@ export const getNewRegisteredUser = (client) => {
     return getGuestUserAuth(client)
         .then(() => instance.postCustomers(validCustomerRegistration))
         .then(() => instance.postCustomersAuth(
-            { type: 'credentials' },
-            { authorization: `Basic ${btoa(`${customer.login}:${password}`)}` }
+            {type: 'credentials'},
+            {authorization: `Basic ${btoa(`${customer.login}:${password}`)}`}
         ))
-        .then((customer) => { newCustomer = customer})
+        .then((customer) => { newCustomer = customer })
         .then(() => instance.postCustomersByIDAddresses(newCustomer.customer_id, validCustomerAddress))
         .then(() => instance.postCustomersByIDPaymentInstruments(newCustomer.customer_id, validCustomerPaymentInstrumentRequest))
         .then(() => instance.postCustomersByIDProductLists(newCustomer.customer_id, validCustomerProductList))
@@ -39,7 +39,7 @@ export const getNewRegisteredUser = (client) => {
             // Append product list for testing purposes later
             newProductLists = [productList]
         })
-        .then(() => instance.getCustomersByID(newCustomer.customer_id, { expand: ['addresses', 'paymentinstruments']}))
+        .then(() => instance.getCustomersByID(newCustomer.customer_id, {expand: ['addresses', 'paymentinstruments']}))
         .then((customer) => {
             customer.product_lists = newProductLists
             return customer
@@ -66,19 +66,19 @@ export const getRegisteredUserAuth = (client) => {
     const instance = new ShopApi.CustomersApi(client)
 
     return instance.postCustomersAuth(
-        { type: 'credentials' },
-        { authorization: `Basic ${btoa(`${VALID_USER_NAME}:${VALID_USER_PASS}`)}` }
+        {type: 'credentials'},
+        {authorization: `Basic ${btoa(`${VALID_USER_NAME}:${VALID_USER_PASS}`)}`}
     )
 }
 
 export const getGuestUserAuth = (client) => {
     const instance = new ShopApi.CustomersApi(client)
 
-    return instance.postCustomersAuth({ type: 'guest' })
+    return instance.postCustomersAuth({type: 'guest'})
 }
 
 export const clearUserAuth = (client) => {
     const instance = new ShopApi.CustomersApi(client)
 
-    return instance.deleteCustomersAuth({ type: 'guest' })
+    return instance.deleteCustomersAuth({type: 'guest'})
 }

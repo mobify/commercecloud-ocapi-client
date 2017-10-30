@@ -12,7 +12,7 @@
  */
 
 
-import ApiClient from "../ApiClient";
+import ApiClient from '../ApiClient'
 import AuthRequestModel from '../models/AuthRequestModel'
 import BasketsResultModel from '../models/BasketsResultModel'
 import CustomerAddressModel from '../models/CustomerAddressModel'
@@ -57,26 +57,26 @@ export default class CustomersApi {
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing HTTP response
      */
     deleteCustomersAuthWithHttpInfo(opts) {
-      opts = opts || {}
-      let postBody = null
+        opts = opts || {}
+        const postBody = null
 
 
-      let pathParams = {
-      }
-      let queryParams = {
-      }
-      let headerParams = {
-        'Authorization': opts['authorization']
-      }
-      let formParams = {
-      }
+        const pathParams = {
+        }
+        const queryParams = {
+        }
+        const headerParams = {
+            Authorization: opts.authorization
+        }
+        const formParams = {
+        }
 
-      let authNames = ['customers_auth']
-      let contentTypes = ['application/json', 'text/xml', 'application/xml']
-      let accepts = ['application/json', 'text/xml', 'application/xml']
-      let returnType = null
+        const authNames = ['customers_auth']
+        const contentTypes = ['application/json', 'text/xml', 'application/xml']
+        const accepts = ['application/json', 'text/xml', 'application/xml']
+        const returnType = null
 
-      return this.apiClient.callApi(
+        return this.apiClient.callApi(
         '/customers/auth', 'DELETE',
         pathParams, queryParams, headerParams, formParams, postBody,
         authNames, contentTypes, accepts, returnType
@@ -90,9 +90,9 @@ export default class CustomersApi {
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}
      */
     deleteCustomersAuth(opts) {
-      return this.deleteCustomersAuthWithHttpInfo(opts)
-        .then(function(response_and_data) {
-          return response_and_data.data
+        return this.deleteCustomersAuthWithHttpInfo(opts)
+        .then((response_and_data) => {
+            return response_and_data.data
         })
     }
 
@@ -104,36 +104,36 @@ export default class CustomersApi {
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing HTTP response
      */
     deleteCustomersByIDAddressesByIDWithHttpInfo(customerId, addressName) {
-      let postBody = null
+        const postBody = null
 
       // verify the required parameter 'customerId' is set
-      if (customerId === undefined || customerId === null) {
-        throw new Error("Missing the required parameter 'customerId' when calling deleteCustomersByIDAddressesByID")
-      }
+        if (customerId === undefined || customerId === null) {
+            throw new Error('Missing the required parameter \'customerId\' when calling deleteCustomersByIDAddressesByID')
+        }
 
       // verify the required parameter 'addressName' is set
-      if (addressName === undefined || addressName === null) {
-        throw new Error("Missing the required parameter 'addressName' when calling deleteCustomersByIDAddressesByID")
-      }
+        if (addressName === undefined || addressName === null) {
+            throw new Error('Missing the required parameter \'addressName\' when calling deleteCustomersByIDAddressesByID')
+        }
 
 
-      let pathParams = {
-        'customer_id': customerId,
-        'address_name': addressName
-      }
-      let queryParams = {
-      }
-      let headerParams = {
-      }
-      let formParams = {
-      }
+        const pathParams = {
+            customer_id: customerId,
+            address_name: addressName
+        }
+        const queryParams = {
+        }
+        const headerParams = {
+        }
+        const formParams = {
+        }
 
-      let authNames = ['customers_auth', 'oauth2_application']
-      let contentTypes = ['application/json', 'text/xml', 'application/xml']
-      let accepts = ['application/json', 'text/xml', 'application/xml']
-      let returnType = null
+        const authNames = ['customers_auth', 'oauth2_application']
+        const contentTypes = ['application/json', 'text/xml', 'application/xml']
+        const accepts = ['application/json', 'text/xml', 'application/xml']
+        const returnType = null
 
-      return this.apiClient.callApi(
+        return this.apiClient.callApi(
         '/customers/{customer_id}/addresses/{address_name}', 'DELETE',
         pathParams, queryParams, headerParams, formParams, postBody,
         authNames, contentTypes, accepts, returnType
@@ -147,9 +147,9 @@ export default class CustomersApi {
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}
      */
     deleteCustomersByIDAddressesByID(customerId, addressName) {
-      return this.deleteCustomersByIDAddressesByIDWithHttpInfo(customerId, addressName)
-        .then(function(response_and_data) {
-          return response_and_data.data
+        return this.deleteCustomersByIDAddressesByIDWithHttpInfo(customerId, addressName)
+        .then((response_and_data) => {
+            return response_and_data.data
         })
     }
 
@@ -161,36 +161,36 @@ export default class CustomersApi {
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing HTTP response
      */
     deleteCustomersByIDPaymentInstrumentsByIDWithHttpInfo(customerId, paymentInstrumentId) {
-      let postBody = null
+        const postBody = null
 
       // verify the required parameter 'customerId' is set
-      if (customerId === undefined || customerId === null) {
-        throw new Error("Missing the required parameter 'customerId' when calling deleteCustomersByIDPaymentInstrumentsByID")
-      }
+        if (customerId === undefined || customerId === null) {
+            throw new Error('Missing the required parameter \'customerId\' when calling deleteCustomersByIDPaymentInstrumentsByID')
+        }
 
       // verify the required parameter 'paymentInstrumentId' is set
-      if (paymentInstrumentId === undefined || paymentInstrumentId === null) {
-        throw new Error("Missing the required parameter 'paymentInstrumentId' when calling deleteCustomersByIDPaymentInstrumentsByID")
-      }
+        if (paymentInstrumentId === undefined || paymentInstrumentId === null) {
+            throw new Error('Missing the required parameter \'paymentInstrumentId\' when calling deleteCustomersByIDPaymentInstrumentsByID')
+        }
 
 
-      let pathParams = {
-        'customer_id': customerId,
-        'payment_instrument_id': paymentInstrumentId
-      }
-      let queryParams = {
-      }
-      let headerParams = {
-      }
-      let formParams = {
-      }
+        const pathParams = {
+            customer_id: customerId,
+            payment_instrument_id: paymentInstrumentId
+        }
+        const queryParams = {
+        }
+        const headerParams = {
+        }
+        const formParams = {
+        }
 
-      let authNames = ['customers_auth', 'oauth2_application']
-      let contentTypes = ['application/json', 'text/xml', 'application/xml']
-      let accepts = ['application/json', 'text/xml', 'application/xml']
-      let returnType = null
+        const authNames = ['customers_auth', 'oauth2_application']
+        const contentTypes = ['application/json', 'text/xml', 'application/xml']
+        const accepts = ['application/json', 'text/xml', 'application/xml']
+        const returnType = null
 
-      return this.apiClient.callApi(
+        return this.apiClient.callApi(
         '/customers/{customer_id}/payment_instruments/{payment_instrument_id}', 'DELETE',
         pathParams, queryParams, headerParams, formParams, postBody,
         authNames, contentTypes, accepts, returnType
@@ -204,9 +204,9 @@ export default class CustomersApi {
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}
      */
     deleteCustomersByIDPaymentInstrumentsByID(customerId, paymentInstrumentId) {
-      return this.deleteCustomersByIDPaymentInstrumentsByIDWithHttpInfo(customerId, paymentInstrumentId)
-        .then(function(response_and_data) {
-          return response_and_data.data
+        return this.deleteCustomersByIDPaymentInstrumentsByIDWithHttpInfo(customerId, paymentInstrumentId)
+        .then((response_and_data) => {
+            return response_and_data.data
         })
     }
 
@@ -218,36 +218,36 @@ export default class CustomersApi {
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing HTTP response
      */
     deleteCustomersByIDProductListsByIDWithHttpInfo(customerId, listId) {
-      let postBody = null
+        const postBody = null
 
       // verify the required parameter 'customerId' is set
-      if (customerId === undefined || customerId === null) {
-        throw new Error("Missing the required parameter 'customerId' when calling deleteCustomersByIDProductListsByID")
-      }
+        if (customerId === undefined || customerId === null) {
+            throw new Error('Missing the required parameter \'customerId\' when calling deleteCustomersByIDProductListsByID')
+        }
 
       // verify the required parameter 'listId' is set
-      if (listId === undefined || listId === null) {
-        throw new Error("Missing the required parameter 'listId' when calling deleteCustomersByIDProductListsByID")
-      }
+        if (listId === undefined || listId === null) {
+            throw new Error('Missing the required parameter \'listId\' when calling deleteCustomersByIDProductListsByID')
+        }
 
 
-      let pathParams = {
-        'customer_id': customerId,
-        'list_id': listId
-      }
-      let queryParams = {
-      }
-      let headerParams = {
-      }
-      let formParams = {
-      }
+        const pathParams = {
+            customer_id: customerId,
+            list_id: listId
+        }
+        const queryParams = {
+        }
+        const headerParams = {
+        }
+        const formParams = {
+        }
 
-      let authNames = ['customers_auth', 'oauth2_application']
-      let contentTypes = ['application/json', 'text/xml', 'application/xml']
-      let accepts = ['application/json', 'text/xml', 'application/xml']
-      let returnType = null
+        const authNames = ['customers_auth', 'oauth2_application']
+        const contentTypes = ['application/json', 'text/xml', 'application/xml']
+        const accepts = ['application/json', 'text/xml', 'application/xml']
+        const returnType = null
 
-      return this.apiClient.callApi(
+        return this.apiClient.callApi(
         '/customers/{customer_id}/product_lists/{list_id}', 'DELETE',
         pathParams, queryParams, headerParams, formParams, postBody,
         authNames, contentTypes, accepts, returnType
@@ -261,9 +261,9 @@ export default class CustomersApi {
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}
      */
     deleteCustomersByIDProductListsByID(customerId, listId) {
-      return this.deleteCustomersByIDProductListsByIDWithHttpInfo(customerId, listId)
-        .then(function(response_and_data) {
-          return response_and_data.data
+        return this.deleteCustomersByIDProductListsByIDWithHttpInfo(customerId, listId)
+        .then((response_and_data) => {
+            return response_and_data.data
         })
     }
 
@@ -276,42 +276,42 @@ export default class CustomersApi {
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing HTTP response
      */
     deleteCustomersByIDProductListsByIDItemsByIDWithHttpInfo(customerId, listId, itemId) {
-      let postBody = null
+        const postBody = null
 
       // verify the required parameter 'customerId' is set
-      if (customerId === undefined || customerId === null) {
-        throw new Error("Missing the required parameter 'customerId' when calling deleteCustomersByIDProductListsByIDItemsByID")
-      }
+        if (customerId === undefined || customerId === null) {
+            throw new Error('Missing the required parameter \'customerId\' when calling deleteCustomersByIDProductListsByIDItemsByID')
+        }
 
       // verify the required parameter 'listId' is set
-      if (listId === undefined || listId === null) {
-        throw new Error("Missing the required parameter 'listId' when calling deleteCustomersByIDProductListsByIDItemsByID")
-      }
+        if (listId === undefined || listId === null) {
+            throw new Error('Missing the required parameter \'listId\' when calling deleteCustomersByIDProductListsByIDItemsByID')
+        }
 
       // verify the required parameter 'itemId' is set
-      if (itemId === undefined || itemId === null) {
-        throw new Error("Missing the required parameter 'itemId' when calling deleteCustomersByIDProductListsByIDItemsByID")
-      }
+        if (itemId === undefined || itemId === null) {
+            throw new Error('Missing the required parameter \'itemId\' when calling deleteCustomersByIDProductListsByIDItemsByID')
+        }
 
 
-      let pathParams = {
-        'customer_id': customerId,
-        'list_id': listId,
-        'item_id': itemId
-      }
-      let queryParams = {
-      }
-      let headerParams = {
-      }
-      let formParams = {
-      }
+        const pathParams = {
+            customer_id: customerId,
+            list_id: listId,
+            item_id: itemId
+        }
+        const queryParams = {
+        }
+        const headerParams = {
+        }
+        const formParams = {
+        }
 
-      let authNames = ['customers_auth', 'oauth2_application']
-      let contentTypes = ['application/json', 'text/xml', 'application/xml']
-      let accepts = ['application/json', 'text/xml', 'application/xml']
-      let returnType = null
+        const authNames = ['customers_auth', 'oauth2_application']
+        const contentTypes = ['application/json', 'text/xml', 'application/xml']
+        const accepts = ['application/json', 'text/xml', 'application/xml']
+        const returnType = null
 
-      return this.apiClient.callApi(
+        return this.apiClient.callApi(
         '/customers/{customer_id}/product_lists/{list_id}/items/{item_id}', 'DELETE',
         pathParams, queryParams, headerParams, formParams, postBody,
         authNames, contentTypes, accepts, returnType
@@ -326,9 +326,9 @@ export default class CustomersApi {
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}
      */
     deleteCustomersByIDProductListsByIDItemsByID(customerId, listId, itemId) {
-      return this.deleteCustomersByIDProductListsByIDItemsByIDWithHttpInfo(customerId, listId, itemId)
-        .then(function(response_and_data) {
-          return response_and_data.data
+        return this.deleteCustomersByIDProductListsByIDItemsByIDWithHttpInfo(customerId, listId, itemId)
+        .then((response_and_data) => {
+            return response_and_data.data
         })
     }
 
@@ -341,32 +341,32 @@ export default class CustomersApi {
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:models/CustomerModel} and HTTP response
      */
     getCustomersByIDWithHttpInfo(customerId, opts) {
-      opts = opts || {}
-      let postBody = null
+        opts = opts || {}
+        const postBody = null
 
       // verify the required parameter 'customerId' is set
-      if (customerId === undefined || customerId === null) {
-        throw new Error("Missing the required parameter 'customerId' when calling getCustomersByID")
-      }
+        if (customerId === undefined || customerId === null) {
+            throw new Error('Missing the required parameter \'customerId\' when calling getCustomersByID')
+        }
 
 
-      let pathParams = {
-        'customer_id': customerId
-      }
-      let queryParams = {
-        'expand': this.apiClient.buildCollectionParam(opts['expand'], 'csv')
-      }
-      let headerParams = {
-      }
-      let formParams = {
-      }
+        const pathParams = {
+            customer_id: customerId
+        }
+        const queryParams = {
+            expand: this.apiClient.buildCollectionParam(opts.expand, 'csv')
+        }
+        const headerParams = {
+        }
+        const formParams = {
+        }
 
-      let authNames = ['customers_auth', 'oauth2_application']
-      let contentTypes = ['application/json', 'text/xml', 'application/xml']
-      let accepts = ['application/json', 'text/xml', 'application/xml']
-      let returnType = CustomerModel
+        const authNames = ['customers_auth', 'oauth2_application']
+        const contentTypes = ['application/json', 'text/xml', 'application/xml']
+        const accepts = ['application/json', 'text/xml', 'application/xml']
+        const returnType = CustomerModel
 
-      return this.apiClient.callApi(
+        return this.apiClient.callApi(
         '/customers/{customer_id}', 'GET',
         pathParams, queryParams, headerParams, formParams, postBody,
         authNames, contentTypes, accepts, returnType
@@ -381,9 +381,9 @@ export default class CustomersApi {
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:models/CustomerModel}
      */
     getCustomersByID(customerId, opts) {
-      return this.getCustomersByIDWithHttpInfo(customerId, opts)
-        .then(function(response_and_data) {
-          return response_and_data.data
+        return this.getCustomersByIDWithHttpInfo(customerId, opts)
+        .then((response_and_data) => {
+            return response_and_data.data
         })
     }
 
@@ -397,33 +397,33 @@ export default class CustomersApi {
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:models/CustomerAddressResultModel} and HTTP response
      */
     getCustomersByIDAddressesWithHttpInfo(customerId, opts) {
-      opts = opts || {}
-      let postBody = null
+        opts = opts || {}
+        const postBody = null
 
       // verify the required parameter 'customerId' is set
-      if (customerId === undefined || customerId === null) {
-        throw new Error("Missing the required parameter 'customerId' when calling getCustomersByIDAddresses")
-      }
+        if (customerId === undefined || customerId === null) {
+            throw new Error('Missing the required parameter \'customerId\' when calling getCustomersByIDAddresses')
+        }
 
 
-      let pathParams = {
-        'customer_id': customerId
-      }
-      let queryParams = {
-        'start': opts['start'],
-        'count': opts['count']
-      }
-      let headerParams = {
-      }
-      let formParams = {
-      }
+        const pathParams = {
+            customer_id: customerId
+        }
+        const queryParams = {
+            start: opts.start,
+            count: opts.count
+        }
+        const headerParams = {
+        }
+        const formParams = {
+        }
 
-      let authNames = ['customers_auth', 'oauth2_application']
-      let contentTypes = ['application/json', 'text/xml', 'application/xml']
-      let accepts = ['application/json', 'text/xml', 'application/xml']
-      let returnType = CustomerAddressResultModel
+        const authNames = ['customers_auth', 'oauth2_application']
+        const contentTypes = ['application/json', 'text/xml', 'application/xml']
+        const accepts = ['application/json', 'text/xml', 'application/xml']
+        const returnType = CustomerAddressResultModel
 
-      return this.apiClient.callApi(
+        return this.apiClient.callApi(
         '/customers/{customer_id}/addresses', 'GET',
         pathParams, queryParams, headerParams, formParams, postBody,
         authNames, contentTypes, accepts, returnType
@@ -439,9 +439,9 @@ export default class CustomersApi {
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:models/CustomerAddressResultModel}
      */
     getCustomersByIDAddresses(customerId, opts) {
-      return this.getCustomersByIDAddressesWithHttpInfo(customerId, opts)
-        .then(function(response_and_data) {
-          return response_and_data.data
+        return this.getCustomersByIDAddressesWithHttpInfo(customerId, opts)
+        .then((response_and_data) => {
+            return response_and_data.data
         })
     }
 
@@ -453,36 +453,36 @@ export default class CustomersApi {
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:models/CustomerAddressModel} and HTTP response
      */
     getCustomersByIDAddressesByIDWithHttpInfo(customerId, addressName) {
-      let postBody = null
+        const postBody = null
 
       // verify the required parameter 'customerId' is set
-      if (customerId === undefined || customerId === null) {
-        throw new Error("Missing the required parameter 'customerId' when calling getCustomersByIDAddressesByID")
-      }
+        if (customerId === undefined || customerId === null) {
+            throw new Error('Missing the required parameter \'customerId\' when calling getCustomersByIDAddressesByID')
+        }
 
       // verify the required parameter 'addressName' is set
-      if (addressName === undefined || addressName === null) {
-        throw new Error("Missing the required parameter 'addressName' when calling getCustomersByIDAddressesByID")
-      }
+        if (addressName === undefined || addressName === null) {
+            throw new Error('Missing the required parameter \'addressName\' when calling getCustomersByIDAddressesByID')
+        }
 
 
-      let pathParams = {
-        'customer_id': customerId,
-        'address_name': addressName
-      }
-      let queryParams = {
-      }
-      let headerParams = {
-      }
-      let formParams = {
-      }
+        const pathParams = {
+            customer_id: customerId,
+            address_name: addressName
+        }
+        const queryParams = {
+        }
+        const headerParams = {
+        }
+        const formParams = {
+        }
 
-      let authNames = ['customers_auth', 'oauth2_application']
-      let contentTypes = ['application/json', 'text/xml', 'application/xml']
-      let accepts = ['application/json', 'text/xml', 'application/xml']
-      let returnType = CustomerAddressModel
+        const authNames = ['customers_auth', 'oauth2_application']
+        const contentTypes = ['application/json', 'text/xml', 'application/xml']
+        const accepts = ['application/json', 'text/xml', 'application/xml']
+        const returnType = CustomerAddressModel
 
-      return this.apiClient.callApi(
+        return this.apiClient.callApi(
         '/customers/{customer_id}/addresses/{address_name}', 'GET',
         pathParams, queryParams, headerParams, formParams, postBody,
         authNames, contentTypes, accepts, returnType
@@ -496,9 +496,9 @@ export default class CustomersApi {
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:models/CustomerAddressModel}
      */
     getCustomersByIDAddressesByID(customerId, addressName) {
-      return this.getCustomersByIDAddressesByIDWithHttpInfo(customerId, addressName)
-        .then(function(response_and_data) {
-          return response_and_data.data
+        return this.getCustomersByIDAddressesByIDWithHttpInfo(customerId, addressName)
+        .then((response_and_data) => {
+            return response_and_data.data
         })
     }
 
@@ -509,30 +509,30 @@ export default class CustomersApi {
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:models/BasketsResultModel} and HTTP response
      */
     getCustomersByIDBasketsWithHttpInfo(customerId) {
-      let postBody = null
+        const postBody = null
 
       // verify the required parameter 'customerId' is set
-      if (customerId === undefined || customerId === null) {
-        throw new Error("Missing the required parameter 'customerId' when calling getCustomersByIDBaskets")
-      }
+        if (customerId === undefined || customerId === null) {
+            throw new Error('Missing the required parameter \'customerId\' when calling getCustomersByIDBaskets')
+        }
 
 
-      let pathParams = {
-        'customer_id': customerId
-      }
-      let queryParams = {
-      }
-      let headerParams = {
-      }
-      let formParams = {
-      }
+        const pathParams = {
+            customer_id: customerId
+        }
+        const queryParams = {
+        }
+        const headerParams = {
+        }
+        const formParams = {
+        }
 
-      let authNames = ['customers_auth', 'oauth2_application']
-      let contentTypes = ['application/json', 'text/xml', 'application/xml']
-      let accepts = ['application/json', 'text/xml', 'application/xml']
-      let returnType = BasketsResultModel
+        const authNames = ['customers_auth', 'oauth2_application']
+        const contentTypes = ['application/json', 'text/xml', 'application/xml']
+        const accepts = ['application/json', 'text/xml', 'application/xml']
+        const returnType = BasketsResultModel
 
-      return this.apiClient.callApi(
+        return this.apiClient.callApi(
         '/customers/{customer_id}/baskets', 'GET',
         pathParams, queryParams, headerParams, formParams, postBody,
         authNames, contentTypes, accepts, returnType
@@ -545,9 +545,9 @@ export default class CustomersApi {
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:models/BasketsResultModel}
      */
     getCustomersByIDBaskets(customerId) {
-      return this.getCustomersByIDBasketsWithHttpInfo(customerId)
-        .then(function(response_and_data) {
-          return response_and_data.data
+        return this.getCustomersByIDBasketsWithHttpInfo(customerId)
+        .then((response_and_data) => {
+            return response_and_data.data
         })
     }
 
@@ -565,37 +565,37 @@ export default class CustomersApi {
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:models/CustomerOrderResultModel} and HTTP response
      */
     getCustomersByIDOrdersWithHttpInfo(customerId, opts) {
-      opts = opts || {}
-      let postBody = null
+        opts = opts || {}
+        const postBody = null
 
       // verify the required parameter 'customerId' is set
-      if (customerId === undefined || customerId === null) {
-        throw new Error("Missing the required parameter 'customerId' when calling getCustomersByIDOrders")
-      }
+        if (customerId === undefined || customerId === null) {
+            throw new Error('Missing the required parameter \'customerId\' when calling getCustomersByIDOrders')
+        }
 
 
-      let pathParams = {
-        'customer_id': customerId
-      }
-      let queryParams = {
-        'start': opts['start'],
-        'count': opts['count'],
-        'cross-sites': opts['crossSites'],
-        'from': opts['from'],
-        'until': opts['until'],
-        'status': opts['status']
-      }
-      let headerParams = {
-      }
-      let formParams = {
-      }
+        const pathParams = {
+            customer_id: customerId
+        }
+        const queryParams = {
+            start: opts.start,
+            count: opts.count,
+            'cross-sites': opts.crossSites,
+            from: opts.from,
+            until: opts.until,
+            status: opts.status
+        }
+        const headerParams = {
+        }
+        const formParams = {
+        }
 
-      let authNames = ['customers_auth', 'oauth2_application']
-      let contentTypes = ['application/json', 'text/xml', 'application/xml']
-      let accepts = ['application/json', 'text/xml', 'application/xml']
-      let returnType = CustomerOrderResultModel
+        const authNames = ['customers_auth', 'oauth2_application']
+        const contentTypes = ['application/json', 'text/xml', 'application/xml']
+        const accepts = ['application/json', 'text/xml', 'application/xml']
+        const returnType = CustomerOrderResultModel
 
-      return this.apiClient.callApi(
+        return this.apiClient.callApi(
         '/customers/{customer_id}/orders', 'GET',
         pathParams, queryParams, headerParams, formParams, postBody,
         authNames, contentTypes, accepts, returnType
@@ -615,9 +615,9 @@ export default class CustomersApi {
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:models/CustomerOrderResultModel}
      */
     getCustomersByIDOrders(customerId, opts) {
-      return this.getCustomersByIDOrdersWithHttpInfo(customerId, opts)
-        .then(function(response_and_data) {
-          return response_and_data.data
+        return this.getCustomersByIDOrdersWithHttpInfo(customerId, opts)
+        .then((response_and_data) => {
+            return response_and_data.data
         })
     }
 
@@ -630,32 +630,32 @@ export default class CustomersApi {
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:models/CustomerPaymentInstrumentResultModel} and HTTP response
      */
     getCustomersByIDPaymentInstrumentsWithHttpInfo(customerId, opts) {
-      opts = opts || {}
-      let postBody = null
+        opts = opts || {}
+        const postBody = null
 
       // verify the required parameter 'customerId' is set
-      if (customerId === undefined || customerId === null) {
-        throw new Error("Missing the required parameter 'customerId' when calling getCustomersByIDPaymentInstruments")
-      }
+        if (customerId === undefined || customerId === null) {
+            throw new Error('Missing the required parameter \'customerId\' when calling getCustomersByIDPaymentInstruments')
+        }
 
 
-      let pathParams = {
-        'customer_id': customerId
-      }
-      let queryParams = {
-        'payment_method_id': opts['paymentMethodId']
-      }
-      let headerParams = {
-      }
-      let formParams = {
-      }
+        const pathParams = {
+            customer_id: customerId
+        }
+        const queryParams = {
+            payment_method_id: opts.paymentMethodId
+        }
+        const headerParams = {
+        }
+        const formParams = {
+        }
 
-      let authNames = ['customers_auth', 'oauth2_application']
-      let contentTypes = ['application/json', 'text/xml', 'application/xml']
-      let accepts = ['application/json', 'text/xml', 'application/xml']
-      let returnType = CustomerPaymentInstrumentResultModel
+        const authNames = ['customers_auth', 'oauth2_application']
+        const contentTypes = ['application/json', 'text/xml', 'application/xml']
+        const accepts = ['application/json', 'text/xml', 'application/xml']
+        const returnType = CustomerPaymentInstrumentResultModel
 
-      return this.apiClient.callApi(
+        return this.apiClient.callApi(
         '/customers/{customer_id}/payment_instruments', 'GET',
         pathParams, queryParams, headerParams, formParams, postBody,
         authNames, contentTypes, accepts, returnType
@@ -670,9 +670,9 @@ export default class CustomersApi {
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:models/CustomerPaymentInstrumentResultModel}
      */
     getCustomersByIDPaymentInstruments(customerId, opts) {
-      return this.getCustomersByIDPaymentInstrumentsWithHttpInfo(customerId, opts)
-        .then(function(response_and_data) {
-          return response_and_data.data
+        return this.getCustomersByIDPaymentInstrumentsWithHttpInfo(customerId, opts)
+        .then((response_and_data) => {
+            return response_and_data.data
         })
     }
 
@@ -684,36 +684,36 @@ export default class CustomersApi {
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:models/CustomerPaymentInstrumentModel} and HTTP response
      */
     getCustomersByIDPaymentInstrumentsByIDWithHttpInfo(customerId, paymentInstrumentId) {
-      let postBody = null
+        const postBody = null
 
       // verify the required parameter 'customerId' is set
-      if (customerId === undefined || customerId === null) {
-        throw new Error("Missing the required parameter 'customerId' when calling getCustomersByIDPaymentInstrumentsByID")
-      }
+        if (customerId === undefined || customerId === null) {
+            throw new Error('Missing the required parameter \'customerId\' when calling getCustomersByIDPaymentInstrumentsByID')
+        }
 
       // verify the required parameter 'paymentInstrumentId' is set
-      if (paymentInstrumentId === undefined || paymentInstrumentId === null) {
-        throw new Error("Missing the required parameter 'paymentInstrumentId' when calling getCustomersByIDPaymentInstrumentsByID")
-      }
+        if (paymentInstrumentId === undefined || paymentInstrumentId === null) {
+            throw new Error('Missing the required parameter \'paymentInstrumentId\' when calling getCustomersByIDPaymentInstrumentsByID')
+        }
 
 
-      let pathParams = {
-        'customer_id': customerId,
-        'payment_instrument_id': paymentInstrumentId
-      }
-      let queryParams = {
-      }
-      let headerParams = {
-      }
-      let formParams = {
-      }
+        const pathParams = {
+            customer_id: customerId,
+            payment_instrument_id: paymentInstrumentId
+        }
+        const queryParams = {
+        }
+        const headerParams = {
+        }
+        const formParams = {
+        }
 
-      let authNames = ['customers_auth', 'oauth2_application']
-      let contentTypes = ['application/json', 'text/xml', 'application/xml']
-      let accepts = ['application/json', 'text/xml', 'application/xml']
-      let returnType = CustomerPaymentInstrumentModel
+        const authNames = ['customers_auth', 'oauth2_application']
+        const contentTypes = ['application/json', 'text/xml', 'application/xml']
+        const accepts = ['application/json', 'text/xml', 'application/xml']
+        const returnType = CustomerPaymentInstrumentModel
 
-      return this.apiClient.callApi(
+        return this.apiClient.callApi(
         '/customers/{customer_id}/payment_instruments/{payment_instrument_id}', 'GET',
         pathParams, queryParams, headerParams, formParams, postBody,
         authNames, contentTypes, accepts, returnType
@@ -727,9 +727,9 @@ export default class CustomersApi {
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:models/CustomerPaymentInstrumentModel}
      */
     getCustomersByIDPaymentInstrumentsByID(customerId, paymentInstrumentId) {
-      return this.getCustomersByIDPaymentInstrumentsByIDWithHttpInfo(customerId, paymentInstrumentId)
-        .then(function(response_and_data) {
-          return response_and_data.data
+        return this.getCustomersByIDPaymentInstrumentsByIDWithHttpInfo(customerId, paymentInstrumentId)
+        .then((response_and_data) => {
+            return response_and_data.data
         })
     }
 
@@ -742,32 +742,32 @@ export default class CustomersApi {
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:models/CustomerProductListResultModel} and HTTP response
      */
     getCustomersByIDProductListsWithHttpInfo(customerId, opts) {
-      opts = opts || {}
-      let postBody = null
+        opts = opts || {}
+        const postBody = null
 
       // verify the required parameter 'customerId' is set
-      if (customerId === undefined || customerId === null) {
-        throw new Error("Missing the required parameter 'customerId' when calling getCustomersByIDProductLists")
-      }
+        if (customerId === undefined || customerId === null) {
+            throw new Error('Missing the required parameter \'customerId\' when calling getCustomersByIDProductLists')
+        }
 
 
-      let pathParams = {
-        'customer_id': customerId
-      }
-      let queryParams = {
-        'expand': this.apiClient.buildCollectionParam(opts['expand'], 'csv')
-      }
-      let headerParams = {
-      }
-      let formParams = {
-      }
+        const pathParams = {
+            customer_id: customerId
+        }
+        const queryParams = {
+            expand: this.apiClient.buildCollectionParam(opts.expand, 'csv')
+        }
+        const headerParams = {
+        }
+        const formParams = {
+        }
 
-      let authNames = ['customers_auth', 'oauth2_application']
-      let contentTypes = ['application/json', 'text/xml', 'application/xml']
-      let accepts = ['application/json', 'text/xml', 'application/xml']
-      let returnType = CustomerProductListResultModel
+        const authNames = ['customers_auth', 'oauth2_application']
+        const contentTypes = ['application/json', 'text/xml', 'application/xml']
+        const accepts = ['application/json', 'text/xml', 'application/xml']
+        const returnType = CustomerProductListResultModel
 
-      return this.apiClient.callApi(
+        return this.apiClient.callApi(
         '/customers/{customer_id}/product_lists', 'GET',
         pathParams, queryParams, headerParams, formParams, postBody,
         authNames, contentTypes, accepts, returnType
@@ -782,9 +782,9 @@ export default class CustomersApi {
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:models/CustomerProductListResultModel}
      */
     getCustomersByIDProductLists(customerId, opts) {
-      return this.getCustomersByIDProductListsWithHttpInfo(customerId, opts)
-        .then(function(response_and_data) {
-          return response_and_data.data
+        return this.getCustomersByIDProductListsWithHttpInfo(customerId, opts)
+        .then((response_and_data) => {
+            return response_and_data.data
         })
     }
 
@@ -798,38 +798,38 @@ export default class CustomersApi {
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:models/CustomerProductListModel} and HTTP response
      */
     getCustomersByIDProductListsByIDWithHttpInfo(customerId, listId, opts) {
-      opts = opts || {}
-      let postBody = null
+        opts = opts || {}
+        const postBody = null
 
       // verify the required parameter 'customerId' is set
-      if (customerId === undefined || customerId === null) {
-        throw new Error("Missing the required parameter 'customerId' when calling getCustomersByIDProductListsByID")
-      }
+        if (customerId === undefined || customerId === null) {
+            throw new Error('Missing the required parameter \'customerId\' when calling getCustomersByIDProductListsByID')
+        }
 
       // verify the required parameter 'listId' is set
-      if (listId === undefined || listId === null) {
-        throw new Error("Missing the required parameter 'listId' when calling getCustomersByIDProductListsByID")
-      }
+        if (listId === undefined || listId === null) {
+            throw new Error('Missing the required parameter \'listId\' when calling getCustomersByIDProductListsByID')
+        }
 
 
-      let pathParams = {
-        'customer_id': customerId,
-        'list_id': listId
-      }
-      let queryParams = {
-        'expand': this.apiClient.buildCollectionParam(opts['expand'], 'csv')
-      }
-      let headerParams = {
-      }
-      let formParams = {
-      }
+        const pathParams = {
+            customer_id: customerId,
+            list_id: listId
+        }
+        const queryParams = {
+            expand: this.apiClient.buildCollectionParam(opts.expand, 'csv')
+        }
+        const headerParams = {
+        }
+        const formParams = {
+        }
 
-      let authNames = ['customers_auth', 'oauth2_application']
-      let contentTypes = ['application/json', 'text/xml', 'application/xml']
-      let accepts = ['application/json', 'text/xml', 'application/xml']
-      let returnType = CustomerProductListModel
+        const authNames = ['customers_auth', 'oauth2_application']
+        const contentTypes = ['application/json', 'text/xml', 'application/xml']
+        const accepts = ['application/json', 'text/xml', 'application/xml']
+        const returnType = CustomerProductListModel
 
-      return this.apiClient.callApi(
+        return this.apiClient.callApi(
         '/customers/{customer_id}/product_lists/{list_id}', 'GET',
         pathParams, queryParams, headerParams, formParams, postBody,
         authNames, contentTypes, accepts, returnType
@@ -845,9 +845,9 @@ export default class CustomersApi {
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:models/CustomerProductListModel}
      */
     getCustomersByIDProductListsByID(customerId, listId, opts) {
-      return this.getCustomersByIDProductListsByIDWithHttpInfo(customerId, listId, opts)
-        .then(function(response_and_data) {
-          return response_and_data.data
+        return this.getCustomersByIDProductListsByIDWithHttpInfo(customerId, listId, opts)
+        .then((response_and_data) => {
+            return response_and_data.data
         })
     }
 
@@ -863,40 +863,40 @@ export default class CustomersApi {
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:models/CustomerProductListItemResultModel} and HTTP response
      */
     getCustomersByIDProductListsByIDItemsWithHttpInfo(customerId, listId, opts) {
-      opts = opts || {}
-      let postBody = null
+        opts = opts || {}
+        const postBody = null
 
       // verify the required parameter 'customerId' is set
-      if (customerId === undefined || customerId === null) {
-        throw new Error("Missing the required parameter 'customerId' when calling getCustomersByIDProductListsByIDItems")
-      }
+        if (customerId === undefined || customerId === null) {
+            throw new Error('Missing the required parameter \'customerId\' when calling getCustomersByIDProductListsByIDItems')
+        }
 
       // verify the required parameter 'listId' is set
-      if (listId === undefined || listId === null) {
-        throw new Error("Missing the required parameter 'listId' when calling getCustomersByIDProductListsByIDItems")
-      }
+        if (listId === undefined || listId === null) {
+            throw new Error('Missing the required parameter \'listId\' when calling getCustomersByIDProductListsByIDItems')
+        }
 
 
-      let pathParams = {
-        'customer_id': customerId,
-        'list_id': listId
-      }
-      let queryParams = {
-        'expand': this.apiClient.buildCollectionParam(opts['expand'], 'csv'),
-        'start': opts['start'],
-        'count': opts['count']
-      }
-      let headerParams = {
-      }
-      let formParams = {
-      }
+        const pathParams = {
+            customer_id: customerId,
+            list_id: listId
+        }
+        const queryParams = {
+            expand: this.apiClient.buildCollectionParam(opts.expand, 'csv'),
+            start: opts.start,
+            count: opts.count
+        }
+        const headerParams = {
+        }
+        const formParams = {
+        }
 
-      let authNames = ['customers_auth', 'oauth2_application']
-      let contentTypes = ['application/json', 'text/xml', 'application/xml']
-      let accepts = ['application/json', 'text/xml', 'application/xml']
-      let returnType = CustomerProductListItemResultModel
+        const authNames = ['customers_auth', 'oauth2_application']
+        const contentTypes = ['application/json', 'text/xml', 'application/xml']
+        const accepts = ['application/json', 'text/xml', 'application/xml']
+        const returnType = CustomerProductListItemResultModel
 
-      return this.apiClient.callApi(
+        return this.apiClient.callApi(
         '/customers/{customer_id}/product_lists/{list_id}/items', 'GET',
         pathParams, queryParams, headerParams, formParams, postBody,
         authNames, contentTypes, accepts, returnType
@@ -914,9 +914,9 @@ export default class CustomersApi {
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:models/CustomerProductListItemResultModel}
      */
     getCustomersByIDProductListsByIDItems(customerId, listId, opts) {
-      return this.getCustomersByIDProductListsByIDItemsWithHttpInfo(customerId, listId, opts)
-        .then(function(response_and_data) {
-          return response_and_data.data
+        return this.getCustomersByIDProductListsByIDItemsWithHttpInfo(customerId, listId, opts)
+        .then((response_and_data) => {
+            return response_and_data.data
         })
     }
 
@@ -931,44 +931,44 @@ export default class CustomersApi {
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:models/CustomerProductListItemModel} and HTTP response
      */
     getCustomersByIDProductListsByIDItemsByIDWithHttpInfo(customerId, listId, itemId, opts) {
-      opts = opts || {}
-      let postBody = null
+        opts = opts || {}
+        const postBody = null
 
       // verify the required parameter 'customerId' is set
-      if (customerId === undefined || customerId === null) {
-        throw new Error("Missing the required parameter 'customerId' when calling getCustomersByIDProductListsByIDItemsByID")
-      }
+        if (customerId === undefined || customerId === null) {
+            throw new Error('Missing the required parameter \'customerId\' when calling getCustomersByIDProductListsByIDItemsByID')
+        }
 
       // verify the required parameter 'listId' is set
-      if (listId === undefined || listId === null) {
-        throw new Error("Missing the required parameter 'listId' when calling getCustomersByIDProductListsByIDItemsByID")
-      }
+        if (listId === undefined || listId === null) {
+            throw new Error('Missing the required parameter \'listId\' when calling getCustomersByIDProductListsByIDItemsByID')
+        }
 
       // verify the required parameter 'itemId' is set
-      if (itemId === undefined || itemId === null) {
-        throw new Error("Missing the required parameter 'itemId' when calling getCustomersByIDProductListsByIDItemsByID")
-      }
+        if (itemId === undefined || itemId === null) {
+            throw new Error('Missing the required parameter \'itemId\' when calling getCustomersByIDProductListsByIDItemsByID')
+        }
 
 
-      let pathParams = {
-        'customer_id': customerId,
-        'list_id': listId,
-        'item_id': itemId
-      }
-      let queryParams = {
-        'expand': this.apiClient.buildCollectionParam(opts['expand'], 'csv')
-      }
-      let headerParams = {
-      }
-      let formParams = {
-      }
+        const pathParams = {
+            customer_id: customerId,
+            list_id: listId,
+            item_id: itemId
+        }
+        const queryParams = {
+            expand: this.apiClient.buildCollectionParam(opts.expand, 'csv')
+        }
+        const headerParams = {
+        }
+        const formParams = {
+        }
 
-      let authNames = ['customers_auth', 'oauth2_application']
-      let contentTypes = ['application/json', 'text/xml', 'application/xml']
-      let accepts = ['application/json', 'text/xml', 'application/xml']
-      let returnType = CustomerProductListItemModel
+        const authNames = ['customers_auth', 'oauth2_application']
+        const contentTypes = ['application/json', 'text/xml', 'application/xml']
+        const accepts = ['application/json', 'text/xml', 'application/xml']
+        const returnType = CustomerProductListItemModel
 
-      return this.apiClient.callApi(
+        return this.apiClient.callApi(
         '/customers/{customer_id}/product_lists/{list_id}/items/{item_id}', 'GET',
         pathParams, queryParams, headerParams, formParams, postBody,
         authNames, contentTypes, accepts, returnType
@@ -985,9 +985,9 @@ export default class CustomersApi {
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:models/CustomerProductListItemModel}
      */
     getCustomersByIDProductListsByIDItemsByID(customerId, listId, itemId, opts) {
-      return this.getCustomersByIDProductListsByIDItemsByIDWithHttpInfo(customerId, listId, itemId, opts)
-        .then(function(response_and_data) {
-          return response_and_data.data
+        return this.getCustomersByIDProductListsByIDItemsByIDWithHttpInfo(customerId, listId, itemId, opts)
+        .then((response_and_data) => {
+            return response_and_data.data
         })
     }
 
@@ -999,35 +999,35 @@ export default class CustomersApi {
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:models/CustomerModel} and HTTP response
      */
     patchCustomersByIDWithHttpInfo(customerId, body) {
-      let postBody = body
+        const postBody = body
 
       // verify the required parameter 'customerId' is set
-      if (customerId === undefined || customerId === null) {
-        throw new Error("Missing the required parameter 'customerId' when calling patchCustomersByID")
-      }
+        if (customerId === undefined || customerId === null) {
+            throw new Error('Missing the required parameter \'customerId\' when calling patchCustomersByID')
+        }
 
       // verify the required parameter 'body' is set
-      if (body === undefined || body === null) {
-        throw new Error("Missing the required parameter 'body' when calling patchCustomersByID")
-      }
+        if (body === undefined || body === null) {
+            throw new Error('Missing the required parameter \'body\' when calling patchCustomersByID')
+        }
 
 
-      let pathParams = {
-        'customer_id': customerId
-      }
-      let queryParams = {
-      }
-      let headerParams = {
-      }
-      let formParams = {
-      }
+        const pathParams = {
+            customer_id: customerId
+        }
+        const queryParams = {
+        }
+        const headerParams = {
+        }
+        const formParams = {
+        }
 
-      let authNames = ['customers_auth', 'oauth2_application']
-      let contentTypes = ['application/json', 'text/xml', 'application/xml']
-      let accepts = ['application/json', 'text/xml', 'application/xml']
-      let returnType = CustomerModel
+        const authNames = ['customers_auth', 'oauth2_application']
+        const contentTypes = ['application/json', 'text/xml', 'application/xml']
+        const accepts = ['application/json', 'text/xml', 'application/xml']
+        const returnType = CustomerModel
 
-      return this.apiClient.callApi(
+        return this.apiClient.callApi(
         '/customers/{customer_id}', 'PATCH',
         pathParams, queryParams, headerParams, formParams, postBody,
         authNames, contentTypes, accepts, returnType
@@ -1041,9 +1041,9 @@ export default class CustomersApi {
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:models/CustomerModel}
      */
     patchCustomersByID(customerId, body) {
-      return this.patchCustomersByIDWithHttpInfo(customerId, body)
-        .then(function(response_and_data) {
-          return response_and_data.data
+        return this.patchCustomersByIDWithHttpInfo(customerId, body)
+        .then((response_and_data) => {
+            return response_and_data.data
         })
     }
 
@@ -1056,41 +1056,41 @@ export default class CustomersApi {
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:models/CustomerAddressModel} and HTTP response
      */
     patchCustomersByIDAddressesByIDWithHttpInfo(customerId, addressName, body) {
-      let postBody = body
+        const postBody = body
 
       // verify the required parameter 'customerId' is set
-      if (customerId === undefined || customerId === null) {
-        throw new Error("Missing the required parameter 'customerId' when calling patchCustomersByIDAddressesByID")
-      }
+        if (customerId === undefined || customerId === null) {
+            throw new Error('Missing the required parameter \'customerId\' when calling patchCustomersByIDAddressesByID')
+        }
 
       // verify the required parameter 'addressName' is set
-      if (addressName === undefined || addressName === null) {
-        throw new Error("Missing the required parameter 'addressName' when calling patchCustomersByIDAddressesByID")
-      }
+        if (addressName === undefined || addressName === null) {
+            throw new Error('Missing the required parameter \'addressName\' when calling patchCustomersByIDAddressesByID')
+        }
 
       // verify the required parameter 'body' is set
-      if (body === undefined || body === null) {
-        throw new Error("Missing the required parameter 'body' when calling patchCustomersByIDAddressesByID")
-      }
+        if (body === undefined || body === null) {
+            throw new Error('Missing the required parameter \'body\' when calling patchCustomersByIDAddressesByID')
+        }
 
 
-      let pathParams = {
-        'customer_id': customerId,
-        'address_name': addressName
-      }
-      let queryParams = {
-      }
-      let headerParams = {
-      }
-      let formParams = {
-      }
+        const pathParams = {
+            customer_id: customerId,
+            address_name: addressName
+        }
+        const queryParams = {
+        }
+        const headerParams = {
+        }
+        const formParams = {
+        }
 
-      let authNames = ['customers_auth', 'oauth2_application']
-      let contentTypes = ['application/json', 'text/xml', 'application/xml']
-      let accepts = ['application/json', 'text/xml', 'application/xml']
-      let returnType = CustomerAddressModel
+        const authNames = ['customers_auth', 'oauth2_application']
+        const contentTypes = ['application/json', 'text/xml', 'application/xml']
+        const accepts = ['application/json', 'text/xml', 'application/xml']
+        const returnType = CustomerAddressModel
 
-      return this.apiClient.callApi(
+        return this.apiClient.callApi(
         '/customers/{customer_id}/addresses/{address_name}', 'PATCH',
         pathParams, queryParams, headerParams, formParams, postBody,
         authNames, contentTypes, accepts, returnType
@@ -1105,9 +1105,9 @@ export default class CustomersApi {
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:models/CustomerAddressModel}
      */
     patchCustomersByIDAddressesByID(customerId, addressName, body) {
-      return this.patchCustomersByIDAddressesByIDWithHttpInfo(customerId, addressName, body)
-        .then(function(response_and_data) {
-          return response_and_data.data
+        return this.patchCustomersByIDAddressesByIDWithHttpInfo(customerId, addressName, body)
+        .then((response_and_data) => {
+            return response_and_data.data
         })
     }
 
@@ -1120,41 +1120,41 @@ export default class CustomersApi {
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:models/CustomerProductListModel} and HTTP response
      */
     patchCustomersByIDProductListsByIDWithHttpInfo(body, customerId, listId) {
-      let postBody = body
+        const postBody = body
 
       // verify the required parameter 'body' is set
-      if (body === undefined || body === null) {
-        throw new Error("Missing the required parameter 'body' when calling patchCustomersByIDProductListsByID")
-      }
+        if (body === undefined || body === null) {
+            throw new Error('Missing the required parameter \'body\' when calling patchCustomersByIDProductListsByID')
+        }
 
       // verify the required parameter 'customerId' is set
-      if (customerId === undefined || customerId === null) {
-        throw new Error("Missing the required parameter 'customerId' when calling patchCustomersByIDProductListsByID")
-      }
+        if (customerId === undefined || customerId === null) {
+            throw new Error('Missing the required parameter \'customerId\' when calling patchCustomersByIDProductListsByID')
+        }
 
       // verify the required parameter 'listId' is set
-      if (listId === undefined || listId === null) {
-        throw new Error("Missing the required parameter 'listId' when calling patchCustomersByIDProductListsByID")
-      }
+        if (listId === undefined || listId === null) {
+            throw new Error('Missing the required parameter \'listId\' when calling patchCustomersByIDProductListsByID')
+        }
 
 
-      let pathParams = {
-        'customer_id': customerId,
-        'list_id': listId
-      }
-      let queryParams = {
-      }
-      let headerParams = {
-      }
-      let formParams = {
-      }
+        const pathParams = {
+            customer_id: customerId,
+            list_id: listId
+        }
+        const queryParams = {
+        }
+        const headerParams = {
+        }
+        const formParams = {
+        }
 
-      let authNames = ['customers_auth', 'oauth2_application']
-      let contentTypes = ['application/json', 'text/xml', 'application/xml']
-      let accepts = ['application/json', 'text/xml', 'application/xml']
-      let returnType = CustomerProductListModel
+        const authNames = ['customers_auth', 'oauth2_application']
+        const contentTypes = ['application/json', 'text/xml', 'application/xml']
+        const accepts = ['application/json', 'text/xml', 'application/xml']
+        const returnType = CustomerProductListModel
 
-      return this.apiClient.callApi(
+        return this.apiClient.callApi(
         '/customers/{customer_id}/product_lists/{list_id}', 'PATCH',
         pathParams, queryParams, headerParams, formParams, postBody,
         authNames, contentTypes, accepts, returnType
@@ -1169,9 +1169,9 @@ export default class CustomersApi {
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:models/CustomerProductListModel}
      */
     patchCustomersByIDProductListsByID(body, customerId, listId) {
-      return this.patchCustomersByIDProductListsByIDWithHttpInfo(body, customerId, listId)
-        .then(function(response_and_data) {
-          return response_and_data.data
+        return this.patchCustomersByIDProductListsByIDWithHttpInfo(body, customerId, listId)
+        .then((response_and_data) => {
+            return response_and_data.data
         })
     }
 
@@ -1185,47 +1185,47 @@ export default class CustomersApi {
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:models/CustomerProductListItemModel} and HTTP response
      */
     patchCustomersByIDProductListsByIDItemsByIDWithHttpInfo(customerId, listId, itemId, body) {
-      let postBody = body
+        const postBody = body
 
       // verify the required parameter 'customerId' is set
-      if (customerId === undefined || customerId === null) {
-        throw new Error("Missing the required parameter 'customerId' when calling patchCustomersByIDProductListsByIDItemsByID")
-      }
+        if (customerId === undefined || customerId === null) {
+            throw new Error('Missing the required parameter \'customerId\' when calling patchCustomersByIDProductListsByIDItemsByID')
+        }
 
       // verify the required parameter 'listId' is set
-      if (listId === undefined || listId === null) {
-        throw new Error("Missing the required parameter 'listId' when calling patchCustomersByIDProductListsByIDItemsByID")
-      }
+        if (listId === undefined || listId === null) {
+            throw new Error('Missing the required parameter \'listId\' when calling patchCustomersByIDProductListsByIDItemsByID')
+        }
 
       // verify the required parameter 'itemId' is set
-      if (itemId === undefined || itemId === null) {
-        throw new Error("Missing the required parameter 'itemId' when calling patchCustomersByIDProductListsByIDItemsByID")
-      }
+        if (itemId === undefined || itemId === null) {
+            throw new Error('Missing the required parameter \'itemId\' when calling patchCustomersByIDProductListsByIDItemsByID')
+        }
 
       // verify the required parameter 'body' is set
-      if (body === undefined || body === null) {
-        throw new Error("Missing the required parameter 'body' when calling patchCustomersByIDProductListsByIDItemsByID")
-      }
+        if (body === undefined || body === null) {
+            throw new Error('Missing the required parameter \'body\' when calling patchCustomersByIDProductListsByIDItemsByID')
+        }
 
 
-      let pathParams = {
-        'customer_id': customerId,
-        'list_id': listId,
-        'item_id': itemId
-      }
-      let queryParams = {
-      }
-      let headerParams = {
-      }
-      let formParams = {
-      }
+        const pathParams = {
+            customer_id: customerId,
+            list_id: listId,
+            item_id: itemId
+        }
+        const queryParams = {
+        }
+        const headerParams = {
+        }
+        const formParams = {
+        }
 
-      let authNames = ['customers_auth', 'oauth2_application']
-      let contentTypes = ['application/json', 'text/xml', 'application/xml']
-      let accepts = ['application/json', 'text/xml', 'application/xml']
-      let returnType = CustomerProductListItemModel
+        const authNames = ['customers_auth', 'oauth2_application']
+        const contentTypes = ['application/json', 'text/xml', 'application/xml']
+        const accepts = ['application/json', 'text/xml', 'application/xml']
+        const returnType = CustomerProductListItemModel
 
-      return this.apiClient.callApi(
+        return this.apiClient.callApi(
         '/customers/{customer_id}/product_lists/{list_id}/items/{item_id}', 'PATCH',
         pathParams, queryParams, headerParams, formParams, postBody,
         authNames, contentTypes, accepts, returnType
@@ -1241,9 +1241,9 @@ export default class CustomersApi {
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:models/CustomerProductListItemModel}
      */
     patchCustomersByIDProductListsByIDItemsByID(customerId, listId, itemId, body) {
-      return this.patchCustomersByIDProductListsByIDItemsByIDWithHttpInfo(customerId, listId, itemId, body)
-        .then(function(response_and_data) {
-          return response_and_data.data
+        return this.patchCustomersByIDProductListsByIDItemsByIDWithHttpInfo(customerId, listId, itemId, body)
+        .then((response_and_data) => {
+            return response_and_data.data
         })
     }
 
@@ -1254,29 +1254,29 @@ export default class CustomersApi {
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:models/CustomerModel} and HTTP response
      */
     postCustomersWithHttpInfo(body) {
-      let postBody = body
+        const postBody = body
 
       // verify the required parameter 'body' is set
-      if (body === undefined || body === null) {
-        throw new Error("Missing the required parameter 'body' when calling postCustomers")
-      }
+        if (body === undefined || body === null) {
+            throw new Error('Missing the required parameter \'body\' when calling postCustomers')
+        }
 
 
-      let pathParams = {
-      }
-      let queryParams = {
-      }
-      let headerParams = {
-      }
-      let formParams = {
-      }
+        const pathParams = {
+        }
+        const queryParams = {
+        }
+        const headerParams = {
+        }
+        const formParams = {
+        }
 
-      let authNames = ['customers_auth', 'oauth2_application']
-      let contentTypes = ['application/json', 'text/xml', 'application/xml']
-      let accepts = ['application/json', 'text/xml', 'application/xml']
-      let returnType = CustomerModel
+        const authNames = ['customers_auth', 'oauth2_application']
+        const contentTypes = ['application/json', 'text/xml', 'application/xml']
+        const accepts = ['application/json', 'text/xml', 'application/xml']
+        const returnType = CustomerModel
 
-      return this.apiClient.callApi(
+        return this.apiClient.callApi(
         '/customers', 'POST',
         pathParams, queryParams, headerParams, formParams, postBody,
         authNames, contentTypes, accepts, returnType
@@ -1289,9 +1289,9 @@ export default class CustomersApi {
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:models/CustomerModel}
      */
     postCustomers(body) {
-      return this.postCustomersWithHttpInfo(body)
-        .then(function(response_and_data) {
-          return response_and_data.data
+        return this.postCustomersWithHttpInfo(body)
+        .then((response_and_data) => {
+            return response_and_data.data
         })
     }
 
@@ -1305,36 +1305,36 @@ export default class CustomersApi {
      */
     postCustomersAuthWithHttpInfo(body, opts) {
         const self = this
-      opts = opts || {}
-      let postBody = body
+        opts = opts || {}
+        const postBody = body
 
       // verify the required parameter 'body' is set
-      if (body === undefined || body === null) {
-        throw new Error("Missing the required parameter 'body' when calling postCustomersAuth")
-      }
+        if (body === undefined || body === null) {
+            throw new Error('Missing the required parameter \'body\' when calling postCustomersAuth')
+        }
 
 
-      let pathParams = {
-      }
-      let queryParams = {
-      }
-      let headerParams = {
-        'Authorization': opts['authorization']
-      }
-      let formParams = {
-      }
+        const pathParams = {
+        }
+        const queryParams = {
+        }
+        const headerParams = {
+            Authorization: opts.authorization
+        }
+        const formParams = {
+        }
 
-      let authNames = ['client_id']
-      let contentTypes = ['application/json', 'text/xml', 'application/xml']
-      let accepts = ['application/json', 'text/xml', 'application/xml']
-      let returnType = CustomerModel
+        const authNames = ['client_id']
+        const contentTypes = ['application/json', 'text/xml', 'application/xml']
+        const accepts = ['application/json', 'text/xml', 'application/xml']
+        const returnType = CustomerModel
 
-      return this.apiClient.callApi(
+        return this.apiClient.callApi(
           '/customers/auth', 'POST',
           pathParams, queryParams, headerParams, formParams, postBody,
           authNames, contentTypes, accepts, returnType
       ).then((response) => {
-          this.apiClient.defaultHeaders['authorization'] = response.response.header.authorization
+          this.apiClient.defaultHeaders.authorization = response.response.header.authorization
           return response
       })
     }
@@ -1347,9 +1347,9 @@ export default class CustomersApi {
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:models/CustomerModel}
      */
     postCustomersAuth(body, opts) {
-      return this.postCustomersAuthWithHttpInfo(body, opts)
-        .then(function(response_and_data) {
-          return response_and_data.data
+        return this.postCustomersAuthWithHttpInfo(body, opts)
+        .then((response_and_data) => {
+            return response_and_data.data
         })
     }
 
@@ -1361,35 +1361,35 @@ export default class CustomersApi {
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:models/CustomerAddressModel} and HTTP response
      */
     postCustomersByIDAddressesWithHttpInfo(customerId, body) {
-      let postBody = body
+        const postBody = body
 
       // verify the required parameter 'customerId' is set
-      if (customerId === undefined || customerId === null) {
-        throw new Error("Missing the required parameter 'customerId' when calling postCustomersByIDAddresses")
-      }
+        if (customerId === undefined || customerId === null) {
+            throw new Error('Missing the required parameter \'customerId\' when calling postCustomersByIDAddresses')
+        }
 
       // verify the required parameter 'body' is set
-      if (body === undefined || body === null) {
-        throw new Error("Missing the required parameter 'body' when calling postCustomersByIDAddresses")
-      }
+        if (body === undefined || body === null) {
+            throw new Error('Missing the required parameter \'body\' when calling postCustomersByIDAddresses')
+        }
 
 
-      let pathParams = {
-        'customer_id': customerId
-      }
-      let queryParams = {
-      }
-      let headerParams = {
-      }
-      let formParams = {
-      }
+        const pathParams = {
+            customer_id: customerId
+        }
+        const queryParams = {
+        }
+        const headerParams = {
+        }
+        const formParams = {
+        }
 
-      let authNames = ['customers_auth', 'oauth2_application']
-      let contentTypes = ['application/json', 'text/xml', 'application/xml']
-      let accepts = ['application/json', 'text/xml', 'application/xml']
-      let returnType = CustomerAddressModel
+        const authNames = ['customers_auth', 'oauth2_application']
+        const contentTypes = ['application/json', 'text/xml', 'application/xml']
+        const accepts = ['application/json', 'text/xml', 'application/xml']
+        const returnType = CustomerAddressModel
 
-      return this.apiClient.callApi(
+        return this.apiClient.callApi(
         '/customers/{customer_id}/addresses', 'POST',
         pathParams, queryParams, headerParams, formParams, postBody,
         authNames, contentTypes, accepts, returnType
@@ -1403,9 +1403,9 @@ export default class CustomersApi {
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:models/CustomerAddressModel}
      */
     postCustomersByIDAddresses(customerId, body) {
-      return this.postCustomersByIDAddressesWithHttpInfo(customerId, body)
-        .then(function(response_and_data) {
-          return response_and_data.data
+        return this.postCustomersByIDAddressesWithHttpInfo(customerId, body)
+        .then((response_and_data) => {
+            return response_and_data.data
         })
     }
 
@@ -1416,30 +1416,30 @@ export default class CustomersApi {
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:models/CustomerModel} and HTTP response
      */
     postCustomersByIDAuthWithHttpInfo(customerId) {
-      let postBody = null
+        const postBody = null
 
       // verify the required parameter 'customerId' is set
-      if (customerId === undefined || customerId === null) {
-        throw new Error("Missing the required parameter 'customerId' when calling postCustomersByIDAuth")
-      }
+        if (customerId === undefined || customerId === null) {
+            throw new Error('Missing the required parameter \'customerId\' when calling postCustomersByIDAuth')
+        }
 
 
-      let pathParams = {
-        'customer_id': customerId
-      }
-      let queryParams = {
-      }
-      let headerParams = {
-      }
-      let formParams = {
-      }
+        const pathParams = {
+            customer_id: customerId
+        }
+        const queryParams = {
+        }
+        const headerParams = {
+        }
+        const formParams = {
+        }
 
-      let authNames = ['customers_auth', 'oauth2_application']
-      let contentTypes = ['application/json', 'text/xml', 'application/xml']
-      let accepts = ['application/json', 'text/xml', 'application/xml']
-      let returnType = CustomerModel
+        const authNames = ['customers_auth', 'oauth2_application']
+        const contentTypes = ['application/json', 'text/xml', 'application/xml']
+        const accepts = ['application/json', 'text/xml', 'application/xml']
+        const returnType = CustomerModel
 
-      return this.apiClient.callApi(
+        return this.apiClient.callApi(
         '/customers/{customer_id}/auth', 'POST',
         pathParams, queryParams, headerParams, formParams, postBody,
         authNames, contentTypes, accepts, returnType
@@ -1452,9 +1452,9 @@ export default class CustomersApi {
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:models/CustomerModel}
      */
     postCustomersByIDAuth(customerId) {
-      return this.postCustomersByIDAuthWithHttpInfo(customerId)
-        .then(function(response_and_data) {
-          return response_and_data.data
+        return this.postCustomersByIDAuthWithHttpInfo(customerId)
+        .then((response_and_data) => {
+            return response_and_data.data
         })
     }
 
@@ -1465,30 +1465,30 @@ export default class CustomersApi {
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing HTTP response
      */
     postCustomersByIDPasswordResetWithHttpInfo(customerId) {
-      let postBody = null
+        const postBody = null
 
       // verify the required parameter 'customerId' is set
-      if (customerId === undefined || customerId === null) {
-        throw new Error("Missing the required parameter 'customerId' when calling postCustomersByIDPasswordReset")
-      }
+        if (customerId === undefined || customerId === null) {
+            throw new Error('Missing the required parameter \'customerId\' when calling postCustomersByIDPasswordReset')
+        }
 
 
-      let pathParams = {
-        'customer_id': customerId
-      }
-      let queryParams = {
-      }
-      let headerParams = {
-      }
-      let formParams = {
-      }
+        const pathParams = {
+            customer_id: customerId
+        }
+        const queryParams = {
+        }
+        const headerParams = {
+        }
+        const formParams = {
+        }
 
-      let authNames = ['customers_auth', 'oauth2_application']
-      let contentTypes = ['application/json', 'text/xml', 'application/xml']
-      let accepts = ['application/json', 'text/xml', 'application/xml']
-      let returnType = null
+        const authNames = ['customers_auth', 'oauth2_application']
+        const contentTypes = ['application/json', 'text/xml', 'application/xml']
+        const accepts = ['application/json', 'text/xml', 'application/xml']
+        const returnType = null
 
-      return this.apiClient.callApi(
+        return this.apiClient.callApi(
         '/customers/{customer_id}/password_reset', 'POST',
         pathParams, queryParams, headerParams, formParams, postBody,
         authNames, contentTypes, accepts, returnType
@@ -1501,9 +1501,9 @@ export default class CustomersApi {
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}
      */
     postCustomersByIDPasswordReset(customerId) {
-      return this.postCustomersByIDPasswordResetWithHttpInfo(customerId)
-        .then(function(response_and_data) {
-          return response_and_data.data
+        return this.postCustomersByIDPasswordResetWithHttpInfo(customerId)
+        .then((response_and_data) => {
+            return response_and_data.data
         })
     }
 
@@ -1515,35 +1515,35 @@ export default class CustomersApi {
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:models/CustomerPaymentInstrumentModel} and HTTP response
      */
     postCustomersByIDPaymentInstrumentsWithHttpInfo(customerId, body) {
-      let postBody = body
+        const postBody = body
 
       // verify the required parameter 'customerId' is set
-      if (customerId === undefined || customerId === null) {
-        throw new Error("Missing the required parameter 'customerId' when calling postCustomersByIDPaymentInstruments")
-      }
+        if (customerId === undefined || customerId === null) {
+            throw new Error('Missing the required parameter \'customerId\' when calling postCustomersByIDPaymentInstruments')
+        }
 
       // verify the required parameter 'body' is set
-      if (body === undefined || body === null) {
-        throw new Error("Missing the required parameter 'body' when calling postCustomersByIDPaymentInstruments")
-      }
+        if (body === undefined || body === null) {
+            throw new Error('Missing the required parameter \'body\' when calling postCustomersByIDPaymentInstruments')
+        }
 
 
-      let pathParams = {
-        'customer_id': customerId
-      }
-      let queryParams = {
-      }
-      let headerParams = {
-      }
-      let formParams = {
-      }
+        const pathParams = {
+            customer_id: customerId
+        }
+        const queryParams = {
+        }
+        const headerParams = {
+        }
+        const formParams = {
+        }
 
-      let authNames = ['customers_auth', 'oauth2_application']
-      let contentTypes = ['application/json', 'text/xml', 'application/xml']
-      let accepts = ['application/json', 'text/xml', 'application/xml']
-      let returnType = CustomerPaymentInstrumentModel
+        const authNames = ['customers_auth', 'oauth2_application']
+        const contentTypes = ['application/json', 'text/xml', 'application/xml']
+        const accepts = ['application/json', 'text/xml', 'application/xml']
+        const returnType = CustomerPaymentInstrumentModel
 
-      return this.apiClient.callApi(
+        return this.apiClient.callApi(
         '/customers/{customer_id}/payment_instruments', 'POST',
         pathParams, queryParams, headerParams, formParams, postBody,
         authNames, contentTypes, accepts, returnType
@@ -1557,9 +1557,9 @@ export default class CustomersApi {
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:models/CustomerPaymentInstrumentModel}
      */
     postCustomersByIDPaymentInstruments(customerId, body) {
-      return this.postCustomersByIDPaymentInstrumentsWithHttpInfo(customerId, body)
-        .then(function(response_and_data) {
-          return response_and_data.data
+        return this.postCustomersByIDPaymentInstrumentsWithHttpInfo(customerId, body)
+        .then((response_and_data) => {
+            return response_and_data.data
         })
     }
 
@@ -1571,35 +1571,35 @@ export default class CustomersApi {
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:models/CustomerProductListModel} and HTTP response
      */
     postCustomersByIDProductListsWithHttpInfo(body, customerId) {
-      let postBody = body
+        const postBody = body
 
       // verify the required parameter 'body' is set
-      if (body === undefined || body === null) {
-        throw new Error("Missing the required parameter 'body' when calling postCustomersByIDProductLists")
-      }
+        if (body === undefined || body === null) {
+            throw new Error('Missing the required parameter \'body\' when calling postCustomersByIDProductLists')
+        }
 
       // verify the required parameter 'customerId' is set
-      if (customerId === undefined || customerId === null) {
-        throw new Error("Missing the required parameter 'customerId' when calling postCustomersByIDProductLists")
-      }
+        if (customerId === undefined || customerId === null) {
+            throw new Error('Missing the required parameter \'customerId\' when calling postCustomersByIDProductLists')
+        }
 
 
-      let pathParams = {
-        'customer_id': customerId
-      }
-      let queryParams = {
-      }
-      let headerParams = {
-      }
-      let formParams = {
-      }
+        const pathParams = {
+            customer_id: customerId
+        }
+        const queryParams = {
+        }
+        const headerParams = {
+        }
+        const formParams = {
+        }
 
-      let authNames = ['customers_auth', 'oauth2_application']
-      let contentTypes = ['application/json', 'text/xml', 'application/xml']
-      let accepts = ['application/json', 'text/xml', 'application/xml']
-      let returnType = CustomerProductListModel
+        const authNames = ['customers_auth', 'oauth2_application']
+        const contentTypes = ['application/json', 'text/xml', 'application/xml']
+        const accepts = ['application/json', 'text/xml', 'application/xml']
+        const returnType = CustomerProductListModel
 
-      return this.apiClient.callApi(
+        return this.apiClient.callApi(
         '/customers/{customer_id}/product_lists', 'POST',
         pathParams, queryParams, headerParams, formParams, postBody,
         authNames, contentTypes, accepts, returnType
@@ -1613,9 +1613,9 @@ export default class CustomersApi {
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:models/CustomerProductListModel}
      */
     postCustomersByIDProductLists(customerId, body) {
-      return this.postCustomersByIDProductListsWithHttpInfo(body, customerId)
-        .then(function(response_and_data) {
-          return response_and_data.data
+        return this.postCustomersByIDProductListsWithHttpInfo(body, customerId)
+        .then((response_and_data) => {
+            return response_and_data.data
         })
     }
 
@@ -1628,41 +1628,41 @@ export default class CustomersApi {
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:models/CustomerProductListItemModel} and HTTP response
      */
     postCustomersByIDProductListsByIDItemsWithHttpInfo(customerId, listId, body) {
-      let postBody = body
+        const postBody = body
 
       // verify the required parameter 'customerId' is set
-      if (customerId === undefined || customerId === null) {
-        throw new Error("Missing the required parameter 'customerId' when calling postCustomersByIDProductListsByIDItems")
-      }
+        if (customerId === undefined || customerId === null) {
+            throw new Error('Missing the required parameter \'customerId\' when calling postCustomersByIDProductListsByIDItems')
+        }
 
       // verify the required parameter 'listId' is set
-      if (listId === undefined || listId === null) {
-        throw new Error("Missing the required parameter 'listId' when calling postCustomersByIDProductListsByIDItems")
-      }
+        if (listId === undefined || listId === null) {
+            throw new Error('Missing the required parameter \'listId\' when calling postCustomersByIDProductListsByIDItems')
+        }
 
       // verify the required parameter 'body' is set
-      if (body === undefined || body === null) {
-        throw new Error("Missing the required parameter 'body' when calling postCustomersByIDProductListsByIDItems")
-      }
+        if (body === undefined || body === null) {
+            throw new Error('Missing the required parameter \'body\' when calling postCustomersByIDProductListsByIDItems')
+        }
 
 
-      let pathParams = {
-        'customer_id': customerId,
-        'list_id': listId
-      }
-      let queryParams = {
-      }
-      let headerParams = {
-      }
-      let formParams = {
-      }
+        const pathParams = {
+            customer_id: customerId,
+            list_id: listId
+        }
+        const queryParams = {
+        }
+        const headerParams = {
+        }
+        const formParams = {
+        }
 
-      let authNames = ['customers_auth', 'oauth2_application']
-      let contentTypes = ['application/json', 'text/xml', 'application/xml']
-      let accepts = ['application/json', 'text/xml', 'application/xml']
-      let returnType = CustomerProductListItemModel
+        const authNames = ['customers_auth', 'oauth2_application']
+        const contentTypes = ['application/json', 'text/xml', 'application/xml']
+        const accepts = ['application/json', 'text/xml', 'application/xml']
+        const returnType = CustomerProductListItemModel
 
-      return this.apiClient.callApi(
+        return this.apiClient.callApi(
         '/customers/{customer_id}/product_lists/{list_id}/items', 'POST',
         pathParams, queryParams, headerParams, formParams, postBody,
         authNames, contentTypes, accepts, returnType
@@ -1677,9 +1677,9 @@ export default class CustomersApi {
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:models/CustomerProductListItemModel}
      */
     postCustomersByIDProductListsByIDItems(customerId, listId, body) {
-      return this.postCustomersByIDProductListsByIDItemsWithHttpInfo(customerId, listId, body)
-        .then(function(response_and_data) {
-          return response_and_data.data
+        return this.postCustomersByIDProductListsByIDItemsWithHttpInfo(customerId, listId, body)
+        .then((response_and_data) => {
+            return response_and_data.data
         })
     }
 
@@ -1690,29 +1690,29 @@ export default class CustomersApi {
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing HTTP response
      */
     postCustomersPasswordResetWithHttpInfo(body) {
-      let postBody = body
+        const postBody = body
 
       // verify the required parameter 'body' is set
-      if (body === undefined || body === null) {
-        throw new Error("Missing the required parameter 'body' when calling postCustomersPasswordReset")
-      }
+        if (body === undefined || body === null) {
+            throw new Error('Missing the required parameter \'body\' when calling postCustomersPasswordReset')
+        }
 
 
-      let pathParams = {
-      }
-      let queryParams = {
-      }
-      let headerParams = {
-      }
-      let formParams = {
-      }
+        const pathParams = {
+        }
+        const queryParams = {
+        }
+        const headerParams = {
+        }
+        const formParams = {
+        }
 
-      let authNames = ['client_id']
-      let contentTypes = ['application/json', 'text/xml', 'application/xml']
-      let accepts = ['application/json', 'text/xml', 'application/xml']
-      let returnType = null
+        const authNames = ['client_id']
+        const contentTypes = ['application/json', 'text/xml', 'application/xml']
+        const accepts = ['application/json', 'text/xml', 'application/xml']
+        const returnType = null
 
-      return this.apiClient.callApi(
+        return this.apiClient.callApi(
         '/customers/password_reset', 'POST',
         pathParams, queryParams, headerParams, formParams, postBody,
         authNames, contentTypes, accepts, returnType
@@ -1725,9 +1725,9 @@ export default class CustomersApi {
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}
      */
     postCustomersPasswordReset(body) {
-      return this.postCustomersPasswordResetWithHttpInfo(body)
-        .then(function(response_and_data) {
-          return response_and_data.data
+        return this.postCustomersPasswordResetWithHttpInfo(body)
+        .then((response_and_data) => {
+            return response_and_data.data
         })
     }
 
@@ -1739,35 +1739,35 @@ export default class CustomersApi {
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing HTTP response
      */
     putCustomersByIDPasswordWithHttpInfo(customerId, body) {
-      let postBody = body
+        const postBody = body
 
       // verify the required parameter 'customerId' is set
-      if (customerId === undefined || customerId === null) {
-        throw new Error("Missing the required parameter 'customerId' when calling putCustomersByIDPassword")
-      }
+        if (customerId === undefined || customerId === null) {
+            throw new Error('Missing the required parameter \'customerId\' when calling putCustomersByIDPassword')
+        }
 
       // verify the required parameter 'body' is set
-      if (body === undefined || body === null) {
-        throw new Error("Missing the required parameter 'body' when calling putCustomersByIDPassword")
-      }
+        if (body === undefined || body === null) {
+            throw new Error('Missing the required parameter \'body\' when calling putCustomersByIDPassword')
+        }
 
 
-      let pathParams = {
-        'customer_id': customerId
-      }
-      let queryParams = {
-      }
-      let headerParams = {
-      }
-      let formParams = {
-      }
+        const pathParams = {
+            customer_id: customerId
+        }
+        const queryParams = {
+        }
+        const headerParams = {
+        }
+        const formParams = {
+        }
 
-      let authNames = ['customers_auth']
-      let contentTypes = ['application/json', 'text/xml', 'application/xml']
-      let accepts = ['application/json', 'text/xml', 'application/xml']
-      let returnType = null
+        const authNames = ['customers_auth']
+        const contentTypes = ['application/json', 'text/xml', 'application/xml']
+        const accepts = ['application/json', 'text/xml', 'application/xml']
+        const returnType = null
 
-      return this.apiClient.callApi(
+        return this.apiClient.callApi(
         '/customers/{customer_id}/password', 'PUT',
         pathParams, queryParams, headerParams, formParams, postBody,
         authNames, contentTypes, accepts, returnType
@@ -1781,9 +1781,9 @@ export default class CustomersApi {
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}
      */
     putCustomersByIDPassword(customerId, body) {
-      return this.putCustomersByIDPasswordWithHttpInfo(customerId, body)
-        .then(function(response_and_data) {
-          return response_and_data.data
+        return this.putCustomersByIDPasswordWithHttpInfo(customerId, body)
+        .then((response_and_data) => {
+            return response_and_data.data
         })
     }
 

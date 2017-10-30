@@ -12,7 +12,7 @@
  */
 
 
-import ApiClient from "../ApiClient";
+import ApiClient from '../ApiClient'
 import StoreModel from '../models/StoreModel'
 import StoreResultModel from '../models/StoreResultModel'
 
@@ -51,27 +51,27 @@ export default class StoresApi {
      */
     getStoresWithHttpInfo(opts) {
         opts = opts || {}
-        let postBody = null
+        const postBody = null
 
 
-        let pathParams = {}
-        let queryParams = {
-            'latitude': opts['latitude'],
-            'longitude': opts['longitude'],
-            'country_code': opts['countryCode'],
-            'postal_code': opts['postalCode'],
-            'distance_unit': opts['distanceUnit'],
-            'max_distance': opts['maxDistance'],
-            'start': opts['start'],
-            'count': opts['count']
+        const pathParams = {}
+        const queryParams = {
+            latitude: opts.latitude,
+            longitude: opts.longitude,
+            country_code: opts.countryCode,
+            postal_code: opts.postalCode,
+            distance_unit: opts.distanceUnit,
+            max_distance: opts.maxDistance,
+            start: opts.start,
+            count: opts.count
         }
-        let headerParams = {}
-        let formParams = {}
+        const headerParams = {}
+        const formParams = {}
 
-        let authNames = ['client_id', 'customers_auth']
-        let contentTypes = ['application/json', 'text/xml', 'application/xml']
-        let accepts = ['application/json', 'text/xml', 'application/xml']
-        let returnType = StoreResultModel
+        const authNames = ['client_id', 'customers_auth']
+        const contentTypes = ['application/json', 'text/xml', 'application/xml']
+        const accepts = ['application/json', 'text/xml', 'application/xml']
+        const returnType = StoreResultModel
 
         return this.apiClient.callApi(
             '/stores', 'GET',
@@ -95,7 +95,7 @@ export default class StoresApi {
      */
     getStores(opts) {
         return this.getStoresWithHttpInfo(opts)
-            .then(function(response_and_data) {
+            .then((response_and_data) => {
                 return response_and_data.data
             })
     }
@@ -107,25 +107,25 @@ export default class StoresApi {
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:models/StoreModel} and HTTP response
      */
     getStoresByIDWithHttpInfo(id) {
-        let postBody = null
+        const postBody = null
 
         // verify the required parameter 'id' is set
         if (id === undefined || id === null) {
-            throw new Error("Missing the required parameter 'id' when calling getStoresByID")
+            throw new Error('Missing the required parameter \'id\' when calling getStoresByID')
         }
 
 
-        let pathParams = {
-            'id': id
+        const pathParams = {
+            id
         }
-        let queryParams = {}
-        let headerParams = {}
-        let formParams = {}
+        const queryParams = {}
+        const headerParams = {}
+        const formParams = {}
 
-        let authNames = ['client_id', 'customers_auth']
-        let contentTypes = ['application/json', 'text/xml', 'application/xml']
-        let accepts = ['application/json', 'text/xml', 'application/xml']
-        let returnType = StoreModel
+        const authNames = ['client_id', 'customers_auth']
+        const contentTypes = ['application/json', 'text/xml', 'application/xml']
+        const accepts = ['application/json', 'text/xml', 'application/xml']
+        const returnType = StoreModel
 
         return this.apiClient.callApi(
             '/stores/{id}', 'GET',
@@ -141,7 +141,7 @@ export default class StoresApi {
      */
     getStoresByID(id) {
         return this.getStoresByIDWithHttpInfo(id)
-            .then(function(response_and_data) {
+            .then((response_and_data) => {
                 return response_and_data.data
             })
     }
@@ -152,25 +152,25 @@ export default class StoresApi {
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:models/StoreResultModel} and HTTP response
      */
     getStoresByIDsWithHttpInfo(ids) {
-        let postBody = null
+        const postBody = null
 
         // verify the required parameter 'ids' is set
         if (ids === undefined || ids === null) {
-            throw new Error("Missing the required parameter 'ids' when calling getStoresByIDs")
+            throw new Error('Missing the required parameter \'ids\' when calling getStoresByIDs')
         }
 
 
-        let pathParams = {
-            'ids': ids
+        const pathParams = {
+            ids
         }
-        let queryParams = {}
-        let headerParams = {}
-        let formParams = {}
+        const queryParams = {}
+        const headerParams = {}
+        const formParams = {}
 
-        let authNames = ['client_id', 'customers_auth']
-        let contentTypes = ['application/json', 'text/xml', 'application/xml']
-        let accepts = ['application/json', 'text/xml', 'application/xml']
-        let returnType = StoreResultModel
+        const authNames = ['client_id', 'customers_auth']
+        const contentTypes = ['application/json', 'text/xml', 'application/xml']
+        const accepts = ['application/json', 'text/xml', 'application/xml']
+        const returnType = StoreResultModel
 
         return this.apiClient.callApi(
             '/stores/({ids})', 'GET',
@@ -185,7 +185,7 @@ export default class StoresApi {
      */
     getStoresByIDs(ids) {
         return this.getStoresByIDsWithHttpInfo(ids)
-            .then(function(response_and_data) {
+            .then((response_and_data) => {
                 return response_and_data.data
             })
     }

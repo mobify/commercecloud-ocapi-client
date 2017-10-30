@@ -21,7 +21,7 @@ let client
 before(() => {
     client = new ShopApi.ApiClient({
         basePath: `${baseUrl}`,
-        defaultHeaders: { 'x-dw-client-id': clientId }
+        defaultHeaders: {'x-dw-client-id': clientId}
     })
 })
 
@@ -29,20 +29,14 @@ beforeEach(() => {
     instance = new ShopApi.SearchSuggestionApi(client)
 })
 
-var getProperty = (object, getter, property) => {
+const getProperty = (object, getter, property) => {
     // Use getter method if present; otherwise, get the property directly.
-    if (typeof object[getter] === 'function')
-        return object[getter]();
-    else
-        return object[property];
+    if (typeof object[getter] === 'function') { return object[getter]() } else { return object[property] }
 }
 
-var setProperty = (object, setter, property, value) => {
+const setProperty = (object, setter, property, value) => {
     // Use setter method if present; otherwise, set the property directly.
-    if (typeof object[setter] === 'function')
-        object[setter](value);
-    else
-        object[property] = value;
+    if (typeof object[setter] === 'function') { object[setter](value) } else { object[property] = value }
 }
 
 describe('SearchSuggestionApi', () => {

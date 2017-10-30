@@ -11,7 +11,7 @@
  *
  */
 
-import ApiClient from "../ApiClient";
+import ApiClient from '../ApiClient'
 import CategoryModel from '../models/CategoryModel'
 import CategoryResultModel from '../models/CategoryResultModel'
 
@@ -45,28 +45,28 @@ export default class CategoriesApi {
      */
     getCategoriesByIDWithHttpInfo(id, opts) {
         opts = opts || {}
-        let postBody = null
+        const postBody = null
 
         // verify the required parameter 'id' is set
         if (id === undefined || id === null) {
-            throw new Error("Missing the required parameter 'id' when calling getCategoriesByID")
+            throw new Error('Missing the required parameter \'id\' when calling getCategoriesByID')
         }
 
 
-        let pathParams = {
-            'id': id
+        const pathParams = {
+            id
         }
-        let queryParams = {
-            'levels': opts['levels'],
-            'locale': opts['locale']
+        const queryParams = {
+            levels: opts.levels,
+            locale: opts.locale
         }
-        let headerParams = {}
-        let formParams = {}
+        const headerParams = {}
+        const formParams = {}
 
-        let authNames = ['client_id', 'customers_auth']
-        let contentTypes = ['application/json', 'text/xml', 'application/xml']
-        let accepts = ['application/json', 'text/xml', 'application/xml']
-        let returnType = CategoryModel
+        const authNames = ['client_id', 'customers_auth']
+        const contentTypes = ['application/json', 'text/xml', 'application/xml']
+        const accepts = ['application/json', 'text/xml', 'application/xml']
+        const returnType = CategoryModel
 
         return this.apiClient.callApi(
             '/categories/{id}', 'GET',
@@ -85,7 +85,7 @@ export default class CategoriesApi {
      */
     getCategoriesByID(id, opts) {
         return this.getCategoriesByIDWithHttpInfo(id, opts)
-            .then(function(response_and_data) {
+            .then((response_and_data) => {
                 return response_and_data.data
             })
     }
@@ -100,28 +100,28 @@ export default class CategoriesApi {
      */
     getCategoriesByIDsWithHttpInfo(ids, opts) {
         opts = opts || {}
-        let postBody = null
+        const postBody = null
 
         // verify the required parameter 'ids' is set
         if (ids === undefined || ids === null) {
-            throw new Error("Missing the required parameter 'ids' when calling getCategoriesByIDs")
+            throw new Error('Missing the required parameter \'ids\' when calling getCategoriesByIDs')
         }
 
 
-        let pathParams = {
-            'ids': ids
+        const pathParams = {
+            ids
         }
-        let queryParams = {
-            'levels': opts['levels'],
-            'locale': opts['locale']
+        const queryParams = {
+            levels: opts.levels,
+            locale: opts.locale
         }
-        let headerParams = {}
-        let formParams = {}
+        const headerParams = {}
+        const formParams = {}
 
-        let authNames = ['client_id', 'customers_auth']
-        let contentTypes = ['application/json', 'text/xml', 'application/xml']
-        let accepts = ['application/json', 'text/xml', 'application/xml']
-        let returnType = CategoryResultModel
+        const authNames = ['client_id', 'customers_auth']
+        const contentTypes = ['application/json', 'text/xml', 'application/xml']
+        const accepts = ['application/json', 'text/xml', 'application/xml']
+        const returnType = CategoryResultModel
 
         return this.apiClient.callApi(
             '/categories/({ids})', 'GET',
@@ -139,7 +139,7 @@ export default class CategoriesApi {
      */
     getCategoriesByIDs(ids, opts) {
         return this.getCategoriesByIDsWithHttpInfo(ids, opts)
-            .then(function(response_and_data) {
+            .then((response_and_data) => {
                 return response_and_data.data
             })
     }

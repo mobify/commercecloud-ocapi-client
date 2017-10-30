@@ -21,7 +21,7 @@ let client
 before(() => {
     client = new ShopApi.ApiClient({
         basePath: `${baseUrl}`,
-        defaultHeaders: { 'x-dw-client-id': clientId }
+        defaultHeaders: {'x-dw-client-id': clientId}
     })
 })
 
@@ -29,20 +29,14 @@ beforeEach(() => {
     instance = new ShopApi.ProductsApi(client)
 })
 
-var getProperty = (object, getter, property) => {
+const getProperty = (object, getter, property) => {
     // Use getter method if present; otherwise, get the property directly.
-    if (typeof object[getter] === 'function')
-        return object[getter]()
-    else
-        return object[property];
+    if (typeof object[getter] === 'function') { return object[getter]() } else { return object[property] }
 }
 
-var setProperty = (object, setter, property, value) => {
+const setProperty = (object, setter, property, value) => {
     // Use setter method if present; otherwise, set the property directly.
-    if (typeof object[setter] === 'function')
-        object[setter](value)
-    else
-        object[property] = value;
+    if (typeof object[setter] === 'function') { object[setter](value) } else { object[property] = value }
 }
 
 const VALID_PRODUCT_ID = '008884303989'
@@ -61,7 +55,7 @@ describe('ProductsApi', () => {
         it('should return fault calling getProductsByID with invalid product id', () =>
             instance.getProductsByID(INVALID_PRODUCT_ID)
                 .catch((fault) => {
-                    expect(fault.type).to.be('ProductNotFoundException');
+                    expect(fault.type).to.be('ProductNotFoundException')
                 })
         )
     })
@@ -70,7 +64,7 @@ describe('ProductsApi', () => {
         it('should call getProductsByIDAvailability successfully', () =>
             instance.getProductsByIDAvailability(VALID_PRODUCT_ID)
                 .then((product) => {
-                    expect(product.inventory).to.be.an('object');
+                    expect(product.inventory).to.be.an('object')
                 })
         )
     })
@@ -88,7 +82,7 @@ describe('ProductsApi', () => {
         it('should call getProductsByIDImages successfully', () =>
             instance.getProductsByIDImages(VALID_PRODUCT_ID)
                 .then((product) => {
-                    expect(product.image_groups).to.be.an('array');
+                    expect(product.image_groups).to.be.an('array')
                 })
         )
     })

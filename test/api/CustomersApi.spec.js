@@ -25,7 +25,7 @@ let newCustomer
 before(() => {
     client = new ShopApi.ApiClient({
         basePath: `${baseUrl}`,
-        defaultHeaders: { 'x-dw-client-id': clientId }
+        defaultHeaders: {'x-dw-client-id': clientId}
     })
     return utils.getNewRegisteredUser(client)
         .then((customer) => {
@@ -40,20 +40,14 @@ beforeEach(() => {
 
 // afterEach(() => utils.clearUserAuth(client))
 
-var getProperty = (object, getter, property) => {
+const getProperty = (object, getter, property) => {
     // Use getter method if present; otherwise, get the property directly.
-    if (typeof object[getter] === 'function')
-        return object[getter]();
-    else
-        return object[property];
+    if (typeof object[getter] === 'function') { return object[getter]() } else { return object[property] }
 }
 
-var setProperty = (object, setter, property, value) => {
+const setProperty = (object, setter, property, value) => {
     // Use setter method if present; otherwise, set the property directly.
-    if (typeof object[setter] === 'function')
-        object[setter](value);
-    else
-        object[property] = value;
+    if (typeof object[setter] === 'function') { object[setter](value) } else { object[property] = value }
 }
 
 describe('CustomersApi', () => {
@@ -223,7 +217,7 @@ describe('CustomersApi', () => {
 
     describe('patchCustomersByID', () => {
         it('should call patchCustomersByID successfully', () =>
-            instance.patchCustomersByID(newCustomer.customer_id, { last_name: 'user-edited' })
+            instance.patchCustomersByID(newCustomer.customer_id, {last_name: 'user-edited'})
                 .then((customer) => {
                     expect(customer.constructor.name).to.be('CustomerModel')
                     expect(customer.last_name).to.be('user-edited')
@@ -233,7 +227,7 @@ describe('CustomersApi', () => {
 
     describe('patchCustomersByIDAddressesByID', () => {
         it('should call patchCustomersByIDAddressesByID successfully', () =>
-            instance.patchCustomersByIDAddressesByID(newCustomer.customer_id, 'work', { city: 'Vancouver-edited' })
+            instance.patchCustomersByIDAddressesByID(newCustomer.customer_id, 'work', {city: 'Vancouver-edited'})
                 .then((customerAddress) => {
                     expect(customerAddress.constructor.name).to.be('CustomerAddressModel')
                     expect(customerAddress.city).to.be('Vancouver-edited')

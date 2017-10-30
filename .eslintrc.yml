@@ -1,0 +1,7 @@
+extends:
+  - './node_modules/mobify-code-style/es6/mobify-es6.yml'
+settings:
+  import/extensions: ['.js']
+globals:
+  process: false
+  DEBUG: false

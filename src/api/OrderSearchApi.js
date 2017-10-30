@@ -12,7 +12,7 @@
  */
 
 
-import ApiClient from "../ApiClient";
+import ApiClient from '../ApiClient'
 import OrderSearchRequestModel from '../models/OrderSearchRequestModel'
 import OrderSearchResultModel from '../models/OrderSearchResultModel'
 
@@ -42,29 +42,29 @@ export default class OrderSearchApi {
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:models/OrderSearchResultModel} and HTTP response
      */
     postOrderSearchWithHttpInfo(body) {
-      let postBody = body
+        const postBody = body
 
       // verify the required parameter 'body' is set
-      if (body === undefined || body === null) {
-        throw new Error("Missing the required parameter 'body' when calling postOrderSearch")
-      }
+        if (body === undefined || body === null) {
+            throw new Error('Missing the required parameter \'body\' when calling postOrderSearch')
+        }
 
 
-      let pathParams = {
-      }
-      let queryParams = {
-      }
-      let headerParams = {
-      }
-      let formParams = {
-      }
+        const pathParams = {
+        }
+        const queryParams = {
+        }
+        const headerParams = {
+        }
+        const formParams = {
+        }
 
-      let authNames = ['customers_auth', 'oauth2_application']
-      let contentTypes = ['application/json', 'text/xml', 'application/xml']
-      let accepts = ['application/json', 'text/xml', 'application/xml']
-      let returnType = OrderSearchResultModel
+        const authNames = ['customers_auth', 'oauth2_application']
+        const contentTypes = ['application/json', 'text/xml', 'application/xml']
+        const accepts = ['application/json', 'text/xml', 'application/xml']
+        const returnType = OrderSearchResultModel
 
-      return this.apiClient.callApi(
+        return this.apiClient.callApi(
         '/order_search', 'POST',
         pathParams, queryParams, headerParams, formParams, postBody,
         authNames, contentTypes, accepts, returnType
@@ -77,9 +77,9 @@ export default class OrderSearchApi {
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:models/OrderSearchResultModel}
      */
     postOrderSearch(body) {
-      return this.postOrderSearchWithHttpInfo(body)
-        .then(function(response_and_data) {
-          return response_and_data.data
+        return this.postOrderSearchWithHttpInfo(body)
+        .then((response_and_data) => {
+            return response_and_data.data
         })
     }
 
