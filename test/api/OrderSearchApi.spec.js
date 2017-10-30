@@ -13,10 +13,29 @@
 import expect from 'expect.js'
 import * as ShopApi from '../../src/index'
 
+import {clientId, proxyUrl, baseUrl} from '../config.json'
+import * as utils from '../utils'
+
+import * as dataSamples from '../samples'
+
 let instance
+let client
+let newCustomer
+
+before(() => {
+    client = new ShopApi.ApiClient(
+        `${baseUrl}`,
+        { 'x-dw-client-id': clientId }
+    )
+    return utils.getNewRegisteredUser(client)
+        .then((customer) => {
+            newCustomer = customer
+            return Promise.resolve()
+        })
+})
 
 beforeEach(() => {
-    instance = new ShopApi.OrderSearchApi()
+    instance = new ShopApi.OrderSearchApi(client)
 })
 
 var getProperty = (object, getter, property) => {
@@ -36,14 +55,16 @@ var setProperty = (object, setter, property, value) => {
 }
 
 describe('OrderSearchApi', () => {
+
     describe('postOrderSearch', () => {
-        it('should call postOrderSearch successfully', () => {
-            //uncomment below and update the code to test postOrderSearch
-            //instance.postOrderSearch(function(error) {
-            //  if (error) throw error;
-            //expect().to.be();
-            //});
-            return Promise.resolve()
-        })
+        // The below test will fault because the current user doesn't have access
+        // to this endpoint with only JWT authentication.
+        it('should call postOrderSearch successfully', () =>
+            instance.postOrderSearch(dataSamples.validOrderSearchRequest)
+                .catch((fault) => {
+                    expect(fault.type).to.be('AccessWithoutUserForbiddenException')
+                })
+        )
     })
+
 })

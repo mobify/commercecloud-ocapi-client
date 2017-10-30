@@ -1,5 +1,19 @@
 import * as ShopApi from '../src/index'
 
+export const validOrderSearchRequest = ShopApi.ProductModel.constructFromObject({
+   query: {
+      text_query: {
+          fields: ['customer_email'],
+          search_phrase: 'example@non.existing.com'
+      }
+   },
+   select: '(**)',
+   sorts: [{
+       field: 'customer_name',
+       sort_order: 'asc'
+   }]
+})
+
 export const validProduct = ShopApi.ProductModel.constructFromObject({
     id: '008884303989'
 })
@@ -89,4 +103,23 @@ export const validCustomer = ShopApi.CustomerModel.constructFromObject({
 export const validCustomerRegistration = ShopApi.CustomerRegistrationModel.constructFromObject({
     password: '12345!aBcD:',
     customer: validCustomer
+})
+
+export const validPasswordChangeRequest = ShopApi.PasswordChangeRequestModel.constructFromObject({
+    current_password: validCustomerRegistration.password,
+    password: '54321!aBcD:'
+})
+
+export const invalidPasswordChangeRequest = ShopApi.PasswordChangeRequestModel.constructFromObject({
+    current_password: validCustomerRegistration.password,
+    password: ''
+})
+
+export const validPasswordReset = ShopApi.PasswordResetModel.constructFromObject({
+    identification: 'jsmith@nonexist.com',
+    type: 'email'
+})
+
+export const invalidPasswordReset = ShopApi.PasswordResetModel.constructFromObject({
+    identification: 'jsmith@nonexist.com'
 })

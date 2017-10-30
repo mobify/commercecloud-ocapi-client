@@ -16,6 +16,8 @@ import * as ShopApi from '../../src/index'
 import {clientId, proxyUrl, baseUrl} from '../config.json'
 import * as utils from '../utils'
 
+import * as dataSamples from '../samples'
+
 let instance
 let client
 let newCustomer
@@ -219,28 +221,23 @@ describe('CustomersApi', () => {
     // })
 
     describe('patchCustomersByID', () => {
-        it('should call patchCustomersByID successfully', () => {
-            return instance.patchCustomersByID(newCustomer.customer_id, { last_name: 'user-edited' })
+        it('should call patchCustomersByID successfully', () =>
+            instance.patchCustomersByID(newCustomer.customer_id, { last_name: 'user-edited' })
                 .then((customer) => {
                     expect(customer.constructor.name).to.be('CustomerModel')
                     expect(customer.last_name).to.be('user-edited')
                 })
-        })
+        )
     })
 
     describe('patchCustomersByIDAddressesByID', () => {
-        it('should call patchCustomersByIDAddressesByID successfully', () => {
-            //uncomment below and update the code to test patchCustomersByIDAddressesByID
-            //instance.patchCustomersByIDAddressesByID(function(error) {
-            //  if (error) throw error;
-            //expect().to.be();
-            //})
-            return instance.patchCustomersByIDAddressesByID(newCustomer.customer_id, 'work', { city: 'Vancouver-edited' })
+        it('should call patchCustomersByIDAddressesByID successfully', () =>
+            instance.patchCustomersByIDAddressesByID(newCustomer.customer_id, 'work', { city: 'Vancouver-edited' })
                 .then((customerAddress) => {
                     expect(customerAddress.constructor.name).to.be('CustomerAddressModel')
                     expect(customerAddress.city).to.be('Vancouver-edited')
                 })
-        })
+        )
     })
     //
     // describe('patchCustomersByIDProductListsByID', () => {
@@ -352,26 +349,36 @@ describe('CustomersApi', () => {
     //
     //     })
     // })
-    //
-    // describe('postCustomersPasswordReset', () => {
-    //     it('should call postCustomersPasswordReset successfully', () => {
-    //         //uncomment below and update the code to test postCustomersPasswordReset
-    //         //instance.postCustomersPasswordReset(function(error) {
-    //         //  if (error) throw error;
-    //         //expect().to.be();
-    //         //})
-    //
-    //     })
-    // })
-    //
-    // describe('putCustomersByIDPassword', () => {
-    //     it('should call putCustomersByIDPassword successfully', () => {
-    //         //uncomment below and update the code to test putCustomersByIDPassword
-    //         //instance.putCustomersByIDPassword(function(error) {
-    //         //  if (error) throw error;
-    //         //expect().to.be();
-    //         //})
-    //
-    //     })
-    // })
+
+    describe('postCustomersPasswordReset', () => {
+        it('calling postCustomersPasswordReset with an valid request should return successfully', (done) =>
+            instance.postCustomersPasswordReset(dataSamples.validPasswordReset)
+                .then((something) => {
+                    done()
+                })
+        )
+
+        it('calling postCustomersPasswordReset with an invalid request should return a fault', () =>
+            instance.postCustomersPasswordReset(dataSamples.invalidPasswordReset)
+                .catch((fault) => {
+                    expect(fault.type).to.be('InternalServerErrorException')
+                })
+        )
+    })
+
+    describe('putCustomersByIDPassword', () => {
+        it('calling putCustomersByIDPassword with a valid request should return successfully', (done) =>
+            instance.putCustomersByIDPassword(newCustomer.customer_id, dataSamples.validPasswordChangeRequest)
+                .then(() => {
+                    done()
+                })
+        )
+
+        it('calling putCustomersByIDPassword with invalid request should return a fault', () =>
+            instance.putCustomersByIDPassword(newCustomer.customer_id, dataSamples.invalidPasswordChangeRequest)
+                .catch((fault) => {
+                    expect(fault.type).to.be('HookStatusException')
+                })
+        )
+    })
 })
