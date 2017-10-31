@@ -16,8 +16,8 @@
  *
  */
 import ApiClient from '../ApiClient'
-import CategoryModel from '../models/CategoryModel'
-import CategoryResultModel from '../models/CategoryResultModel'
+import Category from '../models/Category'
+import CategoryResult from '../models/CategoryResult'
 
 /**
  * Categories service.
@@ -47,7 +47,7 @@ export default class CategoriesApi {
      * @param {Object} opts Optional parameters
      * @param {Number} opts.levels
      * @param {String} opts.locale
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:models/CategoryModel} and HTTP response
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:models/Category} and HTTP response
      */
     getCategoriesByIDWithHttpInfo(id, opts) {
         opts = opts || {}
@@ -72,7 +72,7 @@ export default class CategoriesApi {
         const authNames = ['client_id', 'customers_auth']
         const contentTypes = ['application/json', 'text/xml', 'application/xml']
         const accepts = ['application/json', 'text/xml', 'application/xml']
-        const returnType = CategoryModel
+        const returnType = Category
 
         return this.apiClient.callApi(
             '/categories/{id}', 'GET',
@@ -89,7 +89,7 @@ export default class CategoriesApi {
      * @param {Object} opts Optional parameters
      * @param {Number} opts.levels
      * @param {String} opts.locale
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:models/CategoryModel}
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:models/Category}
      */
     getCategoriesByID(id, opts) {
         return this.getCategoriesByIDWithHttpInfo(id, opts)
@@ -103,7 +103,7 @@ export default class CategoriesApi {
      * @param {Object} opts Optional parameters
      * @param {Number} opts.levels
      * @param {String} opts.locale
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:models/CategoryResultModel} and HTTP response
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:models/CategoryResult} and HTTP response
      */
     getCategoriesByIDsWithHttpInfo(ids, opts) {
         opts = opts || {}
@@ -128,7 +128,7 @@ export default class CategoriesApi {
         const authNames = ['client_id', 'customers_auth']
         const contentTypes = ['application/json', 'text/xml', 'application/xml']
         const accepts = ['application/json', 'text/xml', 'application/xml']
-        const returnType = CategoryResultModel
+        const returnType = CategoryResult
 
         return this.apiClient.callApi(
             '/categories/({ids})', 'GET',
@@ -142,7 +142,7 @@ export default class CategoriesApi {
      * @param {Object} opts Optional parameters
      * @param {Number} opts.levels
      * @param {String} opts.locale
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:models/CategoryResultModel}
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:models/CategoryResult}
      */
     getCategoriesByIDs(ids, opts) {
         return this.getCategoriesByIDsWithHttpInfo(ids, opts)

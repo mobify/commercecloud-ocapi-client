@@ -16,7 +16,7 @@
  *
  */
 import ApiClient from '../ApiClient'
-import ContentSearchResultModel from '../models/ContentSearchResultModel'
+import ContentSearchResult from '../models/ContentSearchResult'
 
 /**
  * Content_search service.
@@ -56,7 +56,7 @@ export default class ContentSearchApi {
      * @param {Number} opts.start The result set index to return the first instance for. Default value is 0.
      * @param {Number} opts.count The maximum number of instances per request. Default value is 25.
      * @param {String} opts.locale The locale context.
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:models/ContentSearchResultModel} and HTTP response
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:models/ContentSearchResult} and HTTP response
      */
     getContentSearchWithHttpInfo(opts) {
         opts = opts || {}
@@ -78,7 +78,7 @@ export default class ContentSearchApi {
         const authNames = ['client_id', 'customers_auth']
         const contentTypes = ['application/json', 'text/xml', 'application/xml']
         const accepts = ['application/json', 'text/xml', 'application/xml']
-        const returnType = ContentSearchResultModel
+        const returnType = ContentSearchResult
 
         return this.apiClient.callApi(
             '/content_search', 'GET',
@@ -107,7 +107,7 @@ export default class ContentSearchApi {
      * @param {Number} opts.start The result set index to return the first instance for. Default value is 0.
      * @param {Number} opts.count The maximum number of instances per request. Default value is 25.
      * @param {String} opts.locale The locale context.
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:models/ContentSearchResultModel}
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:models/ContentSearchResult}
      */
     getContentSearch(opts) {
         return this.getContentSearchWithHttpInfo(opts)

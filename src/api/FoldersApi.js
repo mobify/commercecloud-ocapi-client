@@ -16,8 +16,8 @@
  *
  */
 import ApiClient from '../ApiClient'
-import ContentFolderModel from '../models/ContentFolderModel'
-import ContentFolderResultModel from '../models/ContentFolderResultModel'
+import ContentFolder from '../models/ContentFolder'
+import ContentFolderResult from '../models/ContentFolderResult'
 
 /**
  * Folders service.
@@ -48,7 +48,7 @@ export default class FoldersApi {
      * @param {Object} opts Optional parameters
      * @param {Number} opts.levels
      * @param {String} opts.locale
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:models/ContentFolderModel} and HTTP response
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:models/ContentFolder} and HTTP response
      */
     getFoldersByIDWithHttpInfo(id, opts) {
         opts = opts || {}
@@ -73,7 +73,7 @@ export default class FoldersApi {
         const authNames = ['client_id', 'customers_auth']
         const contentTypes = ['application/json', 'text/xml', 'application/xml']
         const accepts = ['application/json', 'text/xml', 'application/xml']
-        const returnType = ContentFolderModel
+        const returnType = ContentFolder
 
         return this.apiClient.callApi(
             '/folders/{id}', 'GET',
@@ -91,7 +91,7 @@ export default class FoldersApi {
      * @param {Object} opts Optional parameters
      * @param {Number} opts.levels
      * @param {String} opts.locale
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:models/ContentFolderModel}
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:models/ContentFolder}
      */
     getFoldersByID(id, opts) {
         return this.getFoldersByIDWithHttpInfo(id, opts)
@@ -106,7 +106,7 @@ export default class FoldersApi {
      * @param {Object} opts Optional parameters
      * @param {Number} opts.levels
      * @param {String} opts.locale
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:models/ContentFolderResultModel} and HTTP response
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:models/ContentFolderResult} and HTTP response
      */
     getFoldersByIDsWithHttpInfo(ids, opts) {
         opts = opts || {}
@@ -131,7 +131,7 @@ export default class FoldersApi {
         const authNames = ['client_id', 'customers_auth']
         const contentTypes = ['application/json', 'text/xml', 'application/xml']
         const accepts = ['application/json', 'text/xml', 'application/xml']
-        const returnType = ContentFolderResultModel
+        const returnType = ContentFolderResult
 
         return this.apiClient.callApi(
             '/folders/({ids})', 'GET',
@@ -145,7 +145,7 @@ export default class FoldersApi {
      * @param {Object} opts Optional parameters
      * @param {Number} opts.levels
      * @param {String} opts.locale
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:models/ContentFolderResultModel}
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:models/ContentFolderResult}
      */
     getFoldersByIDs(ids, opts) {
         return this.getFoldersByIDsWithHttpInfo(ids, opts)

@@ -77,7 +77,7 @@ describe('ProductsApi', () => {
         it('should call getProductsByIDBundledProducts successfully', () =>
             instance.getProductsByIDBundledProducts(VALID_PRODUCT_ID)
                 .then((product) => {
-                    expect(product.constructor.name).to.be('ProductModel')
+                    expect(product.constructor.name).to.be('Product')
                 })
         )
     })
@@ -95,7 +95,7 @@ describe('ProductsApi', () => {
         it('should call getProductsByIDLinks successfully', () =>
             instance.getProductsByIDLinks(VALID_PRODUCT_ID)
                 .then((product) => {
-                    expect(product.constructor.name).to.be('ProductModel')
+                    expect(product.constructor.name).to.be('Product')
                 })
         )
     })
@@ -105,7 +105,7 @@ describe('ProductsApi', () => {
         it('should call getProductsByIDOptions successfully', () =>
             instance.getProductsByIDOptions(VALID_PRODUCT_ID)
                 .then((product) => {
-                    expect(product.constructor.name).to.be('ProductModel')
+                    expect(product.constructor.name).to.be('Product')
                 })
         )
     })
@@ -114,7 +114,7 @@ describe('ProductsApi', () => {
         it('should call getProductsByIDPrices successfully', () =>
             instance.getProductsByIDPrices(VALID_PRODUCT_ID)
                 .then((product) => {
-                    expect(product.constructor.name).to.be('ProductModel')
+                    expect(product.constructor.name).to.be('Product')
                     expect(product.prices).to.be.an('object')
                 })
         )
@@ -124,7 +124,7 @@ describe('ProductsApi', () => {
         it('should call getProductsByIDPromotions successfully', () =>
             instance.getProductsByIDPromotions(VALID_PRODUCT_ID)
                 .then((product) => {
-                    expect(product.constructor.name).to.be('ProductModel')
+                    expect(product.constructor.name).to.be('Product')
                 })
         )
     })
@@ -133,7 +133,7 @@ describe('ProductsApi', () => {
         it('should call getProductsByIDVariations successfully', () =>
             instance.getProductsByIDVariations(VALID_PRODUCT_ID)
                 .then((product) => {
-                    expect(product.constructor.name).to.be('ProductModel')
+                    expect(product.constructor.name).to.be('Product')
                     expect(product.variants).to.be.an('array')
                 })
         )
@@ -143,7 +143,7 @@ describe('ProductsApi', () => {
         it('should call getProductsByIDs successfully', () =>
             instance.getProductsByIDs(['008884303996', '008884304009'])
                 .then((result) => {
-                    expect(result.constructor.name).to.be('ProductResultModel')
+                    expect(result.constructor.name).to.be('ProductResult')
                     expect(result.total).to.be(2)
                 })
         )

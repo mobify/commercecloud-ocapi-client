@@ -16,7 +16,7 @@
  *
  */
 import ApiClient from '../ApiClient'
-import PriceAdjustmentLimitsModel from '../models/PriceAdjustmentLimitsModel'
+import PriceAdjustmentLimits from '../models/PriceAdjustmentLimits'
 
 /**
  * Price_adjustment_limits service.
@@ -42,7 +42,7 @@ export default class PriceAdjustmentLimitsApi {
      * Returns a list of price adjustment limits for the authenticated user and the site defined in the URL.
      * At least one of the following functional permissions must be assigned to the user to be able to access it:
      * Adjust_Item_Price or Adjust_Shipping_Price or Adjust_Order_Price.
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:models/PriceAdjustmentLimitsModel} and HTTP response
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:models/PriceAdjustmentLimits} and HTTP response
      */
     getPriceAdjustmentLimitsWithHttpInfo() {
         const postBody = null
@@ -56,7 +56,7 @@ export default class PriceAdjustmentLimitsApi {
         const authNames = ['customers_auth', 'oauth2_application']
         const contentTypes = ['application/json', 'text/xml', 'application/xml']
         const accepts = ['application/json', 'text/xml', 'application/xml']
-        const returnType = PriceAdjustmentLimitsModel
+        const returnType = PriceAdjustmentLimits
 
         return this.apiClient.callApi(
             '/price_adjustment_limits', 'GET',
@@ -69,7 +69,7 @@ export default class PriceAdjustmentLimitsApi {
      * Returns a list of price adjustment limits for the authenticated user and the site defined in the URL.
      * At least one of the following functional permissions must be assigned to the user to be able to access it:
      * Adjust_Item_Price or Adjust_Shipping_Price or Adjust_Order_Price.
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:models/PriceAdjustmentLimitsModel}
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:models/PriceAdjustmentLimits}
      */
     getPriceAdjustmentLimits() {
         return this.getPriceAdjustmentLimitsWithHttpInfo()

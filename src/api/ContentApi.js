@@ -16,8 +16,8 @@
  *
  */
 import ApiClient from '../ApiClient'
-import ContentModel from '../models/ContentModel'
-import ContentResultModel from '../models/ContentResultModel'
+import Content from '../models/Content'
+import ContentResult from '../models/ContentResult'
 
 /**
  * Content service.
@@ -44,7 +44,7 @@ export default class ContentApi {
      * @param {String} id The id of the requested content asset.
      * @param {Object} opts Optional parameters
      * @param {String} opts.locale
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:models/ContentModel} and HTTP response
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:models/Content} and HTTP response
      */
     getContentByIDWithHttpInfo(id, opts) {
         opts = opts || {}
@@ -68,7 +68,7 @@ export default class ContentApi {
         const authNames = ['client_id', 'customers_auth']
         const contentTypes = ['application/json', 'text/xml', 'application/xml']
         const accepts = ['application/json', 'text/xml', 'application/xml']
-        const returnType = ContentModel
+        const returnType = Content
 
         return this.apiClient.callApi(
             '/content/{id}', 'GET',
@@ -84,7 +84,7 @@ export default class ContentApi {
      * @param {String} id The id of the requested content asset.
      * @param {Object} opts Optional parameters
      * @param {String} opts.locale
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:models/ContentModel}
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:models/Content}
      */
     getContentByID(id, opts) {
         return this.getContentByIDWithHttpInfo(id, opts)
@@ -98,7 +98,7 @@ export default class ContentApi {
      * @param {Array.<String>} ids
      * @param {Object} opts Optional parameters
      * @param {String} opts.locale
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:models/ContentResultModel} and HTTP response
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:models/ContentResult} and HTTP response
      */
     getContentByIDsWithHttpInfo(ids, opts) {
         opts = opts || {}
@@ -122,7 +122,7 @@ export default class ContentApi {
         const authNames = ['client_id', 'customers_auth']
         const contentTypes = ['application/json', 'text/xml', 'application/xml']
         const accepts = ['application/json', 'text/xml', 'application/xml']
-        const returnType = ContentResultModel
+        const returnType = ContentResult
 
         return this.apiClient.callApi(
             '/content/({ids})', 'GET',
@@ -135,7 +135,7 @@ export default class ContentApi {
      * @param {Array.<String>} ids
      * @param {Object} opts Optional parameters
      * @param {String} opts.locale
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:models/ContentResultModel}
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:models/ContentResult}
      */
     getContentByIDs(ids, opts) {
         return this.getContentByIDsWithHttpInfo(ids, opts)

@@ -16,8 +16,8 @@
  *
  */
 import ApiClient from '../ApiClient'
-import PromotionModel from '../models/PromotionModel'
-import PromotionResultModel from '../models/PromotionResultModel'
+import Promotion from '../models/Promotion'
+import PromotionResult from '../models/PromotionResult'
 
 /**
  * Promotions service.
@@ -51,7 +51,7 @@ export default class PromotionsApi {
      * @param {String} opts.startDate The start date of the promotion in ISO8601 date time format: yyyy-MM-dd&#39;T&#39;HH:mmZ
      * @param {String} opts.endDate The end date of the promotion in ISO8601 date time format: yyyy-MM-dd&#39;T&#39;HH:mmZ
      * @param {String} opts.currency The currency mnemonic specified for price
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:models/PromotionResultModel} and HTTP response
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:models/PromotionResult} and HTTP response
      */
     getPromotionsWithHttpInfo(campaignId, opts) {
         opts = opts || {}
@@ -76,7 +76,7 @@ export default class PromotionsApi {
         const authNames = ['client_id', 'customers_auth']
         const contentTypes = ['application/json', 'text/xml', 'application/xml']
         const accepts = ['application/json', 'text/xml', 'application/xml']
-        const returnType = PromotionResultModel
+        const returnType = PromotionResult
 
         return this.apiClient.callApi(
             '/promotions', 'GET',
@@ -97,7 +97,7 @@ export default class PromotionsApi {
      * @param {String} opts.startDate The start date of the promotion in ISO8601 date time format: yyyy-MM-dd&#39;T&#39;HH:mmZ
      * @param {String} opts.endDate The end date of the promotion in ISO8601 date time format: yyyy-MM-dd&#39;T&#39;HH:mmZ
      * @param {String} opts.currency The currency mnemonic specified for price
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:models/PromotionResultModel}
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:models/PromotionResult}
      */
     getPromotions(campaignId, opts) {
         return this.getPromotionsWithHttpInfo(campaignId, opts)
@@ -113,7 +113,7 @@ export default class PromotionsApi {
      * @param {String} id The id of the requested promotion.
      * @param {Object} opts Optional parameters
      * @param {String} opts.locale
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:models/PromotionModel} and HTTP response
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:models/Promotion} and HTTP response
      */
     getPromotionsByIDWithHttpInfo(id, opts) {
         opts = opts || {}
@@ -137,7 +137,7 @@ export default class PromotionsApi {
         const authNames = ['client_id', 'customers_auth']
         const contentTypes = ['application/json', 'text/xml', 'application/xml']
         const accepts = ['application/json', 'text/xml', 'application/xml']
-        const returnType = PromotionModel
+        const returnType = Promotion
 
         return this.apiClient.callApi(
             '/promotions/{id}', 'GET',
@@ -152,7 +152,7 @@ export default class PromotionsApi {
      * @param {String} id The id of the requested promotion.
      * @param {Object} opts Optional parameters
      * @param {String} opts.locale
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:models/PromotionModel}
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:models/Promotion}
      */
     getPromotionsByID(id, opts) {
         return this.getPromotionsByIDWithHttpInfo(id, opts)
@@ -166,7 +166,7 @@ export default class PromotionsApi {
      * @param {Array.<String>} ids
      * @param {Object} opts Optional parameters
      * @param {String} opts.locale
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:models/PromotionResultModel} and HTTP response
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:models/PromotionResult} and HTTP response
      */
     getPromotionsByIDsWithHttpInfo(ids, opts) {
         opts = opts || {}
@@ -190,7 +190,7 @@ export default class PromotionsApi {
         const authNames = ['client_id', 'customers_auth']
         const contentTypes = ['application/json', 'text/xml', 'application/xml']
         const accepts = ['application/json', 'text/xml', 'application/xml']
-        const returnType = PromotionResultModel
+        const returnType = PromotionResult
 
         return this.apiClient.callApi(
             '/promotions/({ids})', 'GET',
@@ -203,7 +203,7 @@ export default class PromotionsApi {
      * @param {Array.<String>} ids
      * @param {Object} opts Optional parameters
      * @param {String} opts.locale
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:models/PromotionResultModel}
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:models/PromotionResult}
      */
     getPromotionsByIDs(ids, opts) {
         return this.getPromotionsByIDsWithHttpInfo(ids, opts)

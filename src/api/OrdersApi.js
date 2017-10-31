@@ -16,12 +16,9 @@
  *
  */
 import ApiClient from '../ApiClient'
-// import BasketModel from '../models/BasketModel'
-// import NoteModel from '../models/NoteModel'
-import NotesResultModel from '../models/NotesResultModel'
-import OrderModel from '../models/OrderModel'
-// import OrderPaymentInstrumentRequestModel from '../models/OrderPaymentInstrumentRequestModel'
-import PaymentMethodResultModel from '../models/PaymentMethodResultModel'
+import NotesResult from '../models/NotesResult'
+import Order from '../models/Order'
+import PaymentMethodResult from '../models/PaymentMethodResult'
 
 /**
  * Orders service.
@@ -47,7 +44,7 @@ export default class OrdersApi {
      * Removes an order note.
      * @param {String} orderNo the id of the order to be modified
      * @param {String} noteId the id of the note to be removed
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:models/OrderModel} and HTTP response
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:models/Order} and HTTP response
      */
     deleteOrdersByIDNotesByIDWithHttpInfo(orderNo, noteId) {
         const postBody = null
@@ -74,7 +71,7 @@ export default class OrdersApi {
         const authNames = ['customers_auth', 'oauth2_application']
         const contentTypes = ['application/json', 'text/xml', 'application/xml']
         const accepts = ['application/json', 'text/xml', 'application/xml']
-        const returnType = OrderModel
+        const returnType = Order
 
         return this.apiClient.callApi(
             '/orders/{order_no}/notes/{note_id}', 'DELETE',
@@ -87,7 +84,7 @@ export default class OrdersApi {
      * Removes an order note.
      * @param {String} orderNo the id of the order to be modified
      * @param {String} noteId the id of the note to be removed
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:models/OrderModel}
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:models/Order}
      */
     deleteOrdersByIDNotesByID(orderNo, noteId) {
         return this.deleteOrdersByIDNotesByIDWithHttpInfo(orderNo, noteId)
@@ -101,7 +98,7 @@ export default class OrdersApi {
      * Removes a payment instrument of an order.
      * @param {String} orderNo the order number
      * @param {String} paymentInstrumentId the id of the payment instrument to be updated
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:models/OrderModel} and HTTP response
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:models/Order} and HTTP response
      */
     deleteOrdersByIDPaymentInstrumentsByIDWithHttpInfo(orderNo, paymentInstrumentId) {
         const postBody = null
@@ -128,7 +125,7 @@ export default class OrdersApi {
         const authNames = ['customers_auth', 'oauth2_application']
         const contentTypes = ['application/json', 'text/xml', 'application/xml']
         const accepts = ['application/json', 'text/xml', 'application/xml']
-        const returnType = OrderModel
+        const returnType = Order
 
         return this.apiClient.callApi(
             '/orders/{order_no}/payment_instruments/{payment_instrument_id}', 'DELETE',
@@ -141,7 +138,7 @@ export default class OrdersApi {
      * Removes a payment instrument of an order.
      * @param {String} orderNo the order number
      * @param {String} paymentInstrumentId the id of the payment instrument to be updated
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:models/OrderModel}
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:models/Order}
      */
     deleteOrdersByIDPaymentInstrumentsByID(orderNo, paymentInstrumentId) {
         return this.deleteOrdersByIDPaymentInstrumentsByIDWithHttpInfo(orderNo, paymentInstrumentId)
@@ -154,7 +151,7 @@ export default class OrdersApi {
     /**
      * Gets information for an order.
      * @param {String} orderNo the order number
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:models/OrderModel} and HTTP response
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:models/Order} and HTTP response
      */
     getOrdersByIDWithHttpInfo(orderNo) {
         const postBody = null
@@ -175,7 +172,7 @@ export default class OrdersApi {
         const authNames = ['customers_auth', 'oauth2_application']
         const contentTypes = ['application/json', 'text/xml', 'application/xml']
         const accepts = ['application/json', 'text/xml', 'application/xml']
-        const returnType = OrderModel
+        const returnType = Order
 
         return this.apiClient.callApi(
             '/orders/{order_no}', 'GET',
@@ -187,7 +184,7 @@ export default class OrdersApi {
     /**
      * Gets information for an order.
      * @param {String} orderNo the order number
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:models/OrderModel}
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:models/Order}
      */
     getOrdersByID(orderNo) {
         return this.getOrdersByIDWithHttpInfo(orderNo)
@@ -200,7 +197,7 @@ export default class OrdersApi {
     /**
      * Retrieves notes for an order.
      * @param {String} orderNo The id of the order from which you want to retrieve notes.
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:models/NotesResultModel} and HTTP response
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:models/NotesResult} and HTTP response
      */
     getOrdersByIDNotesWithHttpInfo(orderNo) {
         const postBody = null
@@ -221,7 +218,7 @@ export default class OrdersApi {
         const authNames = ['customers_auth', 'oauth2_application']
         const contentTypes = ['application/json', 'text/xml', 'application/xml']
         const accepts = ['application/json', 'text/xml', 'application/xml']
-        const returnType = NotesResultModel
+        const returnType = NotesResult
 
         return this.apiClient.callApi(
             '/orders/{order_no}/notes', 'GET',
@@ -233,7 +230,7 @@ export default class OrdersApi {
     /**
      * Retrieves notes for an order.
      * @param {String} orderNo The id of the order from which you want to retrieve notes.
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:models/NotesResultModel}
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:models/NotesResult}
      */
     getOrdersByIDNotes(orderNo) {
         return this.getOrdersByIDNotesWithHttpInfo(orderNo)
@@ -246,7 +243,7 @@ export default class OrdersApi {
     /**
      * Gets the applicable payment methods for an existing order considering the open payment amount only.
      * @param {String} orderNo the order number
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:models/PaymentMethodResultModel} and HTTP response
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:models/PaymentMethodResult} and HTTP response
      */
     getOrdersByIDPaymentMethodsWithHttpInfo(orderNo) {
         const postBody = null
@@ -267,7 +264,7 @@ export default class OrdersApi {
         const authNames = ['customers_auth', 'oauth2_application']
         const contentTypes = ['application/json', 'text/xml', 'application/xml']
         const accepts = ['application/json', 'text/xml', 'application/xml']
-        const returnType = PaymentMethodResultModel
+        const returnType = PaymentMethodResult
 
         return this.apiClient.callApi(
             '/orders/{order_no}/payment_methods', 'GET',
@@ -279,7 +276,7 @@ export default class OrdersApi {
     /**
      * Gets the applicable payment methods for an existing order considering the open payment amount only.
      * @param {String} orderNo the order number
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:models/PaymentMethodResultModel}
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:models/PaymentMethodResult}
      */
     getOrdersByIDPaymentMethods(orderNo) {
         return this.getOrdersByIDPaymentMethodsWithHttpInfo(orderNo)
@@ -295,8 +292,8 @@ export default class OrdersApi {
      * plus CREATED to FAILED) and custom properties. During the call the correct channel type will be assured to be set for the order  in a
      * successful call. Without agent context the channel type will be storefront otherwise callcenter.
      * @param {String} orderNo the order number
-     * @param {module:models/OrderModel} body
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:models/OrderModel} and HTTP response
+     * @param {module:models/Order} body
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:models/Order} and HTTP response
      */
     patchOrdersByIDWithHttpInfo(orderNo, body) {
         const postBody = body
@@ -322,7 +319,7 @@ export default class OrdersApi {
         const authNames = ['customers_auth', 'oauth2_application']
         const contentTypes = ['application/json', 'text/xml', 'application/xml']
         const accepts = ['application/json', 'text/xml', 'application/xml']
-        const returnType = OrderModel
+        const returnType = Order
 
         return this.apiClient.callApi(
             '/orders/{order_no}', 'PATCH',
@@ -338,8 +335,8 @@ export default class OrdersApi {
      * the call the correct channel type will be assured to be set for the order  in a successful call.
      * Without agent context the channel type will be storefront otherwise callcenter.
      * @param {String} orderNo the order number
-     * @param {module:models/OrderModel} body
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:models/OrderModel}
+     * @param {module:models/Order} body
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:models/Order}
      */
     patchOrdersByID(orderNo, body) {
         return this.patchOrdersByIDWithHttpInfo(orderNo, body)
@@ -376,8 +373,8 @@ export default class OrdersApi {
      * in the scripting API) results in the order being changed to status NEW and prepared for export.
      * @param {String} orderNo the order number
      * @param {String} paymentInstrumentId the id of the payment instrument to be updated
-     * @param {module:models/OrderPaymentInstrumentRequestModel} body
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:models/OrderModel} and HTTP response
+     * @param {module:models/OrderPaymentInstrumentRequest} body
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:models/Order} and HTTP response
      */
     patchOrdersByIDPaymentInstrumentsByIDWithHttpInfo(orderNo, paymentInstrumentId, body) {
         const postBody = body
@@ -409,7 +406,7 @@ export default class OrdersApi {
         const authNames = ['customers_auth', 'oauth2_application']
         const contentTypes = ['application/json', 'text/xml', 'application/xml']
         const accepts = ['application/json', 'text/xml', 'application/xml']
-        const returnType = OrderModel
+        const returnType = Order
 
         return this.apiClient.callApi(
             '/orders/{order_no}/payment_instruments/{payment_instrument_id}', 'PATCH',
@@ -446,8 +443,8 @@ export default class OrdersApi {
      * the order being changed to status NEW and prepared for export.
      * @param {String} orderNo the order number
      * @param {String} paymentInstrumentId the id of the payment instrument to be updated
-     * @param {module:models/OrderPaymentInstrumentRequestModel} body
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:models/OrderModel}
+     * @param {module:models/OrderPaymentInstrumentRequest} body
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:models/Order}
      */
     patchOrdersByIDPaymentInstrumentsByID(orderNo, paymentInstrumentId, body) {
         return this.patchOrdersByIDPaymentInstrumentsByIDWithHttpInfo(orderNo, paymentInstrumentId, body)
@@ -463,8 +460,8 @@ export default class OrdersApi {
      * type will  be set to \&quot;Call Center\&quot;. In case another channel type was set by a script
      * before submitting the basket, the channel type will be reset to  \&quot;Call Center\&quot; and a warning
      * will be logged.  The only considered value from the request body is basket_id.
-     * @param {module:models/BasketModel} body
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:models/OrderModel} and HTTP response
+     * @param {module:models/Basket} body
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:models/Order} and HTTP response
      */
     postOrdersWithHttpInfo(body) {
         const postBody = body
@@ -483,7 +480,7 @@ export default class OrdersApi {
         const authNames = ['customers_auth', 'oauth2_application']
         const contentTypes = ['application/json', 'text/xml', 'application/xml']
         const accepts = ['application/json', 'text/xml', 'application/xml']
-        const returnType = OrderModel
+        const returnType = Order
 
         return this.apiClient.callApi(
             '/orders', 'POST',
@@ -498,8 +495,8 @@ export default class OrdersApi {
      * channel type will  be set to \&quot;Call Center\&quot;. In case another channel type was set by
      * a script  before submitting the basket, the channel type will be reset to  \&quot;Call Center\&quot;
      * and a warning will be logged.  The only considered value from the request body is basket_id.
-     * @param {module:models/BasketModel} body
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:models/OrderModel}
+     * @param {module:models/Basket} body
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:models/Order}
      */
     postOrders(body) {
         return this.postOrdersWithHttpInfo(body)
@@ -512,8 +509,8 @@ export default class OrdersApi {
     /**
      * Adds a note to an existing order.
      * @param {String} orderNo The id of the order to be modified.
-     * @param {module:models/NoteModel} body
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:models/OrderModel} and HTTP response
+     * @param {module:models/Note} body
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:models/Order} and HTTP response
      */
     postOrdersByIDNotesWithHttpInfo(orderNo, body) {
         const postBody = body
@@ -539,7 +536,7 @@ export default class OrdersApi {
         const authNames = ['customers_auth', 'oauth2_application']
         const contentTypes = ['application/json', 'text/xml', 'application/xml']
         const accepts = ['application/json', 'text/xml', 'application/xml']
-        const returnType = OrderModel
+        const returnType = Order
 
         return this.apiClient.callApi(
             '/orders/{order_no}/notes', 'POST',
@@ -551,8 +548,8 @@ export default class OrdersApi {
     /**
      * Adds a note to an existing order.
      * @param {String} orderNo The id of the order to be modified.
-     * @param {module:models/NoteModel} body
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:models/OrderModel}
+     * @param {module:models/Note} body
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:models/Order}
      */
     postOrdersByIDNotes(orderNo, body) {
         return this.postOrdersByIDNotesWithHttpInfo(orderNo, body)
@@ -592,8 +589,8 @@ export default class OrdersApi {
      * Placing the order (equivalent to calling dw.order.OrderMgr.placeOrder(order : Order) in the  scripting API) results
      * in the order being changed to status NEW and prepared for export.
      * @param {String} orderNo the order number
-     * @param {module:models/OrderPaymentInstrumentRequestModel} body
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:models/OrderModel} and HTTP response
+     * @param {module:models/OrderPaymentInstrumentRequest} body
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:models/Order} and HTTP response
      */
     postOrdersByIDPaymentInstrumentsWithHttpInfo(orderNo, body) {
         const postBody = body
@@ -619,7 +616,7 @@ export default class OrdersApi {
         const authNames = ['customers_auth', 'oauth2_application']
         const contentTypes = ['application/json', 'text/xml', 'application/xml']
         const accepts = ['application/json', 'text/xml', 'application/xml']
-        const returnType = OrderModel
+        const returnType = Order
 
         return this.apiClient.callApi(
             '/orders/{order_no}/payment_instruments', 'POST',
@@ -658,8 +655,8 @@ export default class OrdersApi {
      * equals or exceeds the  order total. Placing the order (equivalent to calling dw.order.OrderMgr.placeOrder(order : Order) in the  scripting API)
      * results in the order being changed to status NEW and prepared for export.
      * @param {String} orderNo the order number
-     * @param {module:models/OrderPaymentInstrumentRequestModel} body
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:models/OrderModel}
+     * @param {module:models/OrderPaymentInstrumentRequest} body
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:models/Order}
      */
     postOrdersByIDPaymentInstruments(orderNo, body) {
         return this.postOrdersByIDPaymentInstrumentsWithHttpInfo(orderNo, body)

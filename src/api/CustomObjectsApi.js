@@ -16,7 +16,7 @@
  *
  */
 import ApiClient from '../ApiClient'
-import CustomObjectModel from '../models/CustomObjectModel'
+import CustomObject from '../models/CustomObject'
 
 /**
  * Custom_objects service.
@@ -42,7 +42,7 @@ export default class CustomObjectsApi {
      * Reads a custom object with a given object type ID and a value for the  key attribute of the object which represents its unique identifier.
      * @param {String} objectType the ID of the object type
      * @param {String} key the key attribute value of the custom object
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:models/CustomObjectModel} and HTTP response
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:models/CustomObject} and HTTP response
      */
     getCustomObjectsByIDByIDWithHttpInfo(objectType, key) {
         const postBody = null
@@ -69,7 +69,7 @@ export default class CustomObjectsApi {
         const authNames = ['client_id', 'customers_auth']
         const contentTypes = ['application/json', 'text/xml', 'application/xml']
         const accepts = ['application/json', 'text/xml', 'application/xml']
-        const returnType = CustomObjectModel
+        const returnType = CustomObject
 
         return this.apiClient.callApi(
             '/custom_objects/{object_type}/{key}', 'GET',
@@ -82,7 +82,7 @@ export default class CustomObjectsApi {
      * Reads a custom object with a given object type ID and a value for the  key attribute of the object which represents its unique identifier.
      * @param {String} objectType the ID of the object type
      * @param {String} key the key attribute value of the custom object
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:models/CustomObjectModel}
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:models/CustomObject}
      */
     getCustomObjectsByIDByID(objectType, key) {
         return this.getCustomObjectsByIDByIDWithHttpInfo(objectType, key)

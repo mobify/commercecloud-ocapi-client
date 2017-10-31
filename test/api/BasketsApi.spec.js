@@ -161,7 +161,7 @@ describe('BasketsApi', () => {
                     instance.getBasketsByIDShipmentsByIDShippingMethods(basket.basket_id, 'me')
                 )
                 .then((result) => {
-                    expect(result.constructor.name).to.be('ShippingMethodResultModel')
+                    expect(result.constructor.name).to.be('ShippingMethodResult')
                 })
         )
     })
@@ -214,7 +214,7 @@ describe('BasketsApi', () => {
         it('should call postBaskets successfully', () =>
             instance.postBaskets()
                 .then((basket) => {
-                    expect(basket.constructor.name).to.be('BasketModel')
+                    expect(basket.constructor.name).to.be('Basket')
                 })
         )
     })

@@ -72,7 +72,7 @@ describe('StoresApi', () => {
         it('should call getStoresByID successfully', () =>
             instance.getStoresByID('flagship')
                 .then((store) => {
-                    expect(store.constructor.name).to.be('StoreModel')
+                    expect(store.constructor.name).to.be('Store')
                 })
         )
     })
@@ -81,7 +81,7 @@ describe('StoresApi', () => {
         it('should call getStoresByIDs successfully', () =>
             instance.getStoresByIDs(['flagship'])
                 .then((result) => {
-                    expect(result.constructor.name).to.be('StoreResultModel')
+                    expect(result.constructor.name).to.be('StoreResult')
                 })
         )
     })

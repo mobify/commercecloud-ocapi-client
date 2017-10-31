@@ -16,10 +16,10 @@
  *
  */
 import ApiClient from '../ApiClient'
-import PublicProductListItemModel from '../models/PublicProductListItemModel'
-import PublicProductListItemResultModel from '../models/PublicProductListItemResultModel'
-import PublicProductListModel from '../models/PublicProductListModel'
-import PublicProductListResultModel from '../models/PublicProductListResultModel'
+import PublicProductListItem from '../models/PublicProductListItem'
+import PublicProductListItemResult from '../models/PublicProductListItemResult'
+import PublicProductList from '../models/PublicProductList'
+import PublicProductListResult from '../models/PublicProductListResult'
 
 /**
  * Product_lists service.
@@ -47,7 +47,7 @@ export default class ProductListsApi {
      * @param {String} opts.email The email address of the customer, the product lists belong to.
      * @param {String} opts.firstname The first name of the customer, the product lists belong to.
      * @param {String} opts.lastname The last name of the customer, the product lists belong to.
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:models/PublicProductListResultModel} and HTTP response
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:models/PublicProductListResult} and HTTP response
      */
     getProductListsWithHttpInfo(opts) {
         opts = opts || {}
@@ -66,7 +66,7 @@ export default class ProductListsApi {
         const authNames = ['client_id', 'customers_auth']
         const contentTypes = ['application/json', 'text/xml', 'application/xml']
         const accepts = ['application/json', 'text/xml', 'application/xml']
-        const returnType = PublicProductListResultModel
+        const returnType = PublicProductListResult
 
         return this.apiClient.callApi(
             '/product_lists', 'GET',
@@ -81,7 +81,7 @@ export default class ProductListsApi {
      * @param {String} opts.email The email address of the customer, the product lists belong to.
      * @param {String} opts.firstname The first name of the customer, the product lists belong to.
      * @param {String} opts.lastname The last name of the customer, the product lists belong to.
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:models/PublicProductListResultModel}
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:models/PublicProductListResult}
      */
     getProductLists(opts) {
         return this.getProductListsWithHttpInfo(opts)
@@ -96,7 +96,7 @@ export default class ProductListsApi {
      * @param {String} listId The id of the list.
      * @param {Object} opts Optional parameters
      * @param {Array.<String>} opts.expand
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:models/PublicProductListModel} and HTTP response
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:models/PublicProductList} and HTTP response
      */
     getProductListsByIDWithHttpInfo(listId, opts) {
         opts = opts || {}
@@ -120,7 +120,7 @@ export default class ProductListsApi {
         const authNames = ['client_id', 'customers_auth']
         const contentTypes = ['application/json', 'text/xml', 'application/xml']
         const accepts = ['application/json', 'text/xml', 'application/xml']
-        const returnType = PublicProductListModel
+        const returnType = PublicProductList
 
         return this.apiClient.callApi(
             '/product_lists/{list_id}', 'GET',
@@ -134,7 +134,7 @@ export default class ProductListsApi {
      * @param {String} listId The id of the list.
      * @param {Object} opts Optional parameters
      * @param {Array.<String>} opts.expand
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:models/PublicProductListModel}
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:models/PublicProductList}
      */
     getProductListsByID(listId, opts) {
         return this.getProductListsByIDWithHttpInfo(listId, opts)
@@ -149,7 +149,7 @@ export default class ProductListsApi {
      * @param {String} listId The id of the list.
      * @param {Object} opts Optional parameters
      * @param {Array.<String>} opts.expand
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:models/PublicProductListItemResultModel} and HTTP response
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:models/PublicProductListItemResult} and HTTP response
      */
     getProductListsByIDItemsWithHttpInfo(listId, opts) {
         opts = opts || {}
@@ -173,7 +173,7 @@ export default class ProductListsApi {
         const authNames = ['client_id', 'customers_auth']
         const contentTypes = ['application/json', 'text/xml', 'application/xml']
         const accepts = ['application/json', 'text/xml', 'application/xml']
-        const returnType = PublicProductListItemResultModel
+        const returnType = PublicProductListItemResult
 
         return this.apiClient.callApi(
             '/product_lists/{list_id}/items', 'GET',
@@ -187,7 +187,7 @@ export default class ProductListsApi {
      * @param {String} listId The id of the list.
      * @param {Object} opts Optional parameters
      * @param {Array.<String>} opts.expand
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:models/PublicProductListItemResultModel}
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:models/PublicProductListItemResult}
      */
     getProductListsByIDItems(listId, opts) {
         return this.getProductListsByIDItemsWithHttpInfo(listId, opts)
@@ -203,7 +203,7 @@ export default class ProductListsApi {
      * @param {String} itemId The id of the item.
      * @param {Object} opts Optional parameters
      * @param {Array.<String>} opts.expand
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:models/PublicProductListItemModel} and HTTP response
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:models/PublicProductListItem} and HTTP response
      */
     getProductListsByIDItemsByIDWithHttpInfo(listId, itemId, opts) {
         opts = opts || {}
@@ -233,7 +233,7 @@ export default class ProductListsApi {
         const authNames = ['client_id', 'customers_auth']
         const contentTypes = ['application/json', 'text/xml', 'application/xml']
         const accepts = ['application/json', 'text/xml', 'application/xml']
-        const returnType = PublicProductListItemModel
+        const returnType = PublicProductListItem
 
         return this.apiClient.callApi(
             '/product_lists/{list_id}/items/{item_id}', 'GET',
@@ -248,7 +248,7 @@ export default class ProductListsApi {
      * @param {String} itemId The id of the item.
      * @param {Object} opts Optional parameters
      * @param {Array.<String>} opts.expand
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:models/PublicProductListItemModel}
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:models/PublicProductListItem}
      */
     getProductListsByIDItemsByID(listId, itemId, opts) {
         return this.getProductListsByIDItemsByIDWithHttpInfo(listId, itemId, opts)

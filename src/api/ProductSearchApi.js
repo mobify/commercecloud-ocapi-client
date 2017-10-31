@@ -16,7 +16,7 @@
  *
  */
 import ApiClient from '../ApiClient'
-import ProductSearchResultModel from '../models/ProductSearchResultModel'
+import ProductSearchResult from '../models/ProductSearchResult'
 
 /**
  * Product_search service.
@@ -61,7 +61,7 @@ export default class ProductSearchApi {
      * @param {Array.<String>} opts.expand The expand parameter. A comma separated list with the allowed values (availability, images,             prices, variations)
      * @param {String} opts.currency The currency mnemonic specified for price. This parameter is effective only if specified expand parameter value contains prices.
      * @param {String} opts.locale The locale context.
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:models/ProductSearchResultModel} and HTTP response
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:models/ProductSearchResult} and HTTP response
      */
     getProductSearchWithHttpInfo(opts) {
         opts = opts || {}
@@ -85,7 +85,7 @@ export default class ProductSearchApi {
         const authNames = ['client_id', 'customers_auth']
         const contentTypes = ['application/json', 'text/xml', 'application/xml']
         const accepts = ['application/json', 'text/xml', 'application/xml']
-        const returnType = ProductSearchResultModel
+        const returnType = ProductSearchResult
 
         return this.apiClient.callApi(
             '/product_search', 'GET',
@@ -120,7 +120,7 @@ export default class ProductSearchApi {
      * prices, variations)
      * @param {String} opts.currency The currency mnemonic specified for price. This parameter is effective only if specified expand parameter value contains prices.
      * @param {String} opts.locale The locale context.
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:models/ProductSearchResultModel}
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:models/ProductSearchResult}
      */
     getProductSearch(opts) {
         return this.getProductSearchWithHttpInfo(opts)
@@ -151,7 +151,7 @@ export default class ProductSearchApi {
      * @param {Number} opts.start The result set index to return the first instance for. Default value is 0.
      * @param {Number} opts.count The maximum number of instances per request. Default value is 25.
      * @param {String} opts.locale The locale context.
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:models/ProductSearchResultModel} and HTTP response
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:models/ProductSearchResult} and HTTP response
      */
     getProductSearchAvailabilityWithHttpInfo(opts) {
         opts = opts || {}
@@ -173,7 +173,7 @@ export default class ProductSearchApi {
         const authNames = ['client_id', 'customers_auth']
         const contentTypes = ['application/json', 'text/xml', 'application/xml']
         const accepts = ['application/json', 'text/xml', 'application/xml']
-        const returnType = ProductSearchResultModel
+        const returnType = ProductSearchResult
 
         return this.apiClient.callApi(
             '/product_search/availability', 'GET',
@@ -203,7 +203,7 @@ export default class ProductSearchApi {
      * @param {Number} opts.start The result set index to return the first instance for. Default value is 0.
      * @param {Number} opts.count The maximum number of instances per request. Default value is 25.
      * @param {String} opts.locale The locale context.
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:models/ProductSearchResultModel}
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:models/ProductSearchResult}
      */
     getProductSearchAvailability(opts) {
         return this.getProductSearchAvailabilityWithHttpInfo(opts)
@@ -234,7 +234,7 @@ export default class ProductSearchApi {
      * @param {Number} opts.start The result set index to return the first instance for. Default value is 0.
      * @param {Number} opts.count The maximum number of instances per request. Default value is 25.
      * @param {String} opts.locale The locale context.
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:models/ProductSearchResultModel} and HTTP response
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:models/ProductSearchResult} and HTTP response
      */
     getProductSearchImagesWithHttpInfo(opts) {
         opts = opts || {}
@@ -256,7 +256,7 @@ export default class ProductSearchApi {
         const authNames = ['client_id', 'customers_auth']
         const contentTypes = ['application/json', 'text/xml', 'application/xml']
         const accepts = ['application/json', 'text/xml', 'application/xml']
-        const returnType = ProductSearchResultModel
+        const returnType = ProductSearchResult
 
         return this.apiClient.callApi(
             '/product_search/images', 'GET',
@@ -286,7 +286,7 @@ export default class ProductSearchApi {
      * @param {Number} opts.start The result set index to return the first instance for. Default value is 0.
      * @param {Number} opts.count The maximum number of instances per request. Default value is 25.
      * @param {String} opts.locale The locale context.
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:models/ProductSearchResultModel}
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:models/ProductSearchResult}
      */
     getProductSearchImages(opts) {
         return this.getProductSearchImagesWithHttpInfo(opts)
@@ -318,7 +318,7 @@ export default class ProductSearchApi {
      * @param {Number} opts.count The maximum number of instances per request. Default value is 25.
      * @param {String} opts.currency The currency mnemonic specified for price.
      * @param {String} opts.locale The locale context.
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:models/ProductSearchResultModel} and HTTP response
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:models/ProductSearchResult} and HTTP response
      */
     getProductSearchPricesWithHttpInfo(opts) {
         opts = opts || {}
@@ -341,7 +341,7 @@ export default class ProductSearchApi {
         const authNames = ['client_id', 'customers_auth']
         const contentTypes = ['application/json', 'text/xml', 'application/xml']
         const accepts = ['application/json', 'text/xml', 'application/xml']
-        const returnType = ProductSearchResultModel
+        const returnType = ProductSearchResult
 
         return this.apiClient.callApi(
             '/product_search/prices', 'GET',
@@ -371,7 +371,7 @@ export default class ProductSearchApi {
      * @param {Number} opts.count The maximum number of instances per request. Default value is 25.
      * @param {String} opts.currency The currency mnemonic specified for price.
      * @param {String} opts.locale The locale context.
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:models/ProductSearchResultModel}
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:models/ProductSearchResult}
      */
     getProductSearchPrices(opts) {
         return this.getProductSearchPricesWithHttpInfo(opts)
@@ -401,7 +401,7 @@ export default class ProductSearchApi {
      * @param {Number} opts.start The result set index to return the first instance for. Default value is 0.
      * @param {Number} opts.count The maximum number of instances per request. Default value is 25.
      * @param {String} opts.locale The locale context.
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:models/ProductSearchResultModel} and HTTP response
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:models/ProductSearchResult} and HTTP response
      */
     getProductSearchVariationsWithHttpInfo(opts) {
         opts = opts || {}
@@ -423,7 +423,7 @@ export default class ProductSearchApi {
         const authNames = ['client_id', 'customers_auth']
         const contentTypes = ['application/json', 'text/xml', 'application/xml']
         const accepts = ['application/json', 'text/xml', 'application/xml']
-        const returnType = ProductSearchResultModel
+        const returnType = ProductSearchResult
 
         return this.apiClient.callApi(
             '/product_search/variations', 'GET',
@@ -452,7 +452,7 @@ export default class ProductSearchApi {
      * @param {Number} opts.start The result set index to return the first instance for. Default value is 0.
      * @param {Number} opts.count The maximum number of instances per request. Default value is 25.
      * @param {String} opts.locale The locale context.
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:models/ProductSearchResultModel}
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:models/ProductSearchResult}
      */
     getProductSearchVariations(opts) {
         return this.getProductSearchVariationsWithHttpInfo(opts)

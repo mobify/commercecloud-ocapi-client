@@ -16,9 +16,9 @@
  *
  */
 import ApiClient from '../ApiClient'
-import ProductModel from '../models/ProductModel'
-import ProductResultModel from '../models/ProductResultModel'
-import ShippingMethodResultModel from '../models/ShippingMethodResultModel'
+import Product from '../models/Product'
+import ProductResult from '../models/ProductResult'
+import ShippingMethodResult from '../models/ShippingMethodResult'
 
 /**
  * Products service.
@@ -53,7 +53,7 @@ export default class ProductsApi {
      * @param {String} opts.currency
      * @param {String} opts.locale
      * @param {Boolean} opts.allImages
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:models/ProductModel} and HTTP response
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:models/Product} and HTTP response
      */
     getProductsByIDWithHttpInfo(id, opts) {
         opts = opts || {}
@@ -81,7 +81,7 @@ export default class ProductsApi {
         const authNames = ['client_id', 'customers_auth']
         const contentTypes = ['application/json', 'text/xml', 'application/xml']
         const accepts = ['application/json', 'text/xml', 'application/xml']
-        const returnType = ProductModel
+        const returnType = Product
 
         return this.apiClient.callApi(
             '/products/{id}', 'GET',
@@ -103,7 +103,7 @@ export default class ProductsApi {
      * @param {String} opts.currency
      * @param {String} opts.locale
      * @param {Boolean} opts.allImages
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:models/ProductModel}
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:models/Product}
      */
     getProductsByID(id, opts) {
         return this.getProductsByIDWithHttpInfo(id, opts)
@@ -119,7 +119,7 @@ export default class ProductsApi {
      * @param {Object} opts Optional parameters
      * @param {Array.<String>} opts.inventoryIds
      * @param {String} opts.locale
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:models/ProductModel} and HTTP response
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:models/Product} and HTTP response
      */
     getProductsByIDAvailabilityWithHttpInfo(id, opts) {
         opts = opts || {}
@@ -144,7 +144,7 @@ export default class ProductsApi {
         const authNames = ['client_id', 'customers_auth']
         const contentTypes = ['application/json', 'text/xml', 'application/xml']
         const accepts = ['application/json', 'text/xml', 'application/xml']
-        const returnType = ProductModel
+        const returnType = Product
 
         return this.apiClient.callApi(
             '/products/{id}/availability', 'GET',
@@ -159,7 +159,7 @@ export default class ProductsApi {
      * @param {Object} opts Optional parameters
      * @param {Array.<String>} opts.inventoryIds
      * @param {String} opts.locale
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:models/ProductModel}
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:models/Product}
      */
     getProductsByIDAvailability(id, opts) {
         return this.getProductsByIDAvailabilityWithHttpInfo(id, opts)
@@ -174,7 +174,7 @@ export default class ProductsApi {
      * @param {String} id The requested product id.
      * @param {Object} opts Optional parameters
      * @param {String} opts.locale
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:models/ProductModel} and HTTP response
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:models/Product} and HTTP response
      */
     getProductsByIDBundledProductsWithHttpInfo(id, opts) {
         opts = opts || {}
@@ -198,7 +198,7 @@ export default class ProductsApi {
         const authNames = ['client_id', 'customers_auth']
         const contentTypes = ['application/json', 'text/xml', 'application/xml']
         const accepts = ['application/json', 'text/xml', 'application/xml']
-        const returnType = ProductModel
+        const returnType = Product
 
         return this.apiClient.callApi(
             '/products/{id}/bundled_products', 'GET',
@@ -212,7 +212,7 @@ export default class ProductsApi {
      * @param {String} id The requested product id.
      * @param {Object} opts Optional parameters
      * @param {String} opts.locale
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:models/ProductModel}
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:models/Product}
      */
     getProductsByIDBundledProducts(id, opts) {
         return this.getProductsByIDBundledProductsWithHttpInfo(id, opts)
@@ -230,7 +230,7 @@ export default class ProductsApi {
      * @param {Boolean} opts.allImages
      * @param {String} opts.variationAttribute
      * @param {String} opts.locale
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:models/ProductModel} and HTTP response
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:models/Product} and HTTP response
      */
     getProductsByIDImagesWithHttpInfo(id, opts) {
         opts = opts || {}
@@ -257,7 +257,7 @@ export default class ProductsApi {
         const authNames = ['client_id', 'customers_auth']
         const contentTypes = ['application/json', 'text/xml', 'application/xml']
         const accepts = ['application/json', 'text/xml', 'application/xml']
-        const returnType = ProductModel
+        const returnType = Product
 
         return this.apiClient.callApi(
             '/products/{id}/images', 'GET',
@@ -274,7 +274,7 @@ export default class ProductsApi {
      * @param {Boolean} opts.allImages
      * @param {String} opts.variationAttribute
      * @param {String} opts.locale
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:models/ProductModel}
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:models/Product}
      */
     getProductsByIDImages(id, opts) {
         return this.getProductsByIDImagesWithHttpInfo(id, opts)
@@ -291,7 +291,7 @@ export default class ProductsApi {
      * @param {String} opts.type
      * @param {String} opts.direction
      * @param {String} opts.locale
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:models/ProductModel} and HTTP response
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:models/Product} and HTTP response
      */
     getProductsByIDLinksWithHttpInfo(id, opts) {
         opts = opts || {}
@@ -317,7 +317,7 @@ export default class ProductsApi {
         const authNames = ['client_id', 'customers_auth']
         const contentTypes = ['application/json', 'text/xml', 'application/xml']
         const accepts = ['application/json', 'text/xml', 'application/xml']
-        const returnType = ProductModel
+        const returnType = Product
 
         return this.apiClient.callApi(
             '/products/{id}/links', 'GET',
@@ -333,7 +333,7 @@ export default class ProductsApi {
      * @param {String} opts.type
      * @param {String} opts.direction
      * @param {String} opts.locale
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:models/ProductModel}
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:models/Product}
      */
     getProductsByIDLinks(id, opts) {
         return this.getProductsByIDLinksWithHttpInfo(id, opts)
@@ -348,7 +348,7 @@ export default class ProductsApi {
      * @param {String} id The requested product id.
      * @param {Object} opts Optional parameters
      * @param {String} opts.locale
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:models/ProductModel} and HTTP response
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:models/Product} and HTTP response
      */
     getProductsByIDOptionsWithHttpInfo(id, opts) {
         opts = opts || {}
@@ -372,7 +372,7 @@ export default class ProductsApi {
         const authNames = ['client_id', 'customers_auth']
         const contentTypes = ['application/json', 'text/xml', 'application/xml']
         const accepts = ['application/json', 'text/xml', 'application/xml']
-        const returnType = ProductModel
+        const returnType = Product
 
         return this.apiClient.callApi(
             '/products/{id}/options', 'GET',
@@ -386,7 +386,7 @@ export default class ProductsApi {
      * @param {String} id The requested product id.
      * @param {Object} opts Optional parameters
      * @param {String} opts.locale
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:models/ProductModel}
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:models/Product}
      */
     getProductsByIDOptions(id, opts) {
         return this.getProductsByIDOptionsWithHttpInfo(id, opts)
@@ -401,7 +401,7 @@ export default class ProductsApi {
      * @param {String} id The requested product id.
      * @param {Object} opts Optional parameters
      * @param {String} opts.locale
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:models/ProductModel} and HTTP response
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:models/Product} and HTTP response
      */
     getProductsByIDPricesWithHttpInfo(id, opts) {
         opts = opts || {}
@@ -425,7 +425,7 @@ export default class ProductsApi {
         const authNames = ['client_id', 'customers_auth']
         const contentTypes = ['application/json', 'text/xml', 'application/xml']
         const accepts = ['application/json', 'text/xml', 'application/xml']
-        const returnType = ProductModel
+        const returnType = Product
 
         return this.apiClient.callApi(
             '/products/{id}/prices', 'GET',
@@ -439,7 +439,7 @@ export default class ProductsApi {
      * @param {String} id The requested product id.
      * @param {Object} opts Optional parameters
      * @param {String} opts.locale
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:models/ProductModel}
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:models/Product}
      */
     getProductsByIDPrices(id, opts) {
         return this.getProductsByIDPricesWithHttpInfo(id, opts)
@@ -455,7 +455,7 @@ export default class ProductsApi {
      * @param {Object} opts Optional parameters
      * @param {String} opts.currency
      * @param {String} opts.locale
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:models/ProductModel} and HTTP response
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:models/Product} and HTTP response
      */
     getProductsByIDPromotionsWithHttpInfo(id, opts) {
         opts = opts || {}
@@ -480,7 +480,7 @@ export default class ProductsApi {
         const authNames = ['client_id', 'customers_auth']
         const contentTypes = ['application/json', 'text/xml', 'application/xml']
         const accepts = ['application/json', 'text/xml', 'application/xml']
-        const returnType = ProductModel
+        const returnType = Product
 
         return this.apiClient.callApi(
             '/products/{id}/promotions', 'GET',
@@ -495,7 +495,7 @@ export default class ProductsApi {
      * @param {Object} opts Optional parameters
      * @param {String} opts.currency
      * @param {String} opts.locale
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:models/ProductModel}
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:models/Product}
      */
     getProductsByIDPromotions(id, opts) {
         return this.getProductsByIDPromotionsWithHttpInfo(id, opts)
@@ -508,7 +508,7 @@ export default class ProductsApi {
     /**
      * Retrieves the applicable shipping methods for a certain product.
      * @param {String} id the requested product id
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:models/ShippingMethodResultModel} and HTTP response
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:models/ShippingMethodResult} and HTTP response
      */
     getProductsByIDShippingMethodsWithHttpInfo(id) {
         const postBody = null
@@ -529,7 +529,7 @@ export default class ProductsApi {
         const authNames = ['customers_auth', 'oauth2_application']
         const contentTypes = ['application/json', 'text/xml', 'application/xml']
         const accepts = ['application/json', 'text/xml', 'application/xml']
-        const returnType = ShippingMethodResultModel
+        const returnType = ShippingMethodResult
 
         return this.apiClient.callApi(
             '/products/{id}/shipping_methods', 'GET',
@@ -541,7 +541,7 @@ export default class ProductsApi {
     /**
      * Retrieves the applicable shipping methods for a certain product.
      * @param {String} id the requested product id
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:models/ShippingMethodResultModel}
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:models/ShippingMethodResult}
      */
     getProductsByIDShippingMethods(id) {
         return this.getProductsByIDShippingMethodsWithHttpInfo(id)
@@ -556,7 +556,7 @@ export default class ProductsApi {
      * @param {String} id The requested product id.
      * @param {Object} opts Optional parameters
      * @param {String} opts.locale
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:models/ProductModel} and HTTP response
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:models/Product} and HTTP response
      */
     getProductsByIDVariationsWithHttpInfo(id, opts) {
         opts = opts || {}
@@ -580,7 +580,7 @@ export default class ProductsApi {
         const authNames = ['client_id', 'customers_auth']
         const contentTypes = ['application/json', 'text/xml', 'application/xml']
         const accepts = ['application/json', 'text/xml', 'application/xml']
-        const returnType = ProductModel
+        const returnType = Product
 
         return this.apiClient.callApi(
             '/products/{id}/variations', 'GET',
@@ -594,7 +594,7 @@ export default class ProductsApi {
      * @param {String} id The requested product id.
      * @param {Object} opts Optional parameters
      * @param {String} opts.locale
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:models/ProductModel}
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:models/Product}
      */
     getProductsByIDVariations(id, opts) {
         return this.getProductsByIDVariationsWithHttpInfo(id, opts)
@@ -612,7 +612,7 @@ export default class ProductsApi {
      * @param {String} opts.currency
      * @param {String} opts.locale
      * @param {Boolean} opts.allImages
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:models/ProductResultModel} and HTTP response
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:models/ProductResult} and HTTP response
      */
     getProductsByIDsWithHttpInfo(ids, opts) {
         opts = opts || {}
@@ -640,7 +640,7 @@ export default class ProductsApi {
         const authNames = ['client_id', 'customers_auth']
         const contentTypes = ['application/json', 'text/xml', 'application/xml']
         const accepts = ['application/json', 'text/xml', 'application/xml']
-        const returnType = ProductResultModel
+        const returnType = ProductResult
 
         return this.apiClient.callApi(
             '/products/({ids})', 'GET',
@@ -657,7 +657,7 @@ export default class ProductsApi {
      * @param {String} opts.currency
      * @param {String} opts.locale
      * @param {Boolean} opts.allImages
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:models/ProductResultModel}
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:models/ProductResult}
      */
     getProductsByIDs(ids, opts) {
         return this.getProductsByIDsWithHttpInfo(ids, opts)

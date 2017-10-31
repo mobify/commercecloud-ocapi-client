@@ -49,7 +49,7 @@ describe('SearchSuggestionApi', () => {
         it('valid call to getSearchSuggestion returns result', () =>
             instance.getSearchSuggestion('abc')
                 .then((result) => {
-                    expect(result.constructor.name).to.be('SuggestionResultModel')
+                    expect(result.constructor.name).to.be('SuggestionResult')
                 })
         )
 

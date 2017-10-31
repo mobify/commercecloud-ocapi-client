@@ -96,243 +96,243 @@ All URIs are relative to *https://mobify-tech-prtnr-na03-dw.demandware.net/s/201
 
 Class | Method | HTTP request | Description
 ------------ | ------------- | ------------- | -------------
-*ShopApi.BasketsApi* | [**deleteBasketsByID**](docs/BasketsApi.md#deleteBasketsByID) | **DELETE** /baskets/{basket_id} |
-*ShopApi.BasketsApi* | [**deleteBasketsByIDCouponsByID**](docs/BasketsApi.md#deleteBasketsByIDCouponsByID) | **DELETE** /baskets/{basket_id}/coupons/{coupon_item_id} |
-*ShopApi.BasketsApi* | [**deleteBasketsByIDItemsByID**](docs/BasketsApi.md#deleteBasketsByIDItemsByID) | **DELETE** /baskets/{basket_id}/items/{item_id} |
-*ShopApi.BasketsApi* | [**deleteBasketsByIDNotesByID**](docs/BasketsApi.md#deleteBasketsByIDNotesByID) | **DELETE** /baskets/{basket_id}/notes/{note_id} |
-*ShopApi.BasketsApi* | [**deleteBasketsByIDPaymentInstrumentsByID**](docs/BasketsApi.md#deleteBasketsByIDPaymentInstrumentsByID) | **DELETE** /baskets/{basket_id}/payment_instruments/{payment_instrument_id} |
-*ShopApi.BasketsApi* | [**deleteBasketsByIDShipmentsByID**](docs/BasketsApi.md#deleteBasketsByIDShipmentsByID) | **DELETE** /baskets/{basket_id}/shipments/{shipment_id} |
-*ShopApi.BasketsApi* | [**getBasketsByID**](docs/BasketsApi.md#getBasketsByID) | **GET** /baskets/{basket_id} |
-*ShopApi.BasketsApi* | [**getBasketsByIDNotes**](docs/BasketsApi.md#getBasketsByIDNotes) | **GET** /baskets/{basket_id}/notes |
-*ShopApi.BasketsApi* | [**getBasketsByIDPaymentMethods**](docs/BasketsApi.md#getBasketsByIDPaymentMethods) | **GET** /baskets/{basket_id}/payment_methods |
-*ShopApi.BasketsApi* | [**getBasketsByIDShipmentsByIDShippingMethods**](docs/BasketsApi.md#getBasketsByIDShipmentsByIDShippingMethods) | **GET** /baskets/{basket_id}/shipments/{shipment_id}/shipping_methods |
-*ShopApi.BasketsApi* | [**patchBasketsByID**](docs/BasketsApi.md#patchBasketsByID) | **PATCH** /baskets/{basket_id} |
-*ShopApi.BasketsApi* | [**patchBasketsByIDItemsByID**](docs/BasketsApi.md#patchBasketsByIDItemsByID) | **PATCH** /baskets/{basket_id}/items/{item_id} |
-*ShopApi.BasketsApi* | [**patchBasketsByIDPaymentInstrumentsByID**](docs/BasketsApi.md#patchBasketsByIDPaymentInstrumentsByID) | **PATCH** /baskets/{basket_id}/payment_instruments/{payment_instrument_id} |
-*ShopApi.BasketsApi* | [**patchBasketsByIDShipmentsByID**](docs/BasketsApi.md#patchBasketsByIDShipmentsByID) | **PATCH** /baskets/{basket_id}/shipments/{shipment_id} |
-*ShopApi.BasketsApi* | [**postBaskets**](docs/BasketsApi.md#postBaskets) | **POST** /baskets |
-*ShopApi.BasketsApi* | [**postBasketsByIDCoupons**](docs/BasketsApi.md#postBasketsByIDCoupons) | **POST** /baskets/{basket_id}/coupons |
-*ShopApi.BasketsApi* | [**postBasketsByIDGiftCertificateItems**](docs/BasketsApi.md#postBasketsByIDGiftCertificateItems) | **POST** /baskets/{basket_id}/gift_certificate_items |
-*ShopApi.BasketsApi* | [**postBasketsByIDItems**](docs/BasketsApi.md#postBasketsByIDItems) | **POST** /baskets/{basket_id}/items |
-*ShopApi.BasketsApi* | [**postBasketsByIDNotes**](docs/BasketsApi.md#postBasketsByIDNotes) | **POST** /baskets/{basket_id}/notes |
-*ShopApi.BasketsApi* | [**postBasketsByIDPaymentInstruments**](docs/BasketsApi.md#postBasketsByIDPaymentInstruments) | **POST** /baskets/{basket_id}/payment_instruments |
-*ShopApi.BasketsApi* | [**postBasketsByIDShipments**](docs/BasketsApi.md#postBasketsByIDShipments) | **POST** /baskets/{basket_id}/shipments |
-*ShopApi.BasketsApi* | [**putBasketsByIDBillingAddress**](docs/BasketsApi.md#putBasketsByIDBillingAddress) | **PUT** /baskets/{basket_id}/billing_address |
-*ShopApi.BasketsApi* | [**putBasketsByIDCustomer**](docs/BasketsApi.md#putBasketsByIDCustomer) | **PUT** /baskets/{basket_id}/customer |
-*ShopApi.BasketsApi* | [**putBasketsByIDShipmentsByIDShippingAddress**](docs/BasketsApi.md#putBasketsByIDShipmentsByIDShippingAddress) | **PUT** /baskets/{basket_id}/shipments/{shipment_id}/shipping_address |
-*ShopApi.BasketsApi* | [**putBasketsByIDShipmentsByIDShippingMethod**](docs/BasketsApi.md#putBasketsByIDShipmentsByIDShippingMethod) | **PUT** /baskets/{basket_id}/shipments/{shipment_id}/shipping_method |
-*ShopApi.CategoriesApi* | [**getCategoriesByID**](docs/CategoriesApi.md#getCategoriesByID) | **GET** /categories/{id} |
-*ShopApi.CategoriesApi* | [**getCategoriesByIDs**](docs/CategoriesApi.md#getCategoriesByIDs) | **GET** /categories/({ids}) |
-*ShopApi.ContentApi* | [**getContentByID**](docs/ContentApi.md#getContentByID) | **GET** /content/{id} |
-*ShopApi.ContentApi* | [**getContentByIDs**](docs/ContentApi.md#getContentByIDs) | **GET** /content/({ids}) |
-*ShopApi.ContentSearchApi* | [**getContentSearch**](docs/ContentSearchApi.md#getContentSearch) | **GET** /content_search |
-*ShopApi.CustomObjectsApi* | [**getCustomObjectsByIDByID**](docs/CustomObjectsApi.md#getCustomObjectsByIDByID) | **GET** /custom_objects/{object_type}/{key} |
-*ShopApi.CustomersApi* | [**deleteCustomersAuth**](docs/CustomersApi.md#deleteCustomersAuth) | **DELETE** /customers/auth |
-*ShopApi.CustomersApi* | [**deleteCustomersByIDAddressesByID**](docs/CustomersApi.md#deleteCustomersByIDAddressesByID) | **DELETE** /customers/{customer_id}/addresses/{address_name} |
-*ShopApi.CustomersApi* | [**deleteCustomersByIDPaymentInstrumentsByID**](docs/CustomersApi.md#deleteCustomersByIDPaymentInstrumentsByID) | **DELETE** /customers/{customer_id}/payment_instruments/{payment_instrument_id} |
-*ShopApi.CustomersApi* | [**deleteCustomersByIDProductListsByID**](docs/CustomersApi.md#deleteCustomersByIDProductListsByID) | **DELETE** /customers/{customer_id}/product_lists/{list_id} |
-*ShopApi.CustomersApi* | [**deleteCustomersByIDProductListsByIDItemsByID**](docs/CustomersApi.md#deleteCustomersByIDProductListsByIDItemsByID) | **DELETE** /customers/{customer_id}/product_lists/{list_id}/items/{item_id} |
-*ShopApi.CustomersApi* | [**getCustomersByID**](docs/CustomersApi.md#getCustomersByID) | **GET** /customers/{customer_id} |
-*ShopApi.CustomersApi* | [**getCustomersByIDAddresses**](docs/CustomersApi.md#getCustomersByIDAddresses) | **GET** /customers/{customer_id}/addresses |
-*ShopApi.CustomersApi* | [**getCustomersByIDAddressesByID**](docs/CustomersApi.md#getCustomersByIDAddressesByID) | **GET** /customers/{customer_id}/addresses/{address_name} |
-*ShopApi.CustomersApi* | [**getCustomersByIDBaskets**](docs/CustomersApi.md#getCustomersByIDBaskets) | **GET** /customers/{customer_id}/baskets |
-*ShopApi.CustomersApi* | [**getCustomersByIDOrders**](docs/CustomersApi.md#getCustomersByIDOrders) | **GET** /customers/{customer_id}/orders |
-*ShopApi.CustomersApi* | [**getCustomersByIDPaymentInstruments**](docs/CustomersApi.md#getCustomersByIDPaymentInstruments) | **GET** /customers/{customer_id}/payment_instruments |
-*ShopApi.CustomersApi* | [**getCustomersByIDPaymentInstrumentsByID**](docs/CustomersApi.md#getCustomersByIDPaymentInstrumentsByID) | **GET** /customers/{customer_id}/payment_instruments/{payment_instrument_id} |
-*ShopApi.CustomersApi* | [**getCustomersByIDProductLists**](docs/CustomersApi.md#getCustomersByIDProductLists) | **GET** /customers/{customer_id}/product_lists |
-*ShopApi.CustomersApi* | [**getCustomersByIDProductListsByID**](docs/CustomersApi.md#getCustomersByIDProductListsByID) | **GET** /customers/{customer_id}/product_lists/{list_id} |
-*ShopApi.CustomersApi* | [**getCustomersByIDProductListsByIDItems**](docs/CustomersApi.md#getCustomersByIDProductListsByIDItems) | **GET** /customers/{customer_id}/product_lists/{list_id}/items |
-*ShopApi.CustomersApi* | [**getCustomersByIDProductListsByIDItemsByID**](docs/CustomersApi.md#getCustomersByIDProductListsByIDItemsByID) | **GET** /customers/{customer_id}/product_lists/{list_id}/items/{item_id} |
-*ShopApi.CustomersApi* | [**patchCustomersByID**](docs/CustomersApi.md#patchCustomersByID) | **PATCH** /customers/{customer_id} |
-*ShopApi.CustomersApi* | [**patchCustomersByIDAddressesByID**](docs/CustomersApi.md#patchCustomersByIDAddressesByID) | **PATCH** /customers/{customer_id}/addresses/{address_name} |
-*ShopApi.CustomersApi* | [**patchCustomersByIDProductListsByID**](docs/CustomersApi.md#patchCustomersByIDProductListsByID) | **PATCH** /customers/{customer_id}/product_lists/{list_id} |
-*ShopApi.CustomersApi* | [**patchCustomersByIDProductListsByIDItemsByID**](docs/CustomersApi.md#patchCustomersByIDProductListsByIDItemsByID) | **PATCH** /customers/{customer_id}/product_lists/{list_id}/items/{item_id} |
-*ShopApi.CustomersApi* | [**postCustomers**](docs/CustomersApi.md#postCustomers) | **POST** /customers |
-*ShopApi.CustomersApi* | [**postCustomersAuth**](docs/CustomersApi.md#postCustomersAuth) | **POST** /customers/auth |
-*ShopApi.CustomersApi* | [**postCustomersByIDAddresses**](docs/CustomersApi.md#postCustomersByIDAddresses) | **POST** /customers/{customer_id}/addresses |
-*ShopApi.CustomersApi* | [**postCustomersByIDAuth**](docs/CustomersApi.md#postCustomersByIDAuth) | **POST** /customers/{customer_id}/auth |
-*ShopApi.CustomersApi* | [**postCustomersByIDPasswordReset**](docs/CustomersApi.md#postCustomersByIDPasswordReset) | **POST** /customers/{customer_id}/password_reset |
-*ShopApi.CustomersApi* | [**postCustomersByIDPaymentInstruments**](docs/CustomersApi.md#postCustomersByIDPaymentInstruments) | **POST** /customers/{customer_id}/payment_instruments |
-*ShopApi.CustomersApi* | [**postCustomersByIDProductLists**](docs/CustomersApi.md#postCustomersByIDProductLists) | **POST** /customers/{customer_id}/product_lists |
-*ShopApi.CustomersApi* | [**postCustomersByIDProductListsByIDItems**](docs/CustomersApi.md#postCustomersByIDProductListsByIDItems) | **POST** /customers/{customer_id}/product_lists/{list_id}/items |
-*ShopApi.CustomersApi* | [**postCustomersPasswordReset**](docs/CustomersApi.md#postCustomersPasswordReset) | **POST** /customers/password_reset |
-*ShopApi.CustomersApi* | [**putCustomersByIDPassword**](docs/CustomersApi.md#putCustomersByIDPassword) | **PUT** /customers/{customer_id}/password |
-*ShopApi.FoldersApi* | [**getFoldersByID**](docs/FoldersApi.md#getFoldersByID) | **GET** /folders/{id} |
-*ShopApi.FoldersApi* | [**getFoldersByIDs**](docs/FoldersApi.md#getFoldersByIDs) | **GET** /folders/({ids}) |
-*ShopApi.GiftCertificateApi* | [**postGiftCertificate**](docs/GiftCertificateApi.md#postGiftCertificate) | **POST** /gift_certificate |
-*ShopApi.OrderSearchApi* | [**postOrderSearch**](docs/OrderSearchApi.md#postOrderSearch) | **POST** /order_search |
-*ShopApi.OrdersApi* | [**deleteOrdersByIDNotesByID**](docs/OrdersApi.md#deleteOrdersByIDNotesByID) | **DELETE** /orders/{order_no}/notes/{note_id} |
-*ShopApi.OrdersApi* | [**deleteOrdersByIDPaymentInstrumentsByID**](docs/OrdersApi.md#deleteOrdersByIDPaymentInstrumentsByID) | **DELETE** /orders/{order_no}/payment_instruments/{payment_instrument_id} |
-*ShopApi.OrdersApi* | [**getOrdersByID**](docs/OrdersApi.md#getOrdersByID) | **GET** /orders/{order_no} |
-*ShopApi.OrdersApi* | [**getOrdersByIDNotes**](docs/OrdersApi.md#getOrdersByIDNotes) | **GET** /orders/{order_no}/notes |
-*ShopApi.OrdersApi* | [**getOrdersByIDPaymentMethods**](docs/OrdersApi.md#getOrdersByIDPaymentMethods) | **GET** /orders/{order_no}/payment_methods |
-*ShopApi.OrdersApi* | [**patchOrdersByID**](docs/OrdersApi.md#patchOrdersByID) | **PATCH** /orders/{order_no} |
-*ShopApi.OrdersApi* | [**patchOrdersByIDPaymentInstrumentsByID**](docs/OrdersApi.md#patchOrdersByIDPaymentInstrumentsByID) | **PATCH** /orders/{order_no}/payment_instruments/{payment_instrument_id} |
-*ShopApi.OrdersApi* | [**postOrders**](docs/OrdersApi.md#postOrders) | **POST** /orders |
-*ShopApi.OrdersApi* | [**postOrdersByIDNotes**](docs/OrdersApi.md#postOrdersByIDNotes) | **POST** /orders/{order_no}/notes |
-*ShopApi.OrdersApi* | [**postOrdersByIDPaymentInstruments**](docs/OrdersApi.md#postOrdersByIDPaymentInstruments) | **POST** /orders/{order_no}/payment_instruments |
-*ShopApi.PriceAdjustmentLimitsApi* | [**getPriceAdjustmentLimits**](docs/PriceAdjustmentLimitsApi.md#getPriceAdjustmentLimits) | **GET** /price_adjustment_limits |
-*ShopApi.ProductListsApi* | [**getProductLists**](docs/ProductListsApi.md#getProductLists) | **GET** /product_lists |
-*ShopApi.ProductListsApi* | [**getProductListsByID**](docs/ProductListsApi.md#getProductListsByID) | **GET** /product_lists/{list_id} |
-*ShopApi.ProductListsApi* | [**getProductListsByIDItems**](docs/ProductListsApi.md#getProductListsByIDItems) | **GET** /product_lists/{list_id}/items |
-*ShopApi.ProductListsApi* | [**getProductListsByIDItemsByID**](docs/ProductListsApi.md#getProductListsByIDItemsByID) | **GET** /product_lists/{list_id}/items/{item_id} |
-*ShopApi.ProductSearchApi* | [**getProductSearch**](docs/ProductSearchApi.md#getProductSearch) | **GET** /product_search |
-*ShopApi.ProductSearchApi* | [**getProductSearchAvailability**](docs/ProductSearchApi.md#getProductSearchAvailability) | **GET** /product_search/availability |
-*ShopApi.ProductSearchApi* | [**getProductSearchImages**](docs/ProductSearchApi.md#getProductSearchImages) | **GET** /product_search/images |
-*ShopApi.ProductSearchApi* | [**getProductSearchPrices**](docs/ProductSearchApi.md#getProductSearchPrices) | **GET** /product_search/prices |
-*ShopApi.ProductSearchApi* | [**getProductSearchVariations**](docs/ProductSearchApi.md#getProductSearchVariations) | **GET** /product_search/variations |
-*ShopApi.ProductsApi* | [**getProductsByID**](docs/ProductsApi.md#getProductsByID) | **GET** /products/{id} |
-*ShopApi.ProductsApi* | [**getProductsByIDAvailability**](docs/ProductsApi.md#getProductsByIDAvailability) | **GET** /products/{id}/availability |
-*ShopApi.ProductsApi* | [**getProductsByIDBundledProducts**](docs/ProductsApi.md#getProductsByIDBundledProducts) | **GET** /products/{id}/bundled_products |
-*ShopApi.ProductsApi* | [**getProductsByIDImages**](docs/ProductsApi.md#getProductsByIDImages) | **GET** /products/{id}/images |
-*ShopApi.ProductsApi* | [**getProductsByIDLinks**](docs/ProductsApi.md#getProductsByIDLinks) | **GET** /products/{id}/links |
-*ShopApi.ProductsApi* | [**getProductsByIDOptions**](docs/ProductsApi.md#getProductsByIDOptions) | **GET** /products/{id}/options |
-*ShopApi.ProductsApi* | [**getProductsByIDPrices**](docs/ProductsApi.md#getProductsByIDPrices) | **GET** /products/{id}/prices |
-*ShopApi.ProductsApi* | [**getProductsByIDPromotions**](docs/ProductsApi.md#getProductsByIDPromotions) | **GET** /products/{id}/promotions |
-*ShopApi.ProductsApi* | [**getProductsByIDShippingMethods**](docs/ProductsApi.md#getProductsByIDShippingMethods) | **GET** /products/{id}/shipping_methods |
-*ShopApi.ProductsApi* | [**getProductsByIDVariations**](docs/ProductsApi.md#getProductsByIDVariations) | **GET** /products/{id}/variations |
-*ShopApi.ProductsApi* | [**getProductsByIDs**](docs/ProductsApi.md#getProductsByIDs) | **GET** /products/({ids}) |
-*ShopApi.PromotionsApi* | [**getPromotions**](docs/PromotionsApi.md#getPromotions) | **GET** /promotions |
-*ShopApi.PromotionsApi* | [**getPromotionsByID**](docs/PromotionsApi.md#getPromotionsByID) | **GET** /promotions/{id} |
-*ShopApi.PromotionsApi* | [**getPromotionsByIDs**](docs/PromotionsApi.md#getPromotionsByIDs) | **GET** /promotions/({ids}) |
-*ShopApi.SearchSuggestionApi* | [**getSearchSuggestion**](docs/SearchSuggestionApi.md#getSearchSuggestion) | **GET** /search_suggestion |
-*ShopApi.SessionsApi* | [**postSessions**](docs/SessionsApi.md#postSessions) | **POST** /sessions |
-*ShopApi.SiteApi* | [**getSite**](docs/SiteApi.md#getSite) | **GET** /site |
-*ShopApi.StoresApi* | [**getStores**](docs/StoresApi.md#getStores) | **GET** /stores |
-*ShopApi.StoresApi* | [**getStoresByID**](docs/StoresApi.md#getStoresByID) | **GET** /stores/{id} |
-*ShopApi.StoresApi* | [**getStoresByIDs**](docs/StoresApi.md#getStoresByIDs) | **GET** /stores/({ids}) |
+*ShopApi.BasketsApi* | [**deleteBasketsByID**](module-api_BasketsApi.html#deleteBasketsByID) | **DELETE** /baskets/{basket_id} |
+*ShopApi.BasketsApi* | [**deleteBasketsByIDCouponsByID**](module-api_BasketsApi.html#deleteBasketsByIDCouponsByID) | **DELETE** /baskets/{basket_id}/coupons/{coupon_item_id} |
+*ShopApi.BasketsApi* | [**deleteBasketsByIDItemsByID**](module-api_BasketsApi.html#deleteBasketsByIDItemsByID) | **DELETE** /baskets/{basket_id}/items/{item_id} |
+*ShopApi.BasketsApi* | [**deleteBasketsByIDNotesByID**](module-api_BasketsApi.html#deleteBasketsByIDNotesByID) | **DELETE** /baskets/{basket_id}/notes/{note_id} |
+*ShopApi.BasketsApi* | [**deleteBasketsByIDPaymentInstrumentsByID**](module-api_BasketsApi.html#deleteBasketsByIDPaymentInstrumentsByID) | **DELETE** /baskets/{basket_id}/payment_instruments/{payment_instrument_id} |
+*ShopApi.BasketsApi* | [**deleteBasketsByIDShipmentsByID**](module-api_BasketsApi.html#deleteBasketsByIDShipmentsByID) | **DELETE** /baskets/{basket_id}/shipments/{shipment_id} |
+*ShopApi.BasketsApi* | [**getBasketsByID**](module-api_BasketsApi.html#getBasketsByID) | **GET** /baskets/{basket_id} |
+*ShopApi.BasketsApi* | [**getBasketsByIDNotes**](module-api_BasketsApi.html#getBasketsByIDNotes) | **GET** /baskets/{basket_id}/notes |
+*ShopApi.BasketsApi* | [**getBasketsByIDPaymentMethods**](module-api_BasketsApi.html#getBasketsByIDPaymentMethods) | **GET** /baskets/{basket_id}/payment_methods |
+*ShopApi.BasketsApi* | [**getBasketsByIDShipmentsByIDShippingMethods**](module-api_BasketsApi.html#getBasketsByIDShipmentsByIDShippingMethods) | **GET** /baskets/{basket_id}/shipments/{shipment_id}/shipping_methods |
+*ShopApi.BasketsApi* | [**patchBasketsByID**](module-api_BasketsApi.html#patchBasketsByID) | **PATCH** /baskets/{basket_id} |
+*ShopApi.BasketsApi* | [**patchBasketsByIDItemsByID**](module-api_BasketsApi.html#patchBasketsByIDItemsByID) | **PATCH** /baskets/{basket_id}/items/{item_id} |
+*ShopApi.BasketsApi* | [**patchBasketsByIDPaymentInstrumentsByID**](module-api_BasketsApi.html#patchBasketsByIDPaymentInstrumentsByID) | **PATCH** /baskets/{basket_id}/payment_instruments/{payment_instrument_id} |
+*ShopApi.BasketsApi* | [**patchBasketsByIDShipmentsByID**](module-api_BasketsApi.html#patchBasketsByIDShipmentsByID) | **PATCH** /baskets/{basket_id}/shipments/{shipment_id} |
+*ShopApi.BasketsApi* | [**postBaskets**](module-api_BasketsApi.html#postBaskets) | **POST** /baskets |
+*ShopApi.BasketsApi* | [**postBasketsByIDCoupons**](module-api_BasketsApi.html#postBasketsByIDCoupons) | **POST** /baskets/{basket_id}/coupons |
+*ShopApi.BasketsApi* | [**postBasketsByIDGiftCertificateItems**](module-api_BasketsApi.html#postBasketsByIDGiftCertificateItems) | **POST** /baskets/{basket_id}/gift_certificate_items |
+*ShopApi.BasketsApi* | [**postBasketsByIDItems**](module-api_BasketsApi.html#postBasketsByIDItems) | **POST** /baskets/{basket_id}/items |
+*ShopApi.BasketsApi* | [**postBasketsByIDNotes**](module-api_BasketsApi.html#postBasketsByIDNotes) | **POST** /baskets/{basket_id}/notes |
+*ShopApi.BasketsApi* | [**postBasketsByIDPaymentInstruments**](module-api_BasketsApi.html#postBasketsByIDPaymentInstruments) | **POST** /baskets/{basket_id}/payment_instruments |
+*ShopApi.BasketsApi* | [**postBasketsByIDShipments**](module-api_BasketsApi.html#postBasketsByIDShipments) | **POST** /baskets/{basket_id}/shipments |
+*ShopApi.BasketsApi* | [**putBasketsByIDBillingAddress**](module-api_BasketsApi.html#putBasketsByIDBillingAddress) | **PUT** /baskets/{basket_id}/billing_address |
+*ShopApi.BasketsApi* | [**putBasketsByIDCustomer**](module-api_BasketsApi.html#putBasketsByIDCustomer) | **PUT** /baskets/{basket_id}/customer |
+*ShopApi.BasketsApi* | [**putBasketsByIDShipmentsByIDShippingAddress**](module-api_BasketsApi.html#putBasketsByIDShipmentsByIDShippingAddress) | **PUT** /baskets/{basket_id}/shipments/{shipment_id}/shipping_address |
+*ShopApi.BasketsApi* | [**putBasketsByIDShipmentsByIDShippingMethod**](module-api_BasketsApi.html#putBasketsByIDShipmentsByIDShippingMethod) | **PUT** /baskets/{basket_id}/shipments/{shipment_id}/shipping_method |
+*ShopApi.CategoriesApi* | [**getCategoriesByID**](module-api_CategoriesApi.html#getCategoriesByID) | **GET** /categories/{id} |
+*ShopApi.CategoriesApi* | [**getCategoriesByIDs**](module-api_CategoriesApi.html#getCategoriesByIDs) | **GET** /categories/({ids}) |
+*ShopApi.ContentApi* | [**getContentByID**](module-api_ContentApi.html#getContentByID) | **GET** /content/{id} |
+*ShopApi.ContentApi* | [**getContentByIDs**](module-api_ContentApi.html#getContentByIDs) | **GET** /content/({ids}) |
+*ShopApi.ContentSearchApi* | [**getContentSearch**](module-api_ContentSearchApi.html#getContentSearch) | **GET** /content_search |
+*ShopApi.CustomObjectsApi* | [**getCustomObjectsByIDByID**](module-api_CustomObjectsApi.html#getCustomObjectsByIDByID) | **GET** /custom_objects/{object_type}/{key} |
+*ShopApi.CustomersApi* | [**deleteCustomersAuth**](module-api_CustomersApi.html#deleteCustomersAuth) | **DELETE** /customers/auth |
+*ShopApi.CustomersApi* | [**deleteCustomersByIDAddressesByID**](module-api_CustomersApi.html#deleteCustomersByIDAddressesByID) | **DELETE** /customers/{customer_id}/addresses/{address_name} |
+*ShopApi.CustomersApi* | [**deleteCustomersByIDPaymentInstrumentsByID**](module-api_CustomersApi.html#deleteCustomersByIDPaymentInstrumentsByID) | **DELETE** /customers/{customer_id}/payment_instruments/{payment_instrument_id} |
+*ShopApi.CustomersApi* | [**deleteCustomersByIDProductListsByID**](module-api_CustomersApi.html#deleteCustomersByIDProductListsByID) | **DELETE** /customers/{customer_id}/product_lists/{list_id} |
+*ShopApi.CustomersApi* | [**deleteCustomersByIDProductListsByIDItemsByID**](module-api_CustomersApi.html#deleteCustomersByIDProductListsByIDItemsByID) | **DELETE** /customers/{customer_id}/product_lists/{list_id}/items/{item_id} |
+*ShopApi.CustomersApi* | [**getCustomersByID**](module-api_CustomersApi.html#getCustomersByID) | **GET** /customers/{customer_id} |
+*ShopApi.CustomersApi* | [**getCustomersByIDAddresses**](module-api_CustomersApi.html#getCustomersByIDAddresses) | **GET** /customers/{customer_id}/addresses |
+*ShopApi.CustomersApi* | [**getCustomersByIDAddressesByID**](module-api_CustomersApi.html#getCustomersByIDAddressesByID) | **GET** /customers/{customer_id}/addresses/{address_name} |
+*ShopApi.CustomersApi* | [**getCustomersByIDBaskets**](module-api_CustomersApi.html#getCustomersByIDBaskets) | **GET** /customers/{customer_id}/baskets |
+*ShopApi.CustomersApi* | [**getCustomersByIDOrders**](module-api_CustomersApi.html#getCustomersByIDOrders) | **GET** /customers/{customer_id}/orders |
+*ShopApi.CustomersApi* | [**getCustomersByIDPaymentInstruments**](module-api_CustomersApi.html#getCustomersByIDPaymentInstruments) | **GET** /customers/{customer_id}/payment_instruments |
+*ShopApi.CustomersApi* | [**getCustomersByIDPaymentInstrumentsByID**](module-api_CustomersApi.html#getCustomersByIDPaymentInstrumentsByID) | **GET** /customers/{customer_id}/payment_instruments/{payment_instrument_id} |
+*ShopApi.CustomersApi* | [**getCustomersByIDProductLists**](module-api_CustomersApi.html#getCustomersByIDProductLists) | **GET** /customers/{customer_id}/product_lists |
+*ShopApi.CustomersApi* | [**getCustomersByIDProductListsByID**](module-api_CustomersApi.html#getCustomersByIDProductListsByID) | **GET** /customers/{customer_id}/product_lists/{list_id} |
+*ShopApi.CustomersApi* | [**getCustomersByIDProductListsByIDItems**](module-api_CustomersApi.html#getCustomersByIDProductListsByIDItems) | **GET** /customers/{customer_id}/product_lists/{list_id}/items |
+*ShopApi.CustomersApi* | [**getCustomersByIDProductListsByIDItemsByID**](module-api_CustomersApi.html#getCustomersByIDProductListsByIDItemsByID) | **GET** /customers/{customer_id}/product_lists/{list_id}/items/{item_id} |
+*ShopApi.CustomersApi* | [**patchCustomersByID**](module-api_CustomersApi.html#patchCustomersByID) | **PATCH** /customers/{customer_id} |
+*ShopApi.CustomersApi* | [**patchCustomersByIDAddressesByID**](module-api_CustomersApi.html#patchCustomersByIDAddressesByID) | **PATCH** /customers/{customer_id}/addresses/{address_name} |
+*ShopApi.CustomersApi* | [**patchCustomersByIDProductListsByID**](module-api_CustomersApi.html#patchCustomersByIDProductListsByID) | **PATCH** /customers/{customer_id}/product_lists/{list_id} |
+*ShopApi.CustomersApi* | [**patchCustomersByIDProductListsByIDItemsByID**](module-api_CustomersApi.html#patchCustomersByIDProductListsByIDItemsByID) | **PATCH** /customers/{customer_id}/product_lists/{list_id}/items/{item_id} |
+*ShopApi.CustomersApi* | [**postCustomers**](module-api_CustomersApi.html#postCustomers) | **POST** /customers |
+*ShopApi.CustomersApi* | [**postCustomersAuth**](module-api_CustomersApi.html#postCustomersAuth) | **POST** /customers/auth |
+*ShopApi.CustomersApi* | [**postCustomersByIDAddresses**](module-api_CustomersApi.html#postCustomersByIDAddresses) | **POST** /customers/{customer_id}/addresses |
+*ShopApi.CustomersApi* | [**postCustomersByIDAuth**](module-api_CustomersApi.html#postCustomersByIDAuth) | **POST** /customers/{customer_id}/auth |
+*ShopApi.CustomersApi* | [**postCustomersByIDPasswordReset**](module-api_CustomersApi.html#postCustomersByIDPasswordReset) | **POST** /customers/{customer_id}/password_reset |
+*ShopApi.CustomersApi* | [**postCustomersByIDPaymentInstruments**](module-api_CustomersApi.html#postCustomersByIDPaymentInstruments) | **POST** /customers/{customer_id}/payment_instruments |
+*ShopApi.CustomersApi* | [**postCustomersByIDProductLists**](module-api_CustomersApi.html#postCustomersByIDProductLists) | **POST** /customers/{customer_id}/product_lists |
+*ShopApi.CustomersApi* | [**postCustomersByIDProductListsByIDItems**](module-api_CustomersApi.html#postCustomersByIDProductListsByIDItems) | **POST** /customers/{customer_id}/product_lists/{list_id}/items |
+*ShopApi.CustomersApi* | [**postCustomersPasswordReset**](module-api_CustomersApi.html#postCustomersPasswordReset) | **POST** /customers/password_reset |
+*ShopApi.CustomersApi* | [**putCustomersByIDPassword**](module-api_CustomersApi.html#putCustomersByIDPassword) | **PUT** /customers/{customer_id}/password |
+*ShopApi.FoldersApi* | [**getFoldersByID**](module-api_FoldersApi.html#getFoldersByID) | **GET** /folders/{id} |
+*ShopApi.FoldersApi* | [**getFoldersByIDs**](module-api_FoldersApi.html#getFoldersByIDs) | **GET** /folders/({ids}) |
+*ShopApi.GiftCertificateApi* | [**postGiftCertificate**](module-api_GiftCertificateApi.html#postGiftCertificate) | **POST** /gift_certificate |
+*ShopApi.OrderSearchApi* | [**postOrderSearch**](module-api_OrderSearchApi.html#postOrderSearch) | **POST** /order_search |
+*ShopApi.OrdersApi* | [**deleteOrdersByIDNotesByID**](module-api_OrdersApi.html#deleteOrdersByIDNotesByID) | **DELETE** /orders/{order_no}/notes/{note_id} |
+*ShopApi.OrdersApi* | [**deleteOrdersByIDPaymentInstrumentsByID**](module-api_OrdersApi.html#deleteOrdersByIDPaymentInstrumentsByID) | **DELETE** /orders/{order_no}/payment_instruments/{payment_instrument_id} |
+*ShopApi.OrdersApi* | [**getOrdersByID**](module-api_OrdersApi.html#getOrdersByID) | **GET** /orders/{order_no} |
+*ShopApi.OrdersApi* | [**getOrdersByIDNotes**](module-api_OrdersApi.html#getOrdersByIDNotes) | **GET** /orders/{order_no}/notes |
+*ShopApi.OrdersApi* | [**getOrdersByIDPaymentMethods**](module-api_OrdersApi.html#getOrdersByIDPaymentMethods) | **GET** /orders/{order_no}/payment_methods |
+*ShopApi.OrdersApi* | [**patchOrdersByID**](module-api_OrdersApi.html#patchOrdersByID) | **PATCH** /orders/{order_no} |
+*ShopApi.OrdersApi* | [**patchOrdersByIDPaymentInstrumentsByID**](module-api_OrdersApi.html#patchOrdersByIDPaymentInstrumentsByID) | **PATCH** /orders/{order_no}/payment_instruments/{payment_instrument_id} |
+*ShopApi.OrdersApi* | [**postOrders**](module-api_OrdersApi.html#postOrders) | **POST** /orders |
+*ShopApi.OrdersApi* | [**postOrdersByIDNotes**](module-api_OrdersApi.html#postOrdersByIDNotes) | **POST** /orders/{order_no}/notes |
+*ShopApi.OrdersApi* | [**postOrdersByIDPaymentInstruments**](module-api_OrdersApi.html#postOrdersByIDPaymentInstruments) | **POST** /orders/{order_no}/payment_instruments |
+*ShopApi.PriceAdjustmentLimitsApi* | [**getPriceAdjustmentLimits**](module-api_PriceAdjustmentLimitsApi.html#getPriceAdjustmentLimits) | **GET** /price_adjustment_limits |
+*ShopApi.ProductListsApi* | [**getProductLists**](module-api_ProductListsApi.html#getProductLists) | **GET** /product_lists |
+*ShopApi.ProductListsApi* | [**getProductListsByID**](module-api_ProductListsApi.html#getProductListsByID) | **GET** /product_lists/{list_id} |
+*ShopApi.ProductListsApi* | [**getProductListsByIDItems**](module-api_ProductListsApi.html#getProductListsByIDItems) | **GET** /product_lists/{list_id}/items |
+*ShopApi.ProductListsApi* | [**getProductListsByIDItemsByID**](module-api_ProductListsApi.html#getProductListsByIDItemsByID) | **GET** /product_lists/{list_id}/items/{item_id} |
+*ShopApi.ProductSearchApi* | [**getProductSearch**](module-api_ProductSearchApi.html#getProductSearch) | **GET** /product_search |
+*ShopApi.ProductSearchApi* | [**getProductSearchAvailability**](module-api_ProductSearchApi.html#getProductSearchAvailability) | **GET** /product_search/availability |
+*ShopApi.ProductSearchApi* | [**getProductSearchImages**](module-api_ProductSearchApi.html#getProductSearchImages) | **GET** /product_search/images |
+*ShopApi.ProductSearchApi* | [**getProductSearchPrices**](module-api_ProductSearchApi.html#getProductSearchPrices) | **GET** /product_search/prices |
+*ShopApi.ProductSearchApi* | [**getProductSearchVariations**](module-api_ProductSearchApi.html#getProductSearchVariations) | **GET** /product_search/variations |
+*ShopApi.ProductsApi* | [**getProductsByID**](module-api_ProductsApi.html#getProductsByID) | **GET** /products/{id} |
+*ShopApi.ProductsApi* | [**getProductsByIDAvailability**](module-api_ProductsApi.html#getProductsByIDAvailability) | **GET** /products/{id}/availability |
+*ShopApi.ProductsApi* | [**getProductsByIDBundledProducts**](module-api_ProductsApi.html#getProductsByIDBundledProducts) | **GET** /products/{id}/bundled_products |
+*ShopApi.ProductsApi* | [**getProductsByIDImages**](module-api_ProductsApi.html#getProductsByIDImages) | **GET** /products/{id}/images |
+*ShopApi.ProductsApi* | [**getProductsByIDLinks**](module-api_ProductsApi.html#getProductsByIDLinks) | **GET** /products/{id}/links |
+*ShopApi.ProductsApi* | [**getProductsByIDOptions**](module-api_ProductsApi.html#getProductsByIDOptions) | **GET** /products/{id}/options |
+*ShopApi.ProductsApi* | [**getProductsByIDPrices**](module-api_ProductsApi.html#getProductsByIDPrices) | **GET** /products/{id}/prices |
+*ShopApi.ProductsApi* | [**getProductsByIDPromotions**](module-api_ProductsApi.html#getProductsByIDPromotions) | **GET** /products/{id}/promotions |
+*ShopApi.ProductsApi* | [**getProductsByIDShippingMethods**](module-api_ProductsApi.html#getProductsByIDShippingMethods) | **GET** /products/{id}/shipping_methods |
+*ShopApi.ProductsApi* | [**getProductsByIDVariations**](module-api_ProductsApi.html#getProductsByIDVariations) | **GET** /products/{id}/variations |
+*ShopApi.ProductsApi* | [**getProductsByIDs**](module-api_ProductsApi.html#getProductsByIDs) | **GET** /products/({ids}) |
+*ShopApi.PromotionsApi* | [**getPromotions**](module-api_PromotionsApi.html#getPromotions) | **GET** /promotions |
+*ShopApi.PromotionsApi* | [**getPromotionsByID**](module-api_PromotionsApi.html#getPromotionsByID) | **GET** /promotions/{id} |
+*ShopApi.PromotionsApi* | [**getPromotionsByIDs**](module-api_PromotionsApi.html#getPromotionsByIDs) | **GET** /promotions/({ids}) |
+*ShopApi.SearchSuggestionApi* | [**getSearchSuggestion**](module-api_SearchSuggestionApi.html#getSearchSuggestion) | **GET** /search_suggestion |
+*ShopApi.SessionsApi* | [**postSessions**](module-api_SessionsApi.html#postSessions) | **POST** /sessions |
+*ShopApi.SiteApi* | [**getSite**](module-api_SiteApi.html#getSite) | **GET** /site |
+*ShopApi.StoresApi* | [**getStores**](module-api_StoresApi.html#getStores) | **GET** /stores |
+*ShopApi.StoresApi* | [**getStoresByID**](module-api_StoresApi.html#getStoresByID) | **GET** /stores/{id} |
+*ShopApi.StoresApi* | [**getStoresByIDs**](module-api_StoresApi.html#getStoresByIDs) | **GET** /stores/({ids}) |
 
 
-## Documentation for Models
+## Documentation for models
 
- - [ShopApi.AuthRequestModel](docs/AuthRequestModel.md)
- - [ShopApi.BasketModel](docs/BasketModel.md)
- - [ShopApi.BasketPaymentInstrumentRequestModel](docs/BasketPaymentInstrumentRequestModel.md)
- - [ShopApi.BasketsResultModel](docs/BasketsResultModel.md)
- - [ShopApi.BonusDiscountLineItemModel](docs/BonusDiscountLineItemModel.md)
- - [ShopApi.BoolFilterModel](docs/BoolFilterModel.md)
- - [ShopApi.BoolQueryModel](docs/BoolQueryModel.md)
- - [ShopApi.BundledProductModel](docs/BundledProductModel.md)
- - [ShopApi.CategoryModel](docs/CategoryModel.md)
- - [ShopApi.CategoryResultModel](docs/CategoryResultModel.md)
- - [ShopApi.ContentFolderModel](docs/ContentFolderModel.md)
- - [ShopApi.ContentFolderResultModel](docs/ContentFolderResultModel.md)
- - [ShopApi.ContentModel](docs/ContentModel.md)
- - [ShopApi.ContentResultModel](docs/ContentResultModel.md)
- - [ShopApi.ContentSearchRefinementModel](docs/ContentSearchRefinementModel.md)
- - [ShopApi.ContentSearchRefinementValueModel](docs/ContentSearchRefinementValueModel.md)
- - [ShopApi.ContentSearchResultModel](docs/ContentSearchResultModel.md)
- - [ShopApi.CouponItemModel](docs/CouponItemModel.md)
- - [ShopApi.CustomObjectModel](docs/CustomObjectModel.md)
- - [ShopApi.CustomerAddressLinkModel](docs/CustomerAddressLinkModel.md)
- - [ShopApi.CustomerAddressModel](docs/CustomerAddressModel.md)
- - [ShopApi.CustomerAddressResultModel](docs/CustomerAddressResultModel.md)
- - [ShopApi.CustomerInfoModel](docs/CustomerInfoModel.md)
- - [ShopApi.CustomerModel](docs/CustomerModel.md)
- - [ShopApi.CustomerOrderResultModel](docs/CustomerOrderResultModel.md)
- - [ShopApi.CustomerPaymentCardRequestModel](docs/CustomerPaymentCardRequestModel.md)
- - [ShopApi.CustomerPaymentInstrumentModel](docs/CustomerPaymentInstrumentModel.md)
- - [ShopApi.CustomerPaymentInstrumentRequestModel](docs/CustomerPaymentInstrumentRequestModel.md)
- - [ShopApi.CustomerPaymentInstrumentResultModel](docs/CustomerPaymentInstrumentResultModel.md)
- - [ShopApi.CustomerProductListItemLinkModel](docs/CustomerProductListItemLinkModel.md)
- - [ShopApi.CustomerProductListItemModel](docs/CustomerProductListItemModel.md)
- - [ShopApi.CustomerProductListItemResultModel](docs/CustomerProductListItemResultModel.md)
- - [ShopApi.CustomerProductListModel](docs/CustomerProductListModel.md)
- - [ShopApi.CustomerProductListRegistrantModel](docs/CustomerProductListRegistrantModel.md)
- - [ShopApi.CustomerProductListResultModel](docs/CustomerProductListResultModel.md)
- - [ShopApi.CustomerRegistrationModel](docs/CustomerRegistrationModel.md)
- - [ShopApi.DiscountModel](docs/DiscountModel.md)
- - [ShopApi.FilteredQueryModel](docs/FilteredQueryModel.md)
- - [ShopApi.GiftCertificateItemModel](docs/GiftCertificateItemModel.md)
- - [ShopApi.GiftCertificateModel](docs/GiftCertificateModel.md)
- - [ShopApi.GiftCertificateRequestModel](docs/GiftCertificateRequestModel.md)
- - [ShopApi.ImageGroupModel](docs/ImageGroupModel.md)
- - [ShopApi.ImageModel](docs/ImageModel.md)
- - [ShopApi.InventoryModel](docs/InventoryModel.md)
- - [ShopApi.LocaleModel](docs/LocaleModel.md)
- - [ShopApi.MasterModel](docs/MasterModel.md)
- - [ShopApi.NestedQueryModel](docs/NestedQueryModel.md)
- - [ShopApi.NoteModel](docs/NoteModel.md)
- - [ShopApi.NotesResultModel](docs/NotesResultModel.md)
- - [ShopApi.OptionItemModel](docs/OptionItemModel.md)
- - [ShopApi.OptionModel](docs/OptionModel.md)
- - [ShopApi.OptionValueModel](docs/OptionValueModel.md)
- - [ShopApi.OrderAddressModel](docs/OrderAddressModel.md)
- - [ShopApi.OrderModel](docs/OrderModel.md)
- - [ShopApi.OrderPaymentCardRequestModel](docs/OrderPaymentCardRequestModel.md)
- - [ShopApi.OrderPaymentInstrumentModel](docs/OrderPaymentInstrumentModel.md)
- - [ShopApi.OrderPaymentInstrumentRequestModel](docs/OrderPaymentInstrumentRequestModel.md)
- - [ShopApi.OrderSearchHitModel](docs/OrderSearchHitModel.md)
- - [ShopApi.OrderSearchRequestModel](docs/OrderSearchRequestModel.md)
- - [ShopApi.OrderSearchResultModel](docs/OrderSearchResultModel.md)
- - [ShopApi.PasswordChangeRequestModel](docs/PasswordChangeRequestModel.md)
- - [ShopApi.PasswordResetModel](docs/PasswordResetModel.md)
- - [ShopApi.PaymentBankAccountModel](docs/PaymentBankAccountModel.md)
- - [ShopApi.PaymentBankAccountRequestModel](docs/PaymentBankAccountRequestModel.md)
- - [ShopApi.PaymentCardModel](docs/PaymentCardModel.md)
- - [ShopApi.PaymentCardSpecModel](docs/PaymentCardSpecModel.md)
- - [ShopApi.PaymentMethodModel](docs/PaymentMethodModel.md)
- - [ShopApi.PaymentMethodResultModel](docs/PaymentMethodResultModel.md)
- - [ShopApi.PriceAdjustmentLimitModel](docs/PriceAdjustmentLimitModel.md)
- - [ShopApi.PriceAdjustmentLimitsModel](docs/PriceAdjustmentLimitsModel.md)
- - [ShopApi.PriceAdjustmentModel](docs/PriceAdjustmentModel.md)
- - [ShopApi.ProductDetailsLinkModel](docs/ProductDetailsLinkModel.md)
- - [ShopApi.ProductItemModel](docs/ProductItemModel.md)
- - [ShopApi.ProductLinkModel](docs/ProductLinkModel.md)
- - [ShopApi.ProductListEventModel](docs/ProductListEventModel.md)
- - [ShopApi.ProductListItemReferenceModel](docs/ProductListItemReferenceModel.md)
- - [ShopApi.ProductListLinkModel](docs/ProductListLinkModel.md)
- - [ShopApi.ProductListRegistrantModel](docs/ProductListRegistrantModel.md)
- - [ShopApi.ProductListShippingAddressModel](docs/ProductListShippingAddressModel.md)
- - [ShopApi.ProductModel](docs/ProductModel.md)
- - [ShopApi.ProductPromotionModel](docs/ProductPromotionModel.md)
- - [ShopApi.ProductResultModel](docs/ProductResultModel.md)
- - [ShopApi.ProductSearchHitModel](docs/ProductSearchHitModel.md)
- - [ShopApi.ProductSearchRefinementModel](docs/ProductSearchRefinementModel.md)
- - [ShopApi.ProductSearchRefinementValueModel](docs/ProductSearchRefinementValueModel.md)
- - [ShopApi.ProductSearchResultModel](docs/ProductSearchResultModel.md)
- - [ShopApi.ProductSearchSortingOptionModel](docs/ProductSearchSortingOptionModel.md)
- - [ShopApi.ProductSimpleLinkModel](docs/ProductSimpleLinkModel.md)
- - [ShopApi.ProductTypeModel](docs/ProductTypeModel.md)
- - [ShopApi.PromotionModel](docs/PromotionModel.md)
- - [ShopApi.PromotionResultModel](docs/PromotionResultModel.md)
- - [ShopApi.PublicProductListItemModel](docs/PublicProductListItemModel.md)
- - [ShopApi.PublicProductListItemResultModel](docs/PublicProductListItemResultModel.md)
- - [ShopApi.PublicProductListLinkModel](docs/PublicProductListLinkModel.md)
- - [ShopApi.PublicProductListModel](docs/PublicProductListModel.md)
- - [ShopApi.PublicProductListResultModel](docs/PublicProductListResultModel.md)
- - [ShopApi.QueryFilterModel](docs/QueryFilterModel.md)
- - [ShopApi.Range2FilterModel](docs/Range2FilterModel.md)
- - [ShopApi.RangeFilterModel](docs/RangeFilterModel.md)
- - [ShopApi.RecommendationModel](docs/RecommendationModel.md)
- - [ShopApi.RecommendationTypeModel](docs/RecommendationTypeModel.md)
- - [ShopApi.ResultPageModel](docs/ResultPageModel.md)
- - [ShopApi.ShipmentModel](docs/ShipmentModel.md)
- - [ShopApi.ShippingItemModel](docs/ShippingItemModel.md)
- - [ShopApi.ShippingMethodModel](docs/ShippingMethodModel.md)
- - [ShopApi.ShippingMethodResultModel](docs/ShippingMethodResultModel.md)
- - [ShopApi.ShippingPromotionModel](docs/ShippingPromotionModel.md)
- - [ShopApi.SimpleLinkModel](docs/SimpleLinkModel.md)
- - [ShopApi.SiteModel](docs/SiteModel.md)
- - [ShopApi.SortModel](docs/SortModel.md)
- - [ShopApi.StatusModel](docs/StatusModel.md)
- - [ShopApi.StoreModel](docs/StoreModel.md)
- - [ShopApi.StoreResultModel](docs/StoreResultModel.md)
- - [ShopApi.SuggestedCategoryModel](docs/SuggestedCategoryModel.md)
- - [ShopApi.SuggestedContentModel](docs/SuggestedContentModel.md)
- - [ShopApi.SuggestedPhraseModel](docs/SuggestedPhraseModel.md)
- - [ShopApi.SuggestedProductModel](docs/SuggestedProductModel.md)
- - [ShopApi.SuggestedTermModel](docs/SuggestedTermModel.md)
- - [ShopApi.SuggestedTermsModel](docs/SuggestedTermsModel.md)
- - [ShopApi.SuggestionModel](docs/SuggestionModel.md)
- - [ShopApi.SuggestionResultModel](docs/SuggestionResultModel.md)
- - [ShopApi.TermFilterModel](docs/TermFilterModel.md)
- - [ShopApi.TermQueryModel](docs/TermQueryModel.md)
- - [ShopApi.TextQueryModel](docs/TextQueryModel.md)
- - [ShopApi.VariantModel](docs/VariantModel.md)
- - [ShopApi.VariationAttributeModel](docs/VariationAttributeModel.md)
- - [ShopApi.VariationAttributeValueModel](docs/VariationAttributeValueModel.md)
- - [ShopApi.VariationGroupModel](docs/VariationGroupModel.md)
+ - [ShopApi.AuthRequest](module-models_AuthRequest.html)
+ - [ShopApi.Basket](module-models_Basket.html)
+ - [ShopApi.BasketPaymentInstrumentRequest](module-models_BasketPaymentInstrumentRequest.html)
+ - [ShopApi.BasketsResult](module-models_BasketsResult.html)
+ - [ShopApi.BonusDiscountLineItem](module-models_BonusDiscountLineItem.html)
+ - [ShopApi.BoolFilter](module-models_BoolFilter.html)
+ - [ShopApi.BoolQuery](module-models_BoolQuery.html)
+ - [ShopApi.BundledProduct](module-models_BundledProduct.html)
+ - [ShopApi.Category](module-models_Category.html)
+ - [ShopApi.CategoryResult](module-models_CategoryResult.html)
+ - [ShopApi.ContentFolder](module-models_ContentFolder.html)
+ - [ShopApi.ContentFolderResult](module-models_ContentFolderResult.html)
+ - [ShopApi.Content](module-models_Content.html)
+ - [ShopApi.ContentResult](module-models_ContentResult.html)
+ - [ShopApi.ContentSearchRefinement](module-models_ContentSearchRefinement.html)
+ - [ShopApi.ContentSearchRefinementValue](module-models_ContentSearchRefinementValue.html)
+ - [ShopApi.ContentSearchResult](module-models_ContentSearchResult.html)
+ - [ShopApi.CouponItem](module-models_CouponItem.html)
+ - [ShopApi.CustomObject](module-models_CustomObject.html)
+ - [ShopApi.CustomerAddressLink](module-models_CustomerAddressLink.html)
+ - [ShopApi.CustomerAddress](module-models_CustomerAddress.html)
+ - [ShopApi.CustomerAddressResult](module-models_CustomerAddressResult.html)
+ - [ShopApi.CustomerInfo](module-models_CustomerInfo.html)
+ - [ShopApi.Customer](module-models_Customer.html)
+ - [ShopApi.CustomerOrderResult](module-models_CustomerOrderResult.html)
+ - [ShopApi.CustomerPaymentCardRequest](module-models_CustomerPaymentCardRequest.html)
+ - [ShopApi.CustomerPaymentInstrument](module-models_CustomerPaymentInstrument.html)
+ - [ShopApi.CustomerPaymentInstrumentRequest](module-models_CustomerPaymentInstrumentRequest.html)
+ - [ShopApi.CustomerPaymentInstrumentResult](module-models_CustomerPaymentInstrumentResult.html)
+ - [ShopApi.CustomerProductListItemLink](module-models_CustomerProductListItemLink.html)
+ - [ShopApi.CustomerProductListItem](module-models_CustomerProductListItem.html)
+ - [ShopApi.CustomerProductListItemResult](module-models_CustomerProductListItemResult.html)
+ - [ShopApi.CustomerProductList](module-models_CustomerProductList.html)
+ - [ShopApi.CustomerProductListRegistrant](module-models_CustomerProductListRegistrant.html)
+ - [ShopApi.CustomerProductListResult](module-models_CustomerProductListResult.html)
+ - [ShopApi.CustomerRegistration](module-models_CustomerRegistration.html)
+ - [ShopApi.Discount](module-models_Discount.html)
+ - [ShopApi.FilteredQuery](module-models_FilteredQuery.html)
+ - [ShopApi.GiftCertificateItem](module-models_GiftCertificateItem.html)
+ - [ShopApi.GiftCertificate](module-models_GiftCertificate.html)
+ - [ShopApi.GiftCertificateRequest](module-models_GiftCertificateRequest.html)
+ - [ShopApi.ImageGroup](module-models_ImageGroup.html)
+ - [ShopApi.Image](module-models_Image.html)
+ - [ShopApi.Inventory](module-models_Inventory.html)
+ - [ShopApi.Locale](module-models_Locale.html)
+ - [ShopApi.Master](module-models_Master.html)
+ - [ShopApi.NestedQuery](module-models_NestedQuery.html)
+ - [ShopApi.Note](module-models_Note.html)
+ - [ShopApi.NotesResult](module-models_NotesResult.html)
+ - [ShopApi.OptionItem](module-models_OptionItem.html)
+ - [ShopApi.Option](module-models_Option.html)
+ - [ShopApi.OptionValue](module-models_OptionValue.html)
+ - [ShopApi.OrderAddress](module-models_OrderAddress.html)
+ - [ShopApi.Order](module-models_Order.html)
+ - [ShopApi.OrderPaymentCardRequest](module-models_OrderPaymentCardRequest.html)
+ - [ShopApi.OrderPaymentInstrument](module-models_OrderPaymentInstrument.html)
+ - [ShopApi.OrderPaymentInstrumentRequest](module-models_OrderPaymentInstrumentRequest.html)
+ - [ShopApi.OrderSearchHit](module-models_OrderSearchHit.html)
+ - [ShopApi.OrderSearchRequest](module-models_OrderSearchRequest.html)
+ - [ShopApi.OrderSearchResult](module-models_OrderSearchResult.html)
+ - [ShopApi.PasswordChangeRequest](module-models_PasswordChangeRequest.html)
+ - [ShopApi.PasswordReset](module-models_PasswordReset.html)
+ - [ShopApi.PaymentBankAccount](module-models_PaymentBankAccount.html)
+ - [ShopApi.PaymentBankAccountRequest](module-models_PaymentBankAccountRequest.html)
+ - [ShopApi.PaymentCard](module-models_PaymentCard.html)
+ - [ShopApi.PaymentCardSpec](module-models_PaymentCardSpec.html)
+ - [ShopApi.PaymentMethod](module-models_PaymentMethod.html)
+ - [ShopApi.PaymentMethodResult](module-models_PaymentMethodResult.html)
+ - [ShopApi.PriceAdjustmentLimit](module-models_PriceAdjustmentLimit.html)
+ - [ShopApi.PriceAdjustmentLimits](module-models_PriceAdjustmentLimits.html)
+ - [ShopApi.PriceAdjustment](module-models_PriceAdjustment.html)
+ - [ShopApi.ProductDetailsLink](module-models_ProductDetailsLink.html)
+ - [ShopApi.ProductItem](module-models_ProductItem.html)
+ - [ShopApi.ProductLink](module-models_ProductLink.html)
+ - [ShopApi.ProductListEvent](module-models_ProductListEvent.html)
+ - [ShopApi.ProductListItemReference](module-models_ProductListItemReference.html)
+ - [ShopApi.ProductListLink](module-models_ProductListLink.html)
+ - [ShopApi.ProductListRegistrant](module-models_ProductListRegistrant.html)
+ - [ShopApi.ProductListShippingAddress](module-models_ProductListShippingAddress.html)
+ - [ShopApi.Product](module-models_Product.html)
+ - [ShopApi.ProductPromotion](module-models_ProductPromotion.html)
+ - [ShopApi.ProductResult](module-models_ProductResult.html)
+ - [ShopApi.ProductSearchHit](module-models_ProductSearchHit.html)
+ - [ShopApi.ProductSearchRefinement](module-models_ProductSearchRefinement.html)
+ - [ShopApi.ProductSearchRefinementValue](module-models_ProductSearchRefinementValue.html)
+ - [ShopApi.ProductSearchResult](module-models_ProductSearchResult.html)
+ - [ShopApi.ProductSearchSortingOption](module-models_ProductSearchSortingOption.html)
+ - [ShopApi.ProductSimpleLink](module-models_ProductSimpleLink.html)
+ - [ShopApi.ProductType](module-models_ProductType.html)
+ - [ShopApi.Promotion](module-models_Promotion.html)
+ - [ShopApi.PromotionResult](module-models_PromotionResult.html)
+ - [ShopApi.PublicProductListItem](module-models_PublicProductListItem.html)
+ - [ShopApi.PublicProductListItemResult](module-models_PublicProductListItemResult.html)
+ - [ShopApi.PublicProductListLink](module-models_PublicProductListLink.html)
+ - [ShopApi.PublicProductList](module-models_PublicProductList.html)
+ - [ShopApi.PublicProductListResult](module-models_PublicProductListResult.html)
+ - [ShopApi.QueryFilter](module-models_QueryFilter.html)
+ - [ShopApi.Range2Filter](module-models_Range2Filter.html)
+ - [ShopApi.RangeFilter](module-models_RangeFilter.html)
+ - [ShopApi.Recommendation](module-models_Recommendation.html)
+ - [ShopApi.RecommendationType](module-models_RecommendationType.html)
+ - [ShopApi.ResultPage](module-models_ResultPage.html)
+ - [ShopApi.Shipment](module-models_Shipment.html)
+ - [ShopApi.ShippingItem](module-models_ShippingItem.html)
+ - [ShopApi.ShippingMethod](module-models_ShippingMethod.html)
+ - [ShopApi.ShippingMethodResult](module-models_ShippingMethodResult.html)
+ - [ShopApi.ShippingPromotion](module-models_ShippingPromotion.html)
+ - [ShopApi.SimpleLink](module-models_SimpleLink.html)
+ - [ShopApi.Site](module-models_Site.html)
+ - [ShopApi.Sort](module-models_Sort.html)
+ - [ShopApi.Status](module-models_Status.html)
+ - [ShopApi.Store](module-models_Store.html)
+ - [ShopApi.StoreResult](module-models_StoreResult.html)
+ - [ShopApi.SuggestedCategory](module-models_SuggestedCategory.html)
+ - [ShopApi.SuggestedContent](module-models_SuggestedContent.html)
+ - [ShopApi.SuggestedPhrase](module-models_SuggestedPhrase.html)
+ - [ShopApi.SuggestedProduct](module-models_SuggestedProduct.html)
+ - [ShopApi.SuggestedTerm](module-models_SuggestedTerm.html)
+ - [ShopApi.SuggestedTerms](module-models_SuggestedTerms.html)
+ - [ShopApi.Suggestion](module-models_Suggestion.html)
+ - [ShopApi.SuggestionResult](module-models_SuggestionResult.html)
+ - [ShopApi.TermFilter](module-models_TermFilter.html)
+ - [ShopApi.TermQuery](module-models_TermQuery.html)
+ - [ShopApi.TextQuery](module-models_TextQuery.html)
+ - [ShopApi.Variant](module-models_Variant.html)
+ - [ShopApi.VariationAttribute](module-models_VariationAttribute.html)
+ - [ShopApi.VariationAttributeValue](module-models_VariationAttributeValue.html)
+ - [ShopApi.VariationGroup](module-models_VariationGroup.html)
 
 
 ## Documentation for Authorization

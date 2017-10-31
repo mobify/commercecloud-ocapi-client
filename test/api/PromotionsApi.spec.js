@@ -72,7 +72,7 @@ describe('PromotionsApi', () => {
         it('should return promotion result when calling getPromotions with valid campaign id', () =>
             instance.getPromotions(VALID_CAMPAIGN_ID)
                 .then((result) => {
-                    expect(result.constructor.name).to.be('PromotionResultModel')
+                    expect(result.constructor.name).to.be('PromotionResult')
                 })
         )
     })
@@ -81,7 +81,7 @@ describe('PromotionsApi', () => {
         it('should return promotion when calling getPromotionsByID with valid promotion id', () =>
             instance.getPromotionsByID(VALID_PROMOTION_ID)
                 .then((promotion) => {
-                    expect(promotion.constructor.name).to.be('PromotionModel')
+                    expect(promotion.constructor.name).to.be('Promotion')
                 })
         )
 
@@ -97,7 +97,7 @@ describe('PromotionsApi', () => {
         it('should call getPromotionsByIDs successfully', () =>
         instance.getPromotionsByIDs([VALID_PROMOTION_ID])
             .catch((result) => {
-                expect(promotion.constructor.name).to.be('PromotionResultModel')
+                expect(promotion.constructor.name).to.be('PromotionResult')
             })
         )
     })

@@ -48,7 +48,7 @@ describe('SiteApi', () => {
         it('should call getSite successfully', () =>
             instance.getSite()
                 .then((site) => {
-                    expect(site.constructor.name).to.be('SiteModel')
+                    expect(site.constructor.name).to.be('Site')
                 })
         )
     })

@@ -44,135 +44,136 @@
  */
 
 import ApiClient from './ApiClient'
-import AuthRequestModel from './models/AuthRequestModel'
-import BasketModel from './models/BasketModel'
-import BasketPaymentInstrumentRequestModel from './models/BasketPaymentInstrumentRequestModel'
-import BasketsResultModel from './models/BasketsResultModel'
-import BonusDiscountLineItemModel from './models/BonusDiscountLineItemModel'
-import BoolFilterModel from './models/BoolFilterModel'
-import BoolQueryModel from './models/BoolQueryModel'
-import BundledProductModel from './models/BundledProductModel'
-import CategoryModel from './models/CategoryModel'
-import CategoryResultModel from './models/CategoryResultModel'
-import ContentFolderModel from './models/ContentFolderModel'
-import ContentFolderResultModel from './models/ContentFolderResultModel'
-import ContentModel from './models/ContentModel'
-import ContentResultModel from './models/ContentResultModel'
-import ContentSearchRefinementModel from './models/ContentSearchRefinementModel'
-import ContentSearchRefinementValueModel from './models/ContentSearchRefinementValueModel'
-import ContentSearchResultModel from './models/ContentSearchResultModel'
-import CouponItemModel from './models/CouponItemModel'
-import CustomObjectModel from './models/CustomObjectModel'
-import CustomerAddressLinkModel from './models/CustomerAddressLinkModel'
-import CustomerAddressModel from './models/CustomerAddressModel'
-import CustomerAddressResultModel from './models/CustomerAddressResultModel'
-import CustomerInfoModel from './models/CustomerInfoModel'
-import CustomerModel from './models/CustomerModel'
-import CustomerOrderResultModel from './models/CustomerOrderResultModel'
-import CustomerPaymentCardRequestModel from './models/CustomerPaymentCardRequestModel'
-import CustomerPaymentInstrumentModel from './models/CustomerPaymentInstrumentModel'
-import CustomerPaymentInstrumentRequestModel from './models/CustomerPaymentInstrumentRequestModel'
-import CustomerPaymentInstrumentResultModel from './models/CustomerPaymentInstrumentResultModel'
-import CustomerProductListItemLinkModel from './models/CustomerProductListItemLinkModel'
-import CustomerProductListItemModel from './models/CustomerProductListItemModel'
-import CustomerProductListItemResultModel from './models/CustomerProductListItemResultModel'
-import CustomerProductListModel from './models/CustomerProductListModel'
-import CustomerProductListRegistrantModel from './models/CustomerProductListRegistrantModel'
-import CustomerProductListResultModel from './models/CustomerProductListResultModel'
-import CustomerRegistrationModel from './models/CustomerRegistrationModel'
-import DiscountModel from './models/DiscountModel'
-import FaultModel from './models/FaultModel'
-import FilteredQueryModel from './models/FilteredQueryModel'
-import GiftCertificateItemModel from './models/GiftCertificateItemModel'
-import GiftCertificateModel from './models/GiftCertificateModel'
-import GiftCertificateRequestModel from './models/GiftCertificateRequestModel'
-import ImageGroupModel from './models/ImageGroupModel'
-import ImageModel from './models/ImageModel'
-import InventoryModel from './models/InventoryModel'
-import LocaleModel from './models/LocaleModel'
-import MasterModel from './models/MasterModel'
-import NestedQueryModel from './models/NestedQueryModel'
-import NoteModel from './models/NoteModel'
-import NotesResultModel from './models/NotesResultModel'
-import OptionItemModel from './models/OptionItemModel'
-import OptionModel from './models/OptionModel'
-import OptionValueModel from './models/OptionValueModel'
-import OrderAddressModel from './models/OrderAddressModel'
-import OrderModel from './models/OrderModel'
-import OrderPaymentCardRequestModel from './models/OrderPaymentCardRequestModel'
-import OrderPaymentInstrumentModel from './models/OrderPaymentInstrumentModel'
-import OrderPaymentInstrumentRequestModel from './models/OrderPaymentInstrumentRequestModel'
-import OrderSearchHitModel from './models/OrderSearchHitModel'
-import OrderSearchRequestModel from './models/OrderSearchRequestModel'
-import OrderSearchResultModel from './models/OrderSearchResultModel'
-import PasswordChangeRequestModel from './models/PasswordChangeRequestModel'
-import PasswordResetModel from './models/PasswordResetModel'
-import PaymentBankAccountModel from './models/PaymentBankAccountModel'
-import PaymentBankAccountRequestModel from './models/PaymentBankAccountRequestModel'
-import PaymentCardModel from './models/PaymentCardModel'
-import PaymentCardSpecModel from './models/PaymentCardSpecModel'
-import PaymentMethodModel from './models/PaymentMethodModel'
-import PaymentMethodResultModel from './models/PaymentMethodResultModel'
-import PriceAdjustmentLimitModel from './models/PriceAdjustmentLimitModel'
-import PriceAdjustmentLimitsModel from './models/PriceAdjustmentLimitsModel'
-import PriceAdjustmentModel from './models/PriceAdjustmentModel'
-import ProductDetailsLinkModel from './models/ProductDetailsLinkModel'
-import ProductItemModel from './models/ProductItemModel'
-import ProductLinkModel from './models/ProductLinkModel'
-import ProductListEventModel from './models/ProductListEventModel'
-import ProductListItemReferenceModel from './models/ProductListItemReferenceModel'
-import ProductListLinkModel from './models/ProductListLinkModel'
-import ProductListRegistrantModel from './models/ProductListRegistrantModel'
-import ProductListShippingAddressModel from './models/ProductListShippingAddressModel'
-import ProductModel from './models/ProductModel'
-import ProductPromotionModel from './models/ProductPromotionModel'
-import ProductResultModel from './models/ProductResultModel'
-import ProductSearchHitModel from './models/ProductSearchHitModel'
-import ProductSearchRefinementModel from './models/ProductSearchRefinementModel'
-import ProductSearchRefinementValueModel from './models/ProductSearchRefinementValueModel'
-import ProductSearchResultModel from './models/ProductSearchResultModel'
-import ProductSearchSortingOptionModel from './models/ProductSearchSortingOptionModel'
-import ProductSimpleLinkModel from './models/ProductSimpleLinkModel'
-import ProductTypeModel from './models/ProductTypeModel'
-import PromotionModel from './models/PromotionModel'
-import PromotionResultModel from './models/PromotionResultModel'
-import PublicProductListItemModel from './models/PublicProductListItemModel'
-import PublicProductListItemResultModel from './models/PublicProductListItemResultModel'
-import PublicProductListLinkModel from './models/PublicProductListLinkModel'
-import PublicProductListModel from './models/PublicProductListModel'
-import PublicProductListResultModel from './models/PublicProductListResultModel'
-import QueryFilterModel from './models/QueryFilterModel'
-import Range2FilterModel from './models/Range2FilterModel'
-import RangeFilterModel from './models/RangeFilterModel'
-import RecommendationModel from './models/RecommendationModel'
-import RecommendationTypeModel from './models/RecommendationTypeModel'
-import ResultPageModel from './models/ResultPageModel'
-import ShipmentModel from './models/ShipmentModel'
-import ShippingItemModel from './models/ShippingItemModel'
-import ShippingMethodModel from './models/ShippingMethodModel'
-import ShippingMethodResultModel from './models/ShippingMethodResultModel'
-import ShippingPromotionModel from './models/ShippingPromotionModel'
-import SimpleLinkModel from './models/SimpleLinkModel'
-import SiteModel from './models/SiteModel'
-import SortModel from './models/SortModel'
-import StatusModel from './models/StatusModel'
-import StoreModel from './models/StoreModel'
-import StoreResultModel from './models/StoreResultModel'
-import SuggestedCategoryModel from './models/SuggestedCategoryModel'
-import SuggestedContentModel from './models/SuggestedContentModel'
-import SuggestedPhraseModel from './models/SuggestedPhraseModel'
-import SuggestedProductModel from './models/SuggestedProductModel'
-import SuggestedTermModel from './models/SuggestedTermModel'
-import SuggestedTermsModel from './models/SuggestedTermsModel'
-import SuggestionModel from './models/SuggestionModel'
-import SuggestionResultModel from './models/SuggestionResultModel'
-import TermFilterModel from './models/TermFilterModel'
-import TermQueryModel from './models/TermQueryModel'
-import TextQueryModel from './models/TextQueryModel'
-import VariantModel from './models/VariantModel'
-import VariationAttributeModel from './models/VariationAttributeModel'
-import VariationAttributeValueModel from './models/VariationAttributeValueModel'
-import VariationGroupModel from './models/VariationGroupModel'
+import AuthRequest from './models/AuthRequest'
+import Basket from './models/Basket'
+import BasketPaymentInstrumentRequest from './models/BasketPaymentInstrumentRequest'
+import BasketsResult from './models/BasketsResult'
+import BonusDiscountLineItem from './models/BonusDiscountLineItem'
+import BoolFilter from './models/BoolFilter'
+import BoolQuery from './models/BoolQuery'
+import BundledProduct from './models/BundledProduct'
+import Category from './models/Category'
+import CategoryResult from './models/CategoryResult'
+import ContentFolder from './models/ContentFolder'
+import ContentFolderResult from './models/ContentFolderResult'
+import Content from './models/Content'
+import ContentResult from './models/ContentResult'
+import ContentSearchRefinement from './models/ContentSearchRefinement'
+import ContentSearchRefinementValue from './models/ContentSearchRefinementValue'
+import ContentSearchResult from './models/ContentSearchResult'
+import CouponItem from './models/CouponItem'
+import CustomObject from './models/CustomObject'
+import CustomerAddressLink from './models/CustomerAddressLink'
+import CustomerAddress from './models/CustomerAddress'
+import CustomerAddressResult from './models/CustomerAddressResult'
+import CustomerInfo from './models/CustomerInfo'
+import Customer from './models/Customer'
+import CustomerOrderResult from './models/CustomerOrderResult'
+import CustomerPaymentCardRequest from './models/CustomerPaymentCardRequest'
+import CustomerPaymentInstrument from './models/CustomerPaymentInstrument'
+import CustomerPaymentInstrumentRequest from './models/CustomerPaymentInstrumentRequest'
+import CustomerPaymentInstrumentResult from './models/CustomerPaymentInstrumentResult'
+import CustomerProductListItemLink from './models/CustomerProductListItemLink'
+import CustomerProductListItem from './models/CustomerProductListItem'
+import CustomerProductListItemResult from './models/CustomerProductListItemResult'
+import CustomerProductList from './models/CustomerProductList'
+import CustomerProductListRegistrant from './models/CustomerProductListRegistrant'
+import CustomerProductListResult from './models/CustomerProductListResult'
+import CustomerRegistration from './models/CustomerRegistration'
+import Discount from './models/Discount'
+import Fault from './models/Fault'
+import FilteredQuery from './models/FilteredQuery'
+import GiftCertificateItem from './models/GiftCertificateItem'
+import GiftCertificate from './models/GiftCertificate'
+import GiftCertificateRequest from './models/GiftCertificateRequest'
+import ImageGroup from './models/ImageGroup'
+import Image from './models/Image'
+import Inventory from './models/Inventory'
+import Locale from './models/Locale'
+import Master from './models/Master'
+import NestedQuery from './models/NestedQuery'
+import Note from './models/Note'
+import NotesResult from './models/NotesResult'
+import OptionItem from './models/OptionItem'
+import Option from './models/Option'
+import OptionValue from './models/OptionValue'
+import OrderAddress from './models/OrderAddress'
+import Order from './models/Order'
+import OrderPaymentCardRequest from './models/OrderPaymentCardRequest'
+import OrderPaymentInstrument from './models/OrderPaymentInstrument'
+import OrderPaymentInstrumentRequest from './models/OrderPaymentInstrumentRequest'
+import OrderSearchHit from './models/OrderSearchHit'
+import OrderSearchRequest from './models/OrderSearchRequest'
+import OrderSearchResult from './models/OrderSearchResult'
+import PasswordChangeRequest from './models/PasswordChangeRequest'
+import PasswordReset from './models/PasswordReset'
+import PaymentBankAccount from './models/PaymentBankAccount'
+import PaymentBankAccountRequest from './models/PaymentBankAccountRequest'
+import PaymentCard from './models/PaymentCard'
+import PaymentCardSpec from './models/PaymentCardSpec'
+import PaymentMethod from './models/PaymentMethod'
+import PaymentMethodResult from './models/PaymentMethodResult'
+import PriceAdjustmentLimit from './models/PriceAdjustmentLimit'
+import PriceAdjustmentLimits from './models/PriceAdjustmentLimits'
+import PriceAdjustment from './models/PriceAdjustment'
+import ProductDetailsLink from './models/ProductDetailsLink'
+import ProductItem from './models/ProductItem'
+import ProductLink from './models/ProductLink'
+import ProductListEvent from './models/ProductListEvent'
+import ProductListItemReference from './models/ProductListItemReference'
+import ProductListLink from './models/ProductListLink'
+import ProductListRegistrant from './models/ProductListRegistrant'
+import ProductListShippingAddress from './models/ProductListShippingAddress'
+import Product from './models/Product'
+import ProductPromotion from './models/ProductPromotion'
+import ProductResult from './models/ProductResult'
+import ProductSearchHit from './models/ProductSearchHit'
+import ProductSearchRefinement from './models/ProductSearchRefinement'
+import ProductSearchRefinementValue from './models/ProductSearchRefinementValue'
+import ProductSearchResult from './models/ProductSearchResult'
+import ProductSearchSortingOption from './models/ProductSearchSortingOption'
+import ProductSimpleLink from './models/ProductSimpleLink'
+import ProductType from './models/ProductType'
+import Promotion from './models/Promotion'
+import PromotionResult from './models/PromotionResult'
+import PublicProductListItem from './models/PublicProductListItem'
+import PublicProductListItemResult from './models/PublicProductListItemResult'
+import PublicProductListLink from './models/PublicProductListLink'
+import PublicProductList from './models/PublicProductList'
+import PublicProductListResult from './models/PublicProductListResult'
+import QueryFilter from './models/QueryFilter'
+import Range2Filter from './models/Range2Filter'
+import RangeFilter from './models/RangeFilter'
+import Recommendation from './models/Recommendation'
+import RecommendationType from './models/RecommendationType'
+import ResultPage from './models/ResultPage'
+import Shipment from './models/Shipment'
+import ShippingItem from './models/ShippingItem'
+import ShippingMethod from './models/ShippingMethod'
+import ShippingMethodResult from './models/ShippingMethodResult'
+import ShippingPromotion from './models/ShippingPromotion'
+import SimpleLink from './models/SimpleLink'
+import Site from './models/Site'
+import Sort from './models/Sort'
+import Status from './models/Status'
+import Store from './models/Store'
+import StoreResult from './models/StoreResult'
+import SuggestedCategory from './models/SuggestedCategory'
+import SuggestedContent from './models/SuggestedContent'
+import SuggestedPhrase from './models/SuggestedPhrase'
+import SuggestedProduct from './models/SuggestedProduct'
+import SuggestedTerm from './models/SuggestedTerm'
+import SuggestedTerms from './models/SuggestedTerms'
+import Suggestion from './models/Suggestion'
+import SuggestionResult from './models/SuggestionResult'
+import TermFilter from './models/TermFilter'
+import TermQuery from './models/TermQuery'
+import TextQuery from './models/TextQuery'
+import Variant from './models/Variant'
+import VariationAttribute from './models/VariationAttribute'
+import VariationAttributeValue from './models/VariationAttributeValue'
+import VariationGroup from './models/VariationGroup'
+
 import BasketsApi from './api/BasketsApi'
 import CategoriesApi from './api/CategoriesApi'
 import ContentApi from './api/ContentApi'
@@ -233,778 +234,778 @@ export default {
     ApiClient,
 
     /**
-     * The AuthRequestModel model constructor.
+     * The AuthRequest model constructor.
      * @property {module:models/AuthRequestModel}
      */
-    AuthRequestModel,
+    AuthRequest,
 
     /**
-     * The BasketModel model constructor.
+     * The Basket model constructor.
      * @property {module:models/BasketModel}
      */
-    BasketModel,
+    Basket,
 
     /**
-     * The BasketPaymentInstrumentRequestModel model constructor.
+     * The BasketPaymentInstrumentRequest model constructor.
      * @property {module:models/BasketPaymentInstrumentRequestModel}
      */
-    BasketPaymentInstrumentRequestModel,
+    BasketPaymentInstrumentRequest,
 
     /**
-     * The BasketsResultModel model constructor.
+     * The BasketsResult model constructor.
      * @property {module:models/BasketsResultModel}
      */
-    BasketsResultModel,
+    BasketsResult,
 
     /**
-     * The BonusDiscountLineItemModel model constructor.
+     * The BonusDiscountLineItem model constructor.
      * @property {module:models/BonusDiscountLineItemModel}
      */
-    BonusDiscountLineItemModel,
+    BonusDiscountLineItem,
 
     /**
-     * The BoolFilterModel model constructor.
+     * The BoolFilter model constructor.
      * @property {module:models/BoolFilterModel}
      */
-    BoolFilterModel,
+    BoolFilter,
 
     /**
-     * The BoolQueryModel model constructor.
+     * The BoolQuery model constructor.
      * @property {module:models/BoolQueryModel}
      */
-    BoolQueryModel,
+    BoolQuery,
 
     /**
-     * The BundledProductModel model constructor.
+     * The BundledProduct model constructor.
      * @property {module:models/BundledProductModel}
      */
-    BundledProductModel,
+    BundledProduct,
 
     /**
-     * The CategoryModel model constructor.
+     * The Category model constructor.
      * @property {module:models/CategoryModel}
      */
-    CategoryModel,
+    Category,
 
     /**
-     * The CategoryResultModel model constructor.
+     * The CategoryResult model constructor.
      * @property {module:models/CategoryResultModel}
      */
-    CategoryResultModel,
+    CategoryResult,
 
     /**
-     * The ContentFolderModel model constructor.
+     * The ContentFolder model constructor.
      * @property {module:models/ContentFolderModel}
      */
-    ContentFolderModel,
+    ContentFolder,
 
     /**
-     * The ContentFolderResultModel model constructor.
+     * The ContentFolderResult model constructor.
      * @property {module:models/ContentFolderResultModel}
      */
-    ContentFolderResultModel,
+    ContentFolderResult,
 
     /**
-     * The ContentModel model constructor.
+     * The Content model constructor.
      * @property {module:models/ContentModel}
      */
-    ContentModel,
+    Content,
 
     /**
-     * The ContentResultModel model constructor.
+     * The ContentResult model constructor.
      * @property {module:models/ContentResultModel}
      */
-    ContentResultModel,
+    ContentResult,
 
     /**
-     * The ContentSearchRefinementModel model constructor.
+     * The ContentSearchRefinement model constructor.
      * @property {module:models/ContentSearchRefinementModel}
      */
-    ContentSearchRefinementModel,
+    ContentSearchRefinement,
 
     /**
-     * The ContentSearchRefinementValueModel model constructor.
+     * The ContentSearchRefinementValue model constructor.
      * @property {module:models/ContentSearchRefinementValueModel}
      */
-    ContentSearchRefinementValueModel,
+    ContentSearchRefinementValue,
 
     /**
-     * The ContentSearchResultModel model constructor.
+     * The ContentSearchResult model constructor.
      * @property {module:models/ContentSearchResultModel}
      */
-    ContentSearchResultModel,
+    ContentSearchResult,
 
     /**
-     * The CouponItemModel model constructor.
+     * The CouponItem model constructor.
      * @property {module:models/CouponItemModel}
      */
-    CouponItemModel,
+    CouponItem,
 
     /**
-     * The CustomObjectModel model constructor.
+     * The CustomObject model constructor.
      * @property {module:models/CustomObjectModel}
      */
-    CustomObjectModel,
+    CustomObject,
 
     /**
-     * The CustomerAddressLinkModel model constructor.
+     * The CustomerAddressLink model constructor.
      * @property {module:models/CustomerAddressLinkModel}
      */
-    CustomerAddressLinkModel,
+    CustomerAddressLink,
 
     /**
-     * The CustomerAddressModel model constructor.
+     * The CustomerAddress model constructor.
      * @property {module:models/CustomerAddressModel}
      */
-    CustomerAddressModel,
+    CustomerAddress,
 
     /**
-     * The CustomerAddressResultModel model constructor.
+     * The CustomerAddressResult model constructor.
      * @property {module:models/CustomerAddressResultModel}
      */
-    CustomerAddressResultModel,
+    CustomerAddressResult,
 
     /**
-     * The CustomerInfoModel model constructor.
+     * The CustomerInfo model constructor.
      * @property {module:models/CustomerInfoModel}
      */
-    CustomerInfoModel,
+    CustomerInfo,
 
     /**
-     * The CustomerModel model constructor.
+     * The Customer model constructor.
      * @property {module:models/CustomerModel}
      */
-    CustomerModel,
+    Customer,
 
     /**
-     * The CustomerOrderResultModel model constructor.
+     * The CustomerOrderResult model constructor.
      * @property {module:models/CustomerOrderResultModel}
      */
-    CustomerOrderResultModel,
+    CustomerOrderResult,
 
     /**
-     * The CustomerPaymentCardRequestModel model constructor.
+     * The CustomerPaymentCardRequest model constructor.
      * @property {module:models/CustomerPaymentCardRequestModel}
      */
-    CustomerPaymentCardRequestModel,
+    CustomerPaymentCardRequest,
 
     /**
-     * The CustomerPaymentInstrumentModel model constructor.
+     * The CustomerPaymentInstrument model constructor.
      * @property {module:models/CustomerPaymentInstrumentModel}
      */
-    CustomerPaymentInstrumentModel,
+    CustomerPaymentInstrument,
 
     /**
-     * The CustomerPaymentInstrumentRequestModel model constructor.
+     * The CustomerPaymentInstrumentRequest model constructor.
      * @property {module:models/CustomerPaymentInstrumentRequestModel}
      */
-    CustomerPaymentInstrumentRequestModel,
+    CustomerPaymentInstrumentRequest,
 
     /**
-     * The CustomerPaymentInstrumentResultModel model constructor.
+     * The CustomerPaymentInstrumentResult model constructor.
      * @property {module:models/CustomerPaymentInstrumentResultModel}
      */
-    CustomerPaymentInstrumentResultModel,
+    CustomerPaymentInstrumentResult,
 
     /**
-     * The CustomerProductListItemLinkModel model constructor.
+     * The CustomerProductListItemLink model constructor.
      * @property {module:models/CustomerProductListItemLinkModel}
      */
-    CustomerProductListItemLinkModel,
+    CustomerProductListItemLink,
 
     /**
-     * The CustomerProductListItemModel model constructor.
+     * The CustomerProductListItem model constructor.
      * @property {module:models/CustomerProductListItemModel}
      */
-    CustomerProductListItemModel,
+    CustomerProductListItem,
 
     /**
-     * The CustomerProductListItemResultModel model constructor.
+     * The CustomerProductListItemResult model constructor.
      * @property {module:models/CustomerProductListItemResultModel}
      */
-    CustomerProductListItemResultModel,
+    CustomerProductListItemResult,
 
     /**
-     * The CustomerProductListModel model constructor.
+     * The CustomerProductList model constructor.
      * @property {module:models/CustomerProductListModel}
      */
-    CustomerProductListModel,
+    CustomerProductList,
 
     /**
-     * The CustomerProductListRegistrantModel model constructor.
+     * The CustomerProductListRegistrant model constructor.
      * @property {module:models/CustomerProductListRegistrantModel}
      */
-    CustomerProductListRegistrantModel,
+    CustomerProductListRegistrant,
 
     /**
-     * The CustomerProductListResultModel model constructor.
+     * The CustomerProductListResult model constructor.
      * @property {module:models/CustomerProductListResultModel}
      */
-    CustomerProductListResultModel,
+    CustomerProductListResult,
 
     /**
-     * The CustomerRegistrationModel model constructor.
+     * The CustomerRegistration model constructor.
      * @property {module:models/CustomerRegistrationModel}
      */
-    CustomerRegistrationModel,
+    CustomerRegistration,
 
     /**
-     * The DiscountModel model constructor.
+     * The Discount model constructor.
      * @property {module:models/DiscountModel}
      */
-    DiscountModel,
+    Discount,
 
     /**
-     * The FaultModel model constructor.
+     * The Fault model constructor.
      * @property {module:models/FaultModel}
      */
-    FaultModel,
+    Fault,
 
     /**
-     * The FilteredQueryModel model constructor.
+     * The FilteredQuery model constructor.
      * @property {module:models/FilteredQueryModel}
      */
-    FilteredQueryModel,
+    FilteredQuery,
 
     /**
-     * The GiftCertificateItemModel model constructor.
+     * The GiftCertificateItem model constructor.
      * @property {module:models/GiftCertificateItemModel}
      */
-    GiftCertificateItemModel,
+    GiftCertificateItem,
 
     /**
-     * The GiftCertificateModel model constructor.
+     * The GiftCertificate model constructor.
      * @property {module:models/GiftCertificateModel}
      */
-    GiftCertificateModel,
+    GiftCertificate,
 
     /**
-     * The GiftCertificateRequestModel model constructor.
+     * The GiftCertificateRequest model constructor.
      * @property {module:models/GiftCertificateRequestModel}
      */
-    GiftCertificateRequestModel,
+    GiftCertificateRequest,
 
     /**
-     * The ImageGroupModel model constructor.
+     * The ImageGroup model constructor.
      * @property {module:models/ImageGroupModel}
      */
-    ImageGroupModel,
+    ImageGroup,
 
     /**
-     * The ImageModel model constructor.
+     * The Image model constructor.
      * @property {module:models/ImageModel}
      */
-    ImageModel,
+    Image,
 
     /**
-     * The InventoryModel model constructor.
+     * The Inventory model constructor.
      * @property {module:models/InventoryModel}
      */
-    InventoryModel,
+    Inventory,
 
     /**
-     * The LocaleModel model constructor.
+     * The Locale model constructor.
      * @property {module:models/LocaleModel}
      */
-    LocaleModel,
+    Locale,
 
     /**
-     * The MasterModel model constructor.
+     * The Master model constructor.
      * @property {module:models/MasterModel}
      */
-    MasterModel,
+    Master,
 
     /**
-     * The NestedQueryModel model constructor.
+     * The NestedQuery model constructor.
      * @property {module:models/NestedQueryModel}
      */
-    NestedQueryModel,
+    NestedQuery,
 
     /**
-     * The NoteModel model constructor.
+     * The Note model constructor.
      * @property {module:models/NoteModel}
      */
-    NoteModel,
+    Note,
 
     /**
-     * The NotesResultModel model constructor.
+     * The NotesResult model constructor.
      * @property {module:models/NotesResultModel}
      */
-    NotesResultModel,
+    NotesResult,
 
     /**
-     * The OptionItemModel model constructor.
+     * The OptionItem model constructor.
      * @property {module:models/OptionItemModel}
      */
-    OptionItemModel,
+    OptionItem,
 
     /**
-     * The OptionModel model constructor.
+     * The Option model constructor.
      * @property {module:models/OptionModel}
      */
-    OptionModel,
+    Option,
 
     /**
-     * The OptionValueModel model constructor.
+     * The OptionValue model constructor.
      * @property {module:models/OptionValueModel}
      */
-    OptionValueModel,
+    OptionValue,
 
     /**
-     * The OrderAddressModel model constructor.
+     * The OrderAddress model constructor.
      * @property {module:models/OrderAddressModel}
      */
-    OrderAddressModel,
+    OrderAddress,
 
     /**
-     * The OrderModel model constructor.
+     * The Order model constructor.
      * @property {module:models/OrderModel}
      */
-    OrderModel,
+    Order,
 
     /**
-     * The OrderPaymentCardRequestModel model constructor.
+     * The OrderPaymentCardRequest model constructor.
      * @property {module:models/OrderPaymentCardRequestModel}
      */
-    OrderPaymentCardRequestModel,
+    OrderPaymentCardRequest,
 
     /**
-     * The OrderPaymentInstrumentModel model constructor.
+     * The OrderPaymentInstrument model constructor.
      * @property {module:models/OrderPaymentInstrumentModel}
      */
-    OrderPaymentInstrumentModel,
+    OrderPaymentInstrument,
 
     /**
-     * The OrderPaymentInstrumentRequestModel model constructor.
+     * The OrderPaymentInstrumentRequest model constructor.
      * @property {module:models/OrderPaymentInstrumentRequestModel}
      */
-    OrderPaymentInstrumentRequestModel,
+    OrderPaymentInstrumentRequest,
 
     /**
-     * The OrderSearchHitModel model constructor.
+     * The OrderSearchHit model constructor.
      * @property {module:models/OrderSearchHitModel}
      */
-    OrderSearchHitModel,
+    OrderSearchHit,
 
     /**
-     * The OrderSearchRequestModel model constructor.
+     * The OrderSearchRequest model constructor.
      * @property {module:models/OrderSearchRequestModel}
      */
-    OrderSearchRequestModel,
+    OrderSearchRequest,
 
     /**
-     * The OrderSearchResultModel model constructor.
+     * The OrderSearchResult model constructor.
      * @property {module:models/OrderSearchResultModel}
      */
-    OrderSearchResultModel,
+    OrderSearchResult,
 
     /**
-     * The PasswordChangeRequestModel model constructor.
+     * The PasswordChangeRequest model constructor.
      * @property {module:models/PasswordChangeRequestModel}
      */
-    PasswordChangeRequestModel,
+    PasswordChangeRequest,
 
     /**
-     * The PasswordResetModel model constructor.
+     * The PasswordReset model constructor.
      * @property {module:models/PasswordResetModel}
      */
-    PasswordResetModel,
+    PasswordReset,
 
     /**
-     * The PaymentBankAccountModel model constructor.
+     * The PaymentBankAccount model constructor.
      * @property {module:models/PaymentBankAccountModel}
      */
-    PaymentBankAccountModel,
+    PaymentBankAccount,
 
     /**
-     * The PaymentBankAccountRequestModel model constructor.
+     * The PaymentBankAccountRequest model constructor.
      * @property {module:models/PaymentBankAccountRequestModel}
      */
-    PaymentBankAccountRequestModel,
+    PaymentBankAccountRequest,
 
     /**
-     * The PaymentCardModel model constructor.
+     * The PaymentCard model constructor.
      * @property {module:models/PaymentCardModel}
      */
-    PaymentCardModel,
+    PaymentCard,
 
     /**
-     * The PaymentCardSpecModel model constructor.
+     * The PaymentCardSpec model constructor.
      * @property {module:models/PaymentCardSpecModel}
      */
-    PaymentCardSpecModel,
+    PaymentCardSpec,
 
     /**
-     * The PaymentMethodModel model constructor.
+     * The PaymentMethod model constructor.
      * @property {module:models/PaymentMethodModel}
      */
-    PaymentMethodModel,
+    PaymentMethod,
 
     /**
-     * The PaymentMethodResultModel model constructor.
+     * The PaymentMethodResult model constructor.
      * @property {module:models/PaymentMethodResultModel}
      */
-    PaymentMethodResultModel,
+    PaymentMethodResult,
 
     /**
-     * The PriceAdjustmentLimitModel model constructor.
+     * The PriceAdjustmentLimit model constructor.
      * @property {module:models/PriceAdjustmentLimitModel}
      */
-    PriceAdjustmentLimitModel,
+    PriceAdjustmentLimit,
 
     /**
-     * The PriceAdjustmentLimitsModel model constructor.
+     * The PriceAdjustmentLimits model constructor.
      * @property {module:models/PriceAdjustmentLimitsModel}
      */
-    PriceAdjustmentLimitsModel,
+    PriceAdjustmentLimits,
 
     /**
-     * The PriceAdjustmentModel model constructor.
+     * The PriceAdjustment model constructor.
      * @property {module:models/PriceAdjustmentModel}
      */
-    PriceAdjustmentModel,
+    PriceAdjustment,
 
     /**
-     * The ProductDetailsLinkModel model constructor.
+     * The ProductDetailsLink model constructor.
      * @property {module:models/ProductDetailsLinkModel}
      */
-    ProductDetailsLinkModel,
+    ProductDetailsLink,
 
     /**
-     * The ProductItemModel model constructor.
+     * The ProductItem model constructor.
      * @property {module:models/ProductItemModel}
      */
-    ProductItemModel,
+    ProductItem,
 
     /**
-     * The ProductLinkModel model constructor.
+     * The ProductLink model constructor.
      * @property {module:models/ProductLinkModel}
      */
-    ProductLinkModel,
+    ProductLink,
 
     /**
-     * The ProductListEventModel model constructor.
+     * The ProductListEvent model constructor.
      * @property {module:models/ProductListEventModel}
      */
-    ProductListEventModel,
+    ProductListEvent,
 
     /**
-     * The ProductListItemReferenceModel model constructor.
+     * The ProductListItemReference model constructor.
      * @property {module:models/ProductListItemReferenceModel}
      */
-    ProductListItemReferenceModel,
+    ProductListItemReference,
 
     /**
-     * The ProductListLinkModel model constructor.
+     * The ProductListLink model constructor.
      * @property {module:models/ProductListLinkModel}
      */
-    ProductListLinkModel,
+    ProductListLink,
 
     /**
-     * The ProductListRegistrantModel model constructor.
+     * The ProductListRegistrant model constructor.
      * @property {module:models/ProductListRegistrantModel}
      */
-    ProductListRegistrantModel,
+    ProductListRegistrant,
 
     /**
-     * The ProductListShippingAddressModel model constructor.
+     * The ProductListShippingAddress model constructor.
      * @property {module:models/ProductListShippingAddressModel}
      */
-    ProductListShippingAddressModel,
+    ProductListShippingAddress,
 
     /**
-     * The ProductModel model constructor.
+     * The Product model constructor.
      * @property {module:models/ProductModel}
      */
-    ProductModel,
+    Product,
 
     /**
-     * The ProductPromotionModel model constructor.
+     * The ProductPromotion model constructor.
      * @property {module:models/ProductPromotionModel}
      */
-    ProductPromotionModel,
+    ProductPromotion,
 
     /**
-     * The ProductResultModel model constructor.
+     * The ProductResult model constructor.
      * @property {module:models/ProductResultModel}
      */
-    ProductResultModel,
+    ProductResult,
 
     /**
-     * The ProductSearchHitModel model constructor.
+     * The ProductSearchHit model constructor.
      * @property {module:models/ProductSearchHitModel}
      */
-    ProductSearchHitModel,
+    ProductSearchHit,
 
     /**
-     * The ProductSearchRefinementModel model constructor.
+     * The ProductSearchRefinement model constructor.
      * @property {module:models/ProductSearchRefinementModel}
      */
-    ProductSearchRefinementModel,
+    ProductSearchRefinement,
 
     /**
-     * The ProductSearchRefinementValueModel model constructor.
+     * The ProductSearchRefinementValue model constructor.
      * @property {module:models/ProductSearchRefinementValueModel}
      */
-    ProductSearchRefinementValueModel,
+    ProductSearchRefinementValue,
 
     /**
-     * The ProductSearchResultModel model constructor.
+     * The ProductSearchResult model constructor.
      * @property {module:models/ProductSearchResultModel}
      */
-    ProductSearchResultModel,
+    ProductSearchResult,
 
     /**
-     * The ProductSearchSortingOptionModel model constructor.
+     * The ProductSearchSortingOption model constructor.
      * @property {module:models/ProductSearchSortingOptionModel}
      */
-    ProductSearchSortingOptionModel,
+    ProductSearchSortingOption,
 
     /**
-     * The ProductSimpleLinkModel model constructor.
+     * The ProductSimpleLink model constructor.
      * @property {module:models/ProductSimpleLinkModel}
      */
-    ProductSimpleLinkModel,
+    ProductSimpleLink,
 
     /**
-     * The ProductTypeModel model constructor.
+     * The ProductType model constructor.
      * @property {module:models/ProductTypeModel}
      */
-    ProductTypeModel,
+    ProductType,
 
     /**
-     * The PromotionModel model constructor.
+     * The Promotion model constructor.
      * @property {module:models/PromotionModel}
      */
-    PromotionModel,
+    Promotion,
 
     /**
-     * The PromotionResultModel model constructor.
+     * The PromotionResult model constructor.
      * @property {module:models/PromotionResultModel}
      */
-    PromotionResultModel,
+    PromotionResult,
 
     /**
-     * The PublicProductListItemModel model constructor.
+     * The PublicProductListItem model constructor.
      * @property {module:models/PublicProductListItemModel}
      */
-    PublicProductListItemModel,
+    PublicProductListItem,
 
     /**
-     * The PublicProductListItemResultModel model constructor.
+     * The PublicProductListItemResult model constructor.
      * @property {module:models/PublicProductListItemResultModel}
      */
-    PublicProductListItemResultModel,
+    PublicProductListItemResult,
 
     /**
-     * The PublicProductListLinkModel model constructor.
+     * The PublicProductListLink model constructor.
      * @property {module:models/PublicProductListLinkModel}
      */
-    PublicProductListLinkModel,
+    PublicProductListLink,
 
     /**
-     * The PublicProductListModel model constructor.
+     * The PublicProductList model constructor.
      * @property {module:models/PublicProductListModel}
      */
-    PublicProductListModel,
+    PublicProductList,
 
     /**
-     * The PublicProductListResultModel model constructor.
+     * The PublicProductListResult model constructor.
      * @property {module:models/PublicProductListResultModel}
      */
-    PublicProductListResultModel,
+    PublicProductListResult,
 
     /**
-     * The QueryFilterModel model constructor.
+     * The QueryFilter model constructor.
      * @property {module:models/QueryFilterModel}
      */
-    QueryFilterModel,
+    QueryFilter,
 
     /**
-     * The Range2FilterModel model constructor.
+     * The Range2Filter model constructor.
      * @property {module:models/Range2FilterModel}
      */
-    Range2FilterModel,
+    Range2Filter,
 
     /**
-     * The RangeFilterModel model constructor.
+     * The RangeFilter model constructor.
      * @property {module:models/RangeFilterModel}
      */
-    RangeFilterModel,
+    RangeFilter,
 
     /**
-     * The RecommendationModel model constructor.
+     * The Recommendation model constructor.
      * @property {module:models/RecommendationModel}
      */
-    RecommendationModel,
+    Recommendation,
 
     /**
-     * The RecommendationTypeModel model constructor.
+     * The RecommendationType model constructor.
      * @property {module:models/RecommendationTypeModel}
      */
-    RecommendationTypeModel,
+    RecommendationType,
 
     /**
-     * The ResultPageModel model constructor.
+     * The ResultPage model constructor.
      * @property {module:models/ResultPageModel}
      */
-    ResultPageModel,
+    ResultPage,
 
     /**
-     * The ShipmentModel model constructor.
+     * The Shipment model constructor.
      * @property {module:models/ShipmentModel}
      */
-    ShipmentModel,
+    Shipment,
 
     /**
-     * The ShippingItemModel model constructor.
+     * The ShippingItem model constructor.
      * @property {module:models/ShippingItemModel}
      */
-    ShippingItemModel,
+    ShippingItem,
 
     /**
-     * The ShippingMethodModel model constructor.
+     * The ShippingMethod model constructor.
      * @property {module:models/ShippingMethodModel}
      */
-    ShippingMethodModel,
+    ShippingMethod,
 
     /**
-     * The ShippingMethodResultModel model constructor.
+     * The ShippingMethodResult model constructor.
      * @property {module:models/ShippingMethodResultModel}
      */
-    ShippingMethodResultModel,
+    ShippingMethodResult,
 
     /**
-     * The ShippingPromotionModel model constructor.
+     * The ShippingPromotion model constructor.
      * @property {module:models/ShippingPromotionModel}
      */
-    ShippingPromotionModel,
+    ShippingPromotion,
 
     /**
-     * The SimpleLinkModel model constructor.
+     * The SimpleLink model constructor.
      * @property {module:models/SimpleLinkModel}
      */
-    SimpleLinkModel,
+    SimpleLink,
 
     /**
-     * The SiteModel model constructor.
+     * The Site model constructor.
      * @property {module:models/SiteModel}
      */
-    SiteModel,
+    Site,
 
     /**
-     * The SortModel model constructor.
+     * The Sort model constructor.
      * @property {module:models/SortModel}
      */
-    SortModel,
+    Sort,
 
     /**
-     * The StatusModel model constructor.
+     * The Status model constructor.
      * @property {module:models/StatusModel}
      */
-    StatusModel,
+    Status,
 
     /**
-     * The StoreModel model constructor.
+     * The Store model constructor.
      * @property {module:models/StoreModel}
      */
-    StoreModel,
+    Store,
 
     /**
-     * The StoreResultModel model constructor.
+     * The StoreResult model constructor.
      * @property {module:models/StoreResultModel}
      */
-    StoreResultModel,
+    StoreResult,
 
     /**
-     * The SuggestedCategoryModel model constructor.
+     * The SuggestedCategory model constructor.
      * @property {module:models/SuggestedCategoryModel}
      */
-    SuggestedCategoryModel,
+    SuggestedCategory,
 
     /**
-     * The SuggestedContentModel model constructor.
+     * The SuggestedContent model constructor.
      * @property {module:models/SuggestedContentModel}
      */
-    SuggestedContentModel,
+    SuggestedContent,
 
     /**
-     * The SuggestedPhraseModel model constructor.
+     * The SuggestedPhrase model constructor.
      * @property {module:models/SuggestedPhraseModel}
      */
-    SuggestedPhraseModel,
+    SuggestedPhrase,
 
     /**
-     * The SuggestedProductModel model constructor.
+     * The SuggestedProduct model constructor.
      * @property {module:models/SuggestedProductModel}
      */
-    SuggestedProductModel,
+    SuggestedProduct,
 
     /**
-     * The SuggestedTermModel model constructor.
+     * The SuggestedTerm model constructor.
      * @property {module:models/SuggestedTermModel}
      */
-    SuggestedTermModel,
+    SuggestedTerm,
 
     /**
-     * The SuggestedTermsModel model constructor.
+     * The SuggestedTerms model constructor.
      * @property {module:models/SuggestedTermsModel}
      */
-    SuggestedTermsModel,
+    SuggestedTerms,
 
     /**
-     * The SuggestionModel model constructor.
+     * The Suggestion model constructor.
      * @property {module:models/SuggestionModel}
      */
-    SuggestionModel,
+    Suggestion,
 
     /**
-     * The SuggestionResultModel model constructor.
+     * The SuggestionResult model constructor.
      * @property {module:models/SuggestionResultModel}
      */
-    SuggestionResultModel,
+    SuggestionResult,
 
     /**
-     * The TermFilterModel model constructor.
+     * The TermFilter model constructor.
      * @property {module:models/TermFilterModel}
      */
-    TermFilterModel,
+    TermFilter,
 
     /**
-     * The TermQueryModel model constructor.
+     * The TermQuery model constructor.
      * @property {module:models/TermQueryModel}
      */
-    TermQueryModel,
+    TermQuery,
 
     /**
-     * The TextQueryModel model constructor.
+     * The TextQuery model constructor.
      * @property {module:models/TextQueryModel}
      */
-    TextQueryModel,
+    TextQuery,
 
     /**
-     * The VariantModel model constructor.
+     * The Variant model constructor.
      * @property {module:models/VariantModel}
      */
-    VariantModel,
+    Variant,
 
     /**
-     * The VariationAttributeModel model constructor.
+     * The VariationAttribute model constructor.
      * @property {module:models/VariationAttributeModel}
      */
-    VariationAttributeModel,
+    VariationAttribute,
 
     /**
-     * The VariationAttributeValueModel model constructor.
+     * The VariationAttributeValue model constructor.
      * @property {module:models/VariationAttributeValueModel}
      */
-    VariationAttributeValueModel,
+    VariationAttributeValue,
 
     /**
-     * The VariationGroupModel model constructor.
+     * The VariationGroup model constructor.
      * @property {module:models/VariationGroupModel}
      */
-    VariationGroupModel,
+    VariationGroup,
 
     /**
     * The BasketsApi service constructor.
@@ -1130,13 +1131,13 @@ export default {
 </div>
 
 <nav>
-    <h2><a href="index.html">Home</a></h2><h3>Modules</h3><ul><li><a href="module-api_BasketsApi.html">api/BasketsApi</a></li><li><a href="module-api_CategoriesApi.html">api/CategoriesApi</a></li><li><a href="module-api_ContentApi.html">api/ContentApi</a></li><li><a href="module-api_ContentSearchApi.html">api/ContentSearchApi</a></li><li><a href="module-api_CustomersApi.html">api/CustomersApi</a></li><li><a href="module-api_CustomObjectsApi.html">api/CustomObjectsApi</a></li><li><a href="module-api_FoldersApi.html">api/FoldersApi</a></li><li><a href="module-api_GiftCertificateApi.html">api/GiftCertificateApi</a></li><li><a href="module-api_OrdersApi.html">api/OrdersApi</a></li><li><a href="module-api_OrderSearchApi.html">api/OrderSearchApi</a></li><li><a href="module-api_PriceAdjustmentLimitsApi.html">api/PriceAdjustmentLimitsApi</a></li><li><a href="module-api_ProductListsApi.html">api/ProductListsApi</a></li><li><a href="module-api_ProductsApi.html">api/ProductsApi</a></li><li><a href="module-api_ProductSearchApi.html">api/ProductSearchApi</a></li><li><a href="module-api_PromotionsApi.html">api/PromotionsApi</a></li><li><a href="module-api_SearchSuggestionApi.html">api/SearchSuggestionApi</a></li><li><a href="module-api_SessionsApi.html">api/SessionsApi</a></li><li><a href="module-api_SiteApi.html">api/SiteApi</a></li><li><a href="module-api_StoresApi.html">api/StoresApi</a></li><li><a href="module-ApiClient.html">ApiClient</a></li><li><a href="module-index.html">index</a></li><li><a href="module-models_AuthRequestModel.html">models/AuthRequestModel</a></li><li><a href="module-models_BasketModel.html">models/BasketModel</a></li><li><a href="module-models_BasketPaymentInstrumentRequestModel.html">models/BasketPaymentInstrumentRequestModel</a></li><li><a href="module-models_BasketsResultModel.html">models/BasketsResultModel</a></li><li><a href="module-models_BonusDiscountLineItemModel.html">models/BonusDiscountLineItemModel</a></li><li><a href="module-models_BoolFilterModel.html">models/BoolFilterModel</a></li><li><a href="module-models_BoolQueryModel.html">models/BoolQueryModel</a></li><li><a href="module-models_BundledProductModel.html">models/BundledProductModel</a></li><li><a href="module-models_CategoryModel.html">models/CategoryModel</a></li><li><a href="module-models_CategoryResultModel.html">models/CategoryResultModel</a></li><li><a href="module-models_ContentFolderModel.html">models/ContentFolderModel</a></li><li><a href="module-models_ContentFolderResultModel.html">models/ContentFolderResultModel</a></li><li><a href="module-models_ContentModel.html">models/ContentModel</a></li><li><a href="module-models_ContentResultModel.html">models/ContentResultModel</a></li><li><a href="module-models_ContentSearchRefinementModel.html">models/ContentSearchRefinementModel</a></li><li><a href="module-models_ContentSearchRefinementValueModel.html">models/ContentSearchRefinementValueModel</a></li><li><a href="module-models_ContentSearchResultModel.html">models/ContentSearchResultModel</a></li><li><a href="module-models_CouponItemModel.html">models/CouponItemModel</a></li><li><a href="module-models_CustomerAddressLinkModel.html">models/CustomerAddressLinkModel</a></li><li><a href="module-models_CustomerAddressModel.html">models/CustomerAddressModel</a></li><li><a href="module-models_CustomerAddressResultModel.html">models/CustomerAddressResultModel</a></li><li><a href="module-models_CustomerInfoModel.html">models/CustomerInfoModel</a></li><li><a href="module-models_CustomerModel.html">models/CustomerModel</a></li><li><a href="module-models_CustomerOrderResultModel.html">models/CustomerOrderResultModel</a></li><li><a href="module-models_CustomerPaymentCardRequestModel.html">models/CustomerPaymentCardRequestModel</a></li><li><a href="module-models_CustomerPaymentInstrumentModel.html">models/CustomerPaymentInstrumentModel</a></li><li><a href="module-models_CustomerPaymentInstrumentRequestModel.html">models/CustomerPaymentInstrumentRequestModel</a></li><li><a href="module-models_CustomerPaymentInstrumentResultModel.html">models/CustomerPaymentInstrumentResultModel</a></li><li><a href="module-models_CustomerProductListItemLinkModel.html">models/CustomerProductListItemLinkModel</a></li><li><a href="module-models_CustomerProductListItemModel.html">models/CustomerProductListItemModel</a></li><li><a href="module-models_CustomerProductListItemResultModel.html">models/CustomerProductListItemResultModel</a></li><li><a href="module-models_CustomerProductListModel.html">models/CustomerProductListModel</a></li><li><a href="module-models_CustomerProductListRegistrantModel.html">models/CustomerProductListRegistrantModel</a></li><li><a href="module-models_CustomerProductListResultModel.html">models/CustomerProductListResultModel</a></li><li><a href="module-models_CustomerRegistrationModel.html">models/CustomerRegistrationModel</a></li><li><a href="module-models_CustomObjectModel.html">models/CustomObjectModel</a></li><li><a href="module-models_DiscountModel.html">models/DiscountModel</a></li><li><a href="module-models_FaultModel.html">models/FaultModel</a></li><li><a href="module-models_FilteredQueryModel.html">models/FilteredQueryModel</a></li><li><a href="module-models_FilterModel.html">models/FilterModel</a></li><li><a href="module-models_GiftCertificateItemModel.html">models/GiftCertificateItemModel</a></li><li><a href="module-models_GiftCertificateModel.html">models/GiftCertificateModel</a></li><li><a href="module-models_GiftCertificateRequestModel.html">models/GiftCertificateRequestModel</a></li><li><a href="module-models_ImageGroupModel.html">models/ImageGroupModel</a></li><li><a href="module-models_ImageModel.html">models/ImageModel</a></li><li><a href="module-models_InventoryModel.html">models/InventoryModel</a></li><li><a href="module-models_LocaleModel.html">models/LocaleModel</a></li><li><a href="module-models_MasterModel.html">models/MasterModel</a></li><li><a href="module-models_NestedQueryModel.html">models/NestedQueryModel</a></li><li><a href="module-models_NoteModel.html">models/NoteModel</a></li><li><a href="module-models_NotesResultModel.html">models/NotesResultModel</a></li><li><a href="module-models_OptionItemModel.html">models/OptionItemModel</a></li><li><a href="module-models_OptionModel.html">models/OptionModel</a></li><li><a href="module-models_OptionValueModel.html">models/OptionValueModel</a></li><li><a href="module-models_OrderAddressModel.html">models/OrderAddressModel</a></li><li><a href="module-models_OrderModel.html">models/OrderModel</a></li><li><a href="module-models_OrderPaymentCardRequestModel.html">models/OrderPaymentCardRequestModel</a></li><li><a href="module-models_OrderPaymentInstrumentModel.html">models/OrderPaymentInstrumentModel</a></li><li><a href="module-models_OrderPaymentInstrumentRequestModel.html">models/OrderPaymentInstrumentRequestModel</a></li><li><a href="module-models_OrderSearchHitModel.html">models/OrderSearchHitModel</a></li><li><a href="module-models_OrderSearchRequestModel.html">models/OrderSearchRequestModel</a></li><li><a href="module-models_OrderSearchResultModel.html">models/OrderSearchResultModel</a></li><li><a href="module-models_PasswordChangeRequestModel.html">models/PasswordChangeRequestModel</a></li><li><a href="module-models_PasswordResetModel.html">models/PasswordResetModel</a></li><li><a href="module-models_PaymentBankAccountModel.html">models/PaymentBankAccountModel</a></li><li><a href="module-models_PaymentBankAccountRequestModel.html">models/PaymentBankAccountRequestModel</a></li><li><a href="module-models_PaymentCardModel.html">models/PaymentCardModel</a></li><li><a href="module-models_PaymentCardSpecModel.html">models/PaymentCardSpecModel</a></li><li><a href="module-models_PaymentMethodModel.html">models/PaymentMethodModel</a></li><li><a href="module-models_PaymentMethodResultModel.html">models/PaymentMethodResultModel</a></li><li><a href="module-models_PriceAdjustmentLimitModel.html">models/PriceAdjustmentLimitModel</a></li><li><a href="module-models_PriceAdjustmentLimitsModel.html">models/PriceAdjustmentLimitsModel</a></li><li><a href="module-models_PriceAdjustmentModel.html">models/PriceAdjustmentModel</a></li><li><a href="module-models_ProductDetailsLinkModel.html">models/ProductDetailsLinkModel</a></li><li><a href="module-models_ProductItemModel.html">models/ProductItemModel</a></li><li><a href="module-models_ProductLinkModel.html">models/ProductLinkModel</a></li><li><a href="module-models_ProductListEventModel.html">models/ProductListEventModel</a></li><li><a href="module-models_ProductListItemReferenceModel.html">models/ProductListItemReferenceModel</a></li><li><a href="module-models_ProductListLinkModel.html">models/ProductListLinkModel</a></li><li><a href="module-models_ProductListRegistrantModel.html">models/ProductListRegistrantModel</a></li><li><a href="module-models_ProductListShippingAddressModel.html">models/ProductListShippingAddressModel</a></li><li><a href="module-models_ProductModel.html">models/ProductModel</a></li><li><a href="module-models_ProductPromotionModel.html">models/ProductPromotionModel</a></li><li><a href="module-models_ProductResultModel.html">models/ProductResultModel</a></li><li><a href="module-models_ProductSearchHitModel.html">models/ProductSearchHitModel</a></li><li><a href="module-models_ProductSearchRefinementModel.html">models/ProductSearchRefinementModel</a></li><li><a href="module-models_ProductSearchRefinementValueModel.html">models/ProductSearchRefinementValueModel</a></li><li><a href="module-models_ProductSearchResultModel.html">models/ProductSearchResultModel</a></li><li><a href="module-models_ProductSearchSortingOptionModel.html">models/ProductSearchSortingOptionModel</a></li><li><a href="module-models_ProductSimpleLinkModel.html">models/ProductSimpleLinkModel</a></li><li><a href="module-models_ProductTypeModel.html">models/ProductTypeModel</a></li><li><a href="module-models_PromotionModel.html">models/PromotionModel</a></li><li><a href="module-models_PromotionResultModel.html">models/PromotionResultModel</a></li><li><a href="module-models_PublicProductListItemModel.html">models/PublicProductListItemModel</a></li><li><a href="module-models_PublicProductListItemResultModel.html">models/PublicProductListItemResultModel</a></li><li><a href="module-models_PublicProductListLinkModel.html">models/PublicProductListLinkModel</a></li><li><a href="module-models_PublicProductListModel.html">models/PublicProductListModel</a></li><li><a href="module-models_PublicProductListResultModel.html">models/PublicProductListResultModel</a></li><li><a href="module-models_QueryFilterModel.html">models/QueryFilterModel</a></li><li><a href="module-models_QueryModel.html">models/QueryModel</a></li><li><a href="module-models_Range2FilterModel.html">models/Range2FilterModel</a></li><li><a href="module-models_RangeFilterModel.html">models/RangeFilterModel</a></li><li><a href="module-models_RecommendationModel.html">models/RecommendationModel</a></li><li><a href="module-models_RecommendationTypeModel.html">models/RecommendationTypeModel</a></li><li><a href="module-models_ResultPageModel.html">models/ResultPageModel</a></li><li><a href="module-models_ShipmentModel.html">models/ShipmentModel</a></li><li><a href="module-models_ShippingItemModel.html">models/ShippingItemModel</a></li><li><a href="module-models_ShippingMethodModel.html">models/ShippingMethodModel</a></li><li><a href="module-models_ShippingMethodResultModel.html">models/ShippingMethodResultModel</a></li><li><a href="module-models_ShippingPromotionModel.html">models/ShippingPromotionModel</a></li><li><a href="module-models_SimpleLinkModel.html">models/SimpleLinkModel</a></li><li><a href="module-models_SiteModel.html">models/SiteModel</a></li><li><a href="module-models_SortModel.html">models/SortModel</a></li><li><a href="module-models_StatusModel.html">models/StatusModel</a></li><li><a href="module-models_StoreModel.html">models/StoreModel</a></li><li><a href="module-models_StoreResultModel.html">models/StoreResultModel</a></li><li><a href="module-models_SuggestedCategoryModel.html">models/SuggestedCategoryModel</a></li><li><a href="module-models_SuggestedContentModel.html">models/SuggestedContentModel</a></li><li><a href="module-models_SuggestedPhraseModel.html">models/SuggestedPhraseModel</a></li><li><a href="module-models_SuggestedProductModel.html">models/SuggestedProductModel</a></li><li><a href="module-models_SuggestedTermModel.html">models/SuggestedTermModel</a></li><li><a href="module-models_SuggestedTermsModel.html">models/SuggestedTermsModel</a></li><li><a href="module-models_SuggestionModel.html">models/SuggestionModel</a></li><li><a href="module-models_SuggestionResultModel.html">models/SuggestionResultModel</a></li><li><a href="module-models_TermFilterModel.html">models/TermFilterModel</a></li><li><a href="module-models_TermQueryModel.html">models/TermQueryModel</a></li><li><a href="module-models_TextQueryModel.html">models/TextQueryModel</a></li><li><a href="module-models_VariantModel.html">models/VariantModel</a></li><li><a href="module-models_VariationAttributeModel.html">models/VariationAttributeModel</a></li><li><a href="module-models_VariationAttributeValueModel.html">models/VariationAttributeValueModel</a></li><li><a href="module-models_VariationGroupModel.html">models/VariationGroupModel</a></li></ul><h3>Classes</h3><ul><li><a href="module-api_BasketsApi.html">api/BasketsApi</a></li><li><a href="module-api_CategoriesApi.html">api/CategoriesApi</a></li><li><a href="module-api_ContentApi.html">api/ContentApi</a></li><li><a href="module-api_ContentSearchApi.html">api/ContentSearchApi</a></li><li><a href="module-api_CustomersApi.html">api/CustomersApi</a></li><li><a href="module-api_CustomObjectsApi.html">api/CustomObjectsApi</a></li><li><a href="module-api_FoldersApi.html">api/FoldersApi</a></li><li><a href="module-api_GiftCertificateApi.html">api/GiftCertificateApi</a></li><li><a href="module-api_OrdersApi.html">api/OrdersApi</a></li><li><a href="module-api_OrderSearchApi.html">api/OrderSearchApi</a></li><li><a href="module-api_PriceAdjustmentLimitsApi.html">api/PriceAdjustmentLimitsApi</a></li><li><a href="module-api_ProductListsApi.html">api/ProductListsApi</a></li><li><a href="module-api_ProductsApi.html">api/ProductsApi</a></li><li><a href="module-api_ProductSearchApi.html">api/ProductSearchApi</a></li><li><a href="module-api_PromotionsApi.html">api/PromotionsApi</a></li><li><a href="module-api_SearchSuggestionApi.html">api/SearchSuggestionApi</a></li><li><a href="module-api_SessionsApi.html">api/SessionsApi</a></li><li><a href="module-api_SiteApi.html">api/SiteApi</a></li><li><a href="module-api_StoresApi.html">api/StoresApi</a></li><li><a href="module-ApiClient.html">ApiClient</a></li><li><a href="module-models_AuthRequestModel.html">models/AuthRequestModel</a></li><li><a href="module-models_BasketModel.html">models/BasketModel</a></li><li><a href="module-models_BasketPaymentInstrumentRequestModel.html">models/BasketPaymentInstrumentRequestModel</a></li><li><a href="module-models_BasketsResultModel.html">models/BasketsResultModel</a></li><li><a href="module-models_BonusDiscountLineItemModel.html">models/BonusDiscountLineItemModel</a></li><li><a href="module-models_BoolFilterModel.html">models/BoolFilterModel</a></li><li><a href="module-models_BoolQueryModel.html">models/BoolQueryModel</a></li><li><a href="module-models_BundledProductModel.html">models/BundledProductModel</a></li><li><a href="module-models_CategoryModel.html">models/CategoryModel</a></li><li><a href="module-models_CategoryResultModel.html">models/CategoryResultModel</a></li><li><a href="module-models_ContentFolderModel.html">models/ContentFolderModel</a></li><li><a href="module-models_ContentFolderResultModel.html">models/ContentFolderResultModel</a></li><li><a href="module-models_ContentModel.html">models/ContentModel</a></li><li><a href="module-models_ContentResultModel.html">models/ContentResultModel</a></li><li><a href="module-models_ContentSearchRefinementModel.html">models/ContentSearchRefinementModel</a></li><li><a href="module-models_ContentSearchRefinementValueModel.html">models/ContentSearchRefinementValueModel</a></li><li><a href="module-models_ContentSearchResultModel.html">models/ContentSearchResultModel</a></li><li><a href="module-models_CouponItemModel.html">models/CouponItemModel</a></li><li><a href="module-models_CustomerAddressLinkModel.html">models/CustomerAddressLinkModel</a></li><li><a href="module-models_CustomerAddressModel.html">models/CustomerAddressModel</a></li><li><a href="module-models_CustomerAddressResultModel.html">models/CustomerAddressResultModel</a></li><li><a href="module-models_CustomerInfoModel.html">models/CustomerInfoModel</a></li><li><a href="module-models_CustomerModel.html">models/CustomerModel</a></li><li><a href="module-models_CustomerOrderResultModel.html">models/CustomerOrderResultModel</a></li><li><a href="module-models_CustomerPaymentCardRequestModel.html">models/CustomerPaymentCardRequestModel</a></li><li><a href="module-models_CustomerPaymentInstrumentModel.html">models/CustomerPaymentInstrumentModel</a></li><li><a href="module-models_CustomerPaymentInstrumentRequestModel.html">models/CustomerPaymentInstrumentRequestModel</a></li><li><a href="module-models_CustomerPaymentInstrumentResultModel.html">models/CustomerPaymentInstrumentResultModel</a></li><li><a href="module-models_CustomerProductListItemLinkModel.html">models/CustomerProductListItemLinkModel</a></li><li><a href="module-models_CustomerProductListItemModel.html">models/CustomerProductListItemModel</a></li><li><a href="module-models_CustomerProductListItemResultModel.html">models/CustomerProductListItemResultModel</a></li><li><a href="module-models_CustomerProductListModel.html">models/CustomerProductListModel</a></li><li><a href="module-models_CustomerProductListRegistrantModel.html">models/CustomerProductListRegistrantModel</a></li><li><a href="module-models_CustomerProductListResultModel.html">models/CustomerProductListResultModel</a></li><li><a href="module-models_CustomerRegistrationModel.html">models/CustomerRegistrationModel</a></li><li><a href="module-models_CustomObjectModel.html">models/CustomObjectModel</a></li><li><a href="module-models_DiscountModel.html">models/DiscountModel</a></li><li><a href="module-models_FaultModel.html">models/FaultModel</a></li><li><a href="module-models_FilteredQueryModel.html">models/FilteredQueryModel</a></li><li><a href="module-models_FilterModel.html">models/FilterModel</a></li><li><a href="module-models_GiftCertificateItemModel.html">models/GiftCertificateItemModel</a></li><li><a href="module-models_GiftCertificateModel.html">models/GiftCertificateModel</a></li><li><a href="module-models_GiftCertificateRequestModel.html">models/GiftCertificateRequestModel</a></li><li><a href="module-models_ImageGroupModel.html">models/ImageGroupModel</a></li><li><a href="module-models_ImageModel.html">models/ImageModel</a></li><li><a href="module-models_InventoryModel.html">models/InventoryModel</a></li><li><a href="module-models_LocaleModel.html">models/LocaleModel</a></li><li><a href="module-models_MasterModel.html">models/MasterModel</a></li><li><a href="module-models_NestedQueryModel.html">models/NestedQueryModel</a></li><li><a href="module-models_NoteModel.html">models/NoteModel</a></li><li><a href="module-models_NotesResultModel.html">models/NotesResultModel</a></li><li><a href="module-models_OptionItemModel.html">models/OptionItemModel</a></li><li><a href="module-models_OptionModel.html">models/OptionModel</a></li><li><a href="module-models_OptionValueModel.html">models/OptionValueModel</a></li><li><a href="module-models_OrderAddressModel.html">models/OrderAddressModel</a></li><li><a href="module-models_OrderModel.html">models/OrderModel</a></li><li><a href="module-models_OrderPaymentCardRequestModel.html">models/OrderPaymentCardRequestModel</a></li><li><a href="module-models_OrderPaymentInstrumentModel.html">models/OrderPaymentInstrumentModel</a></li><li><a href="module-models_OrderPaymentInstrumentRequestModel.html">models/OrderPaymentInstrumentRequestModel</a></li><li><a href="module-models_OrderSearchHitModel.html">models/OrderSearchHitModel</a></li><li><a href="module-models_OrderSearchRequestModel.html">models/OrderSearchRequestModel</a></li><li><a href="module-models_OrderSearchResultModel.html">models/OrderSearchResultModel</a></li><li><a href="module-models_PasswordChangeRequestModel.html">models/PasswordChangeRequestModel</a></li><li><a href="module-models_PasswordResetModel.html">models/PasswordResetModel</a></li><li><a href="module-models_PaymentBankAccountModel.html">models/PaymentBankAccountModel</a></li><li><a href="module-models_PaymentBankAccountRequestModel.html">models/PaymentBankAccountRequestModel</a></li><li><a href="module-models_PaymentCardModel.html">models/PaymentCardModel</a></li><li><a href="module-models_PaymentCardSpecModel.html">models/PaymentCardSpecModel</a></li><li><a href="module-models_PaymentMethodModel.html">models/PaymentMethodModel</a></li><li><a href="module-models_PaymentMethodResultModel.html">models/PaymentMethodResultModel</a></li><li><a href="module-models_PriceAdjustmentLimitModel.html">models/PriceAdjustmentLimitModel</a></li><li><a href="module-models_PriceAdjustmentLimitsModel.html">models/PriceAdjustmentLimitsModel</a></li><li><a href="module-models_PriceAdjustmentModel.html">models/PriceAdjustmentModel</a></li><li><a href="module-models_ProductDetailsLinkModel.html">models/ProductDetailsLinkModel</a></li><li><a href="module-models_ProductItemModel.html">models/ProductItemModel</a></li><li><a href="module-models_ProductLinkModel.html">models/ProductLinkModel</a></li><li><a href="module-models_ProductListEventModel.html">models/ProductListEventModel</a></li><li><a href="module-models_ProductListItemReferenceModel.html">models/ProductListItemReferenceModel</a></li><li><a href="module-models_ProductListLinkModel.html">models/ProductListLinkModel</a></li><li><a href="module-models_ProductListRegistrantModel.html">models/ProductListRegistrantModel</a></li><li><a href="module-models_ProductListShippingAddressModel.html">models/ProductListShippingAddressModel</a></li><li><a href="module-models_ProductModel.html">models/ProductModel</a></li><li><a href="module-models_ProductPromotionModel.html">models/ProductPromotionModel</a></li><li><a href="module-models_ProductResultModel.html">models/ProductResultModel</a></li><li><a href="module-models_ProductSearchHitModel.html">models/ProductSearchHitModel</a></li><li><a href="module-models_ProductSearchRefinementModel.html">models/ProductSearchRefinementModel</a></li><li><a href="module-models_ProductSearchRefinementValueModel.html">models/ProductSearchRefinementValueModel</a></li><li><a href="module-models_ProductSearchResultModel.html">models/ProductSearchResultModel</a></li><li><a href="module-models_ProductSearchSortingOptionModel.html">models/ProductSearchSortingOptionModel</a></li><li><a href="module-models_ProductSimpleLinkModel.html">models/ProductSimpleLinkModel</a></li><li><a href="module-models_ProductTypeModel.html">models/ProductTypeModel</a></li><li><a href="module-models_PromotionModel.html">models/PromotionModel</a></li><li><a href="module-models_PromotionResultModel.html">models/PromotionResultModel</a></li><li><a href="module-models_PublicProductListItemModel.html">models/PublicProductListItemModel</a></li><li><a href="module-models_PublicProductListItemResultModel.html">models/PublicProductListItemResultModel</a></li><li><a href="module-models_PublicProductListLinkModel.html">models/PublicProductListLinkModel</a></li><li><a href="module-models_PublicProductListModel.html">models/PublicProductListModel</a></li><li><a href="module-models_PublicProductListResultModel.html">models/PublicProductListResultModel</a></li><li><a href="module-models_QueryFilterModel.html">models/QueryFilterModel</a></li><li><a href="module-models_QueryModel.html">models/QueryModel</a></li><li><a href="module-models_Range2FilterModel.html">models/Range2FilterModel</a></li><li><a href="module-models_RangeFilterModel.html">models/RangeFilterModel</a></li><li><a href="module-models_RecommendationModel.html">models/RecommendationModel</a></li><li><a href="module-models_RecommendationTypeModel.html">models/RecommendationTypeModel</a></li><li><a href="module-models_ResultPageModel.html">models/ResultPageModel</a></li><li><a href="module-models_ShipmentModel.html">models/ShipmentModel</a></li><li><a href="module-models_ShippingItemModel.html">models/ShippingItemModel</a></li><li><a href="module-models_ShippingMethodModel.html">models/ShippingMethodModel</a></li><li><a href="module-models_ShippingMethodResultModel.html">models/ShippingMethodResultModel</a></li><li><a href="module-models_ShippingPromotionModel.html">models/ShippingPromotionModel</a></li><li><a href="module-models_SimpleLinkModel.html">models/SimpleLinkModel</a></li><li><a href="module-models_SiteModel.html">models/SiteModel</a></li><li><a href="module-models_SortModel.html">models/SortModel</a></li><li><a href="module-models_StatusModel.html">models/StatusModel</a></li><li><a href="module-models_StoreModel.html">models/StoreModel</a></li><li><a href="module-models_StoreResultModel.html">models/StoreResultModel</a></li><li><a href="module-models_SuggestedCategoryModel.html">models/SuggestedCategoryModel</a></li><li><a href="module-models_SuggestedContentModel.html">models/SuggestedContentModel</a></li><li><a href="module-models_SuggestedPhraseModel.html">models/SuggestedPhraseModel</a></li><li><a href="module-models_SuggestedProductModel.html">models/SuggestedProductModel</a></li><li><a href="module-models_SuggestedTermModel.html">models/SuggestedTermModel</a></li><li><a href="module-models_SuggestedTermsModel.html">models/SuggestedTermsModel</a></li><li><a href="module-models_SuggestionModel.html">models/SuggestionModel</a></li><li><a href="module-models_SuggestionResultModel.html">models/SuggestionResultModel</a></li><li><a href="module-models_TermFilterModel.html">models/TermFilterModel</a></li><li><a href="module-models_TermQueryModel.html">models/TermQueryModel</a></li><li><a href="module-models_TextQueryModel.html">models/TextQueryModel</a></li><li><a href="module-models_VariantModel.html">models/VariantModel</a></li><li><a href="module-models_VariationAttributeModel.html">models/VariationAttributeModel</a></li><li><a href="module-models_VariationAttributeValueModel.html">models/VariationAttributeValueModel</a></li><li><a href="module-models_VariationGroupModel.html">models/VariationGroupModel</a></li></ul>
+    <h2><a href="index.html">Home</a></h2><h3>Modules</h3><ul><li><a href="module-api_BasketsApi.html">api/BasketsApi</a></li><li><a href="module-api_CategoriesApi.html">api/CategoriesApi</a></li><li><a href="module-api_ContentApi.html">api/ContentApi</a></li><li><a href="module-api_ContentSearchApi.html">api/ContentSearchApi</a></li><li><a href="module-api_CustomersApi.html">api/CustomersApi</a></li><li><a href="module-api_CustomObjectsApi.html">api/CustomObjectsApi</a></li><li><a href="module-api_FoldersApi.html">api/FoldersApi</a></li><li><a href="module-api_GiftCertificateApi.html">api/GiftCertificateApi</a></li><li><a href="module-api_OrdersApi.html">api/OrdersApi</a></li><li><a href="module-api_OrderSearchApi.html">api/OrderSearchApi</a></li><li><a href="module-api_PriceAdjustmentLimitsApi.html">api/PriceAdjustmentLimitsApi</a></li><li><a href="module-api_ProductListsApi.html">api/ProductListsApi</a></li><li><a href="module-api_ProductsApi.html">api/ProductsApi</a></li><li><a href="module-api_ProductSearchApi.html">api/ProductSearchApi</a></li><li><a href="module-api_PromotionsApi.html">api/PromotionsApi</a></li><li><a href="module-api_SearchSuggestionApi.html">api/SearchSuggestionApi</a></li><li><a href="module-api_SessionsApi.html">api/SessionsApi</a></li><li><a href="module-api_SiteApi.html">api/SiteApi</a></li><li><a href="module-api_StoresApi.html">api/StoresApi</a></li><li><a href="module-ApiClient.html">ApiClient</a></li><li><a href="module-index.html">index</a></li><li><a href="module-models_AuthRequest.html">models/AuthRequest</a></li><li><a href="module-models_Basket.html">models/Basket</a></li><li><a href="module-models_BasketPaymentInstrumentRequest.html">models/BasketPaymentInstrumentRequest</a></li><li><a href="module-models_BasketsResult.html">models/BasketsResult</a></li><li><a href="module-models_BonusDiscountLineItem.html">models/BonusDiscountLineItem</a></li><li><a href="module-models_BoolFilter.html">models/BoolFilter</a></li><li><a href="module-models_BoolQuery.html">models/BoolQuery</a></li><li><a href="module-models_BundledProduct.html">models/BundledProduct</a></li><li><a href="module-models_Category.html">models/Category</a></li><li><a href="module-models_CategoryResult.html">models/CategoryResult</a></li><li><a href="module-models_Content.html">models/Content</a></li><li><a href="module-models_ContentFolder.html">models/ContentFolder</a></li><li><a href="module-models_ContentFolderResult.html">models/ContentFolderResult</a></li><li><a href="module-models_ContentResult.html">models/ContentResult</a></li><li><a href="module-models_ContentSearchRefinement.html">models/ContentSearchRefinement</a></li><li><a href="module-models_ContentSearchRefinementValue.html">models/ContentSearchRefinementValue</a></li><li><a href="module-models_ContentSearchResult.html">models/ContentSearchResult</a></li><li><a href="module-models_CouponItem.html">models/CouponItem</a></li><li><a href="module-models_Customer.html">models/Customer</a></li><li><a href="module-models_CustomerAddress.html">models/CustomerAddress</a></li><li><a href="module-models_CustomerAddressLink.html">models/CustomerAddressLink</a></li><li><a href="module-models_CustomerAddressResult.html">models/CustomerAddressResult</a></li><li><a href="module-models_CustomerInfo.html">models/CustomerInfo</a></li><li><a href="module-models_CustomerOrderResult.html">models/CustomerOrderResult</a></li><li><a href="module-models_CustomerPaymentCardRequest.html">models/CustomerPaymentCardRequest</a></li><li><a href="module-models_CustomerPaymentInstrument.html">models/CustomerPaymentInstrument</a></li><li><a href="module-models_CustomerPaymentInstrumentRequest.html">models/CustomerPaymentInstrumentRequest</a></li><li><a href="module-models_CustomerPaymentInstrumentResult.html">models/CustomerPaymentInstrumentResult</a></li><li><a href="module-models_CustomerProductList.html">models/CustomerProductList</a></li><li><a href="module-models_CustomerProductListItem.html">models/CustomerProductListItem</a></li><li><a href="module-models_CustomerProductListItemLink.html">models/CustomerProductListItemLink</a></li><li><a href="module-models_CustomerProductListItemResult.html">models/CustomerProductListItemResult</a></li><li><a href="module-models_CustomerProductListRegistrant.html">models/CustomerProductListRegistrant</a></li><li><a href="module-models_CustomerProductListResult.html">models/CustomerProductListResult</a></li><li><a href="module-models_CustomerRegistration.html">models/CustomerRegistration</a></li><li><a href="module-models_CustomObject.html">models/CustomObject</a></li><li><a href="module-models_Discount.html">models/Discount</a></li><li><a href="module-models_Fault.html">models/Fault</a></li><li><a href="module-models_Filter.html">models/Filter</a></li><li><a href="module-models_FilteredQuery.html">models/FilteredQuery</a></li><li><a href="module-models_GiftCertificate.html">models/GiftCertificate</a></li><li><a href="module-models_GiftCertificateItem.html">models/GiftCertificateItem</a></li><li><a href="module-models_GiftCertificateRequest.html">models/GiftCertificateRequest</a></li><li><a href="module-models_Image.html">models/Image</a></li><li><a href="module-models_ImageGroup.html">models/ImageGroup</a></li><li><a href="module-models_Inventory.html">models/Inventory</a></li><li><a href="module-models_Locale.html">models/Locale</a></li><li><a href="module-models_Master.html">models/Master</a></li><li><a href="module-models_NestedQuery.html">models/NestedQuery</a></li><li><a href="module-models_Note.html">models/Note</a></li><li><a href="module-models_NotesResult.html">models/NotesResult</a></li><li><a href="module-models_Option.html">models/Option</a></li><li><a href="module-models_OptionItem.html">models/OptionItem</a></li><li><a href="module-models_OptionValue.html">models/OptionValue</a></li><li><a href="module-models_Order.html">models/Order</a></li><li><a href="module-models_OrderAddress.html">models/OrderAddress</a></li><li><a href="module-models_OrderPaymentCardRequest.html">models/OrderPaymentCardRequest</a></li><li><a href="module-models_OrderPaymentInstrument.html">models/OrderPaymentInstrument</a></li><li><a href="module-models_OrderPaymentInstrumentRequest.html">models/OrderPaymentInstrumentRequest</a></li><li><a href="module-models_OrderSearchHit.html">models/OrderSearchHit</a></li><li><a href="module-models_OrderSearchRequest.html">models/OrderSearchRequest</a></li><li><a href="module-models_OrderSearchResult.html">models/OrderSearchResult</a></li><li><a href="module-models_PasswordChangeRequest.html">models/PasswordChangeRequest</a></li><li><a href="module-models_PasswordReset.html">models/PasswordReset</a></li><li><a href="module-models_PaymentBankAccount.html">models/PaymentBankAccount</a></li><li><a href="module-models_PaymentBankAccountRequest.html">models/PaymentBankAccountRequest</a></li><li><a href="module-models_PaymentCard.html">models/PaymentCard</a></li><li><a href="module-models_PaymentCardSpec.html">models/PaymentCardSpec</a></li><li><a href="module-models_PaymentMethod.html">models/PaymentMethod</a></li><li><a href="module-models_PaymentMethodResult.html">models/PaymentMethodResult</a></li><li><a href="module-models_PriceAdjustment.html">models/PriceAdjustment</a></li><li><a href="module-models_PriceAdjustmentLimit.html">models/PriceAdjustmentLimit</a></li><li><a href="module-models_PriceAdjustmentLimits.html">models/PriceAdjustmentLimits</a></li><li><a href="module-models_Product.html">models/Product</a></li><li><a href="module-models_ProductDetailsLink.html">models/ProductDetailsLink</a></li><li><a href="module-models_ProductItem.html">models/ProductItem</a></li><li><a href="module-models_ProductLink.html">models/ProductLink</a></li><li><a href="module-models_ProductListEvent.html">models/ProductListEvent</a></li><li><a href="module-models_ProductListItemReference.html">models/ProductListItemReference</a></li><li><a href="module-models_ProductListLink.html">models/ProductListLink</a></li><li><a href="module-models_ProductListRegistrant.html">models/ProductListRegistrant</a></li><li><a href="module-models_ProductListShippingAddress.html">models/ProductListShippingAddress</a></li><li><a href="module-models_ProductPromotion.html">models/ProductPromotion</a></li><li><a href="module-models_ProductResult.html">models/ProductResult</a></li><li><a href="module-models_ProductSearchHit.html">models/ProductSearchHit</a></li><li><a href="module-models_ProductSearchRefinement.html">models/ProductSearchRefinement</a></li><li><a href="module-models_ProductSearchRefinementValue.html">models/ProductSearchRefinementValue</a></li><li><a href="module-models_ProductSearchResult.html">models/ProductSearchResult</a></li><li><a href="module-models_ProductSearchSortingOption.html">models/ProductSearchSortingOption</a></li><li><a href="module-models_ProductSimpleLink.html">models/ProductSimpleLink</a></li><li><a href="module-models_ProductType.html">models/ProductType</a></li><li><a href="module-models_Promotion.html">models/Promotion</a></li><li><a href="module-models_PromotionResult.html">models/PromotionResult</a></li><li><a href="module-models_PublicProductList.html">models/PublicProductList</a></li><li><a href="module-models_PublicProductListItem.html">models/PublicProductListItem</a></li><li><a href="module-models_PublicProductListItemResult.html">models/PublicProductListItemResult</a></li><li><a href="module-models_PublicProductListLink.html">models/PublicProductListLink</a></li><li><a href="module-models_PublicProductListResult.html">models/PublicProductListResult</a></li><li><a href="module-models_Query.html">models/Query</a></li><li><a href="module-models_QueryFilter.html">models/QueryFilter</a></li><li><a href="module-models_Range2Filter.html">models/Range2Filter</a></li><li><a href="module-models_RangeFilter.html">models/RangeFilter</a></li><li><a href="module-models_Recommendation.html">models/Recommendation</a></li><li><a href="module-models_RecommendationType.html">models/RecommendationType</a></li><li><a href="module-models_ResultPage.html">models/ResultPage</a></li><li><a href="module-models_Shipment.html">models/Shipment</a></li><li><a href="module-models_ShippingItem.html">models/ShippingItem</a></li><li><a href="module-models_ShippingMethod.html">models/ShippingMethod</a></li><li><a href="module-models_ShippingMethodResult.html">models/ShippingMethodResult</a></li><li><a href="module-models_ShippingPromotion.html">models/ShippingPromotion</a></li><li><a href="module-models_SimpleLink.html">models/SimpleLink</a></li><li><a href="module-models_Site.html">models/Site</a></li><li><a href="module-models_Sort.html">models/Sort</a></li><li><a href="module-models_Status.html">models/Status</a></li><li><a href="module-models_Store.html">models/Store</a></li><li><a href="module-models_StoreResult.html">models/StoreResult</a></li><li><a href="module-models_SuggestedCategory.html">models/SuggestedCategory</a></li><li><a href="module-models_SuggestedContent.html">models/SuggestedContent</a></li><li><a href="module-models_SuggestedPhrase.html">models/SuggestedPhrase</a></li><li><a href="module-models_SuggestedProduct.html">models/SuggestedProduct</a></li><li><a href="module-models_SuggestedTerm.html">models/SuggestedTerm</a></li><li><a href="module-models_SuggestedTerms.html">models/SuggestedTerms</a></li><li><a href="module-models_Suggestion.html">models/Suggestion</a></li><li><a href="module-models_SuggestionResult.html">models/SuggestionResult</a></li><li><a href="module-models_TermFilter.html">models/TermFilter</a></li><li><a href="module-models_TermQuery.html">models/TermQuery</a></li><li><a href="module-models_TextQuery.html">models/TextQuery</a></li><li><a href="module-models_Variant.html">models/Variant</a></li><li><a href="module-models_VariationAttribute.html">models/VariationAttribute</a></li><li><a href="module-models_VariationAttributeValue.html">models/VariationAttributeValue</a></li><li><a href="module-models_VariationGroup.html">models/VariationGroup</a></li></ul><h3>Classes</h3><ul><li><a href="module-api_BasketsApi.html">api/BasketsApi</a></li><li><a href="module-api_CategoriesApi.html">api/CategoriesApi</a></li><li><a href="module-api_ContentApi.html">api/ContentApi</a></li><li><a href="module-api_ContentSearchApi.html">api/ContentSearchApi</a></li><li><a href="module-api_CustomersApi.html">api/CustomersApi</a></li><li><a href="module-api_CustomObjectsApi.html">api/CustomObjectsApi</a></li><li><a href="module-api_FoldersApi.html">api/FoldersApi</a></li><li><a href="module-api_GiftCertificateApi.html">api/GiftCertificateApi</a></li><li><a href="module-api_OrdersApi.html">api/OrdersApi</a></li><li><a href="module-api_OrderSearchApi.html">api/OrderSearchApi</a></li><li><a href="module-api_PriceAdjustmentLimitsApi.html">api/PriceAdjustmentLimitsApi</a></li><li><a href="module-api_ProductListsApi.html">api/ProductListsApi</a></li><li><a href="module-api_ProductsApi.html">api/ProductsApi</a></li><li><a href="module-api_ProductSearchApi.html">api/ProductSearchApi</a></li><li><a href="module-api_PromotionsApi.html">api/PromotionsApi</a></li><li><a href="module-api_SearchSuggestionApi.html">api/SearchSuggestionApi</a></li><li><a href="module-api_SessionsApi.html">api/SessionsApi</a></li><li><a href="module-api_SiteApi.html">api/SiteApi</a></li><li><a href="module-api_StoresApi.html">api/StoresApi</a></li><li><a href="module-ApiClient.html">ApiClient</a></li><li><a href="module-models_AuthRequest.html">models/AuthRequest</a></li><li><a href="module-models_Basket.html">models/Basket</a></li><li><a href="module-models_BasketPaymentInstrumentRequest.html">models/BasketPaymentInstrumentRequest</a></li><li><a href="module-models_BasketsResult.html">models/BasketsResult</a></li><li><a href="module-models_BonusDiscountLineItem.html">models/BonusDiscountLineItem</a></li><li><a href="module-models_BoolFilter.html">models/BoolFilter</a></li><li><a href="module-models_BoolQuery.html">models/BoolQuery</a></li><li><a href="module-models_BundledProduct.html">models/BundledProduct</a></li><li><a href="module-models_Category.html">models/Category</a></li><li><a href="module-models_CategoryResult.html">models/CategoryResult</a></li><li><a href="module-models_Content.html">models/Content</a></li><li><a href="module-models_ContentFolder.html">models/ContentFolder</a></li><li><a href="module-models_ContentFolderResult.html">models/ContentFolderResult</a></li><li><a href="module-models_ContentResult.html">models/ContentResult</a></li><li><a href="module-models_ContentSearchRefinement.html">models/ContentSearchRefinement</a></li><li><a href="module-models_ContentSearchRefinementValue.html">models/ContentSearchRefinementValue</a></li><li><a href="module-models_ContentSearchResult.html">models/ContentSearchResult</a></li><li><a href="module-models_CouponItem.html">models/CouponItem</a></li><li><a href="module-models_Customer.html">models/Customer</a></li><li><a href="module-models_CustomerAddress.html">models/CustomerAddress</a></li><li><a href="module-models_CustomerAddressLink.html">models/CustomerAddressLink</a></li><li><a href="module-models_CustomerAddressResult.html">models/CustomerAddressResult</a></li><li><a href="module-models_CustomerInfo.html">models/CustomerInfo</a></li><li><a href="module-models_CustomerOrderResult.html">models/CustomerOrderResult</a></li><li><a href="module-models_CustomerPaymentCardRequest.html">models/CustomerPaymentCardRequest</a></li><li><a href="module-models_CustomerPaymentInstrument.html">models/CustomerPaymentInstrument</a></li><li><a href="module-models_CustomerPaymentInstrumentRequest.html">models/CustomerPaymentInstrumentRequest</a></li><li><a href="module-models_CustomerPaymentInstrumentResult.html">models/CustomerPaymentInstrumentResult</a></li><li><a href="module-models_CustomerProductList.html">models/CustomerProductList</a></li><li><a href="module-models_CustomerProductListItem.html">models/CustomerProductListItem</a></li><li><a href="module-models_CustomerProductListItemLink.html">models/CustomerProductListItemLink</a></li><li><a href="module-models_CustomerProductListItemResult.html">models/CustomerProductListItemResult</a></li><li><a href="module-models_CustomerProductListRegistrant.html">models/CustomerProductListRegistrant</a></li><li><a href="module-models_CustomerProductListResult.html">models/CustomerProductListResult</a></li><li><a href="module-models_CustomerRegistration.html">models/CustomerRegistration</a></li><li><a href="module-models_CustomObject.html">models/CustomObject</a></li><li><a href="module-models_Discount.html">models/Discount</a></li><li><a href="module-models_Fault.html">models/Fault</a></li><li><a href="module-models_Filter.html">models/Filter</a></li><li><a href="module-models_FilteredQuery.html">models/FilteredQuery</a></li><li><a href="module-models_GiftCertificate.html">models/GiftCertificate</a></li><li><a href="module-models_GiftCertificateItem.html">models/GiftCertificateItem</a></li><li><a href="module-models_GiftCertificateRequest.html">models/GiftCertificateRequest</a></li><li><a href="module-models_Image.html">models/Image</a></li><li><a href="module-models_ImageGroup.html">models/ImageGroup</a></li><li><a href="module-models_Inventory.html">models/Inventory</a></li><li><a href="module-models_Locale.html">models/Locale</a></li><li><a href="module-models_Master.html">models/Master</a></li><li><a href="module-models_NestedQuery.html">models/NestedQuery</a></li><li><a href="module-models_Note.html">models/Note</a></li><li><a href="module-models_NotesResult.html">models/NotesResult</a></li><li><a href="module-models_Option.html">models/Option</a></li><li><a href="module-models_OptionItem.html">models/OptionItem</a></li><li><a href="module-models_OptionValue.html">models/OptionValue</a></li><li><a href="module-models_Order.html">models/Order</a></li><li><a href="module-models_OrderAddress.html">models/OrderAddress</a></li><li><a href="module-models_OrderPaymentCardRequest.html">models/OrderPaymentCardRequest</a></li><li><a href="module-models_OrderPaymentInstrument.html">models/OrderPaymentInstrument</a></li><li><a href="module-models_OrderPaymentInstrumentRequest.html">models/OrderPaymentInstrumentRequest</a></li><li><a href="module-models_OrderSearchHit.html">models/OrderSearchHit</a></li><li><a href="module-models_OrderSearchRequest.html">models/OrderSearchRequest</a></li><li><a href="module-models_OrderSearchResult.html">models/OrderSearchResult</a></li><li><a href="module-models_PasswordChangeRequest.html">models/PasswordChangeRequest</a></li><li><a href="module-models_PasswordReset.html">models/PasswordReset</a></li><li><a href="module-models_PaymentBankAccount.html">models/PaymentBankAccount</a></li><li><a href="module-models_PaymentBankAccountRequest.html">models/PaymentBankAccountRequest</a></li><li><a href="module-models_PaymentCard.html">models/PaymentCard</a></li><li><a href="module-models_PaymentCardSpec.html">models/PaymentCardSpec</a></li><li><a href="module-models_PaymentMethod.html">models/PaymentMethod</a></li><li><a href="module-models_PaymentMethodResult.html">models/PaymentMethodResult</a></li><li><a href="module-models_PriceAdjustment.html">models/PriceAdjustment</a></li><li><a href="module-models_PriceAdjustmentLimit.html">models/PriceAdjustmentLimit</a></li><li><a href="module-models_PriceAdjustmentLimits.html">models/PriceAdjustmentLimits</a></li><li><a href="module-models_Product.html">models/Product</a></li><li><a href="module-models_ProductDetailsLink.html">models/ProductDetailsLink</a></li><li><a href="module-models_ProductItem.html">models/ProductItem</a></li><li><a href="module-models_ProductLink.html">models/ProductLink</a></li><li><a href="module-models_ProductListEvent.html">models/ProductListEvent</a></li><li><a href="module-models_ProductListItemReference.html">models/ProductListItemReference</a></li><li><a href="module-models_ProductListLink.html">models/ProductListLink</a></li><li><a href="module-models_ProductListRegistrant.html">models/ProductListRegistrant</a></li><li><a href="module-models_ProductListShippingAddress.html">models/ProductListShippingAddress</a></li><li><a href="module-models_ProductPromotion.html">models/ProductPromotion</a></li><li><a href="module-models_ProductResult.html">models/ProductResult</a></li><li><a href="module-models_ProductSearchHit.html">models/ProductSearchHit</a></li><li><a href="module-models_ProductSearchRefinement.html">models/ProductSearchRefinement</a></li><li><a href="module-models_ProductSearchRefinementValue.html">models/ProductSearchRefinementValue</a></li><li><a href="module-models_ProductSearchResult.html">models/ProductSearchResult</a></li><li><a href="module-models_ProductSearchSortingOption.html">models/ProductSearchSortingOption</a></li><li><a href="module-models_ProductSimpleLink.html">models/ProductSimpleLink</a></li><li><a href="module-models_ProductType.html">models/ProductType</a></li><li><a href="module-models_Promotion.html">models/Promotion</a></li><li><a href="module-models_PromotionResult.html">models/PromotionResult</a></li><li><a href="module-models_PublicProductList.html">models/PublicProductList</a></li><li><a href="module-models_PublicProductListItem.html">models/PublicProductListItem</a></li><li><a href="module-models_PublicProductListItemResult.html">models/PublicProductListItemResult</a></li><li><a href="module-models_PublicProductListLink.html">models/PublicProductListLink</a></li><li><a href="module-models_PublicProductListResult.html">models/PublicProductListResult</a></li><li><a href="module-models_Query.html">models/Query</a></li><li><a href="module-models_QueryFilter.html">models/QueryFilter</a></li><li><a href="module-models_Range2Filter.html">models/Range2Filter</a></li><li><a href="module-models_RangeFilter.html">models/RangeFilter</a></li><li><a href="module-models_Recommendation.html">models/Recommendation</a></li><li><a href="module-models_RecommendationType.html">models/RecommendationType</a></li><li><a href="module-models_ResultPage.html">models/ResultPage</a></li><li><a href="module-models_Shipment.html">models/Shipment</a></li><li><a href="module-models_ShippingItem.html">models/ShippingItem</a></li><li><a href="module-models_ShippingMethod.html">models/ShippingMethod</a></li><li><a href="module-models_ShippingMethodResult.html">models/ShippingMethodResult</a></li><li><a href="module-models_ShippingPromotion.html">models/ShippingPromotion</a></li><li><a href="module-models_SimpleLink.html">models/SimpleLink</a></li><li><a href="module-models_Site.html">models/Site</a></li><li><a href="module-models_Sort.html">models/Sort</a></li><li><a href="module-models_Status.html">models/Status</a></li><li><a href="module-models_Store.html">models/Store</a></li><li><a href="module-models_StoreResult.html">models/StoreResult</a></li><li><a href="module-models_SuggestedCategory.html">models/SuggestedCategory</a></li><li><a href="module-models_SuggestedContent.html">models/SuggestedContent</a></li><li><a href="module-models_SuggestedPhrase.html">models/SuggestedPhrase</a></li><li><a href="module-models_SuggestedProduct.html">models/SuggestedProduct</a></li><li><a href="module-models_SuggestedTerm.html">models/SuggestedTerm</a></li><li><a href="module-models_SuggestedTerms.html">models/SuggestedTerms</a></li><li><a href="module-models_Suggestion.html">models/Suggestion</a></li><li><a href="module-models_SuggestionResult.html">models/SuggestionResult</a></li><li><a href="module-models_TermFilter.html">models/TermFilter</a></li><li><a href="module-models_TermQuery.html">models/TermQuery</a></li><li><a href="module-models_TextQuery.html">models/TextQuery</a></li><li><a href="module-models_Variant.html">models/Variant</a></li><li><a href="module-models_VariationAttribute.html">models/VariationAttribute</a></li><li><a href="module-models_VariationAttributeValue.html">models/VariationAttributeValue</a></li><li><a href="module-models_VariationGroup.html">models/VariationGroup</a></li></ul>
 </nav>
 
 <br class="clear">
 
 <footer>
-    Documentation generated by <a href="https://github.com/jsdoc3/jsdoc">JSDoc 3.5.5</a> on Tue Oct 31 2017 13:24:00 GMT-0700 (PDT)
+    Documentation generated by <a href="https://github.com/jsdoc3/jsdoc">JSDoc 3.5.5</a> on Tue Oct 31 2017 14:43:14 GMT-0700 (PDT)
 </footer>
 
 <script> prettyPrint(); </script>

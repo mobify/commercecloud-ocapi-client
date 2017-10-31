@@ -16,22 +16,17 @@
  *
  */
 import ApiClient from '../ApiClient'
-// import AuthRequestModel from '../models/AuthRequestModel'
-import BasketsResultModel from '../models/BasketsResultModel'
-import CustomerAddressModel from '../models/CustomerAddressModel'
-import CustomerAddressResultModel from '../models/CustomerAddressResultModel'
-import CustomerModel from '../models/CustomerModel'
-import CustomerOrderResultModel from '../models/CustomerOrderResultModel'
-import CustomerPaymentInstrumentModel from '../models/CustomerPaymentInstrumentModel'
-// import CustomerPaymentInstrumentRequestModel from '../models/CustomerPaymentInstrumentRequestModel'
-import CustomerPaymentInstrumentResultModel from '../models/CustomerPaymentInstrumentResultModel'
-import CustomerProductListItemModel from '../models/CustomerProductListItemModel'
-import CustomerProductListItemResultModel from '../models/CustomerProductListItemResultModel'
-import CustomerProductListModel from '../models/CustomerProductListModel'
-import CustomerProductListResultModel from '../models/CustomerProductListResultModel'
-// import CustomerRegistrationModel from '../models/CustomerRegistrationModel'
-// import PasswordChangeRequestModel from '../models/PasswordChangeRequestModel'
-// import PasswordResetModel from '../models/PasswordResetModel'
+import BasketsResult from '../models/BasketsResult'
+import CustomerAddress from '../models/CustomerAddress'
+import CustomerAddressResult from '../models/CustomerAddressResult'
+import Customer from '../models/Customer'
+import CustomerOrderResult from '../models/CustomerOrderResult'
+import CustomerPaymentInstrument from '../models/CustomerPaymentInstrument'
+import CustomerPaymentInstrumentResult from '../models/CustomerPaymentInstrumentResult'
+import CustomerProductListItem from '../models/CustomerProductListItem'
+import CustomerProductListItemResult from '../models/CustomerProductListItemResult'
+import CustomerProductList from '../models/CustomerProductList'
+import CustomerProductListResult from '../models/CustomerProductListResult'
 
 /**
  * Customers service.
@@ -326,7 +321,7 @@ export default class CustomersApi {
      * @param {String} customerId The customer id
      * @param {Object} opts Optional parameters
      * @param {Array.<String>} opts.expand
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:models/CustomerModel} and HTTP response
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:models/Customer} and HTTP response
      */
     getCustomersByIDWithHttpInfo(customerId, opts) {
         opts = opts || {}
@@ -350,7 +345,7 @@ export default class CustomersApi {
         const authNames = ['customers_auth', 'oauth2_application']
         const contentTypes = ['application/json', 'text/xml', 'application/xml']
         const accepts = ['application/json', 'text/xml', 'application/xml']
-        const returnType = CustomerModel
+        const returnType = Customer
 
         return this.apiClient.callApi(
             '/customers/{customer_id}', 'GET',
@@ -364,7 +359,7 @@ export default class CustomersApi {
      * @param {String} customerId The customer id
      * @param {Object} opts Optional parameters
      * @param {Array.<String>} opts.expand
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:models/CustomerModel}
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:models/Customer}
      */
     getCustomersByID(customerId, opts) {
         return this.getCustomersByIDWithHttpInfo(customerId, opts)
@@ -384,7 +379,7 @@ export default class CustomersApi {
      * @param {Object} opts Optional parameters
      * @param {Number} opts.start
      * @param {Number} opts.count
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:models/CustomerAddressResultModel} and HTTP response
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:models/CustomerAddressResult} and HTTP response
      */
     getCustomersByIDAddressesWithHttpInfo(customerId, opts) {
         opts = opts || {}
@@ -409,7 +404,7 @@ export default class CustomersApi {
         const authNames = ['customers_auth', 'oauth2_application']
         const contentTypes = ['application/json', 'text/xml', 'application/xml']
         const accepts = ['application/json', 'text/xml', 'application/xml']
-        const returnType = CustomerAddressResultModel
+        const returnType = CustomerAddressResult
 
         return this.apiClient.callApi(
             '/customers/{customer_id}/addresses', 'GET',
@@ -428,7 +423,7 @@ export default class CustomersApi {
      * @param {Object} opts Optional parameters
      * @param {Number} opts.start
      * @param {Number} opts.count
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:models/CustomerAddressResultModel}
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:models/CustomerAddressResult}
      */
     getCustomersByIDAddresses(customerId, opts) {
         return this.getCustomersByIDAddressesWithHttpInfo(customerId, opts)
@@ -442,7 +437,7 @@ export default class CustomersApi {
      * Retrieves a customer&#39;s address by address name.
      * @param {String} customerId the id of the customer to retrieve the address for
      * @param {String} addressName the name of the address to retrieve
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:models/CustomerAddressModel} and HTTP response
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:models/CustomerAddress} and HTTP response
      */
     getCustomersByIDAddressesByIDWithHttpInfo(customerId, addressName) {
         const postBody = null
@@ -469,7 +464,7 @@ export default class CustomersApi {
         const authNames = ['customers_auth', 'oauth2_application']
         const contentTypes = ['application/json', 'text/xml', 'application/xml']
         const accepts = ['application/json', 'text/xml', 'application/xml']
-        const returnType = CustomerAddressModel
+        const returnType = CustomerAddress
 
         return this.apiClient.callApi(
             '/customers/{customer_id}/addresses/{address_name}', 'GET',
@@ -482,7 +477,7 @@ export default class CustomersApi {
      * Retrieves a customer&#39;s address by address name.
      * @param {String} customerId the id of the customer to retrieve the address for
      * @param {String} addressName the name of the address to retrieve
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:models/CustomerAddressModel}
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:models/CustomerAddress}
      */
     getCustomersByIDAddressesByID(customerId, addressName) {
         return this.getCustomersByIDAddressesByIDWithHttpInfo(customerId, addressName)
@@ -495,7 +490,7 @@ export default class CustomersApi {
     /**
      * Gets the baskets of a customer.
      * @param {String} customerId the id of the customer to retrieve the baskets for
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:models/BasketsResultModel} and HTTP response
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:models/BasketsResult} and HTTP response
      */
     getCustomersByIDBasketsWithHttpInfo(customerId) {
         const postBody = null
@@ -516,7 +511,7 @@ export default class CustomersApi {
         const authNames = ['customers_auth', 'oauth2_application']
         const contentTypes = ['application/json', 'text/xml', 'application/xml']
         const accepts = ['application/json', 'text/xml', 'application/xml']
-        const returnType = BasketsResultModel
+        const returnType = BasketsResult
 
         return this.apiClient.callApi(
             '/customers/{customer_id}/baskets', 'GET',
@@ -528,7 +523,7 @@ export default class CustomersApi {
     /**
      * Gets the baskets of a customer.
      * @param {String} customerId the id of the customer to retrieve the baskets for
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:models/BasketsResultModel}
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:models/BasketsResult}
      */
     getCustomersByIDBaskets(customerId) {
         return this.getCustomersByIDBasketsWithHttpInfo(customerId)
@@ -548,7 +543,7 @@ export default class CustomersApi {
      * @param {String} opts.from
      * @param {String} opts.until
      * @param {String} opts.status
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:models/CustomerOrderResultModel} and HTTP response
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:models/CustomerOrderResult} and HTTP response
      */
     getCustomersByIDOrdersWithHttpInfo(customerId, opts) {
         opts = opts || {}
@@ -577,7 +572,7 @@ export default class CustomersApi {
         const authNames = ['customers_auth', 'oauth2_application']
         const contentTypes = ['application/json', 'text/xml', 'application/xml']
         const accepts = ['application/json', 'text/xml', 'application/xml']
-        const returnType = CustomerOrderResultModel
+        const returnType = CustomerOrderResult
 
         return this.apiClient.callApi(
             '/customers/{customer_id}/orders', 'GET',
@@ -596,7 +591,7 @@ export default class CustomersApi {
      * @param {String} opts.from
      * @param {String} opts.until
      * @param {String} opts.status
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:models/CustomerOrderResultModel}
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:models/CustomerOrderResult}
      */
     getCustomersByIDOrders(customerId, opts) {
         return this.getCustomersByIDOrdersWithHttpInfo(customerId, opts)
@@ -614,7 +609,7 @@ export default class CustomersApi {
      * @param {String} customerId the id of the customer to retrieve the payment instruments for
      * @param {Object} opts Optional parameters
      * @param {String} opts.paymentMethodId
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:models/CustomerPaymentInstrumentResultModel} and HTTP response
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:models/CustomerPaymentInstrumentResult} and HTTP response
      */
     getCustomersByIDPaymentInstrumentsWithHttpInfo(customerId, opts) {
         opts = opts || {}
@@ -638,7 +633,7 @@ export default class CustomersApi {
         const authNames = ['customers_auth', 'oauth2_application']
         const contentTypes = ['application/json', 'text/xml', 'application/xml']
         const accepts = ['application/json', 'text/xml', 'application/xml']
-        const returnType = CustomerPaymentInstrumentResultModel
+        const returnType = CustomerPaymentInstrumentResult
 
         return this.apiClient.callApi(
             '/customers/{customer_id}/payment_instruments', 'GET',
@@ -655,7 +650,7 @@ export default class CustomersApi {
      * @param {String} customerId the id of the customer to retrieve the payment instruments for
      * @param {Object} opts Optional parameters
      * @param {String} opts.paymentMethodId
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:models/CustomerPaymentInstrumentResultModel}
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:models/CustomerPaymentInstrumentResult}
      */
     getCustomersByIDPaymentInstruments(customerId, opts) {
         return this.getCustomersByIDPaymentInstrumentsWithHttpInfo(customerId, opts)
@@ -669,7 +664,7 @@ export default class CustomersApi {
      * Retrieves a customer&#39;s payment instrument by its id.
      * @param {String} customerId the id of the customer to retrieve the payment instrument for
      * @param {String} paymentInstrumentId the id of the payment instrument to be retrievedCustomer
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:models/CustomerPaymentInstrumentModel} and HTTP response
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:models/CustomerPaymentInstrument} and HTTP response
      */
     getCustomersByIDPaymentInstrumentsByIDWithHttpInfo(customerId, paymentInstrumentId) {
         const postBody = null
@@ -696,7 +691,7 @@ export default class CustomersApi {
         const authNames = ['customers_auth', 'oauth2_application']
         const contentTypes = ['application/json', 'text/xml', 'application/xml']
         const accepts = ['application/json', 'text/xml', 'application/xml']
-        const returnType = CustomerPaymentInstrumentModel
+        const returnType = CustomerPaymentInstrument
 
         return this.apiClient.callApi(
             '/customers/{customer_id}/payment_instruments/{payment_instrument_id}', 'GET',
@@ -709,7 +704,7 @@ export default class CustomersApi {
      * Retrieves a customer&#39;s payment instrument by its id.
      * @param {String} customerId the id of the customer to retrieve the payment instrument for
      * @param {String} paymentInstrumentId the id of the payment instrument to be retrievedCustomer
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:models/CustomerPaymentInstrumentModel}
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:models/CustomerPaymentInstrument}
      */
     getCustomersByIDPaymentInstrumentsByID(customerId, paymentInstrumentId) {
         return this.getCustomersByIDPaymentInstrumentsByIDWithHttpInfo(customerId, paymentInstrumentId)
@@ -724,7 +719,7 @@ export default class CustomersApi {
      * @param {String} customerId The customer id.
      * @param {Object} opts Optional parameters
      * @param {Array.<String>} opts.expand
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:models/CustomerProductListResultModel} and HTTP response
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:models/CustomerProductListResult} and HTTP response
      */
     getCustomersByIDProductListsWithHttpInfo(customerId, opts) {
         opts = opts || {}
@@ -748,7 +743,7 @@ export default class CustomersApi {
         const authNames = ['customers_auth', 'oauth2_application']
         const contentTypes = ['application/json', 'text/xml', 'application/xml']
         const accepts = ['application/json', 'text/xml', 'application/xml']
-        const returnType = CustomerProductListResultModel
+        const returnType = CustomerProductListResult
 
         return this.apiClient.callApi(
             '/customers/{customer_id}/product_lists', 'GET',
@@ -762,7 +757,7 @@ export default class CustomersApi {
      * @param {String} customerId The customer id.
      * @param {Object} opts Optional parameters
      * @param {Array.<String>} opts.expand
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:models/CustomerProductListResultModel}
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:models/CustomerProductListResult}
      */
     getCustomersByIDProductLists(customerId, opts) {
         return this.getCustomersByIDProductListsWithHttpInfo(customerId, opts)
@@ -778,7 +773,7 @@ export default class CustomersApi {
      * @param {String} listId The product list id.
      * @param {Object} opts Optional parameters
      * @param {Array.<String>} opts.expand
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:models/CustomerProductListModel} and HTTP response
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:models/CustomerProductList} and HTTP response
      */
     getCustomersByIDProductListsByIDWithHttpInfo(customerId, listId, opts) {
         opts = opts || {}
@@ -808,7 +803,7 @@ export default class CustomersApi {
         const authNames = ['customers_auth', 'oauth2_application']
         const contentTypes = ['application/json', 'text/xml', 'application/xml']
         const accepts = ['application/json', 'text/xml', 'application/xml']
-        const returnType = CustomerProductListModel
+        const returnType = CustomerProductList
 
         return this.apiClient.callApi(
             '/customers/{customer_id}/product_lists/{list_id}', 'GET',
@@ -823,7 +818,7 @@ export default class CustomersApi {
      * @param {String} listId The product list id.
      * @param {Object} opts Optional parameters
      * @param {Array.<String>} opts.expand
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:models/CustomerProductListModel}
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:models/CustomerProductList}
      */
     getCustomersByIDProductListsByID(customerId, listId, opts) {
         return this.getCustomersByIDProductListsByIDWithHttpInfo(customerId, listId, opts)
@@ -841,7 +836,7 @@ export default class CustomersApi {
      * @param {Array.<String>} opts.expand
      * @param {Number} opts.start
      * @param {Number} opts.count
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:models/CustomerProductListItemResultModel} and HTTP response
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:models/CustomerProductListItemResult} and HTTP response
      */
     getCustomersByIDProductListsByIDItemsWithHttpInfo(customerId, listId, opts) {
         opts = opts || {}
@@ -873,7 +868,7 @@ export default class CustomersApi {
         const authNames = ['customers_auth', 'oauth2_application']
         const contentTypes = ['application/json', 'text/xml', 'application/xml']
         const accepts = ['application/json', 'text/xml', 'application/xml']
-        const returnType = CustomerProductListItemResultModel
+        const returnType = CustomerProductListItemResult
 
         return this.apiClient.callApi(
             '/customers/{customer_id}/product_lists/{list_id}/items', 'GET',
@@ -890,7 +885,7 @@ export default class CustomersApi {
      * @param {Array.<String>} opts.expand
      * @param {Number} opts.start
      * @param {Number} opts.count
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:models/CustomerProductListItemResultModel}
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:models/CustomerProductListItemResult}
      */
     getCustomersByIDProductListsByIDItems(customerId, listId, opts) {
         return this.getCustomersByIDProductListsByIDItemsWithHttpInfo(customerId, listId, opts)
@@ -907,7 +902,7 @@ export default class CustomersApi {
      * @param {String} itemId The id of the product list item to retrieve.
      * @param {Object} opts Optional parameters
      * @param {Array.<String>} opts.expand
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:models/CustomerProductListItemModel} and HTTP response
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:models/CustomerProductListItem} and HTTP response
      */
     getCustomersByIDProductListsByIDItemsByIDWithHttpInfo(customerId, listId, itemId, opts) {
         opts = opts || {}
@@ -943,7 +938,7 @@ export default class CustomersApi {
         const authNames = ['customers_auth', 'oauth2_application']
         const contentTypes = ['application/json', 'text/xml', 'application/xml']
         const accepts = ['application/json', 'text/xml', 'application/xml']
-        const returnType = CustomerProductListItemModel
+        const returnType = CustomerProductListItem
 
         return this.apiClient.callApi(
             '/customers/{customer_id}/product_lists/{list_id}/items/{item_id}', 'GET',
@@ -959,7 +954,7 @@ export default class CustomersApi {
      * @param {String} itemId The id of the product list item to retrieve.
      * @param {Object} opts Optional parameters
      * @param {Array.<String>} opts.expand
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:models/CustomerProductListItemModel}
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:models/CustomerProductListItem}
      */
     getCustomersByIDProductListsByIDItemsByID(customerId, listId, itemId, opts) {
         return this.getCustomersByIDProductListsByIDItemsByIDWithHttpInfo(customerId, listId, itemId, opts)
@@ -972,8 +967,8 @@ export default class CustomersApi {
     /**
      * Updates a customer.
      * @param {String} customerId the customer id
-     * @param {module:models/CustomerModel} body
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:models/CustomerModel} and HTTP response
+     * @param {module:models/Customer} body
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:models/Customer} and HTTP response
      */
     patchCustomersByIDWithHttpInfo(customerId, body) {
         const postBody = body
@@ -999,7 +994,7 @@ export default class CustomersApi {
         const authNames = ['customers_auth', 'oauth2_application']
         const contentTypes = ['application/json', 'text/xml', 'application/xml']
         const accepts = ['application/json', 'text/xml', 'application/xml']
-        const returnType = CustomerModel
+        const returnType = Customer
 
         return this.apiClient.callApi(
             '/customers/{customer_id}', 'PATCH',
@@ -1011,8 +1006,8 @@ export default class CustomersApi {
     /**
      * Updates a customer.
      * @param {String} customerId the customer id
-     * @param {module:models/CustomerModel} body
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:models/CustomerModel}
+     * @param {module:models/Customer} body
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:models/Customer}
      */
     patchCustomersByID(customerId, body) {
         return this.patchCustomersByIDWithHttpInfo(customerId, body)
@@ -1026,8 +1021,8 @@ export default class CustomersApi {
      * Updates a customer&#39;s address by address name.
      * @param {String} customerId the id of the customer to update the address for
      * @param {String} addressName the name of the address to update
-     * @param {module:models/CustomerAddressModel} body
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:models/CustomerAddressModel} and HTTP response
+     * @param {module:models/CustomerAddress} body
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:models/CustomerAddress} and HTTP response
      */
     patchCustomersByIDAddressesByIDWithHttpInfo(customerId, addressName, body) {
         const postBody = body
@@ -1059,7 +1054,7 @@ export default class CustomersApi {
         const authNames = ['customers_auth', 'oauth2_application']
         const contentTypes = ['application/json', 'text/xml', 'application/xml']
         const accepts = ['application/json', 'text/xml', 'application/xml']
-        const returnType = CustomerAddressModel
+        const returnType = CustomerAddress
 
         return this.apiClient.callApi(
             '/customers/{customer_id}/addresses/{address_name}', 'PATCH',
@@ -1072,8 +1067,8 @@ export default class CustomersApi {
      * Updates a customer&#39;s address by address name.
      * @param {String} customerId the id of the customer to update the address for
      * @param {String} addressName the name of the address to update
-     * @param {module:models/CustomerAddressModel} body
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:models/CustomerAddressModel}
+     * @param {module:models/CustomerAddress} body
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:models/CustomerAddress}
      */
     patchCustomersByIDAddressesByID(customerId, addressName, body) {
         return this.patchCustomersByIDAddressesByIDWithHttpInfo(customerId, addressName, body)
@@ -1085,10 +1080,10 @@ export default class CustomersApi {
 
     /**
      * Changes a product list. Changeable properties are the name, description and if the list is public.
-     * @param {module:models/CustomerProductListModel} body
+     * @param {module:models/CustomerProductList} body
      * @param {String} customerId The customer id.
      * @param {String} listId The product list id.
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:models/CustomerProductListModel} and HTTP response
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:models/CustomerProductList} and HTTP response
      */
     patchCustomersByIDProductListsByIDWithHttpInfo(body, customerId, listId) {
         const postBody = body
@@ -1120,7 +1115,7 @@ export default class CustomersApi {
         const authNames = ['customers_auth', 'oauth2_application']
         const contentTypes = ['application/json', 'text/xml', 'application/xml']
         const accepts = ['application/json', 'text/xml', 'application/xml']
-        const returnType = CustomerProductListModel
+        const returnType = CustomerProductList
 
         return this.apiClient.callApi(
             '/customers/{customer_id}/product_lists/{list_id}', 'PATCH',
@@ -1131,10 +1126,10 @@ export default class CustomersApi {
 
     /**
      * Changes a product list. Changeable properties are the name, description and if the list is public.
-     * @param {module:models/CustomerProductListModel} body
+     * @param {module:models/CustomerProductList} body
      * @param {String} customerId The customer id.
      * @param {String} listId The product list id.
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:models/CustomerProductListModel}
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:models/CustomerProductList}
      */
     patchCustomersByIDProductListsByID(body, customerId, listId) {
         return this.patchCustomersByIDProductListsByIDWithHttpInfo(body, customerId, listId)
@@ -1155,8 +1150,8 @@ export default class CustomersApi {
      * @param {String} customerId The id of the owner of the product list.
      * @param {String} listId The id of the product list.
      * @param {String} itemId The id of the product list item to update.
-     * @param {module:models/CustomerProductListItemModel} body
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:models/CustomerProductListItemModel} and HTTP response
+     * @param {module:models/CustomerProductListItem} body
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:models/CustomerProductListItem} and HTTP response
      */
     patchCustomersByIDProductListsByIDItemsByIDWithHttpInfo(customerId, listId, itemId, body) {
         const postBody = body
@@ -1194,7 +1189,7 @@ export default class CustomersApi {
         const authNames = ['customers_auth', 'oauth2_application']
         const contentTypes = ['application/json', 'text/xml', 'application/xml']
         const accepts = ['application/json', 'text/xml', 'application/xml']
-        const returnType = CustomerProductListItemModel
+        const returnType = CustomerProductListItem
 
         return this.apiClient.callApi(
             '/customers/{customer_id}/product_lists/{list_id}/items/{item_id}', 'PATCH',
@@ -1214,8 +1209,8 @@ export default class CustomersApi {
      * @param {String} customerId The id of the owner of the product list.
      * @param {String} listId The id of the product list.
      * @param {String} itemId The id of the product list item to update.
-     * @param {module:models/CustomerProductListItemModel} body
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:models/CustomerProductListItemModel}
+     * @param {module:models/CustomerProductListItem} body
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:models/CustomerProductListItem}
      */
     patchCustomersByIDProductListsByIDItemsByID(customerId, listId, itemId, body) {
         return this.patchCustomersByIDProductListsByIDItemsByIDWithHttpInfo(customerId, listId, itemId, body)
@@ -1229,8 +1224,8 @@ export default class CustomersApi {
      * Registers a customer.  The mandatory data are the credentials and profile last name and email.
      * When using OAuth the password in the request must not be set, otherwise an InvalidPasswordException
      * will be thrown.  When using JWT the password is required.
-     * @param {module:models/CustomerRegistrationModel} body
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:models/CustomerModel} and HTTP response
+     * @param {module:models/CustomerRegistration} body
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:models/Customer} and HTTP response
      */
     postCustomersWithHttpInfo(body) {
         const postBody = body
@@ -1249,7 +1244,7 @@ export default class CustomersApi {
         const authNames = ['customers_auth', 'oauth2_application']
         const contentTypes = ['application/json', 'text/xml', 'application/xml']
         const accepts = ['application/json', 'text/xml', 'application/xml']
-        const returnType = CustomerModel
+        const returnType = Customer
 
         return this.apiClient.callApi(
             '/customers', 'POST',
@@ -1262,8 +1257,8 @@ export default class CustomersApi {
      * Registers a customer.  The mandatory data are the credentials and profile last name and email.
      * When using OAuth the password in the request must not be set, otherwise an InvalidPasswordException
      * will be thrown.  When using JWT the password is required.
-     * @param {module:models/CustomerRegistrationModel} body
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:models/CustomerModel}
+     * @param {module:models/CustomerRegistration} body
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:models/Customer}
      */
     postCustomers(body) {
         return this.postCustomersWithHttpInfo(body)
@@ -1297,10 +1292,10 @@ export default class CustomersApi {
      * Authorization: Bearer --token--   in any follow up request. The server declines any follow up requests  without a token or
      * which cannot be verified based on the token signature  or expiration time. A token nearing its expiration time should be  exchanged for a new one (type \&quot;refresh\&quot;).
      * See \&quot;API Usage &gt; JWT\&quot; for more details on using JWT as an authentication  mechanism.
-     * @param {module:models/AuthRequestModel} body
+     * @param {module:models/AuthRequest} body
      * @param {Object} opts Optional parameters
      * @param {String} opts.authorization              Authorization:Basic for type credentials             Authorization:Bearer for type refresh
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:models/CustomerModel} and HTTP response
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:models/Customer} and HTTP response
      */
     postCustomersAuthWithHttpInfo(body, opts) {
         opts = opts || {}
@@ -1322,7 +1317,7 @@ export default class CustomersApi {
         const authNames = ['client_id']
         const contentTypes = ['application/json', 'text/xml', 'application/xml']
         const accepts = ['application/json', 'text/xml', 'application/xml']
-        const returnType = CustomerModel
+        const returnType = Customer
 
         return this.apiClient.callApi(
             '/customers/auth', 'POST',
@@ -1363,10 +1358,10 @@ export default class CustomersApi {
      * without a token or which cannot be verified based on the token signature
      * or expiration time. A token nearing its expiration time should be  exchanged for a new one (type \&quot;refresh\&quot;).
      * See \&quot;API Usage &gt; JWT\&quot; for more details on using JWT as an authentication  mechanism.
-     * @param {module:models/AuthRequestModel} body
+     * @param {module:models/AuthRequest} body
      * @param {Object} opts Optional parameters
      * @param {String} opts.authorization              Authorization:Basic for type credentials             Authorization:Bearer for type refresh
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:models/CustomerModel}
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:models/Customer}
      */
     postCustomersAuth(body, opts) {
         return this.postCustomersAuthWithHttpInfo(body, opts)
@@ -1379,8 +1374,8 @@ export default class CustomersApi {
     /**
      * Creates a new address with the given name for the given customer.
      * @param {String} customerId the id of the customer to create the address for
-     * @param {module:models/CustomerAddressModel} body
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:models/CustomerAddressModel} and HTTP response
+     * @param {module:models/CustomerAddress} body
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:models/CustomerAddress} and HTTP response
      */
     postCustomersByIDAddressesWithHttpInfo(customerId, body) {
         const postBody = body
@@ -1406,7 +1401,7 @@ export default class CustomersApi {
         const authNames = ['customers_auth', 'oauth2_application']
         const contentTypes = ['application/json', 'text/xml', 'application/xml']
         const accepts = ['application/json', 'text/xml', 'application/xml']
-        const returnType = CustomerAddressModel
+        const returnType = CustomerAddress
 
         return this.apiClient.callApi(
             '/customers/{customer_id}/addresses', 'POST',
@@ -1418,8 +1413,8 @@ export default class CustomersApi {
     /**
      * Creates a new address with the given name for the given customer.
      * @param {String} customerId the id of the customer to create the address for
-     * @param {module:models/CustomerAddressModel} body
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:models/CustomerAddressModel}
+     * @param {module:models/CustomerAddress} body
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:models/CustomerAddress}
      */
     postCustomersByIDAddresses(customerId, body) {
         return this.postCustomersByIDAddressesWithHttpInfo(customerId, body)
@@ -1442,7 +1437,7 @@ export default class CustomersApi {
      * finally the signature section records the token signature.
      * A token nearing its expiration time should be exchanged for a new one by calling this resource once more.
      * @param {String} customerId specifies the customer to act on behalf of
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:models/CustomerModel} and HTTP response
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:models/Customer} and HTTP response
      */
     postCustomersByIDAuthWithHttpInfo(customerId) {
         const postBody = null
@@ -1463,7 +1458,7 @@ export default class CustomersApi {
         const authNames = ['customers_auth', 'oauth2_application']
         const contentTypes = ['application/json', 'text/xml', 'application/xml']
         const accepts = ['application/json', 'text/xml', 'application/xml']
-        const returnType = CustomerModel
+        const returnType = Customer
 
         return this.apiClient.callApi(
             '/customers/{customer_id}/auth', 'POST',
@@ -1485,7 +1480,7 @@ export default class CustomersApi {
      * finally the signature section records the token signature.
      * A token nearing its expiration time should be exchanged for a new one by calling this resource once more.
      * @param {String} customerId specifies the customer to act on behalf of
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:models/CustomerModel}
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:models/Customer}
      */
     postCustomersByIDAuth(customerId) {
         return this.postCustomersByIDAuthWithHttpInfo(customerId)
@@ -1550,8 +1545,8 @@ export default class CustomersApi {
     /**
      * Adds a payment instrument to a customer information.
      * @param {String} customerId the id of the customer
-     * @param {module:models/CustomerPaymentInstrumentRequestModel} body
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:models/CustomerPaymentInstrumentModel} and HTTP response
+     * @param {module:models/CustomerPaymentInstrumentRequest} body
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:models/CustomerPaymentInstrument} and HTTP response
      */
     postCustomersByIDPaymentInstrumentsWithHttpInfo(customerId, body) {
         const postBody = body
@@ -1577,7 +1572,7 @@ export default class CustomersApi {
         const authNames = ['customers_auth', 'oauth2_application']
         const contentTypes = ['application/json', 'text/xml', 'application/xml']
         const accepts = ['application/json', 'text/xml', 'application/xml']
-        const returnType = CustomerPaymentInstrumentModel
+        const returnType = CustomerPaymentInstrument
 
         return this.apiClient.callApi(
             '/customers/{customer_id}/payment_instruments', 'POST',
@@ -1589,8 +1584,8 @@ export default class CustomersApi {
     /**
      * Adds a payment instrument to a customer information.
      * @param {String} customerId the id of the customer
-     * @param {module:models/CustomerPaymentInstrumentRequestModel} body
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:models/CustomerPaymentInstrumentModel}
+     * @param {module:models/CustomerPaymentInstrumentRequest} body
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:models/CustomerPaymentInstrument}
      */
     postCustomersByIDPaymentInstruments(customerId, body) {
         return this.postCustomersByIDPaymentInstrumentsWithHttpInfo(customerId, body)
@@ -1602,9 +1597,9 @@ export default class CustomersApi {
 
     /**
      * Creates a customer product list.
-     * @param {module:models/CustomerProductListModel} body
+     * @param {module:models/CustomerProductList} body
      * @param {String} customerId The customer id.
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:models/CustomerProductListModel} and HTTP response
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:models/CustomerProductList} and HTTP response
      */
     postCustomersByIDProductListsWithHttpInfo(body, customerId) {
         const postBody = body
@@ -1630,7 +1625,7 @@ export default class CustomersApi {
         const authNames = ['customers_auth', 'oauth2_application']
         const contentTypes = ['application/json', 'text/xml', 'application/xml']
         const accepts = ['application/json', 'text/xml', 'application/xml']
-        const returnType = CustomerProductListModel
+        const returnType = CustomerProductList
 
         return this.apiClient.callApi(
             '/customers/{customer_id}/product_lists', 'POST',
@@ -1642,8 +1637,8 @@ export default class CustomersApi {
     /**
      * Creates a customer product list.
      * @param {String} customerId The customer id.
-     * @param {module:models/CustomerProductListModel} body
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:models/CustomerProductListModel}
+     * @param {module:models/CustomerProductList} body
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:models/CustomerProductList}
      */
     postCustomersByIDProductLists(customerId, body) {
         return this.postCustomersByIDProductListsWithHttpInfo(body, customerId)
@@ -1668,8 +1663,8 @@ export default class CustomersApi {
      * attribute (&lt;CUSTOM_NAME&gt;) defined for ProductListItem. The value of this property must be valid for the  type of custom attribute defined for ProductListItem.
      * @param {String} customerId The id of the customer - owner of the product list.
      * @param {String} listId The id of the product list
-     * @param {module:models/CustomerProductListItemModel} body
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:models/CustomerProductListItemModel} and HTTP response
+     * @param {module:models/CustomerProductListItem} body
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:models/CustomerProductListItem} and HTTP response
      */
     postCustomersByIDProductListsByIDItemsWithHttpInfo(customerId, listId, body) {
         const postBody = body
@@ -1701,7 +1696,7 @@ export default class CustomersApi {
         const authNames = ['customers_auth', 'oauth2_application']
         const contentTypes = ['application/json', 'text/xml', 'application/xml']
         const accepts = ['application/json', 'text/xml', 'application/xml']
-        const returnType = CustomerProductListItemModel
+        const returnType = CustomerProductListItem
 
         return this.apiClient.callApi(
             '/customers/{customer_id}/product_lists/{list_id}/items', 'POST',
@@ -1724,8 +1719,8 @@ export default class CustomersApi {
      * for the  type of custom attribute defined for ProductListItem.
      * @param {String} customerId The id of the customer - owner of the product list.
      * @param {String} listId The id of the product list
-     * @param {module:models/CustomerProductListItemModel} body
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:models/CustomerProductListItemModel}
+     * @param {module:models/CustomerProductListItem} body
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:models/CustomerProductListItem}
      */
     postCustomersByIDProductListsByIDItems(customerId, listId, body) {
         return this.postCustomersByIDProductListsByIDItemsWithHttpInfo(customerId, listId, body)
@@ -1745,7 +1740,7 @@ export default class CustomersApi {
      * hook is only executed if one and only one  customer has been identified for that email.
      * In the case that more than  one customers have been identified for the provided email the
      * resource  does nothing.
-     * @param {module:models/PasswordResetModel} body
+     * @param {module:models/PasswordReset} body
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing HTTP response
      */
     postCustomersPasswordResetWithHttpInfo(body) {
@@ -1783,7 +1778,7 @@ export default class CustomersApi {
      * Currently the resolution can be done by email or login. In case of  an email the password reset hook is only executed if one and only one
      * customer has been identified for that email. In the case that more than  one
      * customers have been identified for the provided email the resource  does nothing.
-     * @param {module:models/PasswordResetModel} body
+     * @param {module:models/PasswordReset} body
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}
      */
     postCustomersPasswordReset(body) {
@@ -1797,7 +1792,7 @@ export default class CustomersApi {
     /**
      * Updates the customer&#39;s password.
      * @param {String} customerId the customer id
-     * @param {module:models/PasswordChangeRequestModel} body
+     * @param {module:models/PasswordChangeRequest} body
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing HTTP response
      */
     putCustomersByIDPasswordWithHttpInfo(customerId, body) {
@@ -1836,7 +1831,7 @@ export default class CustomersApi {
     /**
      * Updates the customer&#39;s password.
      * @param {String} customerId the customer id
-     * @param {module:models/PasswordChangeRequestModel} body
+     * @param {module:models/PasswordChangeRequest} body
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}
      */
     putCustomersByIDPassword(customerId, body) {

@@ -4,7 +4,7 @@
 
 import ShopApi from '../src/index'
 
-export const validOrderSearchRequest = ShopApi.ProductModel.constructFromObject({
+export const validOrderSearchRequest = ShopApi.Product.constructFromObject({
     query: {
         text_query: {
             fields: ['customer_email'],
@@ -18,16 +18,16 @@ export const validOrderSearchRequest = ShopApi.ProductModel.constructFromObject(
     }]
 })
 
-export const validProduct = ShopApi.ProductModel.constructFromObject({
+export const validProduct = ShopApi.Product.constructFromObject({
     id: '008884303989'
 })
 
-export const validCustomerProductListItemLink = ShopApi.CustomerProductListItemLinkModel.constructFromObject({
+export const validCustomerProductListItemLink = ShopApi.CustomerProductListItemLink.constructFromObject({
     link: `https://mobify-tech-prtnr-na03-dw.demandware.net/s/2017refresh/dw/shop/v17_8/products/${validProduct.id}`,
     title: 'Platinum Blue Stripes Easy Care Fitted Shirt'
 })
 
-export const validCustomerProductListItem = ShopApi.CustomerProductListItemModel.constructFromObject({
+export const validCustomerProductListItem = ShopApi.CustomerProductListItem.constructFromObject({
     product: validProduct,
     product_details_link: validCustomerProductListItemLink,
     product_id: validProduct.id,
@@ -36,7 +36,7 @@ export const validCustomerProductListItem = ShopApi.CustomerProductListItemModel
     type: 'product'
 })
 
-export const validCustomerProductList = ShopApi.CustomerProductListModel.constructFromObject({
+export const validCustomerProductList = ShopApi.CustomerProductList.constructFromObject({
     type: 'wish_list',
     name: 'OurProductList',
     description: 'our productlist',
@@ -62,7 +62,7 @@ export const validCustomerProductList = ShopApi.CustomerProductListModel.constru
     }
 })
 
-export const validCustomerPaymentInstrument = ShopApi.CustomerPaymentInstrumentModel.constructFromObject({
+export const validCustomerPaymentInstrument = ShopApi.CustomerPaymentInstrument.constructFromObject({
     expiration_year: 2047,
     expiration_month: 7,
     valid_from_month: 8,
@@ -73,14 +73,14 @@ export const validCustomerPaymentInstrument = ShopApi.CustomerPaymentInstrumentM
     card_type: 'MasterCard'
 })
 
-export const validCustomerPaymentInstrumentRequest = ShopApi.CustomerPaymentInstrumentRequestModel.constructFromObject({
+export const validCustomerPaymentInstrumentRequest = ShopApi.CustomerPaymentInstrumentRequest.constructFromObject({
     payment_card: validCustomerPaymentInstrument,
     gift_certificate_code: 'gift_code7',
     payment_method_id: 'OCAPI_Payment_Simple',
     bank_routing_number: 'bankrouting3776',
 })
 
-export const validCustomerAddress = ShopApi.CustomerAddressModel.constructFromObject({
+export const validCustomerAddress = ShopApi.CustomerAddress.constructFromObject({
     address_id: 'work',
     address1: '725 Granville Steet',
     address2: 'Suite 420',
@@ -96,7 +96,7 @@ export const validCustomerAddress = ShopApi.CustomerAddressModel.constructFromOb
     state_code: 'BC'
 })
 
-export const validCustomer = ShopApi.CustomerModel.constructFromObject({
+export const validCustomer = ShopApi.Customer.constructFromObject({
     login: `automated.user`,
     email: `automated.user@mobify.com`,
     first_name: 'automated',
@@ -104,26 +104,26 @@ export const validCustomer = ShopApi.CustomerModel.constructFromObject({
     company_name: 'mobify'
 })
 
-export const validCustomerRegistration = ShopApi.CustomerRegistrationModel.constructFromObject({
+export const validCustomerRegistration = ShopApi.CustomerRegistration.constructFromObject({
     password: '12345!aBcD:',
     customer: validCustomer
 })
 
-export const validPasswordChangeRequest = ShopApi.PasswordChangeRequestModel.constructFromObject({
+export const validPasswordChangeRequest = ShopApi.PasswordChangeRequest.constructFromObject({
     current_password: validCustomerRegistration.password,
     password: '54321!aBcD:'
 })
 
-export const invalidPasswordChangeRequest = ShopApi.PasswordChangeRequestModel.constructFromObject({
+export const invalidPasswordChangeRequest = ShopApi.PasswordChangeRequest.constructFromObject({
     current_password: validCustomerRegistration.password,
     password: ''
 })
 
-export const validPasswordReset = ShopApi.PasswordResetModel.constructFromObject({
+export const validPasswordReset = ShopApi.PasswordReset.constructFromObject({
     identification: 'jsmith@nonexist.com',
     type: 'email'
 })
 
-export const invalidPasswordReset = ShopApi.PasswordResetModel.constructFromObject({
+export const invalidPasswordReset = ShopApi.PasswordReset.constructFromObject({
     identification: 'jsmith@nonexist.com'
 })

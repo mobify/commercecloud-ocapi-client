@@ -49,7 +49,7 @@ describe('ProductSearchApi', () => {
         it('should call getProductSearch successfully', () =>
             instance.getProductSearch({})
                 .then((productSearchResult) => {
-                    expect(productSearchResult.constructor.name).to.be('ProductSearchResultModel')
+                    expect(productSearchResult.constructor.name).to.be('ProductSearchResult')
                 })
         )
     })
@@ -67,7 +67,7 @@ describe('ProductSearchApi', () => {
         it('should call getProductSearchAvailability successfully', () =>
             instance.getProductSearchAvailability({refine: ['cgid=root'], count: 1})
                 .then((productSearchResult) => {
-                    expect(productSearchResult.constructor.name).to.be('ProductSearchResultModel')
+                    expect(productSearchResult.constructor.name).to.be('ProductSearchResult')
                     expect(productSearchResult.hits[0].orderable).not.to.be(undefined)
                 })
         )
@@ -77,7 +77,7 @@ describe('ProductSearchApi', () => {
         it('should call getProductSearchImages successfully', () =>
             instance.getProductSearchImages({refine: ['cgid=root'], count: 1})
                 .then((productSearchResult) => {
-                    expect(productSearchResult.constructor.name).to.be('ProductSearchResultModel')
+                    expect(productSearchResult.constructor.name).to.be('ProductSearchResult')
                     expect(productSearchResult.hits[0].image).to.be.an('object')
                 })
         )
@@ -87,7 +87,7 @@ describe('ProductSearchApi', () => {
         it('should call getProductSearchPrices successfully', () =>
             instance.getProductSearchPrices({refine: ['cgid=root'], count: 1})
                 .then((productSearchResult) => {
-                    expect(productSearchResult.constructor.name).to.be('ProductSearchResultModel')
+                    expect(productSearchResult.constructor.name).to.be('ProductSearchResult')
                     expect(productSearchResult.hits[0].price).not.to.be(undefined)
                 })
         )
@@ -97,7 +97,7 @@ describe('ProductSearchApi', () => {
         it('should call getProductSearchVariations successfully', () =>
             instance.getProductSearchVariations({refine: ['cgid=root'], count: 1})
                 .then((productSearchResult) => {
-                    expect(productSearchResult.constructor.name).to.be('ProductSearchResultModel')
+                    expect(productSearchResult.constructor.name).to.be('ProductSearchResult')
                     expect(productSearchResult.hits[0].variation_attributes).to.be.an('object')
                 })
         )

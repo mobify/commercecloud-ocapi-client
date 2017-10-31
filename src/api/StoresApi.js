@@ -15,11 +15,9 @@
  * Do not edit the class manually.
  *
  */
-
-
 import ApiClient from '../ApiClient'
-import StoreModel from '../models/StoreModel'
-import StoreResultModel from '../models/StoreResultModel'
+import Store from '../models/Store'
+import StoreResult from '../models/StoreResult'
 
 /**
  * Stores service.
@@ -64,7 +62,7 @@ export default class StoresApi {
      * searched for (default is half of the earth&#39;s perimeter).
      * @param {Number} opts.start The result set index to return the first instance for. Default value is 0.
      * @param {Number} opts.count The maximum number of instances per request. Default value is 25.
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:models/StoreResultModel} and HTTP response
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:models/StoreResult} and HTTP response
      */
     getStoresWithHttpInfo(opts) {
         opts = opts || {}
@@ -88,7 +86,7 @@ export default class StoresApi {
         const authNames = ['client_id', 'customers_auth']
         const contentTypes = ['application/json', 'text/xml', 'application/xml']
         const accepts = ['application/json', 'text/xml', 'application/xml']
-        const returnType = StoreResultModel
+        const returnType = StoreResult
 
         return this.apiClient.callApi(
             '/stores', 'GET',
@@ -120,7 +118,7 @@ export default class StoresApi {
      * searched for (default is half of the earth&#39;s perimeter).
      * @param {Number} opts.start The result set index to return the first instance for. Default value is 0.
      * @param {Number} opts.count The maximum number of instances per request. Default value is 25.
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:models/StoreResultModel}
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:models/StoreResult}
      */
     getStores(opts) {
         return this.getStoresWithHttpInfo(opts)
@@ -133,7 +131,7 @@ export default class StoresApi {
     /**
      * To access a store, you construct a URL using the template shown below. This template requires you to specify a  store id. In the response, the server returns a corresponding store document.
      * @param {String} id The id of the requested store.
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:models/StoreModel} and HTTP response
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:models/Store} and HTTP response
      */
     getStoresByIDWithHttpInfo(id) {
         const postBody = null
@@ -154,7 +152,7 @@ export default class StoresApi {
         const authNames = ['client_id', 'customers_auth']
         const contentTypes = ['application/json', 'text/xml', 'application/xml']
         const accepts = ['application/json', 'text/xml', 'application/xml']
-        const returnType = StoreModel
+        const returnType = Store
 
         return this.apiClient.callApi(
             '/stores/{id}', 'GET',
@@ -166,7 +164,7 @@ export default class StoresApi {
     /**
      * To access a store, you construct a URL using the template shown below. This template requires you to specify a  store id. In the response, the server returns a corresponding store document.
      * @param {String} id The id of the requested store.
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:models/StoreModel}
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:models/Store}
      */
     getStoresByID(id) {
         return this.getStoresByIDWithHttpInfo(id)
@@ -178,7 +176,7 @@ export default class StoresApi {
 
     /**
      * @param {Array.<String>} ids
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:models/StoreResultModel} and HTTP response
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:models/StoreResult} and HTTP response
      */
     getStoresByIDsWithHttpInfo(ids) {
         const postBody = null
@@ -199,7 +197,7 @@ export default class StoresApi {
         const authNames = ['client_id', 'customers_auth']
         const contentTypes = ['application/json', 'text/xml', 'application/xml']
         const accepts = ['application/json', 'text/xml', 'application/xml']
-        const returnType = StoreResultModel
+        const returnType = StoreResult
 
         return this.apiClient.callApi(
             '/stores/({ids})', 'GET',
@@ -210,7 +208,7 @@ export default class StoresApi {
 
     /**
      * @param {Array.<String>} ids
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:models/StoreResultModel}
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:models/StoreResult}
      */
     getStoresByIDs(ids) {
         return this.getStoresByIDsWithHttpInfo(ids)

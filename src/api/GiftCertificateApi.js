@@ -16,8 +16,7 @@
  *
  */
 import ApiClient from '../ApiClient'
-import GiftCertificateModel from '../models/GiftCertificateModel'
-// import GiftCertificateRequestModel from '../models/GiftCertificateRequestModel'
+import GiftCertificate from '../models/GiftCertificate'
 
 /**
  * Gift_certificate service.
@@ -42,8 +41,8 @@ export default class GiftCertificateApi {
     /**
      * Action to retrieve an existing gift certificate.
      * @param {Object} opts Optional parameters
-     * @param {module:models/GiftCertificateRequestModel} opts.body
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:models/GiftCertificateModel} and HTTP response
+     * @param {module:models/GiftCertificateRequest} opts.body
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:models/GiftCertificate} and HTTP response
      */
     postGiftCertificateWithHttpInfo(opts) {
         opts = opts || {}
@@ -58,7 +57,7 @@ export default class GiftCertificateApi {
         const authNames = ['customers_auth', 'oauth2_application']
         const contentTypes = ['application/json', 'text/xml', 'application/xml']
         const accepts = ['application/json', 'text/xml', 'application/xml']
-        const returnType = GiftCertificateModel
+        const returnType = GiftCertificate
 
         return this.apiClient.callApi(
             '/gift_certificate', 'POST',
@@ -70,8 +69,8 @@ export default class GiftCertificateApi {
     /**
      * Action to retrieve an existing gift certificate.
      * @param {Object} opts Optional parameters
-     * @param {module:models/GiftCertificateRequestModel} opts.body
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:models/GiftCertificateModel}
+     * @param {module:models/GiftCertificateRequest} opts.body
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:models/GiftCertificate}
      */
     postGiftCertificate(opts) {
         return this.postGiftCertificateWithHttpInfo(opts)

@@ -68,7 +68,7 @@ describe('FoldersApi', () => {
         it('should call getFoldersByIDs successfully', () =>
             instance.getFoldersByIDs(['root'])
                 .then((result) => {
-                    expect(result.constructor.name).to.be('ContentFolderResultModel')
+                    expect(result.constructor.name).to.be('ContentFolderResult')
                 })
         )
 

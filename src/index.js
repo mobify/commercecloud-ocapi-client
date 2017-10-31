@@ -16,135 +16,136 @@
  */
 
 import ApiClient from './ApiClient'
-import AuthRequestModel from './models/AuthRequestModel'
-import BasketModel from './models/BasketModel'
-import BasketPaymentInstrumentRequestModel from './models/BasketPaymentInstrumentRequestModel'
-import BasketsResultModel from './models/BasketsResultModel'
-import BonusDiscountLineItemModel from './models/BonusDiscountLineItemModel'
-import BoolFilterModel from './models/BoolFilterModel'
-import BoolQueryModel from './models/BoolQueryModel'
-import BundledProductModel from './models/BundledProductModel'
-import CategoryModel from './models/CategoryModel'
-import CategoryResultModel from './models/CategoryResultModel'
-import ContentFolderModel from './models/ContentFolderModel'
-import ContentFolderResultModel from './models/ContentFolderResultModel'
-import ContentModel from './models/ContentModel'
-import ContentResultModel from './models/ContentResultModel'
-import ContentSearchRefinementModel from './models/ContentSearchRefinementModel'
-import ContentSearchRefinementValueModel from './models/ContentSearchRefinementValueModel'
-import ContentSearchResultModel from './models/ContentSearchResultModel'
-import CouponItemModel from './models/CouponItemModel'
-import CustomObjectModel from './models/CustomObjectModel'
-import CustomerAddressLinkModel from './models/CustomerAddressLinkModel'
-import CustomerAddressModel from './models/CustomerAddressModel'
-import CustomerAddressResultModel from './models/CustomerAddressResultModel'
-import CustomerInfoModel from './models/CustomerInfoModel'
-import CustomerModel from './models/CustomerModel'
-import CustomerOrderResultModel from './models/CustomerOrderResultModel'
-import CustomerPaymentCardRequestModel from './models/CustomerPaymentCardRequestModel'
-import CustomerPaymentInstrumentModel from './models/CustomerPaymentInstrumentModel'
-import CustomerPaymentInstrumentRequestModel from './models/CustomerPaymentInstrumentRequestModel'
-import CustomerPaymentInstrumentResultModel from './models/CustomerPaymentInstrumentResultModel'
-import CustomerProductListItemLinkModel from './models/CustomerProductListItemLinkModel'
-import CustomerProductListItemModel from './models/CustomerProductListItemModel'
-import CustomerProductListItemResultModel from './models/CustomerProductListItemResultModel'
-import CustomerProductListModel from './models/CustomerProductListModel'
-import CustomerProductListRegistrantModel from './models/CustomerProductListRegistrantModel'
-import CustomerProductListResultModel from './models/CustomerProductListResultModel'
-import CustomerRegistrationModel from './models/CustomerRegistrationModel'
-import DiscountModel from './models/DiscountModel'
-import FaultModel from './models/FaultModel'
-import FilteredQueryModel from './models/FilteredQueryModel'
-import GiftCertificateItemModel from './models/GiftCertificateItemModel'
-import GiftCertificateModel from './models/GiftCertificateModel'
-import GiftCertificateRequestModel from './models/GiftCertificateRequestModel'
-import ImageGroupModel from './models/ImageGroupModel'
-import ImageModel from './models/ImageModel'
-import InventoryModel from './models/InventoryModel'
-import LocaleModel from './models/LocaleModel'
-import MasterModel from './models/MasterModel'
-import NestedQueryModel from './models/NestedQueryModel'
-import NoteModel from './models/NoteModel'
-import NotesResultModel from './models/NotesResultModel'
-import OptionItemModel from './models/OptionItemModel'
-import OptionModel from './models/OptionModel'
-import OptionValueModel from './models/OptionValueModel'
-import OrderAddressModel from './models/OrderAddressModel'
-import OrderModel from './models/OrderModel'
-import OrderPaymentCardRequestModel from './models/OrderPaymentCardRequestModel'
-import OrderPaymentInstrumentModel from './models/OrderPaymentInstrumentModel'
-import OrderPaymentInstrumentRequestModel from './models/OrderPaymentInstrumentRequestModel'
-import OrderSearchHitModel from './models/OrderSearchHitModel'
-import OrderSearchRequestModel from './models/OrderSearchRequestModel'
-import OrderSearchResultModel from './models/OrderSearchResultModel'
-import PasswordChangeRequestModel from './models/PasswordChangeRequestModel'
-import PasswordResetModel from './models/PasswordResetModel'
-import PaymentBankAccountModel from './models/PaymentBankAccountModel'
-import PaymentBankAccountRequestModel from './models/PaymentBankAccountRequestModel'
-import PaymentCardModel from './models/PaymentCardModel'
-import PaymentCardSpecModel from './models/PaymentCardSpecModel'
-import PaymentMethodModel from './models/PaymentMethodModel'
-import PaymentMethodResultModel from './models/PaymentMethodResultModel'
-import PriceAdjustmentLimitModel from './models/PriceAdjustmentLimitModel'
-import PriceAdjustmentLimitsModel from './models/PriceAdjustmentLimitsModel'
-import PriceAdjustmentModel from './models/PriceAdjustmentModel'
-import ProductDetailsLinkModel from './models/ProductDetailsLinkModel'
-import ProductItemModel from './models/ProductItemModel'
-import ProductLinkModel from './models/ProductLinkModel'
-import ProductListEventModel from './models/ProductListEventModel'
-import ProductListItemReferenceModel from './models/ProductListItemReferenceModel'
-import ProductListLinkModel from './models/ProductListLinkModel'
-import ProductListRegistrantModel from './models/ProductListRegistrantModel'
-import ProductListShippingAddressModel from './models/ProductListShippingAddressModel'
-import ProductModel from './models/ProductModel'
-import ProductPromotionModel from './models/ProductPromotionModel'
-import ProductResultModel from './models/ProductResultModel'
-import ProductSearchHitModel from './models/ProductSearchHitModel'
-import ProductSearchRefinementModel from './models/ProductSearchRefinementModel'
-import ProductSearchRefinementValueModel from './models/ProductSearchRefinementValueModel'
-import ProductSearchResultModel from './models/ProductSearchResultModel'
-import ProductSearchSortingOptionModel from './models/ProductSearchSortingOptionModel'
-import ProductSimpleLinkModel from './models/ProductSimpleLinkModel'
-import ProductTypeModel from './models/ProductTypeModel'
-import PromotionModel from './models/PromotionModel'
-import PromotionResultModel from './models/PromotionResultModel'
-import PublicProductListItemModel from './models/PublicProductListItemModel'
-import PublicProductListItemResultModel from './models/PublicProductListItemResultModel'
-import PublicProductListLinkModel from './models/PublicProductListLinkModel'
-import PublicProductListModel from './models/PublicProductListModel'
-import PublicProductListResultModel from './models/PublicProductListResultModel'
-import QueryFilterModel from './models/QueryFilterModel'
-import Range2FilterModel from './models/Range2FilterModel'
-import RangeFilterModel from './models/RangeFilterModel'
-import RecommendationModel from './models/RecommendationModel'
-import RecommendationTypeModel from './models/RecommendationTypeModel'
-import ResultPageModel from './models/ResultPageModel'
-import ShipmentModel from './models/ShipmentModel'
-import ShippingItemModel from './models/ShippingItemModel'
-import ShippingMethodModel from './models/ShippingMethodModel'
-import ShippingMethodResultModel from './models/ShippingMethodResultModel'
-import ShippingPromotionModel from './models/ShippingPromotionModel'
-import SimpleLinkModel from './models/SimpleLinkModel'
-import SiteModel from './models/SiteModel'
-import SortModel from './models/SortModel'
-import StatusModel from './models/StatusModel'
-import StoreModel from './models/StoreModel'
-import StoreResultModel from './models/StoreResultModel'
-import SuggestedCategoryModel from './models/SuggestedCategoryModel'
-import SuggestedContentModel from './models/SuggestedContentModel'
-import SuggestedPhraseModel from './models/SuggestedPhraseModel'
-import SuggestedProductModel from './models/SuggestedProductModel'
-import SuggestedTermModel from './models/SuggestedTermModel'
-import SuggestedTermsModel from './models/SuggestedTermsModel'
-import SuggestionModel from './models/SuggestionModel'
-import SuggestionResultModel from './models/SuggestionResultModel'
-import TermFilterModel from './models/TermFilterModel'
-import TermQueryModel from './models/TermQueryModel'
-import TextQueryModel from './models/TextQueryModel'
-import VariantModel from './models/VariantModel'
-import VariationAttributeModel from './models/VariationAttributeModel'
-import VariationAttributeValueModel from './models/VariationAttributeValueModel'
-import VariationGroupModel from './models/VariationGroupModel'
+import AuthRequest from './models/AuthRequest'
+import Basket from './models/Basket'
+import BasketPaymentInstrumentRequest from './models/BasketPaymentInstrumentRequest'
+import BasketsResult from './models/BasketsResult'
+import BonusDiscountLineItem from './models/BonusDiscountLineItem'
+import BoolFilter from './models/BoolFilter'
+import BoolQuery from './models/BoolQuery'
+import BundledProduct from './models/BundledProduct'
+import Category from './models/Category'
+import CategoryResult from './models/CategoryResult'
+import ContentFolder from './models/ContentFolder'
+import ContentFolderResult from './models/ContentFolderResult'
+import Content from './models/Content'
+import ContentResult from './models/ContentResult'
+import ContentSearchRefinement from './models/ContentSearchRefinement'
+import ContentSearchRefinementValue from './models/ContentSearchRefinementValue'
+import ContentSearchResult from './models/ContentSearchResult'
+import CouponItem from './models/CouponItem'
+import CustomObject from './models/CustomObject'
+import CustomerAddressLink from './models/CustomerAddressLink'
+import CustomerAddress from './models/CustomerAddress'
+import CustomerAddressResult from './models/CustomerAddressResult'
+import CustomerInfo from './models/CustomerInfo'
+import Customer from './models/Customer'
+import CustomerOrderResult from './models/CustomerOrderResult'
+import CustomerPaymentCardRequest from './models/CustomerPaymentCardRequest'
+import CustomerPaymentInstrument from './models/CustomerPaymentInstrument'
+import CustomerPaymentInstrumentRequest from './models/CustomerPaymentInstrumentRequest'
+import CustomerPaymentInstrumentResult from './models/CustomerPaymentInstrumentResult'
+import CustomerProductListItemLink from './models/CustomerProductListItemLink'
+import CustomerProductListItem from './models/CustomerProductListItem'
+import CustomerProductListItemResult from './models/CustomerProductListItemResult'
+import CustomerProductList from './models/CustomerProductList'
+import CustomerProductListRegistrant from './models/CustomerProductListRegistrant'
+import CustomerProductListResult from './models/CustomerProductListResult'
+import CustomerRegistration from './models/CustomerRegistration'
+import Discount from './models/Discount'
+import Fault from './models/Fault'
+import FilteredQuery from './models/FilteredQuery'
+import GiftCertificateItem from './models/GiftCertificateItem'
+import GiftCertificate from './models/GiftCertificate'
+import GiftCertificateRequest from './models/GiftCertificateRequest'
+import ImageGroup from './models/ImageGroup'
+import Image from './models/Image'
+import Inventory from './models/Inventory'
+import Locale from './models/Locale'
+import Master from './models/Master'
+import NestedQuery from './models/NestedQuery'
+import Note from './models/Note'
+import NotesResult from './models/NotesResult'
+import OptionItem from './models/OptionItem'
+import Option from './models/Option'
+import OptionValue from './models/OptionValue'
+import OrderAddress from './models/OrderAddress'
+import Order from './models/Order'
+import OrderPaymentCardRequest from './models/OrderPaymentCardRequest'
+import OrderPaymentInstrument from './models/OrderPaymentInstrument'
+import OrderPaymentInstrumentRequest from './models/OrderPaymentInstrumentRequest'
+import OrderSearchHit from './models/OrderSearchHit'
+import OrderSearchRequest from './models/OrderSearchRequest'
+import OrderSearchResult from './models/OrderSearchResult'
+import PasswordChangeRequest from './models/PasswordChangeRequest'
+import PasswordReset from './models/PasswordReset'
+import PaymentBankAccount from './models/PaymentBankAccount'
+import PaymentBankAccountRequest from './models/PaymentBankAccountRequest'
+import PaymentCard from './models/PaymentCard'
+import PaymentCardSpec from './models/PaymentCardSpec'
+import PaymentMethod from './models/PaymentMethod'
+import PaymentMethodResult from './models/PaymentMethodResult'
+import PriceAdjustmentLimit from './models/PriceAdjustmentLimit'
+import PriceAdjustmentLimits from './models/PriceAdjustmentLimits'
+import PriceAdjustment from './models/PriceAdjustment'
+import ProductDetailsLink from './models/ProductDetailsLink'
+import ProductItem from './models/ProductItem'
+import ProductLink from './models/ProductLink'
+import ProductListEvent from './models/ProductListEvent'
+import ProductListItemReference from './models/ProductListItemReference'
+import ProductListLink from './models/ProductListLink'
+import ProductListRegistrant from './models/ProductListRegistrant'
+import ProductListShippingAddress from './models/ProductListShippingAddress'
+import Product from './models/Product'
+import ProductPromotion from './models/ProductPromotion'
+import ProductResult from './models/ProductResult'
+import ProductSearchHit from './models/ProductSearchHit'
+import ProductSearchRefinement from './models/ProductSearchRefinement'
+import ProductSearchRefinementValue from './models/ProductSearchRefinementValue'
+import ProductSearchResult from './models/ProductSearchResult'
+import ProductSearchSortingOption from './models/ProductSearchSortingOption'
+import ProductSimpleLink from './models/ProductSimpleLink'
+import ProductType from './models/ProductType'
+import Promotion from './models/Promotion'
+import PromotionResult from './models/PromotionResult'
+import PublicProductListItem from './models/PublicProductListItem'
+import PublicProductListItemResult from './models/PublicProductListItemResult'
+import PublicProductListLink from './models/PublicProductListLink'
+import PublicProductList from './models/PublicProductList'
+import PublicProductListResult from './models/PublicProductListResult'
+import QueryFilter from './models/QueryFilter'
+import Range2Filter from './models/Range2Filter'
+import RangeFilter from './models/RangeFilter'
+import Recommendation from './models/Recommendation'
+import RecommendationType from './models/RecommendationType'
+import ResultPage from './models/ResultPage'
+import Shipment from './models/Shipment'
+import ShippingItem from './models/ShippingItem'
+import ShippingMethod from './models/ShippingMethod'
+import ShippingMethodResult from './models/ShippingMethodResult'
+import ShippingPromotion from './models/ShippingPromotion'
+import SimpleLink from './models/SimpleLink'
+import Site from './models/Site'
+import Sort from './models/Sort'
+import Status from './models/Status'
+import Store from './models/Store'
+import StoreResult from './models/StoreResult'
+import SuggestedCategory from './models/SuggestedCategory'
+import SuggestedContent from './models/SuggestedContent'
+import SuggestedPhrase from './models/SuggestedPhrase'
+import SuggestedProduct from './models/SuggestedProduct'
+import SuggestedTerm from './models/SuggestedTerm'
+import SuggestedTerms from './models/SuggestedTerms'
+import Suggestion from './models/Suggestion'
+import SuggestionResult from './models/SuggestionResult'
+import TermFilter from './models/TermFilter'
+import TermQuery from './models/TermQuery'
+import TextQuery from './models/TextQuery'
+import Variant from './models/Variant'
+import VariationAttribute from './models/VariationAttribute'
+import VariationAttributeValue from './models/VariationAttributeValue'
+import VariationGroup from './models/VariationGroup'
+
 import BasketsApi from './api/BasketsApi'
 import CategoriesApi from './api/CategoriesApi'
 import ContentApi from './api/ContentApi'
@@ -205,778 +206,778 @@ export default {
     ApiClient,
 
     /**
-     * The AuthRequestModel model constructor.
+     * The AuthRequest model constructor.
      * @property {module:models/AuthRequestModel}
      */
-    AuthRequestModel,
+    AuthRequest,
 
     /**
-     * The BasketModel model constructor.
+     * The Basket model constructor.
      * @property {module:models/BasketModel}
      */
-    BasketModel,
+    Basket,
 
     /**
-     * The BasketPaymentInstrumentRequestModel model constructor.
+     * The BasketPaymentInstrumentRequest model constructor.
      * @property {module:models/BasketPaymentInstrumentRequestModel}
      */
-    BasketPaymentInstrumentRequestModel,
+    BasketPaymentInstrumentRequest,
 
     /**
-     * The BasketsResultModel model constructor.
+     * The BasketsResult model constructor.
      * @property {module:models/BasketsResultModel}
      */
-    BasketsResultModel,
+    BasketsResult,
 
     /**
-     * The BonusDiscountLineItemModel model constructor.
+     * The BonusDiscountLineItem model constructor.
      * @property {module:models/BonusDiscountLineItemModel}
      */
-    BonusDiscountLineItemModel,
+    BonusDiscountLineItem,
 
     /**
-     * The BoolFilterModel model constructor.
+     * The BoolFilter model constructor.
      * @property {module:models/BoolFilterModel}
      */
-    BoolFilterModel,
+    BoolFilter,
 
     /**
-     * The BoolQueryModel model constructor.
+     * The BoolQuery model constructor.
      * @property {module:models/BoolQueryModel}
      */
-    BoolQueryModel,
+    BoolQuery,
 
     /**
-     * The BundledProductModel model constructor.
+     * The BundledProduct model constructor.
      * @property {module:models/BundledProductModel}
      */
-    BundledProductModel,
+    BundledProduct,
 
     /**
-     * The CategoryModel model constructor.
+     * The Category model constructor.
      * @property {module:models/CategoryModel}
      */
-    CategoryModel,
+    Category,
 
     /**
-     * The CategoryResultModel model constructor.
+     * The CategoryResult model constructor.
      * @property {module:models/CategoryResultModel}
      */
-    CategoryResultModel,
+    CategoryResult,
 
     /**
-     * The ContentFolderModel model constructor.
+     * The ContentFolder model constructor.
      * @property {module:models/ContentFolderModel}
      */
-    ContentFolderModel,
+    ContentFolder,
 
     /**
-     * The ContentFolderResultModel model constructor.
+     * The ContentFolderResult model constructor.
      * @property {module:models/ContentFolderResultModel}
      */
-    ContentFolderResultModel,
+    ContentFolderResult,
 
     /**
-     * The ContentModel model constructor.
+     * The Content model constructor.
      * @property {module:models/ContentModel}
      */
-    ContentModel,
+    Content,
 
     /**
-     * The ContentResultModel model constructor.
+     * The ContentResult model constructor.
      * @property {module:models/ContentResultModel}
      */
-    ContentResultModel,
+    ContentResult,
 
     /**
-     * The ContentSearchRefinementModel model constructor.
+     * The ContentSearchRefinement model constructor.
      * @property {module:models/ContentSearchRefinementModel}
      */
-    ContentSearchRefinementModel,
+    ContentSearchRefinement,
 
     /**
-     * The ContentSearchRefinementValueModel model constructor.
+     * The ContentSearchRefinementValue model constructor.
      * @property {module:models/ContentSearchRefinementValueModel}
      */
-    ContentSearchRefinementValueModel,
+    ContentSearchRefinementValue,
 
     /**
-     * The ContentSearchResultModel model constructor.
+     * The ContentSearchResult model constructor.
      * @property {module:models/ContentSearchResultModel}
      */
-    ContentSearchResultModel,
+    ContentSearchResult,
 
     /**
-     * The CouponItemModel model constructor.
+     * The CouponItem model constructor.
      * @property {module:models/CouponItemModel}
      */
-    CouponItemModel,
+    CouponItem,
 
     /**
-     * The CustomObjectModel model constructor.
+     * The CustomObject model constructor.
      * @property {module:models/CustomObjectModel}
      */
-    CustomObjectModel,
+    CustomObject,
 
     /**
-     * The CustomerAddressLinkModel model constructor.
+     * The CustomerAddressLink model constructor.
      * @property {module:models/CustomerAddressLinkModel}
      */
-    CustomerAddressLinkModel,
+    CustomerAddressLink,
 
     /**
-     * The CustomerAddressModel model constructor.
+     * The CustomerAddress model constructor.
      * @property {module:models/CustomerAddressModel}
      */
-    CustomerAddressModel,
+    CustomerAddress,
 
     /**
-     * The CustomerAddressResultModel model constructor.
+     * The CustomerAddressResult model constructor.
      * @property {module:models/CustomerAddressResultModel}
      */
-    CustomerAddressResultModel,
+    CustomerAddressResult,
 
     /**
-     * The CustomerInfoModel model constructor.
+     * The CustomerInfo model constructor.
      * @property {module:models/CustomerInfoModel}
      */
-    CustomerInfoModel,
+    CustomerInfo,
 
     /**
-     * The CustomerModel model constructor.
+     * The Customer model constructor.
      * @property {module:models/CustomerModel}
      */
-    CustomerModel,
+    Customer,
 
     /**
-     * The CustomerOrderResultModel model constructor.
+     * The CustomerOrderResult model constructor.
      * @property {module:models/CustomerOrderResultModel}
      */
-    CustomerOrderResultModel,
+    CustomerOrderResult,
 
     /**
-     * The CustomerPaymentCardRequestModel model constructor.
+     * The CustomerPaymentCardRequest model constructor.
      * @property {module:models/CustomerPaymentCardRequestModel}
      */
-    CustomerPaymentCardRequestModel,
+    CustomerPaymentCardRequest,
 
     /**
-     * The CustomerPaymentInstrumentModel model constructor.
+     * The CustomerPaymentInstrument model constructor.
      * @property {module:models/CustomerPaymentInstrumentModel}
      */
-    CustomerPaymentInstrumentModel,
+    CustomerPaymentInstrument,
 
     /**
-     * The CustomerPaymentInstrumentRequestModel model constructor.
+     * The CustomerPaymentInstrumentRequest model constructor.
      * @property {module:models/CustomerPaymentInstrumentRequestModel}
      */
-    CustomerPaymentInstrumentRequestModel,
+    CustomerPaymentInstrumentRequest,
 
     /**
-     * The CustomerPaymentInstrumentResultModel model constructor.
+     * The CustomerPaymentInstrumentResult model constructor.
      * @property {module:models/CustomerPaymentInstrumentResultModel}
      */
-    CustomerPaymentInstrumentResultModel,
+    CustomerPaymentInstrumentResult,
 
     /**
-     * The CustomerProductListItemLinkModel model constructor.
+     * The CustomerProductListItemLink model constructor.
      * @property {module:models/CustomerProductListItemLinkModel}
      */
-    CustomerProductListItemLinkModel,
+    CustomerProductListItemLink,
 
     /**
-     * The CustomerProductListItemModel model constructor.
+     * The CustomerProductListItem model constructor.
      * @property {module:models/CustomerProductListItemModel}
      */
-    CustomerProductListItemModel,
+    CustomerProductListItem,
 
     /**
-     * The CustomerProductListItemResultModel model constructor.
+     * The CustomerProductListItemResult model constructor.
      * @property {module:models/CustomerProductListItemResultModel}
      */
-    CustomerProductListItemResultModel,
+    CustomerProductListItemResult,
 
     /**
-     * The CustomerProductListModel model constructor.
+     * The CustomerProductList model constructor.
      * @property {module:models/CustomerProductListModel}
      */
-    CustomerProductListModel,
+    CustomerProductList,
 
     /**
-     * The CustomerProductListRegistrantModel model constructor.
+     * The CustomerProductListRegistrant model constructor.
      * @property {module:models/CustomerProductListRegistrantModel}
      */
-    CustomerProductListRegistrantModel,
+    CustomerProductListRegistrant,
 
     /**
-     * The CustomerProductListResultModel model constructor.
+     * The CustomerProductListResult model constructor.
      * @property {module:models/CustomerProductListResultModel}
      */
-    CustomerProductListResultModel,
+    CustomerProductListResult,
 
     /**
-     * The CustomerRegistrationModel model constructor.
+     * The CustomerRegistration model constructor.
      * @property {module:models/CustomerRegistrationModel}
      */
-    CustomerRegistrationModel,
+    CustomerRegistration,
 
     /**
-     * The DiscountModel model constructor.
+     * The Discount model constructor.
      * @property {module:models/DiscountModel}
      */
-    DiscountModel,
+    Discount,
 
     /**
-     * The FaultModel model constructor.
+     * The Fault model constructor.
      * @property {module:models/FaultModel}
      */
-    FaultModel,
+    Fault,
 
     /**
-     * The FilteredQueryModel model constructor.
+     * The FilteredQuery model constructor.
      * @property {module:models/FilteredQueryModel}
      */
-    FilteredQueryModel,
+    FilteredQuery,
 
     /**
-     * The GiftCertificateItemModel model constructor.
+     * The GiftCertificateItem model constructor.
      * @property {module:models/GiftCertificateItemModel}
      */
-    GiftCertificateItemModel,
+    GiftCertificateItem,
 
     /**
-     * The GiftCertificateModel model constructor.
+     * The GiftCertificate model constructor.
      * @property {module:models/GiftCertificateModel}
      */
-    GiftCertificateModel,
+    GiftCertificate,
 
     /**
-     * The GiftCertificateRequestModel model constructor.
+     * The GiftCertificateRequest model constructor.
      * @property {module:models/GiftCertificateRequestModel}
      */
-    GiftCertificateRequestModel,
+    GiftCertificateRequest,
 
     /**
-     * The ImageGroupModel model constructor.
+     * The ImageGroup model constructor.
      * @property {module:models/ImageGroupModel}
      */
-    ImageGroupModel,
+    ImageGroup,
 
     /**
-     * The ImageModel model constructor.
+     * The Image model constructor.
      * @property {module:models/ImageModel}
      */
-    ImageModel,
+    Image,
 
     /**
-     * The InventoryModel model constructor.
+     * The Inventory model constructor.
      * @property {module:models/InventoryModel}
      */
-    InventoryModel,
+    Inventory,
 
     /**
-     * The LocaleModel model constructor.
+     * The Locale model constructor.
      * @property {module:models/LocaleModel}
      */
-    LocaleModel,
+    Locale,
 
     /**
-     * The MasterModel model constructor.
+     * The Master model constructor.
      * @property {module:models/MasterModel}
      */
-    MasterModel,
+    Master,
 
     /**
-     * The NestedQueryModel model constructor.
+     * The NestedQuery model constructor.
      * @property {module:models/NestedQueryModel}
      */
-    NestedQueryModel,
+    NestedQuery,
 
     /**
-     * The NoteModel model constructor.
+     * The Note model constructor.
      * @property {module:models/NoteModel}
      */
-    NoteModel,
+    Note,
 
     /**
-     * The NotesResultModel model constructor.
+     * The NotesResult model constructor.
      * @property {module:models/NotesResultModel}
      */
-    NotesResultModel,
+    NotesResult,
 
     /**
-     * The OptionItemModel model constructor.
+     * The OptionItem model constructor.
      * @property {module:models/OptionItemModel}
      */
-    OptionItemModel,
+    OptionItem,
 
     /**
-     * The OptionModel model constructor.
+     * The Option model constructor.
      * @property {module:models/OptionModel}
      */
-    OptionModel,
+    Option,
 
     /**
-     * The OptionValueModel model constructor.
+     * The OptionValue model constructor.
      * @property {module:models/OptionValueModel}
      */
-    OptionValueModel,
+    OptionValue,
 
     /**
-     * The OrderAddressModel model constructor.
+     * The OrderAddress model constructor.
      * @property {module:models/OrderAddressModel}
      */
-    OrderAddressModel,
+    OrderAddress,
 
     /**
-     * The OrderModel model constructor.
+     * The Order model constructor.
      * @property {module:models/OrderModel}
      */
-    OrderModel,
+    Order,
 
     /**
-     * The OrderPaymentCardRequestModel model constructor.
+     * The OrderPaymentCardRequest model constructor.
      * @property {module:models/OrderPaymentCardRequestModel}
      */
-    OrderPaymentCardRequestModel,
+    OrderPaymentCardRequest,
 
     /**
-     * The OrderPaymentInstrumentModel model constructor.
+     * The OrderPaymentInstrument model constructor.
      * @property {module:models/OrderPaymentInstrumentModel}
      */
-    OrderPaymentInstrumentModel,
+    OrderPaymentInstrument,
 
     /**
-     * The OrderPaymentInstrumentRequestModel model constructor.
+     * The OrderPaymentInstrumentRequest model constructor.
      * @property {module:models/OrderPaymentInstrumentRequestModel}
      */
-    OrderPaymentInstrumentRequestModel,
+    OrderPaymentInstrumentRequest,
 
     /**
-     * The OrderSearchHitModel model constructor.
+     * The OrderSearchHit model constructor.
      * @property {module:models/OrderSearchHitModel}
      */
-    OrderSearchHitModel,
+    OrderSearchHit,
 
     /**
-     * The OrderSearchRequestModel model constructor.
+     * The OrderSearchRequest model constructor.
      * @property {module:models/OrderSearchRequestModel}
      */
-    OrderSearchRequestModel,
+    OrderSearchRequest,
 
     /**
-     * The OrderSearchResultModel model constructor.
+     * The OrderSearchResult model constructor.
      * @property {module:models/OrderSearchResultModel}
      */
-    OrderSearchResultModel,
+    OrderSearchResult,
 
     /**
-     * The PasswordChangeRequestModel model constructor.
+     * The PasswordChangeRequest model constructor.
      * @property {module:models/PasswordChangeRequestModel}
      */
-    PasswordChangeRequestModel,
+    PasswordChangeRequest,
 
     /**
-     * The PasswordResetModel model constructor.
+     * The PasswordReset model constructor.
      * @property {module:models/PasswordResetModel}
      */
-    PasswordResetModel,
+    PasswordReset,
 
     /**
-     * The PaymentBankAccountModel model constructor.
+     * The PaymentBankAccount model constructor.
      * @property {module:models/PaymentBankAccountModel}
      */
-    PaymentBankAccountModel,
+    PaymentBankAccount,
 
     /**
-     * The PaymentBankAccountRequestModel model constructor.
+     * The PaymentBankAccountRequest model constructor.
      * @property {module:models/PaymentBankAccountRequestModel}
      */
-    PaymentBankAccountRequestModel,
+    PaymentBankAccountRequest,
 
     /**
-     * The PaymentCardModel model constructor.
+     * The PaymentCard model constructor.
      * @property {module:models/PaymentCardModel}
      */
-    PaymentCardModel,
+    PaymentCard,
 
     /**
-     * The PaymentCardSpecModel model constructor.
+     * The PaymentCardSpec model constructor.
      * @property {module:models/PaymentCardSpecModel}
      */
-    PaymentCardSpecModel,
+    PaymentCardSpec,
 
     /**
-     * The PaymentMethodModel model constructor.
+     * The PaymentMethod model constructor.
      * @property {module:models/PaymentMethodModel}
      */
-    PaymentMethodModel,
+    PaymentMethod,
 
     /**
-     * The PaymentMethodResultModel model constructor.
+     * The PaymentMethodResult model constructor.
      * @property {module:models/PaymentMethodResultModel}
      */
-    PaymentMethodResultModel,
+    PaymentMethodResult,
 
     /**
-     * The PriceAdjustmentLimitModel model constructor.
+     * The PriceAdjustmentLimit model constructor.
      * @property {module:models/PriceAdjustmentLimitModel}
      */
-    PriceAdjustmentLimitModel,
+    PriceAdjustmentLimit,
 
     /**
-     * The PriceAdjustmentLimitsModel model constructor.
+     * The PriceAdjustmentLimits model constructor.
      * @property {module:models/PriceAdjustmentLimitsModel}
      */
-    PriceAdjustmentLimitsModel,
+    PriceAdjustmentLimits,
 
     /**
-     * The PriceAdjustmentModel model constructor.
+     * The PriceAdjustment model constructor.
      * @property {module:models/PriceAdjustmentModel}
      */
-    PriceAdjustmentModel,
+    PriceAdjustment,
 
     /**
-     * The ProductDetailsLinkModel model constructor.
+     * The ProductDetailsLink model constructor.
      * @property {module:models/ProductDetailsLinkModel}
      */
-    ProductDetailsLinkModel,
+    ProductDetailsLink,
 
     /**
-     * The ProductItemModel model constructor.
+     * The ProductItem model constructor.
      * @property {module:models/ProductItemModel}
      */
-    ProductItemModel,
+    ProductItem,
 
     /**
-     * The ProductLinkModel model constructor.
+     * The ProductLink model constructor.
      * @property {module:models/ProductLinkModel}
      */
-    ProductLinkModel,
+    ProductLink,
 
     /**
-     * The ProductListEventModel model constructor.
+     * The ProductListEvent model constructor.
      * @property {module:models/ProductListEventModel}
      */
-    ProductListEventModel,
+    ProductListEvent,
 
     /**
-     * The ProductListItemReferenceModel model constructor.
+     * The ProductListItemReference model constructor.
      * @property {module:models/ProductListItemReferenceModel}
      */
-    ProductListItemReferenceModel,
+    ProductListItemReference,
 
     /**
-     * The ProductListLinkModel model constructor.
+     * The ProductListLink model constructor.
      * @property {module:models/ProductListLinkModel}
      */
-    ProductListLinkModel,
+    ProductListLink,
 
     /**
-     * The ProductListRegistrantModel model constructor.
+     * The ProductListRegistrant model constructor.
      * @property {module:models/ProductListRegistrantModel}
      */
-    ProductListRegistrantModel,
+    ProductListRegistrant,
 
     /**
-     * The ProductListShippingAddressModel model constructor.
+     * The ProductListShippingAddress model constructor.
      * @property {module:models/ProductListShippingAddressModel}
      */
-    ProductListShippingAddressModel,
+    ProductListShippingAddress,
 
     /**
-     * The ProductModel model constructor.
+     * The Product model constructor.
      * @property {module:models/ProductModel}
      */
-    ProductModel,
+    Product,
 
     /**
-     * The ProductPromotionModel model constructor.
+     * The ProductPromotion model constructor.
      * @property {module:models/ProductPromotionModel}
      */
-    ProductPromotionModel,
+    ProductPromotion,
 
     /**
-     * The ProductResultModel model constructor.
+     * The ProductResult model constructor.
      * @property {module:models/ProductResultModel}
      */
-    ProductResultModel,
+    ProductResult,
 
     /**
-     * The ProductSearchHitModel model constructor.
+     * The ProductSearchHit model constructor.
      * @property {module:models/ProductSearchHitModel}
      */
-    ProductSearchHitModel,
+    ProductSearchHit,
 
     /**
-     * The ProductSearchRefinementModel model constructor.
+     * The ProductSearchRefinement model constructor.
      * @property {module:models/ProductSearchRefinementModel}
      */
-    ProductSearchRefinementModel,
+    ProductSearchRefinement,
 
     /**
-     * The ProductSearchRefinementValueModel model constructor.
+     * The ProductSearchRefinementValue model constructor.
      * @property {module:models/ProductSearchRefinementValueModel}
      */
-    ProductSearchRefinementValueModel,
+    ProductSearchRefinementValue,
 
     /**
-     * The ProductSearchResultModel model constructor.
+     * The ProductSearchResult model constructor.
      * @property {module:models/ProductSearchResultModel}
      */
-    ProductSearchResultModel,
+    ProductSearchResult,
 
     /**
-     * The ProductSearchSortingOptionModel model constructor.
+     * The ProductSearchSortingOption model constructor.
      * @property {module:models/ProductSearchSortingOptionModel}
      */
-    ProductSearchSortingOptionModel,
+    ProductSearchSortingOption,
 
     /**
-     * The ProductSimpleLinkModel model constructor.
+     * The ProductSimpleLink model constructor.
      * @property {module:models/ProductSimpleLinkModel}
      */
-    ProductSimpleLinkModel,
+    ProductSimpleLink,
 
     /**
-     * The ProductTypeModel model constructor.
+     * The ProductType model constructor.
      * @property {module:models/ProductTypeModel}
      */
-    ProductTypeModel,
+    ProductType,
 
     /**
-     * The PromotionModel model constructor.
+     * The Promotion model constructor.
      * @property {module:models/PromotionModel}
      */
-    PromotionModel,
+    Promotion,
 
     /**
-     * The PromotionResultModel model constructor.
+     * The PromotionResult model constructor.
      * @property {module:models/PromotionResultModel}
      */
-    PromotionResultModel,
+    PromotionResult,
 
     /**
-     * The PublicProductListItemModel model constructor.
+     * The PublicProductListItem model constructor.
      * @property {module:models/PublicProductListItemModel}
      */
-    PublicProductListItemModel,
+    PublicProductListItem,
 
     /**
-     * The PublicProductListItemResultModel model constructor.
+     * The PublicProductListItemResult model constructor.
      * @property {module:models/PublicProductListItemResultModel}
      */
-    PublicProductListItemResultModel,
+    PublicProductListItemResult,
 
     /**
-     * The PublicProductListLinkModel model constructor.
+     * The PublicProductListLink model constructor.
      * @property {module:models/PublicProductListLinkModel}
      */
-    PublicProductListLinkModel,
+    PublicProductListLink,
 
     /**
-     * The PublicProductListModel model constructor.
+     * The PublicProductList model constructor.
      * @property {module:models/PublicProductListModel}
      */
-    PublicProductListModel,
+    PublicProductList,
 
     /**
-     * The PublicProductListResultModel model constructor.
+     * The PublicProductListResult model constructor.
      * @property {module:models/PublicProductListResultModel}
      */
-    PublicProductListResultModel,
+    PublicProductListResult,
 
     /**
-     * The QueryFilterModel model constructor.
+     * The QueryFilter model constructor.
      * @property {module:models/QueryFilterModel}
      */
-    QueryFilterModel,
+    QueryFilter,
 
     /**
-     * The Range2FilterModel model constructor.
+     * The Range2Filter model constructor.
      * @property {module:models/Range2FilterModel}
      */
-    Range2FilterModel,
+    Range2Filter,
 
     /**
-     * The RangeFilterModel model constructor.
+     * The RangeFilter model constructor.
      * @property {module:models/RangeFilterModel}
      */
-    RangeFilterModel,
+    RangeFilter,
 
     /**
-     * The RecommendationModel model constructor.
+     * The Recommendation model constructor.
      * @property {module:models/RecommendationModel}
      */
-    RecommendationModel,
+    Recommendation,
 
     /**
-     * The RecommendationTypeModel model constructor.
+     * The RecommendationType model constructor.
      * @property {module:models/RecommendationTypeModel}
      */
-    RecommendationTypeModel,
+    RecommendationType,
 
     /**
-     * The ResultPageModel model constructor.
+     * The ResultPage model constructor.
      * @property {module:models/ResultPageModel}
      */
-    ResultPageModel,
+    ResultPage,
 
     /**
-     * The ShipmentModel model constructor.
+     * The Shipment model constructor.
      * @property {module:models/ShipmentModel}
      */
-    ShipmentModel,
+    Shipment,
 
     /**
-     * The ShippingItemModel model constructor.
+     * The ShippingItem model constructor.
      * @property {module:models/ShippingItemModel}
      */
-    ShippingItemModel,
+    ShippingItem,
 
     /**
-     * The ShippingMethodModel model constructor.
+     * The ShippingMethod model constructor.
      * @property {module:models/ShippingMethodModel}
      */
-    ShippingMethodModel,
+    ShippingMethod,
 
     /**
-     * The ShippingMethodResultModel model constructor.
+     * The ShippingMethodResult model constructor.
      * @property {module:models/ShippingMethodResultModel}
      */
-    ShippingMethodResultModel,
+    ShippingMethodResult,
 
     /**
-     * The ShippingPromotionModel model constructor.
+     * The ShippingPromotion model constructor.
      * @property {module:models/ShippingPromotionModel}
      */
-    ShippingPromotionModel,
+    ShippingPromotion,
 
     /**
-     * The SimpleLinkModel model constructor.
+     * The SimpleLink model constructor.
      * @property {module:models/SimpleLinkModel}
      */
-    SimpleLinkModel,
+    SimpleLink,
 
     /**
-     * The SiteModel model constructor.
+     * The Site model constructor.
      * @property {module:models/SiteModel}
      */
-    SiteModel,
+    Site,
 
     /**
-     * The SortModel model constructor.
+     * The Sort model constructor.
      * @property {module:models/SortModel}
      */
-    SortModel,
+    Sort,
 
     /**
-     * The StatusModel model constructor.
+     * The Status model constructor.
      * @property {module:models/StatusModel}
      */
-    StatusModel,
+    Status,
 
     /**
-     * The StoreModel model constructor.
+     * The Store model constructor.
      * @property {module:models/StoreModel}
      */
-    StoreModel,
+    Store,
 
     /**
-     * The StoreResultModel model constructor.
+     * The StoreResult model constructor.
      * @property {module:models/StoreResultModel}
      */
-    StoreResultModel,
+    StoreResult,
 
     /**
-     * The SuggestedCategoryModel model constructor.
+     * The SuggestedCategory model constructor.
      * @property {module:models/SuggestedCategoryModel}
      */
-    SuggestedCategoryModel,
+    SuggestedCategory,
 
     /**
-     * The SuggestedContentModel model constructor.
+     * The SuggestedContent model constructor.
      * @property {module:models/SuggestedContentModel}
      */
-    SuggestedContentModel,
+    SuggestedContent,
 
     /**
-     * The SuggestedPhraseModel model constructor.
+     * The SuggestedPhrase model constructor.
      * @property {module:models/SuggestedPhraseModel}
      */
-    SuggestedPhraseModel,
+    SuggestedPhrase,
 
     /**
-     * The SuggestedProductModel model constructor.
+     * The SuggestedProduct model constructor.
      * @property {module:models/SuggestedProductModel}
      */
-    SuggestedProductModel,
+    SuggestedProduct,
 
     /**
-     * The SuggestedTermModel model constructor.
+     * The SuggestedTerm model constructor.
      * @property {module:models/SuggestedTermModel}
      */
-    SuggestedTermModel,
+    SuggestedTerm,
 
     /**
-     * The SuggestedTermsModel model constructor.
+     * The SuggestedTerms model constructor.
      * @property {module:models/SuggestedTermsModel}
      */
-    SuggestedTermsModel,
+    SuggestedTerms,
 
     /**
-     * The SuggestionModel model constructor.
+     * The Suggestion model constructor.
      * @property {module:models/SuggestionModel}
      */
-    SuggestionModel,
+    Suggestion,
 
     /**
-     * The SuggestionResultModel model constructor.
+     * The SuggestionResult model constructor.
      * @property {module:models/SuggestionResultModel}
      */
-    SuggestionResultModel,
+    SuggestionResult,
 
     /**
-     * The TermFilterModel model constructor.
+     * The TermFilter model constructor.
      * @property {module:models/TermFilterModel}
      */
-    TermFilterModel,
+    TermFilter,
 
     /**
-     * The TermQueryModel model constructor.
+     * The TermQuery model constructor.
      * @property {module:models/TermQueryModel}
      */
-    TermQueryModel,
+    TermQuery,
 
     /**
-     * The TextQueryModel model constructor.
+     * The TextQuery model constructor.
      * @property {module:models/TextQueryModel}
      */
-    TextQueryModel,
+    TextQuery,
 
     /**
-     * The VariantModel model constructor.
+     * The Variant model constructor.
      * @property {module:models/VariantModel}
      */
-    VariantModel,
+    Variant,
 
     /**
-     * The VariationAttributeModel model constructor.
+     * The VariationAttribute model constructor.
      * @property {module:models/VariationAttributeModel}
      */
-    VariationAttributeModel,
+    VariationAttribute,
 
     /**
-     * The VariationAttributeValueModel model constructor.
+     * The VariationAttributeValue model constructor.
      * @property {module:models/VariationAttributeValueModel}
      */
-    VariationAttributeValueModel,
+    VariationAttributeValue,
 
     /**
-     * The VariationGroupModel model constructor.
+     * The VariationGroup model constructor.
      * @property {module:models/VariationGroupModel}
      */
-    VariationGroupModel,
+    VariationGroup,
 
     /**
     * The BasketsApi service constructor.

@@ -16,19 +16,10 @@
  *
  */
 import ApiClient from '../ApiClient'
-import BasketModel from '../models/BasketModel'
-// import BasketPaymentInstrumentRequestModel from '../models/BasketPaymentInstrumentRequestModel'
-// import CouponItemModel from '../models/CouponItemModel'
-// import CustomerInfoModel from '../models/CustomerInfoModel'
-// import GiftCertificateItemModel from '../models/GiftCertificateItemModel'
-// import NoteModel from '../models/NoteModel'
-import NotesResultModel from '../models/NotesResultModel'
-// import OrderAddressModel from '../models/OrderAddressModel'
-import PaymentMethodResultModel from '../models/PaymentMethodResultModel'
-// import ProductItemModel from '../models/ProductItemModel'
-// import ShipmentModel from '../models/ShipmentModel'
-// import ShippingMethodModel from '../models/ShippingMethodModel'
-import ShippingMethodResultModel from '../models/ShippingMethodResultModel'
+import Basket from '../models/Basket'
+import NotesResult from '../models/NotesResult'
+import PaymentMethodResult from '../models/PaymentMethodResult'
+import ShippingMethodResult from '../models/ShippingMethodResult'
 
 /**
  * Baskets service.
@@ -97,7 +88,7 @@ export default class BasketsApi {
      * Removes a coupon from the basket.
      * @param {String} basketId the id of the basket to be modified
      * @param {String} couponItemId the id of the coupon item to be removed
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:models/BasketModel} and HTTP response
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:models/Basket} and HTTP response
      */
     deleteBasketsByIDCouponsByIDWithHttpInfo(basketId, couponItemId) {
         const postBody = null
@@ -124,7 +115,7 @@ export default class BasketsApi {
         const authNames = ['customers_auth', 'oauth2_application']
         const contentTypes = ['application/json', 'text/xml', 'application/xml']
         const accepts = ['application/json', 'text/xml', 'application/xml']
-        const returnType = BasketModel
+        const returnType = Basket
 
         return this.apiClient.callApi(
             '/baskets/{basket_id}/coupons/{coupon_item_id}', 'DELETE',
@@ -137,7 +128,7 @@ export default class BasketsApi {
      * Removes a coupon from the basket.
      * @param {String} basketId the id of the basket to be modified
      * @param {String} couponItemId the id of the coupon item to be removed
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:models/BasketModel}
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:models/Basket}
      */
     deleteBasketsByIDCouponsByID(basketId, couponItemId) {
         return this.deleteBasketsByIDCouponsByIDWithHttpInfo(basketId, couponItemId)
@@ -151,7 +142,7 @@ export default class BasketsApi {
      * Removes a product item from the basket.
      * @param {String} basketId the id of the basket to be modified
      * @param {String} itemId the id of the product item to be removed
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:models/BasketModel} and HTTP response
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:models/Basket} and HTTP response
      */
     deleteBasketsByIDItemsByIDWithHttpInfo(basketId, itemId) {
         const postBody = null
@@ -178,7 +169,7 @@ export default class BasketsApi {
         const authNames = ['customers_auth', 'oauth2_application']
         const contentTypes = ['application/json', 'text/xml', 'application/xml']
         const accepts = ['application/json', 'text/xml', 'application/xml']
-        const returnType = BasketModel
+        const returnType = Basket
 
         return this.apiClient.callApi(
             '/baskets/{basket_id}/items/{item_id}', 'DELETE',
@@ -191,7 +182,7 @@ export default class BasketsApi {
      * Removes a product item from the basket.
      * @param {String} basketId the id of the basket to be modified
      * @param {String} itemId the id of the product item to be removed
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:models/BasketModel}
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:models/Basket}
      */
     deleteBasketsByIDItemsByID(basketId, itemId) {
         return this.deleteBasketsByIDItemsByIDWithHttpInfo(basketId, itemId)
@@ -205,7 +196,7 @@ export default class BasketsApi {
      * Removes a basket note.
      * @param {String} basketId the id of the basket to be modified
      * @param {String} noteId the id of the note to be removed
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:models/BasketModel} and HTTP response
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:models/Basket} and HTTP response
      */
     deleteBasketsByIDNotesByIDWithHttpInfo(basketId, noteId) {
         const postBody = null
@@ -232,7 +223,7 @@ export default class BasketsApi {
         const authNames = ['customers_auth', 'oauth2_application']
         const contentTypes = ['application/json', 'text/xml', 'application/xml']
         const accepts = ['application/json', 'text/xml', 'application/xml']
-        const returnType = BasketModel
+        const returnType = Basket
 
         return this.apiClient.callApi(
             '/baskets/{basket_id}/notes/{note_id}', 'DELETE',
@@ -245,7 +236,7 @@ export default class BasketsApi {
      * Removes a basket note.
      * @param {String} basketId the id of the basket to be modified
      * @param {String} noteId the id of the note to be removed
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:models/BasketModel}
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:models/Basket}
      */
     deleteBasketsByIDNotesByID(basketId, noteId) {
         return this.deleteBasketsByIDNotesByIDWithHttpInfo(basketId, noteId)
@@ -259,7 +250,7 @@ export default class BasketsApi {
      * Removes a payment instrument of a basket.
      * @param {String} basketId the basket id
      * @param {String} paymentInstrumentId the id of the payment instrument to be removed
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:models/BasketModel} and HTTP response
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:models/Basket} and HTTP response
      */
     deleteBasketsByIDPaymentInstrumentsByIDWithHttpInfo(basketId, paymentInstrumentId) {
         const postBody = null
@@ -286,7 +277,7 @@ export default class BasketsApi {
         const authNames = ['customers_auth', 'oauth2_application']
         const contentTypes = ['application/json', 'text/xml', 'application/xml']
         const accepts = ['application/json', 'text/xml', 'application/xml']
-        const returnType = BasketModel
+        const returnType = Basket
 
         return this.apiClient.callApi(
             '/baskets/{basket_id}/payment_instruments/{payment_instrument_id}', 'DELETE',
@@ -299,7 +290,7 @@ export default class BasketsApi {
      * Removes a payment instrument of a basket.
      * @param {String} basketId the basket id
      * @param {String} paymentInstrumentId the id of the payment instrument to be removed
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:models/BasketModel}
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:models/Basket}
      */
     deleteBasketsByIDPaymentInstrumentsByID(basketId, paymentInstrumentId) {
         return this.deleteBasketsByIDPaymentInstrumentsByIDWithHttpInfo(basketId, paymentInstrumentId)
@@ -313,7 +304,7 @@ export default class BasketsApi {
      * Removes a specified shipment and all associated product, gift certificate,  shipping and price adjustment line items from a basket.  It is not permissible to remove the default shipment.
      * @param {String} basketId the id of the basket to be modified
      * @param {String} shipmentId the id of the shipment to be deleted
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:models/BasketModel} and HTTP response
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:models/Basket} and HTTP response
      */
     deleteBasketsByIDShipmentsByIDWithHttpInfo(basketId, shipmentId) {
         const postBody = null
@@ -340,7 +331,7 @@ export default class BasketsApi {
         const authNames = ['customers_auth', 'oauth2_application']
         const contentTypes = ['application/json', 'text/xml', 'application/xml']
         const accepts = ['application/json', 'text/xml', 'application/xml']
-        const returnType = BasketModel
+        const returnType = Basket
 
         return this.apiClient.callApi(
             '/baskets/{basket_id}/shipments/{shipment_id}', 'DELETE',
@@ -353,7 +344,7 @@ export default class BasketsApi {
      * Removes a specified shipment and all associated product, gift certificate,  shipping and price adjustment line items from a basket.  It is not permissible to remove the default shipment.
      * @param {String} basketId the id of the basket to be modified
      * @param {String} shipmentId the id of the shipment to be deleted
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:models/BasketModel}
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:models/Basket}
      */
     deleteBasketsByIDShipmentsByID(basketId, shipmentId) {
         return this.deleteBasketsByIDShipmentsByIDWithHttpInfo(basketId, shipmentId)
@@ -366,7 +357,7 @@ export default class BasketsApi {
     /**
      * Gets a basket.
      * @param {String} basketId the id of the basket to be retrieved
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:models/BasketModel} and HTTP response
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:models/Basket} and HTTP response
      */
     getBasketsByIDWithHttpInfo(basketId) {
         const postBody = null
@@ -387,7 +378,7 @@ export default class BasketsApi {
         const authNames = ['customers_auth', 'oauth2_application']
         const contentTypes = ['application/json', 'text/xml', 'application/xml']
         const accepts = ['application/json', 'text/xml', 'application/xml']
-        const returnType = BasketModel
+        const returnType = Basket
 
         return this.apiClient.callApi(
             '/baskets/{basket_id}', 'GET',
@@ -399,7 +390,7 @@ export default class BasketsApi {
     /**
      * Gets a basket.
      * @param {String} basketId the id of the basket to be retrieved
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:models/BasketModel}
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:models/Basket}
      */
     getBasketsByID(basketId) {
         return this.getBasketsByIDWithHttpInfo(basketId)
@@ -412,7 +403,7 @@ export default class BasketsApi {
     /**
      * Retrieves notes for a basket.
      * @param {String} basketId The id of the basket for which you want to retrieve the notes.
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:models/NotesResultModel} and HTTP response
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:models/NotesResult} and HTTP response
      */
     getBasketsByIDNotesWithHttpInfo(basketId) {
         const postBody = null
@@ -433,7 +424,7 @@ export default class BasketsApi {
         const authNames = ['customers_auth', 'oauth2_application']
         const contentTypes = ['application/json', 'text/xml', 'application/xml']
         const accepts = ['application/json', 'text/xml', 'application/xml']
-        const returnType = NotesResultModel
+        const returnType = NotesResult
 
         return this.apiClient.callApi(
             '/baskets/{basket_id}/notes', 'GET',
@@ -445,7 +436,7 @@ export default class BasketsApi {
     /**
      * Retrieves notes for a basket.
      * @param {String} basketId The id of the basket for which you want to retrieve the notes.
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:models/NotesResultModel}
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:models/NotesResult}
      */
     getBasketsByIDNotes(basketId) {
         return this.getBasketsByIDNotesWithHttpInfo(basketId)
@@ -458,7 +449,7 @@ export default class BasketsApi {
     /**
      * Gets applicable payment methods for an existing basket considering the open payment amount only.
      * @param {String} basketId the basket id
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:models/PaymentMethodResultModel} and HTTP response
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:models/PaymentMethodResult} and HTTP response
      */
     getBasketsByIDPaymentMethodsWithHttpInfo(basketId) {
         const postBody = null
@@ -479,7 +470,7 @@ export default class BasketsApi {
         const authNames = ['customers_auth', 'oauth2_application']
         const contentTypes = ['application/json', 'text/xml', 'application/xml']
         const accepts = ['application/json', 'text/xml', 'application/xml']
-        const returnType = PaymentMethodResultModel
+        const returnType = PaymentMethodResult
 
         return this.apiClient.callApi(
             '/baskets/{basket_id}/payment_methods', 'GET',
@@ -491,7 +482,7 @@ export default class BasketsApi {
     /**
      * Gets applicable payment methods for an existing basket considering the open payment amount only.
      * @param {String} basketId the basket id
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:models/PaymentMethodResultModel}
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:models/PaymentMethodResult}
      */
     getBasketsByIDPaymentMethods(basketId) {
         return this.getBasketsByIDPaymentMethodsWithHttpInfo(basketId)
@@ -505,7 +496,7 @@ export default class BasketsApi {
      * Gets the applicable shipping methods for a certain shipment of a  basket.
      * @param {String} basketId the id of the basket
      * @param {String} shipmentId the id of the shipment
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:models/ShippingMethodResultModel} and HTTP response
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:models/ShippingMethodResult} and HTTP response
      */
     getBasketsByIDShipmentsByIDShippingMethodsWithHttpInfo(basketId, shipmentId) {
         const postBody = null
@@ -532,7 +523,7 @@ export default class BasketsApi {
         const authNames = ['customers_auth', 'oauth2_application']
         const contentTypes = ['application/json', 'text/xml', 'application/xml']
         const accepts = ['application/json', 'text/xml', 'application/xml']
-        const returnType = ShippingMethodResultModel
+        const returnType = ShippingMethodResult
 
         return this.apiClient.callApi(
             '/baskets/{basket_id}/shipments/{shipment_id}/shipping_methods', 'GET',
@@ -545,7 +536,7 @@ export default class BasketsApi {
      * Gets the applicable shipping methods for a certain shipment of a  basket.
      * @param {String} basketId the id of the basket
      * @param {String} shipmentId the id of the shipment
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:models/ShippingMethodResultModel}
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:models/ShippingMethodResult}
      */
     getBasketsByIDShipmentsByIDShippingMethods(basketId, shipmentId) {
         return this.getBasketsByIDShipmentsByIDShippingMethodsWithHttpInfo(basketId, shipmentId)
@@ -558,8 +549,8 @@ export default class BasketsApi {
     /**
      * Updates a basket. Only the currency of the basket, source code, and the custom  properties of the basket and of the shipping items will be considered.
      * @param {String} basketId the id of the basket to be modified
-     * @param {module:models/BasketModel} body
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:models/BasketModel} and HTTP response
+     * @param {module:models/Basket} body
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:models/Basket} and HTTP response
      */
     patchBasketsByIDWithHttpInfo(basketId, body) {
         const postBody = body
@@ -585,7 +576,7 @@ export default class BasketsApi {
         const authNames = ['customers_auth', 'oauth2_application']
         const contentTypes = ['application/json', 'text/xml', 'application/xml']
         const accepts = ['application/json', 'text/xml', 'application/xml']
-        const returnType = BasketModel
+        const returnType = Basket
 
         return this.apiClient.callApi(
             '/baskets/{basket_id}', 'PATCH',
@@ -597,8 +588,8 @@ export default class BasketsApi {
     /**
      * Updates a basket. Only the currency of the basket, source code, and the custom  properties of the basket and of the shipping items will be considered.
      * @param {String} basketId the id of the basket to be modified
-     * @param {module:models/BasketModel} body
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:models/BasketModel}
+     * @param {module:models/Basket} body
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:models/Basket}
      */
     patchBasketsByID(basketId, body) {
         return this.patchBasketsByIDWithHttpInfo(basketId, body)
@@ -626,8 +617,8 @@ export default class BasketsApi {
      * The purpose of this value is to  add or change the value of a custom attribute defined for  ProductLineItem.
      * @param {String} basketId the id of the basket to be modified
      * @param {String} itemId the it of the item to be updated
-     * @param {module:models/ProductItemModel} body
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:models/BasketModel} and HTTP response
+     * @param {module:models/ProductItem} body
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:models/Basket} and HTTP response
      */
     patchBasketsByIDItemsByIDWithHttpInfo(basketId, itemId, body) {
         const postBody = body
@@ -659,7 +650,7 @@ export default class BasketsApi {
         const authNames = ['customers_auth', 'oauth2_application']
         const contentTypes = ['application/json', 'text/xml', 'application/xml']
         const accepts = ['application/json', 'text/xml', 'application/xml']
-        const returnType = BasketModel
+        const returnType = Basket
 
         return this.apiClient.callApi(
             '/baskets/{basket_id}/items/{item_id}', 'PATCH',
@@ -685,8 +676,8 @@ export default class BasketsApi {
      * add or change the value of a custom attribute defined for  ProductLineItem.
      * @param {String} basketId the id of the basket to be modified
      * @param {String} itemId the it of the item to be updated
-     * @param {module:models/ProductItemModel} body
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:models/BasketModel}
+     * @param {module:models/ProductItem} body
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:models/Basket}
      */
     patchBasketsByIDItemsByID(basketId, itemId, body) {
         return this.patchBasketsByIDItemsByIDWithHttpInfo(basketId, itemId, body)
@@ -704,8 +695,8 @@ export default class BasketsApi {
      * See POST /orders/{order_no}/payment_instruments and PATCH  /orders/{order_no}/payment_instruments/{payment_instrument_id}
      * @param {String} basketId the basket id
      * @param {String} paymentInstrumentId the id of the payment instrument to be updated
-     * @param {module:models/BasketPaymentInstrumentRequestModel} body
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:models/BasketModel} and HTTP response
+     * @param {module:models/BasketPaymentInstrumentRequest} body
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:models/Basket} and HTTP response
      */
     patchBasketsByIDPaymentInstrumentsByIDWithHttpInfo(basketId, paymentInstrumentId, body) {
         const postBody = body
@@ -737,7 +728,7 @@ export default class BasketsApi {
         const authNames = ['customers_auth', 'oauth2_application']
         const contentTypes = ['application/json', 'text/xml', 'application/xml']
         const accepts = ['application/json', 'text/xml', 'application/xml']
-        const returnType = BasketModel
+        const returnType = Basket
 
         return this.apiClient.callApi(
             '/baskets/{basket_id}/payment_instruments/{payment_instrument_id}', 'PATCH',
@@ -753,8 +744,8 @@ export default class BasketsApi {
      * updated. See POST /orders/{order_no}/payment_instruments and PATCH  /orders/{order_no}/payment_instruments/{payment_instrument_id}
      * @param {String} basketId the basket id
      * @param {String} paymentInstrumentId the id of the payment instrument to be updated
-     * @param {module:models/BasketPaymentInstrumentRequestModel} body
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:models/BasketModel}
+     * @param {module:models/BasketPaymentInstrumentRequest} body
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:models/Basket}
      */
     patchBasketsByIDPaymentInstrumentsByID(basketId, paymentInstrumentId, body) {
         return this.patchBasketsByIDPaymentInstrumentsByIDWithHttpInfo(basketId, paymentInstrumentId, body)
@@ -772,8 +763,8 @@ export default class BasketsApi {
      * the id  the shipping address  the shipping method  gift boolean flag  gift message  custom properties
      * @param {String} basketId the id of the basket to be modified
      * @param {String} shipmentId the id of the shipment to be modified
-     * @param {module:models/ShipmentModel} body
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:models/BasketModel} and HTTP response
+     * @param {module:models/Shipment} body
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:models/Basket} and HTTP response
      */
     patchBasketsByIDShipmentsByIDWithHttpInfo(basketId, shipmentId, body) {
         const postBody = body
@@ -805,7 +796,7 @@ export default class BasketsApi {
         const authNames = ['customers_auth', 'oauth2_application']
         const contentTypes = ['application/json', 'text/xml', 'application/xml']
         const accepts = ['application/json', 'text/xml', 'application/xml']
-        const returnType = BasketModel
+        const returnType = Basket
 
         return this.apiClient.callApi(
             '/baskets/{basket_id}/shipments/{shipment_id}', 'PATCH',
@@ -822,8 +813,8 @@ export default class BasketsApi {
      * the shipping method  gift boolean flag  gift message  custom properties
      * @param {String} basketId the id of the basket to be modified
      * @param {String} shipmentId the id of the shipment to be modified
-     * @param {module:models/ShipmentModel} body
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:models/BasketModel}
+     * @param {module:models/Shipment} body
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:models/Basket}
      */
     patchBasketsByIDShipmentsByID(basketId, shipmentId, body) {
         return this.patchBasketsByIDShipmentsByIDWithHttpInfo(basketId, shipmentId, body)
@@ -857,8 +848,8 @@ export default class BasketsApi {
      * When using JWT each customer can have just one open basket  When using OAuth each customer can have up to 4 open baskets (this is a quota setting which can be
      * updated by support)
      * @param {Object} opts Optional parameters
-     * @param {module:models/BasketModel} opts.body
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:models/BasketModel} and HTTP response
+     * @param {module:models/Basket} opts.body
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:models/Basket} and HTTP response
      */
     postBasketsWithHttpInfo(opts) {
         opts = opts || {}
@@ -873,7 +864,7 @@ export default class BasketsApi {
         const authNames = ['customers_auth', 'oauth2_application']
         const contentTypes = ['application/json', 'text/xml', 'application/xml']
         const accepts = ['application/json', 'text/xml', 'application/xml']
-        const returnType = BasketModel
+        const returnType = Basket
 
         return this.apiClient.callApi(
             '/baskets', 'POST',
@@ -905,8 +896,8 @@ export default class BasketsApi {
      * When using JWT each customer can have just one open basket  When using OAuth each customer can have up to 4 open baskets (this is a quota setting which can be
      * updated by support)
      * @param {Object} opts Optional parameters
-     * @param {module:models/BasketModel} opts.body
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:models/BasketModel}
+     * @param {module:models/Basket} opts.body
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:models/Basket}
      */
     postBaskets(opts) {
         return this.postBasketsWithHttpInfo(opts)
@@ -919,8 +910,8 @@ export default class BasketsApi {
     /**
      * Adds a coupon to an existing basket.
      * @param {String} basketId The id of the basket to be modified.
-     * @param {module:models/CouponItemModel} body
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:models/BasketModel} and HTTP response
+     * @param {module:models/CouponItem} body
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:models/Basket} and HTTP response
      */
     postBasketsByIDCouponsWithHttpInfo(basketId, body) {
         const postBody = body
@@ -946,7 +937,7 @@ export default class BasketsApi {
         const authNames = ['customers_auth', 'oauth2_application']
         const contentTypes = ['application/json', 'text/xml', 'application/xml']
         const accepts = ['application/json', 'text/xml', 'application/xml']
-        const returnType = BasketModel
+        const returnType = Basket
 
         return this.apiClient.callApi(
             '/baskets/{basket_id}/coupons', 'POST',
@@ -958,8 +949,8 @@ export default class BasketsApi {
     /**
      * Adds a coupon to an existing basket.
      * @param {String} basketId The id of the basket to be modified.
-     * @param {module:models/CouponItemModel} body
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:models/BasketModel}
+     * @param {module:models/CouponItem} body
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:models/Basket}
      */
     postBasketsByIDCoupons(basketId, body) {
         return this.postBasketsByIDCouponsWithHttpInfo(basketId, body)
@@ -972,8 +963,8 @@ export default class BasketsApi {
     /**
      * Adds a gift certificate item to an existing basket.
      * @param {String} basketId the id of the basket to be modified
-     * @param {module:models/GiftCertificateItemModel} body
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:models/BasketModel} and HTTP response
+     * @param {module:models/GiftCertificateItem} body
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:models/Basket} and HTTP response
      */
     postBasketsByIDGiftCertificateItemsWithHttpInfo(basketId, body) {
         const postBody = body
@@ -999,7 +990,7 @@ export default class BasketsApi {
         const authNames = ['customers_auth', 'oauth2_application']
         const contentTypes = ['application/json', 'text/xml', 'application/xml']
         const accepts = ['application/json', 'text/xml', 'application/xml']
-        const returnType = BasketModel
+        const returnType = Basket
 
         return this.apiClient.callApi(
             '/baskets/{basket_id}/gift_certificate_items', 'POST',
@@ -1011,8 +1002,8 @@ export default class BasketsApi {
     /**
      * Adds a gift certificate item to an existing basket.
      * @param {String} basketId the id of the basket to be modified
-     * @param {module:models/GiftCertificateItemModel} body
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:models/BasketModel}
+     * @param {module:models/GiftCertificateItem} body
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:models/Basket}
      */
     postBasketsByIDGiftCertificateItems(basketId, body) {
         return this.postBasketsByIDGiftCertificateItemsWithHttpInfo(basketId, body)
@@ -1046,8 +1037,8 @@ export default class BasketsApi {
      * attribute (&lt;CUSTOM_NAME&gt;) defined for ProductLineItem. The value of this property must be valid for the
      * type of custom attribute defined for ProductLineItem.
      * @param {String} basketId The id of the basket to be modified.
-     * @param {module:models/ProductItemModel} body
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:models/BasketModel} and HTTP response
+     * @param {module:models/ProductItem} body
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:models/Basket} and HTTP response
      */
     postBasketsByIDItemsWithHttpInfo(basketId, body) {
         const postBody = body
@@ -1073,7 +1064,7 @@ export default class BasketsApi {
         const authNames = ['customers_auth', 'oauth2_application']
         const contentTypes = ['application/json', 'text/xml', 'application/xml']
         const accepts = ['application/json', 'text/xml', 'application/xml']
-        const returnType = BasketModel
+        const returnType = Basket
 
         return this.apiClient.callApi(
             '/baskets/{basket_id}/items', 'POST',
@@ -1105,8 +1096,8 @@ export default class BasketsApi {
      * attribute (&lt;CUSTOM_NAME&gt;) defined for ProductLineItem. The value of this property must be valid for the
      * type of custom attribute defined for ProductLineItem.
      * @param {String} basketId The id of the basket to be modified.
-     * @param {module:models/ProductItemModel} body
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:models/BasketModel}
+     * @param {module:models/ProductItem} body
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:models/Basket}
      */
     postBasketsByIDItems(basketId, body) {
         return this.postBasketsByIDItemsWithHttpInfo(basketId, body)
@@ -1119,8 +1110,8 @@ export default class BasketsApi {
     /**
      * Adds a note to an existing basket.
      * @param {String} basketId The id of the basket to be modified.
-     * @param {module:models/NoteModel} body
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:models/BasketModel} and HTTP response
+     * @param {module:models/Note} body
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:models/Basket} and HTTP response
      */
     postBasketsByIDNotesWithHttpInfo(basketId, body) {
         const postBody = body
@@ -1146,7 +1137,7 @@ export default class BasketsApi {
         const authNames = ['customers_auth', 'oauth2_application']
         const contentTypes = ['application/json', 'text/xml', 'application/xml']
         const accepts = ['application/json', 'text/xml', 'application/xml']
-        const returnType = BasketModel
+        const returnType = Basket
 
         return this.apiClient.callApi(
             '/baskets/{basket_id}/notes', 'POST',
@@ -1158,8 +1149,8 @@ export default class BasketsApi {
     /**
      * Adds a note to an existing basket.
      * @param {String} basketId The id of the basket to be modified.
-     * @param {module:models/NoteModel} body
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:models/BasketModel}
+     * @param {module:models/Note} body
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:models/Basket}
      */
     postBasketsByIDNotes(basketId, body) {
         return this.postBasketsByIDNotesWithHttpInfo(basketId, body)
@@ -1176,8 +1167,8 @@ export default class BasketsApi {
      * updated. See POST /orders/{order_no}/payment_instruments and PATCH  /orders/{order_no}/payment_instruments/{payment_instrument_id}.
      * NOTE: If CREDIT_CARD is selected as the payment_method_id, it is mandatory to provide the property card_type.
      * @param {String} basketId the basket id
-     * @param {module:models/BasketPaymentInstrumentRequestModel} body
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:models/BasketModel} and HTTP response
+     * @param {module:models/BasketPaymentInstrumentRequest} body
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:models/Basket} and HTTP response
      */
     postBasketsByIDPaymentInstrumentsWithHttpInfo(basketId, body) {
         const postBody = body
@@ -1203,7 +1194,7 @@ export default class BasketsApi {
         const authNames = ['customers_auth', 'oauth2_application']
         const contentTypes = ['application/json', 'text/xml', 'application/xml']
         const accepts = ['application/json', 'text/xml', 'application/xml']
-        const returnType = BasketModel
+        const returnType = Basket
 
         return this.apiClient.callApi(
             '/baskets/{basket_id}/payment_instruments', 'POST',
@@ -1220,8 +1211,8 @@ export default class BasketsApi {
      * See POST /orders/{order_no}/payment_instruments and PATCH  /orders/{order_no}/payment_instruments/{payment_instrument_id}.
      * NOTE: If CREDIT_CARD is selected as the payment_method_id, it is mandatory to provide the property card_type.
      * @param {String} basketId the basket id
-     * @param {module:models/BasketPaymentInstrumentRequestModel} body
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:models/BasketModel}
+     * @param {module:models/BasketPaymentInstrumentRequest} body
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:models/Basket}
      */
     postBasketsByIDPaymentInstruments(basketId, body) {
         return this.postBasketsByIDPaymentInstrumentsWithHttpInfo(basketId, body)
@@ -1243,8 +1234,8 @@ export default class BasketsApi {
      * gift message
      * custom properties
      * @param {String} basketId the id of the basket to be modified
-     * @param {module:models/ShipmentModel} body
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:models/BasketModel} and HTTP response
+     * @param {module:models/Shipment} body
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:models/Basket} and HTTP response
      */
     postBasketsByIDShipmentsWithHttpInfo(basketId, body) {
         const postBody = body
@@ -1270,7 +1261,7 @@ export default class BasketsApi {
         const authNames = ['customers_auth', 'oauth2_application']
         const contentTypes = ['application/json', 'text/xml', 'application/xml']
         const accepts = ['application/json', 'text/xml', 'application/xml']
-        const returnType = BasketModel
+        const returnType = Basket
 
         return this.apiClient.callApi(
             '/baskets/{basket_id}/shipments', 'POST',
@@ -1291,8 +1282,8 @@ export default class BasketsApi {
      * gift message
      * custom properties
      * @param {String} basketId the id of the basket to be modified
-     * @param {module:models/ShipmentModel} body
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:models/BasketModel}
+     * @param {module:models/Shipment} body
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:models/Basket}
      */
     postBasketsByIDShipments(basketId, body) {
         return this.postBasketsByIDShipmentsWithHttpInfo(basketId, body)
@@ -1308,8 +1299,8 @@ export default class BasketsApi {
      * @param {Object} opts Optional parameters
      * @param {Boolean} opts.useAsShipping
      * @param {String} opts.customerAddressId
-     * @param {module:models/OrderAddressModel} opts.body
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:models/BasketModel} and HTTP response
+     * @param {module:models/OrderAddress} opts.body
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:models/Basket} and HTTP response
      */
     putBasketsByIDBillingAddressWithHttpInfo(basketId, opts) {
         opts = opts || {}
@@ -1334,7 +1325,7 @@ export default class BasketsApi {
         const authNames = ['customers_auth', 'oauth2_application']
         const contentTypes = ['application/json', 'text/xml', 'application/xml']
         const accepts = ['application/json', 'text/xml', 'application/xml']
-        const returnType = BasketModel
+        const returnType = Basket
 
         return this.apiClient.callApi(
             '/baskets/{basket_id}/billing_address', 'PUT',
@@ -1349,8 +1340,8 @@ export default class BasketsApi {
      * @param {Object} opts Optional parameters
      * @param {Boolean} opts.useAsShipping
      * @param {String} opts.customerAddressId
-     * @param {module:models/OrderAddressModel} opts.body
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:models/BasketModel}
+     * @param {module:models/OrderAddress} opts.body
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:models/Basket}
      */
     putBasketsByIDBillingAddress(basketId, opts) {
         return this.putBasketsByIDBillingAddressWithHttpInfo(basketId, opts)
@@ -1363,8 +1354,8 @@ export default class BasketsApi {
     /**
      * Sets customer information for an existing basket.
      * @param {String} basketId the id of the basket to be modified
-     * @param {module:models/CustomerInfoModel} body
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:models/BasketModel} and HTTP response
+     * @param {module:models/CustomerInfo} body
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:models/Basket} and HTTP response
      */
     putBasketsByIDCustomerWithHttpInfo(basketId, body) {
         const postBody = body
@@ -1390,7 +1381,7 @@ export default class BasketsApi {
         const authNames = ['customers_auth', 'oauth2_application']
         const contentTypes = ['application/json', 'text/xml', 'application/xml']
         const accepts = ['application/json', 'text/xml', 'application/xml']
-        const returnType = BasketModel
+        const returnType = Basket
 
         return this.apiClient.callApi(
             '/baskets/{basket_id}/customer', 'PUT',
@@ -1402,8 +1393,8 @@ export default class BasketsApi {
     /**
      * Sets customer information for an existing basket.
      * @param {String} basketId the id of the basket to be modified
-     * @param {module:models/CustomerInfoModel} body
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:models/BasketModel}
+     * @param {module:models/CustomerInfo} body
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:models/Basket}
      */
     putBasketsByIDCustomer(basketId, body) {
         return this.putBasketsByIDCustomerWithHttpInfo(basketId, body)
@@ -1417,11 +1408,11 @@ export default class BasketsApi {
      * Sets a shipping address of a specific shipment of a basket.
      * @param {String} basketId The id of the basket to be modified.
      * @param {String} shipmentId The id of the shipment to be modified.
-     * @param {module:models/OrderAddressModel} body
+     * @param {module:models/OrderAddress} body
      * @param {Object} opts Optional parameters
      * @param {Boolean} opts.useAsBilling
      * @param {String} opts.customerAddressId
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:models/BasketModel} and HTTP response
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:models/Basket} and HTTP response
      */
     putBasketsByIDShipmentsByIDShippingAddressWithHttpInfo(basketId, shipmentId, body, opts) {
         opts = opts || {}
@@ -1457,7 +1448,7 @@ export default class BasketsApi {
         const authNames = ['customers_auth', 'oauth2_application']
         const contentTypes = ['application/json', 'text/xml', 'application/xml']
         const accepts = ['application/json', 'text/xml', 'application/xml']
-        const returnType = BasketModel
+        const returnType = Basket
 
         return this.apiClient.callApi(
             '/baskets/{basket_id}/shipments/{shipment_id}/shipping_address', 'PUT',
@@ -1470,11 +1461,11 @@ export default class BasketsApi {
      * Sets a shipping address of a specific shipment of a basket.
      * @param {String} basketId The id of the basket to be modified.
      * @param {String} shipmentId The id of the shipment to be modified.
-     * @param {module:models/OrderAddressModel} body
+     * @param {module:models/OrderAddress} body
      * @param {Object} opts Optional parameters
      * @param {Boolean} opts.useAsBilling
      * @param {String} opts.customerAddressId
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:models/BasketModel}
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:models/Basket}
      */
     putBasketsByIDShipmentsByIDShippingAddress(basketId, shipmentId, body, opts) {
         return this.putBasketsByIDShipmentsByIDShippingAddressWithHttpInfo(basketId, shipmentId, body, opts)
@@ -1488,8 +1479,8 @@ export default class BasketsApi {
      * Sets a shipping method to a specific shipment of a basket.
      * @param {String} basketId the id of the basket to be modified
      * @param {String} shipmentId the id of the shipment to be modified
-     * @param {module:models/ShippingMethodModel} body
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:models/BasketModel} and HTTP response
+     * @param {module:models/ShippingMethod} body
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:models/Basket} and HTTP response
      */
     putBasketsByIDShipmentsByIDShippingMethodWithHttpInfo(basketId, shipmentId, body) {
         const postBody = body
@@ -1521,7 +1512,7 @@ export default class BasketsApi {
         const authNames = ['customers_auth', 'oauth2_application']
         const contentTypes = ['application/json', 'text/xml', 'application/xml']
         const accepts = ['application/json', 'text/xml', 'application/xml']
-        const returnType = BasketModel
+        const returnType = Basket
 
         return this.apiClient.callApi(
             '/baskets/{basket_id}/shipments/{shipment_id}/shipping_method', 'PUT',
@@ -1534,8 +1525,8 @@ export default class BasketsApi {
      * Sets a shipping method to a specific shipment of a basket.
      * @param {String} basketId the id of the basket to be modified
      * @param {String} shipmentId the id of the shipment to be modified
-     * @param {module:models/ShippingMethodModel} body
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:models/BasketModel}
+     * @param {module:models/ShippingMethod} body
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:models/Basket}
      */
     putBasketsByIDShipmentsByIDShippingMethod(basketId, shipmentId, body) {
         return this.putBasketsByIDShipmentsByIDShippingMethodWithHttpInfo(basketId, shipmentId, body)

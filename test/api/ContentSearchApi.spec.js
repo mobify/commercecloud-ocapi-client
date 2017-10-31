@@ -48,7 +48,7 @@ describe('ContentSearchApi', () => {
         it('should call getContentSearch successfully', () =>
             instance.getContentSearch({q: ''})
                 .then((result) => {
-                    expect(result.constructor.name).to.be('ContentSearchResultModel')
+                    expect(result.constructor.name).to.be('ContentSearchResult')
                 })
         )
     })

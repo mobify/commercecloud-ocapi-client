@@ -63,7 +63,7 @@ describe('ProductListsApi', () => {
         it('calling getProductLists with valid options returns successfully', () =>
             instance.getProductLists({email: newCustomer.email})
                 .then((result) => {
-                    expect(result.constructor.name).to.be('PublicProductListResultModel')
+                    expect(result.constructor.name).to.be('PublicProductListResult')
                 })
         )
     })
@@ -74,7 +74,7 @@ describe('ProductListsApi', () => {
             // this has been added only  for testing purposes
             instance.getProductListsByID(newCustomer.product_lists[0].id)
                 .then((productList) => {
-                    expect(productList.constructor.name).to.be('PublicProductListModel')
+                    expect(productList.constructor.name).to.be('PublicProductList')
                 })
         )
 
@@ -94,7 +94,7 @@ describe('ProductListsApi', () => {
             // this has been added only  for testing purposes
             instance.getProductListsByIDItems(newCustomer.product_lists[0].id)
                 .then((result) => {
-                    expect(result.constructor.name).to.be('PublicProductListItemResultModel')
+                    expect(result.constructor.name).to.be('PublicProductListItemResult')
                 })
         )
     })

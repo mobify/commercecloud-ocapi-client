@@ -16,7 +16,7 @@
  *
  */
 import ApiClient from '../ApiClient'
-import SuggestionResultModel from '../models/SuggestionResultModel'
+import SuggestionResult from '../models/SuggestionResult'
 
 /**
  * Search_suggestion service.
@@ -47,7 +47,7 @@ export default class SearchSuggestionApi {
      * @param {Number} opts.count The maximum number of suggestions per request. Default value is 5. This affects all types of suggestions (category, product, content, brand, custom suggestions).
      * @param {String} opts.currency The currency mnemonic specified for price. This parameter is effective only for product suggestions.
      * @param {String} opts.locale
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:models/SuggestionResultModel} and HTTP response
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:models/SuggestionResult} and HTTP response
      */
     getSearchSuggestionWithHttpInfo(q, opts) {
         opts = opts || {}
@@ -72,7 +72,7 @@ export default class SearchSuggestionApi {
         const authNames = ['client_id', 'customers_auth']
         const contentTypes = ['application/json', 'text/xml', 'application/xml']
         const accepts = ['application/json', 'text/xml', 'application/xml']
-        const returnType = SuggestionResultModel
+        const returnType = SuggestionResult
 
         return this.apiClient.callApi(
             '/search_suggestion', 'GET',
@@ -90,7 +90,7 @@ export default class SearchSuggestionApi {
      * @param {Number} opts.count The maximum number of suggestions per request. Default value is 5. This affects all types of suggestions (category, product, content, brand, custom suggestions).
      * @param {String} opts.currency The currency mnemonic specified for price. This parameter is effective only for product suggestions.
      * @param {String} opts.locale
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:models/SuggestionResultModel}
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:models/SuggestionResult}
      */
     getSearchSuggestion(q, opts) {
         return this.getSearchSuggestionWithHttpInfo(q, opts)

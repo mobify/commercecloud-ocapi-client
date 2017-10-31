@@ -16,8 +16,7 @@
  *
  */
 import ApiClient from '../ApiClient'
-// import OrderSearchRequestModel from '../models/OrderSearchRequestModel'
-import OrderSearchResultModel from '../models/OrderSearchResultModel'
+import OrderSearchResult from '../models/OrderSearchResult'
 
 /**
  * Order_search service.
@@ -57,8 +56,8 @@ export default class OrderSearchApi {
      * The sort order of the retrieved orders could be specified by the \&quot;sorts\&quot; parameter. It is a list of objects
      * presenting field name and sort direction (\&quot;asc\&quot; or \&quot;desc\&quot;).
      * Custom attributes could be used as search fields and as sort fields too. A prefix \&quot;c_\&quot; has to be added to them.
-     * @param {module:models/OrderSearchRequestModel} body
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:models/OrderSearchResultModel} and HTTP response
+     * @param {module:models/OrderSearchRequest} body
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:models/OrderSearchResult} and HTTP response
      */
     postOrderSearchWithHttpInfo(body) {
         const postBody = body
@@ -77,7 +76,7 @@ export default class OrderSearchApi {
         const authNames = ['customers_auth', 'oauth2_application']
         const contentTypes = ['application/json', 'text/xml', 'application/xml']
         const accepts = ['application/json', 'text/xml', 'application/xml']
-        const returnType = OrderSearchResultModel
+        const returnType = OrderSearchResult
 
         return this.apiClient.callApi(
             '/order_search', 'POST',
@@ -104,8 +103,8 @@ export default class OrderSearchApi {
      * The sort order of the retrieved orders could be specified by the \&quot;sorts\&quot; parameter. It is a list of objects
      * presenting field name and sort direction (\&quot;asc\&quot; or \&quot;desc\&quot;).
      * Custom attributes could be used as search fields and as sort fields too. A prefix \&quot;c_\&quot; has to be added to them.
-     * @param {module:models/OrderSearchRequestModel} body
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:models/OrderSearchResultModel}
+     * @param {module:models/OrderSearchRequest} body
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:models/OrderSearchResult}
      */
     postOrderSearch(body) {
         return this.postOrderSearchWithHttpInfo(body)

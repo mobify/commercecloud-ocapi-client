@@ -119,7 +119,7 @@ describe('CustomersApi', () => {
         it('should call getCustomersByIDAddresses successfully', () => {
             return instance.getCustomersByIDAddresses(newCustomer.customer_id)
                 .then((result) => {
-                    expect(result.constructor.name).to.be('CustomerAddressResultModel')
+                    expect(result.constructor.name).to.be('CustomerAddressResult')
                 })
         })
     })
@@ -128,7 +128,7 @@ describe('CustomersApi', () => {
         it('should call getCustomersByIDAddressesByID successfully', () => {
             return instance.getCustomersByIDAddressesByID(newCustomer.customer_id, 'work')
                 .then((address) => {
-                    expect(address.constructor.name).to.be('CustomerAddressModel')
+                    expect(address.constructor.name).to.be('CustomerAddress')
                     expect(address.address_id).to.be('work')
                 })
         })
@@ -138,7 +138,7 @@ describe('CustomersApi', () => {
         it('should call getCustomersByIDBaskets successfully', () => {
             return instance.getCustomersByIDBaskets(newCustomer.customer_id)
                 .then((result) => {
-                    expect(result.constructor.name).to.be('BasketsResultModel')
+                    expect(result.constructor.name).to.be('BasketsResult')
                 })
         })
     })
@@ -147,7 +147,7 @@ describe('CustomersApi', () => {
         it('should call getCustomersByIDOrders successfully', () => {
             return instance.getCustomersByIDOrders(newCustomer.customer_id)
                 .then((result) => {
-                    expect(result.constructor.name).to.be('CustomerOrderResultModel')
+                    expect(result.constructor.name).to.be('CustomerOrderResult')
                 })
         })
     })
@@ -156,7 +156,7 @@ describe('CustomersApi', () => {
         it('should call getCustomersByIDPaymentInstruments successfully', () => {
             return instance.getCustomersByIDPaymentInstruments(newCustomer.customer_id)
                 .then((result) => {
-                    expect(result.constructor.name).to.be('CustomerPaymentInstrumentResultModel')
+                    expect(result.constructor.name).to.be('CustomerPaymentInstrumentResult')
                 })
         })
     })
@@ -172,7 +172,7 @@ describe('CustomersApi', () => {
     //
     //         return instance.getCustomersByIDPaymentInstrumentsByID(customerInfo.customer_id, 'mastercard')
     //             .then((result) => {
-    //                 expect(result.constructor.name).to.be('CustomerPaymentInstrumentResultModel')
+    //                 expect(result.constructor.name).to.be('CustomerPaymentInstrumentResult')
     //             })
     //     })
     // })
@@ -181,7 +181,7 @@ describe('CustomersApi', () => {
         it('should call getCustomersByIDProductLists successfully', () => {
             return instance.getCustomersByIDProductLists(newCustomer.customer_id)
                 .then((result) => {
-                    expect(result.constructor.name).to.be('CustomerProductListResultModel')
+                    expect(result.constructor.name).to.be('CustomerProductListResult')
                 })
         })
     })
@@ -223,7 +223,7 @@ describe('CustomersApi', () => {
         it('should call patchCustomersByID successfully', () =>
             instance.patchCustomersByID(newCustomer.customer_id, {last_name: 'user-edited'})
                 .then((customer) => {
-                    expect(customer.constructor.name).to.be('CustomerModel')
+                    expect(customer.constructor.name).to.be('Customer')
                     expect(customer.last_name).to.be('user-edited')
                 })
         )
@@ -233,7 +233,7 @@ describe('CustomersApi', () => {
         it('should call patchCustomersByIDAddressesByID successfully', () =>
             instance.patchCustomersByIDAddressesByID(newCustomer.customer_id, 'work', {city: 'Vancouver-edited'})
                 .then((customerAddress) => {
-                    expect(customerAddress.constructor.name).to.be('CustomerAddressModel')
+                    expect(customerAddress.constructor.name).to.be('CustomerAddress')
                     expect(customerAddress.city).to.be('Vancouver-edited')
                 })
         )

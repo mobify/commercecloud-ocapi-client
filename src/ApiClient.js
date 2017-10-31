@@ -19,7 +19,7 @@
 import superagent from 'superagent'
 import querystring from 'querystring'
 
-import FaultModel from './models/FaultModel'
+import Fault from './models/Fault'
 
 /**
  * @module ApiClient
@@ -487,7 +487,7 @@ export default class ApiClient {
                     // Looks like there was an fault returned from the API
                     const hasErrorMessage = error.response && error.response.text
                     if (hasErrorMessage) {
-                        const fault = FaultModel.constructFromObject(JSON.parse(error.response.text).fault)
+                        const fault = Fault.constructFromObject(JSON.parse(error.response.text).fault)
                         reject(fault)
                     }
 

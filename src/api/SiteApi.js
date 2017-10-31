@@ -15,10 +15,8 @@
  * Do not edit the class manually.
  *
  */
-
-
 import ApiClient from '../ApiClient'
-import SiteModel from '../models/SiteModel'
+import Site from '../models/Site'
 
 /**
  * Site service.
@@ -42,7 +40,7 @@ export default class SiteApi {
 
     /**
      * Access site information, like site status and site content URLs.
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:models/SiteModel} and HTTP response
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:models/Site} and HTTP response
      */
     getSiteWithHttpInfo() {
         const postBody = null
@@ -56,7 +54,7 @@ export default class SiteApi {
         const authNames = ['client_id', 'customers_auth']
         const contentTypes = ['application/json', 'text/xml', 'application/xml']
         const accepts = ['application/json', 'text/xml', 'application/xml']
-        const returnType = SiteModel
+        const returnType = Site
 
         return this.apiClient.callApi(
             '/site', 'GET',
@@ -67,7 +65,7 @@ export default class SiteApi {
 
     /**
      * Access site information, like site status and site content URLs.
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:models/SiteModel}
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:models/Site}
      */
     getSite() {
         return this.getSiteWithHttpInfo()

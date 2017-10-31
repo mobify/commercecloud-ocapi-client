@@ -44,19 +44,10 @@
  *
  */
 import ApiClient from '../ApiClient'
-import BasketModel from '../models/BasketModel'
-// import BasketPaymentInstrumentRequestModel from '../models/BasketPaymentInstrumentRequestModel'
-// import CouponItemModel from '../models/CouponItemModel'
-// import CustomerInfoModel from '../models/CustomerInfoModel'
-// import GiftCertificateItemModel from '../models/GiftCertificateItemModel'
-// import NoteModel from '../models/NoteModel'
-import NotesResultModel from '../models/NotesResultModel'
-// import OrderAddressModel from '../models/OrderAddressModel'
-import PaymentMethodResultModel from '../models/PaymentMethodResultModel'
-// import ProductItemModel from '../models/ProductItemModel'
-// import ShipmentModel from '../models/ShipmentModel'
-// import ShippingMethodModel from '../models/ShippingMethodModel'
-import ShippingMethodResultModel from '../models/ShippingMethodResultModel'
+import Basket from '../models/Basket'
+import NotesResult from '../models/NotesResult'
+import PaymentMethodResult from '../models/PaymentMethodResult'
+import ShippingMethodResult from '../models/ShippingMethodResult'
 
 /**
  * Baskets service.
@@ -125,7 +116,7 @@ export default class BasketsApi {
      * Removes a coupon from the basket.
      * @param {String} basketId the id of the basket to be modified
      * @param {String} couponItemId the id of the coupon item to be removed
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:models/BasketModel} and HTTP response
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:models/Basket} and HTTP response
      */
     deleteBasketsByIDCouponsByIDWithHttpInfo(basketId, couponItemId) {
         const postBody = null
@@ -152,7 +143,7 @@ export default class BasketsApi {
         const authNames = ['customers_auth', 'oauth2_application']
         const contentTypes = ['application/json', 'text/xml', 'application/xml']
         const accepts = ['application/json', 'text/xml', 'application/xml']
-        const returnType = BasketModel
+        const returnType = Basket
 
         return this.apiClient.callApi(
             '/baskets/{basket_id}/coupons/{coupon_item_id}', 'DELETE',
@@ -165,7 +156,7 @@ export default class BasketsApi {
      * Removes a coupon from the basket.
      * @param {String} basketId the id of the basket to be modified
      * @param {String} couponItemId the id of the coupon item to be removed
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:models/BasketModel}
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:models/Basket}
      */
     deleteBasketsByIDCouponsByID(basketId, couponItemId) {
         return this.deleteBasketsByIDCouponsByIDWithHttpInfo(basketId, couponItemId)
@@ -179,7 +170,7 @@ export default class BasketsApi {
      * Removes a product item from the basket.
      * @param {String} basketId the id of the basket to be modified
      * @param {String} itemId the id of the product item to be removed
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:models/BasketModel} and HTTP response
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:models/Basket} and HTTP response
      */
     deleteBasketsByIDItemsByIDWithHttpInfo(basketId, itemId) {
         const postBody = null
@@ -206,7 +197,7 @@ export default class BasketsApi {
         const authNames = ['customers_auth', 'oauth2_application']
         const contentTypes = ['application/json', 'text/xml', 'application/xml']
         const accepts = ['application/json', 'text/xml', 'application/xml']
-        const returnType = BasketModel
+        const returnType = Basket
 
         return this.apiClient.callApi(
             '/baskets/{basket_id}/items/{item_id}', 'DELETE',
@@ -219,7 +210,7 @@ export default class BasketsApi {
      * Removes a product item from the basket.
      * @param {String} basketId the id of the basket to be modified
      * @param {String} itemId the id of the product item to be removed
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:models/BasketModel}
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:models/Basket}
      */
     deleteBasketsByIDItemsByID(basketId, itemId) {
         return this.deleteBasketsByIDItemsByIDWithHttpInfo(basketId, itemId)
@@ -233,7 +224,7 @@ export default class BasketsApi {
      * Removes a basket note.
      * @param {String} basketId the id of the basket to be modified
      * @param {String} noteId the id of the note to be removed
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:models/BasketModel} and HTTP response
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:models/Basket} and HTTP response
      */
     deleteBasketsByIDNotesByIDWithHttpInfo(basketId, noteId) {
         const postBody = null
@@ -260,7 +251,7 @@ export default class BasketsApi {
         const authNames = ['customers_auth', 'oauth2_application']
         const contentTypes = ['application/json', 'text/xml', 'application/xml']
         const accepts = ['application/json', 'text/xml', 'application/xml']
-        const returnType = BasketModel
+        const returnType = Basket
 
         return this.apiClient.callApi(
             '/baskets/{basket_id}/notes/{note_id}', 'DELETE',
@@ -273,7 +264,7 @@ export default class BasketsApi {
      * Removes a basket note.
      * @param {String} basketId the id of the basket to be modified
      * @param {String} noteId the id of the note to be removed
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:models/BasketModel}
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:models/Basket}
      */
     deleteBasketsByIDNotesByID(basketId, noteId) {
         return this.deleteBasketsByIDNotesByIDWithHttpInfo(basketId, noteId)
@@ -287,7 +278,7 @@ export default class BasketsApi {
      * Removes a payment instrument of a basket.
      * @param {String} basketId the basket id
      * @param {String} paymentInstrumentId the id of the payment instrument to be removed
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:models/BasketModel} and HTTP response
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:models/Basket} and HTTP response
      */
     deleteBasketsByIDPaymentInstrumentsByIDWithHttpInfo(basketId, paymentInstrumentId) {
         const postBody = null
@@ -314,7 +305,7 @@ export default class BasketsApi {
         const authNames = ['customers_auth', 'oauth2_application']
         const contentTypes = ['application/json', 'text/xml', 'application/xml']
         const accepts = ['application/json', 'text/xml', 'application/xml']
-        const returnType = BasketModel
+        const returnType = Basket
 
         return this.apiClient.callApi(
             '/baskets/{basket_id}/payment_instruments/{payment_instrument_id}', 'DELETE',
@@ -327,7 +318,7 @@ export default class BasketsApi {
      * Removes a payment instrument of a basket.
      * @param {String} basketId the basket id
      * @param {String} paymentInstrumentId the id of the payment instrument to be removed
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:models/BasketModel}
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:models/Basket}
      */
     deleteBasketsByIDPaymentInstrumentsByID(basketId, paymentInstrumentId) {
         return this.deleteBasketsByIDPaymentInstrumentsByIDWithHttpInfo(basketId, paymentInstrumentId)
@@ -341,7 +332,7 @@ export default class BasketsApi {
      * Removes a specified shipment and all associated product, gift certificate,  shipping and price adjustment line items from a basket.  It is not permissible to remove the default shipment.
      * @param {String} basketId the id of the basket to be modified
      * @param {String} shipmentId the id of the shipment to be deleted
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:models/BasketModel} and HTTP response
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:models/Basket} and HTTP response
      */
     deleteBasketsByIDShipmentsByIDWithHttpInfo(basketId, shipmentId) {
         const postBody = null
@@ -368,7 +359,7 @@ export default class BasketsApi {
         const authNames = ['customers_auth', 'oauth2_application']
         const contentTypes = ['application/json', 'text/xml', 'application/xml']
         const accepts = ['application/json', 'text/xml', 'application/xml']
-        const returnType = BasketModel
+        const returnType = Basket
 
         return this.apiClient.callApi(
             '/baskets/{basket_id}/shipments/{shipment_id}', 'DELETE',
@@ -381,7 +372,7 @@ export default class BasketsApi {
      * Removes a specified shipment and all associated product, gift certificate,  shipping and price adjustment line items from a basket.  It is not permissible to remove the default shipment.
      * @param {String} basketId the id of the basket to be modified
      * @param {String} shipmentId the id of the shipment to be deleted
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:models/BasketModel}
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:models/Basket}
      */
     deleteBasketsByIDShipmentsByID(basketId, shipmentId) {
         return this.deleteBasketsByIDShipmentsByIDWithHttpInfo(basketId, shipmentId)
@@ -394,7 +385,7 @@ export default class BasketsApi {
     /**
      * Gets a basket.
      * @param {String} basketId the id of the basket to be retrieved
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:models/BasketModel} and HTTP response
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:models/Basket} and HTTP response
      */
     getBasketsByIDWithHttpInfo(basketId) {
         const postBody = null
@@ -415,7 +406,7 @@ export default class BasketsApi {
         const authNames = ['customers_auth', 'oauth2_application']
         const contentTypes = ['application/json', 'text/xml', 'application/xml']
         const accepts = ['application/json', 'text/xml', 'application/xml']
-        const returnType = BasketModel
+        const returnType = Basket
 
         return this.apiClient.callApi(
             '/baskets/{basket_id}', 'GET',
@@ -427,7 +418,7 @@ export default class BasketsApi {
     /**
      * Gets a basket.
      * @param {String} basketId the id of the basket to be retrieved
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:models/BasketModel}
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:models/Basket}
      */
     getBasketsByID(basketId) {
         return this.getBasketsByIDWithHttpInfo(basketId)
@@ -440,7 +431,7 @@ export default class BasketsApi {
     /**
      * Retrieves notes for a basket.
      * @param {String} basketId The id of the basket for which you want to retrieve the notes.
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:models/NotesResultModel} and HTTP response
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:models/NotesResult} and HTTP response
      */
     getBasketsByIDNotesWithHttpInfo(basketId) {
         const postBody = null
@@ -461,7 +452,7 @@ export default class BasketsApi {
         const authNames = ['customers_auth', 'oauth2_application']
         const contentTypes = ['application/json', 'text/xml', 'application/xml']
         const accepts = ['application/json', 'text/xml', 'application/xml']
-        const returnType = NotesResultModel
+        const returnType = NotesResult
 
         return this.apiClient.callApi(
             '/baskets/{basket_id}/notes', 'GET',
@@ -473,7 +464,7 @@ export default class BasketsApi {
     /**
      * Retrieves notes for a basket.
      * @param {String} basketId The id of the basket for which you want to retrieve the notes.
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:models/NotesResultModel}
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:models/NotesResult}
      */
     getBasketsByIDNotes(basketId) {
         return this.getBasketsByIDNotesWithHttpInfo(basketId)
@@ -486,7 +477,7 @@ export default class BasketsApi {
     /**
      * Gets applicable payment methods for an existing basket considering the open payment amount only.
      * @param {String} basketId the basket id
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:models/PaymentMethodResultModel} and HTTP response
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:models/PaymentMethodResult} and HTTP response
      */
     getBasketsByIDPaymentMethodsWithHttpInfo(basketId) {
         const postBody = null
@@ -507,7 +498,7 @@ export default class BasketsApi {
         const authNames = ['customers_auth', 'oauth2_application']
         const contentTypes = ['application/json', 'text/xml', 'application/xml']
         const accepts = ['application/json', 'text/xml', 'application/xml']
-        const returnType = PaymentMethodResultModel
+        const returnType = PaymentMethodResult
 
         return this.apiClient.callApi(
             '/baskets/{basket_id}/payment_methods', 'GET',
@@ -519,7 +510,7 @@ export default class BasketsApi {
     /**
      * Gets applicable payment methods for an existing basket considering the open payment amount only.
      * @param {String} basketId the basket id
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:models/PaymentMethodResultModel}
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:models/PaymentMethodResult}
      */
     getBasketsByIDPaymentMethods(basketId) {
         return this.getBasketsByIDPaymentMethodsWithHttpInfo(basketId)
@@ -533,7 +524,7 @@ export default class BasketsApi {
      * Gets the applicable shipping methods for a certain shipment of a  basket.
      * @param {String} basketId the id of the basket
      * @param {String} shipmentId the id of the shipment
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:models/ShippingMethodResultModel} and HTTP response
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:models/ShippingMethodResult} and HTTP response
      */
     getBasketsByIDShipmentsByIDShippingMethodsWithHttpInfo(basketId, shipmentId) {
         const postBody = null
@@ -560,7 +551,7 @@ export default class BasketsApi {
         const authNames = ['customers_auth', 'oauth2_application']
         const contentTypes = ['application/json', 'text/xml', 'application/xml']
         const accepts = ['application/json', 'text/xml', 'application/xml']
-        const returnType = ShippingMethodResultModel
+        const returnType = ShippingMethodResult
 
         return this.apiClient.callApi(
             '/baskets/{basket_id}/shipments/{shipment_id}/shipping_methods', 'GET',
@@ -573,7 +564,7 @@ export default class BasketsApi {
      * Gets the applicable shipping methods for a certain shipment of a  basket.
      * @param {String} basketId the id of the basket
      * @param {String} shipmentId the id of the shipment
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:models/ShippingMethodResultModel}
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:models/ShippingMethodResult}
      */
     getBasketsByIDShipmentsByIDShippingMethods(basketId, shipmentId) {
         return this.getBasketsByIDShipmentsByIDShippingMethodsWithHttpInfo(basketId, shipmentId)
@@ -586,8 +577,8 @@ export default class BasketsApi {
     /**
      * Updates a basket. Only the currency of the basket, source code, and the custom  properties of the basket and of the shipping items will be considered.
      * @param {String} basketId the id of the basket to be modified
-     * @param {module:models/BasketModel} body
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:models/BasketModel} and HTTP response
+     * @param {module:models/Basket} body
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:models/Basket} and HTTP response
      */
     patchBasketsByIDWithHttpInfo(basketId, body) {
         const postBody = body
@@ -613,7 +604,7 @@ export default class BasketsApi {
         const authNames = ['customers_auth', 'oauth2_application']
         const contentTypes = ['application/json', 'text/xml', 'application/xml']
         const accepts = ['application/json', 'text/xml', 'application/xml']
-        const returnType = BasketModel
+        const returnType = Basket
 
         return this.apiClient.callApi(
             '/baskets/{basket_id}', 'PATCH',
@@ -625,8 +616,8 @@ export default class BasketsApi {
     /**
      * Updates a basket. Only the currency of the basket, source code, and the custom  properties of the basket and of the shipping items will be considered.
      * @param {String} basketId the id of the basket to be modified
-     * @param {module:models/BasketModel} body
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:models/BasketModel}
+     * @param {module:models/Basket} body
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:models/Basket}
      */
     patchBasketsByID(basketId, body) {
         return this.patchBasketsByIDWithHttpInfo(basketId, body)
@@ -654,8 +645,8 @@ export default class BasketsApi {
      * The purpose of this value is to  add or change the value of a custom attribute defined for  ProductLineItem.
      * @param {String} basketId the id of the basket to be modified
      * @param {String} itemId the it of the item to be updated
-     * @param {module:models/ProductItemModel} body
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:models/BasketModel} and HTTP response
+     * @param {module:models/ProductItem} body
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:models/Basket} and HTTP response
      */
     patchBasketsByIDItemsByIDWithHttpInfo(basketId, itemId, body) {
         const postBody = body
@@ -687,7 +678,7 @@ export default class BasketsApi {
         const authNames = ['customers_auth', 'oauth2_application']
         const contentTypes = ['application/json', 'text/xml', 'application/xml']
         const accepts = ['application/json', 'text/xml', 'application/xml']
-        const returnType = BasketModel
+        const returnType = Basket
 
         return this.apiClient.callApi(
             '/baskets/{basket_id}/items/{item_id}', 'PATCH',
@@ -713,8 +704,8 @@ export default class BasketsApi {
      * add or change the value of a custom attribute defined for  ProductLineItem.
      * @param {String} basketId the id of the basket to be modified
      * @param {String} itemId the it of the item to be updated
-     * @param {module:models/ProductItemModel} body
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:models/BasketModel}
+     * @param {module:models/ProductItem} body
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:models/Basket}
      */
     patchBasketsByIDItemsByID(basketId, itemId, body) {
         return this.patchBasketsByIDItemsByIDWithHttpInfo(basketId, itemId, body)
@@ -732,8 +723,8 @@ export default class BasketsApi {
      * See POST /orders/{order_no}/payment_instruments and PATCH  /orders/{order_no}/payment_instruments/{payment_instrument_id}
      * @param {String} basketId the basket id
      * @param {String} paymentInstrumentId the id of the payment instrument to be updated
-     * @param {module:models/BasketPaymentInstrumentRequestModel} body
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:models/BasketModel} and HTTP response
+     * @param {module:models/BasketPaymentInstrumentRequest} body
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:models/Basket} and HTTP response
      */
     patchBasketsByIDPaymentInstrumentsByIDWithHttpInfo(basketId, paymentInstrumentId, body) {
         const postBody = body
@@ -765,7 +756,7 @@ export default class BasketsApi {
         const authNames = ['customers_auth', 'oauth2_application']
         const contentTypes = ['application/json', 'text/xml', 'application/xml']
         const accepts = ['application/json', 'text/xml', 'application/xml']
-        const returnType = BasketModel
+        const returnType = Basket
 
         return this.apiClient.callApi(
             '/baskets/{basket_id}/payment_instruments/{payment_instrument_id}', 'PATCH',
@@ -781,8 +772,8 @@ export default class BasketsApi {
      * updated. See POST /orders/{order_no}/payment_instruments and PATCH  /orders/{order_no}/payment_instruments/{payment_instrument_id}
      * @param {String} basketId the basket id
      * @param {String} paymentInstrumentId the id of the payment instrument to be updated
-     * @param {module:models/BasketPaymentInstrumentRequestModel} body
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:models/BasketModel}
+     * @param {module:models/BasketPaymentInstrumentRequest} body
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:models/Basket}
      */
     patchBasketsByIDPaymentInstrumentsByID(basketId, paymentInstrumentId, body) {
         return this.patchBasketsByIDPaymentInstrumentsByIDWithHttpInfo(basketId, paymentInstrumentId, body)
@@ -800,8 +791,8 @@ export default class BasketsApi {
      * the id  the shipping address  the shipping method  gift boolean flag  gift message  custom properties
      * @param {String} basketId the id of the basket to be modified
      * @param {String} shipmentId the id of the shipment to be modified
-     * @param {module:models/ShipmentModel} body
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:models/BasketModel} and HTTP response
+     * @param {module:models/Shipment} body
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:models/Basket} and HTTP response
      */
     patchBasketsByIDShipmentsByIDWithHttpInfo(basketId, shipmentId, body) {
         const postBody = body
@@ -833,7 +824,7 @@ export default class BasketsApi {
         const authNames = ['customers_auth', 'oauth2_application']
         const contentTypes = ['application/json', 'text/xml', 'application/xml']
         const accepts = ['application/json', 'text/xml', 'application/xml']
-        const returnType = BasketModel
+        const returnType = Basket
 
         return this.apiClient.callApi(
             '/baskets/{basket_id}/shipments/{shipment_id}', 'PATCH',
@@ -850,8 +841,8 @@ export default class BasketsApi {
      * the shipping method  gift boolean flag  gift message  custom properties
      * @param {String} basketId the id of the basket to be modified
      * @param {String} shipmentId the id of the shipment to be modified
-     * @param {module:models/ShipmentModel} body
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:models/BasketModel}
+     * @param {module:models/Shipment} body
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:models/Basket}
      */
     patchBasketsByIDShipmentsByID(basketId, shipmentId, body) {
         return this.patchBasketsByIDShipmentsByIDWithHttpInfo(basketId, shipmentId, body)
@@ -885,8 +876,8 @@ export default class BasketsApi {
      * When using JWT each customer can have just one open basket  When using OAuth each customer can have up to 4 open baskets (this is a quota setting which can be
      * updated by support)
      * @param {Object} opts Optional parameters
-     * @param {module:models/BasketModel} opts.body
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:models/BasketModel} and HTTP response
+     * @param {module:models/Basket} opts.body
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:models/Basket} and HTTP response
      */
     postBasketsWithHttpInfo(opts) {
         opts = opts || {}
@@ -901,7 +892,7 @@ export default class BasketsApi {
         const authNames = ['customers_auth', 'oauth2_application']
         const contentTypes = ['application/json', 'text/xml', 'application/xml']
         const accepts = ['application/json', 'text/xml', 'application/xml']
-        const returnType = BasketModel
+        const returnType = Basket
 
         return this.apiClient.callApi(
             '/baskets', 'POST',
@@ -933,8 +924,8 @@ export default class BasketsApi {
      * When using JWT each customer can have just one open basket  When using OAuth each customer can have up to 4 open baskets (this is a quota setting which can be
      * updated by support)
      * @param {Object} opts Optional parameters
-     * @param {module:models/BasketModel} opts.body
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:models/BasketModel}
+     * @param {module:models/Basket} opts.body
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:models/Basket}
      */
     postBaskets(opts) {
         return this.postBasketsWithHttpInfo(opts)
@@ -947,8 +938,8 @@ export default class BasketsApi {
     /**
      * Adds a coupon to an existing basket.
      * @param {String} basketId The id of the basket to be modified.
-     * @param {module:models/CouponItemModel} body
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:models/BasketModel} and HTTP response
+     * @param {module:models/CouponItem} body
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:models/Basket} and HTTP response
      */
     postBasketsByIDCouponsWithHttpInfo(basketId, body) {
         const postBody = body
@@ -974,7 +965,7 @@ export default class BasketsApi {
         const authNames = ['customers_auth', 'oauth2_application']
         const contentTypes = ['application/json', 'text/xml', 'application/xml']
         const accepts = ['application/json', 'text/xml', 'application/xml']
-        const returnType = BasketModel
+        const returnType = Basket
 
         return this.apiClient.callApi(
             '/baskets/{basket_id}/coupons', 'POST',
@@ -986,8 +977,8 @@ export default class BasketsApi {
     /**
      * Adds a coupon to an existing basket.
      * @param {String} basketId The id of the basket to be modified.
-     * @param {module:models/CouponItemModel} body
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:models/BasketModel}
+     * @param {module:models/CouponItem} body
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:models/Basket}
      */
     postBasketsByIDCoupons(basketId, body) {
         return this.postBasketsByIDCouponsWithHttpInfo(basketId, body)
@@ -1000,8 +991,8 @@ export default class BasketsApi {
     /**
      * Adds a gift certificate item to an existing basket.
      * @param {String} basketId the id of the basket to be modified
-     * @param {module:models/GiftCertificateItemModel} body
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:models/BasketModel} and HTTP response
+     * @param {module:models/GiftCertificateItem} body
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:models/Basket} and HTTP response
      */
     postBasketsByIDGiftCertificateItemsWithHttpInfo(basketId, body) {
         const postBody = body
@@ -1027,7 +1018,7 @@ export default class BasketsApi {
         const authNames = ['customers_auth', 'oauth2_application']
         const contentTypes = ['application/json', 'text/xml', 'application/xml']
         const accepts = ['application/json', 'text/xml', 'application/xml']
-        const returnType = BasketModel
+        const returnType = Basket
 
         return this.apiClient.callApi(
             '/baskets/{basket_id}/gift_certificate_items', 'POST',
@@ -1039,8 +1030,8 @@ export default class BasketsApi {
     /**
      * Adds a gift certificate item to an existing basket.
      * @param {String} basketId the id of the basket to be modified
-     * @param {module:models/GiftCertificateItemModel} body
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:models/BasketModel}
+     * @param {module:models/GiftCertificateItem} body
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:models/Basket}
      */
     postBasketsByIDGiftCertificateItems(basketId, body) {
         return this.postBasketsByIDGiftCertificateItemsWithHttpInfo(basketId, body)
@@ -1074,8 +1065,8 @@ export default class BasketsApi {
      * attribute (&amp;lt;CUSTOM_NAME&amp;gt;) defined for ProductLineItem. The value of this property must be valid for the
      * type of custom attribute defined for ProductLineItem.
      * @param {String} basketId The id of the basket to be modified.
-     * @param {module:models/ProductItemModel} body
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:models/BasketModel} and HTTP response
+     * @param {module:models/ProductItem} body
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:models/Basket} and HTTP response
      */
     postBasketsByIDItemsWithHttpInfo(basketId, body) {
         const postBody = body
@@ -1101,7 +1092,7 @@ export default class BasketsApi {
         const authNames = ['customers_auth', 'oauth2_application']
         const contentTypes = ['application/json', 'text/xml', 'application/xml']
         const accepts = ['application/json', 'text/xml', 'application/xml']
-        const returnType = BasketModel
+        const returnType = Basket
 
         return this.apiClient.callApi(
             '/baskets/{basket_id}/items', 'POST',
@@ -1133,8 +1124,8 @@ export default class BasketsApi {
      * attribute (&amp;lt;CUSTOM_NAME&amp;gt;) defined for ProductLineItem. The value of this property must be valid for the
      * type of custom attribute defined for ProductLineItem.
      * @param {String} basketId The id of the basket to be modified.
-     * @param {module:models/ProductItemModel} body
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:models/BasketModel}
+     * @param {module:models/ProductItem} body
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:models/Basket}
      */
     postBasketsByIDItems(basketId, body) {
         return this.postBasketsByIDItemsWithHttpInfo(basketId, body)
@@ -1147,8 +1138,8 @@ export default class BasketsApi {
     /**
      * Adds a note to an existing basket.
      * @param {String} basketId The id of the basket to be modified.
-     * @param {module:models/NoteModel} body
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:models/BasketModel} and HTTP response
+     * @param {module:models/Note} body
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:models/Basket} and HTTP response
      */
     postBasketsByIDNotesWithHttpInfo(basketId, body) {
         const postBody = body
@@ -1174,7 +1165,7 @@ export default class BasketsApi {
         const authNames = ['customers_auth', 'oauth2_application']
         const contentTypes = ['application/json', 'text/xml', 'application/xml']
         const accepts = ['application/json', 'text/xml', 'application/xml']
-        const returnType = BasketModel
+        const returnType = Basket
 
         return this.apiClient.callApi(
             '/baskets/{basket_id}/notes', 'POST',
@@ -1186,8 +1177,8 @@ export default class BasketsApi {
     /**
      * Adds a note to an existing basket.
      * @param {String} basketId The id of the basket to be modified.
-     * @param {module:models/NoteModel} body
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:models/BasketModel}
+     * @param {module:models/Note} body
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:models/Basket}
      */
     postBasketsByIDNotes(basketId, body) {
         return this.postBasketsByIDNotesWithHttpInfo(basketId, body)
@@ -1204,8 +1195,8 @@ export default class BasketsApi {
      * updated. See POST /orders/{order_no}/payment_instruments and PATCH  /orders/{order_no}/payment_instruments/{payment_instrument_id}.
      * NOTE: If CREDIT_CARD is selected as the payment_method_id, it is mandatory to provide the property card_type.
      * @param {String} basketId the basket id
-     * @param {module:models/BasketPaymentInstrumentRequestModel} body
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:models/BasketModel} and HTTP response
+     * @param {module:models/BasketPaymentInstrumentRequest} body
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:models/Basket} and HTTP response
      */
     postBasketsByIDPaymentInstrumentsWithHttpInfo(basketId, body) {
         const postBody = body
@@ -1231,7 +1222,7 @@ export default class BasketsApi {
         const authNames = ['customers_auth', 'oauth2_application']
         const contentTypes = ['application/json', 'text/xml', 'application/xml']
         const accepts = ['application/json', 'text/xml', 'application/xml']
-        const returnType = BasketModel
+        const returnType = Basket
 
         return this.apiClient.callApi(
             '/baskets/{basket_id}/payment_instruments', 'POST',
@@ -1248,8 +1239,8 @@ export default class BasketsApi {
      * See POST /orders/{order_no}/payment_instruments and PATCH  /orders/{order_no}/payment_instruments/{payment_instrument_id}.
      * NOTE: If CREDIT_CARD is selected as the payment_method_id, it is mandatory to provide the property card_type.
      * @param {String} basketId the basket id
-     * @param {module:models/BasketPaymentInstrumentRequestModel} body
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:models/BasketModel}
+     * @param {module:models/BasketPaymentInstrumentRequest} body
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:models/Basket}
      */
     postBasketsByIDPaymentInstruments(basketId, body) {
         return this.postBasketsByIDPaymentInstrumentsWithHttpInfo(basketId, body)
@@ -1271,8 +1262,8 @@ export default class BasketsApi {
      * gift message
      * custom properties
      * @param {String} basketId the id of the basket to be modified
-     * @param {module:models/ShipmentModel} body
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:models/BasketModel} and HTTP response
+     * @param {module:models/Shipment} body
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:models/Basket} and HTTP response
      */
     postBasketsByIDShipmentsWithHttpInfo(basketId, body) {
         const postBody = body
@@ -1298,7 +1289,7 @@ export default class BasketsApi {
         const authNames = ['customers_auth', 'oauth2_application']
         const contentTypes = ['application/json', 'text/xml', 'application/xml']
         const accepts = ['application/json', 'text/xml', 'application/xml']
-        const returnType = BasketModel
+        const returnType = Basket
 
         return this.apiClient.callApi(
             '/baskets/{basket_id}/shipments', 'POST',
@@ -1319,8 +1310,8 @@ export default class BasketsApi {
      * gift message
      * custom properties
      * @param {String} basketId the id of the basket to be modified
-     * @param {module:models/ShipmentModel} body
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:models/BasketModel}
+     * @param {module:models/Shipment} body
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:models/Basket}
      */
     postBasketsByIDShipments(basketId, body) {
         return this.postBasketsByIDShipmentsWithHttpInfo(basketId, body)
@@ -1336,8 +1327,8 @@ export default class BasketsApi {
      * @param {Object} opts Optional parameters
      * @param {Boolean} opts.useAsShipping
      * @param {String} opts.customerAddressId
-     * @param {module:models/OrderAddressModel} opts.body
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:models/BasketModel} and HTTP response
+     * @param {module:models/OrderAddress} opts.body
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:models/Basket} and HTTP response
      */
     putBasketsByIDBillingAddressWithHttpInfo(basketId, opts) {
         opts = opts || {}
@@ -1362,7 +1353,7 @@ export default class BasketsApi {
         const authNames = ['customers_auth', 'oauth2_application']
         const contentTypes = ['application/json', 'text/xml', 'application/xml']
         const accepts = ['application/json', 'text/xml', 'application/xml']
-        const returnType = BasketModel
+        const returnType = Basket
 
         return this.apiClient.callApi(
             '/baskets/{basket_id}/billing_address', 'PUT',
@@ -1377,8 +1368,8 @@ export default class BasketsApi {
      * @param {Object} opts Optional parameters
      * @param {Boolean} opts.useAsShipping
      * @param {String} opts.customerAddressId
-     * @param {module:models/OrderAddressModel} opts.body
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:models/BasketModel}
+     * @param {module:models/OrderAddress} opts.body
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:models/Basket}
      */
     putBasketsByIDBillingAddress(basketId, opts) {
         return this.putBasketsByIDBillingAddressWithHttpInfo(basketId, opts)
@@ -1391,8 +1382,8 @@ export default class BasketsApi {
     /**
      * Sets customer information for an existing basket.
      * @param {String} basketId the id of the basket to be modified
-     * @param {module:models/CustomerInfoModel} body
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:models/BasketModel} and HTTP response
+     * @param {module:models/CustomerInfo} body
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:models/Basket} and HTTP response
      */
     putBasketsByIDCustomerWithHttpInfo(basketId, body) {
         const postBody = body
@@ -1418,7 +1409,7 @@ export default class BasketsApi {
         const authNames = ['customers_auth', 'oauth2_application']
         const contentTypes = ['application/json', 'text/xml', 'application/xml']
         const accepts = ['application/json', 'text/xml', 'application/xml']
-        const returnType = BasketModel
+        const returnType = Basket
 
         return this.apiClient.callApi(
             '/baskets/{basket_id}/customer', 'PUT',
@@ -1430,8 +1421,8 @@ export default class BasketsApi {
     /**
      * Sets customer information for an existing basket.
      * @param {String} basketId the id of the basket to be modified
-     * @param {module:models/CustomerInfoModel} body
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:models/BasketModel}
+     * @param {module:models/CustomerInfo} body
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:models/Basket}
      */
     putBasketsByIDCustomer(basketId, body) {
         return this.putBasketsByIDCustomerWithHttpInfo(basketId, body)
@@ -1445,11 +1436,11 @@ export default class BasketsApi {
      * Sets a shipping address of a specific shipment of a basket.
      * @param {String} basketId The id of the basket to be modified.
      * @param {String} shipmentId The id of the shipment to be modified.
-     * @param {module:models/OrderAddressModel} body
+     * @param {module:models/OrderAddress} body
      * @param {Object} opts Optional parameters
      * @param {Boolean} opts.useAsBilling
      * @param {String} opts.customerAddressId
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:models/BasketModel} and HTTP response
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:models/Basket} and HTTP response
      */
     putBasketsByIDShipmentsByIDShippingAddressWithHttpInfo(basketId, shipmentId, body, opts) {
         opts = opts || {}
@@ -1485,7 +1476,7 @@ export default class BasketsApi {
         const authNames = ['customers_auth', 'oauth2_application']
         const contentTypes = ['application/json', 'text/xml', 'application/xml']
         const accepts = ['application/json', 'text/xml', 'application/xml']
-        const returnType = BasketModel
+        const returnType = Basket
 
         return this.apiClient.callApi(
             '/baskets/{basket_id}/shipments/{shipment_id}/shipping_address', 'PUT',
@@ -1498,11 +1489,11 @@ export default class BasketsApi {
      * Sets a shipping address of a specific shipment of a basket.
      * @param {String} basketId The id of the basket to be modified.
      * @param {String} shipmentId The id of the shipment to be modified.
-     * @param {module:models/OrderAddressModel} body
+     * @param {module:models/OrderAddress} body
      * @param {Object} opts Optional parameters
      * @param {Boolean} opts.useAsBilling
      * @param {String} opts.customerAddressId
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:models/BasketModel}
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:models/Basket}
      */
     putBasketsByIDShipmentsByIDShippingAddress(basketId, shipmentId, body, opts) {
         return this.putBasketsByIDShipmentsByIDShippingAddressWithHttpInfo(basketId, shipmentId, body, opts)
@@ -1516,8 +1507,8 @@ export default class BasketsApi {
      * Sets a shipping method to a specific shipment of a basket.
      * @param {String} basketId the id of the basket to be modified
      * @param {String} shipmentId the id of the shipment to be modified
-     * @param {module:models/ShippingMethodModel} body
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:models/BasketModel} and HTTP response
+     * @param {module:models/ShippingMethod} body
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:models/Basket} and HTTP response
      */
     putBasketsByIDShipmentsByIDShippingMethodWithHttpInfo(basketId, shipmentId, body) {
         const postBody = body
@@ -1549,7 +1540,7 @@ export default class BasketsApi {
         const authNames = ['customers_auth', 'oauth2_application']
         const contentTypes = ['application/json', 'text/xml', 'application/xml']
         const accepts = ['application/json', 'text/xml', 'application/xml']
-        const returnType = BasketModel
+        const returnType = Basket
 
         return this.apiClient.callApi(
             '/baskets/{basket_id}/shipments/{shipment_id}/shipping_method', 'PUT',
@@ -1562,8 +1553,8 @@ export default class BasketsApi {
      * Sets a shipping method to a specific shipment of a basket.
      * @param {String} basketId the id of the basket to be modified
      * @param {String} shipmentId the id of the shipment to be modified
-     * @param {module:models/ShippingMethodModel} body
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:models/BasketModel}
+     * @param {module:models/ShippingMethod} body
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:models/Basket}
      */
     putBasketsByIDShipmentsByIDShippingMethod(basketId, shipmentId, body) {
         return this.putBasketsByIDShipmentsByIDShippingMethodWithHttpInfo(basketId, shipmentId, body)
@@ -1584,13 +1575,13 @@ export default class BasketsApi {
 </div>
 
 <nav>
-    <h2><a href="index.html">Home</a></h2><h3>Modules</h3><ul><li><a href="module-api_BasketsApi.html">api/BasketsApi</a></li><li><a href="module-api_CategoriesApi.html">api/CategoriesApi</a></li><li><a href="module-api_ContentApi.html">api/ContentApi</a></li><li><a href="module-api_ContentSearchApi.html">api/ContentSearchApi</a></li><li><a href="module-api_CustomersApi.html">api/CustomersApi</a></li><li><a href="module-api_CustomObjectsApi.html">api/CustomObjectsApi</a></li><li><a href="module-api_FoldersApi.html">api/FoldersApi</a></li><li><a href="module-api_GiftCertificateApi.html">api/GiftCertificateApi</a></li><li><a href="module-api_OrdersApi.html">api/OrdersApi</a></li><li><a href="module-api_OrderSearchApi.html">api/OrderSearchApi</a></li><li><a href="module-api_PriceAdjustmentLimitsApi.html">api/PriceAdjustmentLimitsApi</a></li><li><a href="module-api_ProductListsApi.html">api/ProductListsApi</a></li><li><a href="module-api_ProductsApi.html">api/ProductsApi</a></li><li><a href="module-api_ProductSearchApi.html">api/ProductSearchApi</a></li><li><a href="module-api_PromotionsApi.html">api/PromotionsApi</a></li><li><a href="module-api_SearchSuggestionApi.html">api/SearchSuggestionApi</a></li><li><a href="module-api_SessionsApi.html">api/SessionsApi</a></li><li><a href="module-api_SiteApi.html">api/SiteApi</a></li><li><a href="module-api_StoresApi.html">api/StoresApi</a></li><li><a href="module-ApiClient.html">ApiClient</a></li><li><a href="module-index.html">index</a></li><li><a href="module-models_AuthRequestModel.html">models/AuthRequestModel</a></li><li><a href="module-models_BasketModel.html">models/BasketModel</a></li><li><a href="module-models_BasketPaymentInstrumentRequestModel.html">models/BasketPaymentInstrumentRequestModel</a></li><li><a href="module-models_BasketsResultModel.html">models/BasketsResultModel</a></li><li><a href="module-models_BonusDiscountLineItemModel.html">models/BonusDiscountLineItemModel</a></li><li><a href="module-models_BoolFilterModel.html">models/BoolFilterModel</a></li><li><a href="module-models_BoolQueryModel.html">models/BoolQueryModel</a></li><li><a href="module-models_BundledProductModel.html">models/BundledProductModel</a></li><li><a href="module-models_CategoryModel.html">models/CategoryModel</a></li><li><a href="module-models_CategoryResultModel.html">models/CategoryResultModel</a></li><li><a href="module-models_ContentFolderModel.html">models/ContentFolderModel</a></li><li><a href="module-models_ContentFolderResultModel.html">models/ContentFolderResultModel</a></li><li><a href="module-models_ContentModel.html">models/ContentModel</a></li><li><a href="module-models_ContentResultModel.html">models/ContentResultModel</a></li><li><a href="module-models_ContentSearchRefinementModel.html">models/ContentSearchRefinementModel</a></li><li><a href="module-models_ContentSearchRefinementValueModel.html">models/ContentSearchRefinementValueModel</a></li><li><a href="module-models_ContentSearchResultModel.html">models/ContentSearchResultModel</a></li><li><a href="module-models_CouponItemModel.html">models/CouponItemModel</a></li><li><a href="module-models_CustomerAddressLinkModel.html">models/CustomerAddressLinkModel</a></li><li><a href="module-models_CustomerAddressModel.html">models/CustomerAddressModel</a></li><li><a href="module-models_CustomerAddressResultModel.html">models/CustomerAddressResultModel</a></li><li><a href="module-models_CustomerInfoModel.html">models/CustomerInfoModel</a></li><li><a href="module-models_CustomerModel.html">models/CustomerModel</a></li><li><a href="module-models_CustomerOrderResultModel.html">models/CustomerOrderResultModel</a></li><li><a href="module-models_CustomerPaymentCardRequestModel.html">models/CustomerPaymentCardRequestModel</a></li><li><a href="module-models_CustomerPaymentInstrumentModel.html">models/CustomerPaymentInstrumentModel</a></li><li><a href="module-models_CustomerPaymentInstrumentRequestModel.html">models/CustomerPaymentInstrumentRequestModel</a></li><li><a href="module-models_CustomerPaymentInstrumentResultModel.html">models/CustomerPaymentInstrumentResultModel</a></li><li><a href="module-models_CustomerProductListItemLinkModel.html">models/CustomerProductListItemLinkModel</a></li><li><a href="module-models_CustomerProductListItemModel.html">models/CustomerProductListItemModel</a></li><li><a href="module-models_CustomerProductListItemResultModel.html">models/CustomerProductListItemResultModel</a></li><li><a href="module-models_CustomerProductListModel.html">models/CustomerProductListModel</a></li><li><a href="module-models_CustomerProductListRegistrantModel.html">models/CustomerProductListRegistrantModel</a></li><li><a href="module-models_CustomerProductListResultModel.html">models/CustomerProductListResultModel</a></li><li><a href="module-models_CustomerRegistrationModel.html">models/CustomerRegistrationModel</a></li><li><a href="module-models_CustomObjectModel.html">models/CustomObjectModel</a></li><li><a href="module-models_DiscountModel.html">models/DiscountModel</a></li><li><a href="module-models_FaultModel.html">models/FaultModel</a></li><li><a href="module-models_FilteredQueryModel.html">models/FilteredQueryModel</a></li><li><a href="module-models_FilterModel.html">models/FilterModel</a></li><li><a href="module-models_GiftCertificateItemModel.html">models/GiftCertificateItemModel</a></li><li><a href="module-models_GiftCertificateModel.html">models/GiftCertificateModel</a></li><li><a href="module-models_GiftCertificateRequestModel.html">models/GiftCertificateRequestModel</a></li><li><a href="module-models_ImageGroupModel.html">models/ImageGroupModel</a></li><li><a href="module-models_ImageModel.html">models/ImageModel</a></li><li><a href="module-models_InventoryModel.html">models/InventoryModel</a></li><li><a href="module-models_LocaleModel.html">models/LocaleModel</a></li><li><a href="module-models_MasterModel.html">models/MasterModel</a></li><li><a href="module-models_NestedQueryModel.html">models/NestedQueryModel</a></li><li><a href="module-models_NoteModel.html">models/NoteModel</a></li><li><a href="module-models_NotesResultModel.html">models/NotesResultModel</a></li><li><a href="module-models_OptionItemModel.html">models/OptionItemModel</a></li><li><a href="module-models_OptionModel.html">models/OptionModel</a></li><li><a href="module-models_OptionValueModel.html">models/OptionValueModel</a></li><li><a href="module-models_OrderAddressModel.html">models/OrderAddressModel</a></li><li><a href="module-models_OrderModel.html">models/OrderModel</a></li><li><a href="module-models_OrderPaymentCardRequestModel.html">models/OrderPaymentCardRequestModel</a></li><li><a href="module-models_OrderPaymentInstrumentModel.html">models/OrderPaymentInstrumentModel</a></li><li><a href="module-models_OrderPaymentInstrumentRequestModel.html">models/OrderPaymentInstrumentRequestModel</a></li><li><a href="module-models_OrderSearchHitModel.html">models/OrderSearchHitModel</a></li><li><a href="module-models_OrderSearchRequestModel.html">models/OrderSearchRequestModel</a></li><li><a href="module-models_OrderSearchResultModel.html">models/OrderSearchResultModel</a></li><li><a href="module-models_PasswordChangeRequestModel.html">models/PasswordChangeRequestModel</a></li><li><a href="module-models_PasswordResetModel.html">models/PasswordResetModel</a></li><li><a href="module-models_PaymentBankAccountModel.html">models/PaymentBankAccountModel</a></li><li><a href="module-models_PaymentBankAccountRequestModel.html">models/PaymentBankAccountRequestModel</a></li><li><a href="module-models_PaymentCardModel.html">models/PaymentCardModel</a></li><li><a href="module-models_PaymentCardSpecModel.html">models/PaymentCardSpecModel</a></li><li><a href="module-models_PaymentMethodModel.html">models/PaymentMethodModel</a></li><li><a href="module-models_PaymentMethodResultModel.html">models/PaymentMethodResultModel</a></li><li><a href="module-models_PriceAdjustmentLimitModel.html">models/PriceAdjustmentLimitModel</a></li><li><a href="module-models_PriceAdjustmentLimitsModel.html">models/PriceAdjustmentLimitsModel</a></li><li><a href="module-models_PriceAdjustmentModel.html">models/PriceAdjustmentModel</a></li><li><a href="module-models_ProductDetailsLinkModel.html">models/ProductDetailsLinkModel</a></li><li><a href="module-models_ProductItemModel.html">models/ProductItemModel</a></li><li><a href="module-models_ProductLinkModel.html">models/ProductLinkModel</a></li><li><a href="module-models_ProductListEventModel.html">models/ProductListEventModel</a></li><li><a href="module-models_ProductListItemReferenceModel.html">models/ProductListItemReferenceModel</a></li><li><a href="module-models_ProductListLinkModel.html">models/ProductListLinkModel</a></li><li><a href="module-models_ProductListRegistrantModel.html">models/ProductListRegistrantModel</a></li><li><a href="module-models_ProductListShippingAddressModel.html">models/ProductListShippingAddressModel</a></li><li><a href="module-models_ProductModel.html">models/ProductModel</a></li><li><a href="module-models_ProductPromotionModel.html">models/ProductPromotionModel</a></li><li><a href="module-models_ProductResultModel.html">models/ProductResultModel</a></li><li><a href="module-models_ProductSearchHitModel.html">models/ProductSearchHitModel</a></li><li><a href="module-models_ProductSearchRefinementModel.html">models/ProductSearchRefinementModel</a></li><li><a href="module-models_ProductSearchRefinementValueModel.html">models/ProductSearchRefinementValueModel</a></li><li><a href="module-models_ProductSearchResultModel.html">models/ProductSearchResultModel</a></li><li><a href="module-models_ProductSearchSortingOptionModel.html">models/ProductSearchSortingOptionModel</a></li><li><a href="module-models_ProductSimpleLinkModel.html">models/ProductSimpleLinkModel</a></li><li><a href="module-models_ProductTypeModel.html">models/ProductTypeModel</a></li><li><a href="module-models_PromotionModel.html">models/PromotionModel</a></li><li><a href="module-models_PromotionResultModel.html">models/PromotionResultModel</a></li><li><a href="module-models_PublicProductListItemModel.html">models/PublicProductListItemModel</a></li><li><a href="module-models_PublicProductListItemResultModel.html">models/PublicProductListItemResultModel</a></li><li><a href="module-models_PublicProductListLinkModel.html">models/PublicProductListLinkModel</a></li><li><a href="module-models_PublicProductListModel.html">models/PublicProductListModel</a></li><li><a href="module-models_PublicProductListResultModel.html">models/PublicProductListResultModel</a></li><li><a href="module-models_QueryFilterModel.html">models/QueryFilterModel</a></li><li><a href="module-models_QueryModel.html">models/QueryModel</a></li><li><a href="module-models_Range2FilterModel.html">models/Range2FilterModel</a></li><li><a href="module-models_RangeFilterModel.html">models/RangeFilterModel</a></li><li><a href="module-models_RecommendationModel.html">models/RecommendationModel</a></li><li><a href="module-models_RecommendationTypeModel.html">models/RecommendationTypeModel</a></li><li><a href="module-models_ResultPageModel.html">models/ResultPageModel</a></li><li><a href="module-models_ShipmentModel.html">models/ShipmentModel</a></li><li><a href="module-models_ShippingItemModel.html">models/ShippingItemModel</a></li><li><a href="module-models_ShippingMethodModel.html">models/ShippingMethodModel</a></li><li><a href="module-models_ShippingMethodResultModel.html">models/ShippingMethodResultModel</a></li><li><a href="module-models_ShippingPromotionModel.html">models/ShippingPromotionModel</a></li><li><a href="module-models_SimpleLinkModel.html">models/SimpleLinkModel</a></li><li><a href="module-models_SiteModel.html">models/SiteModel</a></li><li><a href="module-models_SortModel.html">models/SortModel</a></li><li><a href="module-models_StatusModel.html">models/StatusModel</a></li><li><a href="module-models_StoreModel.html">models/StoreModel</a></li><li><a href="module-models_StoreResultModel.html">models/StoreResultModel</a></li><li><a href="module-models_SuggestedCategoryModel.html">models/SuggestedCategoryModel</a></li><li><a href="module-models_SuggestedContentModel.html">models/SuggestedContentModel</a></li><li><a href="module-models_SuggestedPhraseModel.html">models/SuggestedPhraseModel</a></li><li><a href="module-models_SuggestedProductModel.html">models/SuggestedProductModel</a></li><li><a href="module-models_SuggestedTermModel.html">models/SuggestedTermModel</a></li><li><a href="module-models_SuggestedTermsModel.html">models/SuggestedTermsModel</a></li><li><a href="module-models_SuggestionModel.html">models/SuggestionModel</a></li><li><a href="module-models_SuggestionResultModel.html">models/SuggestionResultModel</a></li><li><a href="module-models_TermFilterModel.html">models/TermFilterModel</a></li><li><a href="module-models_TermQueryModel.html">models/TermQueryModel</a></li><li><a href="module-models_TextQueryModel.html">models/TextQueryModel</a></li><li><a href="module-models_VariantModel.html">models/VariantModel</a></li><li><a href="module-models_VariationAttributeModel.html">models/VariationAttributeModel</a></li><li><a href="module-models_VariationAttributeValueModel.html">models/VariationAttributeValueModel</a></li><li><a href="module-models_VariationGroupModel.html">models/VariationGroupModel</a></li></ul><h3>Classes</h3><ul><li><a href="module-api_BasketsApi.html">api/BasketsApi</a></li><li><a href="module-api_CategoriesApi.html">api/CategoriesApi</a></li><li><a href="module-api_ContentApi.html">api/ContentApi</a></li><li><a href="module-api_ContentSearchApi.html">api/ContentSearchApi</a></li><li><a href="module-api_CustomersApi.html">api/CustomersApi</a></li><li><a href="module-api_CustomObjectsApi.html">api/CustomObjectsApi</a></li><li><a href="module-api_FoldersApi.html">api/FoldersApi</a></li><li><a href="module-api_GiftCertificateApi.html">api/GiftCertificateApi</a></li><li><a href="module-api_OrdersApi.html">api/OrdersApi</a></li><li><a href="module-api_OrderSearchApi.html">api/OrderSearchApi</a></li><li><a href="module-api_PriceAdjustmentLimitsApi.html">api/PriceAdjustmentLimitsApi</a></li><li><a href="module-api_ProductListsApi.html">api/ProductListsApi</a></li><li><a href="module-api_ProductsApi.html">api/ProductsApi</a></li><li><a href="module-api_ProductSearchApi.html">api/ProductSearchApi</a></li><li><a href="module-api_PromotionsApi.html">api/PromotionsApi</a></li><li><a href="module-api_SearchSuggestionApi.html">api/SearchSuggestionApi</a></li><li><a href="module-api_SessionsApi.html">api/SessionsApi</a></li><li><a href="module-api_SiteApi.html">api/SiteApi</a></li><li><a href="module-api_StoresApi.html">api/StoresApi</a></li><li><a href="module-ApiClient.html">ApiClient</a></li><li><a href="module-models_AuthRequestModel.html">models/AuthRequestModel</a></li><li><a href="module-models_BasketModel.html">models/BasketModel</a></li><li><a href="module-models_BasketPaymentInstrumentRequestModel.html">models/BasketPaymentInstrumentRequestModel</a></li><li><a href="module-models_BasketsResultModel.html">models/BasketsResultModel</a></li><li><a href="module-models_BonusDiscountLineItemModel.html">models/BonusDiscountLineItemModel</a></li><li><a href="module-models_BoolFilterModel.html">models/BoolFilterModel</a></li><li><a href="module-models_BoolQueryModel.html">models/BoolQueryModel</a></li><li><a href="module-models_BundledProductModel.html">models/BundledProductModel</a></li><li><a href="module-models_CategoryModel.html">models/CategoryModel</a></li><li><a href="module-models_CategoryResultModel.html">models/CategoryResultModel</a></li><li><a href="module-models_ContentFolderModel.html">models/ContentFolderModel</a></li><li><a href="module-models_ContentFolderResultModel.html">models/ContentFolderResultModel</a></li><li><a href="module-models_ContentModel.html">models/ContentModel</a></li><li><a href="module-models_ContentResultModel.html">models/ContentResultModel</a></li><li><a href="module-models_ContentSearchRefinementModel.html">models/ContentSearchRefinementModel</a></li><li><a href="module-models_ContentSearchRefinementValueModel.html">models/ContentSearchRefinementValueModel</a></li><li><a href="module-models_ContentSearchResultModel.html">models/ContentSearchResultModel</a></li><li><a href="module-models_CouponItemModel.html">models/CouponItemModel</a></li><li><a href="module-models_CustomerAddressLinkModel.html">models/CustomerAddressLinkModel</a></li><li><a href="module-models_CustomerAddressModel.html">models/CustomerAddressModel</a></li><li><a href="module-models_CustomerAddressResultModel.html">models/CustomerAddressResultModel</a></li><li><a href="module-models_CustomerInfoModel.html">models/CustomerInfoModel</a></li><li><a href="module-models_CustomerModel.html">models/CustomerModel</a></li><li><a href="module-models_CustomerOrderResultModel.html">models/CustomerOrderResultModel</a></li><li><a href="module-models_CustomerPaymentCardRequestModel.html">models/CustomerPaymentCardRequestModel</a></li><li><a href="module-models_CustomerPaymentInstrumentModel.html">models/CustomerPaymentInstrumentModel</a></li><li><a href="module-models_CustomerPaymentInstrumentRequestModel.html">models/CustomerPaymentInstrumentRequestModel</a></li><li><a href="module-models_CustomerPaymentInstrumentResultModel.html">models/CustomerPaymentInstrumentResultModel</a></li><li><a href="module-models_CustomerProductListItemLinkModel.html">models/CustomerProductListItemLinkModel</a></li><li><a href="module-models_CustomerProductListItemModel.html">models/CustomerProductListItemModel</a></li><li><a href="module-models_CustomerProductListItemResultModel.html">models/CustomerProductListItemResultModel</a></li><li><a href="module-models_CustomerProductListModel.html">models/CustomerProductListModel</a></li><li><a href="module-models_CustomerProductListRegistrantModel.html">models/CustomerProductListRegistrantModel</a></li><li><a href="module-models_CustomerProductListResultModel.html">models/CustomerProductListResultModel</a></li><li><a href="module-models_CustomerRegistrationModel.html">models/CustomerRegistrationModel</a></li><li><a href="module-models_CustomObjectModel.html">models/CustomObjectModel</a></li><li><a href="module-models_DiscountModel.html">models/DiscountModel</a></li><li><a href="module-models_FaultModel.html">models/FaultModel</a></li><li><a href="module-models_FilteredQueryModel.html">models/FilteredQueryModel</a></li><li><a href="module-models_FilterModel.html">models/FilterModel</a></li><li><a href="module-models_GiftCertificateItemModel.html">models/GiftCertificateItemModel</a></li><li><a href="module-models_GiftCertificateModel.html">models/GiftCertificateModel</a></li><li><a href="module-models_GiftCertificateRequestModel.html">models/GiftCertificateRequestModel</a></li><li><a href="module-models_ImageGroupModel.html">models/ImageGroupModel</a></li><li><a href="module-models_ImageModel.html">models/ImageModel</a></li><li><a href="module-models_InventoryModel.html">models/InventoryModel</a></li><li><a href="module-models_LocaleModel.html">models/LocaleModel</a></li><li><a href="module-models_MasterModel.html">models/MasterModel</a></li><li><a href="module-models_NestedQueryModel.html">models/NestedQueryModel</a></li><li><a href="module-models_NoteModel.html">models/NoteModel</a></li><li><a href="module-models_NotesResultModel.html">models/NotesResultModel</a></li><li><a href="module-models_OptionItemModel.html">models/OptionItemModel</a></li><li><a href="module-models_OptionModel.html">models/OptionModel</a></li><li><a href="module-models_OptionValueModel.html">models/OptionValueModel</a></li><li><a href="module-models_OrderAddressModel.html">models/OrderAddressModel</a></li><li><a href="module-models_OrderModel.html">models/OrderModel</a></li><li><a href="module-models_OrderPaymentCardRequestModel.html">models/OrderPaymentCardRequestModel</a></li><li><a href="module-models_OrderPaymentInstrumentModel.html">models/OrderPaymentInstrumentModel</a></li><li><a href="module-models_OrderPaymentInstrumentRequestModel.html">models/OrderPaymentInstrumentRequestModel</a></li><li><a href="module-models_OrderSearchHitModel.html">models/OrderSearchHitModel</a></li><li><a href="module-models_OrderSearchRequestModel.html">models/OrderSearchRequestModel</a></li><li><a href="module-models_OrderSearchResultModel.html">models/OrderSearchResultModel</a></li><li><a href="module-models_PasswordChangeRequestModel.html">models/PasswordChangeRequestModel</a></li><li><a href="module-models_PasswordResetModel.html">models/PasswordResetModel</a></li><li><a href="module-models_PaymentBankAccountModel.html">models/PaymentBankAccountModel</a></li><li><a href="module-models_PaymentBankAccountRequestModel.html">models/PaymentBankAccountRequestModel</a></li><li><a href="module-models_PaymentCardModel.html">models/PaymentCardModel</a></li><li><a href="module-models_PaymentCardSpecModel.html">models/PaymentCardSpecModel</a></li><li><a href="module-models_PaymentMethodModel.html">models/PaymentMethodModel</a></li><li><a href="module-models_PaymentMethodResultModel.html">models/PaymentMethodResultModel</a></li><li><a href="module-models_PriceAdjustmentLimitModel.html">models/PriceAdjustmentLimitModel</a></li><li><a href="module-models_PriceAdjustmentLimitsModel.html">models/PriceAdjustmentLimitsModel</a></li><li><a href="module-models_PriceAdjustmentModel.html">models/PriceAdjustmentModel</a></li><li><a href="module-models_ProductDetailsLinkModel.html">models/ProductDetailsLinkModel</a></li><li><a href="module-models_ProductItemModel.html">models/ProductItemModel</a></li><li><a href="module-models_ProductLinkModel.html">models/ProductLinkModel</a></li><li><a href="module-models_ProductListEventModel.html">models/ProductListEventModel</a></li><li><a href="module-models_ProductListItemReferenceModel.html">models/ProductListItemReferenceModel</a></li><li><a href="module-models_ProductListLinkModel.html">models/ProductListLinkModel</a></li><li><a href="module-models_ProductListRegistrantModel.html">models/ProductListRegistrantModel</a></li><li><a href="module-models_ProductListShippingAddressModel.html">models/ProductListShippingAddressModel</a></li><li><a href="module-models_ProductModel.html">models/ProductModel</a></li><li><a href="module-models_ProductPromotionModel.html">models/ProductPromotionModel</a></li><li><a href="module-models_ProductResultModel.html">models/ProductResultModel</a></li><li><a href="module-models_ProductSearchHitModel.html">models/ProductSearchHitModel</a></li><li><a href="module-models_ProductSearchRefinementModel.html">models/ProductSearchRefinementModel</a></li><li><a href="module-models_ProductSearchRefinementValueModel.html">models/ProductSearchRefinementValueModel</a></li><li><a href="module-models_ProductSearchResultModel.html">models/ProductSearchResultModel</a></li><li><a href="module-models_ProductSearchSortingOptionModel.html">models/ProductSearchSortingOptionModel</a></li><li><a href="module-models_ProductSimpleLinkModel.html">models/ProductSimpleLinkModel</a></li><li><a href="module-models_ProductTypeModel.html">models/ProductTypeModel</a></li><li><a href="module-models_PromotionModel.html">models/PromotionModel</a></li><li><a href="module-models_PromotionResultModel.html">models/PromotionResultModel</a></li><li><a href="module-models_PublicProductListItemModel.html">models/PublicProductListItemModel</a></li><li><a href="module-models_PublicProductListItemResultModel.html">models/PublicProductListItemResultModel</a></li><li><a href="module-models_PublicProductListLinkModel.html">models/PublicProductListLinkModel</a></li><li><a href="module-models_PublicProductListModel.html">models/PublicProductListModel</a></li><li><a href="module-models_PublicProductListResultModel.html">models/PublicProductListResultModel</a></li><li><a href="module-models_QueryFilterModel.html">models/QueryFilterModel</a></li><li><a href="module-models_QueryModel.html">models/QueryModel</a></li><li><a href="module-models_Range2FilterModel.html">models/Range2FilterModel</a></li><li><a href="module-models_RangeFilterModel.html">models/RangeFilterModel</a></li><li><a href="module-models_RecommendationModel.html">models/RecommendationModel</a></li><li><a href="module-models_RecommendationTypeModel.html">models/RecommendationTypeModel</a></li><li><a href="module-models_ResultPageModel.html">models/ResultPageModel</a></li><li><a href="module-models_ShipmentModel.html">models/ShipmentModel</a></li><li><a href="module-models_ShippingItemModel.html">models/ShippingItemModel</a></li><li><a href="module-models_ShippingMethodModel.html">models/ShippingMethodModel</a></li><li><a href="module-models_ShippingMethodResultModel.html">models/ShippingMethodResultModel</a></li><li><a href="module-models_ShippingPromotionModel.html">models/ShippingPromotionModel</a></li><li><a href="module-models_SimpleLinkModel.html">models/SimpleLinkModel</a></li><li><a href="module-models_SiteModel.html">models/SiteModel</a></li><li><a href="module-models_SortModel.html">models/SortModel</a></li><li><a href="module-models_StatusModel.html">models/StatusModel</a></li><li><a href="module-models_StoreModel.html">models/StoreModel</a></li><li><a href="module-models_StoreResultModel.html">models/StoreResultModel</a></li><li><a href="module-models_SuggestedCategoryModel.html">models/SuggestedCategoryModel</a></li><li><a href="module-models_SuggestedContentModel.html">models/SuggestedContentModel</a></li><li><a href="module-models_SuggestedPhraseModel.html">models/SuggestedPhraseModel</a></li><li><a href="module-models_SuggestedProductModel.html">models/SuggestedProductModel</a></li><li><a href="module-models_SuggestedTermModel.html">models/SuggestedTermModel</a></li><li><a href="module-models_SuggestedTermsModel.html">models/SuggestedTermsModel</a></li><li><a href="module-models_SuggestionModel.html">models/SuggestionModel</a></li><li><a href="module-models_SuggestionResultModel.html">models/SuggestionResultModel</a></li><li><a href="module-models_TermFilterModel.html">models/TermFilterModel</a></li><li><a href="module-models_TermQueryModel.html">models/TermQueryModel</a></li><li><a href="module-models_TextQueryModel.html">models/TextQueryModel</a></li><li><a href="module-models_VariantModel.html">models/VariantModel</a></li><li><a href="module-models_VariationAttributeModel.html">models/VariationAttributeModel</a></li><li><a href="module-models_VariationAttributeValueModel.html">models/VariationAttributeValueModel</a></li><li><a href="module-models_VariationGroupModel.html">models/VariationGroupModel</a></li></ul>
+    <h2><a href="index.html">Home</a></h2><h3>Modules</h3><ul><li><a href="module-api_BasketsApi.html">api/BasketsApi</a></li><li><a href="module-api_CategoriesApi.html">api/CategoriesApi</a></li><li><a href="module-api_ContentApi.html">api/ContentApi</a></li><li><a href="module-api_ContentSearchApi.html">api/ContentSearchApi</a></li><li><a href="module-api_CustomersApi.html">api/CustomersApi</a></li><li><a href="module-api_CustomObjectsApi.html">api/CustomObjectsApi</a></li><li><a href="module-api_FoldersApi.html">api/FoldersApi</a></li><li><a href="module-api_GiftCertificateApi.html">api/GiftCertificateApi</a></li><li><a href="module-api_OrdersApi.html">api/OrdersApi</a></li><li><a href="module-api_OrderSearchApi.html">api/OrderSearchApi</a></li><li><a href="module-api_PriceAdjustmentLimitsApi.html">api/PriceAdjustmentLimitsApi</a></li><li><a href="module-api_ProductListsApi.html">api/ProductListsApi</a></li><li><a href="module-api_ProductsApi.html">api/ProductsApi</a></li><li><a href="module-api_ProductSearchApi.html">api/ProductSearchApi</a></li><li><a href="module-api_PromotionsApi.html">api/PromotionsApi</a></li><li><a href="module-api_SearchSuggestionApi.html">api/SearchSuggestionApi</a></li><li><a href="module-api_SessionsApi.html">api/SessionsApi</a></li><li><a href="module-api_SiteApi.html">api/SiteApi</a></li><li><a href="module-api_StoresApi.html">api/StoresApi</a></li><li><a href="module-ApiClient.html">ApiClient</a></li><li><a href="module-index.html">index</a></li><li><a href="module-models_AuthRequest.html">models/AuthRequest</a></li><li><a href="module-models_Basket.html">models/Basket</a></li><li><a href="module-models_BasketPaymentInstrumentRequest.html">models/BasketPaymentInstrumentRequest</a></li><li><a href="module-models_BasketsResult.html">models/BasketsResult</a></li><li><a href="module-models_BonusDiscountLineItem.html">models/BonusDiscountLineItem</a></li><li><a href="module-models_BoolFilter.html">models/BoolFilter</a></li><li><a href="module-models_BoolQuery.html">models/BoolQuery</a></li><li><a href="module-models_BundledProduct.html">models/BundledProduct</a></li><li><a href="module-models_Category.html">models/Category</a></li><li><a href="module-models_CategoryResult.html">models/CategoryResult</a></li><li><a href="module-models_Content.html">models/Content</a></li><li><a href="module-models_ContentFolder.html">models/ContentFolder</a></li><li><a href="module-models_ContentFolderResult.html">models/ContentFolderResult</a></li><li><a href="module-models_ContentResult.html">models/ContentResult</a></li><li><a href="module-models_ContentSearchRefinement.html">models/ContentSearchRefinement</a></li><li><a href="module-models_ContentSearchRefinementValue.html">models/ContentSearchRefinementValue</a></li><li><a href="module-models_ContentSearchResult.html">models/ContentSearchResult</a></li><li><a href="module-models_CouponItem.html">models/CouponItem</a></li><li><a href="module-models_Customer.html">models/Customer</a></li><li><a href="module-models_CustomerAddress.html">models/CustomerAddress</a></li><li><a href="module-models_CustomerAddressLink.html">models/CustomerAddressLink</a></li><li><a href="module-models_CustomerAddressResult.html">models/CustomerAddressResult</a></li><li><a href="module-models_CustomerInfo.html">models/CustomerInfo</a></li><li><a href="module-models_CustomerOrderResult.html">models/CustomerOrderResult</a></li><li><a href="module-models_CustomerPaymentCardRequest.html">models/CustomerPaymentCardRequest</a></li><li><a href="module-models_CustomerPaymentInstrument.html">models/CustomerPaymentInstrument</a></li><li><a href="module-models_CustomerPaymentInstrumentRequest.html">models/CustomerPaymentInstrumentRequest</a></li><li><a href="module-models_CustomerPaymentInstrumentResult.html">models/CustomerPaymentInstrumentResult</a></li><li><a href="module-models_CustomerProductList.html">models/CustomerProductList</a></li><li><a href="module-models_CustomerProductListItem.html">models/CustomerProductListItem</a></li><li><a href="module-models_CustomerProductListItemLink.html">models/CustomerProductListItemLink</a></li><li><a href="module-models_CustomerProductListItemResult.html">models/CustomerProductListItemResult</a></li><li><a href="module-models_CustomerProductListRegistrant.html">models/CustomerProductListRegistrant</a></li><li><a href="module-models_CustomerProductListResult.html">models/CustomerProductListResult</a></li><li><a href="module-models_CustomerRegistration.html">models/CustomerRegistration</a></li><li><a href="module-models_CustomObject.html">models/CustomObject</a></li><li><a href="module-models_Discount.html">models/Discount</a></li><li><a href="module-models_Fault.html">models/Fault</a></li><li><a href="module-models_Filter.html">models/Filter</a></li><li><a href="module-models_FilteredQuery.html">models/FilteredQuery</a></li><li><a href="module-models_GiftCertificate.html">models/GiftCertificate</a></li><li><a href="module-models_GiftCertificateItem.html">models/GiftCertificateItem</a></li><li><a href="module-models_GiftCertificateRequest.html">models/GiftCertificateRequest</a></li><li><a href="module-models_Image.html">models/Image</a></li><li><a href="module-models_ImageGroup.html">models/ImageGroup</a></li><li><a href="module-models_Inventory.html">models/Inventory</a></li><li><a href="module-models_Locale.html">models/Locale</a></li><li><a href="module-models_Master.html">models/Master</a></li><li><a href="module-models_NestedQuery.html">models/NestedQuery</a></li><li><a href="module-models_Note.html">models/Note</a></li><li><a href="module-models_NotesResult.html">models/NotesResult</a></li><li><a href="module-models_Option.html">models/Option</a></li><li><a href="module-models_OptionItem.html">models/OptionItem</a></li><li><a href="module-models_OptionValue.html">models/OptionValue</a></li><li><a href="module-models_Order.html">models/Order</a></li><li><a href="module-models_OrderAddress.html">models/OrderAddress</a></li><li><a href="module-models_OrderPaymentCardRequest.html">models/OrderPaymentCardRequest</a></li><li><a href="module-models_OrderPaymentInstrument.html">models/OrderPaymentInstrument</a></li><li><a href="module-models_OrderPaymentInstrumentRequest.html">models/OrderPaymentInstrumentRequest</a></li><li><a href="module-models_OrderSearchHit.html">models/OrderSearchHit</a></li><li><a href="module-models_OrderSearchRequest.html">models/OrderSearchRequest</a></li><li><a href="module-models_OrderSearchResult.html">models/OrderSearchResult</a></li><li><a href="module-models_PasswordChangeRequest.html">models/PasswordChangeRequest</a></li><li><a href="module-models_PasswordReset.html">models/PasswordReset</a></li><li><a href="module-models_PaymentBankAccount.html">models/PaymentBankAccount</a></li><li><a href="module-models_PaymentBankAccountRequest.html">models/PaymentBankAccountRequest</a></li><li><a href="module-models_PaymentCard.html">models/PaymentCard</a></li><li><a href="module-models_PaymentCardSpec.html">models/PaymentCardSpec</a></li><li><a href="module-models_PaymentMethod.html">models/PaymentMethod</a></li><li><a href="module-models_PaymentMethodResult.html">models/PaymentMethodResult</a></li><li><a href="module-models_PriceAdjustment.html">models/PriceAdjustment</a></li><li><a href="module-models_PriceAdjustmentLimit.html">models/PriceAdjustmentLimit</a></li><li><a href="module-models_PriceAdjustmentLimits.html">models/PriceAdjustmentLimits</a></li><li><a href="module-models_Product.html">models/Product</a></li><li><a href="module-models_ProductDetailsLink.html">models/ProductDetailsLink</a></li><li><a href="module-models_ProductItem.html">models/ProductItem</a></li><li><a href="module-models_ProductLink.html">models/ProductLink</a></li><li><a href="module-models_ProductListEvent.html">models/ProductListEvent</a></li><li><a href="module-models_ProductListItemReference.html">models/ProductListItemReference</a></li><li><a href="module-models_ProductListLink.html">models/ProductListLink</a></li><li><a href="module-models_ProductListRegistrant.html">models/ProductListRegistrant</a></li><li><a href="module-models_ProductListShippingAddress.html">models/ProductListShippingAddress</a></li><li><a href="module-models_ProductPromotion.html">models/ProductPromotion</a></li><li><a href="module-models_ProductResult.html">models/ProductResult</a></li><li><a href="module-models_ProductSearchHit.html">models/ProductSearchHit</a></li><li><a href="module-models_ProductSearchRefinement.html">models/ProductSearchRefinement</a></li><li><a href="module-models_ProductSearchRefinementValue.html">models/ProductSearchRefinementValue</a></li><li><a href="module-models_ProductSearchResult.html">models/ProductSearchResult</a></li><li><a href="module-models_ProductSearchSortingOption.html">models/ProductSearchSortingOption</a></li><li><a href="module-models_ProductSimpleLink.html">models/ProductSimpleLink</a></li><li><a href="module-models_ProductType.html">models/ProductType</a></li><li><a href="module-models_Promotion.html">models/Promotion</a></li><li><a href="module-models_PromotionResult.html">models/PromotionResult</a></li><li><a href="module-models_PublicProductList.html">models/PublicProductList</a></li><li><a href="module-models_PublicProductListItem.html">models/PublicProductListItem</a></li><li><a href="module-models_PublicProductListItemResult.html">models/PublicProductListItemResult</a></li><li><a href="module-models_PublicProductListLink.html">models/PublicProductListLink</a></li><li><a href="module-models_PublicProductListResult.html">models/PublicProductListResult</a></li><li><a href="module-models_Query.html">models/Query</a></li><li><a href="module-models_QueryFilter.html">models/QueryFilter</a></li><li><a href="module-models_Range2Filter.html">models/Range2Filter</a></li><li><a href="module-models_RangeFilter.html">models/RangeFilter</a></li><li><a href="module-models_Recommendation.html">models/Recommendation</a></li><li><a href="module-models_RecommendationType.html">models/RecommendationType</a></li><li><a href="module-models_ResultPage.html">models/ResultPage</a></li><li><a href="module-models_Shipment.html">models/Shipment</a></li><li><a href="module-models_ShippingItem.html">models/ShippingItem</a></li><li><a href="module-models_ShippingMethod.html">models/ShippingMethod</a></li><li><a href="module-models_ShippingMethodResult.html">models/ShippingMethodResult</a></li><li><a href="module-models_ShippingPromotion.html">models/ShippingPromotion</a></li><li><a href="module-models_SimpleLink.html">models/SimpleLink</a></li><li><a href="module-models_Site.html">models/Site</a></li><li><a href="module-models_Sort.html">models/Sort</a></li><li><a href="module-models_Status.html">models/Status</a></li><li><a href="module-models_Store.html">models/Store</a></li><li><a href="module-models_StoreResult.html">models/StoreResult</a></li><li><a href="module-models_SuggestedCategory.html">models/SuggestedCategory</a></li><li><a href="module-models_SuggestedContent.html">models/SuggestedContent</a></li><li><a href="module-models_SuggestedPhrase.html">models/SuggestedPhrase</a></li><li><a href="module-models_SuggestedProduct.html">models/SuggestedProduct</a></li><li><a href="module-models_SuggestedTerm.html">models/SuggestedTerm</a></li><li><a href="module-models_SuggestedTerms.html">models/SuggestedTerms</a></li><li><a href="module-models_Suggestion.html">models/Suggestion</a></li><li><a href="module-models_SuggestionResult.html">models/SuggestionResult</a></li><li><a href="module-models_TermFilter.html">models/TermFilter</a></li><li><a href="module-models_TermQuery.html">models/TermQuery</a></li><li><a href="module-models_TextQuery.html">models/TextQuery</a></li><li><a href="module-models_Variant.html">models/Variant</a></li><li><a href="module-models_VariationAttribute.html">models/VariationAttribute</a></li><li><a href="module-models_VariationAttributeValue.html">models/VariationAttributeValue</a></li><li><a href="module-models_VariationGroup.html">models/VariationGroup</a></li></ul><h3>Classes</h3><ul><li><a href="module-api_BasketsApi.html">api/BasketsApi</a></li><li><a href="module-api_CategoriesApi.html">api/CategoriesApi</a></li><li><a href="module-api_ContentApi.html">api/ContentApi</a></li><li><a href="module-api_ContentSearchApi.html">api/ContentSearchApi</a></li><li><a href="module-api_CustomersApi.html">api/CustomersApi</a></li><li><a href="module-api_CustomObjectsApi.html">api/CustomObjectsApi</a></li><li><a href="module-api_FoldersApi.html">api/FoldersApi</a></li><li><a href="module-api_GiftCertificateApi.html">api/GiftCertificateApi</a></li><li><a href="module-api_OrdersApi.html">api/OrdersApi</a></li><li><a href="module-api_OrderSearchApi.html">api/OrderSearchApi</a></li><li><a href="module-api_PriceAdjustmentLimitsApi.html">api/PriceAdjustmentLimitsApi</a></li><li><a href="module-api_ProductListsApi.html">api/ProductListsApi</a></li><li><a href="module-api_ProductsApi.html">api/ProductsApi</a></li><li><a href="module-api_ProductSearchApi.html">api/ProductSearchApi</a></li><li><a href="module-api_PromotionsApi.html">api/PromotionsApi</a></li><li><a href="module-api_SearchSuggestionApi.html">api/SearchSuggestionApi</a></li><li><a href="module-api_SessionsApi.html">api/SessionsApi</a></li><li><a href="module-api_SiteApi.html">api/SiteApi</a></li><li><a href="module-api_StoresApi.html">api/StoresApi</a></li><li><a href="module-ApiClient.html">ApiClient</a></li><li><a href="module-models_AuthRequest.html">models/AuthRequest</a></li><li><a href="module-models_Basket.html">models/Basket</a></li><li><a href="module-models_BasketPaymentInstrumentRequest.html">models/BasketPaymentInstrumentRequest</a></li><li><a href="module-models_BasketsResult.html">models/BasketsResult</a></li><li><a href="module-models_BonusDiscountLineItem.html">models/BonusDiscountLineItem</a></li><li><a href="module-models_BoolFilter.html">models/BoolFilter</a></li><li><a href="module-models_BoolQuery.html">models/BoolQuery</a></li><li><a href="module-models_BundledProduct.html">models/BundledProduct</a></li><li><a href="module-models_Category.html">models/Category</a></li><li><a href="module-models_CategoryResult.html">models/CategoryResult</a></li><li><a href="module-models_Content.html">models/Content</a></li><li><a href="module-models_ContentFolder.html">models/ContentFolder</a></li><li><a href="module-models_ContentFolderResult.html">models/ContentFolderResult</a></li><li><a href="module-models_ContentResult.html">models/ContentResult</a></li><li><a href="module-models_ContentSearchRefinement.html">models/ContentSearchRefinement</a></li><li><a href="module-models_ContentSearchRefinementValue.html">models/ContentSearchRefinementValue</a></li><li><a href="module-models_ContentSearchResult.html">models/ContentSearchResult</a></li><li><a href="module-models_CouponItem.html">models/CouponItem</a></li><li><a href="module-models_Customer.html">models/Customer</a></li><li><a href="module-models_CustomerAddress.html">models/CustomerAddress</a></li><li><a href="module-models_CustomerAddressLink.html">models/CustomerAddressLink</a></li><li><a href="module-models_CustomerAddressResult.html">models/CustomerAddressResult</a></li><li><a href="module-models_CustomerInfo.html">models/CustomerInfo</a></li><li><a href="module-models_CustomerOrderResult.html">models/CustomerOrderResult</a></li><li><a href="module-models_CustomerPaymentCardRequest.html">models/CustomerPaymentCardRequest</a></li><li><a href="module-models_CustomerPaymentInstrument.html">models/CustomerPaymentInstrument</a></li><li><a href="module-models_CustomerPaymentInstrumentRequest.html">models/CustomerPaymentInstrumentRequest</a></li><li><a href="module-models_CustomerPaymentInstrumentResult.html">models/CustomerPaymentInstrumentResult</a></li><li><a href="module-models_CustomerProductList.html">models/CustomerProductList</a></li><li><a href="module-models_CustomerProductListItem.html">models/CustomerProductListItem</a></li><li><a href="module-models_CustomerProductListItemLink.html">models/CustomerProductListItemLink</a></li><li><a href="module-models_CustomerProductListItemResult.html">models/CustomerProductListItemResult</a></li><li><a href="module-models_CustomerProductListRegistrant.html">models/CustomerProductListRegistrant</a></li><li><a href="module-models_CustomerProductListResult.html">models/CustomerProductListResult</a></li><li><a href="module-models_CustomerRegistration.html">models/CustomerRegistration</a></li><li><a href="module-models_CustomObject.html">models/CustomObject</a></li><li><a href="module-models_Discount.html">models/Discount</a></li><li><a href="module-models_Fault.html">models/Fault</a></li><li><a href="module-models_Filter.html">models/Filter</a></li><li><a href="module-models_FilteredQuery.html">models/FilteredQuery</a></li><li><a href="module-models_GiftCertificate.html">models/GiftCertificate</a></li><li><a href="module-models_GiftCertificateItem.html">models/GiftCertificateItem</a></li><li><a href="module-models_GiftCertificateRequest.html">models/GiftCertificateRequest</a></li><li><a href="module-models_Image.html">models/Image</a></li><li><a href="module-models_ImageGroup.html">models/ImageGroup</a></li><li><a href="module-models_Inventory.html">models/Inventory</a></li><li><a href="module-models_Locale.html">models/Locale</a></li><li><a href="module-models_Master.html">models/Master</a></li><li><a href="module-models_NestedQuery.html">models/NestedQuery</a></li><li><a href="module-models_Note.html">models/Note</a></li><li><a href="module-models_NotesResult.html">models/NotesResult</a></li><li><a href="module-models_Option.html">models/Option</a></li><li><a href="module-models_OptionItem.html">models/OptionItem</a></li><li><a href="module-models_OptionValue.html">models/OptionValue</a></li><li><a href="module-models_Order.html">models/Order</a></li><li><a href="module-models_OrderAddress.html">models/OrderAddress</a></li><li><a href="module-models_OrderPaymentCardRequest.html">models/OrderPaymentCardRequest</a></li><li><a href="module-models_OrderPaymentInstrument.html">models/OrderPaymentInstrument</a></li><li><a href="module-models_OrderPaymentInstrumentRequest.html">models/OrderPaymentInstrumentRequest</a></li><li><a href="module-models_OrderSearchHit.html">models/OrderSearchHit</a></li><li><a href="module-models_OrderSearchRequest.html">models/OrderSearchRequest</a></li><li><a href="module-models_OrderSearchResult.html">models/OrderSearchResult</a></li><li><a href="module-models_PasswordChangeRequest.html">models/PasswordChangeRequest</a></li><li><a href="module-models_PasswordReset.html">models/PasswordReset</a></li><li><a href="module-models_PaymentBankAccount.html">models/PaymentBankAccount</a></li><li><a href="module-models_PaymentBankAccountRequest.html">models/PaymentBankAccountRequest</a></li><li><a href="module-models_PaymentCard.html">models/PaymentCard</a></li><li><a href="module-models_PaymentCardSpec.html">models/PaymentCardSpec</a></li><li><a href="module-models_PaymentMethod.html">models/PaymentMethod</a></li><li><a href="module-models_PaymentMethodResult.html">models/PaymentMethodResult</a></li><li><a href="module-models_PriceAdjustment.html">models/PriceAdjustment</a></li><li><a href="module-models_PriceAdjustmentLimit.html">models/PriceAdjustmentLimit</a></li><li><a href="module-models_PriceAdjustmentLimits.html">models/PriceAdjustmentLimits</a></li><li><a href="module-models_Product.html">models/Product</a></li><li><a href="module-models_ProductDetailsLink.html">models/ProductDetailsLink</a></li><li><a href="module-models_ProductItem.html">models/ProductItem</a></li><li><a href="module-models_ProductLink.html">models/ProductLink</a></li><li><a href="module-models_ProductListEvent.html">models/ProductListEvent</a></li><li><a href="module-models_ProductListItemReference.html">models/ProductListItemReference</a></li><li><a href="module-models_ProductListLink.html">models/ProductListLink</a></li><li><a href="module-models_ProductListRegistrant.html">models/ProductListRegistrant</a></li><li><a href="module-models_ProductListShippingAddress.html">models/ProductListShippingAddress</a></li><li><a href="module-models_ProductPromotion.html">models/ProductPromotion</a></li><li><a href="module-models_ProductResult.html">models/ProductResult</a></li><li><a href="module-models_ProductSearchHit.html">models/ProductSearchHit</a></li><li><a href="module-models_ProductSearchRefinement.html">models/ProductSearchRefinement</a></li><li><a href="module-models_ProductSearchRefinementValue.html">models/ProductSearchRefinementValue</a></li><li><a href="module-models_ProductSearchResult.html">models/ProductSearchResult</a></li><li><a href="module-models_ProductSearchSortingOption.html">models/ProductSearchSortingOption</a></li><li><a href="module-models_ProductSimpleLink.html">models/ProductSimpleLink</a></li><li><a href="module-models_ProductType.html">models/ProductType</a></li><li><a href="module-models_Promotion.html">models/Promotion</a></li><li><a href="module-models_PromotionResult.html">models/PromotionResult</a></li><li><a href="module-models_PublicProductList.html">models/PublicProductList</a></li><li><a href="module-models_PublicProductListItem.html">models/PublicProductListItem</a></li><li><a href="module-models_PublicProductListItemResult.html">models/PublicProductListItemResult</a></li><li><a href="module-models_PublicProductListLink.html">models/PublicProductListLink</a></li><li><a href="module-models_PublicProductListResult.html">models/PublicProductListResult</a></li><li><a href="module-models_Query.html">models/Query</a></li><li><a href="module-models_QueryFilter.html">models/QueryFilter</a></li><li><a href="module-models_Range2Filter.html">models/Range2Filter</a></li><li><a href="module-models_RangeFilter.html">models/RangeFilter</a></li><li><a href="module-models_Recommendation.html">models/Recommendation</a></li><li><a href="module-models_RecommendationType.html">models/RecommendationType</a></li><li><a href="module-models_ResultPage.html">models/ResultPage</a></li><li><a href="module-models_Shipment.html">models/Shipment</a></li><li><a href="module-models_ShippingItem.html">models/ShippingItem</a></li><li><a href="module-models_ShippingMethod.html">models/ShippingMethod</a></li><li><a href="module-models_ShippingMethodResult.html">models/ShippingMethodResult</a></li><li><a href="module-models_ShippingPromotion.html">models/ShippingPromotion</a></li><li><a href="module-models_SimpleLink.html">models/SimpleLink</a></li><li><a href="module-models_Site.html">models/Site</a></li><li><a href="module-models_Sort.html">models/Sort</a></li><li><a href="module-models_Status.html">models/Status</a></li><li><a href="module-models_Store.html">models/Store</a></li><li><a href="module-models_StoreResult.html">models/StoreResult</a></li><li><a href="module-models_SuggestedCategory.html">models/SuggestedCategory</a></li><li><a href="module-models_SuggestedContent.html">models/SuggestedContent</a></li><li><a href="module-models_SuggestedPhrase.html">models/SuggestedPhrase</a></li><li><a href="module-models_SuggestedProduct.html">models/SuggestedProduct</a></li><li><a href="module-models_SuggestedTerm.html">models/SuggestedTerm</a></li><li><a href="module-models_SuggestedTerms.html">models/SuggestedTerms</a></li><li><a href="module-models_Suggestion.html">models/Suggestion</a></li><li><a href="module-models_SuggestionResult.html">models/SuggestionResult</a></li><li><a href="module-models_TermFilter.html">models/TermFilter</a></li><li><a href="module-models_TermQuery.html">models/TermQuery</a></li><li><a href="module-models_TextQuery.html">models/TextQuery</a></li><li><a href="module-models_Variant.html">models/Variant</a></li><li><a href="module-models_VariationAttribute.html">models/VariationAttribute</a></li><li><a href="module-models_VariationAttributeValue.html">models/VariationAttributeValue</a></li><li><a href="module-models_VariationGroup.html">models/VariationGroup</a></li></ul>
 </nav>
 
 <br class="clear">
 
 <footer>
-    Documentation generated by <a href="https://github.com/jsdoc3/jsdoc">JSDoc 3.5.5</a> on Tue Oct 31 2017 13:24:00 GMT-0700 (PDT)
+    Documentation generated by <a href="https://github.com/jsdoc3/jsdoc">JSDoc 3.5.5</a> on Tue Oct 31 2017 14:43:14 GMT-0700 (PDT)
 </footer>
 
 <script> prettyPrint(); </script>
