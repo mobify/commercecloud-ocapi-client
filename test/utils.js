@@ -1,11 +1,28 @@
+/* * *  *  * *  *  *  *  *  *  *  *  *  *  *  *  *  *  *  *  *  *  *  *  *  * */
+/* Copyright (c) 2017 Mobify Research & Development Inc. All rights reserved. */
+/* * *  *  * *  *  *  *  *  *  *  *  *  *  *  *  *  *  *  *  *  *  *  *  *  * */
+
 import ShopApi from '../src/index'
-import {clientId, proxyUrl, baseUrl} from './config.json'
+
 import btoa from 'btoa'
 import atob from 'atob'
+
 import * as dataSamples from './samples'
 
 const VALID_USER_NAME = 'mobifyqa@gmail.com'
 const VALID_USER_PASS = 'p4ssword'
+
+export const getGuestUserAuth = (client) => {
+    const instance = new ShopApi.CustomersApi(client)
+
+    return instance.postCustomersAuth({type: 'guest'})
+}
+
+export const clearUserAuth = (client) => {
+    const instance = new ShopApi.CustomersApi(client)
+
+    return instance.deleteCustomersAuth({type: 'guest'})
+}
 
 export const getNewRegisteredUser = (client) => {
     const instance = new ShopApi.CustomersApi(client)
@@ -69,16 +86,4 @@ export const getRegisteredUserAuth = (client) => {
         {type: 'credentials'},
         {authorization: `Basic ${btoa(`${VALID_USER_NAME}:${VALID_USER_PASS}`)}`}
     )
-}
-
-export const getGuestUserAuth = (client) => {
-    const instance = new ShopApi.CustomersApi(client)
-
-    return instance.postCustomersAuth({type: 'guest'})
-}
-
-export const clearUserAuth = (client) => {
-    const instance = new ShopApi.CustomersApi(client)
-
-    return instance.deleteCustomersAuth({type: 'guest'})
 }

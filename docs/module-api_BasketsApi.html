@@ -1,0 +1,9851 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>JSDoc: Class: module:api/BasketsApi</title>
+
+    <script src="scripts/prettify/prettify.js"> </script>
+    <script src="scripts/prettify/lang-css.js"> </script>
+    <!--[if lt IE 9]>
+      <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+    <link type="text/css" rel="stylesheet" href="styles/prettify-tomorrow.css">
+    <link type="text/css" rel="stylesheet" href="styles/jsdoc-default.css">
+</head>
+
+<body>
+
+<div id="main">
+
+    <h1 class="page-title">Class: module:api/BasketsApi</h1>
+
+    
+
+
+
+
+<section>
+
+<header>
+    
+        <h2><span class="attribs"><span class="type-signature"></span></span>module:api/BasketsApi<span class="signature">(apiClient)</span><span class="type-signature"></span></h2>
+        
+    
+</header>
+
+<article>
+    <div class="container-overview">
+    
+        
+
+    
+
+    
+    <h4 class="name" id="module:api/BasketsApi"><span class="type-signature"></span>new module:api/BasketsApi<span class="signature">(apiClient)</span><span class="type-signature"></span></h4>
+    
+
+    
+
+
+
+<div class="description">
+    <p>Constructs a new BasketsApi.</p>
+</div>
+
+
+
+
+
+
+
+
+
+    <h5>Parameters:</h5>
+    
+
+<table class="params">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>apiClient</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type"><a href="module-ApiClient.html">module:ApiClient</a></span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"><p>Optional API client implementation to use,
+default to module:ApiClient#instance if unspecified.</p></td>
+        </tr>
+
+    
+    </tbody>
+</table>
+
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="api_BasketsApi.js.html">api/BasketsApi.js</a>, <a href="api_BasketsApi.js.html#line47">line 47</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    
+    </div>
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+        <h3 class="subsection-title">Methods</h3>
+
+        
+            
+
+    
+
+    
+    <h4 class="name" id="deleteBasketsByID"><span class="type-signature"></span>deleteBasketsByID<span class="signature">(basketId)</span><span class="type-signature"> &rarr; {Promise}</span></h4>
+    
+
+    
+
+
+
+<div class="description">
+    <p>Removes a basket.</p>
+</div>
+
+
+
+
+
+
+
+
+
+    <h5>Parameters:</h5>
+    
+
+<table class="params">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>basketId</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">String</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"><p>the id of the basket to be retrieved</p></td>
+        </tr>
+
+    
+    </tbody>
+</table>
+
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="api_BasketsApi.js.html">api/BasketsApi.js</a>, <a href="api_BasketsApi.js.html#line88">line 88</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+
+
+
+
+
+
+
+<h5>Returns:</h5>
+
+        
+<div class="param-desc">
+    <p>a <a href="https://www.promisejs.org/">Promise</a></p>
+</div>
+
+
+
+<dl>
+    <dt>
+        Type
+    </dt>
+    <dd>
+        
+<span class="param-type">Promise</span>
+
+
+    </dd>
+</dl>
+
+    
+
+
+
+
+
+        
+            
+
+    
+
+    
+    <h4 class="name" id="deleteBasketsByIDCouponsByID"><span class="type-signature"></span>deleteBasketsByIDCouponsByID<span class="signature">(basketId, couponItemId)</span><span class="type-signature"> &rarr; {Promise}</span></h4>
+    
+
+    
+
+
+
+<div class="description">
+    <p>Removes a coupon from the basket.</p>
+</div>
+
+
+
+
+
+
+
+
+
+    <h5>Parameters:</h5>
+    
+
+<table class="params">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>basketId</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">String</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"><p>the id of the basket to be modified</p></td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>couponItemId</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">String</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"><p>the id of the coupon item to be removed</p></td>
+        </tr>
+
+    
+    </tbody>
+</table>
+
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="api_BasketsApi.js.html">api/BasketsApi.js</a>, <a href="api_BasketsApi.js.html#line142">line 142</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+
+
+
+
+
+
+
+<h5>Returns:</h5>
+
+        
+<div class="param-desc">
+    <p>a <a href="https://www.promisejs.org/">Promise</a>, with data of type <a href="module-models_BasketModel.html">module:models/BasketModel</a></p>
+</div>
+
+
+
+<dl>
+    <dt>
+        Type
+    </dt>
+    <dd>
+        
+<span class="param-type">Promise</span>
+
+
+    </dd>
+</dl>
+
+    
+
+
+
+
+
+        
+            
+
+    
+
+    
+    <h4 class="name" id="deleteBasketsByIDCouponsByIDWithHttpInfo"><span class="type-signature"></span>deleteBasketsByIDCouponsByIDWithHttpInfo<span class="signature">(basketId, couponItemId)</span><span class="type-signature"> &rarr; {Promise}</span></h4>
+    
+
+    
+
+
+
+<div class="description">
+    <p>Removes a coupon from the basket.</p>
+</div>
+
+
+
+
+
+
+
+
+
+    <h5>Parameters:</h5>
+    
+
+<table class="params">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>basketId</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">String</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"><p>the id of the basket to be modified</p></td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>couponItemId</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">String</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"><p>the id of the coupon item to be removed</p></td>
+        </tr>
+
+    
+    </tbody>
+</table>
+
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="api_BasketsApi.js.html">api/BasketsApi.js</a>, <a href="api_BasketsApi.js.html#line102">line 102</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+
+
+
+
+
+
+
+<h5>Returns:</h5>
+
+        
+<div class="param-desc">
+    <p>a <a href="https://www.promisejs.org/">Promise</a>, with an object containing data of type <a href="module-models_BasketModel.html">module:models/BasketModel</a> and HTTP response</p>
+</div>
+
+
+
+<dl>
+    <dt>
+        Type
+    </dt>
+    <dd>
+        
+<span class="param-type">Promise</span>
+
+
+    </dd>
+</dl>
+
+    
+
+
+
+
+
+        
+            
+
+    
+
+    
+    <h4 class="name" id="deleteBasketsByIDItemsByID"><span class="type-signature"></span>deleteBasketsByIDItemsByID<span class="signature">(basketId, itemId)</span><span class="type-signature"> &rarr; {Promise}</span></h4>
+    
+
+    
+
+
+
+<div class="description">
+    <p>Removes a product item from the basket.</p>
+</div>
+
+
+
+
+
+
+
+
+
+    <h5>Parameters:</h5>
+    
+
+<table class="params">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>basketId</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">String</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"><p>the id of the basket to be modified</p></td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>itemId</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">String</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"><p>the id of the product item to be removed</p></td>
+        </tr>
+
+    
+    </tbody>
+</table>
+
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="api_BasketsApi.js.html">api/BasketsApi.js</a>, <a href="api_BasketsApi.js.html#line196">line 196</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+
+
+
+
+
+
+
+<h5>Returns:</h5>
+
+        
+<div class="param-desc">
+    <p>a <a href="https://www.promisejs.org/">Promise</a>, with data of type <a href="module-models_BasketModel.html">module:models/BasketModel</a></p>
+</div>
+
+
+
+<dl>
+    <dt>
+        Type
+    </dt>
+    <dd>
+        
+<span class="param-type">Promise</span>
+
+
+    </dd>
+</dl>
+
+    
+
+
+
+
+
+        
+            
+
+    
+
+    
+    <h4 class="name" id="deleteBasketsByIDItemsByIDWithHttpInfo"><span class="type-signature"></span>deleteBasketsByIDItemsByIDWithHttpInfo<span class="signature">(basketId, itemId)</span><span class="type-signature"> &rarr; {Promise}</span></h4>
+    
+
+    
+
+
+
+<div class="description">
+    <p>Removes a product item from the basket.</p>
+</div>
+
+
+
+
+
+
+
+
+
+    <h5>Parameters:</h5>
+    
+
+<table class="params">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>basketId</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">String</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"><p>the id of the basket to be modified</p></td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>itemId</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">String</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"><p>the id of the product item to be removed</p></td>
+        </tr>
+
+    
+    </tbody>
+</table>
+
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="api_BasketsApi.js.html">api/BasketsApi.js</a>, <a href="api_BasketsApi.js.html#line156">line 156</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+
+
+
+
+
+
+
+<h5>Returns:</h5>
+
+        
+<div class="param-desc">
+    <p>a <a href="https://www.promisejs.org/">Promise</a>, with an object containing data of type <a href="module-models_BasketModel.html">module:models/BasketModel</a> and HTTP response</p>
+</div>
+
+
+
+<dl>
+    <dt>
+        Type
+    </dt>
+    <dd>
+        
+<span class="param-type">Promise</span>
+
+
+    </dd>
+</dl>
+
+    
+
+
+
+
+
+        
+            
+
+    
+
+    
+    <h4 class="name" id="deleteBasketsByIDNotesByID"><span class="type-signature"></span>deleteBasketsByIDNotesByID<span class="signature">(basketId, noteId)</span><span class="type-signature"> &rarr; {Promise}</span></h4>
+    
+
+    
+
+
+
+<div class="description">
+    <p>Removes a basket note.</p>
+</div>
+
+
+
+
+
+
+
+
+
+    <h5>Parameters:</h5>
+    
+
+<table class="params">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>basketId</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">String</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"><p>the id of the basket to be modified</p></td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>noteId</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">String</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"><p>the id of the note to be removed</p></td>
+        </tr>
+
+    
+    </tbody>
+</table>
+
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="api_BasketsApi.js.html">api/BasketsApi.js</a>, <a href="api_BasketsApi.js.html#line250">line 250</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+
+
+
+
+
+
+
+<h5>Returns:</h5>
+
+        
+<div class="param-desc">
+    <p>a <a href="https://www.promisejs.org/">Promise</a>, with data of type <a href="module-models_BasketModel.html">module:models/BasketModel</a></p>
+</div>
+
+
+
+<dl>
+    <dt>
+        Type
+    </dt>
+    <dd>
+        
+<span class="param-type">Promise</span>
+
+
+    </dd>
+</dl>
+
+    
+
+
+
+
+
+        
+            
+
+    
+
+    
+    <h4 class="name" id="deleteBasketsByIDNotesByIDWithHttpInfo"><span class="type-signature"></span>deleteBasketsByIDNotesByIDWithHttpInfo<span class="signature">(basketId, noteId)</span><span class="type-signature"> &rarr; {Promise}</span></h4>
+    
+
+    
+
+
+
+<div class="description">
+    <p>Removes a basket note.</p>
+</div>
+
+
+
+
+
+
+
+
+
+    <h5>Parameters:</h5>
+    
+
+<table class="params">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>basketId</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">String</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"><p>the id of the basket to be modified</p></td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>noteId</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">String</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"><p>the id of the note to be removed</p></td>
+        </tr>
+
+    
+    </tbody>
+</table>
+
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="api_BasketsApi.js.html">api/BasketsApi.js</a>, <a href="api_BasketsApi.js.html#line210">line 210</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+
+
+
+
+
+
+
+<h5>Returns:</h5>
+
+        
+<div class="param-desc">
+    <p>a <a href="https://www.promisejs.org/">Promise</a>, with an object containing data of type <a href="module-models_BasketModel.html">module:models/BasketModel</a> and HTTP response</p>
+</div>
+
+
+
+<dl>
+    <dt>
+        Type
+    </dt>
+    <dd>
+        
+<span class="param-type">Promise</span>
+
+
+    </dd>
+</dl>
+
+    
+
+
+
+
+
+        
+            
+
+    
+
+    
+    <h4 class="name" id="deleteBasketsByIDPaymentInstrumentsByID"><span class="type-signature"></span>deleteBasketsByIDPaymentInstrumentsByID<span class="signature">(basketId, paymentInstrumentId)</span><span class="type-signature"> &rarr; {Promise}</span></h4>
+    
+
+    
+
+
+
+<div class="description">
+    <p>Removes a payment instrument of a basket.</p>
+</div>
+
+
+
+
+
+
+
+
+
+    <h5>Parameters:</h5>
+    
+
+<table class="params">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>basketId</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">String</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"><p>the basket id</p></td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>paymentInstrumentId</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">String</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"><p>the id of the payment instrument to be removed</p></td>
+        </tr>
+
+    
+    </tbody>
+</table>
+
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="api_BasketsApi.js.html">api/BasketsApi.js</a>, <a href="api_BasketsApi.js.html#line304">line 304</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+
+
+
+
+
+
+
+<h5>Returns:</h5>
+
+        
+<div class="param-desc">
+    <p>a <a href="https://www.promisejs.org/">Promise</a>, with data of type <a href="module-models_BasketModel.html">module:models/BasketModel</a></p>
+</div>
+
+
+
+<dl>
+    <dt>
+        Type
+    </dt>
+    <dd>
+        
+<span class="param-type">Promise</span>
+
+
+    </dd>
+</dl>
+
+    
+
+
+
+
+
+        
+            
+
+    
+
+    
+    <h4 class="name" id="deleteBasketsByIDPaymentInstrumentsByIDWithHttpInfo"><span class="type-signature"></span>deleteBasketsByIDPaymentInstrumentsByIDWithHttpInfo<span class="signature">(basketId, paymentInstrumentId)</span><span class="type-signature"> &rarr; {Promise}</span></h4>
+    
+
+    
+
+
+
+<div class="description">
+    <p>Removes a payment instrument of a basket.</p>
+</div>
+
+
+
+
+
+
+
+
+
+    <h5>Parameters:</h5>
+    
+
+<table class="params">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>basketId</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">String</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"><p>the basket id</p></td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>paymentInstrumentId</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">String</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"><p>the id of the payment instrument to be removed</p></td>
+        </tr>
+
+    
+    </tbody>
+</table>
+
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="api_BasketsApi.js.html">api/BasketsApi.js</a>, <a href="api_BasketsApi.js.html#line264">line 264</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+
+
+
+
+
+
+
+<h5>Returns:</h5>
+
+        
+<div class="param-desc">
+    <p>a <a href="https://www.promisejs.org/">Promise</a>, with an object containing data of type <a href="module-models_BasketModel.html">module:models/BasketModel</a> and HTTP response</p>
+</div>
+
+
+
+<dl>
+    <dt>
+        Type
+    </dt>
+    <dd>
+        
+<span class="param-type">Promise</span>
+
+
+    </dd>
+</dl>
+
+    
+
+
+
+
+
+        
+            
+
+    
+
+    
+    <h4 class="name" id="deleteBasketsByIDShipmentsByID"><span class="type-signature"></span>deleteBasketsByIDShipmentsByID<span class="signature">(basketId, shipmentId)</span><span class="type-signature"> &rarr; {Promise}</span></h4>
+    
+
+    
+
+
+
+<div class="description">
+    <p>Removes a specified shipment and all associated product, gift certificate,  shipping and price adjustment line items from a basket.  It is not permissible to remove the default shipment.</p>
+</div>
+
+
+
+
+
+
+
+
+
+    <h5>Parameters:</h5>
+    
+
+<table class="params">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>basketId</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">String</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"><p>the id of the basket to be modified</p></td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>shipmentId</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">String</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"><p>the id of the shipment to be deleted</p></td>
+        </tr>
+
+    
+    </tbody>
+</table>
+
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="api_BasketsApi.js.html">api/BasketsApi.js</a>, <a href="api_BasketsApi.js.html#line358">line 358</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+
+
+
+
+
+
+
+<h5>Returns:</h5>
+
+        
+<div class="param-desc">
+    <p>a <a href="https://www.promisejs.org/">Promise</a>, with data of type <a href="module-models_BasketModel.html">module:models/BasketModel</a></p>
+</div>
+
+
+
+<dl>
+    <dt>
+        Type
+    </dt>
+    <dd>
+        
+<span class="param-type">Promise</span>
+
+
+    </dd>
+</dl>
+
+    
+
+
+
+
+
+        
+            
+
+    
+
+    
+    <h4 class="name" id="deleteBasketsByIDShipmentsByIDWithHttpInfo"><span class="type-signature"></span>deleteBasketsByIDShipmentsByIDWithHttpInfo<span class="signature">(basketId, shipmentId)</span><span class="type-signature"> &rarr; {Promise}</span></h4>
+    
+
+    
+
+
+
+<div class="description">
+    <p>Removes a specified shipment and all associated product, gift certificate,  shipping and price adjustment line items from a basket.  It is not permissible to remove the default shipment.</p>
+</div>
+
+
+
+
+
+
+
+
+
+    <h5>Parameters:</h5>
+    
+
+<table class="params">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>basketId</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">String</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"><p>the id of the basket to be modified</p></td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>shipmentId</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">String</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"><p>the id of the shipment to be deleted</p></td>
+        </tr>
+
+    
+    </tbody>
+</table>
+
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="api_BasketsApi.js.html">api/BasketsApi.js</a>, <a href="api_BasketsApi.js.html#line318">line 318</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+
+
+
+
+
+
+
+<h5>Returns:</h5>
+
+        
+<div class="param-desc">
+    <p>a <a href="https://www.promisejs.org/">Promise</a>, with an object containing data of type <a href="module-models_BasketModel.html">module:models/BasketModel</a> and HTTP response</p>
+</div>
+
+
+
+<dl>
+    <dt>
+        Type
+    </dt>
+    <dd>
+        
+<span class="param-type">Promise</span>
+
+
+    </dd>
+</dl>
+
+    
+
+
+
+
+
+        
+            
+
+    
+
+    
+    <h4 class="name" id="deleteBasketsByIDWithHttpInfo"><span class="type-signature"></span>deleteBasketsByIDWithHttpInfo<span class="signature">(basketId)</span><span class="type-signature"> &rarr; {Promise}</span></h4>
+    
+
+    
+
+
+
+<div class="description">
+    <p>Removes a basket.</p>
+</div>
+
+
+
+
+
+
+
+
+
+    <h5>Parameters:</h5>
+    
+
+<table class="params">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>basketId</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">String</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"><p>the id of the basket to be retrieved</p></td>
+        </tr>
+
+    
+    </tbody>
+</table>
+
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="api_BasketsApi.js.html">api/BasketsApi.js</a>, <a href="api_BasketsApi.js.html#line56">line 56</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+
+
+
+
+
+
+
+<h5>Returns:</h5>
+
+        
+<div class="param-desc">
+    <p>a <a href="https://www.promisejs.org/">Promise</a>, with an object containing HTTP response</p>
+</div>
+
+
+
+<dl>
+    <dt>
+        Type
+    </dt>
+    <dd>
+        
+<span class="param-type">Promise</span>
+
+
+    </dd>
+</dl>
+
+    
+
+
+
+
+
+        
+            
+
+    
+
+    
+    <h4 class="name" id="getBasketsByID"><span class="type-signature"></span>getBasketsByID<span class="signature">(basketId)</span><span class="type-signature"> &rarr; {Promise}</span></h4>
+    
+
+    
+
+
+
+<div class="description">
+    <p>Gets a basket.</p>
+</div>
+
+
+
+
+
+
+
+
+
+    <h5>Parameters:</h5>
+    
+
+<table class="params">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>basketId</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">String</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"><p>the id of the basket to be retrieved</p></td>
+        </tr>
+
+    
+    </tbody>
+</table>
+
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="api_BasketsApi.js.html">api/BasketsApi.js</a>, <a href="api_BasketsApi.js.html#line404">line 404</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+
+
+
+
+
+
+
+<h5>Returns:</h5>
+
+        
+<div class="param-desc">
+    <p>a <a href="https://www.promisejs.org/">Promise</a>, with data of type <a href="module-models_BasketModel.html">module:models/BasketModel</a></p>
+</div>
+
+
+
+<dl>
+    <dt>
+        Type
+    </dt>
+    <dd>
+        
+<span class="param-type">Promise</span>
+
+
+    </dd>
+</dl>
+
+    
+
+
+
+
+
+        
+            
+
+    
+
+    
+    <h4 class="name" id="getBasketsByIDNotes"><span class="type-signature"></span>getBasketsByIDNotes<span class="signature">(basketId)</span><span class="type-signature"> &rarr; {Promise}</span></h4>
+    
+
+    
+
+
+
+<div class="description">
+    <p>Retrieves notes for a basket.</p>
+</div>
+
+
+
+
+
+
+
+
+
+    <h5>Parameters:</h5>
+    
+
+<table class="params">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>basketId</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">String</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"><p>The id of the basket for which you want to retrieve the notes.</p></td>
+        </tr>
+
+    
+    </tbody>
+</table>
+
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="api_BasketsApi.js.html">api/BasketsApi.js</a>, <a href="api_BasketsApi.js.html#line450">line 450</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+
+
+
+
+
+
+
+<h5>Returns:</h5>
+
+        
+<div class="param-desc">
+    <p>a <a href="https://www.promisejs.org/">Promise</a>, with data of type <a href="module-models_NotesResultModel.html">module:models/NotesResultModel</a></p>
+</div>
+
+
+
+<dl>
+    <dt>
+        Type
+    </dt>
+    <dd>
+        
+<span class="param-type">Promise</span>
+
+
+    </dd>
+</dl>
+
+    
+
+
+
+
+
+        
+            
+
+    
+
+    
+    <h4 class="name" id="getBasketsByIDNotesWithHttpInfo"><span class="type-signature"></span>getBasketsByIDNotesWithHttpInfo<span class="signature">(basketId)</span><span class="type-signature"> &rarr; {Promise}</span></h4>
+    
+
+    
+
+
+
+<div class="description">
+    <p>Retrieves notes for a basket.</p>
+</div>
+
+
+
+
+
+
+
+
+
+    <h5>Parameters:</h5>
+    
+
+<table class="params">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>basketId</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">String</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"><p>The id of the basket for which you want to retrieve the notes.</p></td>
+        </tr>
+
+    
+    </tbody>
+</table>
+
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="api_BasketsApi.js.html">api/BasketsApi.js</a>, <a href="api_BasketsApi.js.html#line417">line 417</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+
+
+
+
+
+
+
+<h5>Returns:</h5>
+
+        
+<div class="param-desc">
+    <p>a <a href="https://www.promisejs.org/">Promise</a>, with an object containing data of type <a href="module-models_NotesResultModel.html">module:models/NotesResultModel</a> and HTTP response</p>
+</div>
+
+
+
+<dl>
+    <dt>
+        Type
+    </dt>
+    <dd>
+        
+<span class="param-type">Promise</span>
+
+
+    </dd>
+</dl>
+
+    
+
+
+
+
+
+        
+            
+
+    
+
+    
+    <h4 class="name" id="getBasketsByIDPaymentMethods"><span class="type-signature"></span>getBasketsByIDPaymentMethods<span class="signature">(basketId)</span><span class="type-signature"> &rarr; {Promise}</span></h4>
+    
+
+    
+
+
+
+<div class="description">
+    <p>Gets applicable payment methods for an existing basket considering the open payment amount only.</p>
+</div>
+
+
+
+
+
+
+
+
+
+    <h5>Parameters:</h5>
+    
+
+<table class="params">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>basketId</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">String</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"><p>the basket id</p></td>
+        </tr>
+
+    
+    </tbody>
+</table>
+
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="api_BasketsApi.js.html">api/BasketsApi.js</a>, <a href="api_BasketsApi.js.html#line496">line 496</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+
+
+
+
+
+
+
+<h5>Returns:</h5>
+
+        
+<div class="param-desc">
+    <p>a <a href="https://www.promisejs.org/">Promise</a>, with data of type <a href="module-models_PaymentMethodResultModel.html">module:models/PaymentMethodResultModel</a></p>
+</div>
+
+
+
+<dl>
+    <dt>
+        Type
+    </dt>
+    <dd>
+        
+<span class="param-type">Promise</span>
+
+
+    </dd>
+</dl>
+
+    
+
+
+
+
+
+        
+            
+
+    
+
+    
+    <h4 class="name" id="getBasketsByIDPaymentMethodsWithHttpInfo"><span class="type-signature"></span>getBasketsByIDPaymentMethodsWithHttpInfo<span class="signature">(basketId)</span><span class="type-signature"> &rarr; {Promise}</span></h4>
+    
+
+    
+
+
+
+<div class="description">
+    <p>Gets applicable payment methods for an existing basket considering the open payment amount only.</p>
+</div>
+
+
+
+
+
+
+
+
+
+    <h5>Parameters:</h5>
+    
+
+<table class="params">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>basketId</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">String</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"><p>the basket id</p></td>
+        </tr>
+
+    
+    </tbody>
+</table>
+
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="api_BasketsApi.js.html">api/BasketsApi.js</a>, <a href="api_BasketsApi.js.html#line463">line 463</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+
+
+
+
+
+
+
+<h5>Returns:</h5>
+
+        
+<div class="param-desc">
+    <p>a <a href="https://www.promisejs.org/">Promise</a>, with an object containing data of type <a href="module-models_PaymentMethodResultModel.html">module:models/PaymentMethodResultModel</a> and HTTP response</p>
+</div>
+
+
+
+<dl>
+    <dt>
+        Type
+    </dt>
+    <dd>
+        
+<span class="param-type">Promise</span>
+
+
+    </dd>
+</dl>
+
+    
+
+
+
+
+
+        
+            
+
+    
+
+    
+    <h4 class="name" id="getBasketsByIDShipmentsByIDShippingMethods"><span class="type-signature"></span>getBasketsByIDShipmentsByIDShippingMethods<span class="signature">(basketId, shipmentId)</span><span class="type-signature"> &rarr; {Promise}</span></h4>
+    
+
+    
+
+
+
+<div class="description">
+    <p>Gets the applicable shipping methods for a certain shipment of a  basket.</p>
+</div>
+
+
+
+
+
+
+
+
+
+    <h5>Parameters:</h5>
+    
+
+<table class="params">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>basketId</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">String</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"><p>the id of the basket</p></td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>shipmentId</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">String</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"><p>the id of the shipment</p></td>
+        </tr>
+
+    
+    </tbody>
+</table>
+
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="api_BasketsApi.js.html">api/BasketsApi.js</a>, <a href="api_BasketsApi.js.html#line550">line 550</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+
+
+
+
+
+
+
+<h5>Returns:</h5>
+
+        
+<div class="param-desc">
+    <p>a <a href="https://www.promisejs.org/">Promise</a>, with data of type <a href="module-models_ShippingMethodResultModel.html">module:models/ShippingMethodResultModel</a></p>
+</div>
+
+
+
+<dl>
+    <dt>
+        Type
+    </dt>
+    <dd>
+        
+<span class="param-type">Promise</span>
+
+
+    </dd>
+</dl>
+
+    
+
+
+
+
+
+        
+            
+
+    
+
+    
+    <h4 class="name" id="getBasketsByIDShipmentsByIDShippingMethodsWithHttpInfo"><span class="type-signature"></span>getBasketsByIDShipmentsByIDShippingMethodsWithHttpInfo<span class="signature">(basketId, shipmentId)</span><span class="type-signature"> &rarr; {Promise}</span></h4>
+    
+
+    
+
+
+
+<div class="description">
+    <p>Gets the applicable shipping methods for a certain shipment of a  basket.</p>
+</div>
+
+
+
+
+
+
+
+
+
+    <h5>Parameters:</h5>
+    
+
+<table class="params">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>basketId</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">String</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"><p>the id of the basket</p></td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>shipmentId</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">String</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"><p>the id of the shipment</p></td>
+        </tr>
+
+    
+    </tbody>
+</table>
+
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="api_BasketsApi.js.html">api/BasketsApi.js</a>, <a href="api_BasketsApi.js.html#line510">line 510</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+
+
+
+
+
+
+
+<h5>Returns:</h5>
+
+        
+<div class="param-desc">
+    <p>a <a href="https://www.promisejs.org/">Promise</a>, with an object containing data of type <a href="module-models_ShippingMethodResultModel.html">module:models/ShippingMethodResultModel</a> and HTTP response</p>
+</div>
+
+
+
+<dl>
+    <dt>
+        Type
+    </dt>
+    <dd>
+        
+<span class="param-type">Promise</span>
+
+
+    </dd>
+</dl>
+
+    
+
+
+
+
+
+        
+            
+
+    
+
+    
+    <h4 class="name" id="getBasketsByIDWithHttpInfo"><span class="type-signature"></span>getBasketsByIDWithHttpInfo<span class="signature">(basketId)</span><span class="type-signature"> &rarr; {Promise}</span></h4>
+    
+
+    
+
+
+
+<div class="description">
+    <p>Gets a basket.</p>
+</div>
+
+
+
+
+
+
+
+
+
+    <h5>Parameters:</h5>
+    
+
+<table class="params">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>basketId</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">String</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"><p>the id of the basket to be retrieved</p></td>
+        </tr>
+
+    
+    </tbody>
+</table>
+
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="api_BasketsApi.js.html">api/BasketsApi.js</a>, <a href="api_BasketsApi.js.html#line371">line 371</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+
+
+
+
+
+
+
+<h5>Returns:</h5>
+
+        
+<div class="param-desc">
+    <p>a <a href="https://www.promisejs.org/">Promise</a>, with an object containing data of type <a href="module-models_BasketModel.html">module:models/BasketModel</a> and HTTP response</p>
+</div>
+
+
+
+<dl>
+    <dt>
+        Type
+    </dt>
+    <dd>
+        
+<span class="param-type">Promise</span>
+
+
+    </dd>
+</dl>
+
+    
+
+
+
+
+
+        
+            
+
+    
+
+    
+    <h4 class="name" id="patchBasketsByID"><span class="type-signature"></span>patchBasketsByID<span class="signature">(basketId, body)</span><span class="type-signature"> &rarr; {Promise}</span></h4>
+    
+
+    
+
+
+
+<div class="description">
+    <p>Updates a basket. Only the currency of the basket, source code, and the custom  properties of the basket and of the shipping items will be considered.</p>
+</div>
+
+
+
+
+
+
+
+
+
+    <h5>Parameters:</h5>
+    
+
+<table class="params">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>basketId</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">String</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"><p>the id of the basket to be modified</p></td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>body</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type"><a href="module-models_BasketModel.html">module:models/BasketModel</a></span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"></td>
+        </tr>
+
+    
+    </tbody>
+</table>
+
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="api_BasketsApi.js.html">api/BasketsApi.js</a>, <a href="api_BasketsApi.js.html#line603">line 603</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+
+
+
+
+
+
+
+<h5>Returns:</h5>
+
+        
+<div class="param-desc">
+    <p>a <a href="https://www.promisejs.org/">Promise</a>, with data of type <a href="module-models_BasketModel.html">module:models/BasketModel</a></p>
+</div>
+
+
+
+<dl>
+    <dt>
+        Type
+    </dt>
+    <dd>
+        
+<span class="param-type">Promise</span>
+
+
+    </dd>
+</dl>
+
+    
+
+
+
+
+
+        
+            
+
+    
+
+    
+    <h4 class="name" id="patchBasketsByIDItemsByID"><span class="type-signature"></span>patchBasketsByIDItemsByID<span class="signature">(basketId, itemId, body)</span><span class="type-signature"> &rarr; {Promise}</span></h4>
+    
+
+    
+
+
+
+<div class="description">
+    <p>Updates an item in a basket.
+The  following values in the request body are considered by the server:
+product_id: a valid product id. The purpose of this  value is to exchange a variation of a variation product.
+shipment_id: a valid shipment id. The purpose of  this value is to move a product item to another shipment.
+quantity: a number between 0 and 999. The purpose of  this value is to change quantity of the product item. If quantity is 0,  the product item is removed.
+option_items/option_value_id: a valid option value  id. The purpose of this value is to exchange an option value for an  option item of an option product.
+This is only possible if the product item is an option product. To change
+option values a collection of option items to be changed need to be
+provided in property option_items. Those  option_items need to contain option_id  and option_value<em>id.
+The provided values must be valid  for the option product that this product item represents. Otherwise
+InvalidProductOptionItemException or  InvalidProductOptionValueItemException will be thrown.
+custom properties c</em>&lt;CUSTOM_NAME&gt;: a  value corresponding to the type defined for custom attribute
+&lt;CUSTOM_NAME&gt; of ProductLineItem. The purpose of this value is to
+add or change the value of a custom attribute defined for  ProductLineItem.</p>
+</div>
+
+
+
+
+
+
+
+
+
+    <h5>Parameters:</h5>
+    
+
+<table class="params">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>basketId</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">String</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"><p>the id of the basket to be modified</p></td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>itemId</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">String</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"><p>the it of the item to be updated</p></td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>body</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type"><a href="module-models_ProductItemModel.html">module:models/ProductItemModel</a></span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"></td>
+        </tr>
+
+    
+    </tbody>
+</table>
+
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="api_BasketsApi.js.html">api/BasketsApi.js</a>, <a href="api_BasketsApi.js.html#line691">line 691</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+
+
+
+
+
+
+
+<h5>Returns:</h5>
+
+        
+<div class="param-desc">
+    <p>a <a href="https://www.promisejs.org/">Promise</a>, with data of type <a href="module-models_BasketModel.html">module:models/BasketModel</a></p>
+</div>
+
+
+
+<dl>
+    <dt>
+        Type
+    </dt>
+    <dd>
+        
+<span class="param-type">Promise</span>
+
+
+    </dd>
+</dl>
+
+    
+
+
+
+
+
+        
+            
+
+    
+
+    
+    <h4 class="name" id="patchBasketsByIDItemsByIDWithHttpInfo"><span class="type-signature"></span>patchBasketsByIDItemsByIDWithHttpInfo<span class="signature">(basketId, itemId, body)</span><span class="type-signature"> &rarr; {Promise}</span></h4>
+    
+
+    
+
+
+
+<div class="description">
+    <p>Updates an item in a basket.
+The  following values in the request body are considered by the server:
+product_id: a valid product id. The purpose of this  value is to exchange a variation of a variation product.
+shipment_id: a valid shipment id. The purpose of  this value is to move a product item to another shipment.
+quantity: a number between 0 and 999. The purpose of  this value is to change quantity of the product item. If quantity is 0,
+the product item is removed.
+option_items/option_value_id: a valid option value  id. The purpose of this value is to exchange an option value for an  option item of an option product.
+This is only possible if the product item is an option product.
+To change  option values a collection of option items to be changed need to be
+provided in property option_items. Those  option_items need to contain option_id
+and option_value<em>id. The provided values must be valid  for the option product that
+this product item represents. Otherwise  InvalidProductOptionItemException or
+InvalidProductOptionValueItemException will be thrown.  custom properties c</em>&lt;CUSTOM_NAME&gt;: a
+value corresponding to the type defined for custom attribute  &lt;CUSTOM_NAME&gt; of ProductLineItem.
+The purpose of this value is to  add or change the value of a custom attribute defined for  ProductLineItem.</p>
+</div>
+
+
+
+
+
+
+
+
+
+    <h5>Parameters:</h5>
+    
+
+<table class="params">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>basketId</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">String</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"><p>the id of the basket to be modified</p></td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>itemId</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">String</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"><p>the it of the item to be updated</p></td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>body</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type"><a href="module-models_ProductItemModel.html">module:models/ProductItemModel</a></span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"></td>
+        </tr>
+
+    
+    </tbody>
+</table>
+
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="api_BasketsApi.js.html">api/BasketsApi.js</a>, <a href="api_BasketsApi.js.html#line632">line 632</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+
+
+
+
+
+
+
+<h5>Returns:</h5>
+
+        
+<div class="param-desc">
+    <p>a <a href="https://www.promisejs.org/">Promise</a>, with an object containing data of type <a href="module-models_BasketModel.html">module:models/BasketModel</a> and HTTP response</p>
+</div>
+
+
+
+<dl>
+    <dt>
+        Type
+    </dt>
+    <dd>
+        
+<span class="param-type">Promise</span>
+
+
+    </dd>
+</dl>
+
+    
+
+
+
+
+
+        
+            
+
+    
+
+    
+    <h4 class="name" id="patchBasketsByIDPaymentInstrumentsByID"><span class="type-signature"></span>patchBasketsByIDPaymentInstrumentsByID<span class="signature">(basketId, paymentInstrumentId, body)</span><span class="type-signature"> &rarr; {Promise}</span></h4>
+    
+
+    
+
+
+
+<div class="description">
+    <p>Updates a payment instrument of a basket.
+Payment instruments are usually authorized after order creation, for example in a custom hook. The default
+payment authorization process executes an authorization when a payment instrument is added to an order or
+updated. See POST /orders/{order_no}/payment_instruments and PATCH  /orders/{order_no}/payment_instruments/{payment_instrument_id}</p>
+</div>
+
+
+
+
+
+
+
+
+
+    <h5>Parameters:</h5>
+    
+
+<table class="params">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>basketId</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">String</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"><p>the basket id</p></td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>paymentInstrumentId</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">String</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"><p>the id of the payment instrument to be updated</p></td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>body</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type"><a href="module-models_BasketPaymentInstrumentRequestModel.html">module:models/BasketPaymentInstrumentRequestModel</a></span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"></td>
+        </tr>
+
+    
+    </tbody>
+</table>
+
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="api_BasketsApi.js.html">api/BasketsApi.js</a>, <a href="api_BasketsApi.js.html#line759">line 759</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+
+
+
+
+
+
+
+<h5>Returns:</h5>
+
+        
+<div class="param-desc">
+    <p>a <a href="https://www.promisejs.org/">Promise</a>, with data of type <a href="module-models_BasketModel.html">module:models/BasketModel</a></p>
+</div>
+
+
+
+<dl>
+    <dt>
+        Type
+    </dt>
+    <dd>
+        
+<span class="param-type">Promise</span>
+
+
+    </dd>
+</dl>
+
+    
+
+
+
+
+
+        
+            
+
+    
+
+    
+    <h4 class="name" id="patchBasketsByIDPaymentInstrumentsByIDWithHttpInfo"><span class="type-signature"></span>patchBasketsByIDPaymentInstrumentsByIDWithHttpInfo<span class="signature">(basketId, paymentInstrumentId, body)</span><span class="type-signature"> &rarr; {Promise}</span></h4>
+    
+
+    
+
+
+
+<div class="description">
+    <p>Updates a payment instrument of a basket.
+Payment instruments are usually authorized after order creation, for example in a custom hook. The default
+payment authorization process executes an authorization when a payment instrument is added to an order or
+updated.
+See POST /orders/{order_no}/payment_instruments and PATCH  /orders/{order_no}/payment_instruments/{payment_instrument_id}</p>
+</div>
+
+
+
+
+
+
+
+
+
+    <h5>Parameters:</h5>
+    
+
+<table class="params">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>basketId</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">String</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"><p>the basket id</p></td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>paymentInstrumentId</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">String</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"><p>the id of the payment instrument to be updated</p></td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>body</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type"><a href="module-models_BasketPaymentInstrumentRequestModel.html">module:models/BasketPaymentInstrumentRequestModel</a></span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"></td>
+        </tr>
+
+    
+    </tbody>
+</table>
+
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="api_BasketsApi.js.html">api/BasketsApi.js</a>, <a href="api_BasketsApi.js.html#line710">line 710</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+
+
+
+
+
+
+
+<h5>Returns:</h5>
+
+        
+<div class="param-desc">
+    <p>a <a href="https://www.promisejs.org/">Promise</a>, with an object containing data of type <a href="module-models_BasketModel.html">module:models/BasketModel</a> and HTTP response</p>
+</div>
+
+
+
+<dl>
+    <dt>
+        Type
+    </dt>
+    <dd>
+        
+<span class="param-type">Promise</span>
+
+
+    </dd>
+</dl>
+
+    
+
+
+
+
+
+        
+            
+
+    
+
+    
+    <h4 class="name" id="patchBasketsByIDShipmentsByID"><span class="type-signature"></span>patchBasketsByIDShipmentsByID<span class="signature">(basketId, shipmentId, body)</span><span class="type-signature"> &rarr; {Promise}</span></h4>
+    
+
+    
+
+
+
+<div class="description">
+    <p>Updates a shipment for a basket.
+The shipment is initialized with values provided in the body
+document and can be updated with further data API calls. Considered from
+the body are the following properties if specified    the id  the shipping address
+the shipping method  gift boolean flag  gift message  custom properties</p>
+</div>
+
+
+
+
+
+
+
+
+
+    <h5>Parameters:</h5>
+    
+
+<table class="params">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>basketId</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">String</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"><p>the id of the basket to be modified</p></td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>shipmentId</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">String</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"><p>the id of the shipment to be modified</p></td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>body</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type"><a href="module-models_ShipmentModel.html">module:models/ShipmentModel</a></span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"></td>
+        </tr>
+
+    
+    </tbody>
+</table>
+
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="api_BasketsApi.js.html">api/BasketsApi.js</a>, <a href="api_BasketsApi.js.html#line828">line 828</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+
+
+
+
+
+
+
+<h5>Returns:</h5>
+
+        
+<div class="param-desc">
+    <p>a <a href="https://www.promisejs.org/">Promise</a>, with data of type <a href="module-models_BasketModel.html">module:models/BasketModel</a></p>
+</div>
+
+
+
+<dl>
+    <dt>
+        Type
+    </dt>
+    <dd>
+        
+<span class="param-type">Promise</span>
+
+
+    </dd>
+</dl>
+
+    
+
+
+
+
+
+        
+            
+
+    
+
+    
+    <h4 class="name" id="patchBasketsByIDShipmentsByIDWithHttpInfo"><span class="type-signature"></span>patchBasketsByIDShipmentsByIDWithHttpInfo<span class="signature">(basketId, shipmentId, body)</span><span class="type-signature"> &rarr; {Promise}</span></h4>
+    
+
+    
+
+
+
+<div class="description">
+    <p>Updates a shipment for a basket.
+The shipment is initialized with values provided in the body
+document and can be updated with further data API calls. Considered from
+the body are the following properties if specified
+the id  the shipping address  the shipping method  gift boolean flag  gift message  custom properties</p>
+</div>
+
+
+
+
+
+
+
+
+
+    <h5>Parameters:</h5>
+    
+
+<table class="params">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>basketId</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">String</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"><p>the id of the basket to be modified</p></td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>shipmentId</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">String</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"><p>the id of the shipment to be modified</p></td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>body</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type"><a href="module-models_ShipmentModel.html">module:models/ShipmentModel</a></span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"></td>
+        </tr>
+
+    
+    </tbody>
+</table>
+
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="api_BasketsApi.js.html">api/BasketsApi.js</a>, <a href="api_BasketsApi.js.html#line778">line 778</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+
+
+
+
+
+
+
+<h5>Returns:</h5>
+
+        
+<div class="param-desc">
+    <p>a <a href="https://www.promisejs.org/">Promise</a>, with an object containing data of type <a href="module-models_BasketModel.html">module:models/BasketModel</a> and HTTP response</p>
+</div>
+
+
+
+<dl>
+    <dt>
+        Type
+    </dt>
+    <dd>
+        
+<span class="param-type">Promise</span>
+
+
+    </dd>
+</dl>
+
+    
+
+
+
+
+
+        
+            
+
+    
+
+    
+    <h4 class="name" id="patchBasketsByIDWithHttpInfo"><span class="type-signature"></span>patchBasketsByIDWithHttpInfo<span class="signature">(basketId, body)</span><span class="type-signature"> &rarr; {Promise}</span></h4>
+    
+
+    
+
+
+
+<div class="description">
+    <p>Updates a basket. Only the currency of the basket, source code, and the custom  properties of the basket and of the shipping items will be considered.</p>
+</div>
+
+
+
+
+
+
+
+
+
+    <h5>Parameters:</h5>
+    
+
+<table class="params">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>basketId</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">String</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"><p>the id of the basket to be modified</p></td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>body</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type"><a href="module-models_BasketModel.html">module:models/BasketModel</a></span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"></td>
+        </tr>
+
+    
+    </tbody>
+</table>
+
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="api_BasketsApi.js.html">api/BasketsApi.js</a>, <a href="api_BasketsApi.js.html#line564">line 564</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+
+
+
+
+
+
+
+<h5>Returns:</h5>
+
+        
+<div class="param-desc">
+    <p>a <a href="https://www.promisejs.org/">Promise</a>, with an object containing data of type <a href="module-models_BasketModel.html">module:models/BasketModel</a> and HTTP response</p>
+</div>
+
+
+
+<dl>
+    <dt>
+        Type
+    </dt>
+    <dd>
+        
+<span class="param-type">Promise</span>
+
+
+    </dd>
+</dl>
+
+    
+
+
+
+
+
+        
+            
+
+    
+
+    
+    <h4 class="name" id="postBaskets"><span class="type-signature"></span>postBaskets<span class="signature">(opts)</span><span class="type-signature"> &rarr; {Promise}</span></h4>
+    
+
+    
+
+
+
+<div class="description">
+    <p>Creates a new basket. The created basket is initialized with default values. Data provided in the body document
+will be populated into the created basket. It can be updated with further Shop API calls.
+Considered values from the request body are:
+customer information: PUT /baskets/{basket_id}/customer  billing address: PUT /baskets/{basket_id}/billing_address
+shipments including shipping address and shipping method: POST /baskets/{basket_id}/shipments  product items: POST /baskets/{basket_id}/items
+coupon items: POST /baskets/{basket_id}/coupons  gift certificate items: POST /baskets/{basket_id}/gift_certificates
+payment method and card type: POST /baskets/{basket_id}/payment_instruments  custom properties: PATCH /baskets/{basket_id}
+Related resource means with which resource you can specify the same data after the basket creation.
+Identify the basket using the basket_id property, which  should be integrated into the path of an update request, for example a POST to
+/baskets/{basket_id}/items.
+The resource supports JWT or  OAuth tokens for authentication:
+A customer must provide a JWT, which specifies exactly one customer (it may be a guest or a registered
+customer). In this case the resource creates a basket for this customer.
+An agent must provide an OAuth token. The agent can use this resource to create a basket for a new created
+guest customer, and can later update the customer if desired.
+The number of baskets which can be created per customer is limited. When a
+basket is created it is said to be open. It remains open until either an order is created from it
+using a POST to resource /orders or it is deleted using a DELETE to resource  /baskets/{basket_id}. The number of open baskets allowed depends on the authentication
+method used:
+When using JWT each customer can have just one open basket  When using OAuth each customer can have up to 4 open baskets (this is a quota setting which can be
+updated by support)</p>
+</div>
+
+
+
+
+
+
+
+
+
+    <h5>Parameters:</h5>
+    
+
+<table class="params">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>opts</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">Object</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"><p>Optional parameters</p>
+                <h6>Properties</h6>
+                
+
+<table class="params">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>body</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type"><a href="module-models_BasketModel.html">module:models/BasketModel</a></span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"></td>
+        </tr>
+
+    
+    </tbody>
+</table>
+
+            </td>
+        </tr>
+
+    
+    </tbody>
+</table>
+
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="api_BasketsApi.js.html">api/BasketsApi.js</a>, <a href="api_BasketsApi.js.html#line911">line 911</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+
+
+
+
+
+
+
+<h5>Returns:</h5>
+
+        
+<div class="param-desc">
+    <p>a <a href="https://www.promisejs.org/">Promise</a>, with data of type <a href="module-models_BasketModel.html">module:models/BasketModel</a></p>
+</div>
+
+
+
+<dl>
+    <dt>
+        Type
+    </dt>
+    <dd>
+        
+<span class="param-type">Promise</span>
+
+
+    </dd>
+</dl>
+
+    
+
+
+
+
+
+        
+            
+
+    
+
+    
+    <h4 class="name" id="postBasketsByIDCoupons"><span class="type-signature"></span>postBasketsByIDCoupons<span class="signature">(basketId, body)</span><span class="type-signature"> &rarr; {Promise}</span></h4>
+    
+
+    
+
+
+
+<div class="description">
+    <p>Adds a coupon to an existing basket.</p>
+</div>
+
+
+
+
+
+
+
+
+
+    <h5>Parameters:</h5>
+    
+
+<table class="params">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>basketId</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">String</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"><p>The id of the basket to be modified.</p></td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>body</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type"><a href="module-models_CouponItemModel.html">module:models/CouponItemModel</a></span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"></td>
+        </tr>
+
+    
+    </tbody>
+</table>
+
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="api_BasketsApi.js.html">api/BasketsApi.js</a>, <a href="api_BasketsApi.js.html#line964">line 964</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+
+
+
+
+
+
+
+<h5>Returns:</h5>
+
+        
+<div class="param-desc">
+    <p>a <a href="https://www.promisejs.org/">Promise</a>, with data of type <a href="module-models_BasketModel.html">module:models/BasketModel</a></p>
+</div>
+
+
+
+<dl>
+    <dt>
+        Type
+    </dt>
+    <dd>
+        
+<span class="param-type">Promise</span>
+
+
+    </dd>
+</dl>
+
+    
+
+
+
+
+
+        
+            
+
+    
+
+    
+    <h4 class="name" id="postBasketsByIDCouponsWithHttpInfo"><span class="type-signature"></span>postBasketsByIDCouponsWithHttpInfo<span class="signature">(basketId, body)</span><span class="type-signature"> &rarr; {Promise}</span></h4>
+    
+
+    
+
+
+
+<div class="description">
+    <p>Adds a coupon to an existing basket.</p>
+</div>
+
+
+
+
+
+
+
+
+
+    <h5>Parameters:</h5>
+    
+
+<table class="params">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>basketId</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">String</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"><p>The id of the basket to be modified.</p></td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>body</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type"><a href="module-models_CouponItemModel.html">module:models/CouponItemModel</a></span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"></td>
+        </tr>
+
+    
+    </tbody>
+</table>
+
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="api_BasketsApi.js.html">api/BasketsApi.js</a>, <a href="api_BasketsApi.js.html#line925">line 925</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+
+
+
+
+
+
+
+<h5>Returns:</h5>
+
+        
+<div class="param-desc">
+    <p>a <a href="https://www.promisejs.org/">Promise</a>, with an object containing data of type <a href="module-models_BasketModel.html">module:models/BasketModel</a> and HTTP response</p>
+</div>
+
+
+
+<dl>
+    <dt>
+        Type
+    </dt>
+    <dd>
+        
+<span class="param-type">Promise</span>
+
+
+    </dd>
+</dl>
+
+    
+
+
+
+
+
+        
+            
+
+    
+
+    
+    <h4 class="name" id="postBasketsByIDGiftCertificateItems"><span class="type-signature"></span>postBasketsByIDGiftCertificateItems<span class="signature">(basketId, body)</span><span class="type-signature"> &rarr; {Promise}</span></h4>
+    
+
+    
+
+
+
+<div class="description">
+    <p>Adds a gift certificate item to an existing basket.</p>
+</div>
+
+
+
+
+
+
+
+
+
+    <h5>Parameters:</h5>
+    
+
+<table class="params">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>basketId</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">String</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"><p>the id of the basket to be modified</p></td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>body</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type"><a href="module-models_GiftCertificateItemModel.html">module:models/GiftCertificateItemModel</a></span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"></td>
+        </tr>
+
+    
+    </tbody>
+</table>
+
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="api_BasketsApi.js.html">api/BasketsApi.js</a>, <a href="api_BasketsApi.js.html#line1017">line 1017</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+
+
+
+
+
+
+
+<h5>Returns:</h5>
+
+        
+<div class="param-desc">
+    <p>a <a href="https://www.promisejs.org/">Promise</a>, with data of type <a href="module-models_BasketModel.html">module:models/BasketModel</a></p>
+</div>
+
+
+
+<dl>
+    <dt>
+        Type
+    </dt>
+    <dd>
+        
+<span class="param-type">Promise</span>
+
+
+    </dd>
+</dl>
+
+    
+
+
+
+
+
+        
+            
+
+    
+
+    
+    <h4 class="name" id="postBasketsByIDGiftCertificateItemsWithHttpInfo"><span class="type-signature"></span>postBasketsByIDGiftCertificateItemsWithHttpInfo<span class="signature">(basketId, body)</span><span class="type-signature"> &rarr; {Promise}</span></h4>
+    
+
+    
+
+
+
+<div class="description">
+    <p>Adds a gift certificate item to an existing basket.</p>
+</div>
+
+
+
+
+
+
+
+
+
+    <h5>Parameters:</h5>
+    
+
+<table class="params">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>basketId</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">String</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"><p>the id of the basket to be modified</p></td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>body</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type"><a href="module-models_GiftCertificateItemModel.html">module:models/GiftCertificateItemModel</a></span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"></td>
+        </tr>
+
+    
+    </tbody>
+</table>
+
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="api_BasketsApi.js.html">api/BasketsApi.js</a>, <a href="api_BasketsApi.js.html#line978">line 978</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+
+
+
+
+
+
+
+<h5>Returns:</h5>
+
+        
+<div class="param-desc">
+    <p>a <a href="https://www.promisejs.org/">Promise</a>, with an object containing data of type <a href="module-models_BasketModel.html">module:models/BasketModel</a> and HTTP response</p>
+</div>
+
+
+
+<dl>
+    <dt>
+        Type
+    </dt>
+    <dd>
+        
+<span class="param-type">Promise</span>
+
+
+    </dd>
+</dl>
+
+    
+
+
+
+
+
+        
+            
+
+    
+
+    
+    <h4 class="name" id="postBasketsByIDItems"><span class="type-signature"></span>postBasketsByIDItems<span class="signature">(basketId, body)</span><span class="type-signature"> &rarr; {Promise}</span></h4>
+    
+
+    
+
+
+
+<div class="description">
+    <p>Adds new items to a basket.
+The added items are associated with the  specified shipment. If no shipment id is specified, the added items are associated with the default shipment.
+Considered values from the request body, for each item are:
+product_id: a valid product id. This is the id of the product to be added to the basket. If the
+product is already in the basket, the API either increments the quantity of the existing product line item or
+creates a new product line item, based on the site preference 'Add Product Behavior'. For option products and
+product bundles containing variation masters, the API creates a new product line item regardless of the site  preference.
+shipment_id: a valid shipment id (optional). This is the id of the shipment in which the product item  is created.
+quantity: a number between 0.01 and 999. This is the quantity of the product to order.
+inventory_id: a valid inventory id (optional). This is the id of the inventory from which the item is  allocated.
+bonus_discount_line_item_id: a valid bonus discount line item id (optional). This is the id of the
+bonus discount line item for which the added product is a selected bonus product.
+option_items/option_value_id: a valid option value id. This is an option value for an option item of  an option product.
+This is only possible if the product item is an option
+product. To set option values, you must specify a collection of option items in the option_items
+property. These option items must contain option_id and option_value<em>id. Also,
+the values you specify must be valid for the option product that this product item represents.
+Otherwise, the  server throws an InvalidProductOptionItemException or an  InvalidProductOptionValueItemException.
+custom properties in the form c</em>&lt;CUSTOM_NAME&gt;: the custom property must correspond to a custom
+attribute (&lt;CUSTOM_NAME&gt;) defined for ProductLineItem. The value of this property must be valid for the
+type of custom attribute defined for ProductLineItem.</p>
+</div>
+
+
+
+
+
+
+
+
+
+    <h5>Parameters:</h5>
+    
+
+<table class="params">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>basketId</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">String</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"><p>The id of the basket to be modified.</p></td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>body</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type"><a href="module-models_ProductItemModel.html">module:models/ProductItemModel</a></span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"></td>
+        </tr>
+
+    
+    </tbody>
+</table>
+
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="api_BasketsApi.js.html">api/BasketsApi.js</a>, <a href="api_BasketsApi.js.html#line1111">line 1111</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+
+
+
+
+
+
+
+<h5>Returns:</h5>
+
+        
+<div class="param-desc">
+    <p>a <a href="https://www.promisejs.org/">Promise</a>, with data of type <a href="module-models_BasketModel.html">module:models/BasketModel</a></p>
+</div>
+
+
+
+<dl>
+    <dt>
+        Type
+    </dt>
+    <dd>
+        
+<span class="param-type">Promise</span>
+
+
+    </dd>
+</dl>
+
+    
+
+
+
+
+
+        
+            
+
+    
+
+    
+    <h4 class="name" id="postBasketsByIDItemsWithHttpInfo"><span class="type-signature"></span>postBasketsByIDItemsWithHttpInfo<span class="signature">(basketId, body)</span><span class="type-signature"> &rarr; {Promise}</span></h4>
+    
+
+    
+
+
+
+<div class="description">
+    <p>Adds new items to a basket.
+The added items are associated with the  specified shipment. If no shipment id is specified, the added items are associated with the default shipment.
+Considered values from the request body, for each item are:
+product_id: a valid product id. This is the id of the product to be added to the basket. If the
+product is already in the basket, the API either increments the quantity of the existing product line item or
+creates a new product line item, based on the site preference 'Add Product Behavior'. For option products and
+product bundles containing variation masters, the API creates a new product line item regardless of the site
+preference.  shipment_id: a valid shipment id (optional). This is the id of the shipment in which the product item  is created.
+quantity: a number between 0.01 and 999. This is the quantity of the product to order.
+inventory_id: a valid inventory id (optional). This is the id of the inventory from which the item is
+allocated.
+bonus_discount_line_item_id: a valid bonus discount line item id (optional). This is the id of the
+bonus discount line item for which the added product is a selected bonus product.
+option_items/option_value_id: a valid option value id. This is an option value for an option item of  an option product.
+This is only possible if the product item is an option
+product. To set option values, you must specify a collection of option items in the option_items
+property. These option items must contain option_id and option_value<em>id. Also,
+the values you specify must be valid for the option product that this product item represents. Otherwise, the
+server throws an InvalidProductOptionItemException or an  InvalidProductOptionValueItemException.
+custom properties in the form c</em>&lt;CUSTOM_NAME&gt;: the custom property must correspond to a custom
+attribute (&lt;CUSTOM_NAME&gt;) defined for ProductLineItem. The value of this property must be valid for the
+type of custom attribute defined for ProductLineItem.</p>
+</div>
+
+
+
+
+
+
+
+
+
+    <h5>Parameters:</h5>
+    
+
+<table class="params">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>basketId</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">String</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"><p>The id of the basket to be modified.</p></td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>body</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type"><a href="module-models_ProductItemModel.html">module:models/ProductItemModel</a></span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"></td>
+        </tr>
+
+    
+    </tbody>
+</table>
+
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="api_BasketsApi.js.html">api/BasketsApi.js</a>, <a href="api_BasketsApi.js.html#line1052">line 1052</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+
+
+
+
+
+
+
+<h5>Returns:</h5>
+
+        
+<div class="param-desc">
+    <p>a <a href="https://www.promisejs.org/">Promise</a>, with an object containing data of type <a href="module-models_BasketModel.html">module:models/BasketModel</a> and HTTP response</p>
+</div>
+
+
+
+<dl>
+    <dt>
+        Type
+    </dt>
+    <dd>
+        
+<span class="param-type">Promise</span>
+
+
+    </dd>
+</dl>
+
+    
+
+
+
+
+
+        
+            
+
+    
+
+    
+    <h4 class="name" id="postBasketsByIDNotes"><span class="type-signature"></span>postBasketsByIDNotes<span class="signature">(basketId, body)</span><span class="type-signature"> &rarr; {Promise}</span></h4>
+    
+
+    
+
+
+
+<div class="description">
+    <p>Adds a note to an existing basket.</p>
+</div>
+
+
+
+
+
+
+
+
+
+    <h5>Parameters:</h5>
+    
+
+<table class="params">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>basketId</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">String</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"><p>The id of the basket to be modified.</p></td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>body</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type"><a href="module-models_NoteModel.html">module:models/NoteModel</a></span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"></td>
+        </tr>
+
+    
+    </tbody>
+</table>
+
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="api_BasketsApi.js.html">api/BasketsApi.js</a>, <a href="api_BasketsApi.js.html#line1164">line 1164</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+
+
+
+
+
+
+
+<h5>Returns:</h5>
+
+        
+<div class="param-desc">
+    <p>a <a href="https://www.promisejs.org/">Promise</a>, with data of type <a href="module-models_BasketModel.html">module:models/BasketModel</a></p>
+</div>
+
+
+
+<dl>
+    <dt>
+        Type
+    </dt>
+    <dd>
+        
+<span class="param-type">Promise</span>
+
+
+    </dd>
+</dl>
+
+    
+
+
+
+
+
+        
+            
+
+    
+
+    
+    <h4 class="name" id="postBasketsByIDNotesWithHttpInfo"><span class="type-signature"></span>postBasketsByIDNotesWithHttpInfo<span class="signature">(basketId, body)</span><span class="type-signature"> &rarr; {Promise}</span></h4>
+    
+
+    
+
+
+
+<div class="description">
+    <p>Adds a note to an existing basket.</p>
+</div>
+
+
+
+
+
+
+
+
+
+    <h5>Parameters:</h5>
+    
+
+<table class="params">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>basketId</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">String</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"><p>The id of the basket to be modified.</p></td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>body</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type"><a href="module-models_NoteModel.html">module:models/NoteModel</a></span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"></td>
+        </tr>
+
+    
+    </tbody>
+</table>
+
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="api_BasketsApi.js.html">api/BasketsApi.js</a>, <a href="api_BasketsApi.js.html#line1125">line 1125</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+
+
+
+
+
+
+
+<h5>Returns:</h5>
+
+        
+<div class="param-desc">
+    <p>a <a href="https://www.promisejs.org/">Promise</a>, with an object containing data of type <a href="module-models_BasketModel.html">module:models/BasketModel</a> and HTTP response</p>
+</div>
+
+
+
+<dl>
+    <dt>
+        Type
+    </dt>
+    <dd>
+        
+<span class="param-type">Promise</span>
+
+
+    </dd>
+</dl>
+
+    
+
+
+
+
+
+        
+            
+
+    
+
+    
+    <h4 class="name" id="postBasketsByIDPaymentInstruments"><span class="type-signature"></span>postBasketsByIDPaymentInstruments<span class="signature">(basketId, body)</span><span class="type-signature"> &rarr; {Promise}</span></h4>
+    
+
+    
+
+
+
+<div class="description">
+    <p>Adds a payment instrument to a basket.
+Payment instruments are usually authorized after order creation, for example in a custom hook. The default
+payment authorization process executes an authorization when a payment instrument is added to an order or
+updated.
+See POST /orders/{order_no}/payment_instruments and PATCH  /orders/{order_no}/payment_instruments/{payment_instrument_id}.
+NOTE: If CREDIT_CARD is selected as the payment_method_id, it is mandatory to provide the property card_type.</p>
+</div>
+
+
+
+
+
+
+
+
+
+    <h5>Parameters:</h5>
+    
+
+<table class="params">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>basketId</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">String</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"><p>the basket id</p></td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>body</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type"><a href="module-models_BasketPaymentInstrumentRequestModel.html">module:models/BasketPaymentInstrumentRequestModel</a></span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"></td>
+        </tr>
+
+    
+    </tbody>
+</table>
+
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="api_BasketsApi.js.html">api/BasketsApi.js</a>, <a href="api_BasketsApi.js.html#line1226">line 1226</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+
+
+
+
+
+
+
+<h5>Returns:</h5>
+
+        
+<div class="param-desc">
+    <p>a <a href="https://www.promisejs.org/">Promise</a>, with data of type <a href="module-models_BasketModel.html">module:models/BasketModel</a></p>
+</div>
+
+
+
+<dl>
+    <dt>
+        Type
+    </dt>
+    <dd>
+        
+<span class="param-type">Promise</span>
+
+
+    </dd>
+</dl>
+
+    
+
+
+
+
+
+        
+            
+
+    
+
+    
+    <h4 class="name" id="postBasketsByIDPaymentInstrumentsWithHttpInfo"><span class="type-signature"></span>postBasketsByIDPaymentInstrumentsWithHttpInfo<span class="signature">(basketId, body)</span><span class="type-signature"> &rarr; {Promise}</span></h4>
+    
+
+    
+
+
+
+<div class="description">
+    <p>Adds a payment instrument to a basket.
+Payment instruments are usually authorized after order creation, for example in a custom hook. The default
+payment authorization process executes an authorization when a payment instrument is added to an order or
+updated. See POST /orders/{order_no}/payment_instruments and PATCH  /orders/{order_no}/payment_instruments/{payment_instrument_id}.
+NOTE: If CREDIT_CARD is selected as the payment_method_id, it is mandatory to provide the property card_type.</p>
+</div>
+
+
+
+
+
+
+
+
+
+    <h5>Parameters:</h5>
+    
+
+<table class="params">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>basketId</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">String</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"><p>the basket id</p></td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>body</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type"><a href="module-models_BasketPaymentInstrumentRequestModel.html">module:models/BasketPaymentInstrumentRequestModel</a></span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"></td>
+        </tr>
+
+    
+    </tbody>
+</table>
+
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="api_BasketsApi.js.html">api/BasketsApi.js</a>, <a href="api_BasketsApi.js.html#line1182">line 1182</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+
+
+
+
+
+
+
+<h5>Returns:</h5>
+
+        
+<div class="param-desc">
+    <p>a <a href="https://www.promisejs.org/">Promise</a>, with an object containing data of type <a href="module-models_BasketModel.html">module:models/BasketModel</a> and HTTP response</p>
+</div>
+
+
+
+<dl>
+    <dt>
+        Type
+    </dt>
+    <dd>
+        
+<span class="param-type">Promise</span>
+
+
+    </dd>
+</dl>
+
+    
+
+
+
+
+
+        
+            
+
+    
+
+    
+    <h4 class="name" id="postBasketsByIDShipments"><span class="type-signature"></span>postBasketsByIDShipments<span class="signature">(basketId, body)</span><span class="type-signature"> &rarr; {Promise}</span></h4>
+    
+
+    
+
+
+
+<div class="description">
+    <p>Creates a new shipment for a basket.
+The created shipment is initialized with values provided in the body
+document and can be updated with further data API calls. Considered from
+the body are the following properties if specified:
+the id
+the shipping address
+the shipping method
+gift boolean flag
+gift message
+custom properties</p>
+</div>
+
+
+
+
+
+
+
+
+
+    <h5>Parameters:</h5>
+    
+
+<table class="params">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>basketId</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">String</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"><p>the id of the basket to be modified</p></td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>body</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type"><a href="module-models_ShipmentModel.html">module:models/ShipmentModel</a></span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"></td>
+        </tr>
+
+    
+    </tbody>
+</table>
+
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="api_BasketsApi.js.html">api/BasketsApi.js</a>, <a href="api_BasketsApi.js.html#line1297">line 1297</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+
+
+
+
+
+
+
+<h5>Returns:</h5>
+
+        
+<div class="param-desc">
+    <p>a <a href="https://www.promisejs.org/">Promise</a>, with data of type <a href="module-models_BasketModel.html">module:models/BasketModel</a></p>
+</div>
+
+
+
+<dl>
+    <dt>
+        Type
+    </dt>
+    <dd>
+        
+<span class="param-type">Promise</span>
+
+
+    </dd>
+</dl>
+
+    
+
+
+
+
+
+        
+            
+
+    
+
+    
+    <h4 class="name" id="postBasketsByIDShipmentsWithHttpInfo"><span class="type-signature"></span>postBasketsByIDShipmentsWithHttpInfo<span class="signature">(basketId, body)</span><span class="type-signature"> &rarr; {Promise}</span></h4>
+    
+
+    
+
+
+
+<div class="description">
+    <p>Creates a new shipment for a basket.
+The created shipment is initialized with values provided in the body
+document and can be updated with further data API calls. Considered from
+the body are the following properties if specified:
+the id
+the shipping address
+the shipping method
+gift boolean flag
+gift message
+custom properties</p>
+</div>
+
+
+
+
+
+
+
+
+
+    <h5>Parameters:</h5>
+    
+
+<table class="params">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>basketId</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">String</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"><p>the id of the basket to be modified</p></td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>body</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type"><a href="module-models_ShipmentModel.html">module:models/ShipmentModel</a></span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"></td>
+        </tr>
+
+    
+    </tbody>
+</table>
+
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="api_BasketsApi.js.html">api/BasketsApi.js</a>, <a href="api_BasketsApi.js.html#line1249">line 1249</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+
+
+
+
+
+
+
+<h5>Returns:</h5>
+
+        
+<div class="param-desc">
+    <p>a <a href="https://www.promisejs.org/">Promise</a>, with an object containing data of type <a href="module-models_BasketModel.html">module:models/BasketModel</a> and HTTP response</p>
+</div>
+
+
+
+<dl>
+    <dt>
+        Type
+    </dt>
+    <dd>
+        
+<span class="param-type">Promise</span>
+
+
+    </dd>
+</dl>
+
+    
+
+
+
+
+
+        
+            
+
+    
+
+    
+    <h4 class="name" id="postBasketsWithHttpInfo"><span class="type-signature"></span>postBasketsWithHttpInfo<span class="signature">(opts)</span><span class="type-signature"> &rarr; {Promise}</span></h4>
+    
+
+    
+
+
+
+<div class="description">
+    <p>Creates a new basket. The created basket is initialized with default values. Data provided in the body document
+will be populated into the created basket. It can be updated with further Shop API calls.
+Considered values from the request body are:
+customer information: PUT /baskets/{basket_id}/customer
+billing address: PUT /baskets/{basket_id}/billing_address
+shipments including shipping address and shipping method: POST /baskets/{basket_id}/shipments
+product items: POST /baskets/{basket_id}/items
+coupon items: POST /baskets/{basket_id}/coupons
+gift certificate items: POST /baskets/{basket_id}/gift_certificates
+payment method and card type: POST /baskets/{basket_id}/payment_instruments
+custom properties: PATCH /baskets/{basket_id}
+Related resource means with which resource you can specify the same data after the basket creation.
+Identify the basket using the basket_id property, which
+should be integrated into the path of an update request, for example a POST to  /baskets/{basket_id}/items.
+The resource supports JWT or  OAuth tokens for authentication:
+A customer must provide a JWT, which specifies exactly one customer (it may be a guest or a registered  customer). In this case the resource creates a basket for this customer.
+An agent must provide an OAuth token. The agent can use this resource to create a basket for a new created  guest customer, and can later update the customer if desired.
+The number of baskets which can be created per customer is limited. When a
+basket is created it is said to be open. It remains open until either an order is created from it
+using a POST to resource /orders or it is deleted using a DELETE to resource  /baskets/{basket_id}. The number of open baskets allowed depends on the authentication  method used:
+When using JWT each customer can have just one open basket  When using OAuth each customer can have up to 4 open baskets (this is a quota setting which can be
+updated by support)</p>
+</div>
+
+
+
+
+
+
+
+
+
+    <h5>Parameters:</h5>
+    
+
+<table class="params">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>opts</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">Object</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"><p>Optional parameters</p>
+                <h6>Properties</h6>
+                
+
+<table class="params">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>body</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type"><a href="module-models_BasketModel.html">module:models/BasketModel</a></span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"></td>
+        </tr>
+
+    
+    </tbody>
+</table>
+
+            </td>
+        </tr>
+
+    
+    </tbody>
+</table>
+
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="api_BasketsApi.js.html">api/BasketsApi.js</a>, <a href="api_BasketsApi.js.html#line863">line 863</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+
+
+
+
+
+
+
+<h5>Returns:</h5>
+
+        
+<div class="param-desc">
+    <p>a <a href="https://www.promisejs.org/">Promise</a>, with an object containing data of type <a href="module-models_BasketModel.html">module:models/BasketModel</a> and HTTP response</p>
+</div>
+
+
+
+<dl>
+    <dt>
+        Type
+    </dt>
+    <dd>
+        
+<span class="param-type">Promise</span>
+
+
+    </dd>
+</dl>
+
+    
+
+
+
+
+
+        
+            
+
+    
+
+    
+    <h4 class="name" id="putBasketsByIDBillingAddress"><span class="type-signature"></span>putBasketsByIDBillingAddress<span class="signature">(basketId, opts)</span><span class="type-signature"> &rarr; {Promise}</span></h4>
+    
+
+    
+
+
+
+<div class="description">
+    <p>Sets the billing address of a basket.</p>
+</div>
+
+
+
+
+
+
+
+
+
+    <h5>Parameters:</h5>
+    
+
+<table class="params">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>basketId</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">String</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"><p>The id of the basket to be modified.</p></td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>opts</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">Object</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"><p>Optional parameters</p>
+                <h6>Properties</h6>
+                
+
+<table class="params">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>useAsShipping</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">Boolean</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"></td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>customerAddressId</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">String</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"></td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>body</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type"><a href="module-models_OrderAddressModel.html">module:models/OrderAddressModel</a></span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"></td>
+        </tr>
+
+    
+    </tbody>
+</table>
+
+            </td>
+        </tr>
+
+    
+    </tbody>
+</table>
+
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="api_BasketsApi.js.html">api/BasketsApi.js</a>, <a href="api_BasketsApi.js.html#line1355">line 1355</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+
+
+
+
+
+
+
+<h5>Returns:</h5>
+
+        
+<div class="param-desc">
+    <p>a <a href="https://www.promisejs.org/">Promise</a>, with data of type <a href="module-models_BasketModel.html">module:models/BasketModel</a></p>
+</div>
+
+
+
+<dl>
+    <dt>
+        Type
+    </dt>
+    <dd>
+        
+<span class="param-type">Promise</span>
+
+
+    </dd>
+</dl>
+
+    
+
+
+
+
+
+        
+            
+
+    
+
+    
+    <h4 class="name" id="putBasketsByIDBillingAddressWithHttpInfo"><span class="type-signature"></span>putBasketsByIDBillingAddressWithHttpInfo<span class="signature">(basketId, opts)</span><span class="type-signature"> &rarr; {Promise}</span></h4>
+    
+
+    
+
+
+
+<div class="description">
+    <p>Sets the billing address of a basket.</p>
+</div>
+
+
+
+
+
+
+
+
+
+    <h5>Parameters:</h5>
+    
+
+<table class="params">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>basketId</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">String</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"><p>The id of the basket to be modified.</p></td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>opts</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">Object</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"><p>Optional parameters</p>
+                <h6>Properties</h6>
+                
+
+<table class="params">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>useAsShipping</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">Boolean</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"></td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>customerAddressId</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">String</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"></td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>body</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type"><a href="module-models_OrderAddressModel.html">module:models/OrderAddressModel</a></span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"></td>
+        </tr>
+
+    
+    </tbody>
+</table>
+
+            </td>
+        </tr>
+
+    
+    </tbody>
+</table>
+
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="api_BasketsApi.js.html">api/BasketsApi.js</a>, <a href="api_BasketsApi.js.html#line1314">line 1314</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+
+
+
+
+
+
+
+<h5>Returns:</h5>
+
+        
+<div class="param-desc">
+    <p>a <a href="https://www.promisejs.org/">Promise</a>, with an object containing data of type <a href="module-models_BasketModel.html">module:models/BasketModel</a> and HTTP response</p>
+</div>
+
+
+
+<dl>
+    <dt>
+        Type
+    </dt>
+    <dd>
+        
+<span class="param-type">Promise</span>
+
+
+    </dd>
+</dl>
+
+    
+
+
+
+
+
+        
+            
+
+    
+
+    
+    <h4 class="name" id="putBasketsByIDCustomer"><span class="type-signature"></span>putBasketsByIDCustomer<span class="signature">(basketId, body)</span><span class="type-signature"> &rarr; {Promise}</span></h4>
+    
+
+    
+
+
+
+<div class="description">
+    <p>Sets customer information for an existing basket.</p>
+</div>
+
+
+
+
+
+
+
+
+
+    <h5>Parameters:</h5>
+    
+
+<table class="params">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>basketId</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">String</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"><p>the id of the basket to be modified</p></td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>body</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type"><a href="module-models_CustomerInfoModel.html">module:models/CustomerInfoModel</a></span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"></td>
+        </tr>
+
+    
+    </tbody>
+</table>
+
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="api_BasketsApi.js.html">api/BasketsApi.js</a>, <a href="api_BasketsApi.js.html#line1408">line 1408</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+
+
+
+
+
+
+
+<h5>Returns:</h5>
+
+        
+<div class="param-desc">
+    <p>a <a href="https://www.promisejs.org/">Promise</a>, with data of type <a href="module-models_BasketModel.html">module:models/BasketModel</a></p>
+</div>
+
+
+
+<dl>
+    <dt>
+        Type
+    </dt>
+    <dd>
+        
+<span class="param-type">Promise</span>
+
+
+    </dd>
+</dl>
+
+    
+
+
+
+
+
+        
+            
+
+    
+
+    
+    <h4 class="name" id="putBasketsByIDCustomerWithHttpInfo"><span class="type-signature"></span>putBasketsByIDCustomerWithHttpInfo<span class="signature">(basketId, body)</span><span class="type-signature"> &rarr; {Promise}</span></h4>
+    
+
+    
+
+
+
+<div class="description">
+    <p>Sets customer information for an existing basket.</p>
+</div>
+
+
+
+
+
+
+
+
+
+    <h5>Parameters:</h5>
+    
+
+<table class="params">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>basketId</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">String</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"><p>the id of the basket to be modified</p></td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>body</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type"><a href="module-models_CustomerInfoModel.html">module:models/CustomerInfoModel</a></span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"></td>
+        </tr>
+
+    
+    </tbody>
+</table>
+
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="api_BasketsApi.js.html">api/BasketsApi.js</a>, <a href="api_BasketsApi.js.html#line1369">line 1369</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+
+
+
+
+
+
+
+<h5>Returns:</h5>
+
+        
+<div class="param-desc">
+    <p>a <a href="https://www.promisejs.org/">Promise</a>, with an object containing data of type <a href="module-models_BasketModel.html">module:models/BasketModel</a> and HTTP response</p>
+</div>
+
+
+
+<dl>
+    <dt>
+        Type
+    </dt>
+    <dd>
+        
+<span class="param-type">Promise</span>
+
+
+    </dd>
+</dl>
+
+    
+
+
+
+
+
+        
+            
+
+    
+
+    
+    <h4 class="name" id="putBasketsByIDShipmentsByIDShippingAddress"><span class="type-signature"></span>putBasketsByIDShipmentsByIDShippingAddress<span class="signature">(basketId, shipmentId, body, opts)</span><span class="type-signature"> &rarr; {Promise}</span></h4>
+    
+
+    
+
+
+
+<div class="description">
+    <p>Sets a shipping address of a specific shipment of a basket.</p>
+</div>
+
+
+
+
+
+
+
+
+
+    <h5>Parameters:</h5>
+    
+
+<table class="params">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>basketId</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">String</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"><p>The id of the basket to be modified.</p></td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>shipmentId</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">String</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"><p>The id of the shipment to be modified.</p></td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>body</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type"><a href="module-models_OrderAddressModel.html">module:models/OrderAddressModel</a></span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"></td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>opts</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">Object</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"><p>Optional parameters</p>
+                <h6>Properties</h6>
+                
+
+<table class="params">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>useAsBilling</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">Boolean</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"></td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>customerAddressId</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">String</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"></td>
+        </tr>
+
+    
+    </tbody>
+</table>
+
+            </td>
+        </tr>
+
+    
+    </tbody>
+</table>
+
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="api_BasketsApi.js.html">api/BasketsApi.js</a>, <a href="api_BasketsApi.js.html#line1479">line 1479</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+
+
+
+
+
+
+
+<h5>Returns:</h5>
+
+        
+<div class="param-desc">
+    <p>a <a href="https://www.promisejs.org/">Promise</a>, with data of type <a href="module-models_BasketModel.html">module:models/BasketModel</a></p>
+</div>
+
+
+
+<dl>
+    <dt>
+        Type
+    </dt>
+    <dd>
+        
+<span class="param-type">Promise</span>
+
+
+    </dd>
+</dl>
+
+    
+
+
+
+
+
+        
+            
+
+    
+
+    
+    <h4 class="name" id="putBasketsByIDShipmentsByIDShippingAddressWithHttpInfo"><span class="type-signature"></span>putBasketsByIDShipmentsByIDShippingAddressWithHttpInfo<span class="signature">(basketId, shipmentId, body, opts)</span><span class="type-signature"> &rarr; {Promise}</span></h4>
+    
+
+    
+
+
+
+<div class="description">
+    <p>Sets a shipping address of a specific shipment of a basket.</p>
+</div>
+
+
+
+
+
+
+
+
+
+    <h5>Parameters:</h5>
+    
+
+<table class="params">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>basketId</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">String</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"><p>The id of the basket to be modified.</p></td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>shipmentId</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">String</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"><p>The id of the shipment to be modified.</p></td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>body</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type"><a href="module-models_OrderAddressModel.html">module:models/OrderAddressModel</a></span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"></td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>opts</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">Object</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"><p>Optional parameters</p>
+                <h6>Properties</h6>
+                
+
+<table class="params">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>useAsBilling</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">Boolean</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"></td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>customerAddressId</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">String</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"></td>
+        </tr>
+
+    
+    </tbody>
+</table>
+
+            </td>
+        </tr>
+
+    
+    </tbody>
+</table>
+
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="api_BasketsApi.js.html">api/BasketsApi.js</a>, <a href="api_BasketsApi.js.html#line1426">line 1426</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+
+
+
+
+
+
+
+<h5>Returns:</h5>
+
+        
+<div class="param-desc">
+    <p>a <a href="https://www.promisejs.org/">Promise</a>, with an object containing data of type <a href="module-models_BasketModel.html">module:models/BasketModel</a> and HTTP response</p>
+</div>
+
+
+
+<dl>
+    <dt>
+        Type
+    </dt>
+    <dd>
+        
+<span class="param-type">Promise</span>
+
+
+    </dd>
+</dl>
+
+    
+
+
+
+
+
+        
+            
+
+    
+
+    
+    <h4 class="name" id="putBasketsByIDShipmentsByIDShippingMethod"><span class="type-signature"></span>putBasketsByIDShipmentsByIDShippingMethod<span class="signature">(basketId, shipmentId, body)</span><span class="type-signature"> &rarr; {Promise}</span></h4>
+    
+
+    
+
+
+
+<div class="description">
+    <p>Sets a shipping method to a specific shipment of a basket.</p>
+</div>
+
+
+
+
+
+
+
+
+
+    <h5>Parameters:</h5>
+    
+
+<table class="params">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>basketId</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">String</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"><p>the id of the basket to be modified</p></td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>shipmentId</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">String</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"><p>the id of the shipment to be modified</p></td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>body</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type"><a href="module-models_ShippingMethodModel.html">module:models/ShippingMethodModel</a></span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"></td>
+        </tr>
+
+    
+    </tbody>
+</table>
+
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="api_BasketsApi.js.html">api/BasketsApi.js</a>, <a href="api_BasketsApi.js.html#line1540">line 1540</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+
+
+
+
+
+
+
+<h5>Returns:</h5>
+
+        
+<div class="param-desc">
+    <p>a <a href="https://www.promisejs.org/">Promise</a>, with data of type <a href="module-models_BasketModel.html">module:models/BasketModel</a></p>
+</div>
+
+
+
+<dl>
+    <dt>
+        Type
+    </dt>
+    <dd>
+        
+<span class="param-type">Promise</span>
+
+
+    </dd>
+</dl>
+
+    
+
+
+
+
+
+        
+            
+
+    
+
+    
+    <h4 class="name" id="putBasketsByIDShipmentsByIDShippingMethodWithHttpInfo"><span class="type-signature"></span>putBasketsByIDShipmentsByIDShippingMethodWithHttpInfo<span class="signature">(basketId, shipmentId, body)</span><span class="type-signature"> &rarr; {Promise}</span></h4>
+    
+
+    
+
+
+
+<div class="description">
+    <p>Sets a shipping method to a specific shipment of a basket.</p>
+</div>
+
+
+
+
+
+
+
+
+
+    <h5>Parameters:</h5>
+    
+
+<table class="params">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>basketId</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">String</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"><p>the id of the basket to be modified</p></td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>shipmentId</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">String</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"><p>the id of the shipment to be modified</p></td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>body</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type"><a href="module-models_ShippingMethodModel.html">module:models/ShippingMethodModel</a></span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"></td>
+        </tr>
+
+    
+    </tbody>
+</table>
+
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="api_BasketsApi.js.html">api/BasketsApi.js</a>, <a href="api_BasketsApi.js.html#line1494">line 1494</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+
+
+
+
+
+
+
+<h5>Returns:</h5>
+
+        
+<div class="param-desc">
+    <p>a <a href="https://www.promisejs.org/">Promise</a>, with an object containing data of type <a href="module-models_BasketModel.html">module:models/BasketModel</a> and HTTP response</p>
+</div>
+
+
+
+<dl>
+    <dt>
+        Type
+    </dt>
+    <dd>
+        
+<span class="param-type">Promise</span>
+
+
+    </dd>
+</dl>
+
+    
+
+
+
+
+
+        
+    
+
+    
+
+    
+</article>
+
+</section>
+
+
+
+
+</div>
+
+<nav>
+    <h2><a href="index.html">Home</a></h2><h3>Modules</h3><ul><li><a href="module-api_BasketsApi.html">api/BasketsApi</a></li><li><a href="module-api_CategoriesApi.html">api/CategoriesApi</a></li><li><a href="module-api_ContentApi.html">api/ContentApi</a></li><li><a href="module-api_ContentSearchApi.html">api/ContentSearchApi</a></li><li><a href="module-api_CustomersApi.html">api/CustomersApi</a></li><li><a href="module-api_CustomObjectsApi.html">api/CustomObjectsApi</a></li><li><a href="module-api_FoldersApi.html">api/FoldersApi</a></li><li><a href="module-api_GiftCertificateApi.html">api/GiftCertificateApi</a></li><li><a href="module-api_OrdersApi.html">api/OrdersApi</a></li><li><a href="module-api_OrderSearchApi.html">api/OrderSearchApi</a></li><li><a href="module-api_PriceAdjustmentLimitsApi.html">api/PriceAdjustmentLimitsApi</a></li><li><a href="module-api_ProductListsApi.html">api/ProductListsApi</a></li><li><a href="module-api_ProductsApi.html">api/ProductsApi</a></li><li><a href="module-api_ProductSearchApi.html">api/ProductSearchApi</a></li><li><a href="module-api_PromotionsApi.html">api/PromotionsApi</a></li><li><a href="module-api_SearchSuggestionApi.html">api/SearchSuggestionApi</a></li><li><a href="module-api_SessionsApi.html">api/SessionsApi</a></li><li><a href="module-api_SiteApi.html">api/SiteApi</a></li><li><a href="module-api_StoresApi.html">api/StoresApi</a></li><li><a href="module-ApiClient.html">ApiClient</a></li><li><a href="module-index.html">index</a></li><li><a href="module-models_AuthRequestModel.html">models/AuthRequestModel</a></li><li><a href="module-models_BasketModel.html">models/BasketModel</a></li><li><a href="module-models_BasketPaymentInstrumentRequestModel.html">models/BasketPaymentInstrumentRequestModel</a></li><li><a href="module-models_BasketsResultModel.html">models/BasketsResultModel</a></li><li><a href="module-models_BonusDiscountLineItemModel.html">models/BonusDiscountLineItemModel</a></li><li><a href="module-models_BoolFilterModel.html">models/BoolFilterModel</a></li><li><a href="module-models_BoolQueryModel.html">models/BoolQueryModel</a></li><li><a href="module-models_BundledProductModel.html">models/BundledProductModel</a></li><li><a href="module-models_CategoryModel.html">models/CategoryModel</a></li><li><a href="module-models_CategoryResultModel.html">models/CategoryResultModel</a></li><li><a href="module-models_ContentFolderModel.html">models/ContentFolderModel</a></li><li><a href="module-models_ContentFolderResultModel.html">models/ContentFolderResultModel</a></li><li><a href="module-models_ContentModel.html">models/ContentModel</a></li><li><a href="module-models_ContentResultModel.html">models/ContentResultModel</a></li><li><a href="module-models_ContentSearchRefinementModel.html">models/ContentSearchRefinementModel</a></li><li><a href="module-models_ContentSearchRefinementValueModel.html">models/ContentSearchRefinementValueModel</a></li><li><a href="module-models_ContentSearchResultModel.html">models/ContentSearchResultModel</a></li><li><a href="module-models_CouponItemModel.html">models/CouponItemModel</a></li><li><a href="module-models_CustomerAddressLinkModel.html">models/CustomerAddressLinkModel</a></li><li><a href="module-models_CustomerAddressModel.html">models/CustomerAddressModel</a></li><li><a href="module-models_CustomerAddressResultModel.html">models/CustomerAddressResultModel</a></li><li><a href="module-models_CustomerInfoModel.html">models/CustomerInfoModel</a></li><li><a href="module-models_CustomerModel.html">models/CustomerModel</a></li><li><a href="module-models_CustomerOrderResultModel.html">models/CustomerOrderResultModel</a></li><li><a href="module-models_CustomerPaymentCardRequestModel.html">models/CustomerPaymentCardRequestModel</a></li><li><a href="module-models_CustomerPaymentInstrumentModel.html">models/CustomerPaymentInstrumentModel</a></li><li><a href="module-models_CustomerPaymentInstrumentRequestModel.html">models/CustomerPaymentInstrumentRequestModel</a></li><li><a href="module-models_CustomerPaymentInstrumentResultModel.html">models/CustomerPaymentInstrumentResultModel</a></li><li><a href="module-models_CustomerProductListItemLinkModel.html">models/CustomerProductListItemLinkModel</a></li><li><a href="module-models_CustomerProductListItemModel.html">models/CustomerProductListItemModel</a></li><li><a href="module-models_CustomerProductListItemResultModel.html">models/CustomerProductListItemResultModel</a></li><li><a href="module-models_CustomerProductListModel.html">models/CustomerProductListModel</a></li><li><a href="module-models_CustomerProductListRegistrantModel.html">models/CustomerProductListRegistrantModel</a></li><li><a href="module-models_CustomerProductListResultModel.html">models/CustomerProductListResultModel</a></li><li><a href="module-models_CustomerRegistrationModel.html">models/CustomerRegistrationModel</a></li><li><a href="module-models_CustomObjectModel.html">models/CustomObjectModel</a></li><li><a href="module-models_DiscountModel.html">models/DiscountModel</a></li><li><a href="module-models_FaultModel.html">models/FaultModel</a></li><li><a href="module-models_FilteredQueryModel.html">models/FilteredQueryModel</a></li><li><a href="module-models_FilterModel.html">models/FilterModel</a></li><li><a href="module-models_GiftCertificateItemModel.html">models/GiftCertificateItemModel</a></li><li><a href="module-models_GiftCertificateModel.html">models/GiftCertificateModel</a></li><li><a href="module-models_GiftCertificateRequestModel.html">models/GiftCertificateRequestModel</a></li><li><a href="module-models_ImageGroupModel.html">models/ImageGroupModel</a></li><li><a href="module-models_ImageModel.html">models/ImageModel</a></li><li><a href="module-models_InventoryModel.html">models/InventoryModel</a></li><li><a href="module-models_LocaleModel.html">models/LocaleModel</a></li><li><a href="module-models_MasterModel.html">models/MasterModel</a></li><li><a href="module-models_NestedQueryModel.html">models/NestedQueryModel</a></li><li><a href="module-models_NoteModel.html">models/NoteModel</a></li><li><a href="module-models_NotesResultModel.html">models/NotesResultModel</a></li><li><a href="module-models_OptionItemModel.html">models/OptionItemModel</a></li><li><a href="module-models_OptionModel.html">models/OptionModel</a></li><li><a href="module-models_OptionValueModel.html">models/OptionValueModel</a></li><li><a href="module-models_OrderAddressModel.html">models/OrderAddressModel</a></li><li><a href="module-models_OrderModel.html">models/OrderModel</a></li><li><a href="module-models_OrderPaymentCardRequestModel.html">models/OrderPaymentCardRequestModel</a></li><li><a href="module-models_OrderPaymentInstrumentModel.html">models/OrderPaymentInstrumentModel</a></li><li><a href="module-models_OrderPaymentInstrumentRequestModel.html">models/OrderPaymentInstrumentRequestModel</a></li><li><a href="module-models_OrderSearchHitModel.html">models/OrderSearchHitModel</a></li><li><a href="module-models_OrderSearchRequestModel.html">models/OrderSearchRequestModel</a></li><li><a href="module-models_OrderSearchResultModel.html">models/OrderSearchResultModel</a></li><li><a href="module-models_PasswordChangeRequestModel.html">models/PasswordChangeRequestModel</a></li><li><a href="module-models_PasswordResetModel.html">models/PasswordResetModel</a></li><li><a href="module-models_PaymentBankAccountModel.html">models/PaymentBankAccountModel</a></li><li><a href="module-models_PaymentBankAccountRequestModel.html">models/PaymentBankAccountRequestModel</a></li><li><a href="module-models_PaymentCardModel.html">models/PaymentCardModel</a></li><li><a href="module-models_PaymentCardSpecModel.html">models/PaymentCardSpecModel</a></li><li><a href="module-models_PaymentMethodModel.html">models/PaymentMethodModel</a></li><li><a href="module-models_PaymentMethodResultModel.html">models/PaymentMethodResultModel</a></li><li><a href="module-models_PriceAdjustmentLimitModel.html">models/PriceAdjustmentLimitModel</a></li><li><a href="module-models_PriceAdjustmentLimitsModel.html">models/PriceAdjustmentLimitsModel</a></li><li><a href="module-models_PriceAdjustmentModel.html">models/PriceAdjustmentModel</a></li><li><a href="module-models_ProductDetailsLinkModel.html">models/ProductDetailsLinkModel</a></li><li><a href="module-models_ProductItemModel.html">models/ProductItemModel</a></li><li><a href="module-models_ProductLinkModel.html">models/ProductLinkModel</a></li><li><a href="module-models_ProductListEventModel.html">models/ProductListEventModel</a></li><li><a href="module-models_ProductListItemReferenceModel.html">models/ProductListItemReferenceModel</a></li><li><a href="module-models_ProductListLinkModel.html">models/ProductListLinkModel</a></li><li><a href="module-models_ProductListRegistrantModel.html">models/ProductListRegistrantModel</a></li><li><a href="module-models_ProductListShippingAddressModel.html">models/ProductListShippingAddressModel</a></li><li><a href="module-models_ProductModel.html">models/ProductModel</a></li><li><a href="module-models_ProductPromotionModel.html">models/ProductPromotionModel</a></li><li><a href="module-models_ProductResultModel.html">models/ProductResultModel</a></li><li><a href="module-models_ProductSearchHitModel.html">models/ProductSearchHitModel</a></li><li><a href="module-models_ProductSearchRefinementModel.html">models/ProductSearchRefinementModel</a></li><li><a href="module-models_ProductSearchRefinementValueModel.html">models/ProductSearchRefinementValueModel</a></li><li><a href="module-models_ProductSearchResultModel.html">models/ProductSearchResultModel</a></li><li><a href="module-models_ProductSearchSortingOptionModel.html">models/ProductSearchSortingOptionModel</a></li><li><a href="module-models_ProductSimpleLinkModel.html">models/ProductSimpleLinkModel</a></li><li><a href="module-models_ProductTypeModel.html">models/ProductTypeModel</a></li><li><a href="module-models_PromotionModel.html">models/PromotionModel</a></li><li><a href="module-models_PromotionResultModel.html">models/PromotionResultModel</a></li><li><a href="module-models_PublicProductListItemModel.html">models/PublicProductListItemModel</a></li><li><a href="module-models_PublicProductListItemResultModel.html">models/PublicProductListItemResultModel</a></li><li><a href="module-models_PublicProductListLinkModel.html">models/PublicProductListLinkModel</a></li><li><a href="module-models_PublicProductListModel.html">models/PublicProductListModel</a></li><li><a href="module-models_PublicProductListResultModel.html">models/PublicProductListResultModel</a></li><li><a href="module-models_QueryFilterModel.html">models/QueryFilterModel</a></li><li><a href="module-models_QueryModel.html">models/QueryModel</a></li><li><a href="module-models_Range2FilterModel.html">models/Range2FilterModel</a></li><li><a href="module-models_RangeFilterModel.html">models/RangeFilterModel</a></li><li><a href="module-models_RecommendationModel.html">models/RecommendationModel</a></li><li><a href="module-models_RecommendationTypeModel.html">models/RecommendationTypeModel</a></li><li><a href="module-models_ResultPageModel.html">models/ResultPageModel</a></li><li><a href="module-models_ShipmentModel.html">models/ShipmentModel</a></li><li><a href="module-models_ShippingItemModel.html">models/ShippingItemModel</a></li><li><a href="module-models_ShippingMethodModel.html">models/ShippingMethodModel</a></li><li><a href="module-models_ShippingMethodResultModel.html">models/ShippingMethodResultModel</a></li><li><a href="module-models_ShippingPromotionModel.html">models/ShippingPromotionModel</a></li><li><a href="module-models_SimpleLinkModel.html">models/SimpleLinkModel</a></li><li><a href="module-models_SiteModel.html">models/SiteModel</a></li><li><a href="module-models_SortModel.html">models/SortModel</a></li><li><a href="module-models_StatusModel.html">models/StatusModel</a></li><li><a href="module-models_StoreModel.html">models/StoreModel</a></li><li><a href="module-models_StoreResultModel.html">models/StoreResultModel</a></li><li><a href="module-models_SuggestedCategoryModel.html">models/SuggestedCategoryModel</a></li><li><a href="module-models_SuggestedContentModel.html">models/SuggestedContentModel</a></li><li><a href="module-models_SuggestedPhraseModel.html">models/SuggestedPhraseModel</a></li><li><a href="module-models_SuggestedProductModel.html">models/SuggestedProductModel</a></li><li><a href="module-models_SuggestedTermModel.html">models/SuggestedTermModel</a></li><li><a href="module-models_SuggestedTermsModel.html">models/SuggestedTermsModel</a></li><li><a href="module-models_SuggestionModel.html">models/SuggestionModel</a></li><li><a href="module-models_SuggestionResultModel.html">models/SuggestionResultModel</a></li><li><a href="module-models_TermFilterModel.html">models/TermFilterModel</a></li><li><a href="module-models_TermQueryModel.html">models/TermQueryModel</a></li><li><a href="module-models_TextQueryModel.html">models/TextQueryModel</a></li><li><a href="module-models_VariantModel.html">models/VariantModel</a></li><li><a href="module-models_VariationAttributeModel.html">models/VariationAttributeModel</a></li><li><a href="module-models_VariationAttributeValueModel.html">models/VariationAttributeValueModel</a></li><li><a href="module-models_VariationGroupModel.html">models/VariationGroupModel</a></li></ul><h3>Classes</h3><ul><li><a href="module-api_BasketsApi.html">api/BasketsApi</a></li><li><a href="module-api_CategoriesApi.html">api/CategoriesApi</a></li><li><a href="module-api_ContentApi.html">api/ContentApi</a></li><li><a href="module-api_ContentSearchApi.html">api/ContentSearchApi</a></li><li><a href="module-api_CustomersApi.html">api/CustomersApi</a></li><li><a href="module-api_CustomObjectsApi.html">api/CustomObjectsApi</a></li><li><a href="module-api_FoldersApi.html">api/FoldersApi</a></li><li><a href="module-api_GiftCertificateApi.html">api/GiftCertificateApi</a></li><li><a href="module-api_OrdersApi.html">api/OrdersApi</a></li><li><a href="module-api_OrderSearchApi.html">api/OrderSearchApi</a></li><li><a href="module-api_PriceAdjustmentLimitsApi.html">api/PriceAdjustmentLimitsApi</a></li><li><a href="module-api_ProductListsApi.html">api/ProductListsApi</a></li><li><a href="module-api_ProductsApi.html">api/ProductsApi</a></li><li><a href="module-api_ProductSearchApi.html">api/ProductSearchApi</a></li><li><a href="module-api_PromotionsApi.html">api/PromotionsApi</a></li><li><a href="module-api_SearchSuggestionApi.html">api/SearchSuggestionApi</a></li><li><a href="module-api_SessionsApi.html">api/SessionsApi</a></li><li><a href="module-api_SiteApi.html">api/SiteApi</a></li><li><a href="module-api_StoresApi.html">api/StoresApi</a></li><li><a href="module-ApiClient.html">ApiClient</a></li><li><a href="module-models_AuthRequestModel.html">models/AuthRequestModel</a></li><li><a href="module-models_BasketModel.html">models/BasketModel</a></li><li><a href="module-models_BasketPaymentInstrumentRequestModel.html">models/BasketPaymentInstrumentRequestModel</a></li><li><a href="module-models_BasketsResultModel.html">models/BasketsResultModel</a></li><li><a href="module-models_BonusDiscountLineItemModel.html">models/BonusDiscountLineItemModel</a></li><li><a href="module-models_BoolFilterModel.html">models/BoolFilterModel</a></li><li><a href="module-models_BoolQueryModel.html">models/BoolQueryModel</a></li><li><a href="module-models_BundledProductModel.html">models/BundledProductModel</a></li><li><a href="module-models_CategoryModel.html">models/CategoryModel</a></li><li><a href="module-models_CategoryResultModel.html">models/CategoryResultModel</a></li><li><a href="module-models_ContentFolderModel.html">models/ContentFolderModel</a></li><li><a href="module-models_ContentFolderResultModel.html">models/ContentFolderResultModel</a></li><li><a href="module-models_ContentModel.html">models/ContentModel</a></li><li><a href="module-models_ContentResultModel.html">models/ContentResultModel</a></li><li><a href="module-models_ContentSearchRefinementModel.html">models/ContentSearchRefinementModel</a></li><li><a href="module-models_ContentSearchRefinementValueModel.html">models/ContentSearchRefinementValueModel</a></li><li><a href="module-models_ContentSearchResultModel.html">models/ContentSearchResultModel</a></li><li><a href="module-models_CouponItemModel.html">models/CouponItemModel</a></li><li><a href="module-models_CustomerAddressLinkModel.html">models/CustomerAddressLinkModel</a></li><li><a href="module-models_CustomerAddressModel.html">models/CustomerAddressModel</a></li><li><a href="module-models_CustomerAddressResultModel.html">models/CustomerAddressResultModel</a></li><li><a href="module-models_CustomerInfoModel.html">models/CustomerInfoModel</a></li><li><a href="module-models_CustomerModel.html">models/CustomerModel</a></li><li><a href="module-models_CustomerOrderResultModel.html">models/CustomerOrderResultModel</a></li><li><a href="module-models_CustomerPaymentCardRequestModel.html">models/CustomerPaymentCardRequestModel</a></li><li><a href="module-models_CustomerPaymentInstrumentModel.html">models/CustomerPaymentInstrumentModel</a></li><li><a href="module-models_CustomerPaymentInstrumentRequestModel.html">models/CustomerPaymentInstrumentRequestModel</a></li><li><a href="module-models_CustomerPaymentInstrumentResultModel.html">models/CustomerPaymentInstrumentResultModel</a></li><li><a href="module-models_CustomerProductListItemLinkModel.html">models/CustomerProductListItemLinkModel</a></li><li><a href="module-models_CustomerProductListItemModel.html">models/CustomerProductListItemModel</a></li><li><a href="module-models_CustomerProductListItemResultModel.html">models/CustomerProductListItemResultModel</a></li><li><a href="module-models_CustomerProductListModel.html">models/CustomerProductListModel</a></li><li><a href="module-models_CustomerProductListRegistrantModel.html">models/CustomerProductListRegistrantModel</a></li><li><a href="module-models_CustomerProductListResultModel.html">models/CustomerProductListResultModel</a></li><li><a href="module-models_CustomerRegistrationModel.html">models/CustomerRegistrationModel</a></li><li><a href="module-models_CustomObjectModel.html">models/CustomObjectModel</a></li><li><a href="module-models_DiscountModel.html">models/DiscountModel</a></li><li><a href="module-models_FaultModel.html">models/FaultModel</a></li><li><a href="module-models_FilteredQueryModel.html">models/FilteredQueryModel</a></li><li><a href="module-models_FilterModel.html">models/FilterModel</a></li><li><a href="module-models_GiftCertificateItemModel.html">models/GiftCertificateItemModel</a></li><li><a href="module-models_GiftCertificateModel.html">models/GiftCertificateModel</a></li><li><a href="module-models_GiftCertificateRequestModel.html">models/GiftCertificateRequestModel</a></li><li><a href="module-models_ImageGroupModel.html">models/ImageGroupModel</a></li><li><a href="module-models_ImageModel.html">models/ImageModel</a></li><li><a href="module-models_InventoryModel.html">models/InventoryModel</a></li><li><a href="module-models_LocaleModel.html">models/LocaleModel</a></li><li><a href="module-models_MasterModel.html">models/MasterModel</a></li><li><a href="module-models_NestedQueryModel.html">models/NestedQueryModel</a></li><li><a href="module-models_NoteModel.html">models/NoteModel</a></li><li><a href="module-models_NotesResultModel.html">models/NotesResultModel</a></li><li><a href="module-models_OptionItemModel.html">models/OptionItemModel</a></li><li><a href="module-models_OptionModel.html">models/OptionModel</a></li><li><a href="module-models_OptionValueModel.html">models/OptionValueModel</a></li><li><a href="module-models_OrderAddressModel.html">models/OrderAddressModel</a></li><li><a href="module-models_OrderModel.html">models/OrderModel</a></li><li><a href="module-models_OrderPaymentCardRequestModel.html">models/OrderPaymentCardRequestModel</a></li><li><a href="module-models_OrderPaymentInstrumentModel.html">models/OrderPaymentInstrumentModel</a></li><li><a href="module-models_OrderPaymentInstrumentRequestModel.html">models/OrderPaymentInstrumentRequestModel</a></li><li><a href="module-models_OrderSearchHitModel.html">models/OrderSearchHitModel</a></li><li><a href="module-models_OrderSearchRequestModel.html">models/OrderSearchRequestModel</a></li><li><a href="module-models_OrderSearchResultModel.html">models/OrderSearchResultModel</a></li><li><a href="module-models_PasswordChangeRequestModel.html">models/PasswordChangeRequestModel</a></li><li><a href="module-models_PasswordResetModel.html">models/PasswordResetModel</a></li><li><a href="module-models_PaymentBankAccountModel.html">models/PaymentBankAccountModel</a></li><li><a href="module-models_PaymentBankAccountRequestModel.html">models/PaymentBankAccountRequestModel</a></li><li><a href="module-models_PaymentCardModel.html">models/PaymentCardModel</a></li><li><a href="module-models_PaymentCardSpecModel.html">models/PaymentCardSpecModel</a></li><li><a href="module-models_PaymentMethodModel.html">models/PaymentMethodModel</a></li><li><a href="module-models_PaymentMethodResultModel.html">models/PaymentMethodResultModel</a></li><li><a href="module-models_PriceAdjustmentLimitModel.html">models/PriceAdjustmentLimitModel</a></li><li><a href="module-models_PriceAdjustmentLimitsModel.html">models/PriceAdjustmentLimitsModel</a></li><li><a href="module-models_PriceAdjustmentModel.html">models/PriceAdjustmentModel</a></li><li><a href="module-models_ProductDetailsLinkModel.html">models/ProductDetailsLinkModel</a></li><li><a href="module-models_ProductItemModel.html">models/ProductItemModel</a></li><li><a href="module-models_ProductLinkModel.html">models/ProductLinkModel</a></li><li><a href="module-models_ProductListEventModel.html">models/ProductListEventModel</a></li><li><a href="module-models_ProductListItemReferenceModel.html">models/ProductListItemReferenceModel</a></li><li><a href="module-models_ProductListLinkModel.html">models/ProductListLinkModel</a></li><li><a href="module-models_ProductListRegistrantModel.html">models/ProductListRegistrantModel</a></li><li><a href="module-models_ProductListShippingAddressModel.html">models/ProductListShippingAddressModel</a></li><li><a href="module-models_ProductModel.html">models/ProductModel</a></li><li><a href="module-models_ProductPromotionModel.html">models/ProductPromotionModel</a></li><li><a href="module-models_ProductResultModel.html">models/ProductResultModel</a></li><li><a href="module-models_ProductSearchHitModel.html">models/ProductSearchHitModel</a></li><li><a href="module-models_ProductSearchRefinementModel.html">models/ProductSearchRefinementModel</a></li><li><a href="module-models_ProductSearchRefinementValueModel.html">models/ProductSearchRefinementValueModel</a></li><li><a href="module-models_ProductSearchResultModel.html">models/ProductSearchResultModel</a></li><li><a href="module-models_ProductSearchSortingOptionModel.html">models/ProductSearchSortingOptionModel</a></li><li><a href="module-models_ProductSimpleLinkModel.html">models/ProductSimpleLinkModel</a></li><li><a href="module-models_ProductTypeModel.html">models/ProductTypeModel</a></li><li><a href="module-models_PromotionModel.html">models/PromotionModel</a></li><li><a href="module-models_PromotionResultModel.html">models/PromotionResultModel</a></li><li><a href="module-models_PublicProductListItemModel.html">models/PublicProductListItemModel</a></li><li><a href="module-models_PublicProductListItemResultModel.html">models/PublicProductListItemResultModel</a></li><li><a href="module-models_PublicProductListLinkModel.html">models/PublicProductListLinkModel</a></li><li><a href="module-models_PublicProductListModel.html">models/PublicProductListModel</a></li><li><a href="module-models_PublicProductListResultModel.html">models/PublicProductListResultModel</a></li><li><a href="module-models_QueryFilterModel.html">models/QueryFilterModel</a></li><li><a href="module-models_QueryModel.html">models/QueryModel</a></li><li><a href="module-models_Range2FilterModel.html">models/Range2FilterModel</a></li><li><a href="module-models_RangeFilterModel.html">models/RangeFilterModel</a></li><li><a href="module-models_RecommendationModel.html">models/RecommendationModel</a></li><li><a href="module-models_RecommendationTypeModel.html">models/RecommendationTypeModel</a></li><li><a href="module-models_ResultPageModel.html">models/ResultPageModel</a></li><li><a href="module-models_ShipmentModel.html">models/ShipmentModel</a></li><li><a href="module-models_ShippingItemModel.html">models/ShippingItemModel</a></li><li><a href="module-models_ShippingMethodModel.html">models/ShippingMethodModel</a></li><li><a href="module-models_ShippingMethodResultModel.html">models/ShippingMethodResultModel</a></li><li><a href="module-models_ShippingPromotionModel.html">models/ShippingPromotionModel</a></li><li><a href="module-models_SimpleLinkModel.html">models/SimpleLinkModel</a></li><li><a href="module-models_SiteModel.html">models/SiteModel</a></li><li><a href="module-models_SortModel.html">models/SortModel</a></li><li><a href="module-models_StatusModel.html">models/StatusModel</a></li><li><a href="module-models_StoreModel.html">models/StoreModel</a></li><li><a href="module-models_StoreResultModel.html">models/StoreResultModel</a></li><li><a href="module-models_SuggestedCategoryModel.html">models/SuggestedCategoryModel</a></li><li><a href="module-models_SuggestedContentModel.html">models/SuggestedContentModel</a></li><li><a href="module-models_SuggestedPhraseModel.html">models/SuggestedPhraseModel</a></li><li><a href="module-models_SuggestedProductModel.html">models/SuggestedProductModel</a></li><li><a href="module-models_SuggestedTermModel.html">models/SuggestedTermModel</a></li><li><a href="module-models_SuggestedTermsModel.html">models/SuggestedTermsModel</a></li><li><a href="module-models_SuggestionModel.html">models/SuggestionModel</a></li><li><a href="module-models_SuggestionResultModel.html">models/SuggestionResultModel</a></li><li><a href="module-models_TermFilterModel.html">models/TermFilterModel</a></li><li><a href="module-models_TermQueryModel.html">models/TermQueryModel</a></li><li><a href="module-models_TextQueryModel.html">models/TextQueryModel</a></li><li><a href="module-models_VariantModel.html">models/VariantModel</a></li><li><a href="module-models_VariationAttributeModel.html">models/VariationAttributeModel</a></li><li><a href="module-models_VariationAttributeValueModel.html">models/VariationAttributeValueModel</a></li><li><a href="module-models_VariationGroupModel.html">models/VariationGroupModel</a></li></ul>
+</nav>
+
+<br class="clear">
+
+<footer>
+    Documentation generated by <a href="https://github.com/jsdoc3/jsdoc">JSDoc 3.5.5</a> on Tue Oct 31 2017 13:24:00 GMT-0700 (PDT)
+</footer>
+
+<script> prettyPrint(); </script>
+<script src="scripts/linenumber.js"> </script>
+</body>
+</html>

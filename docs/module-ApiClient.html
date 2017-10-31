@@ -1,0 +1,3166 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>JSDoc: Class: module:ApiClient</title>
+
+    <script src="scripts/prettify/prettify.js"> </script>
+    <script src="scripts/prettify/lang-css.js"> </script>
+    <!--[if lt IE 9]>
+      <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+    <link type="text/css" rel="stylesheet" href="styles/prettify-tomorrow.css">
+    <link type="text/css" rel="stylesheet" href="styles/jsdoc-default.css">
+</head>
+
+<body>
+
+<div id="main">
+
+    <h1 class="page-title">Class: module:ApiClient</h1>
+
+    
+
+
+
+
+<section>
+
+<header>
+    
+        <h2><span class="attribs"><span class="type-signature"></span></span>module:ApiClient<span class="signature">()</span><span class="type-signature"></span></h2>
+        
+            <div class="class-description"><p>Manages low level client-server communications, parameter marshalling, etc. There should not be any need for an
+application to use this class directly - the *Api and model classes provide the public API for the service. The
+contents of this file should be regarded as internal but are documented for completeness.</p></div>
+        
+    
+</header>
+
+<article>
+    <div class="container-overview">
+    
+        
+
+    
+    <h2>Constructor</h2>
+    
+
+    
+    <h4 class="name" id="module:ApiClient"><span class="type-signature"></span>new module:ApiClient<span class="signature">()</span><span class="type-signature"></span></h4>
+    
+
+    
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="ApiClient.js.html">ApiClient.js</a>, <a href="ApiClient.js.html#line44">line 44</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    
+    </div>
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+        <h3 class="subsection-title">Members</h3>
+
+        
+            
+<h4 class="name" id="authentications"><span class="type-signature"></span>authentications<span class="type-signature"> :Array.&lt;String></span></h4>
+
+
+
+
+<div class="description">
+    <p>The authentication methods to be included for all API calls.</p>
+</div>
+
+
+
+    <h5>Type:</h5>
+    <ul>
+        <li>
+            
+<span class="param-type">Array.&lt;String></span>
+
+
+        </li>
+    </ul>
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="ApiClient.js.html">ApiClient.js</a>, <a href="ApiClient.js.html#line75">line 75</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+        
+            
+<h4 class="name" id="basePath"><span class="type-signature"></span>basePath<span class="type-signature"> :String</span></h4>
+
+
+
+
+<div class="description">
+    <p>The base URL against which to resolve every API call's (relative) path.</p>
+</div>
+
+
+
+    <h5>Type:</h5>
+    <ul>
+        <li>
+            
+<span class="param-type">String</span>
+
+
+        </li>
+    </ul>
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-default">Default Value:</dt>
+    <dd class="tag-default"><ul class="dummy">
+            <li>https://mobify-tech-prtnr-na03-dw.demandware.net/s/2017refresh/dw/shop/v17_8</li>
+        </ul></dd>
+    
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="ApiClient.js.html">ApiClient.js</a>, <a href="ApiClient.js.html#line69">line 69</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+        
+            
+<h4 class="name" id="cache"><span class="type-signature"></span>cache<span class="type-signature"> :Boolean</span></h4>
+
+
+
+
+<div class="description">
+    <p>If set to false an additional timestamp parameter is added to all API GET calls to
+prevent browser caching</p>
+</div>
+
+
+
+    <h5>Type:</h5>
+    <ul>
+        <li>
+            
+<span class="param-type">Boolean</span>
+
+
+        </li>
+    </ul>
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-default">Default Value:</dt>
+    <dd class="tag-default"><ul class="dummy">
+            <li>true</li>
+        </ul></dd>
+    
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="ApiClient.js.html">ApiClient.js</a>, <a href="ApiClient.js.html#line121">line 121</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+        
+            
+<h4 class="name" id="defaultHeaders"><span class="type-signature"></span>defaultHeaders<span class="type-signature"> :Array.&lt;String></span></h4>
+
+
+
+
+<div class="description">
+    <p>The default HTTP headers to be included for all API calls.</p>
+</div>
+
+
+
+    <h5>Type:</h5>
+    <ul>
+        <li>
+            
+<span class="param-type">Array.&lt;String></span>
+
+
+        </li>
+    </ul>
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-default">Default Value:</dt>
+    <dd class="tag-default"><ul class="dummy">
+            <li>{}</li>
+        </ul></dd>
+    
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="ApiClient.js.html">ApiClient.js</a>, <a href="ApiClient.js.html#line106">line 106</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+        
+            
+<h4 class="name" id="enableCookies"><span class="type-signature"></span>enableCookies<span class="type-signature"></span></h4>
+
+
+
+
+<div class="description">
+    <p>If set to true, the client will save the cookies from each server
+response, and return them in the next request.</p>
+</div>
+
+
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-default">Default Value:</dt>
+    <dd class="tag-default"><ul class="dummy">
+            <li>false</li>
+        </ul></dd>
+    
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="ApiClient.js.html">ApiClient.js</a>, <a href="ApiClient.js.html#line128">line 128</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+        
+            
+<h4 class="name" id="timeout"><span class="type-signature"></span>timeout<span class="type-signature"> :Number</span></h4>
+
+
+
+
+<div class="description">
+    <p>The default HTTP timeout for all API calls.</p>
+</div>
+
+
+
+    <h5>Type:</h5>
+    <ul>
+        <li>
+            
+<span class="param-type">Number</span>
+
+
+        </li>
+    </ul>
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-default">Default Value:</dt>
+    <dd class="tag-default"><ul class="dummy">
+            <li>60000</li>
+        </ul></dd>
+    
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="ApiClient.js.html">ApiClient.js</a>, <a href="ApiClient.js.html#line113">line 113</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+        
+    
+
+    
+        <h3 class="subsection-title">Methods</h3>
+
+        
+            
+
+    
+
+    
+    <h4 class="name" id=".constructFromObject"><span class="type-signature">(static) </span>constructFromObject<span class="signature">(data, obj)</span><span class="type-signature"></span></h4>
+    
+
+    
+
+
+
+<div class="description">
+    <p>Constructs a new map or array model from REST data.</p>
+</div>
+
+
+
+
+
+
+
+
+
+    <h5>Parameters:</h5>
+    
+
+<table class="params">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>data</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">Object</span>
+|
+
+<span class="param-type">Array</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"><p>The REST data.</p></td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>obj</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">Object</span>
+|
+
+<span class="param-type">Array</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"><p>The target object or array.</p></td>
+        </tr>
+
+    
+    </tbody>
+</table>
+
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="ApiClient.js.html">ApiClient.js</a>, <a href="ApiClient.js.html#line610">line 610</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        
+            
+
+    
+
+    
+    <h4 class="name" id=".convertToType"><span class="type-signature">(static) </span>convertToType<span class="signature">(data, type)</span><span class="type-signature"></span></h4>
+    
+
+    
+
+
+
+<div class="description">
+    <p>Converts a value to the specified type.</p>
+</div>
+
+
+
+
+
+
+
+
+
+    <h5>Parameters:</h5>
+    
+
+<table class="params">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>data</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">String</span>
+|
+
+<span class="param-type">Object</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"><p>The data to convert, as a string or object.</p></td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>type</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">String</span>
+|
+
+<span class="param-type">Array.&lt;String></span>
+|
+
+<span class="param-type">Object.&lt;String, Object></span>
+|
+
+<span class="param-type">function</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"><p>The type to return. Pass a string for simple types
+or the constructor function for a complex type. Pass an array containing the type name to return an array of that type. To
+return an object, pass an object with one property whose name is the key type and whose value is the corresponding value type:
+all properties on <code>data<code> will be converted to this type.</p></td>
+        </tr>
+
+    
+    </tbody>
+</table>
+
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="ApiClient.js.html">ApiClient.js</a>, <a href="ApiClient.js.html#line533">line 533</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+
+
+
+
+
+
+
+<h5>Returns:</h5>
+
+        
+<div class="param-desc">
+    <p>An instance of the specified type or null or undefined if data is null or undefined.</p>
+</div>
+
+
+
+    
+
+
+
+
+
+        
+            
+
+    
+
+    
+    <h4 class="name" id=".parseDate"><span class="type-signature">(static) </span>parseDate<span class="signature">(str)</span><span class="type-signature"> &rarr; {Date}</span></h4>
+    
+
+    
+
+
+
+<div class="description">
+    <p>Parses an ISO-8601 string representation of a date value.</p>
+</div>
+
+
+
+
+
+
+
+
+
+    <h5>Parameters:</h5>
+    
+
+<table class="params">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>str</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">String</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"><p>The date value as a string.</p></td>
+        </tr>
+
+    
+    </tbody>
+</table>
+
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="ApiClient.js.html">ApiClient.js</a>, <a href="ApiClient.js.html#line520">line 520</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+
+
+
+
+
+
+
+<h5>Returns:</h5>
+
+        
+<div class="param-desc">
+    <p>The parsed date object.</p>
+</div>
+
+
+
+<dl>
+    <dt>
+        Type
+    </dt>
+    <dd>
+        
+<span class="param-type">Date</span>
+
+
+    </dd>
+</dl>
+
+    
+
+
+
+
+
+        
+            
+
+    
+
+    
+    <h4 class="name" id="applyAuthToRequest"><span class="type-signature"></span>applyAuthToRequest<span class="signature">(request, authNames)</span><span class="type-signature"></span></h4>
+    
+
+    
+
+
+
+<div class="description">
+    <p>Applies authentication headers to the request.</p>
+</div>
+
+
+
+
+
+
+
+
+
+    <h5>Parameters:</h5>
+    
+
+<table class="params">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>request</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">Object</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"><p>The request object created by a <code>superagent()</code> call.</p></td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>authNames</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">Array.&lt;String></span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"><p>An array of authentication method names.</p></td>
+        </tr>
+
+    
+    </tbody>
+</table>
+
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="ApiClient.js.html">ApiClient.js</a>, <a href="ApiClient.js.html#line330">line 330</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        
+            
+
+    
+
+    
+    <h4 class="name" id="buildCollectionParam"><span class="type-signature"></span>buildCollectionParam<span class="signature">(param, collectionFormat)</span><span class="type-signature"> &rarr; {String|Array}</span></h4>
+    
+
+    
+
+
+
+<div class="description">
+    <p>Builds a string representation of an array-type actual parameter, according to the given collection format.</p>
+</div>
+
+
+
+
+
+
+
+
+
+    <h5>Parameters:</h5>
+    
+
+<table class="params">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>param</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">Array</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"><p>An array parameter.</p></td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>collectionFormat</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">module:ApiClient.CollectionFormatEnum</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"><p>The array element separator strategy.</p></td>
+        </tr>
+
+    
+    </tbody>
+</table>
+
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="ApiClient.js.html">ApiClient.js</a>, <a href="ApiClient.js.html#line303">line 303</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+
+
+
+
+
+
+
+<h5>Returns:</h5>
+
+        
+<div class="param-desc">
+    <p>A string representation of the supplied collection, using the specified delimiter. Returns
+<code>param</code> as is if <code>collectionFormat</code> is <code>multi</code>.</p>
+</div>
+
+
+
+<dl>
+    <dt>
+        Type
+    </dt>
+    <dd>
+        
+<span class="param-type">String</span>
+|
+
+<span class="param-type">Array</span>
+
+
+    </dd>
+</dl>
+
+    
+
+
+
+
+
+        
+            
+
+    
+
+    
+    <h4 class="name" id="buildUrl"><span class="type-signature"></span>buildUrl<span class="signature">(path, pathParams)</span><span class="type-signature"> &rarr; {String}</span></h4>
+    
+
+    
+
+
+
+<div class="description">
+    <p>Builds full URL by appending the given path to the base URL and replacing path parameter place-holders with parameter values.
+NOTE: query parameters are not handled here.</p>
+</div>
+
+
+
+
+
+
+
+
+
+    <h5>Parameters:</h5>
+    
+
+<table class="params">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>path</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">String</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"><p>The path to append to the base URL.</p></td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>pathParams</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">Object</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"><p>The parameter values to append.</p></td>
+        </tr>
+
+    
+    </tbody>
+</table>
+
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="ApiClient.js.html">ApiClient.js</a>, <a href="ApiClient.js.html#line185">line 185</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+
+
+
+
+
+
+
+<h5>Returns:</h5>
+
+        
+<div class="param-desc">
+    <p>The encoded path with parameter values substituted.</p>
+</div>
+
+
+
+<dl>
+    <dt>
+        Type
+    </dt>
+    <dd>
+        
+<span class="param-type">String</span>
+
+
+    </dd>
+</dl>
+
+    
+
+
+
+
+
+        
+            
+
+    
+
+    
+    <h4 class="name" id="callApi"><span class="type-signature"></span>callApi<span class="signature">(path, httpMethod, pathParams, queryParams, headerParams, formParams, bodyParam, authNames, contentTypes, accepts, returnType)</span><span class="type-signature"> &rarr; {Promise}</span></h4>
+    
+
+    
+
+
+
+<div class="description">
+    <p>Invokes the REST service using the supplied settings and parameters.</p>
+</div>
+
+
+
+
+
+
+
+
+
+    <h5>Parameters:</h5>
+    
+
+<table class="params">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>path</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">String</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"><p>The base URL to invoke.</p></td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>httpMethod</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">String</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"><p>The HTTP method to use.</p></td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>pathParams</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">Object.&lt;String, String></span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"><p>A map of path parameters and their values.</p></td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>queryParams</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">Object.&lt;String, Object></span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"><p>A map of query parameters and their values.</p></td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>headerParams</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">Object.&lt;String, Object></span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"><p>A map of header parameters and their values.</p></td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>formParams</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">Object.&lt;String, Object></span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"><p>A map of form parameters and their values.</p></td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>bodyParam</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">Object</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"><p>The value to pass as the request body.</p></td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>authNames</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">Array.&lt;String></span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"><p>An array of authentication type names.</p></td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>contentTypes</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">Array.&lt;String></span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"><p>An array of request MIME types.</p></td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>accepts</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">Array.&lt;String></span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"><p>An array of acceptable response MIME types.</p></td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>returnType</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">String</span>
+|
+
+<span class="param-type">Array</span>
+|
+
+<span class="param-type">ObjectFunction</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"><p>The required type to return; can be a string for simple types or the
+constructor for a complex type.</p></td>
+        </tr>
+
+    
+    </tbody>
+</table>
+
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="ApiClient.js.html">ApiClient.js</a>, <a href="ApiClient.js.html#line412">line 412</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+
+
+
+
+
+
+
+<h5>Returns:</h5>
+
+        
+<div class="param-desc">
+    <p>A <a href="https://www.promisejs.org/">Promise</a> object.</p>
+</div>
+
+
+
+<dl>
+    <dt>
+        Type
+    </dt>
+    <dd>
+        
+<span class="param-type">Promise</span>
+
+
+    </dd>
+</dl>
+
+    
+
+
+
+
+
+        
+            
+
+    
+
+    
+    <h4 class="name" id="deserialize"><span class="type-signature"></span>deserialize<span class="signature">(response, returnType)</span><span class="type-signature"></span></h4>
+    
+
+    
+
+
+
+<div class="description">
+    <p>Deserializes an HTTP response body into a value of the specified type.</p>
+</div>
+
+
+
+
+
+
+
+
+
+    <h5>Parameters:</h5>
+    
+
+<table class="params">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>response</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">Object</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"><p>A SuperAgent response object.</p></td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>returnType</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">String</span>
+|
+
+<span class="param-type">Array.&lt;String></span>
+|
+
+<span class="param-type">Object.&lt;String, Object></span>
+|
+
+<span class="param-type">function</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"><p>The type to return. Pass a string for simple types
+or the constructor function for a complex type. Pass an array containing the type name to return an array of that type. To
+return an object, pass an object with one property whose name is the key type and whose value is the corresponding value type:
+all properties on <code>data<code> will be converted to this type.</p></td>
+        </tr>
+
+    
+    </tbody>
+</table>
+
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="ApiClient.js.html">ApiClient.js</a>, <a href="ApiClient.js.html#line380">line 380</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+
+
+
+
+
+
+
+<h5>Returns:</h5>
+
+        
+<div class="param-desc">
+    <p>A value of the specified type.</p>
+</div>
+
+
+
+    
+
+
+
+
+
+        
+            
+
+    
+
+    
+    <h4 class="name" id="isFileParam"><span class="type-signature"></span>isFileParam<span class="signature">(param)</span><span class="type-signature"> &rarr; {Boolean}</span></h4>
+    
+
+    
+
+
+
+<div class="description">
+    <p>Checks whether the given parameter value represents file-like content.</p>
+</div>
+
+
+
+
+
+
+
+
+
+    <h5>Parameters:</h5>
+    
+
+<table class="params">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>param</code></td>
+            
+
+            <td class="type">
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"><p>The parameter to check.</p></td>
+        </tr>
+
+    
+    </tbody>
+</table>
+
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="ApiClient.js.html">ApiClient.js</a>, <a href="ApiClient.js.html#line240">line 240</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+
+
+
+
+
+
+
+<h5>Returns:</h5>
+
+        
+<div class="param-desc">
+    <p><code>true</code> if <code>param</code> represents a file.</p>
+</div>
+
+
+
+<dl>
+    <dt>
+        Type
+    </dt>
+    <dd>
+        
+<span class="param-type">Boolean</span>
+
+
+    </dd>
+</dl>
+
+    
+
+
+
+
+
+        
+            
+
+    
+
+    
+    <h4 class="name" id="isJsonMime"><span class="type-signature"></span>isJsonMime<span class="signature">(contentType)</span><span class="type-signature"> &rarr; {Boolean}</span></h4>
+    
+
+    
+
+
+
+<div class="description">
+    <p>Checks whether the given content type represents JSON.<br>
+JSON content type examples:<br></p>
+<ul>
+<li>application/json</li>
+<li>application/json; charset=UTF8</li>
+<li>APPLICATION/JSON</li>
+</ul>
+</div>
+
+
+
+
+
+
+
+
+
+    <h5>Parameters:</h5>
+    
+
+<table class="params">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>contentType</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">String</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"><p>The MIME content type to check.</p></td>
+        </tr>
+
+    
+    </tbody>
+</table>
+
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="ApiClient.js.html">ApiClient.js</a>, <a href="ApiClient.js.html#line216">line 216</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+
+
+
+
+
+
+
+<h5>Returns:</h5>
+
+        
+<div class="param-desc">
+    <p><code>true</code> if <code>contentType</code> represents JSON, otherwise <code>false</code>.</p>
+</div>
+
+
+
+<dl>
+    <dt>
+        Type
+    </dt>
+    <dd>
+        
+<span class="param-type">Boolean</span>
+
+
+    </dd>
+</dl>
+
+    
+
+
+
+
+
+        
+            
+
+    
+
+    
+    <h4 class="name" id="jsonPreferredMime"><span class="type-signature"></span>jsonPreferredMime<span class="signature">(contentTypes)</span><span class="type-signature"> &rarr; {String}</span></h4>
+    
+
+    
+
+
+
+<div class="description">
+    <p>Chooses a content type from the given array, with JSON preferred; i.e. return JSON if included, otherwise return the first.</p>
+</div>
+
+
+
+
+
+
+
+
+
+    <h5>Parameters:</h5>
+    
+
+<table class="params">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>contentTypes</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">Array.&lt;String></span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"></td>
+        </tr>
+
+    
+    </tbody>
+</table>
+
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="ApiClient.js.html">ApiClient.js</a>, <a href="ApiClient.js.html#line225">line 225</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+
+
+
+
+
+
+
+<h5>Returns:</h5>
+
+        
+<div class="param-desc">
+    <p>The chosen content type, preferring JSON.</p>
+</div>
+
+
+
+<dl>
+    <dt>
+        Type
+    </dt>
+    <dd>
+        
+<span class="param-type">String</span>
+
+
+    </dd>
+</dl>
+
+    
+
+
+
+
+
+        
+            
+
+    
+
+    
+    <h4 class="name" id="normalizeParams"><span class="type-signature"></span>normalizeParams<span class="signature">(params)</span><span class="type-signature"> &rarr; {Object.&lt;String, Object>}</span></h4>
+    
+
+    
+
+
+
+<div class="description">
+    <p>Normalizes parameter values:</p>
+<ul>
+<li>remove nils</li>
+<li>keep files and arrays</li>
+<li>format to string with <code>paramToString</code> for other cases</li>
+</ul>
+</div>
+
+
+
+
+
+
+
+
+
+    <h5>Parameters:</h5>
+    
+
+<table class="params">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>params</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">Object.&lt;String, Object></span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"><p>The parameters as object properties.</p></td>
+        </tr>
+
+    
+    </tbody>
+</table>
+
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="ApiClient.js.html">ApiClient.js</a>, <a href="ApiClient.js.html#line280">line 280</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+
+
+
+
+
+
+
+<h5>Returns:</h5>
+
+        
+<div class="param-desc">
+    <p>normalized parameters.</p>
+</div>
+
+
+
+<dl>
+    <dt>
+        Type
+    </dt>
+    <dd>
+        
+<span class="param-type">Object.&lt;String, Object></span>
+
+
+    </dd>
+</dl>
+
+    
+
+
+
+
+
+        
+            
+
+    
+
+    
+    <h4 class="name" id="paramToEncodedString"><span class="type-signature"></span>paramToEncodedString<span class="signature">(param)</span><span class="type-signature"> &rarr; {String}</span></h4>
+    
+
+    
+
+
+
+<div class="description">
+    <p>Returns a encoded string representation for an actual parameter.</p>
+</div>
+
+
+
+
+
+
+
+
+
+    <h5>Parameters:</h5>
+    
+
+<table class="params">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>param</code></td>
+            
+
+            <td class="type">
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"><p>The actual parameter.</p></td>
+        </tr>
+
+    
+    </tbody>
+</table>
+
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="ApiClient.js.html">ApiClient.js</a>, <a href="ApiClient.js.html#line160">line 160</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+
+
+
+
+
+
+
+<h5>Returns:</h5>
+
+        
+<div class="param-desc">
+    <p>The string representation of <code>param</code>.</p>
+</div>
+
+
+
+<dl>
+    <dt>
+        Type
+    </dt>
+    <dd>
+        
+<span class="param-type">String</span>
+
+
+    </dd>
+</dl>
+
+    
+
+
+
+
+
+        
+            
+
+    
+
+    
+    <h4 class="name" id="paramToString"><span class="type-signature"></span>paramToString<span class="signature">(param)</span><span class="type-signature"> &rarr; {String}</span></h4>
+    
+
+    
+
+
+
+<div class="description">
+    <p>Returns a string representation for an actual parameter.</p>
+</div>
+
+
+
+
+
+
+
+
+
+    <h5>Parameters:</h5>
+    
+
+<table class="params">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>param</code></td>
+            
+
+            <td class="type">
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"><p>The actual parameter.</p></td>
+        </tr>
+
+    
+    </tbody>
+</table>
+
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="ApiClient.js.html">ApiClient.js</a>, <a href="ApiClient.js.html#line144">line 144</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+
+
+
+
+
+
+
+<h5>Returns:</h5>
+
+        
+<div class="param-desc">
+    <p>The string representation of <code>param</code>.</p>
+</div>
+
+
+
+<dl>
+    <dt>
+        Type
+    </dt>
+    <dd>
+        
+<span class="param-type">String</span>
+
+
+    </dd>
+</dl>
+
+    
+
+
+
+
+
+        
+    
+
+    
+
+    
+</article>
+
+</section>
+
+
+
+
+</div>
+
+<nav>
+    <h2><a href="index.html">Home</a></h2><h3>Modules</h3><ul><li><a href="module-api_BasketsApi.html">api/BasketsApi</a></li><li><a href="module-api_CategoriesApi.html">api/CategoriesApi</a></li><li><a href="module-api_ContentApi.html">api/ContentApi</a></li><li><a href="module-api_ContentSearchApi.html">api/ContentSearchApi</a></li><li><a href="module-api_CustomersApi.html">api/CustomersApi</a></li><li><a href="module-api_CustomObjectsApi.html">api/CustomObjectsApi</a></li><li><a href="module-api_FoldersApi.html">api/FoldersApi</a></li><li><a href="module-api_GiftCertificateApi.html">api/GiftCertificateApi</a></li><li><a href="module-api_OrdersApi.html">api/OrdersApi</a></li><li><a href="module-api_OrderSearchApi.html">api/OrderSearchApi</a></li><li><a href="module-api_PriceAdjustmentLimitsApi.html">api/PriceAdjustmentLimitsApi</a></li><li><a href="module-api_ProductListsApi.html">api/ProductListsApi</a></li><li><a href="module-api_ProductsApi.html">api/ProductsApi</a></li><li><a href="module-api_ProductSearchApi.html">api/ProductSearchApi</a></li><li><a href="module-api_PromotionsApi.html">api/PromotionsApi</a></li><li><a href="module-api_SearchSuggestionApi.html">api/SearchSuggestionApi</a></li><li><a href="module-api_SessionsApi.html">api/SessionsApi</a></li><li><a href="module-api_SiteApi.html">api/SiteApi</a></li><li><a href="module-api_StoresApi.html">api/StoresApi</a></li><li><a href="module-ApiClient.html">ApiClient</a></li><li><a href="module-index.html">index</a></li><li><a href="module-models_AuthRequestModel.html">models/AuthRequestModel</a></li><li><a href="module-models_BasketModel.html">models/BasketModel</a></li><li><a href="module-models_BasketPaymentInstrumentRequestModel.html">models/BasketPaymentInstrumentRequestModel</a></li><li><a href="module-models_BasketsResultModel.html">models/BasketsResultModel</a></li><li><a href="module-models_BonusDiscountLineItemModel.html">models/BonusDiscountLineItemModel</a></li><li><a href="module-models_BoolFilterModel.html">models/BoolFilterModel</a></li><li><a href="module-models_BoolQueryModel.html">models/BoolQueryModel</a></li><li><a href="module-models_BundledProductModel.html">models/BundledProductModel</a></li><li><a href="module-models_CategoryModel.html">models/CategoryModel</a></li><li><a href="module-models_CategoryResultModel.html">models/CategoryResultModel</a></li><li><a href="module-models_ContentFolderModel.html">models/ContentFolderModel</a></li><li><a href="module-models_ContentFolderResultModel.html">models/ContentFolderResultModel</a></li><li><a href="module-models_ContentModel.html">models/ContentModel</a></li><li><a href="module-models_ContentResultModel.html">models/ContentResultModel</a></li><li><a href="module-models_ContentSearchRefinementModel.html">models/ContentSearchRefinementModel</a></li><li><a href="module-models_ContentSearchRefinementValueModel.html">models/ContentSearchRefinementValueModel</a></li><li><a href="module-models_ContentSearchResultModel.html">models/ContentSearchResultModel</a></li><li><a href="module-models_CouponItemModel.html">models/CouponItemModel</a></li><li><a href="module-models_CustomerAddressLinkModel.html">models/CustomerAddressLinkModel</a></li><li><a href="module-models_CustomerAddressModel.html">models/CustomerAddressModel</a></li><li><a href="module-models_CustomerAddressResultModel.html">models/CustomerAddressResultModel</a></li><li><a href="module-models_CustomerInfoModel.html">models/CustomerInfoModel</a></li><li><a href="module-models_CustomerModel.html">models/CustomerModel</a></li><li><a href="module-models_CustomerOrderResultModel.html">models/CustomerOrderResultModel</a></li><li><a href="module-models_CustomerPaymentCardRequestModel.html">models/CustomerPaymentCardRequestModel</a></li><li><a href="module-models_CustomerPaymentInstrumentModel.html">models/CustomerPaymentInstrumentModel</a></li><li><a href="module-models_CustomerPaymentInstrumentRequestModel.html">models/CustomerPaymentInstrumentRequestModel</a></li><li><a href="module-models_CustomerPaymentInstrumentResultModel.html">models/CustomerPaymentInstrumentResultModel</a></li><li><a href="module-models_CustomerProductListItemLinkModel.html">models/CustomerProductListItemLinkModel</a></li><li><a href="module-models_CustomerProductListItemModel.html">models/CustomerProductListItemModel</a></li><li><a href="module-models_CustomerProductListItemResultModel.html">models/CustomerProductListItemResultModel</a></li><li><a href="module-models_CustomerProductListModel.html">models/CustomerProductListModel</a></li><li><a href="module-models_CustomerProductListRegistrantModel.html">models/CustomerProductListRegistrantModel</a></li><li><a href="module-models_CustomerProductListResultModel.html">models/CustomerProductListResultModel</a></li><li><a href="module-models_CustomerRegistrationModel.html">models/CustomerRegistrationModel</a></li><li><a href="module-models_CustomObjectModel.html">models/CustomObjectModel</a></li><li><a href="module-models_DiscountModel.html">models/DiscountModel</a></li><li><a href="module-models_FaultModel.html">models/FaultModel</a></li><li><a href="module-models_FilteredQueryModel.html">models/FilteredQueryModel</a></li><li><a href="module-models_FilterModel.html">models/FilterModel</a></li><li><a href="module-models_GiftCertificateItemModel.html">models/GiftCertificateItemModel</a></li><li><a href="module-models_GiftCertificateModel.html">models/GiftCertificateModel</a></li><li><a href="module-models_GiftCertificateRequestModel.html">models/GiftCertificateRequestModel</a></li><li><a href="module-models_ImageGroupModel.html">models/ImageGroupModel</a></li><li><a href="module-models_ImageModel.html">models/ImageModel</a></li><li><a href="module-models_InventoryModel.html">models/InventoryModel</a></li><li><a href="module-models_LocaleModel.html">models/LocaleModel</a></li><li><a href="module-models_MasterModel.html">models/MasterModel</a></li><li><a href="module-models_NestedQueryModel.html">models/NestedQueryModel</a></li><li><a href="module-models_NoteModel.html">models/NoteModel</a></li><li><a href="module-models_NotesResultModel.html">models/NotesResultModel</a></li><li><a href="module-models_OptionItemModel.html">models/OptionItemModel</a></li><li><a href="module-models_OptionModel.html">models/OptionModel</a></li><li><a href="module-models_OptionValueModel.html">models/OptionValueModel</a></li><li><a href="module-models_OrderAddressModel.html">models/OrderAddressModel</a></li><li><a href="module-models_OrderModel.html">models/OrderModel</a></li><li><a href="module-models_OrderPaymentCardRequestModel.html">models/OrderPaymentCardRequestModel</a></li><li><a href="module-models_OrderPaymentInstrumentModel.html">models/OrderPaymentInstrumentModel</a></li><li><a href="module-models_OrderPaymentInstrumentRequestModel.html">models/OrderPaymentInstrumentRequestModel</a></li><li><a href="module-models_OrderSearchHitModel.html">models/OrderSearchHitModel</a></li><li><a href="module-models_OrderSearchRequestModel.html">models/OrderSearchRequestModel</a></li><li><a href="module-models_OrderSearchResultModel.html">models/OrderSearchResultModel</a></li><li><a href="module-models_PasswordChangeRequestModel.html">models/PasswordChangeRequestModel</a></li><li><a href="module-models_PasswordResetModel.html">models/PasswordResetModel</a></li><li><a href="module-models_PaymentBankAccountModel.html">models/PaymentBankAccountModel</a></li><li><a href="module-models_PaymentBankAccountRequestModel.html">models/PaymentBankAccountRequestModel</a></li><li><a href="module-models_PaymentCardModel.html">models/PaymentCardModel</a></li><li><a href="module-models_PaymentCardSpecModel.html">models/PaymentCardSpecModel</a></li><li><a href="module-models_PaymentMethodModel.html">models/PaymentMethodModel</a></li><li><a href="module-models_PaymentMethodResultModel.html">models/PaymentMethodResultModel</a></li><li><a href="module-models_PriceAdjustmentLimitModel.html">models/PriceAdjustmentLimitModel</a></li><li><a href="module-models_PriceAdjustmentLimitsModel.html">models/PriceAdjustmentLimitsModel</a></li><li><a href="module-models_PriceAdjustmentModel.html">models/PriceAdjustmentModel</a></li><li><a href="module-models_ProductDetailsLinkModel.html">models/ProductDetailsLinkModel</a></li><li><a href="module-models_ProductItemModel.html">models/ProductItemModel</a></li><li><a href="module-models_ProductLinkModel.html">models/ProductLinkModel</a></li><li><a href="module-models_ProductListEventModel.html">models/ProductListEventModel</a></li><li><a href="module-models_ProductListItemReferenceModel.html">models/ProductListItemReferenceModel</a></li><li><a href="module-models_ProductListLinkModel.html">models/ProductListLinkModel</a></li><li><a href="module-models_ProductListRegistrantModel.html">models/ProductListRegistrantModel</a></li><li><a href="module-models_ProductListShippingAddressModel.html">models/ProductListShippingAddressModel</a></li><li><a href="module-models_ProductModel.html">models/ProductModel</a></li><li><a href="module-models_ProductPromotionModel.html">models/ProductPromotionModel</a></li><li><a href="module-models_ProductResultModel.html">models/ProductResultModel</a></li><li><a href="module-models_ProductSearchHitModel.html">models/ProductSearchHitModel</a></li><li><a href="module-models_ProductSearchRefinementModel.html">models/ProductSearchRefinementModel</a></li><li><a href="module-models_ProductSearchRefinementValueModel.html">models/ProductSearchRefinementValueModel</a></li><li><a href="module-models_ProductSearchResultModel.html">models/ProductSearchResultModel</a></li><li><a href="module-models_ProductSearchSortingOptionModel.html">models/ProductSearchSortingOptionModel</a></li><li><a href="module-models_ProductSimpleLinkModel.html">models/ProductSimpleLinkModel</a></li><li><a href="module-models_ProductTypeModel.html">models/ProductTypeModel</a></li><li><a href="module-models_PromotionModel.html">models/PromotionModel</a></li><li><a href="module-models_PromotionResultModel.html">models/PromotionResultModel</a></li><li><a href="module-models_PublicProductListItemModel.html">models/PublicProductListItemModel</a></li><li><a href="module-models_PublicProductListItemResultModel.html">models/PublicProductListItemResultModel</a></li><li><a href="module-models_PublicProductListLinkModel.html">models/PublicProductListLinkModel</a></li><li><a href="module-models_PublicProductListModel.html">models/PublicProductListModel</a></li><li><a href="module-models_PublicProductListResultModel.html">models/PublicProductListResultModel</a></li><li><a href="module-models_QueryFilterModel.html">models/QueryFilterModel</a></li><li><a href="module-models_QueryModel.html">models/QueryModel</a></li><li><a href="module-models_Range2FilterModel.html">models/Range2FilterModel</a></li><li><a href="module-models_RangeFilterModel.html">models/RangeFilterModel</a></li><li><a href="module-models_RecommendationModel.html">models/RecommendationModel</a></li><li><a href="module-models_RecommendationTypeModel.html">models/RecommendationTypeModel</a></li><li><a href="module-models_ResultPageModel.html">models/ResultPageModel</a></li><li><a href="module-models_ShipmentModel.html">models/ShipmentModel</a></li><li><a href="module-models_ShippingItemModel.html">models/ShippingItemModel</a></li><li><a href="module-models_ShippingMethodModel.html">models/ShippingMethodModel</a></li><li><a href="module-models_ShippingMethodResultModel.html">models/ShippingMethodResultModel</a></li><li><a href="module-models_ShippingPromotionModel.html">models/ShippingPromotionModel</a></li><li><a href="module-models_SimpleLinkModel.html">models/SimpleLinkModel</a></li><li><a href="module-models_SiteModel.html">models/SiteModel</a></li><li><a href="module-models_SortModel.html">models/SortModel</a></li><li><a href="module-models_StatusModel.html">models/StatusModel</a></li><li><a href="module-models_StoreModel.html">models/StoreModel</a></li><li><a href="module-models_StoreResultModel.html">models/StoreResultModel</a></li><li><a href="module-models_SuggestedCategoryModel.html">models/SuggestedCategoryModel</a></li><li><a href="module-models_SuggestedContentModel.html">models/SuggestedContentModel</a></li><li><a href="module-models_SuggestedPhraseModel.html">models/SuggestedPhraseModel</a></li><li><a href="module-models_SuggestedProductModel.html">models/SuggestedProductModel</a></li><li><a href="module-models_SuggestedTermModel.html">models/SuggestedTermModel</a></li><li><a href="module-models_SuggestedTermsModel.html">models/SuggestedTermsModel</a></li><li><a href="module-models_SuggestionModel.html">models/SuggestionModel</a></li><li><a href="module-models_SuggestionResultModel.html">models/SuggestionResultModel</a></li><li><a href="module-models_TermFilterModel.html">models/TermFilterModel</a></li><li><a href="module-models_TermQueryModel.html">models/TermQueryModel</a></li><li><a href="module-models_TextQueryModel.html">models/TextQueryModel</a></li><li><a href="module-models_VariantModel.html">models/VariantModel</a></li><li><a href="module-models_VariationAttributeModel.html">models/VariationAttributeModel</a></li><li><a href="module-models_VariationAttributeValueModel.html">models/VariationAttributeValueModel</a></li><li><a href="module-models_VariationGroupModel.html">models/VariationGroupModel</a></li></ul><h3>Classes</h3><ul><li><a href="module-api_BasketsApi.html">api/BasketsApi</a></li><li><a href="module-api_CategoriesApi.html">api/CategoriesApi</a></li><li><a href="module-api_ContentApi.html">api/ContentApi</a></li><li><a href="module-api_ContentSearchApi.html">api/ContentSearchApi</a></li><li><a href="module-api_CustomersApi.html">api/CustomersApi</a></li><li><a href="module-api_CustomObjectsApi.html">api/CustomObjectsApi</a></li><li><a href="module-api_FoldersApi.html">api/FoldersApi</a></li><li><a href="module-api_GiftCertificateApi.html">api/GiftCertificateApi</a></li><li><a href="module-api_OrdersApi.html">api/OrdersApi</a></li><li><a href="module-api_OrderSearchApi.html">api/OrderSearchApi</a></li><li><a href="module-api_PriceAdjustmentLimitsApi.html">api/PriceAdjustmentLimitsApi</a></li><li><a href="module-api_ProductListsApi.html">api/ProductListsApi</a></li><li><a href="module-api_ProductsApi.html">api/ProductsApi</a></li><li><a href="module-api_ProductSearchApi.html">api/ProductSearchApi</a></li><li><a href="module-api_PromotionsApi.html">api/PromotionsApi</a></li><li><a href="module-api_SearchSuggestionApi.html">api/SearchSuggestionApi</a></li><li><a href="module-api_SessionsApi.html">api/SessionsApi</a></li><li><a href="module-api_SiteApi.html">api/SiteApi</a></li><li><a href="module-api_StoresApi.html">api/StoresApi</a></li><li><a href="module-ApiClient.html">ApiClient</a></li><li><a href="module-models_AuthRequestModel.html">models/AuthRequestModel</a></li><li><a href="module-models_BasketModel.html">models/BasketModel</a></li><li><a href="module-models_BasketPaymentInstrumentRequestModel.html">models/BasketPaymentInstrumentRequestModel</a></li><li><a href="module-models_BasketsResultModel.html">models/BasketsResultModel</a></li><li><a href="module-models_BonusDiscountLineItemModel.html">models/BonusDiscountLineItemModel</a></li><li><a href="module-models_BoolFilterModel.html">models/BoolFilterModel</a></li><li><a href="module-models_BoolQueryModel.html">models/BoolQueryModel</a></li><li><a href="module-models_BundledProductModel.html">models/BundledProductModel</a></li><li><a href="module-models_CategoryModel.html">models/CategoryModel</a></li><li><a href="module-models_CategoryResultModel.html">models/CategoryResultModel</a></li><li><a href="module-models_ContentFolderModel.html">models/ContentFolderModel</a></li><li><a href="module-models_ContentFolderResultModel.html">models/ContentFolderResultModel</a></li><li><a href="module-models_ContentModel.html">models/ContentModel</a></li><li><a href="module-models_ContentResultModel.html">models/ContentResultModel</a></li><li><a href="module-models_ContentSearchRefinementModel.html">models/ContentSearchRefinementModel</a></li><li><a href="module-models_ContentSearchRefinementValueModel.html">models/ContentSearchRefinementValueModel</a></li><li><a href="module-models_ContentSearchResultModel.html">models/ContentSearchResultModel</a></li><li><a href="module-models_CouponItemModel.html">models/CouponItemModel</a></li><li><a href="module-models_CustomerAddressLinkModel.html">models/CustomerAddressLinkModel</a></li><li><a href="module-models_CustomerAddressModel.html">models/CustomerAddressModel</a></li><li><a href="module-models_CustomerAddressResultModel.html">models/CustomerAddressResultModel</a></li><li><a href="module-models_CustomerInfoModel.html">models/CustomerInfoModel</a></li><li><a href="module-models_CustomerModel.html">models/CustomerModel</a></li><li><a href="module-models_CustomerOrderResultModel.html">models/CustomerOrderResultModel</a></li><li><a href="module-models_CustomerPaymentCardRequestModel.html">models/CustomerPaymentCardRequestModel</a></li><li><a href="module-models_CustomerPaymentInstrumentModel.html">models/CustomerPaymentInstrumentModel</a></li><li><a href="module-models_CustomerPaymentInstrumentRequestModel.html">models/CustomerPaymentInstrumentRequestModel</a></li><li><a href="module-models_CustomerPaymentInstrumentResultModel.html">models/CustomerPaymentInstrumentResultModel</a></li><li><a href="module-models_CustomerProductListItemLinkModel.html">models/CustomerProductListItemLinkModel</a></li><li><a href="module-models_CustomerProductListItemModel.html">models/CustomerProductListItemModel</a></li><li><a href="module-models_CustomerProductListItemResultModel.html">models/CustomerProductListItemResultModel</a></li><li><a href="module-models_CustomerProductListModel.html">models/CustomerProductListModel</a></li><li><a href="module-models_CustomerProductListRegistrantModel.html">models/CustomerProductListRegistrantModel</a></li><li><a href="module-models_CustomerProductListResultModel.html">models/CustomerProductListResultModel</a></li><li><a href="module-models_CustomerRegistrationModel.html">models/CustomerRegistrationModel</a></li><li><a href="module-models_CustomObjectModel.html">models/CustomObjectModel</a></li><li><a href="module-models_DiscountModel.html">models/DiscountModel</a></li><li><a href="module-models_FaultModel.html">models/FaultModel</a></li><li><a href="module-models_FilteredQueryModel.html">models/FilteredQueryModel</a></li><li><a href="module-models_FilterModel.html">models/FilterModel</a></li><li><a href="module-models_GiftCertificateItemModel.html">models/GiftCertificateItemModel</a></li><li><a href="module-models_GiftCertificateModel.html">models/GiftCertificateModel</a></li><li><a href="module-models_GiftCertificateRequestModel.html">models/GiftCertificateRequestModel</a></li><li><a href="module-models_ImageGroupModel.html">models/ImageGroupModel</a></li><li><a href="module-models_ImageModel.html">models/ImageModel</a></li><li><a href="module-models_InventoryModel.html">models/InventoryModel</a></li><li><a href="module-models_LocaleModel.html">models/LocaleModel</a></li><li><a href="module-models_MasterModel.html">models/MasterModel</a></li><li><a href="module-models_NestedQueryModel.html">models/NestedQueryModel</a></li><li><a href="module-models_NoteModel.html">models/NoteModel</a></li><li><a href="module-models_NotesResultModel.html">models/NotesResultModel</a></li><li><a href="module-models_OptionItemModel.html">models/OptionItemModel</a></li><li><a href="module-models_OptionModel.html">models/OptionModel</a></li><li><a href="module-models_OptionValueModel.html">models/OptionValueModel</a></li><li><a href="module-models_OrderAddressModel.html">models/OrderAddressModel</a></li><li><a href="module-models_OrderModel.html">models/OrderModel</a></li><li><a href="module-models_OrderPaymentCardRequestModel.html">models/OrderPaymentCardRequestModel</a></li><li><a href="module-models_OrderPaymentInstrumentModel.html">models/OrderPaymentInstrumentModel</a></li><li><a href="module-models_OrderPaymentInstrumentRequestModel.html">models/OrderPaymentInstrumentRequestModel</a></li><li><a href="module-models_OrderSearchHitModel.html">models/OrderSearchHitModel</a></li><li><a href="module-models_OrderSearchRequestModel.html">models/OrderSearchRequestModel</a></li><li><a href="module-models_OrderSearchResultModel.html">models/OrderSearchResultModel</a></li><li><a href="module-models_PasswordChangeRequestModel.html">models/PasswordChangeRequestModel</a></li><li><a href="module-models_PasswordResetModel.html">models/PasswordResetModel</a></li><li><a href="module-models_PaymentBankAccountModel.html">models/PaymentBankAccountModel</a></li><li><a href="module-models_PaymentBankAccountRequestModel.html">models/PaymentBankAccountRequestModel</a></li><li><a href="module-models_PaymentCardModel.html">models/PaymentCardModel</a></li><li><a href="module-models_PaymentCardSpecModel.html">models/PaymentCardSpecModel</a></li><li><a href="module-models_PaymentMethodModel.html">models/PaymentMethodModel</a></li><li><a href="module-models_PaymentMethodResultModel.html">models/PaymentMethodResultModel</a></li><li><a href="module-models_PriceAdjustmentLimitModel.html">models/PriceAdjustmentLimitModel</a></li><li><a href="module-models_PriceAdjustmentLimitsModel.html">models/PriceAdjustmentLimitsModel</a></li><li><a href="module-models_PriceAdjustmentModel.html">models/PriceAdjustmentModel</a></li><li><a href="module-models_ProductDetailsLinkModel.html">models/ProductDetailsLinkModel</a></li><li><a href="module-models_ProductItemModel.html">models/ProductItemModel</a></li><li><a href="module-models_ProductLinkModel.html">models/ProductLinkModel</a></li><li><a href="module-models_ProductListEventModel.html">models/ProductListEventModel</a></li><li><a href="module-models_ProductListItemReferenceModel.html">models/ProductListItemReferenceModel</a></li><li><a href="module-models_ProductListLinkModel.html">models/ProductListLinkModel</a></li><li><a href="module-models_ProductListRegistrantModel.html">models/ProductListRegistrantModel</a></li><li><a href="module-models_ProductListShippingAddressModel.html">models/ProductListShippingAddressModel</a></li><li><a href="module-models_ProductModel.html">models/ProductModel</a></li><li><a href="module-models_ProductPromotionModel.html">models/ProductPromotionModel</a></li><li><a href="module-models_ProductResultModel.html">models/ProductResultModel</a></li><li><a href="module-models_ProductSearchHitModel.html">models/ProductSearchHitModel</a></li><li><a href="module-models_ProductSearchRefinementModel.html">models/ProductSearchRefinementModel</a></li><li><a href="module-models_ProductSearchRefinementValueModel.html">models/ProductSearchRefinementValueModel</a></li><li><a href="module-models_ProductSearchResultModel.html">models/ProductSearchResultModel</a></li><li><a href="module-models_ProductSearchSortingOptionModel.html">models/ProductSearchSortingOptionModel</a></li><li><a href="module-models_ProductSimpleLinkModel.html">models/ProductSimpleLinkModel</a></li><li><a href="module-models_ProductTypeModel.html">models/ProductTypeModel</a></li><li><a href="module-models_PromotionModel.html">models/PromotionModel</a></li><li><a href="module-models_PromotionResultModel.html">models/PromotionResultModel</a></li><li><a href="module-models_PublicProductListItemModel.html">models/PublicProductListItemModel</a></li><li><a href="module-models_PublicProductListItemResultModel.html">models/PublicProductListItemResultModel</a></li><li><a href="module-models_PublicProductListLinkModel.html">models/PublicProductListLinkModel</a></li><li><a href="module-models_PublicProductListModel.html">models/PublicProductListModel</a></li><li><a href="module-models_PublicProductListResultModel.html">models/PublicProductListResultModel</a></li><li><a href="module-models_QueryFilterModel.html">models/QueryFilterModel</a></li><li><a href="module-models_QueryModel.html">models/QueryModel</a></li><li><a href="module-models_Range2FilterModel.html">models/Range2FilterModel</a></li><li><a href="module-models_RangeFilterModel.html">models/RangeFilterModel</a></li><li><a href="module-models_RecommendationModel.html">models/RecommendationModel</a></li><li><a href="module-models_RecommendationTypeModel.html">models/RecommendationTypeModel</a></li><li><a href="module-models_ResultPageModel.html">models/ResultPageModel</a></li><li><a href="module-models_ShipmentModel.html">models/ShipmentModel</a></li><li><a href="module-models_ShippingItemModel.html">models/ShippingItemModel</a></li><li><a href="module-models_ShippingMethodModel.html">models/ShippingMethodModel</a></li><li><a href="module-models_ShippingMethodResultModel.html">models/ShippingMethodResultModel</a></li><li><a href="module-models_ShippingPromotionModel.html">models/ShippingPromotionModel</a></li><li><a href="module-models_SimpleLinkModel.html">models/SimpleLinkModel</a></li><li><a href="module-models_SiteModel.html">models/SiteModel</a></li><li><a href="module-models_SortModel.html">models/SortModel</a></li><li><a href="module-models_StatusModel.html">models/StatusModel</a></li><li><a href="module-models_StoreModel.html">models/StoreModel</a></li><li><a href="module-models_StoreResultModel.html">models/StoreResultModel</a></li><li><a href="module-models_SuggestedCategoryModel.html">models/SuggestedCategoryModel</a></li><li><a href="module-models_SuggestedContentModel.html">models/SuggestedContentModel</a></li><li><a href="module-models_SuggestedPhraseModel.html">models/SuggestedPhraseModel</a></li><li><a href="module-models_SuggestedProductModel.html">models/SuggestedProductModel</a></li><li><a href="module-models_SuggestedTermModel.html">models/SuggestedTermModel</a></li><li><a href="module-models_SuggestedTermsModel.html">models/SuggestedTermsModel</a></li><li><a href="module-models_SuggestionModel.html">models/SuggestionModel</a></li><li><a href="module-models_SuggestionResultModel.html">models/SuggestionResultModel</a></li><li><a href="module-models_TermFilterModel.html">models/TermFilterModel</a></li><li><a href="module-models_TermQueryModel.html">models/TermQueryModel</a></li><li><a href="module-models_TextQueryModel.html">models/TextQueryModel</a></li><li><a href="module-models_VariantModel.html">models/VariantModel</a></li><li><a href="module-models_VariationAttributeModel.html">models/VariationAttributeModel</a></li><li><a href="module-models_VariationAttributeValueModel.html">models/VariationAttributeValueModel</a></li><li><a href="module-models_VariationGroupModel.html">models/VariationGroupModel</a></li></ul>
+</nav>
+
+<br class="clear">
+
+<footer>
+    Documentation generated by <a href="https://github.com/jsdoc3/jsdoc">JSDoc 3.5.5</a> on Tue Oct 31 2017 13:24:01 GMT-0700 (PDT)
+</footer>
+
+<script> prettyPrint(); </script>
+<script src="scripts/linenumber.js"> </script>
+</body>
+</html>
