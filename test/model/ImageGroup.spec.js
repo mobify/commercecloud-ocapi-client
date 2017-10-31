@@ -15,61 +15,56 @@
  *
  */
 
-(function(root, factory) {
-    if (typeof define === 'function' && define.amd) {
-    // AMD.
-        define(['expect.js', '../../src/index'], factory)
-    } else if (typeof module === 'object' && module.exports) {
-    // CommonJS-like environments that support module.exports, like Node.
-        factory(require('expect.js'), require('../../src/index'))
-    } else {
-    // Browser globals (root is window)
-        factory(root.expect, root.ShopApi)
-    }
-}(this, (expect, ShopApi) => {
-    'use strict'
+import expect from 'expect.js'
+import ShopApi from '../../src/index'
 
-    let instance
+let instance
 
-    beforeEach(() => {
-        instance = new ShopApi.ImageGroupModel()
-    })
+beforeEach(() => {
+    instance = new ShopApi.ImageGroup()
+})
 
-    const getProperty = (object, getter, property) => {
+const getProperty = (object, getter, property) => {
     // Use getter method if present; otherwise, get the property directly.
-        if (typeof object[getter] === 'function') { return object[getter]() } else { return object[property] }
+    if (typeof object[getter] === 'function') {
+        return object[getter]()
+    } else {
+        return object[property]
     }
+}
 
-    const setProperty = (object, setter, property, value) => {
+const setProperty = (object, setter, property, value) => {
     // Use setter method if present; otherwise, set the property directly.
-        if (typeof object[setter] === 'function') { object[setter](value) } else { object[property] = value }
+    if (typeof object[setter] === 'function') {
+        object[setter](value)
+    } else {
+        object[property] = value
     }
+}
 
-    describe('ImageGroupModel', () => {
-        it('should create an instance of ImageGroupModel', () => {
-      // uncomment below and update the code to test ImageGroupModel
-      // var instane = new ShopApi.ImageGroupModel()
-      // expect(instance).to.be.a(ShopApi.ImageGroupModel);
-        })
-
-        it('should have the property images (base name: "images")', () => {
-      // uncomment below and update the code to test the property images
-      // var instane = new ShopApi.ImageGroupModel()
-      // expect(instance).to.be();
-        })
-
-        it('should have the property variationAttributes (base name: "variation_attributes")', () => {
-      // uncomment below and update the code to test the property variationAttributes
-      // var instane = new ShopApi.ImageGroupModel()
-      // expect(instance).to.be();
-        })
-
-        it('should have the property viewType (base name: "view_type")', () => {
-      // uncomment below and update the code to test the property viewType
-      // var instane = new ShopApi.ImageGroupModel()
-      // expect(instance).to.be();
-        })
-
+describe('ImageGroupModel', () => {
+    it('should create an instance of ImageGroupModel', () => {
+        // uncomment below and update the code to test ImageGroupModel
+        // var instane = new ShopApi.ImageGroup()
+        // expect(instance).to.be.a(ShopApi.ImageGroup);
     })
 
-}))
+    it('should have the property images (base name: "images")', () => {
+        // uncomment below and update the code to test the property images
+        // var instane = new ShopApi.ImageGroup()
+        // expect(instance).to.be();
+    })
+
+    it('should have the property variationAttributes (base name: "variation_attributes")', () => {
+        // uncomment below and update the code to test the property variationAttributes
+        // var instane = new ShopApi.ImageGroup()
+        // expect(instance).to.be();
+    })
+
+    it('should have the property viewType (base name: "view_type")', () => {
+        // uncomment below and update the code to test the property viewType
+        // var instane = new ShopApi.ImageGroup()
+        // expect(instance).to.be();
+    })
+
+})

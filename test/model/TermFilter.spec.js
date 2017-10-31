@@ -15,61 +15,56 @@
  *
  */
 
-(function(root, factory) {
-    if (typeof define === 'function' && define.amd) {
-    // AMD.
-        define(['expect.js', '../../src/index'], factory)
-    } else if (typeof module === 'object' && module.exports) {
-    // CommonJS-like environments that support module.exports, like Node.
-        factory(require('expect.js'), require('../../src/index'))
-    } else {
-    // Browser globals (root is window)
-        factory(root.expect, root.ShopApi)
-    }
-}(this, (expect, ShopApi) => {
-    'use strict'
+import expect from 'expect.js'
+import ShopApi from '../../src/index'
 
-    let instance
+let instance
 
-    beforeEach(() => {
-        instance = new ShopApi.TermFilterModel()
-    })
+beforeEach(() => {
+    instance = new ShopApi.TermFilter()
+})
 
-    const getProperty = (object, getter, property) => {
+const getProperty = (object, getter, property) => {
     // Use getter method if present; otherwise, get the property directly.
-        if (typeof object[getter] === 'function') { return object[getter]() } else { return object[property] }
+    if (typeof object[getter] === 'function') {
+        return object[getter]()
+    } else {
+        return object[property]
     }
+}
 
-    const setProperty = (object, setter, property, value) => {
+const setProperty = (object, setter, property, value) => {
     // Use setter method if present; otherwise, set the property directly.
-        if (typeof object[setter] === 'function') { object[setter](value) } else { object[property] = value }
+    if (typeof object[setter] === 'function') {
+        object[setter](value)
+    } else {
+        object[property] = value
     }
+}
 
-    describe('TermFilterModel', () => {
-        it('should create an instance of TermFilterModel', () => {
-      // uncomment below and update the code to test TermFilterModel
-      // var instane = new ShopApi.TermFilterModel()
-      // expect(instance).to.be.a(ShopApi.TermFilterModel);
-        })
-
-        it('should have the property field (base name: "field")', () => {
-      // uncomment below and update the code to test the property field
-      // var instane = new ShopApi.TermFilterModel()
-      // expect(instance).to.be();
-        })
-
-        it('should have the property operator (base name: "operator")', () => {
-      // uncomment below and update the code to test the property operator
-      // var instane = new ShopApi.TermFilterModel()
-      // expect(instance).to.be();
-        })
-
-        it('should have the property values (base name: "values")', () => {
-      // uncomment below and update the code to test the property values
-      // var instane = new ShopApi.TermFilterModel()
-      // expect(instance).to.be();
-        })
-
+describe('TermFilterModel', () => {
+    it('should create an instance of TermFilterModel', () => {
+        // uncomment below and update the code to test TermFilterModel
+        // var instane = new ShopApi.TermFilter()
+        // expect(instance).to.be.a(ShopApi.TermFilter);
     })
 
-}))
+    it('should have the property field (base name: "field")', () => {
+        // uncomment below and update the code to test the property field
+        // var instane = new ShopApi.TermFilter()
+        // expect(instance).to.be();
+    })
+
+    it('should have the property operator (base name: "operator")', () => {
+        // uncomment below and update the code to test the property operator
+        // var instane = new ShopApi.TermFilter()
+        // expect(instance).to.be();
+    })
+
+    it('should have the property values (base name: "values")', () => {
+        // uncomment below and update the code to test the property values
+        // var instane = new ShopApi.TermFilter()
+        // expect(instance).to.be();
+    })
+
+})

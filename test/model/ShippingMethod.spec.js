@@ -15,85 +15,80 @@
  *
  */
 
-(function(root, factory) {
-    if (typeof define === 'function' && define.amd) {
-    // AMD.
-        define(['expect.js', '../../src/index'], factory)
-    } else if (typeof module === 'object' && module.exports) {
-    // CommonJS-like environments that support module.exports, like Node.
-        factory(require('expect.js'), require('../../src/index'))
-    } else {
-    // Browser globals (root is window)
-        factory(root.expect, root.ShopApi)
-    }
-}(this, (expect, ShopApi) => {
-    'use strict'
+import expect from 'expect.js'
+import ShopApi from '../../src/index'
 
-    let instance
+let instance
 
-    beforeEach(() => {
-        instance = new ShopApi.ShippingMethodModel()
-    })
+beforeEach(() => {
+    instance = new ShopApi.ShippingMethod()
+})
 
-    const getProperty = (object, getter, property) => {
+const getProperty = (object, getter, property) => {
     // Use getter method if present; otherwise, get the property directly.
-        if (typeof object[getter] === 'function') { return object[getter]() } else { return object[property] }
+    if (typeof object[getter] === 'function') {
+        return object[getter]()
+    } else {
+        return object[property]
     }
+}
 
-    const setProperty = (object, setter, property, value) => {
+const setProperty = (object, setter, property, value) => {
     // Use setter method if present; otherwise, set the property directly.
-        if (typeof object[setter] === 'function') { object[setter](value) } else { object[property] = value }
+    if (typeof object[setter] === 'function') {
+        object[setter](value)
+    } else {
+        object[property] = value
     }
+}
 
-    describe('ShippingMethodModel', () => {
-        it('should create an instance of ShippingMethodModel', () => {
-      // uncomment below and update the code to test ShippingMethodModel
-      // var instane = new ShopApi.ShippingMethodModel()
-      // expect(instance).to.be.a(ShopApi.ShippingMethodModel);
-        })
-
-        it('should have the property cStorePickupEnabled (base name: "c_storePickupEnabled")', () => {
-      // uncomment below and update the code to test the property cStorePickupEnabled
-      // var instane = new ShopApi.ShippingMethodModel()
-      // expect(instance).to.be();
-        })
-
-        it('should have the property description (base name: "description")', () => {
-      // uncomment below and update the code to test the property description
-      // var instane = new ShopApi.ShippingMethodModel()
-      // expect(instance).to.be();
-        })
-
-        it('should have the property externalShippingMethod (base name: "external_shipping_method")', () => {
-      // uncomment below and update the code to test the property externalShippingMethod
-      // var instane = new ShopApi.ShippingMethodModel()
-      // expect(instance).to.be();
-        })
-
-        it('should have the property id (base name: "id")', () => {
-      // uncomment below and update the code to test the property id
-      // var instane = new ShopApi.ShippingMethodModel()
-      // expect(instance).to.be();
-        })
-
-        it('should have the property name (base name: "name")', () => {
-      // uncomment below and update the code to test the property name
-      // var instane = new ShopApi.ShippingMethodModel()
-      // expect(instance).to.be();
-        })
-
-        it('should have the property price (base name: "price")', () => {
-      // uncomment below and update the code to test the property price
-      // var instane = new ShopApi.ShippingMethodModel()
-      // expect(instance).to.be();
-        })
-
-        it('should have the property shippingPromotions (base name: "shipping_promotions")', () => {
-      // uncomment below and update the code to test the property shippingPromotions
-      // var instane = new ShopApi.ShippingMethodModel()
-      // expect(instance).to.be();
-        })
-
+describe('ShippingMethodModel', () => {
+    it('should create an instance of ShippingMethodModel', () => {
+        // uncomment below and update the code to test ShippingMethodModel
+        // var instane = new ShopApi.ShippingMethod()
+        // expect(instance).to.be.a(ShopApi.ShippingMethod);
     })
 
-}))
+    it('should have the property cStorePickupEnabled (base name: "c_storePickupEnabled")', () => {
+        // uncomment below and update the code to test the property cStorePickupEnabled
+        // var instane = new ShopApi.ShippingMethod()
+        // expect(instance).to.be();
+    })
+
+    it('should have the property description (base name: "description")', () => {
+        // uncomment below and update the code to test the property description
+        // var instane = new ShopApi.ShippingMethod()
+        // expect(instance).to.be();
+    })
+
+    it('should have the property externalShippingMethod (base name: "external_shipping_method")', () => {
+        // uncomment below and update the code to test the property externalShippingMethod
+        // var instane = new ShopApi.ShippingMethod()
+        // expect(instance).to.be();
+    })
+
+    it('should have the property id (base name: "id")', () => {
+        // uncomment below and update the code to test the property id
+        // var instane = new ShopApi.ShippingMethod()
+        // expect(instance).to.be();
+    })
+
+    it('should have the property name (base name: "name")', () => {
+        // uncomment below and update the code to test the property name
+        // var instane = new ShopApi.ShippingMethod()
+        // expect(instance).to.be();
+    })
+
+    it('should have the property price (base name: "price")', () => {
+        // uncomment below and update the code to test the property price
+        // var instane = new ShopApi.ShippingMethod()
+        // expect(instance).to.be();
+    })
+
+    it('should have the property shippingPromotions (base name: "shipping_promotions")', () => {
+        // uncomment below and update the code to test the property shippingPromotions
+        // var instane = new ShopApi.ShippingMethod()
+        // expect(instance).to.be();
+    })
+
+})

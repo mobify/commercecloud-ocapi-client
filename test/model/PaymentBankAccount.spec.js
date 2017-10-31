@@ -15,79 +15,74 @@
  *
  */
 
-(function(root, factory) {
-    if (typeof define === 'function' && define.amd) {
-    // AMD.
-        define(['expect.js', '../../src/index'], factory)
-    } else if (typeof module === 'object' && module.exports) {
-    // CommonJS-like environments that support module.exports, like Node.
-        factory(require('expect.js'), require('../../src/index'))
-    } else {
-    // Browser globals (root is window)
-        factory(root.expect, root.ShopApi)
-    }
-}(this, (expect, ShopApi) => {
-    'use strict'
+import expect from 'expect.js'
+import ShopApi from '../../src/index'
 
-    let instance
+let instance
 
-    beforeEach(() => {
-        instance = new ShopApi.PaymentBankAccountModel()
-    })
+beforeEach(() => {
+    instance = new ShopApi.PaymentBankAccount()
+})
 
-    const getProperty = (object, getter, property) => {
+const getProperty = (object, getter, property) => {
     // Use getter method if present; otherwise, get the property directly.
-        if (typeof object[getter] === 'function') { return object[getter]() } else { return object[property] }
+    if (typeof object[getter] === 'function') {
+        return object[getter]()
+    } else {
+        return object[property]
     }
+}
 
-    const setProperty = (object, setter, property, value) => {
+const setProperty = (object, setter, property, value) => {
     // Use setter method if present; otherwise, set the property directly.
-        if (typeof object[setter] === 'function') { object[setter](value) } else { object[property] = value }
+    if (typeof object[setter] === 'function') {
+        object[setter](value)
+    } else {
+        object[property] = value
     }
+}
 
-    describe('PaymentBankAccountModel', () => {
-        it('should create an instance of PaymentBankAccountModel', () => {
-      // uncomment below and update the code to test PaymentBankAccountModel
-      // var instane = new ShopApi.PaymentBankAccountModel()
-      // expect(instance).to.be.a(ShopApi.PaymentBankAccountModel);
-        })
-
-        it('should have the property driversLicenseLastDigits (base name: "drivers_license_last_digits")', () => {
-      // uncomment below and update the code to test the property driversLicenseLastDigits
-      // var instane = new ShopApi.PaymentBankAccountModel()
-      // expect(instance).to.be();
-        })
-
-        it('should have the property driversLicenseStateCode (base name: "drivers_license_state_code")', () => {
-      // uncomment below and update the code to test the property driversLicenseStateCode
-      // var instane = new ShopApi.PaymentBankAccountModel()
-      // expect(instance).to.be();
-        })
-
-        it('should have the property holder (base name: "holder")', () => {
-      // uncomment below and update the code to test the property holder
-      // var instane = new ShopApi.PaymentBankAccountModel()
-      // expect(instance).to.be();
-        })
-
-        it('should have the property maskedDriversLicense (base name: "masked_drivers_license")', () => {
-      // uncomment below and update the code to test the property maskedDriversLicense
-      // var instane = new ShopApi.PaymentBankAccountModel()
-      // expect(instance).to.be();
-        })
-
-        it('should have the property maskedNumber (base name: "masked_number")', () => {
-      // uncomment below and update the code to test the property maskedNumber
-      // var instane = new ShopApi.PaymentBankAccountModel()
-      // expect(instance).to.be();
-        })
-
-        it('should have the property numberLastDigits (base name: "number_last_digits")', () => {
-      // uncomment below and update the code to test the property numberLastDigits
-      // var instane = new ShopApi.PaymentBankAccountModel()
-      // expect(instance).to.be();
-        })
-
+describe('PaymentBankAccountModel', () => {
+    it('should create an instance of PaymentBankAccountModel', () => {
+        // uncomment below and update the code to test PaymentBankAccountModel
+        // var instane = new ShopApi.PaymentBankAccount()
+        // expect(instance).to.be.a(ShopApi.PaymentBankAccount);
     })
 
-}))
+    it('should have the property driversLicenseLastDigits (base name: "drivers_license_last_digits")', () => {
+        // uncomment below and update the code to test the property driversLicenseLastDigits
+        // var instane = new ShopApi.PaymentBankAccount()
+        // expect(instance).to.be();
+    })
+
+    it('should have the property driversLicenseStateCode (base name: "drivers_license_state_code")', () => {
+        // uncomment below and update the code to test the property driversLicenseStateCode
+        // var instane = new ShopApi.PaymentBankAccount()
+        // expect(instance).to.be();
+    })
+
+    it('should have the property holder (base name: "holder")', () => {
+        // uncomment below and update the code to test the property holder
+        // var instane = new ShopApi.PaymentBankAccount()
+        // expect(instance).to.be();
+    })
+
+    it('should have the property maskedDriversLicense (base name: "masked_drivers_license")', () => {
+        // uncomment below and update the code to test the property maskedDriversLicense
+        // var instane = new ShopApi.PaymentBankAccount()
+        // expect(instance).to.be();
+    })
+
+    it('should have the property maskedNumber (base name: "masked_number")', () => {
+        // uncomment below and update the code to test the property maskedNumber
+        // var instane = new ShopApi.PaymentBankAccount()
+        // expect(instance).to.be();
+    })
+
+    it('should have the property numberLastDigits (base name: "number_last_digits")', () => {
+        // uncomment below and update the code to test the property numberLastDigits
+        // var instane = new ShopApi.PaymentBankAccount()
+        // expect(instance).to.be();
+    })
+
+})

@@ -15,61 +15,56 @@
  *
  */
 
-(function(root, factory) {
-    if (typeof define === 'function' && define.amd) {
-    // AMD.
-        define(['expect.js', '../../src/index'], factory)
-    } else if (typeof module === 'object' && module.exports) {
-    // CommonJS-like environments that support module.exports, like Node.
-        factory(require('expect.js'), require('../../src/index'))
-    } else {
-    // Browser globals (root is window)
-        factory(root.expect, root.ShopApi)
-    }
-}(this, (expect, ShopApi) => {
-    'use strict'
+import expect from 'expect.js'
+import ShopApi from '../../src/index'
 
-    let instance
+let instance
 
-    beforeEach(() => {
-        instance = new ShopApi.BundledProductModel()
-    })
+beforeEach(() => {
+    instance = new ShopApi.BundledProduct()
+})
 
-    const getProperty = (object, getter, property) => {
+const getProperty = (object, getter, property) => {
     // Use getter method if present; otherwise, get the property directly.
-        if (typeof object[getter] === 'function') { return object[getter]() } else { return object[property] }
+    if (typeof object[getter] === 'function') {
+        return object[getter]()
+    } else {
+        return object[property]
     }
+}
 
-    const setProperty = (object, setter, property, value) => {
+const setProperty = (object, setter, property, value) => {
     // Use setter method if present; otherwise, set the property directly.
-        if (typeof object[setter] === 'function') { object[setter](value) } else { object[property] = value }
+    if (typeof object[setter] === 'function') {
+        object[setter](value)
+    } else {
+        object[property] = value
     }
+}
 
-    describe('BundledProductModel', () => {
-        it('should create an instance of BundledProductModel', () => {
-      // uncomment below and update the code to test BundledProductModel
-      // var instane = new ShopApi.BundledProductModel()
-      // expect(instance).to.be.a(ShopApi.BundledProductModel);
-        })
-
-        it('should have the property id (base name: "id")', () => {
-      // uncomment below and update the code to test the property id
-      // var instane = new ShopApi.BundledProductModel()
-      // expect(instance).to.be();
-        })
-
-        it('should have the property product (base name: "product")', () => {
-      // uncomment below and update the code to test the property product
-      // var instane = new ShopApi.BundledProductModel()
-      // expect(instance).to.be();
-        })
-
-        it('should have the property quantity (base name: "quantity")', () => {
-      // uncomment below and update the code to test the property quantity
-      // var instane = new ShopApi.BundledProductModel()
-      // expect(instance).to.be();
-        })
-
+describe('BundledProductModel', () => {
+    it('should create an instance of BundledProductModel', () => {
+        // uncomment below and update the code to test BundledProductModel
+        // var instane = new ShopApi.BundledProduct()
+        // expect(instance).to.be.a(ShopApi.BundledProduct);
     })
 
-}))
+    it('should have the property id (base name: "id")', () => {
+        // uncomment below and update the code to test the property id
+        // var instane = new ShopApi.BundledProduct()
+        // expect(instance).to.be();
+    })
+
+    it('should have the property product (base name: "product")', () => {
+        // uncomment below and update the code to test the property product
+        // var instane = new ShopApi.BundledProduct()
+        // expect(instance).to.be();
+    })
+
+    it('should have the property quantity (base name: "quantity")', () => {
+        // uncomment below and update the code to test the property quantity
+        // var instane = new ShopApi.BundledProduct()
+        // expect(instance).to.be();
+    })
+
+})

@@ -15,61 +15,56 @@
  *
  */
 
-(function(root, factory) {
-    if (typeof define === 'function' && define.amd) {
-    // AMD.
-        define(['expect.js', '../../src/index'], factory)
-    } else if (typeof module === 'object' && module.exports) {
-    // CommonJS-like environments that support module.exports, like Node.
-        factory(require('expect.js'), require('../../src/index'))
-    } else {
-    // Browser globals (root is window)
-        factory(root.expect, root.ShopApi)
-    }
-}(this, (expect, ShopApi) => {
-    'use strict'
+import expect from 'expect.js'
+import ShopApi from '../../src/index'
 
-    let instance
+let instance
 
-    beforeEach(() => {
-        instance = new ShopApi.StatusModel()
-    })
+beforeEach(() => {
+    instance = new ShopApi.Status()
+})
 
-    const getProperty = (object, getter, property) => {
+const getProperty = (object, getter, property) => {
     // Use getter method if present; otherwise, get the property directly.
-        if (typeof object[getter] === 'function') { return object[getter]() } else { return object[property] }
+    if (typeof object[getter] === 'function') {
+        return object[getter]()
+    } else {
+        return object[property]
     }
+}
 
-    const setProperty = (object, setter, property, value) => {
+const setProperty = (object, setter, property, value) => {
     // Use setter method if present; otherwise, set the property directly.
-        if (typeof object[setter] === 'function') { object[setter](value) } else { object[property] = value }
+    if (typeof object[setter] === 'function') {
+        object[setter](value)
+    } else {
+        object[property] = value
     }
+}
 
-    describe('StatusModel', () => {
-        it('should create an instance of StatusModel', () => {
-      // uncomment below and update the code to test StatusModel
-      // var instane = new ShopApi.StatusModel()
-      // expect(instance).to.be.a(ShopApi.StatusModel);
-        })
-
-        it('should have the property code (base name: "code")', () => {
-      // uncomment below and update the code to test the property code
-      // var instane = new ShopApi.StatusModel()
-      // expect(instance).to.be();
-        })
-
-        it('should have the property message (base name: "message")', () => {
-      // uncomment below and update the code to test the property message
-      // var instane = new ShopApi.StatusModel()
-      // expect(instance).to.be();
-        })
-
-        it('should have the property status (base name: "status")', () => {
-      // uncomment below and update the code to test the property status
-      // var instane = new ShopApi.StatusModel()
-      // expect(instance).to.be();
-        })
-
+describe('StatusModel', () => {
+    it('should create an instance of StatusModel', () => {
+        // uncomment below and update the code to test StatusModel
+        // var instane = new ShopApi.Status()
+        // expect(instance).to.be.a(ShopApi.Status);
     })
 
-}))
+    it('should have the property code (base name: "code")', () => {
+        // uncomment below and update the code to test the property code
+        // var instane = new ShopApi.Status()
+        // expect(instance).to.be();
+    })
+
+    it('should have the property message (base name: "message")', () => {
+        // uncomment below and update the code to test the property message
+        // var instane = new ShopApi.Status()
+        // expect(instance).to.be();
+    })
+
+    it('should have the property status (base name: "status")', () => {
+        // uncomment below and update the code to test the property status
+        // var instane = new ShopApi.Status()
+        // expect(instance).to.be();
+    })
+
+})

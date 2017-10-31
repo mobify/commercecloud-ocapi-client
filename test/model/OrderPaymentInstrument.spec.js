@@ -15,91 +15,86 @@
  *
  */
 
-(function(root, factory) {
-    if (typeof define === 'function' && define.amd) {
-    // AMD.
-        define(['expect.js', '../../src/index'], factory)
-    } else if (typeof module === 'object' && module.exports) {
-    // CommonJS-like environments that support module.exports, like Node.
-        factory(require('expect.js'), require('../../src/index'))
-    } else {
-    // Browser globals (root is window)
-        factory(root.expect, root.ShopApi)
-    }
-}(this, (expect, ShopApi) => {
-    'use strict'
+import expect from 'expect.js'
+import ShopApi from '../../src/index'
 
-    let instance
+let instance
 
-    beforeEach(() => {
-        instance = new ShopApi.OrderPaymentInstrumentModel()
-    })
+beforeEach(() => {
+    instance = new ShopApi.OrderPaymentInstrument()
+})
 
-    const getProperty = (object, getter, property) => {
+const getProperty = (object, getter, property) => {
     // Use getter method if present; otherwise, get the property directly.
-        if (typeof object[getter] === 'function') { return object[getter]() } else { return object[property] }
+    if (typeof object[getter] === 'function') {
+        return object[getter]()
+    } else {
+        return object[property]
     }
+}
 
-    const setProperty = (object, setter, property, value) => {
+const setProperty = (object, setter, property, value) => {
     // Use setter method if present; otherwise, set the property directly.
-        if (typeof object[setter] === 'function') { object[setter](value) } else { object[property] = value }
+    if (typeof object[setter] === 'function') {
+        object[setter](value)
+    } else {
+        object[property] = value
     }
+}
 
-    describe('OrderPaymentInstrumentModel', () => {
-        it('should create an instance of OrderPaymentInstrumentModel', () => {
-      // uncomment below and update the code to test OrderPaymentInstrumentModel
-      // var instane = new ShopApi.OrderPaymentInstrumentModel()
-      // expect(instance).to.be.a(ShopApi.OrderPaymentInstrumentModel);
-        })
-
-        it('should have the property amount (base name: "amount")', () => {
-      // uncomment below and update the code to test the property amount
-      // var instane = new ShopApi.OrderPaymentInstrumentModel()
-      // expect(instance).to.be();
-        })
-
-        it('should have the property authorizationStatus (base name: "authorization_status")', () => {
-      // uncomment below and update the code to test the property authorizationStatus
-      // var instane = new ShopApi.OrderPaymentInstrumentModel()
-      // expect(instance).to.be();
-        })
-
-        it('should have the property bankRoutingNumber (base name: "bank_routing_number")', () => {
-      // uncomment below and update the code to test the property bankRoutingNumber
-      // var instane = new ShopApi.OrderPaymentInstrumentModel()
-      // expect(instance).to.be();
-        })
-
-        it('should have the property maskedGiftCertificateCode (base name: "masked_gift_certificate_code")', () => {
-      // uncomment below and update the code to test the property maskedGiftCertificateCode
-      // var instane = new ShopApi.OrderPaymentInstrumentModel()
-      // expect(instance).to.be();
-        })
-
-        it('should have the property paymentBankAccount (base name: "payment_bank_account")', () => {
-      // uncomment below and update the code to test the property paymentBankAccount
-      // var instane = new ShopApi.OrderPaymentInstrumentModel()
-      // expect(instance).to.be();
-        })
-
-        it('should have the property paymentCard (base name: "payment_card")', () => {
-      // uncomment below and update the code to test the property paymentCard
-      // var instane = new ShopApi.OrderPaymentInstrumentModel()
-      // expect(instance).to.be();
-        })
-
-        it('should have the property paymentInstrumentId (base name: "payment_instrument_id")', () => {
-      // uncomment below and update the code to test the property paymentInstrumentId
-      // var instane = new ShopApi.OrderPaymentInstrumentModel()
-      // expect(instance).to.be();
-        })
-
-        it('should have the property paymentMethodId (base name: "payment_method_id")', () => {
-      // uncomment below and update the code to test the property paymentMethodId
-      // var instane = new ShopApi.OrderPaymentInstrumentModel()
-      // expect(instance).to.be();
-        })
-
+describe('OrderPaymentInstrumentModel', () => {
+    it('should create an instance of OrderPaymentInstrumentModel', () => {
+        // uncomment below and update the code to test OrderPaymentInstrumentModel
+        // var instane = new ShopApi.OrderPaymentInstrument()
+        // expect(instance).to.be.a(ShopApi.OrderPaymentInstrument);
     })
 
-}))
+    it('should have the property amount (base name: "amount")', () => {
+        // uncomment below and update the code to test the property amount
+        // var instane = new ShopApi.OrderPaymentInstrument()
+        // expect(instance).to.be();
+    })
+
+    it('should have the property authorizationStatus (base name: "authorization_status")', () => {
+        // uncomment below and update the code to test the property authorizationStatus
+        // var instane = new ShopApi.OrderPaymentInstrument()
+        // expect(instance).to.be();
+    })
+
+    it('should have the property bankRoutingNumber (base name: "bank_routing_number")', () => {
+        // uncomment below and update the code to test the property bankRoutingNumber
+        // var instane = new ShopApi.OrderPaymentInstrument()
+        // expect(instance).to.be();
+    })
+
+    it('should have the property maskedGiftCertificateCode (base name: "masked_gift_certificate_code")', () => {
+        // uncomment below and update the code to test the property maskedGiftCertificateCode
+        // var instane = new ShopApi.OrderPaymentInstrument()
+        // expect(instance).to.be();
+    })
+
+    it('should have the property paymentBankAccount (base name: "payment_bank_account")', () => {
+        // uncomment below and update the code to test the property paymentBankAccount
+        // var instane = new ShopApi.OrderPaymentInstrument()
+        // expect(instance).to.be();
+    })
+
+    it('should have the property paymentCard (base name: "payment_card")', () => {
+        // uncomment below and update the code to test the property paymentCard
+        // var instane = new ShopApi.OrderPaymentInstrument()
+        // expect(instance).to.be();
+    })
+
+    it('should have the property paymentInstrumentId (base name: "payment_instrument_id")', () => {
+        // uncomment below and update the code to test the property paymentInstrumentId
+        // var instane = new ShopApi.OrderPaymentInstrument()
+        // expect(instance).to.be();
+    })
+
+    it('should have the property paymentMethodId (base name: "payment_method_id")', () => {
+        // uncomment below and update the code to test the property paymentMethodId
+        // var instane = new ShopApi.OrderPaymentInstrument()
+        // expect(instance).to.be();
+    })
+
+})

@@ -15,61 +15,56 @@
  *
  */
 
-(function(root, factory) {
-    if (typeof define === 'function' && define.amd) {
-    // AMD.
-        define(['expect.js', '../../src/index'], factory)
-    } else if (typeof module === 'object' && module.exports) {
-    // CommonJS-like environments that support module.exports, like Node.
-        factory(require('expect.js'), require('../../src/index'))
-    } else {
-    // Browser globals (root is window)
-        factory(root.expect, root.ShopApi)
-    }
-}(this, (expect, ShopApi) => {
-    'use strict'
+import expect from 'expect.js'
+import ShopApi from '../../src/index'
 
-    let instance
+let instance
 
-    beforeEach(() => {
-        instance = new ShopApi.VariationAttributeModel()
-    })
+beforeEach(() => {
+    instance = new ShopApi.VariationAttribute()
+})
 
-    const getProperty = (object, getter, property) => {
+const getProperty = (object, getter, property) => {
     // Use getter method if present; otherwise, get the property directly.
-        if (typeof object[getter] === 'function') { return object[getter]() } else { return object[property] }
+    if (typeof object[getter] === 'function') {
+        return object[getter]()
+    } else {
+        return object[property]
     }
+}
 
-    const setProperty = (object, setter, property, value) => {
+const setProperty = (object, setter, property, value) => {
     // Use setter method if present; otherwise, set the property directly.
-        if (typeof object[setter] === 'function') { object[setter](value) } else { object[property] = value }
+    if (typeof object[setter] === 'function') {
+        object[setter](value)
+    } else {
+        object[property] = value
     }
+}
 
-    describe('VariationAttributeModel', () => {
-        it('should create an instance of VariationAttributeModel', () => {
-      // uncomment below and update the code to test VariationAttributeModel
-      // var instane = new ShopApi.VariationAttributeModel()
-      // expect(instance).to.be.a(ShopApi.VariationAttributeModel);
-        })
-
-        it('should have the property id (base name: "id")', () => {
-      // uncomment below and update the code to test the property id
-      // var instane = new ShopApi.VariationAttributeModel()
-      // expect(instance).to.be();
-        })
-
-        it('should have the property name (base name: "name")', () => {
-      // uncomment below and update the code to test the property name
-      // var instane = new ShopApi.VariationAttributeModel()
-      // expect(instance).to.be();
-        })
-
-        it('should have the property values (base name: "values")', () => {
-      // uncomment below and update the code to test the property values
-      // var instane = new ShopApi.VariationAttributeModel()
-      // expect(instance).to.be();
-        })
-
+describe('VariationAttributeModel', () => {
+    it('should create an instance of VariationAttributeModel', () => {
+        // uncomment below and update the code to test VariationAttributeModel
+        // var instane = new ShopApi.VariationAttribute()
+        // expect(instance).to.be.a(ShopApi.VariationAttribute);
     })
 
-}))
+    it('should have the property id (base name: "id")', () => {
+        // uncomment below and update the code to test the property id
+        // var instane = new ShopApi.VariationAttribute()
+        // expect(instance).to.be();
+    })
+
+    it('should have the property name (base name: "name")', () => {
+        // uncomment below and update the code to test the property name
+        // var instane = new ShopApi.VariationAttribute()
+        // expect(instance).to.be();
+    })
+
+    it('should have the property values (base name: "values")', () => {
+        // uncomment below and update the code to test the property values
+        // var instane = new ShopApi.VariationAttribute()
+        // expect(instance).to.be();
+    })
+
+})

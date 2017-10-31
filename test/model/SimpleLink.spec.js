@@ -15,49 +15,44 @@
  *
  */
 
-(function(root, factory) {
-    if (typeof define === 'function' && define.amd) {
-    // AMD.
-        define(['expect.js', '../../src/index'], factory)
-    } else if (typeof module === 'object' && module.exports) {
-    // CommonJS-like environments that support module.exports, like Node.
-        factory(require('expect.js'), require('../../src/index'))
-    } else {
-    // Browser globals (root is window)
-        factory(root.expect, root.ShopApi)
-    }
-}(this, (expect, ShopApi) => {
-    'use strict'
+import expect from 'expect.js'
+import ShopApi from '../../src/index'
 
-    let instance
+let instance
 
-    beforeEach(() => {
-        instance = new ShopApi.SimpleLinkModel()
-    })
+beforeEach(() => {
+    instance = new ShopApi.SimpleLink()
+})
 
-    const getProperty = (object, getter, property) => {
+const getProperty = (object, getter, property) => {
     // Use getter method if present; otherwise, get the property directly.
-        if (typeof object[getter] === 'function') { return object[getter]() } else { return object[property] }
+    if (typeof object[getter] === 'function') {
+        return object[getter]()
+    } else {
+        return object[property]
     }
+}
 
-    const setProperty = (object, setter, property, value) => {
+const setProperty = (object, setter, property, value) => {
     // Use setter method if present; otherwise, set the property directly.
-        if (typeof object[setter] === 'function') { object[setter](value) } else { object[property] = value }
+    if (typeof object[setter] === 'function') {
+        object[setter](value)
+    } else {
+        object[property] = value
     }
+}
 
-    describe('SimpleLinkModel', () => {
-        it('should create an instance of SimpleLinkModel', () => {
-      // uncomment below and update the code to test SimpleLinkModel
-      // var instane = new ShopApi.SimpleLinkModel()
-      // expect(instance).to.be.a(ShopApi.SimpleLinkModel);
-        })
-
-        it('should have the property link (base name: "link")', () => {
-      // uncomment below and update the code to test the property link
-      // var instane = new ShopApi.SimpleLinkModel()
-      // expect(instance).to.be();
-        })
-
+describe('SimpleLinkModel', () => {
+    it('should create an instance of SimpleLinkModel', () => {
+        // uncomment below and update the code to test SimpleLinkModel
+        // var instane = new ShopApi.SimpleLink()
+        // expect(instance).to.be.a(ShopApi.SimpleLink);
     })
 
-}))
+    it('should have the property link (base name: "link")', () => {
+        // uncomment below and update the code to test the property link
+        // var instane = new ShopApi.SimpleLink()
+        // expect(instance).to.be();
+    })
+
+})

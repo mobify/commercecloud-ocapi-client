@@ -15,55 +15,50 @@
  *
  */
 
-(function(root, factory) {
-    if (typeof define === 'function' && define.amd) {
-    // AMD.
-        define(['expect.js', '../../src/index'], factory)
-    } else if (typeof module === 'object' && module.exports) {
-    // CommonJS-like environments that support module.exports, like Node.
-        factory(require('expect.js'), require('../../src/index'))
-    } else {
-    // Browser globals (root is window)
-        factory(root.expect, root.ShopApi)
-    }
-}(this, (expect, ShopApi) => {
-    'use strict'
+import expect from 'expect.js'
+import ShopApi from '../../src/index'
 
-    let instance
+let instance
 
-    beforeEach(() => {
-        instance = new ShopApi.OrderSearchHitModel()
-    })
+beforeEach(() => {
+    instance = new ShopApi.OrderSearchHit()
+})
 
-    const getProperty = (object, getter, property) => {
+const getProperty = (object, getter, property) => {
     // Use getter method if present; otherwise, get the property directly.
-        if (typeof object[getter] === 'function') { return object[getter]() } else { return object[property] }
+    if (typeof object[getter] === 'function') {
+        return object[getter]()
+    } else {
+        return object[property]
     }
+}
 
-    const setProperty = (object, setter, property, value) => {
+const setProperty = (object, setter, property, value) => {
     // Use setter method if present; otherwise, set the property directly.
-        if (typeof object[setter] === 'function') { object[setter](value) } else { object[property] = value }
+    if (typeof object[setter] === 'function') {
+        object[setter](value)
+    } else {
+        object[property] = value
     }
+}
 
-    describe('OrderSearchHitModel', () => {
-        it('should create an instance of OrderSearchHitModel', () => {
-      // uncomment below and update the code to test OrderSearchHitModel
-      // var instane = new ShopApi.OrderSearchHitModel()
-      // expect(instance).to.be.a(ShopApi.OrderSearchHitModel);
-        })
-
-        it('should have the property data (base name: "data")', () => {
-      // uncomment below and update the code to test the property data
-      // var instane = new ShopApi.OrderSearchHitModel()
-      // expect(instance).to.be();
-        })
-
-        it('should have the property relevance (base name: "relevance")', () => {
-      // uncomment below and update the code to test the property relevance
-      // var instane = new ShopApi.OrderSearchHitModel()
-      // expect(instance).to.be();
-        })
-
+describe('OrderSearchHitModel', () => {
+    it('should create an instance of OrderSearchHitModel', () => {
+        // uncomment below and update the code to test OrderSearchHitModel
+        // var instane = new ShopApi.OrderSearchHit()
+        // expect(instance).to.be.a(ShopApi.OrderSearchHit);
     })
 
-}))
+    it('should have the property data (base name: "data")', () => {
+        // uncomment below and update the code to test the property data
+        // var instane = new ShopApi.OrderSearchHit()
+        // expect(instance).to.be();
+    })
+
+    it('should have the property relevance (base name: "relevance")', () => {
+        // uncomment below and update the code to test the property relevance
+        // var instane = new ShopApi.OrderSearchHit()
+        // expect(instance).to.be();
+    })
+
+})

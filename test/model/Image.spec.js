@@ -15,67 +15,62 @@
  *
  */
 
-(function(root, factory) {
-    if (typeof define === 'function' && define.amd) {
-    // AMD.
-        define(['expect.js', '../../src/index'], factory)
-    } else if (typeof module === 'object' && module.exports) {
-    // CommonJS-like environments that support module.exports, like Node.
-        factory(require('expect.js'), require('../../src/index'))
-    } else {
-    // Browser globals (root is window)
-        factory(root.expect, root.ShopApi)
-    }
-}(this, (expect, ShopApi) => {
-    'use strict'
+import expect from 'expect.js'
+import ShopApi from '../../src/index'
 
-    let instance
+let instance
 
-    beforeEach(() => {
-        instance = new ShopApi.ImageModel()
-    })
+beforeEach(() => {
+    instance = new ShopApi.Image()
+})
 
-    const getProperty = (object, getter, property) => {
+const getProperty = (object, getter, property) => {
     // Use getter method if present; otherwise, get the property directly.
-        if (typeof object[getter] === 'function') { return object[getter]() } else { return object[property] }
+    if (typeof object[getter] === 'function') {
+        return object[getter]()
+    } else {
+        return object[property]
     }
+}
 
-    const setProperty = (object, setter, property, value) => {
+const setProperty = (object, setter, property, value) => {
     // Use setter method if present; otherwise, set the property directly.
-        if (typeof object[setter] === 'function') { object[setter](value) } else { object[property] = value }
+    if (typeof object[setter] === 'function') {
+        object[setter](value)
+    } else {
+        object[property] = value
     }
+}
 
-    describe('ImageModel', () => {
-        it('should create an instance of ImageModel', () => {
-      // uncomment below and update the code to test ImageModel
-      // var instane = new ShopApi.ImageModel()
-      // expect(instance).to.be.a(ShopApi.ImageModel);
-        })
-
-        it('should have the property alt (base name: "alt")', () => {
-      // uncomment below and update the code to test the property alt
-      // var instane = new ShopApi.ImageModel()
-      // expect(instance).to.be();
-        })
-
-        it('should have the property disBaseLink (base name: "dis_base_link")', () => {
-      // uncomment below and update the code to test the property disBaseLink
-      // var instane = new ShopApi.ImageModel()
-      // expect(instance).to.be();
-        })
-
-        it('should have the property link (base name: "link")', () => {
-      // uncomment below and update the code to test the property link
-      // var instane = new ShopApi.ImageModel()
-      // expect(instance).to.be();
-        })
-
-        it('should have the property title (base name: "title")', () => {
-      // uncomment below and update the code to test the property title
-      // var instane = new ShopApi.ImageModel()
-      // expect(instance).to.be();
-        })
-
+describe('ImageModel', () => {
+    it('should create an instance of ImageModel', () => {
+        // uncomment below and update the code to test ImageModel
+        // var instane = new ShopApi.Image()
+        // expect(instance).to.be.a(ShopApi.Image);
     })
 
-}))
+    it('should have the property alt (base name: "alt")', () => {
+        // uncomment below and update the code to test the property alt
+        // var instane = new ShopApi.Image()
+        // expect(instance).to.be();
+    })
+
+    it('should have the property disBaseLink (base name: "dis_base_link")', () => {
+        // uncomment below and update the code to test the property disBaseLink
+        // var instane = new ShopApi.Image()
+        // expect(instance).to.be();
+    })
+
+    it('should have the property link (base name: "link")', () => {
+        // uncomment below and update the code to test the property link
+        // var instane = new ShopApi.Image()
+        // expect(instance).to.be();
+    })
+
+    it('should have the property title (base name: "title")', () => {
+        // uncomment below and update the code to test the property title
+        // var instane = new ShopApi.Image()
+        // expect(instance).to.be();
+    })
+
+})

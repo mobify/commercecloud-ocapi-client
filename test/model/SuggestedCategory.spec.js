@@ -15,67 +15,62 @@
  *
  */
 
-(function(root, factory) {
-    if (typeof define === 'function' && define.amd) {
-    // AMD.
-        define(['expect.js', '../../src/index'], factory)
-    } else if (typeof module === 'object' && module.exports) {
-    // CommonJS-like environments that support module.exports, like Node.
-        factory(require('expect.js'), require('../../src/index'))
-    } else {
-    // Browser globals (root is window)
-        factory(root.expect, root.ShopApi)
-    }
-}(this, (expect, ShopApi) => {
-    'use strict'
+import expect from 'expect.js'
+import ShopApi from '../../src/index'
 
-    let instance
+let instance
 
-    beforeEach(() => {
-        instance = new ShopApi.SuggestedCategoryModel()
-    })
+beforeEach(() => {
+    instance = new ShopApi.SuggestedCategory()
+})
 
-    const getProperty = (object, getter, property) => {
+const getProperty = (object, getter, property) => {
     // Use getter method if present; otherwise, get the property directly.
-        if (typeof object[getter] === 'function') { return object[getter]() } else { return object[property] }
+    if (typeof object[getter] === 'function') {
+        return object[getter]()
+    } else {
+        return object[property]
     }
+}
 
-    const setProperty = (object, setter, property, value) => {
+const setProperty = (object, setter, property, value) => {
     // Use setter method if present; otherwise, set the property directly.
-        if (typeof object[setter] === 'function') { object[setter](value) } else { object[property] = value }
+    if (typeof object[setter] === 'function') {
+        object[setter](value)
+    } else {
+        object[property] = value
     }
+}
 
-    describe('SuggestedCategoryModel', () => {
-        it('should create an instance of SuggestedCategoryModel', () => {
-      // uncomment below and update the code to test SuggestedCategoryModel
-      // var instane = new ShopApi.SuggestedCategoryModel()
-      // expect(instance).to.be.a(ShopApi.SuggestedCategoryModel);
-        })
-
-        it('should have the property id (base name: "id")', () => {
-      // uncomment below and update the code to test the property id
-      // var instane = new ShopApi.SuggestedCategoryModel()
-      // expect(instance).to.be();
-        })
-
-        it('should have the property link (base name: "link")', () => {
-      // uncomment below and update the code to test the property link
-      // var instane = new ShopApi.SuggestedCategoryModel()
-      // expect(instance).to.be();
-        })
-
-        it('should have the property name (base name: "name")', () => {
-      // uncomment below and update the code to test the property name
-      // var instane = new ShopApi.SuggestedCategoryModel()
-      // expect(instance).to.be();
-        })
-
-        it('should have the property parentCategoryName (base name: "parent_category_name")', () => {
-      // uncomment below and update the code to test the property parentCategoryName
-      // var instane = new ShopApi.SuggestedCategoryModel()
-      // expect(instance).to.be();
-        })
-
+describe('SuggestedCategoryModel', () => {
+    it('should create an instance of SuggestedCategoryModel', () => {
+        // uncomment below and update the code to test SuggestedCategoryModel
+        // var instane = new ShopApi.SuggestedCategory()
+        // expect(instance).to.be.a(ShopApi.SuggestedCategory);
     })
 
-}))
+    it('should have the property id (base name: "id")', () => {
+        // uncomment below and update the code to test the property id
+        // var instane = new ShopApi.SuggestedCategory()
+        // expect(instance).to.be();
+    })
+
+    it('should have the property link (base name: "link")', () => {
+        // uncomment below and update the code to test the property link
+        // var instane = new ShopApi.SuggestedCategory()
+        // expect(instance).to.be();
+    })
+
+    it('should have the property name (base name: "name")', () => {
+        // uncomment below and update the code to test the property name
+        // var instane = new ShopApi.SuggestedCategory()
+        // expect(instance).to.be();
+    })
+
+    it('should have the property parentCategoryName (base name: "parent_category_name")', () => {
+        // uncomment below and update the code to test the property parentCategoryName
+        // var instane = new ShopApi.SuggestedCategory()
+        // expect(instance).to.be();
+    })
+
+})

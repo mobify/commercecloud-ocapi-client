@@ -15,97 +15,92 @@
  *
  */
 
-(function(root, factory) {
-    if (typeof define === 'function' && define.amd) {
-    // AMD.
-        define(['expect.js', '../../src/index'], factory)
-    } else if (typeof module === 'object' && module.exports) {
-    // CommonJS-like environments that support module.exports, like Node.
-        factory(require('expect.js'), require('../../src/index'))
-    } else {
-    // Browser globals (root is window)
-        factory(root.expect, root.ShopApi)
-    }
-}(this, (expect, ShopApi) => {
-    'use strict'
+import expect from 'expect.js'
+import ShopApi from '../../src/index'
 
-    let instance
+let instance
 
-    beforeEach(() => {
-        instance = new ShopApi.CustomerPaymentCardRequestModel()
-    })
+beforeEach(() => {
+    instance = new ShopApi.CustomerPaymentCardRequest()
+})
 
-    const getProperty = (object, getter, property) => {
+const getProperty = (object, getter, property) => {
     // Use getter method if present; otherwise, get the property directly.
-        if (typeof object[getter] === 'function') { return object[getter]() } else { return object[property] }
+    if (typeof object[getter] === 'function') {
+        return object[getter]()
+    } else {
+        return object[property]
     }
+}
 
-    const setProperty = (object, setter, property, value) => {
+const setProperty = (object, setter, property, value) => {
     // Use setter method if present; otherwise, set the property directly.
-        if (typeof object[setter] === 'function') { object[setter](value) } else { object[property] = value }
+    if (typeof object[setter] === 'function') {
+        object[setter](value)
+    } else {
+        object[property] = value
     }
+}
 
-    describe('CustomerPaymentCardRequestModel', () => {
-        it('should create an instance of CustomerPaymentCardRequestModel', () => {
-      // uncomment below and update the code to test CustomerPaymentCardRequestModel
-      // var instane = new ShopApi.CustomerPaymentCardRequestModel()
-      // expect(instance).to.be.a(ShopApi.CustomerPaymentCardRequestModel);
-        })
-
-        it('should have the property cardType (base name: "card_type")', () => {
-      // uncomment below and update the code to test the property cardType
-      // var instane = new ShopApi.CustomerPaymentCardRequestModel()
-      // expect(instance).to.be();
-        })
-
-        it('should have the property creditCardToken (base name: "credit_card_token")', () => {
-      // uncomment below and update the code to test the property creditCardToken
-      // var instane = new ShopApi.CustomerPaymentCardRequestModel()
-      // expect(instance).to.be();
-        })
-
-        it('should have the property expirationMonth (base name: "expiration_month")', () => {
-      // uncomment below and update the code to test the property expirationMonth
-      // var instane = new ShopApi.CustomerPaymentCardRequestModel()
-      // expect(instance).to.be();
-        })
-
-        it('should have the property expirationYear (base name: "expiration_year")', () => {
-      // uncomment below and update the code to test the property expirationYear
-      // var instane = new ShopApi.CustomerPaymentCardRequestModel()
-      // expect(instance).to.be();
-        })
-
-        it('should have the property holder (base name: "holder")', () => {
-      // uncomment below and update the code to test the property holder
-      // var instane = new ShopApi.CustomerPaymentCardRequestModel()
-      // expect(instance).to.be();
-        })
-
-        it('should have the property issueNumber (base name: "issue_number")', () => {
-      // uncomment below and update the code to test the property issueNumber
-      // var instane = new ShopApi.CustomerPaymentCardRequestModel()
-      // expect(instance).to.be();
-        })
-
-        it('should have the property _number (base name: "number")', () => {
-      // uncomment below and update the code to test the property _number
-      // var instane = new ShopApi.CustomerPaymentCardRequestModel()
-      // expect(instance).to.be();
-        })
-
-        it('should have the property validFromMonth (base name: "valid_from_month")', () => {
-      // uncomment below and update the code to test the property validFromMonth
-      // var instane = new ShopApi.CustomerPaymentCardRequestModel()
-      // expect(instance).to.be();
-        })
-
-        it('should have the property validFromYear (base name: "valid_from_year")', () => {
-      // uncomment below and update the code to test the property validFromYear
-      // var instane = new ShopApi.CustomerPaymentCardRequestModel()
-      // expect(instance).to.be();
-        })
-
+describe('CustomerPaymentCardRequestModel', () => {
+    it('should create an instance of CustomerPaymentCardRequestModel', () => {
+        // uncomment below and update the code to test CustomerPaymentCardRequestModel
+        // var instane = new ShopApi.CustomerPaymentCardRequest()
+        // expect(instance).to.be.a(ShopApi.CustomerPaymentCardRequest);
     })
 
-}))
+    it('should have the property cardType (base name: "card_type")', () => {
+        // uncomment below and update the code to test the property cardType
+        // var instane = new ShopApi.CustomerPaymentCardRequest()
+        // expect(instance).to.be();
+    })
+
+    it('should have the property creditCardToken (base name: "credit_card_token")', () => {
+        // uncomment below and update the code to test the property creditCardToken
+        // var instane = new ShopApi.CustomerPaymentCardRequest()
+        // expect(instance).to.be();
+    })
+
+    it('should have the property expirationMonth (base name: "expiration_month")', () => {
+        // uncomment below and update the code to test the property expirationMonth
+        // var instane = new ShopApi.CustomerPaymentCardRequest()
+        // expect(instance).to.be();
+    })
+
+    it('should have the property expirationYear (base name: "expiration_year")', () => {
+        // uncomment below and update the code to test the property expirationYear
+        // var instane = new ShopApi.CustomerPaymentCardRequest()
+        // expect(instance).to.be();
+    })
+
+    it('should have the property holder (base name: "holder")', () => {
+        // uncomment below and update the code to test the property holder
+        // var instane = new ShopApi.CustomerPaymentCardRequest()
+        // expect(instance).to.be();
+    })
+
+    it('should have the property issueNumber (base name: "issue_number")', () => {
+        // uncomment below and update the code to test the property issueNumber
+        // var instane = new ShopApi.CustomerPaymentCardRequest()
+        // expect(instance).to.be();
+    })
+
+    it('should have the property _number (base name: "number")', () => {
+        // uncomment below and update the code to test the property _number
+        // var instane = new ShopApi.CustomerPaymentCardRequest()
+        // expect(instance).to.be();
+    })
+
+    it('should have the property validFromMonth (base name: "valid_from_month")', () => {
+        // uncomment below and update the code to test the property validFromMonth
+        // var instane = new ShopApi.CustomerPaymentCardRequest()
+        // expect(instance).to.be();
+    })
+
+    it('should have the property validFromYear (base name: "valid_from_year")', () => {
+        // uncomment below and update the code to test the property validFromYear
+        // var instane = new ShopApi.CustomerPaymentCardRequest()
+        // expect(instance).to.be();
+    })
+
+})

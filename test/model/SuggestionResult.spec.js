@@ -15,79 +15,74 @@
  *
  */
 
-(function(root, factory) {
-    if (typeof define === 'function' && define.amd) {
-    // AMD.
-        define(['expect.js', '../../src/index'], factory)
-    } else if (typeof module === 'object' && module.exports) {
-    // CommonJS-like environments that support module.exports, like Node.
-        factory(require('expect.js'), require('../../src/index'))
-    } else {
-    // Browser globals (root is window)
-        factory(root.expect, root.ShopApi)
-    }
-}(this, (expect, ShopApi) => {
-    'use strict'
+import expect from 'expect.js'
+import ShopApi from '../../src/index'
 
-    let instance
+let instance
 
-    beforeEach(() => {
-        instance = new ShopApi.SuggestionResultModel()
-    })
+beforeEach(() => {
+    instance = new ShopApi.SuggestionResult()
+})
 
-    const getProperty = (object, getter, property) => {
+const getProperty = (object, getter, property) => {
     // Use getter method if present; otherwise, get the property directly.
-        if (typeof object[getter] === 'function') { return object[getter]() } else { return object[property] }
+    if (typeof object[getter] === 'function') {
+        return object[getter]()
+    } else {
+        return object[property]
     }
+}
 
-    const setProperty = (object, setter, property, value) => {
+const setProperty = (object, setter, property, value) => {
     // Use setter method if present; otherwise, set the property directly.
-        if (typeof object[setter] === 'function') { object[setter](value) } else { object[property] = value }
+    if (typeof object[setter] === 'function') {
+        object[setter](value)
+    } else {
+        object[property] = value
     }
+}
 
-    describe('SuggestionResultModel', () => {
-        it('should create an instance of SuggestionResultModel', () => {
-      // uncomment below and update the code to test SuggestionResultModel
-      // var instane = new ShopApi.SuggestionResultModel()
-      // expect(instance).to.be.a(ShopApi.SuggestionResultModel);
-        })
-
-        it('should have the property brandSuggestions (base name: "brand_suggestions")', () => {
-      // uncomment below and update the code to test the property brandSuggestions
-      // var instane = new ShopApi.SuggestionResultModel()
-      // expect(instance).to.be();
-        })
-
-        it('should have the property categorySuggestions (base name: "category_suggestions")', () => {
-      // uncomment below and update the code to test the property categorySuggestions
-      // var instane = new ShopApi.SuggestionResultModel()
-      // expect(instance).to.be();
-        })
-
-        it('should have the property contentSuggestions (base name: "content_suggestions")', () => {
-      // uncomment below and update the code to test the property contentSuggestions
-      // var instane = new ShopApi.SuggestionResultModel()
-      // expect(instance).to.be();
-        })
-
-        it('should have the property customSuggestions (base name: "custom_suggestions")', () => {
-      // uncomment below and update the code to test the property customSuggestions
-      // var instane = new ShopApi.SuggestionResultModel()
-      // expect(instance).to.be();
-        })
-
-        it('should have the property productSuggestions (base name: "product_suggestions")', () => {
-      // uncomment below and update the code to test the property productSuggestions
-      // var instane = new ShopApi.SuggestionResultModel()
-      // expect(instance).to.be();
-        })
-
-        it('should have the property query (base name: "query")', () => {
-      // uncomment below and update the code to test the property query
-      // var instane = new ShopApi.SuggestionResultModel()
-      // expect(instance).to.be();
-        })
-
+describe('SuggestionResultModel', () => {
+    it('should create an instance of SuggestionResultModel', () => {
+        // uncomment below and update the code to test SuggestionResultModel
+        // var instane = new ShopApi.SuggestionResult()
+        // expect(instance).to.be.a(ShopApi.SuggestionResult);
     })
 
-}))
+    it('should have the property brandSuggestions (base name: "brand_suggestions")', () => {
+        // uncomment below and update the code to test the property brandSuggestions
+        // var instane = new ShopApi.SuggestionResult()
+        // expect(instance).to.be();
+    })
+
+    it('should have the property categorySuggestions (base name: "category_suggestions")', () => {
+        // uncomment below and update the code to test the property categorySuggestions
+        // var instane = new ShopApi.SuggestionResult()
+        // expect(instance).to.be();
+    })
+
+    it('should have the property contentSuggestions (base name: "content_suggestions")', () => {
+        // uncomment below and update the code to test the property contentSuggestions
+        // var instane = new ShopApi.SuggestionResult()
+        // expect(instance).to.be();
+    })
+
+    it('should have the property customSuggestions (base name: "custom_suggestions")', () => {
+        // uncomment below and update the code to test the property customSuggestions
+        // var instane = new ShopApi.SuggestionResult()
+        // expect(instance).to.be();
+    })
+
+    it('should have the property productSuggestions (base name: "product_suggestions")', () => {
+        // uncomment below and update the code to test the property productSuggestions
+        // var instane = new ShopApi.SuggestionResult()
+        // expect(instance).to.be();
+    })
+
+    it('should have the property query (base name: "query")', () => {
+        // uncomment below and update the code to test the property query
+        // var instane = new ShopApi.SuggestionResult()
+        // expect(instance).to.be();
+    })
+
+})

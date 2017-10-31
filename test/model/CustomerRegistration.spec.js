@@ -15,55 +15,50 @@
  *
  */
 
-(function(root, factory) {
-    if (typeof define === 'function' && define.amd) {
-    // AMD.
-        define(['expect.js', '../../src/index'], factory)
-    } else if (typeof module === 'object' && module.exports) {
-    // CommonJS-like environments that support module.exports, like Node.
-        factory(require('expect.js'), require('../../src/index'))
-    } else {
-    // Browser globals (root is window)
-        factory(root.expect, root.ShopApi)
-    }
-}(this, (expect, ShopApi) => {
-    'use strict'
+import expect from 'expect.js'
+import ShopApi from '../../src/index'
 
-    let instance
+let instance
 
-    beforeEach(() => {
-        instance = new ShopApi.CustomerRegistrationModel()
-    })
+beforeEach(() => {
+    instance = new ShopApi.CustomerRegistration()
+})
 
-    const getProperty = (object, getter, property) => {
+const getProperty = (object, getter, property) => {
     // Use getter method if present; otherwise, get the property directly.
-        if (typeof object[getter] === 'function') { return object[getter]() } else { return object[property] }
+    if (typeof object[getter] === 'function') {
+        return object[getter]()
+    } else {
+        return object[property]
     }
+}
 
-    const setProperty = (object, setter, property, value) => {
+const setProperty = (object, setter, property, value) => {
     // Use setter method if present; otherwise, set the property directly.
-        if (typeof object[setter] === 'function') { object[setter](value) } else { object[property] = value }
+    if (typeof object[setter] === 'function') {
+        object[setter](value)
+    } else {
+        object[property] = value
     }
+}
 
-    describe('CustomerRegistrationModel', () => {
-        it('should create an instance of CustomerRegistrationModel', () => {
-      // uncomment below and update the code to test CustomerRegistrationModel
-      // var instane = new ShopApi.CustomerRegistrationModel()
-      // expect(instance).to.be.a(ShopApi.CustomerRegistrationModel);
-        })
-
-        it('should have the property customer (base name: "customer")', () => {
-      // uncomment below and update the code to test the property customer
-      // var instane = new ShopApi.CustomerRegistrationModel()
-      // expect(instance).to.be();
-        })
-
-        it('should have the property password (base name: "password")', () => {
-      // uncomment below and update the code to test the property password
-      // var instane = new ShopApi.CustomerRegistrationModel()
-      // expect(instance).to.be();
-        })
-
+describe('CustomerRegistrationModel', () => {
+    it('should create an instance of CustomerRegistrationModel', () => {
+        // uncomment below and update the code to test CustomerRegistrationModel
+        // var instane = new ShopApi.CustomerRegistration()
+        // expect(instance).to.be.a(ShopApi.CustomerRegistration);
     })
 
-}))
+    it('should have the property customer (base name: "customer")', () => {
+        // uncomment below and update the code to test the property customer
+        // var instane = new ShopApi.CustomerRegistration()
+        // expect(instance).to.be();
+    })
+
+    it('should have the property password (base name: "password")', () => {
+        // uncomment below and update the code to test the property password
+        // var instane = new ShopApi.CustomerRegistration()
+        // expect(instance).to.be();
+    })
+
+})

@@ -15,49 +15,36 @@
  *
  */
 
-(function(root, factory) {
-    if (typeof define === 'function' && define.amd) {
-    // AMD.
-        define(['expect.js', '../../src/index'], factory)
-    } else if (typeof module === 'object' && module.exports) {
-    // CommonJS-like environments that support module.exports, like Node.
-        factory(require('expect.js'), require('../../src/index'))
-    } else {
-    // Browser globals (root is window)
-        factory(root.expect, root.ShopApi)
-    }
-}(this, (expect, ShopApi) => {
-    'use strict'
+import expect from 'expect.js'
+import ShopApi from '../../src/index'
 
-    let instance
+let instance
 
-    beforeEach(() => {
-        instance = new ShopApi.AuthRequestModel()
+beforeEach(() => {
+    instance = new ShopApi.AuthRequest()
+})
+
+const getProperty = (object, getter, property) => {
+// Use getter method if present; otherwise, get the property directly.
+    if (typeof object[getter] === 'function') { return object[getter]() } else { return object[property] }
+}
+
+const setProperty = (object, setter, property, value) => {
+// Use setter method if present; otherwise, set the property directly.
+    if (typeof object[setter] === 'function') { object[setter](value) } else { object[property] = value }
+}
+
+describe('AuthRequestModel', () => {
+    it('should create an instance of AuthRequestModel', () => {
+  // uncomment below and update the code to test AuthRequestModel
+  // var instance = new ShopApi.AuthRequest()
+  // expect(instance).to.be.a(ShopApi.AuthRequest);
     })
 
-    const getProperty = (object, getter, property) => {
-    // Use getter method if present; otherwise, get the property directly.
-        if (typeof object[getter] === 'function') { return object[getter]() } else { return object[property] }
-    }
-
-    const setProperty = (object, setter, property, value) => {
-    // Use setter method if present; otherwise, set the property directly.
-        if (typeof object[setter] === 'function') { object[setter](value) } else { object[property] = value }
-    }
-
-    describe('AuthRequestModel', () => {
-        it('should create an instance of AuthRequestModel', () => {
-      // uncomment below and update the code to test AuthRequestModel
-      // var instance = new ShopApi.AuthRequestModel()
-      // expect(instance).to.be.a(ShopApi.AuthRequestModel);
-        })
-
-        it('should have the property type (base name: "type")', () => {
-      // uncomment below and update the code to test the property type
-      // var instane = new ShopApi.AuthRequestModel()
-      // expect(instance).to.be();
-        })
-
+    it('should have the property type (base name: "type")', () => {
+  // uncomment below and update the code to test the property type
+  // var instane = new ShopApi.AuthRequest()
+  // expect(instance).to.be();
     })
 
-}))
+})

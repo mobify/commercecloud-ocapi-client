@@ -15,91 +15,86 @@
  *
  */
 
-(function(root, factory) {
-    if (typeof define === 'function' && define.amd) {
-    // AMD.
-        define(['expect.js', '../../src/index'], factory)
-    } else if (typeof module === 'object' && module.exports) {
-    // CommonJS-like environments that support module.exports, like Node.
-        factory(require('expect.js'), require('../../src/index'))
-    } else {
-    // Browser globals (root is window)
-        factory(root.expect, root.ShopApi)
-    }
-}(this, (expect, ShopApi) => {
-    'use strict'
+import expect from 'expect.js'
+import ShopApi from '../../src/index'
 
-    let instance
+let instance
 
-    beforeEach(() => {
-        instance = new ShopApi.RecommendationModel()
-    })
+beforeEach(() => {
+    instance = new ShopApi.Recommendation()
+})
 
-    const getProperty = (object, getter, property) => {
+const getProperty = (object, getter, property) => {
     // Use getter method if present; otherwise, get the property directly.
-        if (typeof object[getter] === 'function') { return object[getter]() } else { return object[property] }
+    if (typeof object[getter] === 'function') {
+        return object[getter]()
+    } else {
+        return object[property]
     }
+}
 
-    const setProperty = (object, setter, property, value) => {
+const setProperty = (object, setter, property, value) => {
     // Use setter method if present; otherwise, set the property directly.
-        if (typeof object[setter] === 'function') { object[setter](value) } else { object[property] = value }
+    if (typeof object[setter] === 'function') {
+        object[setter](value)
+    } else {
+        object[property] = value
     }
+}
 
-    describe('RecommendationModel', () => {
-        it('should create an instance of RecommendationModel', () => {
-      // uncomment below and update the code to test RecommendationModel
-      // var instane = new ShopApi.RecommendationModel()
-      // expect(instance).to.be.a(ShopApi.RecommendationModel);
-        })
-
-        it('should have the property calloutMsg (base name: "callout_msg")', () => {
-      // uncomment below and update the code to test the property calloutMsg
-      // var instane = new ShopApi.RecommendationModel()
-      // expect(instance).to.be();
-        })
-
-        it('should have the property image (base name: "image")', () => {
-      // uncomment below and update the code to test the property image
-      // var instane = new ShopApi.RecommendationModel()
-      // expect(instance).to.be();
-        })
-
-        it('should have the property longDescription (base name: "long_description")', () => {
-      // uncomment below and update the code to test the property longDescription
-      // var instane = new ShopApi.RecommendationModel()
-      // expect(instance).to.be();
-        })
-
-        it('should have the property name (base name: "name")', () => {
-      // uncomment below and update the code to test the property name
-      // var instane = new ShopApi.RecommendationModel()
-      // expect(instance).to.be();
-        })
-
-        it('should have the property recommendationType (base name: "recommendation_type")', () => {
-      // uncomment below and update the code to test the property recommendationType
-      // var instane = new ShopApi.RecommendationModel()
-      // expect(instance).to.be();
-        })
-
-        it('should have the property recommendedItemId (base name: "recommended_item_id")', () => {
-      // uncomment below and update the code to test the property recommendedItemId
-      // var instane = new ShopApi.RecommendationModel()
-      // expect(instance).to.be();
-        })
-
-        it('should have the property recommendedItemLink (base name: "recommended_item_link")', () => {
-      // uncomment below and update the code to test the property recommendedItemLink
-      // var instane = new ShopApi.RecommendationModel()
-      // expect(instance).to.be();
-        })
-
-        it('should have the property shortDescription (base name: "short_description")', () => {
-      // uncomment below and update the code to test the property shortDescription
-      // var instane = new ShopApi.RecommendationModel()
-      // expect(instance).to.be();
-        })
-
+describe('RecommendationModel', () => {
+    it('should create an instance of RecommendationModel', () => {
+        // uncomment below and update the code to test RecommendationModel
+        // var instane = new ShopApi.Recommendation()
+        // expect(instance).to.be.a(ShopApi.Recommendation);
     })
 
-}))
+    it('should have the property calloutMsg (base name: "callout_msg")', () => {
+        // uncomment below and update the code to test the property calloutMsg
+        // var instane = new ShopApi.Recommendation()
+        // expect(instance).to.be();
+    })
+
+    it('should have the property image (base name: "image")', () => {
+        // uncomment below and update the code to test the property image
+        // var instane = new ShopApi.Recommendation()
+        // expect(instance).to.be();
+    })
+
+    it('should have the property longDescription (base name: "long_description")', () => {
+        // uncomment below and update the code to test the property longDescription
+        // var instane = new ShopApi.Recommendation()
+        // expect(instance).to.be();
+    })
+
+    it('should have the property name (base name: "name")', () => {
+        // uncomment below and update the code to test the property name
+        // var instane = new ShopApi.Recommendation()
+        // expect(instance).to.be();
+    })
+
+    it('should have the property recommendationType (base name: "recommendation_type")', () => {
+        // uncomment below and update the code to test the property recommendationType
+        // var instane = new ShopApi.Recommendation()
+        // expect(instance).to.be();
+    })
+
+    it('should have the property recommendedItemId (base name: "recommended_item_id")', () => {
+        // uncomment below and update the code to test the property recommendedItemId
+        // var instane = new ShopApi.Recommendation()
+        // expect(instance).to.be();
+    })
+
+    it('should have the property recommendedItemLink (base name: "recommended_item_link")', () => {
+        // uncomment below and update the code to test the property recommendedItemLink
+        // var instane = new ShopApi.Recommendation()
+        // expect(instance).to.be();
+    })
+
+    it('should have the property shortDescription (base name: "short_description")', () => {
+        // uncomment below and update the code to test the property shortDescription
+        // var instane = new ShopApi.Recommendation()
+        // expect(instance).to.be();
+    })
+
+})

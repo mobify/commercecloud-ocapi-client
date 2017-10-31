@@ -15,79 +15,74 @@
  *
  */
 
-(function(root, factory) {
-    if (typeof define === 'function' && define.amd) {
-    // AMD.
-        define(['expect.js', '../../src/index'], factory)
-    } else if (typeof module === 'object' && module.exports) {
-    // CommonJS-like environments that support module.exports, like Node.
-        factory(require('expect.js'), require('../../src/index'))
-    } else {
-    // Browser globals (root is window)
-        factory(root.expect, root.ShopApi)
-    }
-}(this, (expect, ShopApi) => {
-    'use strict'
+import expect from 'expect.js'
+import ShopApi from '../../src/index'
 
-    let instance
+let instance
 
-    beforeEach(() => {
-        instance = new ShopApi.StoreResultModel()
-    })
+beforeEach(() => {
+    instance = new ShopApi.StoreResult()
+})
 
-    const getProperty = (object, getter, property) => {
+const getProperty = (object, getter, property) => {
     // Use getter method if present; otherwise, get the property directly.
-        if (typeof object[getter] === 'function') { return object[getter]() } else { return object[property] }
+    if (typeof object[getter] === 'function') {
+        return object[getter]()
+    } else {
+        return object[property]
     }
+}
 
-    const setProperty = (object, setter, property, value) => {
+const setProperty = (object, setter, property, value) => {
     // Use setter method if present; otherwise, set the property directly.
-        if (typeof object[setter] === 'function') { object[setter](value) } else { object[property] = value }
+    if (typeof object[setter] === 'function') {
+        object[setter](value)
+    } else {
+        object[property] = value
     }
+}
 
-    describe('StoreResultModel', () => {
-        it('should create an instance of StoreResultModel', () => {
-      // uncomment below and update the code to test StoreResultModel
-      // var instane = new ShopApi.StoreResultModel()
-      // expect(instance).to.be.a(ShopApi.StoreResultModel);
-        })
-
-        it('should have the property count (base name: "count")', () => {
-      // uncomment below and update the code to test the property count
-      // var instane = new ShopApi.StoreResultModel()
-      // expect(instance).to.be();
-        })
-
-        it('should have the property data (base name: "data")', () => {
-      // uncomment below and update the code to test the property data
-      // var instane = new ShopApi.StoreResultModel()
-      // expect(instance).to.be();
-        })
-
-        it('should have the property next (base name: "next")', () => {
-      // uncomment below and update the code to test the property next
-      // var instane = new ShopApi.StoreResultModel()
-      // expect(instance).to.be();
-        })
-
-        it('should have the property previous (base name: "previous")', () => {
-      // uncomment below and update the code to test the property previous
-      // var instane = new ShopApi.StoreResultModel()
-      // expect(instance).to.be();
-        })
-
-        it('should have the property start (base name: "start")', () => {
-      // uncomment below and update the code to test the property start
-      // var instane = new ShopApi.StoreResultModel()
-      // expect(instance).to.be();
-        })
-
-        it('should have the property total (base name: "total")', () => {
-      // uncomment below and update the code to test the property total
-      // var instane = new ShopApi.StoreResultModel()
-      // expect(instance).to.be();
-        })
-
+describe('StoreResultModel', () => {
+    it('should create an instance of StoreResultModel', () => {
+        // uncomment below and update the code to test StoreResultModel
+        // var instane = new ShopApi.StoreResult()
+        // expect(instance).to.be.a(ShopApi.StoreResult);
     })
 
-}))
+    it('should have the property count (base name: "count")', () => {
+        // uncomment below and update the code to test the property count
+        // var instane = new ShopApi.StoreResult()
+        // expect(instance).to.be();
+    })
+
+    it('should have the property data (base name: "data")', () => {
+        // uncomment below and update the code to test the property data
+        // var instane = new ShopApi.StoreResult()
+        // expect(instance).to.be();
+    })
+
+    it('should have the property next (base name: "next")', () => {
+        // uncomment below and update the code to test the property next
+        // var instane = new ShopApi.StoreResult()
+        // expect(instance).to.be();
+    })
+
+    it('should have the property previous (base name: "previous")', () => {
+        // uncomment below and update the code to test the property previous
+        // var instane = new ShopApi.StoreResult()
+        // expect(instance).to.be();
+    })
+
+    it('should have the property start (base name: "start")', () => {
+        // uncomment below and update the code to test the property start
+        // var instane = new ShopApi.StoreResult()
+        // expect(instance).to.be();
+    })
+
+    it('should have the property total (base name: "total")', () => {
+        // uncomment below and update the code to test the property total
+        // var instane = new ShopApi.StoreResult()
+        // expect(instance).to.be();
+    })
+
+})

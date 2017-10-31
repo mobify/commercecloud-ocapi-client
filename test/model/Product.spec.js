@@ -15,601 +15,596 @@
  *
  */
 
-(function(root, factory) {
-    if (typeof define === 'function' && define.amd) {
-    // AMD.
-        define(['expect.js', '../../src/index'], factory)
-    } else if (typeof module === 'object' && module.exports) {
-    // CommonJS-like environments that support module.exports, like Node.
-        factory(require('expect.js'), require('../../src/index'))
-    } else {
-    // Browser globals (root is window)
-        factory(root.expect, root.ShopApi)
-    }
-}(this, (expect, ShopApi) => {
-    'use strict'
+import expect from 'expect.js'
+import ShopApi from '../../src/index'
 
-    let instance
+let instance
 
-    beforeEach(() => {
-        instance = new ShopApi.ProductModel()
-    })
+beforeEach(() => {
+    instance = new ShopApi.Product()
+})
 
-    const getProperty = (object, getter, property) => {
+const getProperty = (object, getter, property) => {
     // Use getter method if present; otherwise, get the property directly.
-        if (typeof object[getter] === 'function') { return object[getter]() } else { return object[property] }
+    if (typeof object[getter] === 'function') {
+        return object[getter]()
+    } else {
+        return object[property]
     }
+}
 
-    const setProperty = (object, setter, property, value) => {
+const setProperty = (object, setter, property, value) => {
     // Use setter method if present; otherwise, set the property directly.
-        if (typeof object[setter] === 'function') { object[setter](value) } else { object[property] = value }
+    if (typeof object[setter] === 'function') {
+        object[setter](value)
+    } else {
+        object[property] = value
     }
-
-    describe('ProductModel', () => {
-        it('should create an instance of ProductModel', () => {
-      // uncomment below and update the code to test ProductModel
-      // var instane = new ShopApi.ProductModel()
-      // expect(instance).to.be.a(ShopApi.ProductModel);
-        })
-
-        it('should have the property brand (base name: "brand")', () => {
-      // uncomment below and update the code to test the property brand
-      // var instane = new ShopApi.ProductModel()
-      // expect(instance).to.be();
-        })
-
-        it('should have the property bundledProducts (base name: "bundled_products")', () => {
-      // uncomment below and update the code to test the property bundledProducts
-      // var instane = new ShopApi.ProductModel()
-      // expect(instance).to.be();
-        })
-
-        it('should have the property cAvailableForInStorePickup (base name: "c_availableForInStorePickup")', () => {
-      // uncomment below and update the code to test the property cAvailableForInStorePickup
-      // var instane = new ShopApi.ProductModel()
-      // expect(instance).to.be();
-        })
-
-        it('should have the property cBatteryLife (base name: "c_batteryLife")', () => {
-      // uncomment below and update the code to test the property cBatteryLife
-      // var instane = new ShopApi.ProductModel()
-      // expect(instance).to.be();
-        })
-
-        it('should have the property cBatteryType (base name: "c_batteryType")', () => {
-      // uncomment below and update the code to test the property cBatteryType
-      // var instane = new ShopApi.ProductModel()
-      // expect(instance).to.be();
-        })
-
-        it('should have the property cBootType (base name: "c_bootType")', () => {
-      // uncomment below and update the code to test the property cBootType
-      // var instane = new ShopApi.ProductModel()
-      // expect(instance).to.be();
-        })
-
-        it('should have the property cBottomType (base name: "c_bottomType")', () => {
-      // uncomment below and update the code to test the property cBottomType
-      // var instane = new ShopApi.ProductModel()
-      // expect(instance).to.be();
-        })
-
-        it('should have the property cColor (base name: "c_color")', () => {
-      // uncomment below and update the code to test the property cColor
-      // var instane = new ShopApi.ProductModel()
-      // expect(instance).to.be();
-        })
-
-        it('should have the property cConsoleWarranty (base name: "c_consoleWarranty")', () => {
-      // uncomment below and update the code to test the property cConsoleWarranty
-      // var instane = new ShopApi.ProductModel()
-      // expect(instance).to.be();
-        })
-
-        it('should have the property cCustomCSSFile (base name: "c_customCSSFile")', () => {
-      // uncomment below and update the code to test the property cCustomCSSFile
-      // var instane = new ShopApi.ProductModel()
-      // expect(instance).to.be();
-        })
-
-        it('should have the property cDigitalCameraFeatures (base name: "c_digitalCameraFeatures")', () => {
-      // uncomment below and update the code to test the property cDigitalCameraFeatures
-      // var instane = new ShopApi.ProductModel()
-      // expect(instance).to.be();
-        })
-
-        it('should have the property cDigitalCameraPixels (base name: "c_digitalCameraPixels")', () => {
-      // uncomment below and update the code to test the property cDigitalCameraPixels
-      // var instane = new ShopApi.ProductModel()
-      // expect(instance).to.be();
-        })
-
-        it('should have the property cDigitalCameraType (base name: "c_digitalCameraType")', () => {
-      // uncomment below and update the code to test the property cDigitalCameraType
-      // var instane = new ShopApi.ProductModel()
-      // expect(instance).to.be();
-        })
-
-        it('should have the property cDigitalCameraWarranty (base name: "c_digitalCameraWarranty")', () => {
-      // uncomment below and update the code to test the property cDigitalCameraWarranty
-      // var instane = new ShopApi.ProductModel()
-      // expect(instance).to.be();
-        })
-
-        it('should have the property cDimDepth (base name: "c_dimDepth")', () => {
-      // uncomment below and update the code to test the property cDimDepth
-      // var instane = new ShopApi.ProductModel()
-      // expect(instance).to.be();
-        })
-
-        it('should have the property cDimHeight (base name: "c_dimHeight")', () => {
-      // uncomment below and update the code to test the property cDimHeight
-      // var instane = new ShopApi.ProductModel()
-      // expect(instance).to.be();
-        })
-
-        it('should have the property cDimWeight (base name: "c_dimWeight")', () => {
-      // uncomment below and update the code to test the property cDimWeight
-      // var instane = new ShopApi.ProductModel()
-      // expect(instance).to.be();
-        })
-
-        it('should have the property cDimWidth (base name: "c_dimWidth")', () => {
-      // uncomment below and update the code to test the property cDimWidth
-      // var instane = new ShopApi.ProductModel()
-      // expect(instance).to.be();
-        })
-
-        it('should have the property cDisplaySize (base name: "c_displaySize")', () => {
-      // uncomment below and update the code to test the property cDisplaySize
-      // var instane = new ShopApi.ProductModel()
-      // expect(instance).to.be();
-        })
-
-        it('should have the property cGameGenre (base name: "c_gameGenre")', () => {
-      // uncomment below and update the code to test the property cGameGenre
-      // var instane = new ShopApi.ProductModel()
-      // expect(instance).to.be();
-        })
-
-        it('should have the property cGameRating (base name: "c_gameRating")', () => {
-      // uncomment below and update the code to test the property cGameRating
-      // var instane = new ShopApi.ProductModel()
-      // expect(instance).to.be();
-        })
-
-        it('should have the property cGameSystemType (base name: "c_gameSystemType")', () => {
-      // uncomment below and update the code to test the property cGameSystemType
-      // var instane = new ShopApi.ProductModel()
-      // expect(instance).to.be();
-        })
-
-        it('should have the property cGpsFeatures (base name: "c_gpsFeatures")', () => {
-      // uncomment below and update the code to test the property cGpsFeatures
-      // var instane = new ShopApi.ProductModel()
-      // expect(instance).to.be();
-        })
-
-        it('should have the property cGpsType (base name: "c_gpsType")', () => {
-      // uncomment below and update the code to test the property cGpsType
-      // var instane = new ShopApi.ProductModel()
-      // expect(instance).to.be();
-        })
-
-        it('should have the property cGpsWarranty (base name: "c_gpsWarranty")', () => {
-      // uncomment below and update the code to test the property cGpsWarranty
-      // var instane = new ShopApi.ProductModel()
-      // expect(instance).to.be();
-        })
-
-        it('should have the property cImageAspectRatio (base name: "c_imageAspectRatio")', () => {
-      // uncomment below and update the code to test the property cImageAspectRatio
-      // var instane = new ShopApi.ProductModel()
-      // expect(instance).to.be();
-        })
-
-        it('should have the property cIsNew (base name: "c_isNew")', () => {
-      // uncomment below and update the code to test the property cIsNew
-      // var instane = new ShopApi.ProductModel()
-      // expect(instance).to.be();
-        })
-
-        it('should have the property cIsNewtest (base name: "c_isNewtest")', () => {
-      // uncomment below and update the code to test the property cIsNewtest
-      // var instane = new ShopApi.ProductModel()
-      // expect(instance).to.be();
-        })
-
-        it('should have the property cIsSale (base name: "c_isSale")', () => {
-      // uncomment below and update the code to test the property cIsSale
-      // var instane = new ShopApi.ProductModel()
-      // expect(instance).to.be();
-        })
-
-        it('should have the property cKidsAge (base name: "c_kidsAge")', () => {
-      // uncomment below and update the code to test the property cKidsAge
-      // var instane = new ShopApi.ProductModel()
-      // expect(instance).to.be();
-        })
-
-        it('should have the property cLength (base name: "c_length")', () => {
-      // uncomment below and update the code to test the property cLength
-      // var instane = new ShopApi.ProductModel()
-      // expect(instance).to.be();
-        })
-
-        it('should have the property cLensAperture (base name: "c_lensAperture")', () => {
-      // uncomment below and update the code to test the property cLensAperture
-      // var instane = new ShopApi.ProductModel()
-      // expect(instance).to.be();
-        })
-
-        it('should have the property cMaterialTest (base name: "c_materialTest")', () => {
-      // uncomment below and update the code to test the property cMaterialTest
-      // var instane = new ShopApi.ProductModel()
-      // expect(instance).to.be();
-        })
-
-        it('should have the property cMediaFormat (base name: "c_mediaFormat")', () => {
-      // uncomment below and update the code to test the property cMediaFormat
-      // var instane = new ShopApi.ProductModel()
-      // expect(instance).to.be();
-        })
-
-        it('should have the property cMemorySize (base name: "c_memorySize")', () => {
-      // uncomment below and update the code to test the property cMemorySize
-      // var instane = new ShopApi.ProductModel()
-      // expect(instance).to.be();
-        })
-
-        it('should have the property cMemoryType (base name: "c_memoryType")', () => {
-      // uncomment below and update the code to test the property cMemoryType
-      // var instane = new ShopApi.ProductModel()
-      // expect(instance).to.be();
-        })
-
-        it('should have the property cMusicStorage (base name: "c_musicStorage")', () => {
-      // uncomment below and update the code to test the property cMusicStorage
-      // var instane = new ShopApi.ProductModel()
-      // expect(instance).to.be();
-        })
-
-        it('should have the property cOpticalZoom (base name: "c_opticalZoom")', () => {
-      // uncomment below and update the code to test the property cOpticalZoom
-      // var instane = new ShopApi.ProductModel()
-      // expect(instance).to.be();
-        })
-
-        it('should have the property cOuterwearType (base name: "c_outerwearType")', () => {
-      // uncomment below and update the code to test the property cOuterwearType
-      // var instane = new ShopApi.ProductModel()
-      // expect(instance).to.be();
-        })
-
-        it('should have the property cPortableAudioType (base name: "c_portableAudioType")', () => {
-      // uncomment below and update the code to test the property cPortableAudioType
-      // var instane = new ShopApi.ProductModel()
-      // expect(instance).to.be();
-        })
-
-        it('should have the property cRefinementColor (base name: "c_refinementColor")', () => {
-      // uncomment below and update the code to test the property cRefinementColor
-      // var instane = new ShopApi.ProductModel()
-      // expect(instance).to.be();
-        })
-
-        it('should have the property cResolution (base name: "c_resolution")', () => {
-      // uncomment below and update the code to test the property cResolution
-      // var instane = new ShopApi.ProductModel()
-      // expect(instance).to.be();
-        })
-
-        it('should have the property cSandalType (base name: "c_sandalType")', () => {
-      // uncomment below and update the code to test the property cSandalType
-      // var instane = new ShopApi.ProductModel()
-      // expect(instance).to.be();
-        })
-
-        it('should have the property cSheets (base name: "c_sheets")', () => {
-      // uncomment below and update the code to test the property cSheets
-      // var instane = new ShopApi.ProductModel()
-      // expect(instance).to.be();
-        })
-
-        it('should have the property cShoeType (base name: "c_shoeType")', () => {
-      // uncomment below and update the code to test the property cShoeType
-      // var instane = new ShopApi.ProductModel()
-      // expect(instance).to.be();
-        })
-
-        it('should have the property cSize (base name: "c_size")', () => {
-      // uncomment below and update the code to test the property cSize
-      // var instane = new ShopApi.ProductModel()
-      // expect(instance).to.be();
-        })
-
-        it('should have the property cSkinConcern (base name: "c_skinConcern")', () => {
-      // uncomment below and update the code to test the property cSkinConcern
-      // var instane = new ShopApi.ProductModel()
-      // expect(instance).to.be();
-        })
-
-        it('should have the property cStyleNumber (base name: "c_styleNumber")', () => {
-      // uncomment below and update the code to test the property cStyleNumber
-      // var instane = new ShopApi.ProductModel()
-      // expect(instance).to.be();
-        })
-
-        it('should have the property cTabDescription (base name: "c_tabDescription")', () => {
-      // uncomment below and update the code to test the property cTabDescription
-      // var instane = new ShopApi.ProductModel()
-      // expect(instance).to.be();
-        })
-
-        it('should have the property cTabDetails (base name: "c_tabDetails")', () => {
-      // uncomment below and update the code to test the property cTabDetails
-      // var instane = new ShopApi.ProductModel()
-      // expect(instance).to.be();
-        })
-
-        it('should have the property cTest (base name: "c_test")', () => {
-      // uncomment below and update the code to test the property cTest
-      // var instane = new ShopApi.ProductModel()
-      // expect(instance).to.be();
-        })
-
-        it('should have the property cTopType (base name: "c_topType")', () => {
-      // uncomment below and update the code to test the property cTopType
-      // var instane = new ShopApi.ProductModel()
-      // expect(instance).to.be();
-        })
-
-        it('should have the property cTvSignalFormat (base name: "c_tvSignalFormat")', () => {
-      // uncomment below and update the code to test the property cTvSignalFormat
-      // var instane = new ShopApi.ProductModel()
-      // expect(instance).to.be();
-        })
-
-        it('should have the property cTvSize (base name: "c_tvSize")', () => {
-      // uncomment below and update the code to test the property cTvSize
-      // var instane = new ShopApi.ProductModel()
-      // expect(instance).to.be();
-        })
-
-        it('should have the property cTvType (base name: "c_tvType")', () => {
-      // uncomment below and update the code to test the property cTvType
-      // var instane = new ShopApi.ProductModel()
-      // expect(instance).to.be();
-        })
-
-        it('should have the property cTvWarranty (base name: "c_tvWarranty")', () => {
-      // uncomment below and update the code to test the property cTvWarranty
-      // var instane = new ShopApi.ProductModel()
-      // expect(instance).to.be();
-        })
-
-        it('should have the property cVideoStorage (base name: "c_videoStorage")', () => {
-      // uncomment below and update the code to test the property cVideoStorage
-      // var instane = new ShopApi.ProductModel()
-      // expect(instance).to.be();
-        })
-
-        it('should have the property cWaist (base name: "c_waist")', () => {
-      // uncomment below and update the code to test the property cWaist
-      // var instane = new ShopApi.ProductModel()
-      // expect(instance).to.be();
-        })
-
-        it('should have the property cWidth (base name: "c_width")', () => {
-      // uncomment below and update the code to test the property cWidth
-      // var instane = new ShopApi.ProductModel()
-      // expect(instance).to.be();
-        })
-
-        it('should have the property currency (base name: "currency")', () => {
-      // uncomment below and update the code to test the property currency
-      // var instane = new ShopApi.ProductModel()
-      // expect(instance).to.be();
-        })
-
-        it('should have the property ean (base name: "ean")', () => {
-      // uncomment below and update the code to test the property ean
-      // var instane = new ShopApi.ProductModel()
-      // expect(instance).to.be();
-        })
-
-        it('should have the property fetchDate (base name: "fetch_date")', () => {
-      // uncomment below and update the code to test the property fetchDate
-      // var instane = new ShopApi.ProductModel()
-      // expect(instance).to.be();
-        })
-
-        it('should have the property id (base name: "id")', () => {
-      // uncomment below and update the code to test the property id
-      // var instane = new ShopApi.ProductModel()
-      // expect(instance).to.be();
-        })
-
-        it('should have the property imageGroups (base name: "image_groups")', () => {
-      // uncomment below and update the code to test the property imageGroups
-      // var instane = new ShopApi.ProductModel()
-      // expect(instance).to.be();
-        })
-
-        it('should have the property inventories (base name: "inventories")', () => {
-      // uncomment below and update the code to test the property inventories
-      // var instane = new ShopApi.ProductModel()
-      // expect(instance).to.be();
-        })
-
-        it('should have the property inventory (base name: "inventory")', () => {
-      // uncomment below and update the code to test the property inventory
-      // var instane = new ShopApi.ProductModel()
-      // expect(instance).to.be();
-        })
-
-        it('should have the property longDescription (base name: "long_description")', () => {
-      // uncomment below and update the code to test the property longDescription
-      // var instane = new ShopApi.ProductModel()
-      // expect(instance).to.be();
-        })
-
-        it('should have the property manufacturerName (base name: "manufacturer_name")', () => {
-      // uncomment below and update the code to test the property manufacturerName
-      // var instane = new ShopApi.ProductModel()
-      // expect(instance).to.be();
-        })
-
-        it('should have the property manufacturerSku (base name: "manufacturer_sku")', () => {
-      // uncomment below and update the code to test the property manufacturerSku
-      // var instane = new ShopApi.ProductModel()
-      // expect(instance).to.be();
-        })
-
-        it('should have the property master (base name: "master")', () => {
-      // uncomment below and update the code to test the property master
-      // var instane = new ShopApi.ProductModel()
-      // expect(instance).to.be();
-        })
-
-        it('should have the property minOrderQuantity (base name: "min_order_quantity")', () => {
-      // uncomment below and update the code to test the property minOrderQuantity
-      // var instane = new ShopApi.ProductModel()
-      // expect(instance).to.be();
-        })
-
-        it('should have the property name (base name: "name")', () => {
-      // uncomment below and update the code to test the property name
-      // var instane = new ShopApi.ProductModel()
-      // expect(instance).to.be();
-        })
-
-        it('should have the property options (base name: "options")', () => {
-      // uncomment below and update the code to test the property options
-      // var instane = new ShopApi.ProductModel()
-      // expect(instance).to.be();
-        })
-
-        it('should have the property pageDescription (base name: "page_description")', () => {
-      // uncomment below and update the code to test the property pageDescription
-      // var instane = new ShopApi.ProductModel()
-      // expect(instance).to.be();
-        })
-
-        it('should have the property pageKeywords (base name: "page_keywords")', () => {
-      // uncomment below and update the code to test the property pageKeywords
-      // var instane = new ShopApi.ProductModel()
-      // expect(instance).to.be();
-        })
-
-        it('should have the property pageTitle (base name: "page_title")', () => {
-      // uncomment below and update the code to test the property pageTitle
-      // var instane = new ShopApi.ProductModel()
-      // expect(instance).to.be();
-        })
-
-        it('should have the property price (base name: "price")', () => {
-      // uncomment below and update the code to test the property price
-      // var instane = new ShopApi.ProductModel()
-      // expect(instance).to.be();
-        })
-
-        it('should have the property priceMax (base name: "price_max")', () => {
-      // uncomment below and update the code to test the property priceMax
-      // var instane = new ShopApi.ProductModel()
-      // expect(instance).to.be();
-        })
-
-        it('should have the property prices (base name: "prices")', () => {
-      // uncomment below and update the code to test the property prices
-      // var instane = new ShopApi.ProductModel()
-      // expect(instance).to.be();
-        })
-
-        it('should have the property primaryCategoryId (base name: "primary_category_id")', () => {
-      // uncomment below and update the code to test the property primaryCategoryId
-      // var instane = new ShopApi.ProductModel()
-      // expect(instance).to.be();
-        })
-
-        it('should have the property productLinks (base name: "product_links")', () => {
-      // uncomment below and update the code to test the property productLinks
-      // var instane = new ShopApi.ProductModel()
-      // expect(instance).to.be();
-        })
-
-        it('should have the property productPromotions (base name: "product_promotions")', () => {
-      // uncomment below and update the code to test the property productPromotions
-      // var instane = new ShopApi.ProductModel()
-      // expect(instance).to.be();
-        })
-
-        it('should have the property recommendations (base name: "recommendations")', () => {
-      // uncomment below and update the code to test the property recommendations
-      // var instane = new ShopApi.ProductModel()
-      // expect(instance).to.be();
-        })
-
-        it('should have the property setProducts (base name: "set_products")', () => {
-      // uncomment below and update the code to test the property setProducts
-      // var instane = new ShopApi.ProductModel()
-      // expect(instance).to.be();
-        })
-
-        it('should have the property shortDescription (base name: "short_description")', () => {
-      // uncomment below and update the code to test the property shortDescription
-      // var instane = new ShopApi.ProductModel()
-      // expect(instance).to.be();
-        })
-
-        it('should have the property stepQuantity (base name: "step_quantity")', () => {
-      // uncomment below and update the code to test the property stepQuantity
-      // var instane = new ShopApi.ProductModel()
-      // expect(instance).to.be();
-        })
-
-        it('should have the property type (base name: "type")', () => {
-      // uncomment below and update the code to test the property type
-      // var instane = new ShopApi.ProductModel()
-      // expect(instance).to.be();
-        })
-
-        it('should have the property unit (base name: "unit")', () => {
-      // uncomment below and update the code to test the property unit
-      // var instane = new ShopApi.ProductModel()
-      // expect(instance).to.be();
-        })
-
-        it('should have the property upc (base name: "upc")', () => {
-      // uncomment below and update the code to test the property upc
-      // var instane = new ShopApi.ProductModel()
-      // expect(instance).to.be();
-        })
-
-        it('should have the property variants (base name: "variants")', () => {
-      // uncomment below and update the code to test the property variants
-      // var instane = new ShopApi.ProductModel()
-      // expect(instance).to.be();
-        })
-
-        it('should have the property variationAttributes (base name: "variation_attributes")', () => {
-      // uncomment below and update the code to test the property variationAttributes
-      // var instane = new ShopApi.ProductModel()
-      // expect(instance).to.be();
-        })
-
-        it('should have the property variationGroups (base name: "variation_groups")', () => {
-      // uncomment below and update the code to test the property variationGroups
-      // var instane = new ShopApi.ProductModel()
-      // expect(instance).to.be();
-        })
-
-        it('should have the property variationValues (base name: "variation_values")', () => {
-      // uncomment below and update the code to test the property variationValues
-      // var instane = new ShopApi.ProductModel()
-      // expect(instance).to.be();
-        })
-
+}
+
+describe('ProductModel', () => {
+    it('should create an instance of ProductModel', () => {
+        // uncomment below and update the code to test ProductModel
+        // var instane = new ShopApi.Product()
+        // expect(instance).to.be.a(ShopApi.Product);
     })
 
-}))
+    it('should have the property brand (base name: "brand")', () => {
+        // uncomment below and update the code to test the property brand
+        // var instane = new ShopApi.Product()
+        // expect(instance).to.be();
+    })
+
+    it('should have the property bundledProducts (base name: "bundled_products")', () => {
+        // uncomment below and update the code to test the property bundledProducts
+        // var instane = new ShopApi.Product()
+        // expect(instance).to.be();
+    })
+
+    it('should have the property cAvailableForInStorePickup (base name: "c_availableForInStorePickup")', () => {
+        // uncomment below and update the code to test the property cAvailableForInStorePickup
+        // var instane = new ShopApi.Product()
+        // expect(instance).to.be();
+    })
+
+    it('should have the property cBatteryLife (base name: "c_batteryLife")', () => {
+        // uncomment below and update the code to test the property cBatteryLife
+        // var instane = new ShopApi.Product()
+        // expect(instance).to.be();
+    })
+
+    it('should have the property cBatteryType (base name: "c_batteryType")', () => {
+        // uncomment below and update the code to test the property cBatteryType
+        // var instane = new ShopApi.Product()
+        // expect(instance).to.be();
+    })
+
+    it('should have the property cBootType (base name: "c_bootType")', () => {
+        // uncomment below and update the code to test the property cBootType
+        // var instane = new ShopApi.Product()
+        // expect(instance).to.be();
+    })
+
+    it('should have the property cBottomType (base name: "c_bottomType")', () => {
+        // uncomment below and update the code to test the property cBottomType
+        // var instane = new ShopApi.Product()
+        // expect(instance).to.be();
+    })
+
+    it('should have the property cColor (base name: "c_color")', () => {
+        // uncomment below and update the code to test the property cColor
+        // var instane = new ShopApi.Product()
+        // expect(instance).to.be();
+    })
+
+    it('should have the property cConsoleWarranty (base name: "c_consoleWarranty")', () => {
+        // uncomment below and update the code to test the property cConsoleWarranty
+        // var instane = new ShopApi.Product()
+        // expect(instance).to.be();
+    })
+
+    it('should have the property cCustomCSSFile (base name: "c_customCSSFile")', () => {
+        // uncomment below and update the code to test the property cCustomCSSFile
+        // var instane = new ShopApi.Product()
+        // expect(instance).to.be();
+    })
+
+    it('should have the property cDigitalCameraFeatures (base name: "c_digitalCameraFeatures")', () => {
+        // uncomment below and update the code to test the property cDigitalCameraFeatures
+        // var instane = new ShopApi.Product()
+        // expect(instance).to.be();
+    })
+
+    it('should have the property cDigitalCameraPixels (base name: "c_digitalCameraPixels")', () => {
+        // uncomment below and update the code to test the property cDigitalCameraPixels
+        // var instane = new ShopApi.Product()
+        // expect(instance).to.be();
+    })
+
+    it('should have the property cDigitalCameraType (base name: "c_digitalCameraType")', () => {
+        // uncomment below and update the code to test the property cDigitalCameraType
+        // var instane = new ShopApi.Product()
+        // expect(instance).to.be();
+    })
+
+    it('should have the property cDigitalCameraWarranty (base name: "c_digitalCameraWarranty")', () => {
+        // uncomment below and update the code to test the property cDigitalCameraWarranty
+        // var instane = new ShopApi.Product()
+        // expect(instance).to.be();
+    })
+
+    it('should have the property cDimDepth (base name: "c_dimDepth")', () => {
+        // uncomment below and update the code to test the property cDimDepth
+        // var instane = new ShopApi.Product()
+        // expect(instance).to.be();
+    })
+
+    it('should have the property cDimHeight (base name: "c_dimHeight")', () => {
+        // uncomment below and update the code to test the property cDimHeight
+        // var instane = new ShopApi.Product()
+        // expect(instance).to.be();
+    })
+
+    it('should have the property cDimWeight (base name: "c_dimWeight")', () => {
+        // uncomment below and update the code to test the property cDimWeight
+        // var instane = new ShopApi.Product()
+        // expect(instance).to.be();
+    })
+
+    it('should have the property cDimWidth (base name: "c_dimWidth")', () => {
+        // uncomment below and update the code to test the property cDimWidth
+        // var instane = new ShopApi.Product()
+        // expect(instance).to.be();
+    })
+
+    it('should have the property cDisplaySize (base name: "c_displaySize")', () => {
+        // uncomment below and update the code to test the property cDisplaySize
+        // var instane = new ShopApi.Product()
+        // expect(instance).to.be();
+    })
+
+    it('should have the property cGameGenre (base name: "c_gameGenre")', () => {
+        // uncomment below and update the code to test the property cGameGenre
+        // var instane = new ShopApi.Product()
+        // expect(instance).to.be();
+    })
+
+    it('should have the property cGameRating (base name: "c_gameRating")', () => {
+        // uncomment below and update the code to test the property cGameRating
+        // var instane = new ShopApi.Product()
+        // expect(instance).to.be();
+    })
+
+    it('should have the property cGameSystemType (base name: "c_gameSystemType")', () => {
+        // uncomment below and update the code to test the property cGameSystemType
+        // var instane = new ShopApi.Product()
+        // expect(instance).to.be();
+    })
+
+    it('should have the property cGpsFeatures (base name: "c_gpsFeatures")', () => {
+        // uncomment below and update the code to test the property cGpsFeatures
+        // var instane = new ShopApi.Product()
+        // expect(instance).to.be();
+    })
+
+    it('should have the property cGpsType (base name: "c_gpsType")', () => {
+        // uncomment below and update the code to test the property cGpsType
+        // var instane = new ShopApi.Product()
+        // expect(instance).to.be();
+    })
+
+    it('should have the property cGpsWarranty (base name: "c_gpsWarranty")', () => {
+        // uncomment below and update the code to test the property cGpsWarranty
+        // var instane = new ShopApi.Product()
+        // expect(instance).to.be();
+    })
+
+    it('should have the property cImageAspectRatio (base name: "c_imageAspectRatio")', () => {
+        // uncomment below and update the code to test the property cImageAspectRatio
+        // var instane = new ShopApi.Product()
+        // expect(instance).to.be();
+    })
+
+    it('should have the property cIsNew (base name: "c_isNew")', () => {
+        // uncomment below and update the code to test the property cIsNew
+        // var instane = new ShopApi.Product()
+        // expect(instance).to.be();
+    })
+
+    it('should have the property cIsNewtest (base name: "c_isNewtest")', () => {
+        // uncomment below and update the code to test the property cIsNewtest
+        // var instane = new ShopApi.Product()
+        // expect(instance).to.be();
+    })
+
+    it('should have the property cIsSale (base name: "c_isSale")', () => {
+        // uncomment below and update the code to test the property cIsSale
+        // var instane = new ShopApi.Product()
+        // expect(instance).to.be();
+    })
+
+    it('should have the property cKidsAge (base name: "c_kidsAge")', () => {
+        // uncomment below and update the code to test the property cKidsAge
+        // var instane = new ShopApi.Product()
+        // expect(instance).to.be();
+    })
+
+    it('should have the property cLength (base name: "c_length")', () => {
+        // uncomment below and update the code to test the property cLength
+        // var instane = new ShopApi.Product()
+        // expect(instance).to.be();
+    })
+
+    it('should have the property cLensAperture (base name: "c_lensAperture")', () => {
+        // uncomment below and update the code to test the property cLensAperture
+        // var instane = new ShopApi.Product()
+        // expect(instance).to.be();
+    })
+
+    it('should have the property cMaterialTest (base name: "c_materialTest")', () => {
+        // uncomment below and update the code to test the property cMaterialTest
+        // var instane = new ShopApi.Product()
+        // expect(instance).to.be();
+    })
+
+    it('should have the property cMediaFormat (base name: "c_mediaFormat")', () => {
+        // uncomment below and update the code to test the property cMediaFormat
+        // var instane = new ShopApi.Product()
+        // expect(instance).to.be();
+    })
+
+    it('should have the property cMemorySize (base name: "c_memorySize")', () => {
+        // uncomment below and update the code to test the property cMemorySize
+        // var instane = new ShopApi.Product()
+        // expect(instance).to.be();
+    })
+
+    it('should have the property cMemoryType (base name: "c_memoryType")', () => {
+        // uncomment below and update the code to test the property cMemoryType
+        // var instane = new ShopApi.Product()
+        // expect(instance).to.be();
+    })
+
+    it('should have the property cMusicStorage (base name: "c_musicStorage")', () => {
+        // uncomment below and update the code to test the property cMusicStorage
+        // var instane = new ShopApi.Product()
+        // expect(instance).to.be();
+    })
+
+    it('should have the property cOpticalZoom (base name: "c_opticalZoom")', () => {
+        // uncomment below and update the code to test the property cOpticalZoom
+        // var instane = new ShopApi.Product()
+        // expect(instance).to.be();
+    })
+
+    it('should have the property cOuterwearType (base name: "c_outerwearType")', () => {
+        // uncomment below and update the code to test the property cOuterwearType
+        // var instane = new ShopApi.Product()
+        // expect(instance).to.be();
+    })
+
+    it('should have the property cPortableAudioType (base name: "c_portableAudioType")', () => {
+        // uncomment below and update the code to test the property cPortableAudioType
+        // var instane = new ShopApi.Product()
+        // expect(instance).to.be();
+    })
+
+    it('should have the property cRefinementColor (base name: "c_refinementColor")', () => {
+        // uncomment below and update the code to test the property cRefinementColor
+        // var instane = new ShopApi.Product()
+        // expect(instance).to.be();
+    })
+
+    it('should have the property cResolution (base name: "c_resolution")', () => {
+        // uncomment below and update the code to test the property cResolution
+        // var instane = new ShopApi.Product()
+        // expect(instance).to.be();
+    })
+
+    it('should have the property cSandalType (base name: "c_sandalType")', () => {
+        // uncomment below and update the code to test the property cSandalType
+        // var instane = new ShopApi.Product()
+        // expect(instance).to.be();
+    })
+
+    it('should have the property cSheets (base name: "c_sheets")', () => {
+        // uncomment below and update the code to test the property cSheets
+        // var instane = new ShopApi.Product()
+        // expect(instance).to.be();
+    })
+
+    it('should have the property cShoeType (base name: "c_shoeType")', () => {
+        // uncomment below and update the code to test the property cShoeType
+        // var instane = new ShopApi.Product()
+        // expect(instance).to.be();
+    })
+
+    it('should have the property cSize (base name: "c_size")', () => {
+        // uncomment below and update the code to test the property cSize
+        // var instane = new ShopApi.Product()
+        // expect(instance).to.be();
+    })
+
+    it('should have the property cSkinConcern (base name: "c_skinConcern")', () => {
+        // uncomment below and update the code to test the property cSkinConcern
+        // var instane = new ShopApi.Product()
+        // expect(instance).to.be();
+    })
+
+    it('should have the property cStyleNumber (base name: "c_styleNumber")', () => {
+        // uncomment below and update the code to test the property cStyleNumber
+        // var instane = new ShopApi.Product()
+        // expect(instance).to.be();
+    })
+
+    it('should have the property cTabDescription (base name: "c_tabDescription")', () => {
+        // uncomment below and update the code to test the property cTabDescription
+        // var instane = new ShopApi.Product()
+        // expect(instance).to.be();
+    })
+
+    it('should have the property cTabDetails (base name: "c_tabDetails")', () => {
+        // uncomment below and update the code to test the property cTabDetails
+        // var instane = new ShopApi.Product()
+        // expect(instance).to.be();
+    })
+
+    it('should have the property cTest (base name: "c_test")', () => {
+        // uncomment below and update the code to test the property cTest
+        // var instane = new ShopApi.Product()
+        // expect(instance).to.be();
+    })
+
+    it('should have the property cTopType (base name: "c_topType")', () => {
+        // uncomment below and update the code to test the property cTopType
+        // var instane = new ShopApi.Product()
+        // expect(instance).to.be();
+    })
+
+    it('should have the property cTvSignalFormat (base name: "c_tvSignalFormat")', () => {
+        // uncomment below and update the code to test the property cTvSignalFormat
+        // var instane = new ShopApi.Product()
+        // expect(instance).to.be();
+    })
+
+    it('should have the property cTvSize (base name: "c_tvSize")', () => {
+        // uncomment below and update the code to test the property cTvSize
+        // var instane = new ShopApi.Product()
+        // expect(instance).to.be();
+    })
+
+    it('should have the property cTvType (base name: "c_tvType")', () => {
+        // uncomment below and update the code to test the property cTvType
+        // var instane = new ShopApi.Product()
+        // expect(instance).to.be();
+    })
+
+    it('should have the property cTvWarranty (base name: "c_tvWarranty")', () => {
+        // uncomment below and update the code to test the property cTvWarranty
+        // var instane = new ShopApi.Product()
+        // expect(instance).to.be();
+    })
+
+    it('should have the property cVideoStorage (base name: "c_videoStorage")', () => {
+        // uncomment below and update the code to test the property cVideoStorage
+        // var instane = new ShopApi.Product()
+        // expect(instance).to.be();
+    })
+
+    it('should have the property cWaist (base name: "c_waist")', () => {
+        // uncomment below and update the code to test the property cWaist
+        // var instane = new ShopApi.Product()
+        // expect(instance).to.be();
+    })
+
+    it('should have the property cWidth (base name: "c_width")', () => {
+        // uncomment below and update the code to test the property cWidth
+        // var instane = new ShopApi.Product()
+        // expect(instance).to.be();
+    })
+
+    it('should have the property currency (base name: "currency")', () => {
+        // uncomment below and update the code to test the property currency
+        // var instane = new ShopApi.Product()
+        // expect(instance).to.be();
+    })
+
+    it('should have the property ean (base name: "ean")', () => {
+        // uncomment below and update the code to test the property ean
+        // var instane = new ShopApi.Product()
+        // expect(instance).to.be();
+    })
+
+    it('should have the property fetchDate (base name: "fetch_date")', () => {
+        // uncomment below and update the code to test the property fetchDate
+        // var instane = new ShopApi.Product()
+        // expect(instance).to.be();
+    })
+
+    it('should have the property id (base name: "id")', () => {
+        // uncomment below and update the code to test the property id
+        // var instane = new ShopApi.Product()
+        // expect(instance).to.be();
+    })
+
+    it('should have the property imageGroups (base name: "image_groups")', () => {
+        // uncomment below and update the code to test the property imageGroups
+        // var instane = new ShopApi.Product()
+        // expect(instance).to.be();
+    })
+
+    it('should have the property inventories (base name: "inventories")', () => {
+        // uncomment below and update the code to test the property inventories
+        // var instane = new ShopApi.Product()
+        // expect(instance).to.be();
+    })
+
+    it('should have the property inventory (base name: "inventory")', () => {
+        // uncomment below and update the code to test the property inventory
+        // var instane = new ShopApi.Product()
+        // expect(instance).to.be();
+    })
+
+    it('should have the property longDescription (base name: "long_description")', () => {
+        // uncomment below and update the code to test the property longDescription
+        // var instane = new ShopApi.Product()
+        // expect(instance).to.be();
+    })
+
+    it('should have the property manufacturerName (base name: "manufacturer_name")', () => {
+        // uncomment below and update the code to test the property manufacturerName
+        // var instane = new ShopApi.Product()
+        // expect(instance).to.be();
+    })
+
+    it('should have the property manufacturerSku (base name: "manufacturer_sku")', () => {
+        // uncomment below and update the code to test the property manufacturerSku
+        // var instane = new ShopApi.Product()
+        // expect(instance).to.be();
+    })
+
+    it('should have the property master (base name: "master")', () => {
+        // uncomment below and update the code to test the property master
+        // var instane = new ShopApi.Product()
+        // expect(instance).to.be();
+    })
+
+    it('should have the property minOrderQuantity (base name: "min_order_quantity")', () => {
+        // uncomment below and update the code to test the property minOrderQuantity
+        // var instane = new ShopApi.Product()
+        // expect(instance).to.be();
+    })
+
+    it('should have the property name (base name: "name")', () => {
+        // uncomment below and update the code to test the property name
+        // var instane = new ShopApi.Product()
+        // expect(instance).to.be();
+    })
+
+    it('should have the property options (base name: "options")', () => {
+        // uncomment below and update the code to test the property options
+        // var instane = new ShopApi.Product()
+        // expect(instance).to.be();
+    })
+
+    it('should have the property pageDescription (base name: "page_description")', () => {
+        // uncomment below and update the code to test the property pageDescription
+        // var instane = new ShopApi.Product()
+        // expect(instance).to.be();
+    })
+
+    it('should have the property pageKeywords (base name: "page_keywords")', () => {
+        // uncomment below and update the code to test the property pageKeywords
+        // var instane = new ShopApi.Product()
+        // expect(instance).to.be();
+    })
+
+    it('should have the property pageTitle (base name: "page_title")', () => {
+        // uncomment below and update the code to test the property pageTitle
+        // var instane = new ShopApi.Product()
+        // expect(instance).to.be();
+    })
+
+    it('should have the property price (base name: "price")', () => {
+        // uncomment below and update the code to test the property price
+        // var instane = new ShopApi.Product()
+        // expect(instance).to.be();
+    })
+
+    it('should have the property priceMax (base name: "price_max")', () => {
+        // uncomment below and update the code to test the property priceMax
+        // var instane = new ShopApi.Product()
+        // expect(instance).to.be();
+    })
+
+    it('should have the property prices (base name: "prices")', () => {
+        // uncomment below and update the code to test the property prices
+        // var instane = new ShopApi.Product()
+        // expect(instance).to.be();
+    })
+
+    it('should have the property primaryCategoryId (base name: "primary_category_id")', () => {
+        // uncomment below and update the code to test the property primaryCategoryId
+        // var instane = new ShopApi.Product()
+        // expect(instance).to.be();
+    })
+
+    it('should have the property productLinks (base name: "product_links")', () => {
+        // uncomment below and update the code to test the property productLinks
+        // var instane = new ShopApi.Product()
+        // expect(instance).to.be();
+    })
+
+    it('should have the property productPromotions (base name: "product_promotions")', () => {
+        // uncomment below and update the code to test the property productPromotions
+        // var instane = new ShopApi.Product()
+        // expect(instance).to.be();
+    })
+
+    it('should have the property recommendations (base name: "recommendations")', () => {
+        // uncomment below and update the code to test the property recommendations
+        // var instane = new ShopApi.Product()
+        // expect(instance).to.be();
+    })
+
+    it('should have the property setProducts (base name: "set_products")', () => {
+        // uncomment below and update the code to test the property setProducts
+        // var instane = new ShopApi.Product()
+        // expect(instance).to.be();
+    })
+
+    it('should have the property shortDescription (base name: "short_description")', () => {
+        // uncomment below and update the code to test the property shortDescription
+        // var instane = new ShopApi.Product()
+        // expect(instance).to.be();
+    })
+
+    it('should have the property stepQuantity (base name: "step_quantity")', () => {
+        // uncomment below and update the code to test the property stepQuantity
+        // var instane = new ShopApi.Product()
+        // expect(instance).to.be();
+    })
+
+    it('should have the property type (base name: "type")', () => {
+        // uncomment below and update the code to test the property type
+        // var instane = new ShopApi.Product()
+        // expect(instance).to.be();
+    })
+
+    it('should have the property unit (base name: "unit")', () => {
+        // uncomment below and update the code to test the property unit
+        // var instane = new ShopApi.Product()
+        // expect(instance).to.be();
+    })
+
+    it('should have the property upc (base name: "upc")', () => {
+        // uncomment below and update the code to test the property upc
+        // var instane = new ShopApi.Product()
+        // expect(instance).to.be();
+    })
+
+    it('should have the property variants (base name: "variants")', () => {
+        // uncomment below and update the code to test the property variants
+        // var instane = new ShopApi.Product()
+        // expect(instance).to.be();
+    })
+
+    it('should have the property variationAttributes (base name: "variation_attributes")', () => {
+        // uncomment below and update the code to test the property variationAttributes
+        // var instane = new ShopApi.Product()
+        // expect(instance).to.be();
+    })
+
+    it('should have the property variationGroups (base name: "variation_groups")', () => {
+        // uncomment below and update the code to test the property variationGroups
+        // var instane = new ShopApi.Product()
+        // expect(instance).to.be();
+    })
+
+    it('should have the property variationValues (base name: "variation_values")', () => {
+        // uncomment below and update the code to test the property variationValues
+        // var instane = new ShopApi.Product()
+        // expect(instance).to.be();
+    })
+
+})

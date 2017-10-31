@@ -15,85 +15,80 @@
  *
  */
 
-(function(root, factory) {
-    if (typeof define === 'function' && define.amd) {
-    // AMD.
-        define(['expect.js', '../../src/index'], factory)
-    } else if (typeof module === 'object' && module.exports) {
-    // CommonJS-like environments that support module.exports, like Node.
-        factory(require('expect.js'), require('../../src/index'))
-    } else {
-    // Browser globals (root is window)
-        factory(root.expect, root.ShopApi)
-    }
-}(this, (expect, ShopApi) => {
-    'use strict'
+import expect from 'expect.js'
+import ShopApi from '../../src/index'
 
-    let instance
+let instance
 
-    beforeEach(() => {
-        instance = new ShopApi.ProductTypeModel()
-    })
+beforeEach(() => {
+    instance = new ShopApi.ProductType()
+})
 
-    const getProperty = (object, getter, property) => {
+const getProperty = (object, getter, property) => {
     // Use getter method if present; otherwise, get the property directly.
-        if (typeof object[getter] === 'function') { return object[getter]() } else { return object[property] }
+    if (typeof object[getter] === 'function') {
+        return object[getter]()
+    } else {
+        return object[property]
     }
+}
 
-    const setProperty = (object, setter, property, value) => {
+const setProperty = (object, setter, property, value) => {
     // Use setter method if present; otherwise, set the property directly.
-        if (typeof object[setter] === 'function') { object[setter](value) } else { object[property] = value }
+    if (typeof object[setter] === 'function') {
+        object[setter](value)
+    } else {
+        object[property] = value
     }
+}
 
-    describe('ProductTypeModel', () => {
-        it('should create an instance of ProductTypeModel', () => {
-      // uncomment below and update the code to test ProductTypeModel
-      // var instane = new ShopApi.ProductTypeModel()
-      // expect(instance).to.be.a(ShopApi.ProductTypeModel);
-        })
-
-        it('should have the property bundle (base name: "bundle")', () => {
-      // uncomment below and update the code to test the property bundle
-      // var instane = new ShopApi.ProductTypeModel()
-      // expect(instance).to.be();
-        })
-
-        it('should have the property item (base name: "item")', () => {
-      // uncomment below and update the code to test the property item
-      // var instane = new ShopApi.ProductTypeModel()
-      // expect(instance).to.be();
-        })
-
-        it('should have the property master (base name: "master")', () => {
-      // uncomment below and update the code to test the property master
-      // var instane = new ShopApi.ProductTypeModel()
-      // expect(instance).to.be();
-        })
-
-        it('should have the property option (base name: "option")', () => {
-      // uncomment below and update the code to test the property option
-      // var instane = new ShopApi.ProductTypeModel()
-      // expect(instance).to.be();
-        })
-
-        it('should have the property set (base name: "set")', () => {
-      // uncomment below and update the code to test the property set
-      // var instane = new ShopApi.ProductTypeModel()
-      // expect(instance).to.be();
-        })
-
-        it('should have the property variant (base name: "variant")', () => {
-      // uncomment below and update the code to test the property variant
-      // var instane = new ShopApi.ProductTypeModel()
-      // expect(instance).to.be();
-        })
-
-        it('should have the property variationGroup (base name: "variation_group")', () => {
-      // uncomment below and update the code to test the property variationGroup
-      // var instane = new ShopApi.ProductTypeModel()
-      // expect(instance).to.be();
-        })
-
+describe('ProductTypeModel', () => {
+    it('should create an instance of ProductTypeModel', () => {
+        // uncomment below and update the code to test ProductTypeModel
+        // var instane = new ShopApi.ProductType()
+        // expect(instance).to.be.a(ShopApi.ProductType);
     })
 
-}))
+    it('should have the property bundle (base name: "bundle")', () => {
+        // uncomment below and update the code to test the property bundle
+        // var instane = new ShopApi.ProductType()
+        // expect(instance).to.be();
+    })
+
+    it('should have the property item (base name: "item")', () => {
+        // uncomment below and update the code to test the property item
+        // var instane = new ShopApi.ProductType()
+        // expect(instance).to.be();
+    })
+
+    it('should have the property master (base name: "master")', () => {
+        // uncomment below and update the code to test the property master
+        // var instane = new ShopApi.ProductType()
+        // expect(instance).to.be();
+    })
+
+    it('should have the property option (base name: "option")', () => {
+        // uncomment below and update the code to test the property option
+        // var instane = new ShopApi.ProductType()
+        // expect(instance).to.be();
+    })
+
+    it('should have the property set (base name: "set")', () => {
+        // uncomment below and update the code to test the property set
+        // var instane = new ShopApi.ProductType()
+        // expect(instance).to.be();
+    })
+
+    it('should have the property variant (base name: "variant")', () => {
+        // uncomment below and update the code to test the property variant
+        // var instane = new ShopApi.ProductType()
+        // expect(instance).to.be();
+    })
+
+    it('should have the property variationGroup (base name: "variation_group")', () => {
+        // uncomment below and update the code to test the property variationGroup
+        // var instane = new ShopApi.ProductType()
+        // expect(instance).to.be();
+    })
+
+})

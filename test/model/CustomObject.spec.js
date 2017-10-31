@@ -15,67 +15,62 @@
  *
  */
 
-(function(root, factory) {
-    if (typeof define === 'function' && define.amd) {
-    // AMD.
-        define(['expect.js', '../../src/index'], factory)
-    } else if (typeof module === 'object' && module.exports) {
-    // CommonJS-like environments that support module.exports, like Node.
-        factory(require('expect.js'), require('../../src/index'))
-    } else {
-    // Browser globals (root is window)
-        factory(root.expect, root.ShopApi)
-    }
-}(this, (expect, ShopApi) => {
-    'use strict'
+import expect from 'expect.js'
+import ShopApi from '../../src/index'
 
-    let instance
+let instance
 
-    beforeEach(() => {
-        instance = new ShopApi.CustomObjectModel()
-    })
+beforeEach(() => {
+    instance = new ShopApi.CustomObject()
+})
 
-    const getProperty = (object, getter, property) => {
+const getProperty = (object, getter, property) => {
     // Use getter method if present; otherwise, get the property directly.
-        if (typeof object[getter] === 'function') { return object[getter]() } else { return object[property] }
+    if (typeof object[getter] === 'function') {
+        return object[getter]()
+    } else {
+        return object[property]
     }
+}
 
-    const setProperty = (object, setter, property, value) => {
+const setProperty = (object, setter, property, value) => {
     // Use setter method if present; otherwise, set the property directly.
-        if (typeof object[setter] === 'function') { object[setter](value) } else { object[property] = value }
+    if (typeof object[setter] === 'function') {
+        object[setter](value)
+    } else {
+        object[property] = value
     }
+}
 
-    describe('CustomObjectModel', () => {
-        it('should create an instance of CustomObjectModel', () => {
-      // uncomment below and update the code to test CustomObjectModel
-      // var instane = new ShopApi.CustomObjectModel()
-      // expect(instance).to.be.a(ShopApi.CustomObjectModel);
-        })
-
-        it('should have the property keyProperty (base name: "key_property")', () => {
-      // uncomment below and update the code to test the property keyProperty
-      // var instane = new ShopApi.CustomObjectModel()
-      // expect(instance).to.be();
-        })
-
-        it('should have the property keyValueInteger (base name: "key_value_integer")', () => {
-      // uncomment below and update the code to test the property keyValueInteger
-      // var instane = new ShopApi.CustomObjectModel()
-      // expect(instance).to.be();
-        })
-
-        it('should have the property keyValueString (base name: "key_value_string")', () => {
-      // uncomment below and update the code to test the property keyValueString
-      // var instane = new ShopApi.CustomObjectModel()
-      // expect(instance).to.be();
-        })
-
-        it('should have the property objectType (base name: "object_type")', () => {
-      // uncomment below and update the code to test the property objectType
-      // var instane = new ShopApi.CustomObjectModel()
-      // expect(instance).to.be();
-        })
-
+describe('CustomObjectModel', () => {
+    it('should create an instance of CustomObjectModel', () => {
+        // uncomment below and update the code to test CustomObjectModel
+        // var instane = new ShopApi.CustomObject()
+        // expect(instance).to.be.a(ShopApi.CustomObject);
     })
 
-}))
+    it('should have the property keyProperty (base name: "key_property")', () => {
+        // uncomment below and update the code to test the property keyProperty
+        // var instane = new ShopApi.CustomObject()
+        // expect(instance).to.be();
+    })
+
+    it('should have the property keyValueInteger (base name: "key_value_integer")', () => {
+        // uncomment below and update the code to test the property keyValueInteger
+        // var instane = new ShopApi.CustomObject()
+        // expect(instance).to.be();
+    })
+
+    it('should have the property keyValueString (base name: "key_value_string")', () => {
+        // uncomment below and update the code to test the property keyValueString
+        // var instane = new ShopApi.CustomObject()
+        // expect(instance).to.be();
+    })
+
+    it('should have the property objectType (base name: "object_type")', () => {
+        // uncomment below and update the code to test the property objectType
+        // var instane = new ShopApi.CustomObject()
+        // expect(instance).to.be();
+    })
+
+})

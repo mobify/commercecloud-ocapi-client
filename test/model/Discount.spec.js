@@ -15,67 +15,62 @@
  *
  */
 
-(function(root, factory) {
-    if (typeof define === 'function' && define.amd) {
-    // AMD.
-        define(['expect.js', '../../src/index'], factory)
-    } else if (typeof module === 'object' && module.exports) {
-    // CommonJS-like environments that support module.exports, like Node.
-        factory(require('expect.js'), require('../../src/index'))
-    } else {
-    // Browser globals (root is window)
-        factory(root.expect, root.ShopApi)
-    }
-}(this, (expect, ShopApi) => {
-    'use strict'
+import expect from 'expect.js'
+import ShopApi from '../../src/index'
 
-    let instance
+let instance
 
-    beforeEach(() => {
-        instance = new ShopApi.DiscountModel()
-    })
+beforeEach(() => {
+    instance = new ShopApi.Discount()
+})
 
-    const getProperty = (object, getter, property) => {
+const getProperty = (object, getter, property) => {
     // Use getter method if present; otherwise, get the property directly.
-        if (typeof object[getter] === 'function') { return object[getter]() } else { return object[property] }
+    if (typeof object[getter] === 'function') {
+        return object[getter]()
+    } else {
+        return object[property]
     }
+}
 
-    const setProperty = (object, setter, property, value) => {
+const setProperty = (object, setter, property, value) => {
     // Use setter method if present; otherwise, set the property directly.
-        if (typeof object[setter] === 'function') { object[setter](value) } else { object[property] = value }
+    if (typeof object[setter] === 'function') {
+        object[setter](value)
+    } else {
+        object[property] = value
     }
+}
 
-    describe('DiscountModel', () => {
-        it('should create an instance of DiscountModel', () => {
-      // uncomment below and update the code to test DiscountModel
-      // var instane = new ShopApi.DiscountModel()
-      // expect(instance).to.be.a(ShopApi.DiscountModel);
-        })
-
-        it('should have the property amount (base name: "amount")', () => {
-      // uncomment below and update the code to test the property amount
-      // var instane = new ShopApi.DiscountModel()
-      // expect(instance).to.be();
-        })
-
-        it('should have the property percentage (base name: "percentage")', () => {
-      // uncomment below and update the code to test the property percentage
-      // var instane = new ShopApi.DiscountModel()
-      // expect(instance).to.be();
-        })
-
-        it('should have the property priceBookId (base name: "price_book_id")', () => {
-      // uncomment below and update the code to test the property priceBookId
-      // var instane = new ShopApi.DiscountModel()
-      // expect(instance).to.be();
-        })
-
-        it('should have the property type (base name: "type")', () => {
-      // uncomment below and update the code to test the property type
-      // var instane = new ShopApi.DiscountModel()
-      // expect(instance).to.be();
-        })
-
+describe('DiscountModel', () => {
+    it('should create an instance of DiscountModel', () => {
+        // uncomment below and update the code to test DiscountModel
+        // var instane = new ShopApi.Discount()
+        // expect(instance).to.be.a(ShopApi.Discount);
     })
 
-}))
+    it('should have the property amount (base name: "amount")', () => {
+        // uncomment below and update the code to test the property amount
+        // var instane = new ShopApi.Discount()
+        // expect(instance).to.be();
+    })
+
+    it('should have the property percentage (base name: "percentage")', () => {
+        // uncomment below and update the code to test the property percentage
+        // var instane = new ShopApi.Discount()
+        // expect(instance).to.be();
+    })
+
+    it('should have the property priceBookId (base name: "price_book_id")', () => {
+        // uncomment below and update the code to test the property priceBookId
+        // var instane = new ShopApi.Discount()
+        // expect(instance).to.be();
+    })
+
+    it('should have the property type (base name: "type")', () => {
+        // uncomment below and update the code to test the property type
+        // var instane = new ShopApi.Discount()
+        // expect(instance).to.be();
+    })
+
+})

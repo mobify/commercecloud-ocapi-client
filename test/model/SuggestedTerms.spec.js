@@ -15,55 +15,50 @@
  *
  */
 
-(function(root, factory) {
-    if (typeof define === 'function' && define.amd) {
-    // AMD.
-        define(['expect.js', '../../src/index'], factory)
-    } else if (typeof module === 'object' && module.exports) {
-    // CommonJS-like environments that support module.exports, like Node.
-        factory(require('expect.js'), require('../../src/index'))
-    } else {
-    // Browser globals (root is window)
-        factory(root.expect, root.ShopApi)
-    }
-}(this, (expect, ShopApi) => {
-    'use strict'
+import expect from 'expect.js'
+import ShopApi from '../../src/index'
 
-    let instance
+let instance
 
-    beforeEach(() => {
-        instance = new ShopApi.SuggestedTermsModel()
-    })
+beforeEach(() => {
+    instance = new ShopApi.SuggestedTerms()
+})
 
-    const getProperty = (object, getter, property) => {
+const getProperty = (object, getter, property) => {
     // Use getter method if present; otherwise, get the property directly.
-        if (typeof object[getter] === 'function') { return object[getter]() } else { return object[property] }
+    if (typeof object[getter] === 'function') {
+        return object[getter]()
+    } else {
+        return object[property]
     }
+}
 
-    const setProperty = (object, setter, property, value) => {
+const setProperty = (object, setter, property, value) => {
     // Use setter method if present; otherwise, set the property directly.
-        if (typeof object[setter] === 'function') { object[setter](value) } else { object[property] = value }
+    if (typeof object[setter] === 'function') {
+        object[setter](value)
+    } else {
+        object[property] = value
     }
+}
 
-    describe('SuggestedTermsModel', () => {
-        it('should create an instance of SuggestedTermsModel', () => {
-      // uncomment below and update the code to test SuggestedTermsModel
-      // var instane = new ShopApi.SuggestedTermsModel()
-      // expect(instance).to.be.a(ShopApi.SuggestedTermsModel);
-        })
-
-        it('should have the property originalTerm (base name: "original_term")', () => {
-      // uncomment below and update the code to test the property originalTerm
-      // var instane = new ShopApi.SuggestedTermsModel()
-      // expect(instance).to.be();
-        })
-
-        it('should have the property terms (base name: "terms")', () => {
-      // uncomment below and update the code to test the property terms
-      // var instane = new ShopApi.SuggestedTermsModel()
-      // expect(instance).to.be();
-        })
-
+describe('SuggestedTermsModel', () => {
+    it('should create an instance of SuggestedTermsModel', () => {
+        // uncomment below and update the code to test SuggestedTermsModel
+        // var instane = new ShopApi.SuggestedTerms()
+        // expect(instance).to.be.a(ShopApi.SuggestedTerms);
     })
 
-}))
+    it('should have the property originalTerm (base name: "original_term")', () => {
+        // uncomment below and update the code to test the property originalTerm
+        // var instane = new ShopApi.SuggestedTerms()
+        // expect(instance).to.be();
+    })
+
+    it('should have the property terms (base name: "terms")', () => {
+        // uncomment below and update the code to test the property terms
+        // var instane = new ShopApi.SuggestedTerms()
+        // expect(instance).to.be();
+    })
+
+})

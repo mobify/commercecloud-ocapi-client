@@ -15,109 +15,104 @@
  *
  */
 
-(function(root, factory) {
-    if (typeof define === 'function' && define.amd) {
-    // AMD.
-        define(['expect.js', '../../src/index'], factory)
-    } else if (typeof module === 'object' && module.exports) {
-    // CommonJS-like environments that support module.exports, like Node.
-        factory(require('expect.js'), require('../../src/index'))
-    } else {
-    // Browser globals (root is window)
-        factory(root.expect, root.ShopApi)
-    }
-}(this, (expect, ShopApi) => {
-    'use strict'
+import expect from 'expect.js'
+import ShopApi from '../../src/index'
 
-    let instance
+let instance
 
-    beforeEach(() => {
-        instance = new ShopApi.GiftCertificateModel()
-    })
+beforeEach(() => {
+    instance = new ShopApi.GiftCertificate()
+})
 
-    const getProperty = (object, getter, property) => {
+const getProperty = (object, getter, property) => {
     // Use getter method if present; otherwise, get the property directly.
-        if (typeof object[getter] === 'function') { return object[getter]() } else { return object[property] }
+    if (typeof object[getter] === 'function') {
+        return object[getter]()
+    } else {
+        return object[property]
     }
+}
 
-    const setProperty = (object, setter, property, value) => {
+const setProperty = (object, setter, property, value) => {
     // Use setter method if present; otherwise, set the property directly.
-        if (typeof object[setter] === 'function') { object[setter](value) } else { object[property] = value }
+    if (typeof object[setter] === 'function') {
+        object[setter](value)
+    } else {
+        object[property] = value
     }
+}
 
-    describe('GiftCertificateModel', () => {
-        it('should create an instance of GiftCertificateModel', () => {
-      // uncomment below and update the code to test GiftCertificateModel
-      // var instane = new ShopApi.GiftCertificateModel()
-      // expect(instance).to.be.a(ShopApi.GiftCertificateModel);
-        })
-
-        it('should have the property amount (base name: "amount")', () => {
-      // uncomment below and update the code to test the property amount
-      // var instane = new ShopApi.GiftCertificateModel()
-      // expect(instance).to.be();
-        })
-
-        it('should have the property balance (base name: "balance")', () => {
-      // uncomment below and update the code to test the property balance
-      // var instane = new ShopApi.GiftCertificateModel()
-      // expect(instance).to.be();
-        })
-
-        it('should have the property description (base name: "description")', () => {
-      // uncomment below and update the code to test the property description
-      // var instane = new ShopApi.GiftCertificateModel()
-      // expect(instance).to.be();
-        })
-
-        it('should have the property enabled (base name: "enabled")', () => {
-      // uncomment below and update the code to test the property enabled
-      // var instane = new ShopApi.GiftCertificateModel()
-      // expect(instance).to.be();
-        })
-
-        it('should have the property maskedGiftCertificateCode (base name: "masked_gift_certificate_code")', () => {
-      // uncomment below and update the code to test the property maskedGiftCertificateCode
-      // var instane = new ShopApi.GiftCertificateModel()
-      // expect(instance).to.be();
-        })
-
-        it('should have the property merchantId (base name: "merchant_id")', () => {
-      // uncomment below and update the code to test the property merchantId
-      // var instane = new ShopApi.GiftCertificateModel()
-      // expect(instance).to.be();
-        })
-
-        it('should have the property message (base name: "message")', () => {
-      // uncomment below and update the code to test the property message
-      // var instane = new ShopApi.GiftCertificateModel()
-      // expect(instance).to.be();
-        })
-
-        it('should have the property recipientEmail (base name: "recipient_email")', () => {
-      // uncomment below and update the code to test the property recipientEmail
-      // var instane = new ShopApi.GiftCertificateModel()
-      // expect(instance).to.be();
-        })
-
-        it('should have the property recipientName (base name: "recipient_name")', () => {
-      // uncomment below and update the code to test the property recipientName
-      // var instane = new ShopApi.GiftCertificateModel()
-      // expect(instance).to.be();
-        })
-
-        it('should have the property senderName (base name: "sender_name")', () => {
-      // uncomment below and update the code to test the property senderName
-      // var instane = new ShopApi.GiftCertificateModel()
-      // expect(instance).to.be();
-        })
-
-        it('should have the property status (base name: "status")', () => {
-      // uncomment below and update the code to test the property status
-      // var instane = new ShopApi.GiftCertificateModel()
-      // expect(instance).to.be();
-        })
-
+describe('GiftCertificateModel', () => {
+    it('should create an instance of GiftCertificateModel', () => {
+        // uncomment below and update the code to test GiftCertificateModel
+        // var instane = new ShopApi.GiftCertificate()
+        // expect(instance).to.be.a(ShopApi.GiftCertificate);
     })
 
-}))
+    it('should have the property amount (base name: "amount")', () => {
+        // uncomment below and update the code to test the property amount
+        // var instane = new ShopApi.GiftCertificate()
+        // expect(instance).to.be();
+    })
+
+    it('should have the property balance (base name: "balance")', () => {
+        // uncomment below and update the code to test the property balance
+        // var instane = new ShopApi.GiftCertificate()
+        // expect(instance).to.be();
+    })
+
+    it('should have the property description (base name: "description")', () => {
+        // uncomment below and update the code to test the property description
+        // var instane = new ShopApi.GiftCertificate()
+        // expect(instance).to.be();
+    })
+
+    it('should have the property enabled (base name: "enabled")', () => {
+        // uncomment below and update the code to test the property enabled
+        // var instane = new ShopApi.GiftCertificate()
+        // expect(instance).to.be();
+    })
+
+    it('should have the property maskedGiftCertificateCode (base name: "masked_gift_certificate_code")', () => {
+        // uncomment below and update the code to test the property maskedGiftCertificateCode
+        // var instane = new ShopApi.GiftCertificate()
+        // expect(instance).to.be();
+    })
+
+    it('should have the property merchantId (base name: "merchant_id")', () => {
+        // uncomment below and update the code to test the property merchantId
+        // var instane = new ShopApi.GiftCertificate()
+        // expect(instance).to.be();
+    })
+
+    it('should have the property message (base name: "message")', () => {
+        // uncomment below and update the code to test the property message
+        // var instane = new ShopApi.GiftCertificate()
+        // expect(instance).to.be();
+    })
+
+    it('should have the property recipientEmail (base name: "recipient_email")', () => {
+        // uncomment below and update the code to test the property recipientEmail
+        // var instane = new ShopApi.GiftCertificate()
+        // expect(instance).to.be();
+    })
+
+    it('should have the property recipientName (base name: "recipient_name")', () => {
+        // uncomment below and update the code to test the property recipientName
+        // var instane = new ShopApi.GiftCertificate()
+        // expect(instance).to.be();
+    })
+
+    it('should have the property senderName (base name: "sender_name")', () => {
+        // uncomment below and update the code to test the property senderName
+        // var instane = new ShopApi.GiftCertificate()
+        // expect(instance).to.be();
+    })
+
+    it('should have the property status (base name: "status")', () => {
+        // uncomment below and update the code to test the property status
+        // var instane = new ShopApi.GiftCertificate()
+        // expect(instance).to.be();
+    })
+
+})

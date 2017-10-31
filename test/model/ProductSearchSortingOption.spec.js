@@ -15,55 +15,50 @@
  *
  */
 
-(function(root, factory) {
-    if (typeof define === 'function' && define.amd) {
-    // AMD.
-        define(['expect.js', '../../src/index'], factory)
-    } else if (typeof module === 'object' && module.exports) {
-    // CommonJS-like environments that support module.exports, like Node.
-        factory(require('expect.js'), require('../../src/index'))
-    } else {
-    // Browser globals (root is window)
-        factory(root.expect, root.ShopApi)
-    }
-}(this, (expect, ShopApi) => {
-    'use strict'
+import expect from 'expect.js'
+import ShopApi from '../../src/index'
 
-    let instance
+let instance
 
-    beforeEach(() => {
-        instance = new ShopApi.ProductSearchSortingOptionModel()
-    })
+beforeEach(() => {
+    instance = new ShopApi.ProductSearchSortingOption()
+})
 
-    const getProperty = (object, getter, property) => {
+const getProperty = (object, getter, property) => {
     // Use getter method if present; otherwise, get the property directly.
-        if (typeof object[getter] === 'function') { return object[getter]() } else { return object[property] }
+    if (typeof object[getter] === 'function') {
+        return object[getter]()
+    } else {
+        return object[property]
     }
+}
 
-    const setProperty = (object, setter, property, value) => {
+const setProperty = (object, setter, property, value) => {
     // Use setter method if present; otherwise, set the property directly.
-        if (typeof object[setter] === 'function') { object[setter](value) } else { object[property] = value }
+    if (typeof object[setter] === 'function') {
+        object[setter](value)
+    } else {
+        object[property] = value
     }
+}
 
-    describe('ProductSearchSortingOptionModel', () => {
-        it('should create an instance of ProductSearchSortingOptionModel', () => {
-      // uncomment below and update the code to test ProductSearchSortingOptionModel
-      // var instane = new ShopApi.ProductSearchSortingOptionModel()
-      // expect(instance).to.be.a(ShopApi.ProductSearchSortingOptionModel);
-        })
-
-        it('should have the property id (base name: "id")', () => {
-      // uncomment below and update the code to test the property id
-      // var instane = new ShopApi.ProductSearchSortingOptionModel()
-      // expect(instance).to.be();
-        })
-
-        it('should have the property label (base name: "label")', () => {
-      // uncomment below and update the code to test the property label
-      // var instane = new ShopApi.ProductSearchSortingOptionModel()
-      // expect(instance).to.be();
-        })
-
+describe('ProductSearchSortingOptionModel', () => {
+    it('should create an instance of ProductSearchSortingOptionModel', () => {
+        // uncomment below and update the code to test ProductSearchSortingOptionModel
+        // var instane = new ShopApi.ProductSearchSortingOption()
+        // expect(instance).to.be.a(ShopApi.ProductSearchSortingOption);
     })
 
-}))
+    it('should have the property id (base name: "id")', () => {
+        // uncomment below and update the code to test the property id
+        // var instane = new ShopApi.ProductSearchSortingOption()
+        // expect(instance).to.be();
+    })
+
+    it('should have the property label (base name: "label")', () => {
+        // uncomment below and update the code to test the property label
+        // var instane = new ShopApi.ProductSearchSortingOption()
+        // expect(instance).to.be();
+    })
+
+})

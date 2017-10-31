@@ -11,7 +11,7 @@
         "lint": "npm run lint:js && npm run copyright:lint",
         "lint:js": "eslint '**/*.js'",
         "lint:fix": "npm run lint:js -- --fix",
-        "test": "mocha --compilers js:babel-core/register $(find test -name '*Api.spec.js')",
+        "test": "mocha --compilers js:babel-core/register $(find test/api -name '*.spec.js')",
         "build": "babel src --out-dir lib"
     },
     "browser": {

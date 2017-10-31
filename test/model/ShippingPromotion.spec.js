@@ -15,67 +15,62 @@
  *
  */
 
-(function(root, factory) {
-    if (typeof define === 'function' && define.amd) {
-    // AMD.
-        define(['expect.js', '../../src/index'], factory)
-    } else if (typeof module === 'object' && module.exports) {
-    // CommonJS-like environments that support module.exports, like Node.
-        factory(require('expect.js'), require('../../src/index'))
-    } else {
-    // Browser globals (root is window)
-        factory(root.expect, root.ShopApi)
-    }
-}(this, (expect, ShopApi) => {
-    'use strict'
+import expect from 'expect.js'
+import ShopApi from '../../src/index'
 
-    let instance
+let instance
 
-    beforeEach(() => {
-        instance = new ShopApi.ShippingPromotionModel()
-    })
+beforeEach(() => {
+    instance = new ShopApi.ShippingPromotion()
+})
 
-    const getProperty = (object, getter, property) => {
+const getProperty = (object, getter, property) => {
     // Use getter method if present; otherwise, get the property directly.
-        if (typeof object[getter] === 'function') { return object[getter]() } else { return object[property] }
+    if (typeof object[getter] === 'function') {
+        return object[getter]()
+    } else {
+        return object[property]
     }
+}
 
-    const setProperty = (object, setter, property, value) => {
+const setProperty = (object, setter, property, value) => {
     // Use setter method if present; otherwise, set the property directly.
-        if (typeof object[setter] === 'function') { object[setter](value) } else { object[property] = value }
+    if (typeof object[setter] === 'function') {
+        object[setter](value)
+    } else {
+        object[property] = value
     }
+}
 
-    describe('ShippingPromotionModel', () => {
-        it('should create an instance of ShippingPromotionModel', () => {
-      // uncomment below and update the code to test ShippingPromotionModel
-      // var instane = new ShopApi.ShippingPromotionModel()
-      // expect(instance).to.be.a(ShopApi.ShippingPromotionModel);
-        })
-
-        it('should have the property calloutMsg (base name: "callout_msg")', () => {
-      // uncomment below and update the code to test the property calloutMsg
-      // var instane = new ShopApi.ShippingPromotionModel()
-      // expect(instance).to.be();
-        })
-
-        it('should have the property link (base name: "link")', () => {
-      // uncomment below and update the code to test the property link
-      // var instane = new ShopApi.ShippingPromotionModel()
-      // expect(instance).to.be();
-        })
-
-        it('should have the property promotionId (base name: "promotion_id")', () => {
-      // uncomment below and update the code to test the property promotionId
-      // var instane = new ShopApi.ShippingPromotionModel()
-      // expect(instance).to.be();
-        })
-
-        it('should have the property promotionName (base name: "promotion_name")', () => {
-      // uncomment below and update the code to test the property promotionName
-      // var instane = new ShopApi.ShippingPromotionModel()
-      // expect(instance).to.be();
-        })
-
+describe('ShippingPromotionModel', () => {
+    it('should create an instance of ShippingPromotionModel', () => {
+        // uncomment below and update the code to test ShippingPromotionModel
+        // var instane = new ShopApi.ShippingPromotion()
+        // expect(instance).to.be.a(ShopApi.ShippingPromotion);
     })
 
-}))
+    it('should have the property calloutMsg (base name: "callout_msg")', () => {
+        // uncomment below and update the code to test the property calloutMsg
+        // var instane = new ShopApi.ShippingPromotion()
+        // expect(instance).to.be();
+    })
+
+    it('should have the property link (base name: "link")', () => {
+        // uncomment below and update the code to test the property link
+        // var instane = new ShopApi.ShippingPromotion()
+        // expect(instance).to.be();
+    })
+
+    it('should have the property promotionId (base name: "promotion_id")', () => {
+        // uncomment below and update the code to test the property promotionId
+        // var instane = new ShopApi.ShippingPromotion()
+        // expect(instance).to.be();
+    })
+
+    it('should have the property promotionName (base name: "promotion_name")', () => {
+        // uncomment below and update the code to test the property promotionName
+        // var instane = new ShopApi.ShippingPromotion()
+        // expect(instance).to.be();
+    })
+
+})

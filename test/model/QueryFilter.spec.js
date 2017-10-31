@@ -15,49 +15,44 @@
  *
  */
 
-(function(root, factory) {
-    if (typeof define === 'function' && define.amd) {
-    // AMD.
-        define(['expect.js', '../../src/index'], factory)
-    } else if (typeof module === 'object' && module.exports) {
-    // CommonJS-like environments that support module.exports, like Node.
-        factory(require('expect.js'), require('../../src/index'))
-    } else {
-    // Browser globals (root is window)
-        factory(root.expect, root.ShopApi)
-    }
-}(this, (expect, ShopApi) => {
-    'use strict'
+import expect from 'expect.js'
+import ShopApi from '../../src/index'
 
-    let instance
+let instance
 
-    beforeEach(() => {
-        instance = new ShopApi.QueryFilterModel()
-    })
+beforeEach(() => {
+    instance = new ShopApi.QueryFilter()
+})
 
-    const getProperty = (object, getter, property) => {
+const getProperty = (object, getter, property) => {
     // Use getter method if present; otherwise, get the property directly.
-        if (typeof object[getter] === 'function') { return object[getter]() } else { return object[property] }
+    if (typeof object[getter] === 'function') {
+        return object[getter]()
+    } else {
+        return object[property]
     }
+}
 
-    const setProperty = (object, setter, property, value) => {
+const setProperty = (object, setter, property, value) => {
     // Use setter method if present; otherwise, set the property directly.
-        if (typeof object[setter] === 'function') { object[setter](value) } else { object[property] = value }
+    if (typeof object[setter] === 'function') {
+        object[setter](value)
+    } else {
+        object[property] = value
     }
+}
 
-    describe('QueryFilterModel', () => {
-        it('should create an instance of QueryFilterModel', () => {
-      // uncomment below and update the code to test QueryFilterModel
-      // var instane = new ShopApi.QueryFilterModel()
-      // expect(instance).to.be.a(ShopApi.QueryFilterModel);
-        })
-
-        it('should have the property query (base name: "query")', () => {
-      // uncomment below and update the code to test the property query
-      // var instane = new ShopApi.QueryFilterModel()
-      // expect(instance).to.be();
-        })
-
+describe('QueryFilterModel', () => {
+    it('should create an instance of QueryFilterModel', () => {
+        // uncomment below and update the code to test QueryFilterModel
+        // var instane = new ShopApi.QueryFilter()
+        // expect(instance).to.be.a(ShopApi.QueryFilter);
     })
 
-}))
+    it('should have the property query (base name: "query")', () => {
+        // uncomment below and update the code to test the property query
+        // var instane = new ShopApi.QueryFilter()
+        // expect(instance).to.be();
+    })
+
+})

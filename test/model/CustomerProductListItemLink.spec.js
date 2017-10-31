@@ -15,55 +15,50 @@
  *
  */
 
-(function(root, factory) {
-    if (typeof define === 'function' && define.amd) {
-    // AMD.
-        define(['expect.js', '../../src/index'], factory)
-    } else if (typeof module === 'object' && module.exports) {
-    // CommonJS-like environments that support module.exports, like Node.
-        factory(require('expect.js'), require('../../src/index'))
-    } else {
-    // Browser globals (root is window)
-        factory(root.expect, root.ShopApi)
-    }
-}(this, (expect, ShopApi) => {
-    'use strict'
+import expect from 'expect.js'
+import ShopApi from '../../src/index'
 
-    let instance
+let instance
 
-    beforeEach(() => {
-        instance = new ShopApi.CustomerProductListItemLinkModel()
-    })
+beforeEach(() => {
+    instance = new ShopApi.CustomerProductListItemLink()
+})
 
-    const getProperty = (object, getter, property) => {
+const getProperty = (object, getter, property) => {
     // Use getter method if present; otherwise, get the property directly.
-        if (typeof object[getter] === 'function') { return object[getter]() } else { return object[property] }
+    if (typeof object[getter] === 'function') {
+        return object[getter]()
+    } else {
+        return object[property]
     }
+}
 
-    const setProperty = (object, setter, property, value) => {
+const setProperty = (object, setter, property, value) => {
     // Use setter method if present; otherwise, set the property directly.
-        if (typeof object[setter] === 'function') { object[setter](value) } else { object[property] = value }
+    if (typeof object[setter] === 'function') {
+        object[setter](value)
+    } else {
+        object[property] = value
     }
+}
 
-    describe('CustomerProductListItemLinkModel', () => {
-        it('should create an instance of CustomerProductListItemLinkModel', () => {
-      // uncomment below and update the code to test CustomerProductListItemLinkModel
-      // var instane = new ShopApi.CustomerProductListItemLinkModel()
-      // expect(instance).to.be.a(ShopApi.CustomerProductListItemLinkModel);
-        })
-
-        it('should have the property link (base name: "link")', () => {
-      // uncomment below and update the code to test the property link
-      // var instane = new ShopApi.CustomerProductListItemLinkModel()
-      // expect(instance).to.be();
-        })
-
-        it('should have the property title (base name: "title")', () => {
-      // uncomment below and update the code to test the property title
-      // var instane = new ShopApi.CustomerProductListItemLinkModel()
-      // expect(instance).to.be();
-        })
-
+describe('CustomerProductListItemLinkModel', () => {
+    it('should create an instance of CustomerProductListItemLinkModel', () => {
+        // uncomment below and update the code to test CustomerProductListItemLinkModel
+        // var instane = new ShopApi.CustomerProductListItemLink()
+        // expect(instance).to.be.a(ShopApi.CustomerProductListItemLink);
     })
 
-}))
+    it('should have the property link (base name: "link")', () => {
+        // uncomment below and update the code to test the property link
+        // var instane = new ShopApi.CustomerProductListItemLink()
+        // expect(instance).to.be();
+    })
+
+    it('should have the property title (base name: "title")', () => {
+        // uncomment below and update the code to test the property title
+        // var instane = new ShopApi.CustomerProductListItemLink()
+        // expect(instance).to.be();
+    })
+
+})

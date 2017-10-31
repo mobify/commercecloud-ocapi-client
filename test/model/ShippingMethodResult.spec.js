@@ -15,55 +15,50 @@
  *
  */
 
-(function(root, factory) {
-    if (typeof define === 'function' && define.amd) {
-    // AMD.
-        define(['expect.js', '../../src/index'], factory)
-    } else if (typeof module === 'object' && module.exports) {
-    // CommonJS-like environments that support module.exports, like Node.
-        factory(require('expect.js'), require('../../src/index'))
-    } else {
-    // Browser globals (root is window)
-        factory(root.expect, root.ShopApi)
-    }
-}(this, (expect, ShopApi) => {
-    'use strict'
+import expect from 'expect.js'
+import ShopApi from '../../src/index'
 
-    let instance
+let instance
 
-    beforeEach(() => {
-        instance = new ShopApi.ShippingMethodResultModel()
-    })
+beforeEach(() => {
+    instance = new ShopApi.ShippingMethodResult()
+})
 
-    const getProperty = (object, getter, property) => {
+const getProperty = (object, getter, property) => {
     // Use getter method if present; otherwise, get the property directly.
-        if (typeof object[getter] === 'function') { return object[getter]() } else { return object[property] }
+    if (typeof object[getter] === 'function') {
+        return object[getter]()
+    } else {
+        return object[property]
     }
+}
 
-    const setProperty = (object, setter, property, value) => {
+const setProperty = (object, setter, property, value) => {
     // Use setter method if present; otherwise, set the property directly.
-        if (typeof object[setter] === 'function') { object[setter](value) } else { object[property] = value }
+    if (typeof object[setter] === 'function') {
+        object[setter](value)
+    } else {
+        object[property] = value
     }
+}
 
-    describe('ShippingMethodResultModel', () => {
-        it('should create an instance of ShippingMethodResultModel', () => {
-      // uncomment below and update the code to test ShippingMethodResultModel
-      // var instane = new ShopApi.ShippingMethodResultModel()
-      // expect(instance).to.be.a(ShopApi.ShippingMethodResultModel);
-        })
-
-        it('should have the property applicableShippingMethods (base name: "applicable_shipping_methods")', () => {
-      // uncomment below and update the code to test the property applicableShippingMethods
-      // var instane = new ShopApi.ShippingMethodResultModel()
-      // expect(instance).to.be();
-        })
-
-        it('should have the property defaultShippingMethodId (base name: "default_shipping_method_id")', () => {
-      // uncomment below and update the code to test the property defaultShippingMethodId
-      // var instane = new ShopApi.ShippingMethodResultModel()
-      // expect(instance).to.be();
-        })
-
+describe('ShippingMethodResultModel', () => {
+    it('should create an instance of ShippingMethodResultModel', () => {
+        // uncomment below and update the code to test ShippingMethodResultModel
+        // var instane = new ShopApi.ShippingMethodResult()
+        // expect(instance).to.be.a(ShopApi.ShippingMethodResult);
     })
 
-}))
+    it('should have the property applicableShippingMethods (base name: "applicable_shipping_methods")', () => {
+        // uncomment below and update the code to test the property applicableShippingMethods
+        // var instane = new ShopApi.ShippingMethodResult()
+        // expect(instance).to.be();
+    })
+
+    it('should have the property defaultShippingMethodId (base name: "default_shipping_method_id")', () => {
+        // uncomment below and update the code to test the property defaultShippingMethodId
+        // var instane = new ShopApi.ShippingMethodResult()
+        // expect(instance).to.be();
+    })
+
+})

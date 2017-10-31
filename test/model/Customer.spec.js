@@ -15,229 +15,224 @@
  *
  */
 
-(function(root, factory) {
-    if (typeof define === 'function' && define.amd) {
-    // AMD.
-        define(['expect.js', '../../src/index'], factory)
-    } else if (typeof module === 'object' && module.exports) {
-    // CommonJS-like environments that support module.exports, like Node.
-        factory(require('expect.js'), require('../../src/index'))
-    } else {
-    // Browser globals (root is window)
-        factory(root.expect, root.ShopApi)
-    }
-}(this, (expect, ShopApi) => {
-    'use strict'
+import expect from 'expect.js'
+import ShopApi from '../../src/index'
 
-    let instance
+let instance
 
-    beforeEach(() => {
-        instance = new ShopApi.CustomerModel()
-    })
+beforeEach(() => {
+    instance = new ShopApi.Customer()
+})
 
-    const getProperty = (object, getter, property) => {
+const getProperty = (object, getter, property) => {
     // Use getter method if present; otherwise, get the property directly.
-        if (typeof object[getter] === 'function') { return object[getter]() } else { return object[property] }
+    if (typeof object[getter] === 'function') {
+        return object[getter]()
+    } else {
+        return object[property]
     }
+}
 
-    const setProperty = (object, setter, property, value) => {
+const setProperty = (object, setter, property, value) => {
     // Use setter method if present; otherwise, set the property directly.
-        if (typeof object[setter] === 'function') { object[setter](value) } else { object[property] = value }
+    if (typeof object[setter] === 'function') {
+        object[setter](value)
+    } else {
+        object[property] = value
     }
+}
 
-    describe('CustomerModel', () => {
-        it('should create an instance of CustomerModel', () => {
-      // uncomment below and update the code to test CustomerModel
-      // var instane = new ShopApi.CustomerModel()
-      // expect(instance).to.be.a(ShopApi.CustomerModel);
-        })
-
-        it('should have the property addresses (base name: "addresses")', () => {
-      // uncomment below and update the code to test the property addresses
-      // var instane = new ShopApi.CustomerModel()
-      // expect(instance).to.be();
-        })
-
-        it('should have the property authType (base name: "auth_type")', () => {
-      // uncomment below and update the code to test the property authType
-      // var instane = new ShopApi.CustomerModel()
-      // expect(instance).to.be();
-        })
-
-        it('should have the property birthday (base name: "birthday")', () => {
-      // uncomment below and update the code to test the property birthday
-      // var instane = new ShopApi.CustomerModel()
-      // expect(instance).to.be();
-        })
-
-        it('should have the property cFamilyStatus (base name: "c_familyStatus")', () => {
-      // uncomment below and update the code to test the property cFamilyStatus
-      // var instane = new ShopApi.CustomerModel()
-      // expect(instance).to.be();
-        })
-
-        it('should have the property companyName (base name: "company_name")', () => {
-      // uncomment below and update the code to test the property companyName
-      // var instane = new ShopApi.CustomerModel()
-      // expect(instance).to.be();
-        })
-
-        it('should have the property creationDate (base name: "creation_date")', () => {
-      // uncomment below and update the code to test the property creationDate
-      // var instane = new ShopApi.CustomerModel()
-      // expect(instance).to.be();
-        })
-
-        it('should have the property customerId (base name: "customer_id")', () => {
-      // uncomment below and update the code to test the property customerId
-      // var instane = new ShopApi.CustomerModel()
-      // expect(instance).to.be();
-        })
-
-        it('should have the property customerNo (base name: "customer_no")', () => {
-      // uncomment below and update the code to test the property customerNo
-      // var instane = new ShopApi.CustomerModel()
-      // expect(instance).to.be();
-        })
-
-        it('should have the property email (base name: "email")', () => {
-      // uncomment below and update the code to test the property email
-      // var instane = new ShopApi.CustomerModel()
-      // expect(instance).to.be();
-        })
-
-        it('should have the property enabled (base name: "enabled")', () => {
-      // uncomment below and update the code to test the property enabled
-      // var instane = new ShopApi.CustomerModel()
-      // expect(instance).to.be();
-        })
-
-        it('should have the property fax (base name: "fax")', () => {
-      // uncomment below and update the code to test the property fax
-      // var instane = new ShopApi.CustomerModel()
-      // expect(instance).to.be();
-        })
-
-        it('should have the property firstName (base name: "first_name")', () => {
-      // uncomment below and update the code to test the property firstName
-      // var instane = new ShopApi.CustomerModel()
-      // expect(instance).to.be();
-        })
-
-        it('should have the property gender (base name: "gender")', () => {
-      // uncomment below and update the code to test the property gender
-      // var instane = new ShopApi.CustomerModel()
-      // expect(instance).to.be();
-        })
-
-        it('should have the property jobTitle (base name: "job_title")', () => {
-      // uncomment below and update the code to test the property jobTitle
-      // var instane = new ShopApi.CustomerModel()
-      // expect(instance).to.be();
-        })
-
-        it('should have the property lastLoginTime (base name: "last_login_time")', () => {
-      // uncomment below and update the code to test the property lastLoginTime
-      // var instane = new ShopApi.CustomerModel()
-      // expect(instance).to.be();
-        })
-
-        it('should have the property lastModified (base name: "last_modified")', () => {
-      // uncomment below and update the code to test the property lastModified
-      // var instane = new ShopApi.CustomerModel()
-      // expect(instance).to.be();
-        })
-
-        it('should have the property lastName (base name: "last_name")', () => {
-      // uncomment below and update the code to test the property lastName
-      // var instane = new ShopApi.CustomerModel()
-      // expect(instance).to.be();
-        })
-
-        it('should have the property lastVisitTime (base name: "last_visit_time")', () => {
-      // uncomment below and update the code to test the property lastVisitTime
-      // var instane = new ShopApi.CustomerModel()
-      // expect(instance).to.be();
-        })
-
-        it('should have the property login (base name: "login")', () => {
-      // uncomment below and update the code to test the property login
-      // var instane = new ShopApi.CustomerModel()
-      // expect(instance).to.be();
-        })
-
-        it('should have the property note (base name: "note")', () => {
-      // uncomment below and update the code to test the property note
-      // var instane = new ShopApi.CustomerModel()
-      // expect(instance).to.be();
-        })
-
-        it('should have the property paymentInstruments (base name: "payment_instruments")', () => {
-      // uncomment below and update the code to test the property paymentInstruments
-      // var instane = new ShopApi.CustomerModel()
-      // expect(instance).to.be();
-        })
-
-        it('should have the property phoneBusiness (base name: "phone_business")', () => {
-      // uncomment below and update the code to test the property phoneBusiness
-      // var instane = new ShopApi.CustomerModel()
-      // expect(instance).to.be();
-        })
-
-        it('should have the property phoneHome (base name: "phone_home")', () => {
-      // uncomment below and update the code to test the property phoneHome
-      // var instane = new ShopApi.CustomerModel()
-      // expect(instance).to.be();
-        })
-
-        it('should have the property phoneMobile (base name: "phone_mobile")', () => {
-      // uncomment below and update the code to test the property phoneMobile
-      // var instane = new ShopApi.CustomerModel()
-      // expect(instance).to.be();
-        })
-
-        it('should have the property preferredLocale (base name: "preferred_locale")', () => {
-      // uncomment below and update the code to test the property preferredLocale
-      // var instane = new ShopApi.CustomerModel()
-      // expect(instance).to.be();
-        })
-
-        it('should have the property previousLoginTime (base name: "previous_login_time")', () => {
-      // uncomment below and update the code to test the property previousLoginTime
-      // var instane = new ShopApi.CustomerModel()
-      // expect(instance).to.be();
-        })
-
-        it('should have the property previousVisitTime (base name: "previous_visit_time")', () => {
-      // uncomment below and update the code to test the property previousVisitTime
-      // var instane = new ShopApi.CustomerModel()
-      // expect(instance).to.be();
-        })
-
-        it('should have the property salutation (base name: "salutation")', () => {
-      // uncomment below and update the code to test the property salutation
-      // var instane = new ShopApi.CustomerModel()
-      // expect(instance).to.be();
-        })
-
-        it('should have the property secondName (base name: "second_name")', () => {
-      // uncomment below and update the code to test the property secondName
-      // var instane = new ShopApi.CustomerModel()
-      // expect(instance).to.be();
-        })
-
-        it('should have the property suffix (base name: "suffix")', () => {
-      // uncomment below and update the code to test the property suffix
-      // var instane = new ShopApi.CustomerModel()
-      // expect(instance).to.be();
-        })
-
-        it('should have the property title (base name: "title")', () => {
-      // uncomment below and update the code to test the property title
-      // var instane = new ShopApi.CustomerModel()
-      // expect(instance).to.be();
-        })
-
+describe('CustomerModel', () => {
+    it('should create an instance of CustomerModel', () => {
+        // uncomment below and update the code to test CustomerModel
+        // var instane = new ShopApi.Customer()
+        // expect(instance).to.be.a(ShopApi.Customer);
     })
 
-}))
+    it('should have the property addresses (base name: "addresses")', () => {
+        // uncomment below and update the code to test the property addresses
+        // var instane = new ShopApi.Customer()
+        // expect(instance).to.be();
+    })
+
+    it('should have the property authType (base name: "auth_type")', () => {
+        // uncomment below and update the code to test the property authType
+        // var instane = new ShopApi.Customer()
+        // expect(instance).to.be();
+    })
+
+    it('should have the property birthday (base name: "birthday")', () => {
+        // uncomment below and update the code to test the property birthday
+        // var instane = new ShopApi.Customer()
+        // expect(instance).to.be();
+    })
+
+    it('should have the property cFamilyStatus (base name: "c_familyStatus")', () => {
+        // uncomment below and update the code to test the property cFamilyStatus
+        // var instane = new ShopApi.Customer()
+        // expect(instance).to.be();
+    })
+
+    it('should have the property companyName (base name: "company_name")', () => {
+        // uncomment below and update the code to test the property companyName
+        // var instane = new ShopApi.Customer()
+        // expect(instance).to.be();
+    })
+
+    it('should have the property creationDate (base name: "creation_date")', () => {
+        // uncomment below and update the code to test the property creationDate
+        // var instane = new ShopApi.Customer()
+        // expect(instance).to.be();
+    })
+
+    it('should have the property customerId (base name: "customer_id")', () => {
+        // uncomment below and update the code to test the property customerId
+        // var instane = new ShopApi.Customer()
+        // expect(instance).to.be();
+    })
+
+    it('should have the property customerNo (base name: "customer_no")', () => {
+        // uncomment below and update the code to test the property customerNo
+        // var instane = new ShopApi.Customer()
+        // expect(instance).to.be();
+    })
+
+    it('should have the property email (base name: "email")', () => {
+        // uncomment below and update the code to test the property email
+        // var instane = new ShopApi.Customer()
+        // expect(instance).to.be();
+    })
+
+    it('should have the property enabled (base name: "enabled")', () => {
+        // uncomment below and update the code to test the property enabled
+        // var instane = new ShopApi.Customer()
+        // expect(instance).to.be();
+    })
+
+    it('should have the property fax (base name: "fax")', () => {
+        // uncomment below and update the code to test the property fax
+        // var instane = new ShopApi.Customer()
+        // expect(instance).to.be();
+    })
+
+    it('should have the property firstName (base name: "first_name")', () => {
+        // uncomment below and update the code to test the property firstName
+        // var instane = new ShopApi.Customer()
+        // expect(instance).to.be();
+    })
+
+    it('should have the property gender (base name: "gender")', () => {
+        // uncomment below and update the code to test the property gender
+        // var instane = new ShopApi.Customer()
+        // expect(instance).to.be();
+    })
+
+    it('should have the property jobTitle (base name: "job_title")', () => {
+        // uncomment below and update the code to test the property jobTitle
+        // var instane = new ShopApi.Customer()
+        // expect(instance).to.be();
+    })
+
+    it('should have the property lastLoginTime (base name: "last_login_time")', () => {
+        // uncomment below and update the code to test the property lastLoginTime
+        // var instane = new ShopApi.Customer()
+        // expect(instance).to.be();
+    })
+
+    it('should have the property lastModified (base name: "last_modified")', () => {
+        // uncomment below and update the code to test the property lastModified
+        // var instane = new ShopApi.Customer()
+        // expect(instance).to.be();
+    })
+
+    it('should have the property lastName (base name: "last_name")', () => {
+        // uncomment below and update the code to test the property lastName
+        // var instane = new ShopApi.Customer()
+        // expect(instance).to.be();
+    })
+
+    it('should have the property lastVisitTime (base name: "last_visit_time")', () => {
+        // uncomment below and update the code to test the property lastVisitTime
+        // var instane = new ShopApi.Customer()
+        // expect(instance).to.be();
+    })
+
+    it('should have the property login (base name: "login")', () => {
+        // uncomment below and update the code to test the property login
+        // var instane = new ShopApi.Customer()
+        // expect(instance).to.be();
+    })
+
+    it('should have the property note (base name: "note")', () => {
+        // uncomment below and update the code to test the property note
+        // var instane = new ShopApi.Customer()
+        // expect(instance).to.be();
+    })
+
+    it('should have the property paymentInstruments (base name: "payment_instruments")', () => {
+        // uncomment below and update the code to test the property paymentInstruments
+        // var instane = new ShopApi.Customer()
+        // expect(instance).to.be();
+    })
+
+    it('should have the property phoneBusiness (base name: "phone_business")', () => {
+        // uncomment below and update the code to test the property phoneBusiness
+        // var instane = new ShopApi.Customer()
+        // expect(instance).to.be();
+    })
+
+    it('should have the property phoneHome (base name: "phone_home")', () => {
+        // uncomment below and update the code to test the property phoneHome
+        // var instane = new ShopApi.Customer()
+        // expect(instance).to.be();
+    })
+
+    it('should have the property phoneMobile (base name: "phone_mobile")', () => {
+        // uncomment below and update the code to test the property phoneMobile
+        // var instane = new ShopApi.Customer()
+        // expect(instance).to.be();
+    })
+
+    it('should have the property preferredLocale (base name: "preferred_locale")', () => {
+        // uncomment below and update the code to test the property preferredLocale
+        // var instane = new ShopApi.Customer()
+        // expect(instance).to.be();
+    })
+
+    it('should have the property previousLoginTime (base name: "previous_login_time")', () => {
+        // uncomment below and update the code to test the property previousLoginTime
+        // var instane = new ShopApi.Customer()
+        // expect(instance).to.be();
+    })
+
+    it('should have the property previousVisitTime (base name: "previous_visit_time")', () => {
+        // uncomment below and update the code to test the property previousVisitTime
+        // var instane = new ShopApi.Customer()
+        // expect(instance).to.be();
+    })
+
+    it('should have the property salutation (base name: "salutation")', () => {
+        // uncomment below and update the code to test the property salutation
+        // var instane = new ShopApi.Customer()
+        // expect(instance).to.be();
+    })
+
+    it('should have the property secondName (base name: "second_name")', () => {
+        // uncomment below and update the code to test the property secondName
+        // var instane = new ShopApi.Customer()
+        // expect(instance).to.be();
+    })
+
+    it('should have the property suffix (base name: "suffix")', () => {
+        // uncomment below and update the code to test the property suffix
+        // var instane = new ShopApi.Customer()
+        // expect(instance).to.be();
+    })
+
+    it('should have the property title (base name: "title")', () => {
+        // uncomment below and update the code to test the property title
+        // var instane = new ShopApi.Customer()
+        // expect(instance).to.be();
+    })
+
+})

@@ -15,85 +15,72 @@
  *
  */
 
-(function(root, factory) {
-    if (typeof define === 'function' && define.amd) {
-    // AMD.
-        define(['expect.js', '../../src/index'], factory)
-    } else if (typeof module === 'object' && module.exports) {
-    // CommonJS-like environments that support module.exports, like Node.
-        factory(require('expect.js'), require('../../src/index'))
-    } else {
-    // Browser globals (root is window)
-        factory(root.expect, root.ShopApi)
-    }
-}(this, (expect, ShopApi) => {
-    'use strict'
+import expect from 'expect.js'
+import ShopApi from '../../src/index'
 
-    let instance
+let instance
 
-    beforeEach(() => {
-        instance = new ShopApi.BasketPaymentInstrumentRequestModel()
+beforeEach(() => {
+    instance = new ShopApi.BasketPaymentInstrumentRequest()
+})
+
+const getProperty = (object, getter, property) => {
+// Use getter method if present; otherwise, get the property directly.
+    if (typeof object[getter] === 'function') { return object[getter]() } else { return object[property] }
+}
+
+const setProperty = (object, setter, property, value) => {
+// Use setter method if present; otherwise, set the property directly.
+    if (typeof object[setter] === 'function') { object[setter](value) } else { object[property] = value }
+}
+
+describe('BasketPaymentInstrumentRequestModel', () => {
+    it('should create an instance of BasketPaymentInstrumentRequestModel', () => {
+  // uncomment below and update the code to test BasketPaymentInstrumentRequestModel
+  // var instane = new ShopApi.BasketPaymentInstrumentRequest()
+  // expect(instance).to.be.a(ShopApi.BasketPaymentInstrumentRequest);
     })
 
-    const getProperty = (object, getter, property) => {
-    // Use getter method if present; otherwise, get the property directly.
-        if (typeof object[getter] === 'function') { return object[getter]() } else { return object[property] }
-    }
-
-    const setProperty = (object, setter, property, value) => {
-    // Use setter method if present; otherwise, set the property directly.
-        if (typeof object[setter] === 'function') { object[setter](value) } else { object[property] = value }
-    }
-
-    describe('BasketPaymentInstrumentRequestModel', () => {
-        it('should create an instance of BasketPaymentInstrumentRequestModel', () => {
-      // uncomment below and update the code to test BasketPaymentInstrumentRequestModel
-      // var instane = new ShopApi.BasketPaymentInstrumentRequestModel()
-      // expect(instance).to.be.a(ShopApi.BasketPaymentInstrumentRequestModel);
-        })
-
-        it('should have the property amount (base name: "amount")', () => {
-      // uncomment below and update the code to test the property amount
-      // var instane = new ShopApi.BasketPaymentInstrumentRequestModel()
-      // expect(instance).to.be();
-        })
-
-        it('should have the property bankRoutingNumber (base name: "bank_routing_number")', () => {
-      // uncomment below and update the code to test the property bankRoutingNumber
-      // var instane = new ShopApi.BasketPaymentInstrumentRequestModel()
-      // expect(instance).to.be();
-        })
-
-        it('should have the property customerPaymentInstrumentId (base name: "customer_payment_instrument_id")', () => {
-      // uncomment below and update the code to test the property customerPaymentInstrumentId
-      // var instane = new ShopApi.BasketPaymentInstrumentRequestModel()
-      // expect(instance).to.be();
-        })
-
-        it('should have the property giftCertificateCode (base name: "gift_certificate_code")', () => {
-      // uncomment below and update the code to test the property giftCertificateCode
-      // var instane = new ShopApi.BasketPaymentInstrumentRequestModel()
-      // expect(instance).to.be();
-        })
-
-        it('should have the property paymentBankAccount (base name: "payment_bank_account")', () => {
-      // uncomment below and update the code to test the property paymentBankAccount
-      // var instane = new ShopApi.BasketPaymentInstrumentRequestModel()
-      // expect(instance).to.be();
-        })
-
-        it('should have the property paymentCard (base name: "payment_card")', () => {
-      // uncomment below and update the code to test the property paymentCard
-      // var instane = new ShopApi.BasketPaymentInstrumentRequestModel()
-      // expect(instance).to.be();
-        })
-
-        it('should have the property paymentMethodId (base name: "payment_method_id")', () => {
-      // uncomment below and update the code to test the property paymentMethodId
-      // var instane = new ShopApi.BasketPaymentInstrumentRequestModel()
-      // expect(instance).to.be();
-        })
-
+    it('should have the property amount (base name: "amount")', () => {
+  // uncomment below and update the code to test the property amount
+  // var instane = new ShopApi.BasketPaymentInstrumentRequest()
+  // expect(instance).to.be();
     })
 
-}))
+    it('should have the property bankRoutingNumber (base name: "bank_routing_number")', () => {
+  // uncomment below and update the code to test the property bankRoutingNumber
+  // var instane = new ShopApi.BasketPaymentInstrumentRequest()
+  // expect(instance).to.be();
+    })
+
+    it('should have the property customerPaymentInstrumentId (base name: "customer_payment_instrument_id")', () => {
+  // uncomment below and update the code to test the property customerPaymentInstrumentId
+  // var instane = new ShopApi.BasketPaymentInstrumentRequest()
+  // expect(instance).to.be();
+    })
+
+    it('should have the property giftCertificateCode (base name: "gift_certificate_code")', () => {
+  // uncomment below and update the code to test the property giftCertificateCode
+  // var instane = new ShopApi.BasketPaymentInstrumentRequest()
+  // expect(instance).to.be();
+    })
+
+    it('should have the property paymentBankAccount (base name: "payment_bank_account")', () => {
+  // uncomment below and update the code to test the property paymentBankAccount
+  // var instane = new ShopApi.BasketPaymentInstrumentRequest()
+  // expect(instance).to.be();
+    })
+
+    it('should have the property paymentCard (base name: "payment_card")', () => {
+  // uncomment below and update the code to test the property paymentCard
+  // var instane = new ShopApi.BasketPaymentInstrumentRequest()
+  // expect(instance).to.be();
+    })
+
+    it('should have the property paymentMethodId (base name: "payment_method_id")', () => {
+  // uncomment below and update the code to test the property paymentMethodId
+  // var instane = new ShopApi.BasketPaymentInstrumentRequest()
+  // expect(instance).to.be();
+    })
+
+})

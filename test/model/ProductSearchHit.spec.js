@@ -15,109 +15,104 @@
  *
  */
 
-(function(root, factory) {
-    if (typeof define === 'function' && define.amd) {
-    // AMD.
-        define(['expect.js', '../../src/index'], factory)
-    } else if (typeof module === 'object' && module.exports) {
-    // CommonJS-like environments that support module.exports, like Node.
-        factory(require('expect.js'), require('../../src/index'))
-    } else {
-    // Browser globals (root is window)
-        factory(root.expect, root.ShopApi)
-    }
-}(this, (expect, ShopApi) => {
-    'use strict'
+import expect from 'expect.js'
+import ShopApi from '../../src/index'
 
-    let instance
+let instance
 
-    beforeEach(() => {
-        instance = new ShopApi.ProductSearchHitModel()
-    })
+beforeEach(() => {
+    instance = new ShopApi.ProductSearchHit()
+})
 
-    const getProperty = (object, getter, property) => {
+const getProperty = (object, getter, property) => {
     // Use getter method if present; otherwise, get the property directly.
-        if (typeof object[getter] === 'function') { return object[getter]() } else { return object[property] }
+    if (typeof object[getter] === 'function') {
+        return object[getter]()
+    } else {
+        return object[property]
     }
+}
 
-    const setProperty = (object, setter, property, value) => {
+const setProperty = (object, setter, property, value) => {
     // Use setter method if present; otherwise, set the property directly.
-        if (typeof object[setter] === 'function') { object[setter](value) } else { object[property] = value }
+    if (typeof object[setter] === 'function') {
+        object[setter](value)
+    } else {
+        object[property] = value
     }
+}
 
-    describe('ProductSearchHitModel', () => {
-        it('should create an instance of ProductSearchHitModel', () => {
-      // uncomment below and update the code to test ProductSearchHitModel
-      // var instane = new ShopApi.ProductSearchHitModel()
-      // expect(instance).to.be.a(ShopApi.ProductSearchHitModel);
-        })
-
-        it('should have the property currency (base name: "currency")', () => {
-      // uncomment below and update the code to test the property currency
-      // var instane = new ShopApi.ProductSearchHitModel()
-      // expect(instance).to.be();
-        })
-
-        it('should have the property image (base name: "image")', () => {
-      // uncomment below and update the code to test the property image
-      // var instane = new ShopApi.ProductSearchHitModel()
-      // expect(instance).to.be();
-        })
-
-        it('should have the property link (base name: "link")', () => {
-      // uncomment below and update the code to test the property link
-      // var instane = new ShopApi.ProductSearchHitModel()
-      // expect(instance).to.be();
-        })
-
-        it('should have the property orderable (base name: "orderable")', () => {
-      // uncomment below and update the code to test the property orderable
-      // var instane = new ShopApi.ProductSearchHitModel()
-      // expect(instance).to.be();
-        })
-
-        it('should have the property price (base name: "price")', () => {
-      // uncomment below and update the code to test the property price
-      // var instane = new ShopApi.ProductSearchHitModel()
-      // expect(instance).to.be();
-        })
-
-        it('should have the property priceMax (base name: "price_max")', () => {
-      // uncomment below and update the code to test the property priceMax
-      // var instane = new ShopApi.ProductSearchHitModel()
-      // expect(instance).to.be();
-        })
-
-        it('should have the property prices (base name: "prices")', () => {
-      // uncomment below and update the code to test the property prices
-      // var instane = new ShopApi.ProductSearchHitModel()
-      // expect(instance).to.be();
-        })
-
-        it('should have the property productId (base name: "product_id")', () => {
-      // uncomment below and update the code to test the property productId
-      // var instane = new ShopApi.ProductSearchHitModel()
-      // expect(instance).to.be();
-        })
-
-        it('should have the property productName (base name: "product_name")', () => {
-      // uncomment below and update the code to test the property productName
-      // var instane = new ShopApi.ProductSearchHitModel()
-      // expect(instance).to.be();
-        })
-
-        it('should have the property productType (base name: "product_type")', () => {
-      // uncomment below and update the code to test the property productType
-      // var instane = new ShopApi.ProductSearchHitModel()
-      // expect(instance).to.be();
-        })
-
-        it('should have the property variationAttributes (base name: "variation_attributes")', () => {
-      // uncomment below and update the code to test the property variationAttributes
-      // var instane = new ShopApi.ProductSearchHitModel()
-      // expect(instance).to.be();
-        })
-
+describe('ProductSearchHitModel', () => {
+    it('should create an instance of ProductSearchHitModel', () => {
+        // uncomment below and update the code to test ProductSearchHitModel
+        // var instane = new ShopApi.ProductSearchHit()
+        // expect(instance).to.be.a(ShopApi.ProductSearchHit);
     })
 
-}))
+    it('should have the property currency (base name: "currency")', () => {
+        // uncomment below and update the code to test the property currency
+        // var instane = new ShopApi.ProductSearchHit()
+        // expect(instance).to.be();
+    })
+
+    it('should have the property image (base name: "image")', () => {
+        // uncomment below and update the code to test the property image
+        // var instane = new ShopApi.ProductSearchHit()
+        // expect(instance).to.be();
+    })
+
+    it('should have the property link (base name: "link")', () => {
+        // uncomment below and update the code to test the property link
+        // var instane = new ShopApi.ProductSearchHit()
+        // expect(instance).to.be();
+    })
+
+    it('should have the property orderable (base name: "orderable")', () => {
+        // uncomment below and update the code to test the property orderable
+        // var instane = new ShopApi.ProductSearchHit()
+        // expect(instance).to.be();
+    })
+
+    it('should have the property price (base name: "price")', () => {
+        // uncomment below and update the code to test the property price
+        // var instane = new ShopApi.ProductSearchHit()
+        // expect(instance).to.be();
+    })
+
+    it('should have the property priceMax (base name: "price_max")', () => {
+        // uncomment below and update the code to test the property priceMax
+        // var instane = new ShopApi.ProductSearchHit()
+        // expect(instance).to.be();
+    })
+
+    it('should have the property prices (base name: "prices")', () => {
+        // uncomment below and update the code to test the property prices
+        // var instane = new ShopApi.ProductSearchHit()
+        // expect(instance).to.be();
+    })
+
+    it('should have the property productId (base name: "product_id")', () => {
+        // uncomment below and update the code to test the property productId
+        // var instane = new ShopApi.ProductSearchHit()
+        // expect(instance).to.be();
+    })
+
+    it('should have the property productName (base name: "product_name")', () => {
+        // uncomment below and update the code to test the property productName
+        // var instane = new ShopApi.ProductSearchHit()
+        // expect(instance).to.be();
+    })
+
+    it('should have the property productType (base name: "product_type")', () => {
+        // uncomment below and update the code to test the property productType
+        // var instane = new ShopApi.ProductSearchHit()
+        // expect(instance).to.be();
+    })
+
+    it('should have the property variationAttributes (base name: "variation_attributes")', () => {
+        // uncomment below and update the code to test the property variationAttributes
+        // var instane = new ShopApi.ProductSearchHit()
+        // expect(instance).to.be();
+    })
+
+})

@@ -15,73 +15,68 @@
  *
  */
 
-(function(root, factory) {
-    if (typeof define === 'function' && define.amd) {
-    // AMD.
-        define(['expect.js', '../../src/index'], factory)
-    } else if (typeof module === 'object' && module.exports) {
-    // CommonJS-like environments that support module.exports, like Node.
-        factory(require('expect.js'), require('../../src/index'))
-    } else {
-    // Browser globals (root is window)
-        factory(root.expect, root.ShopApi)
-    }
-}(this, (expect, ShopApi) => {
-    'use strict'
+import expect from 'expect.js'
+import ShopApi from '../../src/index'
 
-    let instance
+let instance
 
-    beforeEach(() => {
-        instance = new ShopApi.ProductListEventModel()
-    })
+beforeEach(() => {
+    instance = new ShopApi.ProductListEvent()
+})
 
-    const getProperty = (object, getter, property) => {
+const getProperty = (object, getter, property) => {
     // Use getter method if present; otherwise, get the property directly.
-        if (typeof object[getter] === 'function') { return object[getter]() } else { return object[property] }
+    if (typeof object[getter] === 'function') {
+        return object[getter]()
+    } else {
+        return object[property]
     }
+}
 
-    const setProperty = (object, setter, property, value) => {
+const setProperty = (object, setter, property, value) => {
     // Use setter method if present; otherwise, set the property directly.
-        if (typeof object[setter] === 'function') { object[setter](value) } else { object[property] = value }
+    if (typeof object[setter] === 'function') {
+        object[setter](value)
+    } else {
+        object[property] = value
     }
+}
 
-    describe('ProductListEventModel', () => {
-        it('should create an instance of ProductListEventModel', () => {
-      // uncomment below and update the code to test ProductListEventModel
-      // var instane = new ShopApi.ProductListEventModel()
-      // expect(instance).to.be.a(ShopApi.ProductListEventModel);
-        })
-
-        it('should have the property city (base name: "city")', () => {
-      // uncomment below and update the code to test the property city
-      // var instane = new ShopApi.ProductListEventModel()
-      // expect(instance).to.be();
-        })
-
-        it('should have the property country (base name: "country")', () => {
-      // uncomment below and update the code to test the property country
-      // var instane = new ShopApi.ProductListEventModel()
-      // expect(instance).to.be();
-        })
-
-        it('should have the property _date (base name: "date")', () => {
-      // uncomment below and update the code to test the property _date
-      // var instane = new ShopApi.ProductListEventModel()
-      // expect(instance).to.be();
-        })
-
-        it('should have the property state (base name: "state")', () => {
-      // uncomment below and update the code to test the property state
-      // var instane = new ShopApi.ProductListEventModel()
-      // expect(instance).to.be();
-        })
-
-        it('should have the property type (base name: "type")', () => {
-      // uncomment below and update the code to test the property type
-      // var instane = new ShopApi.ProductListEventModel()
-      // expect(instance).to.be();
-        })
-
+describe('ProductListEventModel', () => {
+    it('should create an instance of ProductListEventModel', () => {
+        // uncomment below and update the code to test ProductListEventModel
+        // var instane = new ShopApi.ProductListEvent()
+        // expect(instance).to.be.a(ShopApi.ProductListEvent);
     })
 
-}))
+    it('should have the property city (base name: "city")', () => {
+        // uncomment below and update the code to test the property city
+        // var instane = new ShopApi.ProductListEvent()
+        // expect(instance).to.be();
+    })
+
+    it('should have the property country (base name: "country")', () => {
+        // uncomment below and update the code to test the property country
+        // var instane = new ShopApi.ProductListEvent()
+        // expect(instance).to.be();
+    })
+
+    it('should have the property _date (base name: "date")', () => {
+        // uncomment below and update the code to test the property _date
+        // var instane = new ShopApi.ProductListEvent()
+        // expect(instance).to.be();
+    })
+
+    it('should have the property state (base name: "state")', () => {
+        // uncomment below and update the code to test the property state
+        // var instane = new ShopApi.ProductListEvent()
+        // expect(instance).to.be();
+    })
+
+    it('should have the property type (base name: "type")', () => {
+        // uncomment below and update the code to test the property type
+        // var instane = new ShopApi.ProductListEvent()
+        // expect(instance).to.be();
+    })
+
+})

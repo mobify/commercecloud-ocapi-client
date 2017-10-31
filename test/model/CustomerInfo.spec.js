@@ -15,73 +15,68 @@
  *
  */
 
-(function(root, factory) {
-    if (typeof define === 'function' && define.amd) {
-    // AMD.
-        define(['expect.js', '../../src/index'], factory)
-    } else if (typeof module === 'object' && module.exports) {
-    // CommonJS-like environments that support module.exports, like Node.
-        factory(require('expect.js'), require('../../src/index'))
-    } else {
-    // Browser globals (root is window)
-        factory(root.expect, root.ShopApi)
-    }
-}(this, (expect, ShopApi) => {
-    'use strict'
+import expect from 'expect.js'
+import ShopApi from '../../src/index'
 
-    let instance
+let instance
 
-    beforeEach(() => {
-        instance = new ShopApi.CustomerInfoModel()
-    })
+beforeEach(() => {
+    instance = new ShopApi.CustomerInfo()
+})
 
-    const getProperty = (object, getter, property) => {
+const getProperty = (object, getter, property) => {
     // Use getter method if present; otherwise, get the property directly.
-        if (typeof object[getter] === 'function') { return object[getter]() } else { return object[property] }
+    if (typeof object[getter] === 'function') {
+        return object[getter]()
+    } else {
+        return object[property]
     }
+}
 
-    const setProperty = (object, setter, property, value) => {
+const setProperty = (object, setter, property, value) => {
     // Use setter method if present; otherwise, set the property directly.
-        if (typeof object[setter] === 'function') { object[setter](value) } else { object[property] = value }
+    if (typeof object[setter] === 'function') {
+        object[setter](value)
+    } else {
+        object[property] = value
     }
+}
 
-    describe('CustomerInfoModel', () => {
-        it('should create an instance of CustomerInfoModel', () => {
-      // uncomment below and update the code to test CustomerInfoModel
-      // var instane = new ShopApi.CustomerInfoModel()
-      // expect(instance).to.be.a(ShopApi.CustomerInfoModel);
-        })
-
-        it('should have the property cFamilyStatus (base name: "c_familyStatus")', () => {
-      // uncomment below and update the code to test the property cFamilyStatus
-      // var instane = new ShopApi.CustomerInfoModel()
-      // expect(instance).to.be();
-        })
-
-        it('should have the property customerId (base name: "customer_id")', () => {
-      // uncomment below and update the code to test the property customerId
-      // var instane = new ShopApi.CustomerInfoModel()
-      // expect(instance).to.be();
-        })
-
-        it('should have the property customerName (base name: "customer_name")', () => {
-      // uncomment below and update the code to test the property customerName
-      // var instane = new ShopApi.CustomerInfoModel()
-      // expect(instance).to.be();
-        })
-
-        it('should have the property customerNo (base name: "customer_no")', () => {
-      // uncomment below and update the code to test the property customerNo
-      // var instane = new ShopApi.CustomerInfoModel()
-      // expect(instance).to.be();
-        })
-
-        it('should have the property email (base name: "email")', () => {
-      // uncomment below and update the code to test the property email
-      // var instane = new ShopApi.CustomerInfoModel()
-      // expect(instance).to.be();
-        })
-
+describe('CustomerInfoModel', () => {
+    it('should create an instance of CustomerInfoModel', () => {
+        // uncomment below and update the code to test CustomerInfoModel
+        // var instane = new ShopApi.CustomerInfo()
+        // expect(instance).to.be.a(ShopApi.CustomerInfo);
     })
 
-}))
+    it('should have the property cFamilyStatus (base name: "c_familyStatus")', () => {
+        // uncomment below and update the code to test the property cFamilyStatus
+        // var instane = new ShopApi.CustomerInfo()
+        // expect(instance).to.be();
+    })
+
+    it('should have the property customerId (base name: "customer_id")', () => {
+        // uncomment below and update the code to test the property customerId
+        // var instane = new ShopApi.CustomerInfo()
+        // expect(instance).to.be();
+    })
+
+    it('should have the property customerName (base name: "customer_name")', () => {
+        // uncomment below and update the code to test the property customerName
+        // var instane = new ShopApi.CustomerInfo()
+        // expect(instance).to.be();
+    })
+
+    it('should have the property customerNo (base name: "customer_no")', () => {
+        // uncomment below and update the code to test the property customerNo
+        // var instane = new ShopApi.CustomerInfo()
+        // expect(instance).to.be();
+    })
+
+    it('should have the property email (base name: "email")', () => {
+        // uncomment below and update the code to test the property email
+        // var instane = new ShopApi.CustomerInfo()
+        // expect(instance).to.be();
+    })
+
+})

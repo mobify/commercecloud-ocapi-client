@@ -15,67 +15,62 @@
  *
  */
 
-(function(root, factory) {
-    if (typeof define === 'function' && define.amd) {
-    // AMD.
-        define(['expect.js', '../../src/index'], factory)
-    } else if (typeof module === 'object' && module.exports) {
-    // CommonJS-like environments that support module.exports, like Node.
-        factory(require('expect.js'), require('../../src/index'))
-    } else {
-    // Browser globals (root is window)
-        factory(root.expect, root.ShopApi)
-    }
-}(this, (expect, ShopApi) => {
-    'use strict'
+import expect from 'expect.js'
+import ShopApi from '../../src/index'
 
-    let instance
+let instance
 
-    beforeEach(() => {
-        instance = new ShopApi.CouponItemModel()
-    })
+beforeEach(() => {
+    instance = new ShopApi.CouponItem()
+})
 
-    const getProperty = (object, getter, property) => {
+const getProperty = (object, getter, property) => {
     // Use getter method if present; otherwise, get the property directly.
-        if (typeof object[getter] === 'function') { return object[getter]() } else { return object[property] }
+    if (typeof object[getter] === 'function') {
+        return object[getter]()
+    } else {
+        return object[property]
     }
+}
 
-    const setProperty = (object, setter, property, value) => {
+const setProperty = (object, setter, property, value) => {
     // Use setter method if present; otherwise, set the property directly.
-        if (typeof object[setter] === 'function') { object[setter](value) } else { object[property] = value }
+    if (typeof object[setter] === 'function') {
+        object[setter](value)
+    } else {
+        object[property] = value
     }
+}
 
-    describe('CouponItemModel', () => {
-        it('should create an instance of CouponItemModel', () => {
-      // uncomment below and update the code to test CouponItemModel
-      // var instane = new ShopApi.CouponItemModel()
-      // expect(instance).to.be.a(ShopApi.CouponItemModel);
-        })
-
-        it('should have the property code (base name: "code")', () => {
-      // uncomment below and update the code to test the property code
-      // var instane = new ShopApi.CouponItemModel()
-      // expect(instance).to.be();
-        })
-
-        it('should have the property couponItemId (base name: "coupon_item_id")', () => {
-      // uncomment below and update the code to test the property couponItemId
-      // var instane = new ShopApi.CouponItemModel()
-      // expect(instance).to.be();
-        })
-
-        it('should have the property statusCode (base name: "status_code")', () => {
-      // uncomment below and update the code to test the property statusCode
-      // var instane = new ShopApi.CouponItemModel()
-      // expect(instance).to.be();
-        })
-
-        it('should have the property valid (base name: "valid")', () => {
-      // uncomment below and update the code to test the property valid
-      // var instane = new ShopApi.CouponItemModel()
-      // expect(instance).to.be();
-        })
-
+describe('CouponItemModel', () => {
+    it('should create an instance of CouponItemModel', () => {
+        // uncomment below and update the code to test CouponItemModel
+        // var instane = new ShopApi.CouponItem()
+        // expect(instance).to.be.a(ShopApi.CouponItem);
     })
 
-}))
+    it('should have the property code (base name: "code")', () => {
+        // uncomment below and update the code to test the property code
+        // var instane = new ShopApi.CouponItem()
+        // expect(instance).to.be();
+    })
+
+    it('should have the property couponItemId (base name: "coupon_item_id")', () => {
+        // uncomment below and update the code to test the property couponItemId
+        // var instane = new ShopApi.CouponItem()
+        // expect(instance).to.be();
+    })
+
+    it('should have the property statusCode (base name: "status_code")', () => {
+        // uncomment below and update the code to test the property statusCode
+        // var instane = new ShopApi.CouponItem()
+        // expect(instance).to.be();
+    })
+
+    it('should have the property valid (base name: "valid")', () => {
+        // uncomment below and update the code to test the property valid
+        // var instane = new ShopApi.CouponItem()
+        // expect(instance).to.be();
+    })
+
+})
