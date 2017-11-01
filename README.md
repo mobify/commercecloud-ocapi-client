@@ -20,7 +20,7 @@ please follow the procedure in ["Publishing npm packages"](https://docs.npmjs.co
 Then install it via:
 
 ```shell
-npm install sfcc-shop-api --save
+npm install ocapi-client --save
 ```
 
 #### git
@@ -68,7 +68,7 @@ module: {
 Please follow the [installation](#installation) instruction and execute the following JS code:
 
 ```javascript
-import ShopApi from 'sfcc-shop-api'
+import ShopApi from 'ocapi-client'
 
 ShopApi.ApiClient.instance = new ShopApi.ApiClient({
     clientUsername: 'YOUR USERNAME', // Configure HTTP basic authorization: customers_auth
