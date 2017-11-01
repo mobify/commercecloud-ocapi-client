@@ -1,6 +1,6 @@
 {
   "name": "ocapi-client",
-  "version": "0.2.0",
+  "version": "0.2.1",
   "description": "An ES6 JavaScript Client for Salesforce Open Commerce API",
   "license": "SEE LICENSE IN LICENSE",
   "main": "lib/index.js",

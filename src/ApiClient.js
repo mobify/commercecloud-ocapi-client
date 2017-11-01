@@ -61,7 +61,7 @@ export default class ApiClient {
         /**
          * The base URL against which to resolve every API call's (relative) path.
          * @type {String}
-         * @default https://mobify-tech-prtnr-na03-dw.demandware.net/s/2017refresh/dw/shop/v17_8
+         * @default https://localhost/s/siteId/dw/shop/v17_8
          */
         this.basePath = basePath.replace(/\/+$/, '')
 
