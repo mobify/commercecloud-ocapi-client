@@ -37,8 +37,6 @@ export default class CategoriesApi {
         this.apiClient = apiClient || ApiClient.instance
     }
 
-
-
     /**
      * When you use the URL template below, the server returns a category identified by its id; by default, the server
      * also returns the first level of subcategories, but you can specify another level by setting the levels
@@ -57,7 +55,6 @@ export default class CategoriesApi {
         if (id === undefined || id === null) {
             throw new Error('Missing the required parameter \'id\' when calling getCategoriesByID')
         }
-
 
         const pathParams = {
             id
@@ -114,7 +111,6 @@ export default class CategoriesApi {
             throw new Error('Missing the required parameter \'ids\' when calling getCategoriesByIDs')
         }
 
-
         const pathParams = {
             ids
         }
@@ -150,6 +146,4 @@ export default class CategoriesApi {
                 return response_and_data.data
             })
     }
-
-
 }

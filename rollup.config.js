@@ -12,6 +12,10 @@ export default {
         babel({
             exclude: 'node_modules/**'
         }),
-        uglify()
+        uglify({
+            compress: {
+                keep_fnames: true
+            }
+        })
     ]
 }

@@ -5,9 +5,15 @@
             {
                 "modules": false
             }
-        ]
+        ],
+        "stage-0"
     ],
     "plugins": [
-        "external-helpers"
-    ]
+        "external-helpers",
+        "transform-object-rest-spread",
+        "transform-object-assign",
+        ["transform-builtin-extend", {
+            "globals": ["Error"]
+        }]
+    ],
 }

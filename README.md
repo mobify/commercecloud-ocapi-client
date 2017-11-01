@@ -70,7 +70,7 @@ Please follow the [installation](#installation) instruction and execute the foll
 ```javascript
 import ShopApi from 'sfcc-shop-api'
 
-ShopApi.instance = new ShopApi.ApiClient({
+ShopApi.ApiClient.instance = new ShopApi.ApiClient({
     clientUsername: 'YOUR USERNAME', // Configure HTTP basic authorization: customers_auth
     clientPassword: 'YOUR PASSWORD', // Configure HTTP basic authorization: customers_auth
     oAuthAccessToken: '' // Configure OAuth2 access token for authorization: oauth2_application
