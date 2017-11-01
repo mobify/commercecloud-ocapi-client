@@ -4,7 +4,7 @@ import babel from 'rollup-plugin-babel'
 export default {
     input: 'src/index.js',
     output: {
-        file: 'dist/ocapi-client.js',
+        file: 'lib/index.js',
         format: 'cjs'
     },
     external: ['superagent', 'querystring'],

@@ -3,7 +3,7 @@
     "version": "0.1.0",
     "description": "An ES6 JavaScript Client for Salesforce Open Commerce API",
     "license": "SEE LICENSE IN LICENSE",
-    "main": "dist/ocapi-client.js",
+    "main": "lib/index.js",
     "scripts": {
         "copyright:lint": "copyright 'src/**/*.js' 'bin/**/*.js' 'test/**/*.js'",
         "copyright:fix": "copyright --fix --update 'src/*.js' 'src/**/*.js' 'test/*.js' 'test/**/*.js'",
