@@ -5,3 +5,5 @@ settings:
 globals:
   process: false
   DEBUG: false
+rules:
+  camelcase: off
