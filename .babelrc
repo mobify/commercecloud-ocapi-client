@@ -8,12 +8,12 @@
         ],
         "stage-0"
     ],
-    "plugins": [
-        "external-helpers",
-        "transform-object-rest-spread",
-        "transform-object-assign",
-        ["transform-builtin-extend", {
-            "globals": ["Error"]
-        }]
-    ],
+    "env": {
+        "production": {
+            "plugins": ["external-helpers", "transform-es2015-function-name"]
+        },
+        "test": {
+            "plugins": ["babel-plugin-transform-es2015-modules-commonjs"]
+        }
+    }
 }

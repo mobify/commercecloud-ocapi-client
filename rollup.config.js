@@ -13,7 +13,7 @@ export default {
             exclude: 'node_modules/**'
         }),
         uglify({
-            compress: {
+            mangle: {
                 keep_fnames: true
             }
         })
