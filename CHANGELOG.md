@@ -1,4 +1,4 @@
-## To be released
+## v0.2.1 (November 1, 2017)
 - Update README
 - Remove reference to test Salesforce instance
 - Compile docs
