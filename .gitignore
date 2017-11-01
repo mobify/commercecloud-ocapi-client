@@ -1,1 +1,7 @@
+.DS_Store
+*.tgz
+
+lib/
+tmp/
 node_modules
+npm-debug.log

@@ -1,19 +1,50 @@
 {
-  "name": "test-demandware",
-  "version": "1.0.0",
-  "description": "",
-  "main": "index.js",
+  "name": "ocapi-client",
+  "version": "0.2.0",
+  "description": "An ES6 JavaScript Client for Salesforce Open Commerce API",
+  "license": "SEE LICENSE IN LICENSE",
+  "main": "lib/index.js",
   "scripts": {
-    "start": "node client.js",
-    "start:debug": "node --inspect --debug-brk client.js"
+    "copyright:lint": "copyright 'src/**/*.js' 'bin/**/*.js' 'test/**/*.js'",
+    "copyright:fix": "copyright --fix --update 'src/*.js' 'src/**/*.js' 'test/*.js' 'test/**/*.js'",
+    "docs": "jsdoc -c .jsdocrc",
+    "lint": "npm run lint:js && npm run copyright:lint",
+    "lint:js": "eslint '**/*.js'",
+    "lint:fix": "npm run lint:js -- --fix",
+    "test": "BABEL_ENV=test mocha --compilers js:babel-core/register $(find test/api -name '*.spec.js')",
+    "build": "BABEL_ENV=production rollup -c"
   },
-  "author": "",
-  "license": "ISC",
+  "browser": {
+    "fs": false
+  },
   "dependencies": {
-    "request": "^2.81.0",
-    "request-promise": "^4.2.1",
+    "atob": "^2.0.3",
+    "btoa": "^1.1.2",
+    "querystring": "^0.2.0",
+    "superagent": "3.5.2"
   },
   "devDependencies": {
-    "nodemon": "^1.11.0"
+    "babel": "^6.23.0",
+    "babel-cli": "^6.24.1",
+    "babel-core": "6.18.0",
+    "babel-plugin-external-helpers": "^6.22.0",
+    "babel-plugin-transform-builtin-extend": "^1.1.2",
+    "babel-plugin-transform-es2015-function-name": "^6.24.1",
+    "babel-plugin-transform-object-assign": "6.22.0",
+    "babel-plugin-transform-object-rest-spread": "6.23.0",
+    "babel-preset-es2015": "^6.24.1",
+    "babel-preset-stage-0": "^6.24.1",
+    "eslint": "3.19.0",
+    "eslint-import-resolver-webpack": "0.8.1",
+    "eslint-plugin-import": "2.3.0",
+    "expect.js": "~0.3.1",
+    "express": "^4.16.2",
+    "jsdoc": "^3.4.3",
+    "mobify-code-style": "2.8.1",
+    "mocha": "~2.3.4",
+    "rollup": "^0.49.3",
+    "rollup-plugin-babel": "^3.0.2",
+    "rollup-plugin-uglify": "^2.0.1",
+    "sinon": "1.17.3"
   }
 }
