@@ -4,6 +4,9 @@
   "description": "An ES6 JavaScript Client for Salesforce Open Commerce API",
   "license": "SEE LICENSE IN LICENSE",
   "main": "lib/index.js",
+  "files": [
+    "lib"
+  ],
   "scripts": {
     "copyright:lint": "copyright 'src/**/*.js' 'bin/**/*.js' 'test/**/*.js'",
     "copyright:fix": "copyright --fix --update 'src/*.js' 'src/**/*.js' 'test/*.js' 'test/**/*.js'",
@@ -12,7 +15,8 @@
     "lint:js": "eslint '**/*.js'",
     "lint:fix": "npm run lint:js -- --fix",
     "test": "BABEL_ENV=test mocha --compilers js:babel-core/register $(find test/api -name '*.spec.js')",
-    "build": "BABEL_ENV=production rollup -c"
+    "build": "BABEL_ENV=production rollup -c",
+    "prepack": "npm run build"
   },
   "browser": {
     "fs": false
