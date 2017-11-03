@@ -7,5 +7,10 @@
         "destination": "docs",
         "readme": "README.md"
     },
-    "plugins": ["plugins/markdown"]
+    "plugins": ["plugins/markdown"],
+    "templates": {
+        "default": {
+            "includeDate": false
+        }
+    }
 }
