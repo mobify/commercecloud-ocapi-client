@@ -17,7 +17,7 @@ _(___ _(___/_/_/__/_/_/__/_(___ _/_____(___ _(___ _(___ _/___(___/_(___(__(___/_
 
 ## Introduction
 
-ShopApi - JavaScript client for Salesforce Commerce Cloud OCAPI Shop API.
+ShopApi - ES6 JavaScript client for Salesforce Commerce Cloud OCAPI Shop API.
 
 - API version: 17.8
 
