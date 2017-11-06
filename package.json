@@ -1,6 +1,6 @@
 {
-  "name": "ocapi-client",
-  "version": "0.2.2",
+  "name": "commercecloud-ocapi-client",
+  "version": "0.0.1",
   "description": "An ES6 JavaScript Client for Salesforce Open Commerce API",
   "license": "SEE LICENSE IN LICENSE",
   "main": "lib/index.js",
@@ -14,8 +14,8 @@
     "lint": "npm run lint:js && npm run copyright:lint",
     "lint:js": "eslint '**/*.js'",
     "lint:fix": "npm run lint:js -- --fix",
-    "test": "BABEL_ENV=test mocha --compilers js:babel-core/register $(find test/api -name '*.spec.js')",
-    "build": "BABEL_ENV=production rollup -c",
+    "test": "mocha --compilers js:babel-core/register $(find test/api -name '*.spec.js')",
+    "build": "rollup -c",
     "prepack": "npm run build"
   },
   "browser": {
@@ -47,8 +47,6 @@
     "mobify-code-style": "2.8.1",
     "mocha": "~2.3.4",
     "rollup": "^0.49.3",
-    "rollup-plugin-babel": "^3.0.2",
-    "rollup-plugin-uglify": "^2.0.1",
     "sinon": "1.17.3"
   }
 }
