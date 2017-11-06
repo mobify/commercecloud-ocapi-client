@@ -47,7 +47,6 @@
     "mobify-code-style": "2.8.1",
     "mocha": "~2.3.4",
     "rollup": "^0.49.3",
-    "rollup-plugin-uglify": "^2.0.1",
     "sinon": "1.17.3"
   }
 }
