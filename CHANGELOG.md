@@ -1,4 +1,4 @@
-## To be released
+## v0.1.0 (November 6, 2017)
 - Module name change
 - Add ASCII art
 - Add circleci/npm links to README
