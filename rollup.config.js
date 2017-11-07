@@ -2,7 +2,7 @@ export default {
     input: 'src/index.js',
     output: {
         file: 'lib/index.js',
-        format: 'cjs'
+        format: 'es'
     },
     external: ['superagent', 'querystring'],
 }
