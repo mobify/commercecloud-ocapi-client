@@ -67,7 +67,6 @@ export default class ProductSearchApi {
         const pathParams = {}
         const queryParams = {
             q: opts.q,
-            refine: this.apiClient.buildCollectionParam(opts.refine, 'csv'),
             sort: opts.sort,
             start: opts.start,
             count: opts.count,
@@ -75,6 +74,22 @@ export default class ProductSearchApi {
             currency: opts.currency,
             locale: opts.locale
         }
+
+        const refinements = Object.keys(opts).filter((key) => /^refine/.test(key))
+
+        if (refinements) {
+            const useSuffix = refinements.length > 0
+
+            refinements.forEach((key, idx) => {
+                if (!opts[key]) {
+                    return
+                }
+
+                queryParams[`refine${useSuffix ? `_${idx + 1}` : ''}`] =
+                    this.apiClient.buildCollectionParam(opts[key], 'csv')
+            })
+        }
+
         const headerParams = {}
         const formParams = {}
 
