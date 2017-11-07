@@ -73,7 +73,7 @@ export default class ContentSearchApi {
 
         const refinements = Object.keys(opts).filter((key) => /^refine/.test(key))
 
-        if (refinements.lengh > 0) {
+        if (refinements.length > 0) {
             const useSuffix = refinements.length > 1
 
             refinements.forEach((key, idx) => {
