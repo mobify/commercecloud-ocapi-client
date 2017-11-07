@@ -59,14 +59,6 @@ describe('PriceAdjustmentLimitsApi', () => {
             //  if (error) throw error;
             // expect().to.be();
             // });
-            instance.getPriceAdjustmentLimits()
-                .then((thing) => {
-                    console.log('thing: ', thing)
-                })
-                .catch((fault) => {
-                    console.log('fault: ', fault)
-                })
-            return Promise.resolve()
         })
     })
 })

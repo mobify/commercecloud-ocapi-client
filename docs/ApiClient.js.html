@@ -347,6 +347,32 @@ export default class ApiClient {
     }
 
     /**
+     * Builds an object with refinement keys 1..n given a options object..
+     * @param {Object} opts Optional parameters
+     * @returns {Object} An object with refinement keys numbered 1 ... n with their
+     * string representation value.
+     */
+    buildRefineParams(opts) {
+        const refinements = Object.keys(opts).filter((key) => /^refine/.test(key))
+        const queryParams = {}
+
+        if (refinements.length > 0) {
+            const useSuffix = refinements.length > 1
+
+            refinements.forEach((key, idx) => {
+                if (!opts[key]) {
+                    return
+                }
+
+                queryParams[`refine${useSuffix ? `_${idx + 1}` : ''}`] =
+                    this.buildCollectionParam(opts[key], 'csv')
+            })
+        }
+
+        return queryParams
+    }
+
+    /**
      * Applies authentication headers to the request.
      * @param {Object} request The request object created by a &lt;code>superagent()&lt;/code> call.
      * @param {Array.&lt;String>} authNames An array of authentication method names.

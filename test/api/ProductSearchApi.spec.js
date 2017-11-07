@@ -61,6 +61,17 @@ describe('ProductSearchApi', () => {
                     expect(productSearchResult.count).to.above(0)
                 })
         )
+
+        it('should call getProductSearch with multiple refinments successfully', () =>
+            instance.getProductSearch({
+                    refine_1: ['cgid=root'],
+                    refine_2: ['c_refinementColor=Navy']
+                })
+                .then((productSearchResult) => {
+                    expect(productSearchResult.selected_refinements.cgid).to.be('root')
+                    expect(productSearchResult.selected_refinements.c_refinementColor).to.be('Navy')
+                })
+        )
     })
 
     describe('getProductSearchAvailability', () => {
