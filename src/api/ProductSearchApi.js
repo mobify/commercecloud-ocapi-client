@@ -77,7 +77,7 @@ export default class ProductSearchApi {
 
         const refinements = Object.keys(opts).filter((key) => /^refine/.test(key))
 
-        if (refinements) {
+        if (refinements.lengh > 0) {
             const useSuffix = refinements.length > 0
 
             refinements.forEach((key, idx) => {
