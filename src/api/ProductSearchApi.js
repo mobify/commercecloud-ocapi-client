@@ -75,20 +75,7 @@ export default class ProductSearchApi {
             locale: opts.locale
         }
 
-        const refinements = Object.keys(opts).filter((key) => /^refine/.test(key))
-
-        if (refinements.length > 0) {
-            const useSuffix = refinements.length > 1
-
-            refinements.forEach((key, idx) => {
-                if (!opts[key]) {
-                    return
-                }
-
-                queryParams[`refine${useSuffix ? `_${idx + 1}` : ''}`] =
-                    this.apiClient.buildCollectionParam(opts[key], 'csv')
-            })
-        }
+        Object.assign(queryParams, this.apiClient.buildRefineParams(opts))
 
         const headerParams = {}
         const formParams = {}
@@ -170,12 +157,14 @@ export default class ProductSearchApi {
         const pathParams = {}
         const queryParams = {
             q: opts.q,
-            refine: this.apiClient.buildCollectionParam(opts.refine, 'csv'),
             sort: opts.sort,
             start: opts.start,
             count: opts.count,
             locale: opts.locale
         }
+
+        Object.assign(queryParams, this.apiClient.buildRefineParams(opts))
+
         const headerParams = {}
         const formParams = {}
 
@@ -251,12 +240,14 @@ export default class ProductSearchApi {
         const pathParams = {}
         const queryParams = {
             q: opts.q,
-            refine: this.apiClient.buildCollectionParam(opts.refine, 'csv'),
             sort: opts.sort,
             start: opts.start,
             count: opts.count,
             locale: opts.locale
         }
+
+        Object.assign(queryParams, this.apiClient.buildRefineParams(opts))
+
         const headerParams = {}
         const formParams = {}
 
@@ -333,13 +324,15 @@ export default class ProductSearchApi {
         const pathParams = {}
         const queryParams = {
             q: opts.q,
-            refine: this.apiClient.buildCollectionParam(opts.refine, 'csv'),
             sort: opts.sort,
             start: opts.start,
             count: opts.count,
             currency: opts.currency,
             locale: opts.locale
         }
+
+        Object.assign(queryParams, this.apiClient.buildRefineParams(opts))
+
         const headerParams = {}
         const formParams = {}
 
@@ -414,12 +407,14 @@ export default class ProductSearchApi {
         const pathParams = {}
         const queryParams = {
             q: opts.q,
-            refine: this.apiClient.buildCollectionParam(opts.refine, 'csv'),
             sort: opts.sort,
             start: opts.start,
             count: opts.count,
             locale: opts.locale
         }
+
+        Object.assign(queryParams, this.apiClient.buildRefineParams(opts))
+
         const headerParams = {}
         const formParams = {}
 
