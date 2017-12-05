@@ -23,7 +23,7 @@ Salesforce Commerce Cloud Open Commerce API (OCAPI) for Node and browsers.
 
 ### ⚒ Installation
 
-This library is distrbuted on npm, In order to add it as a dependency, run the following command:
+This library is distributed on npm, in order to add it as a dependency, run the following command:
 
 ```shell
 npm install commercecloud-ocapi-client --save
