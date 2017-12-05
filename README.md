@@ -92,15 +92,26 @@ ShopApi.ApiClient.instance = new ShopApi.ApiClient(config)
 
 ### 🔐 Authorization
 
-To access secure end points, you can pass the username, password and access token in the configuration, example:
+To access secure end points, you can pass the username, password in the configuration, example:
 
 ```js
 import ShopApi from 'commercecloud-ocapi-client'
 
 const config = {
-  clientUsername,
-  clientPassword,
-  oauth2AccessToken // You need to obtain the OAuth 2.0 access token and pass it into the API client
+  clientUsername: 'username',
+  clientPassword: 'password',
+}
+
+ShopApi.ApiClient.instance = new ShopApi.ApiClient(config)
+```
+
+Or to use oAuth token:
+
+```js
+import ShopApi from 'commercecloud-ocapi-client'
+
+const config = {
+  oauth2AccessToken: 'token'
 }
 
 ShopApi.ApiClient.instance = new ShopApi.ApiClient(config)
