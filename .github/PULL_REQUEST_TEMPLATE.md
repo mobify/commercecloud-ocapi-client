@@ -1,8 +1,8 @@
 # Description
 
-Please include a summary of the change and which issue is fixed if any. Please also include relevant motivation and context. List any dependencies that are required for this change.
+Please include a summary of the change. Please also include relevant motivation and context. List any dependencies that are required for this change.
 
-Fixes # (issue)
+<!-- If this PR fixes an issue, please specify issue #. -->
 
 ## Type of change
 
