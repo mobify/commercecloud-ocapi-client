@@ -119,7 +119,7 @@ ShopApi.ApiClient.instance = new ShopApi.ApiClient(config)
 
 ## ✅ Testing
 
-Because Salesforce OCAPI is not public available, you need to have a running instance that you can test against. In the test folder, there is a file `config.json` that has the example configuration for your environment. Simply update the file with your instance information
+Because Salesforce OCAPI is not publicly available, you need to have a running instance that you can test against. In the test folder, there is a file `config.json` that has the example configuration for your environment. Simply update the file with your instance information
 
 Example: 
 ```json
