@@ -141,16 +141,15 @@ We use Circle CI to protect the `develop` and `master` branch to make sure the b
 - Linting: `npm run lint`
 - Unit Tests: `npm run test`
 
-
 ## 📦 Build and Deployment
 
-At Mobify, we practice several branching strategies, [Release Deployment](https://github.com/mobify/branching-strategy/blob/master/release-deployment.md) is a strategy for projects where feature gets bundled into a release periodically. `master` contains the code for current version, `develop` has the features that is under development and waiting to be released.
+At Mobify, we practice several branching strategies, [Release Deployment](https://github.com/mobify/branching-strategy/blob/master/release-deployment.md) is a strategy for projects where feature gets bundled into a release periodically. `master` contains the code for current version, `develop` has the features that is under development and waiting to be released. For new features and bug fixes, please propose pull requests to merge into `develop`.
 
-This package is distributed on npm, 
+This package is distributed on npm, on every release, we run scripts to automatically merge `develop` into `master`, test the build in Circle CI as well as publish the package on NPM.
 
 ### Changelog
 
-To understand the changes between versions, please read [CHANGELOG.md](./CHANGELOG.md). Note that it is required to have a `# To be released` section filled out if you are planning to make pull requests that include new features or bug fixes.
+To understand the change between versions, please read [CHANGELOG.md](./CHANGELOG.md). Note that it is required to have a `# To be released` section filled out if you are planning to make pull requests that include new features or bug fixes.
 
 ## 📖 Documentation
 
