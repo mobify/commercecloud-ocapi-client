@@ -134,6 +134,24 @@ Then run the following command:
 npm test
 ```
 
+### ♻️ Continuous Integration
+
+We use Circle CI to protect the `develop` and `master` branch to make sure the builds follows the code style and passes all tests. For every pull request, it is required to pass ALL checks including the following tests:
+
+- Linting: `npm run lint`
+- Unit Tests: `npm run test`
+
+
+## 📦 Build and Deployment
+
+At Mobify, we practice several branching strategies, [Release Deployment](https://github.com/mobify/branching-strategy/blob/master/release-deployment.md) is a strategy for projects where feature gets bundled into a release periodically. `master` contains the code for current version, `develop` has the features that is under development and waiting to be released.
+
+This package is distributed on npm, 
+
+### Changelog
+
+To understand the changes between versions, please read [CHANGELOG.md](./CHANGELOG.md). Note that it is required to have a `# To be released` section filled out if you are planning to make pull requests that include new features or bug fixes.
+
 ## 📖 Documentation
 
 - [API Docs](https://mobify.github.io/commercecloud-ocapi-client/)
