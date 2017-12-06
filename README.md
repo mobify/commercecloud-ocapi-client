@@ -151,6 +151,18 @@ This package is distributed on npm, on every release, we run scripts to automati
 
 To understand the change between versions, please read [CHANGELOG.md](./CHANGELOG.md). Note that it is required to have a `# To be released` section filled out if you are planning to make pull requests that include new features or bug fixes.
 
+Example:
+```markdown
+## To be released
+- Update npm package to ship with three builds: `UMD`, `CommonJS` and `ES2015` [#4](https://github.com/mobify/commercecloud-ocapi-client/pull/4)
+
+## v0.1.1 (November 7, 2017)
+- Update Rollup output format to 'es'
+
+...
+```
+
+
 ## 📖 Documentation
 
 - [API Docs](https://mobify.github.io/commercecloud-ocapi-client/)
