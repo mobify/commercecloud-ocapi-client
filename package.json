@@ -6,7 +6,9 @@
   "main": "lib/index.js",
   "module": "es/index.js",
   "files": [
-    "lib"
+    "lib",
+    "dist",
+    "es"
   ],
   "scripts": {
     "copyright:lint": "copyright 'src/**/*.js' 'bin/**/*.js' 'test/**/*.js'",
