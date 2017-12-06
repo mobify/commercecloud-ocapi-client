@@ -149,3 +149,4 @@ We will make an effort to support the library, but we reserve the right to make 
 
 - [@jeremywiebe](https://github.com/jeremywiebeh)
 - [@bendvc](https://github.com/bendvc)
+- [@kevinxh](https://github.com/kevinxh)
