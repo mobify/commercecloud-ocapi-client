@@ -147,6 +147,6 @@ We will make an effort to support the library, but we reserve the right to make 
 
 ## 🏅 Contributors
 
-- [@jeremywiebe](https://github.com/jeremywiebeh)
+- [@jeremywiebe](https://github.com/jeremywiebe)
 - [@bendvc](https://github.com/bendvc)
 - [@kevinxh](https://github.com/kevinxh)
