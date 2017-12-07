@@ -1,6 +1,8 @@
 .DS_Store
 *.tgz
 
+dist/
+es/
 lib/
 tmp/
 node_modules
