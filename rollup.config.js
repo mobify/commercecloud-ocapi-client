@@ -8,7 +8,7 @@ export default [{
     name: 'ocapi-client',
     output: {
         name: 'OcapiClient',
-        file: pkg.browser.file,
+        file: 'dist/commercecloud-ocapi-client.umd.js',
         format: 'umd'
     },
     plugins: [
@@ -23,7 +23,8 @@ export default [{
             browser: true,
         }),
         babel({
-            exclude: ['node_modules/**']
+            exclude: ['node_modules/**'],
+            externalHelpers: true
         })
     ]
 },

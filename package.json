@@ -6,7 +6,6 @@
   "main": "dist/commercecloud-ocapi-client.cjs.js",
   "module": "dist/commercecloud-ocapi-client.es.js",
   "browser": {
-    "dist/commercecloud-ocapi-client.cjs.js": "dist/commercecloud-ocapi-client.umd.js",
     "fs": false
   },
   "files": [
@@ -19,7 +18,7 @@
     "lint": "npm run lint:js && npm run copyright:lint",
     "lint:js": "eslint '**/*.js'",
     "lint:fix": "npm run lint:js -- --fix",
-    "test": "mocha --compilers js:babel-core/register $(find test/api -name '*.spec.js')",
+    "test": "NODE_ENV=test mocha --require babel-core/register $(find test/api -name '*.spec.js')",
     "build": "rollup -c",
     "prepack": "npm run build"
   },
@@ -38,7 +37,7 @@
     "eslint": "3.19.0",
     "eslint-import-resolver-webpack": "0.8.1",
     "eslint-plugin-import": "2.3.0",
-    "expect.js": "~0.3.1",
+    "expect.js": "^0.3.1",
     "express": "^4.16.2",
     "jsdoc": "^3.4.3",
     "mobify-code-style": "2.8.1",
