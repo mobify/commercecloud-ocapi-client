@@ -1,12 +1,13 @@
 {
     "presets": [
         [
-            "es2015",
+            "env",
             {
                 "modules": false
             }
-        ],
-        "stage-0"
+        ]
     ],
-    "plugins": ["babel-plugin-transform-es2015-modules-commonjs"]
+    "plugins": [
+        "external-helpers"
+    ]
 }
