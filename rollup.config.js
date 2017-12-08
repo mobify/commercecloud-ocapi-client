@@ -7,7 +7,6 @@ export default [{
     input: 'src/index.js',
     name: 'ocapi-client',
     output: {
-        name: 'OcapiClient',
         file: 'dist/commercecloud-ocapi-client.umd.js',
         format: 'umd'
     },
