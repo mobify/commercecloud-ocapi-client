@@ -46,7 +46,7 @@ const setProperty = (object, setter, property, value) => {
 describe('ContentSearchApi', () => {
     describe('getContentSearch', () => {
         it('should call getContentSearch successfully', () =>
-            instance.getContentSearch({q: ''})
+            instance.getContentSearch({q: 'abc'})
                 .then((result) => {
                     expect(result.constructor.name).to.be('ContentSearchResult')
                 })
