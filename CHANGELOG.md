@@ -1,5 +1,7 @@
 ## To be released
 - Update npm package to ship with three builds: `UMD`, `CommonJS` and `ES2015`
+- Add checkout workflow test run with command `npm run test:e2e`
+- Fixed sample test data, in particular the customer payment instrument request sample
 
 ## v0.1.1 (November 7, 2017)
 - Update Rollup output format to 'es'

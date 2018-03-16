@@ -62,22 +62,29 @@ export const validCustomerProductList = ShopApi.CustomerProductList.constructFro
     }
 })
 
-export const validCustomerPaymentInstrument = ShopApi.CustomerPaymentInstrument.constructFromObject({
+export const validCustomerPaymentCardRequest = ShopApi.CustomerPaymentCardRequest.constructFromObject({
     expiration_year: 2047,
     expiration_month: 7,
-    valid_from_month: 8,
-    valid_from_year: 2007,
-    issue_number: 'i117',
-    number: '1234567',
+    number: '4111111111111111',
     holder: 'Joe Doe',
-    card_type: 'MasterCard'
+    card_type: 'Visa',
+    security_code: '123'
 })
 
 export const validCustomerPaymentInstrumentRequest = ShopApi.CustomerPaymentInstrumentRequest.constructFromObject({
-    payment_card: validCustomerPaymentInstrument,
-    gift_certificate_code: 'gift_code7',
-    payment_method_id: 'OCAPI_Payment_Simple',
-    bank_routing_number: 'bankrouting3776',
+    payment_card: validCustomerPaymentCardRequest,
+    payment_method_id: 'CREDIT_CARD'
+})
+
+export const validOrderAddress = ShopApi.CustomerAddress.constructFromObject({
+    address1: '1600 Pennsylvania Avenue NW',
+    city: 'Washington',
+    country_code: 'US',
+    first_name: 'Donald',
+    last_name: 'Trump',
+    phone: '(555) 555-5555',
+    postal_code: '20500',
+    state_code: 'DC'
 })
 
 export const validCustomerAddress = ShopApi.CustomerAddress.constructFromObject({
