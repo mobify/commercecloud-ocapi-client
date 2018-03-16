@@ -4,6 +4,10 @@
 
 import ShopApi from '../src/index'
 
+export const validCustomerInfo = ShopApi.CustomerInfo.constructFromObject({
+    email: 'admin@mobify.com'
+})
+
 export const validOrderSearchRequest = ShopApi.Product.constructFromObject({
     query: {
         text_query: {
@@ -22,12 +26,10 @@ export const validProduct = ShopApi.Product.constructFromObject({
     id: '008884303989'
 })
 
-export const validProductItem = ShopApi.Product.constructFromObject({
+export const validProductItem = ShopApi.ProductItem.constructFromObject({
     product_id: validProduct.id,
     quantity: 1
 })
-
-ProductItem
 
 export const validCustomerProductListItemLink = ShopApi.CustomerProductListItemLink.constructFromObject({
     link: `https://mobify-tech-prtnr-na03-dw.demandware.net/s/2017refresh/dw/shop/v17_8/products/${validProduct.id}`,
@@ -74,12 +76,25 @@ export const validCustomerPaymentCardRequest = ShopApi.CustomerPaymentCardReques
     expiration_month: 7,
     number: '4111111111111111',
     holder: 'Joe Doe',
-    card_type: 'Visa',
-    security_code: '123'
+    card_type: 'Visa'
 })
 
 export const validCustomerPaymentInstrumentRequest = ShopApi.CustomerPaymentInstrumentRequest.constructFromObject({
     payment_card: validCustomerPaymentCardRequest,
+    payment_method_id: 'CREDIT_CARD'
+})
+
+export const validOrderPaymentCardRequest = ShopApi.OrderPaymentCardRequest.constructFromObject({
+    expiration_year: 2047,
+    expiration_month: 7,
+    number: '4111111111111111',
+    holder: 'Joe Doe',
+    card_type: 'Visa',
+    security_code: '123'
+})
+
+export const validOrderPaymentInstrumentRequest = ShopApi.OrderPaymentInstrumentRequest.constructFromObject({
+    payment_card: validOrderPaymentCardRequest,
     payment_method_id: 'CREDIT_CARD'
 })
 
@@ -92,6 +107,17 @@ export const validOrderAddress = ShopApi.CustomerAddress.constructFromObject({
     phone: '(555) 555-5555',
     postal_code: '20500',
     state_code: 'DC'
+})
+
+export const validOrderAddress2 = ShopApi.CustomerAddress.constructFromObject({
+    address1: '14046 Aubrey Rd',
+    city: 'Beverly Hills',
+    country_code: 'US',
+    first_name: 'Tom',
+    last_name: 'Arnold',
+    phone: '(555) 555-5555',
+    postal_code: '90210-1064',
+    state_code: 'CA'
 })
 
 export const validCustomerAddress = ShopApi.CustomerAddress.constructFromObject({

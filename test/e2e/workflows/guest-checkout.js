@@ -57,10 +57,16 @@ describe('workflows', () => {
     describe('guest checkout e2e', () => {
         it('should be able to complete checkout flow successfully', () => {
             const basketApi = new ShopApi.BasketsApi(client)
-            const opdersApi = new ShopApi.OrdersApi(client)
+            const ordersApi = new ShopApi.OrdersApi(client)
+
+            let orderTotal
 
             // Get new basket
-            return basketApi.postBaskets()
+            return basketApi.postBaskets({
+                body: {
+                    customer_info: dataSamples.validCustomerInfo
+                }
+            })
                 .then((basket) => {
                     // Add product to basket
                     return basketApi.postBasketsByIDItems(basket.basket_id, [dataSamples.validProductItem])
@@ -81,15 +87,24 @@ describe('workflows', () => {
                     })
                 })
                 .then((basket) => {
-                    const requestObj = dataSamples.validCustomerPaymentInstrumentRequest
-                    requestObj.amount = basket.order_total
+                    // Save amount for later when we patch the order payment instrument.
+                    orderTotal = basket.order_total
 
-                    // Add payment information to the basket
-                    return basketApi.postBasketsByIDPaymentInstruments(basket.basket_id, requestObj)
+                    // Add payment information to the basket.
+                    return basketApi.postBasketsByIDPaymentInstruments(basket.basket_id, dataSamples.validCustomerPaymentInstrumentRequest)
                 })
                 .then((basket) => {
-                    // Add payment information to the basket
-                    return opdersApi.postOrders(basket)
+                    // Create the order by posting the basket.
+                    return ordersApi.postOrders(basket)
+                })
+                .then((order) => {
+                    const paymentInstrumentId = order.payment_instruments[0].payment_instrument_id
+
+                    const requestObj = dataSamples.validOrderPaymentInstrumentRequest
+                    requestObj.amount = orderTotal
+
+                    // Patch the orders payment instrument to trigger the authorization
+                    return ordersApi.patchOrdersByIDPaymentInstrumentsByID(order.order_no, paymentInstrumentId, requestObj)
                 })
                 .then((order) => {
                     console.log(`Order: ${order.order_no} ('${order.confirmation_status}')`)
