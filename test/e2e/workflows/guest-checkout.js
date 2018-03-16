@@ -59,16 +59,11 @@ describe('workflows', () => {
             const basketApi = new ShopApi.BasketsApi(client)
             const opdersApi = new ShopApi.OrdersApi(client)
 
-            return basketApi.postBaskets() // Get new basket
+            // Get new basket
+            return basketApi.postBaskets()
                 .then((basket) => {
                     // Add product to basket
-                    return basketApi.postBasketsByIDItems(
-                        basket.basket_id,
-                        [{
-                          product_id : '008884303989',
-                          quantity : 1
-                        }]
-                    )
+                    return basketApi.postBasketsByIDItems(basket.basket_id, [dataSamples.validProductItem])
                 })
                 .then((basket) => {
                     // Add billing address to the basket
