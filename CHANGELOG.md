@@ -1,4 +1,4 @@
-## To be released
+## v0.1.2 (April 3, 2018)
 - Update npm package to ship with three builds: `UMD`, `CommonJS` and `ES2015`
 
 ## v0.1.1 (November 7, 2017)
