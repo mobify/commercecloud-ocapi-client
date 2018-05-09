@@ -1,4 +1,4 @@
-## To be released
+## v0.1.3 (May 9, 2018)
 - Ensure we are shipping ES5 everywhere.
 
 ## v0.1.2 (April 3, 2018)
