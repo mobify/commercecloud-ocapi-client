@@ -22,8 +22,7 @@ export default [{
             browser: true,
         }),
         babel({
-            exclude: ['node_modules/**'],
-            externalHelpers: true
+            exclude: ['node_modules/**']
         })
     ]
 },
@@ -39,8 +38,7 @@ export default [{
     external: ['superagent', 'querystring'],
     plugins: [
         babel({
-            exclude: ['node_modules/**'],
-            externalHelpers: true
+            exclude: ['node_modules/**']
         })
     ]
 }]
