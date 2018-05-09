@@ -20,7 +20,7 @@
     "lint:fix": "npm run lint:js -- --fix",
     "test": "NODE_ENV=test mocha --require babel-core/register $(find test/api -name '*.spec.js')",
     "prebuild": "npm run lint",
-    "build": "rollup -c",
+    "build": "NODE_ENV=production rollup -c",
     "prepack": "npm run build"
   },
   "dependencies": {
