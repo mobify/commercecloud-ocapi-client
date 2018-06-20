@@ -1,3 +1,6 @@
+## To be released
+- Fix attaching/saving cookies to superagent
+
 ## v0.1.3 (May 9, 2018)
 - Ensure we are shipping ES5 everywhere.
 
