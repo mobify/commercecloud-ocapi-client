@@ -1,4 +1,4 @@
-## To be released
+## v0.1.4 (June 21, 2018)
 - Fix superagent `attachCookies` and `saveCookies` usage
 
 ## v0.1.3 (May 9, 2018)
