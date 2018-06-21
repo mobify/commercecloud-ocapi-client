@@ -52,22 +52,12 @@ _(___ _(___/_/_/__/_/_/__/_(___ _/_____(___ _(___ _(___ _/___(___/_(___(__(___/_
                                                                                                          /                                             
                                                                                                         /</code></pre><p><a href="https://nodei.co/npm/commercecloud-ocapi-client/"><img src="https://nodei.co/npm/commercecloud-ocapi-client.png?downloads=true&amp;stars=true" alt="NPM"></a></p>
 <p><a href="https://circleci.com/gh/mobify/commercecloud-ocapi-client"><img src="https://circleci.com/gh/mobify/commercecloud-ocapi-client.svg?style=svg" alt="CircleCI"></a></p>
-<h2>Introduction</h2><p>ShopApi - JavaScript client for Salesforce Commerce Cloud OCAPI Shop API.</p>
+<h2>🙌 Introduction</h2><p>Salesforce Commerce Cloud Open Commerce API (OCAPI) for Node and browsers.</p>
 <ul>
 <li>API version: 17.8</li>
 </ul>
-<h2>Installation</h2><h3>For <a href="https://nodejs.org/">Node.js</a></h3><h4>npm</h4><p>To publish the library as a <a href="https://www.npmjs.com/">npm</a>,
-please follow the procedure in <a href="https://docs.npmjs.com/getting-started/publishing-npm-packages">&quot;Publishing npm packages&quot;</a>.</p>
-<p>Then install it via:</p>
-<pre class="prettyprint source lang-shell"><code>npm install commercecloud-ocapi-client --save</code></pre><h4>git</h4><p>#
-If the library is hosted at a git repository, e.g.
-https://github.com/GIT_USER_ID/GIT_REPO_ID
-then install it via:</p>
-<pre class="prettyprint source lang-shell"><code>    npm install GIT_USER_ID/GIT_REPO_ID --save</code></pre><h3>For browser</h3><p>The library also works in the browser environment via npm and <a href="http://browserify.org/">browserify</a>. After following
-the above steps with Node.js and installing browserify with <code>npm install -g browserify</code>,
-perform the following (assuming <em>main.js</em> is your entry file):</p>
-<pre class="prettyprint source lang-shell"><code>browserify main.js > bundle.js</code></pre><p>Then include <em>bundle.js</em> in the HTML pages.</p>
-<h3>Webpack Configuration</h3><p>Using Webpack you may encounter the following error: &quot;Module not found: Error:
+<h3>⚒ Installation</h3><p>This library is distributed on npm, in order to add it as a dependency, run the following command:</p>
+<pre class="prettyprint source lang-shell"><code>npm install commercecloud-ocapi-client --save</code></pre><h3>🔦 Webpack Configuration</h3><p>Using Webpack you may encounter the following error: &quot;Module not found: Error:
 Cannot resolve module&quot;, most certainly you should disable AMD loader. Add/merge
 the following section to your webpack config:</p>
 <pre class="prettyprint source lang-javascript"><code>module: {
@@ -78,41 +68,75 @@ the following section to your webpack config:</p>
       }
     }
   ]
-}</code></pre><h2>Getting Started</h2><p>Please follow the <a href="#installation">installation</a> instruction and execute the following JS code:</p>
+}</code></pre><h2>👨🏻‍💻 Getting Started</h2><h3>💡 Usage</h3><p>Please follow the <a href="#installation">installation</a> instruction and execute the following JS code:</p>
 <pre class="prettyprint source lang-javascript"><code>import ShopApi from 'commercecloud-ocapi-client'
 
-ShopApi.ApiClient.instance = new ShopApi.ApiClient({
-    clientUsername: 'YOUR USERNAME', // Configure HTTP basic authorization: customers_auth
-    clientPassword: 'YOUR PASSWORD', // Configure HTTP basic authorization: customers_auth
-    oAuthAccessToken: '' // Configure OAuth2 access token for authorization: oauth2_application
-})
+ShopApi.ApiClient.instance = new ShopApi.ApiClient()
 
-const api = new ShopApi.BasketsApi()
+const api = new ShopApi.CategoriesApi()
 
-const basketId = &quot;basketId_example&quot; // {String} the id of the basket to be retrieved
-
-api.deleteBasketsByID(basketId)
+api.getCategoriesByIDs(['mens', 'newarrivals'])
     .then(() {
         console.log('API called successfully.')
     })
     .catch((fault) => {
         console.error(fault)
-    })</code></pre><h2>Documentation for API Endpoints</h2><ul>
+    })</code></pre><h3>🔌 Configuration</h3><p>The API client accepts an configuration object, example:</p>
+<pre class="prettyprint source lang-js"><code>import ShopApi from 'commercecloud-ocapi-client'
+
+const config = {
+  basePath: 'https://localhost/s/siteId/dw/shop/v17_8',
+  defaultHeaders: {}, // HTTP header for all requests
+  timeout: 60000, // Request timeout in milliseconds
+  cache: true, // If set to false an additional timestamp parameter is added to all API GET calls to prevent browser caching
+  enableCookies: false, //If set to true, the client will save the cookies from each server response, and return them in the next request.
+}
+
+ShopApi.ApiClient.instance = new ShopApi.ApiClient(config)</code></pre><h3>🔐 Authorization</h3><p>To access secure end points, you can pass the username, password in the configuration, example:</p>
+<pre class="prettyprint source lang-js"><code>import ShopApi from 'commercecloud-ocapi-client'
+
+const config = {
+  clientUsername: 'username',
+  clientPassword: 'password',
+}
+
+ShopApi.ApiClient.instance = new ShopApi.ApiClient(config)</code></pre><p>Or to use oAuth token:</p>
+<pre class="prettyprint source lang-js"><code>import ShopApi from 'commercecloud-ocapi-client'
+
+const config = {
+  oauth2AccessToken: 'token'
+}
+
+ShopApi.ApiClient.instance = new ShopApi.ApiClient(config)</code></pre><h2>✅ Testing</h2><p>Because Salesforce OCAPI is not publicly available, you need to have a running instance that you can test against. In the test folder, there is a file <code>config.json</code> that has the example configuration for your environment. Simply update the file with your instance information</p>
+<p>Example: </p>
+<pre class="prettyprint source lang-json"><code>{
+  &quot;clientId&quot;: &quot;5640cc6b-f5e9-466e-9134-9853e9f9db93&quot;,
+  &quot;baseUrl&quot;: &quot;https://localhost/s/siteId/dw/shop/v17_8&quot;
+}</code></pre><p>Then run the following command:</p>
+<pre class="prettyprint source lang-sh"><code>npm test</code></pre><h3>♻️ Continuous Integration</h3><p>We use Circle CI to protect the <code>develop</code> and <code>master</code> branch to make sure the builds follows the code style and passes all tests. For every pull request, it is required to pass ALL checks including the following tests:</p>
+<ul>
+<li>Linting: <code>npm run lint</code></li>
+<li>Unit Tests: <code>npm run test</code></li>
+</ul>
+<h2>📦 Build and Deployment</h2><p>At Mobify, we practice several branching strategies, <a href="https://github.com/mobify/branching-strategy/blob/master/release-deployment.md">Release Deployment</a> is a strategy for projects where feature gets bundled into a release periodically. <code>master</code> contains the code for current version, <code>develop</code> has the features that is under development and waiting to be released. For new features and bug fixes, please propose pull requests to merge into <code>develop</code>.</p>
+<p>This package is distributed on npm, on every release, we run scripts to automatically merge <code>develop</code> into <code>master</code>, test the build in Circle CI as well as publish the package on NPM.</p>
+<h3>Changelog</h3><p>To understand the change between versions, please read <a href="./CHANGELOG.md">CHANGELOG.md</a>. Note that it is required to have a <code># To be released</code> section filled out if you are planning to make pull requests that include new features or bug fixes.</p>
+<p>Example:</p>
+<pre class="prettyprint source lang-markdown"><code>## To be released
+- Update npm package to ship with three builds: `UMD`, `CommonJS` and `ES2015` [#4](https://github.com/mobify/commercecloud-ocapi-client/pull/4)
+
+## v0.1.1 (November 7, 2017)
+- Update Rollup output format to 'es'
+
+...</code></pre><h2>📖 Documentation</h2><ul>
 <li><a href="https://mobify.github.io/commercecloud-ocapi-client/">API Docs</a></li>
 </ul>
-<h2>Documentation for Authorization</h2><h3>client_id</h3><ul>
-<li><strong>Type</strong>: API key</li>
-<li><strong>API key parameter name</strong>: x-dw-client-id</li>
-<li><strong>Location</strong>: HTTP header</li>
-</ul>
-<h3>customers_auth</h3><ul>
-<li><strong>Type</strong>: HTTP basic authentication</li>
-</ul>
-<h3>oauth2_application</h3><ul>
-<li><strong>Type</strong>: OAuth</li>
-<li><strong>Flow</strong>: application</li>
-<li><strong>Authorization URL</strong>:</li>
-<li><strong>Scopes</strong>: N/A</li>
+<h2>👥 Owner</h2><p>This project is open sourced and actively maintained by <a href="https://github.com/mobify">Mobify</a>.
+We will make an effort to support the library, but we reserve the right to make incompatible changes when necessary.</p>
+<h2>🏅 Contributors</h2><ul>
+<li><a href="https://github.com/jeremywiebe">@jeremywiebe</a></li>
+<li><a href="https://github.com/bendvc">@bendvc</a></li>
+<li><a href="https://github.com/kevinxh">@kevinxh</a></li>
 </ul></article>
     </section>
 

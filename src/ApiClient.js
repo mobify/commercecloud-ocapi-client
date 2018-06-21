@@ -470,7 +470,7 @@ export default class ApiClient {
         // Attach previously saved cookies, if enabled
         if (this.enableCookies) {
             if (typeof window === 'undefined') {
-                this.agent.attachCookies(request)
+                this.agent._attachCookies(request)
             } else {
                 request.withCredentials()
             }
@@ -493,7 +493,7 @@ export default class ApiClient {
                     try {
                         const data = this.deserialize(response, returnType)
                         if (this.enableCookies && typeof window === 'undefined') {
-                            this.agent.saveCookies(response)
+                            this.agent._saveCookies(response)
                         }
 
                         resolve({
