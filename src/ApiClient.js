@@ -25,6 +25,7 @@ import Fault from './models/Fault'
  */
 
 const defaultConfig = {
+    allowHttpPut: false,
     basePath: 'https://localhost/s/siteId/dw/shop/v17_8',
     defaultHeaders: {},
     timeout: 60000,
@@ -43,6 +44,7 @@ export default class ApiClient {
 
     constructor(config = defaultConfig) {
         const {
+            allowHttpPut,
             basePath,
             defaultHeaders,
             timeout,
@@ -93,6 +95,17 @@ export default class ApiClient {
             customers_auth.username = clientUsername
             customers_auth.password = clientPassword
         }
+
+        /**
+         * If set to false endpoints normally sent using the HTTP method `PUT` will
+         * be sent using `POST`, with an aditional header (x-dw-http-method-override)
+         * set to `PUT`.
+         * Please refer to the following Salesforce documentation {@link https://documentation.demandware.com/DOC1/topic/com.demandware.dochelp/OCAPI/18.8/usage/HttpMethods.html}
+         * for more information.
+         * @type {Boolean}
+         * @default false
+         */
+        this.allowHttpPut = allowHttpPut
 
         /**
          * The default HTTP headers to be included for all API calls.
@@ -418,6 +431,12 @@ export default class ApiClient {
         // set query parameters
         if (httpMethod.toUpperCase() === 'GET' && this.cache === false) {
             queryParams._ = new Date().getTime()
+        }
+
+        // emulate PUT method is they are not allowed
+        if (!this.allowHttpPut && httpMethod.toUpperCase() === 'PUT') {
+            httpMethod = 'POST'
+            headerParams = Object.assign(headerParams || {}, {'x-dw-http-method-override': 'PUT'})
         }
 
         request.query(this.normalizeParams(queryParams))
