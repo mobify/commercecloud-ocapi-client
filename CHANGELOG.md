@@ -1,4 +1,4 @@
-## To be released
+## v0.1.6 (October 16, 2018)
 - Fix `overrideHttpPut` logic invocation
 
 ## v0.1.5 (October 16, 2018)
