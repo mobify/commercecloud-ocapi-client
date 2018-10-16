@@ -97,9 +97,8 @@ export default class ApiClient {
         }
 
         /**
-         * If set to false endpoints normally sent using the HTTP method `PUT` will
-         * be sent using `POST`, with an aditional header (x-dw-http-method-override)
-         * set to `PUT`.
+         * If set to false endpoints that normally use HTTP `PUT` will
+         * be sent using `POST`, with an aditional header (x-dw-http-method-override: `PUT`).
          * Please refer to the following Salesforce documentation {@link https://documentation.demandware.com/DOC1/topic/com.demandware.dochelp/OCAPI/18.8/usage/HttpMethods.html}
          * for more information.
          * @type {Boolean}
@@ -433,7 +432,7 @@ export default class ApiClient {
             queryParams._ = new Date().getTime()
         }
 
-        // emulate PUT method is they are not allowed
+        // emulate PUT method because they are not allowed on staging and production environments
         if (!this.allowHttpPut && httpMethod.toUpperCase() === 'PUT') {
             httpMethod = 'POST'
             headerParams = Object.assign(headerParams || {}, {'x-dw-http-method-override': 'PUT'})
