@@ -421,6 +421,12 @@ export default class ApiClient {
         queryParams, headerParams, formParams, bodyParam, authNames, contentTypes, accepts,
         returnType) {
 
+        // emulate PUT method because they are not allowed on staging and production environments
+        if (this.overrideHttpPut && httpMethod.toUpperCase() === 'PUT') {
+            httpMethod = 'POST'
+            headerParams = Object.assign(headerParams || {}, {'x-dw-http-method-override': 'PUT'})
+        }
+
         const url = this.buildUrl(path, pathParams)
         const request = superagent(httpMethod, url)
 
@@ -430,12 +436,6 @@ export default class ApiClient {
         // set query parameters
         if (httpMethod.toUpperCase() === 'GET' && this.cache === false) {
             queryParams._ = new Date().getTime()
-        }
-
-        // emulate PUT method because they are not allowed on staging and production environments
-        if (this.overrideHttpPut && httpMethod.toUpperCase() === 'PUT') {
-            httpMethod = 'POST'
-            headerParams = Object.assign(headerParams || {}, {'x-dw-http-method-override': 'PUT'})
         }
 
         request.query(this.normalizeParams(queryParams))
