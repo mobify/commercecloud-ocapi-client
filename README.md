@@ -83,7 +83,7 @@ const config = {
   timeout: 60000, // Request timeout in milliseconds
   cache: true, // If set to false an additional timestamp parameter is added to all API GET calls to prevent browser caching
   enableCookies: false, //If set to true, the client will save the cookies from each server response, and return them in the next request.
-  overrideHttpPut: true // If set to true, any methods specified as using http PUT will best sent using POST along the header value 'x-dw-http-method-override' set to 'PUT'.
+  overrideHttpPut: true // If set to true, any methods specified as using http PUT will be sent using POST along the header value 'x-dw-http-method-override' set to 'PUT'.
 }
 
 ShopApi.ApiClient.instance = new ShopApi.ApiClient(config)
