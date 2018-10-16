@@ -102,7 +102,7 @@ export default class ApiClient {
          * Please refer to the following Salesforce documentation {@link https://documentation.demandware.com/DOC1/topic/com.demandware.dochelp/OCAPI/18.8/usage/HttpMethods.html}
          * for more information.
          * @type {Boolean}
-         * @default false
+         * @default true
          */
         this.overrideHttpPut = overrideHttpPut
 
