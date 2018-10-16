@@ -1,5 +1,5 @@
 ## To be released
-- Add `allowHttpPut` option for handling environments not allowing http put.
+- Add `overrideHttpPut` option for handling environments not allowing http put.
 
 ## v0.1.4 (June 21, 2018)
 - Fix superagent `attachCookies` and `saveCookies` usage
