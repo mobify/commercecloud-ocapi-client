@@ -1,3 +1,6 @@
+## To be released
+- Fix `overrideHttpPut` logic invocation
+
 ## v0.1.5 (October 16, 2018)
 - Add `overrideHttpPut` option for handling environments not allowing http put.
 
