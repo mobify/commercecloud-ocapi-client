@@ -25,12 +25,12 @@ import Fault from './models/Fault'
  */
 
 const defaultConfig = {
-    allowHttpPut: false,
     basePath: 'https://localhost/s/siteId/dw/shop/v17_8',
-    defaultHeaders: {},
-    timeout: 60000,
     cache: true,
+    defaultHeaders: {},
     enableCookies: false,
+    overrideHttpPut: true,
+    timeout: 60000,
 }
 
 /**
@@ -44,7 +44,6 @@ export default class ApiClient {
 
     constructor(config = defaultConfig) {
         const {
-            allowHttpPut,
             basePath,
             defaultHeaders,
             timeout,
@@ -52,7 +51,8 @@ export default class ApiClient {
             enableCookies,
             clientUsername,
             clientPassword,
-            oauth2AccessToken
+            oauth2AccessToken,
+            overrideHttpPut
         } = Object.assign(defaultConfig, config)
 
         // verify the required parameter 'basepath' is set
@@ -97,14 +97,14 @@ export default class ApiClient {
         }
 
         /**
-         * If set to false endpoints that normally use HTTP `PUT` will
-         * be sent using `POST`, with an aditional header (x-dw-http-method-override: `PUT`).
+         * If set to true, endpoints that normally use HTTP `PUT` will
+         * be sent using `POST` with an aditional header (x-dw-http-method-override: `PUT`).
          * Please refer to the following Salesforce documentation {@link https://documentation.demandware.com/DOC1/topic/com.demandware.dochelp/OCAPI/18.8/usage/HttpMethods.html}
          * for more information.
          * @type {Boolean}
          * @default false
          */
-        this.allowHttpPut = allowHttpPut
+        this.overrideHttpPut = overrideHttpPut
 
         /**
          * The default HTTP headers to be included for all API calls.
@@ -433,7 +433,7 @@ export default class ApiClient {
         }
 
         // emulate PUT method because they are not allowed on staging and production environments
-        if (!this.allowHttpPut && httpMethod.toUpperCase() === 'PUT') {
+        if (this.overrideHttpPut && httpMethod.toUpperCase() === 'PUT') {
             httpMethod = 'POST'
             headerParams = Object.assign(headerParams || {}, {'x-dw-http-method-override': 'PUT'})
         }

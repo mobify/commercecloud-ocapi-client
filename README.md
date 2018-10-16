@@ -83,12 +83,13 @@ const config = {
   timeout: 60000, // Request timeout in milliseconds
   cache: true, // If set to false an additional timestamp parameter is added to all API GET calls to prevent browser caching
   enableCookies: false, //If set to true, the client will save the cookies from each server response, and return them in the next request.
+  overrideHttpPut: true // If set to true, any methods specified as using http PUT will best sent using POST along the header value 'x-dw-http-method-override' set to 'PUT'.
 }
 
 ShopApi.ApiClient.instance = new ShopApi.ApiClient(config)
 ```
 
-    
+
 
 ### 🔐 Authorization
 
@@ -121,7 +122,7 @@ ShopApi.ApiClient.instance = new ShopApi.ApiClient(config)
 
 Because Salesforce OCAPI is not publicly available, you need to have a running instance that you can test against. In the test folder, there is a file `config.json` that has the example configuration for your environment. Simply update the file with your instance information
 
-Example: 
+Example:
 ```json
 {
   "clientId": "5640cc6b-f5e9-466e-9134-9853e9f9db93",
