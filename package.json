@@ -1,6 +1,6 @@
 {
   "name": "commercecloud-ocapi-client",
-  "version": "0.1.4",
+  "version": "0.1.5",
   "description": "An ES6 JavaScript Client for Salesforce Open Commerce API",
   "license": "SEE LICENSE IN LICENSE",
   "main": "dist/commercecloud-ocapi-client.cjs.js",
