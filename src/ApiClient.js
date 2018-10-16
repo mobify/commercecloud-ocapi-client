@@ -26,10 +26,11 @@ import Fault from './models/Fault'
 
 const defaultConfig = {
     basePath: 'https://localhost/s/siteId/dw/shop/v17_8',
-    defaultHeaders: {},
-    timeout: 60000,
     cache: true,
+    defaultHeaders: {},
     enableCookies: false,
+    overrideHttpPut: true,
+    timeout: 60000,
 }
 
 /**
@@ -50,7 +51,8 @@ export default class ApiClient {
             enableCookies,
             clientUsername,
             clientPassword,
-            oauth2AccessToken
+            oauth2AccessToken,
+            overrideHttpPut
         } = Object.assign(defaultConfig, config)
 
         // verify the required parameter 'basepath' is set
@@ -93,6 +95,16 @@ export default class ApiClient {
             customers_auth.username = clientUsername
             customers_auth.password = clientPassword
         }
+
+        /**
+         * If set to true, endpoints that normally use HTTP `PUT` will
+         * be sent using `POST` with an aditional header (x-dw-http-method-override: `PUT`).
+         * Please refer to the following Salesforce documentation {@link https://documentation.demandware.com/DOC1/topic/com.demandware.dochelp/OCAPI/18.8/usage/HttpMethods.html}
+         * for more information.
+         * @type {Boolean}
+         * @default true
+         */
+        this.overrideHttpPut = overrideHttpPut
 
         /**
          * The default HTTP headers to be included for all API calls.
@@ -418,6 +430,12 @@ export default class ApiClient {
         // set query parameters
         if (httpMethod.toUpperCase() === 'GET' && this.cache === false) {
             queryParams._ = new Date().getTime()
+        }
+
+        // emulate PUT method because they are not allowed on staging and production environments
+        if (this.overrideHttpPut && httpMethod.toUpperCase() === 'PUT') {
+            httpMethod = 'POST'
+            headerParams = Object.assign(headerParams || {}, {'x-dw-http-method-override': 'PUT'})
         }
 
         request.query(this.normalizeParams(queryParams))
