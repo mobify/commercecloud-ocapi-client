@@ -155,7 +155,7 @@ export default class ProductSearchHit {
                 obj['product_type'] = ProductType.constructFromObject(data['product_type'])
             }
             if (data.hasOwnProperty('represented_product')) {
-                obj['represented_product'] = ProductType.constructFromObject(data['represented_product'])
+                obj['represented_product'] = ProductRef.constructFromObject(data['represented_product'])
             }
             if (data.hasOwnProperty('represented_products')) {
                 obj['represented_products'] = ApiClient.convertToType(data['represented_products'], [ProductRef])
