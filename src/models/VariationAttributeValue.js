@@ -16,6 +16,7 @@
  *
  */
 import ApiClient from '../ApiClient'
+import Image from './Image'
 
 /**
 * The VariationAttributeValue model module.
@@ -34,6 +35,16 @@ export default class VariationAttributeValue {
         * @member {String} description
         */
         this.description = undefined
+
+        /**
+        * @member {module:models/Image} image
+        */
+        this.image = undefined
+
+        /**
+        * @member {module:models/Image} image_swatch
+        */
+        this.image_swatch = undefined
 
         /**
         * @member {String} name
@@ -64,6 +75,12 @@ export default class VariationAttributeValue {
 
             if (data.hasOwnProperty('description')) {
                 obj['description'] = ApiClient.convertToType(data['description'], 'String')
+            }
+            if (data.hasOwnProperty('image')) {
+                obj['image'] = Image.constructFromObject(data['image'])
+            }
+            if (data.hasOwnProperty('image_swatch')) {
+                obj['image_swatch'] = Image.constructFromObject(data['image_swatch'])
             }
             if (data.hasOwnProperty('name')) {
                 obj['name'] = ApiClient.convertToType(data['name'], 'String')

@@ -18,6 +18,7 @@
 import ApiClient from '../ApiClient'
 import Image from './Image'
 import ProductType from './ProductType'
+import ProductRef from './ProductRef'
 import VariationAttribute from './VariationAttribute'
 
 /**
@@ -94,6 +95,18 @@ export default class ProductSearchHit {
         this.product_type = undefined
 
         /**
+        * The first represented product.
+        * @member {module:models/ProductRef} represented_product
+        */
+        this.represented_product = undefined
+
+        /**
+        * All the represented products.
+        * @member {Array.<module:models/ProductRef>} represented_products
+        */
+        this.represented_products = undefined
+
+        /**
         * The array of represented variation attributes (for the master product only). This array can be empty.
         * @member {Array.<module:models/VariationAttribute>} variation_attributes
         */
@@ -140,6 +153,12 @@ export default class ProductSearchHit {
             }
             if (data.hasOwnProperty('product_type')) {
                 obj['product_type'] = ProductType.constructFromObject(data['product_type'])
+            }
+            if (data.hasOwnProperty('represented_product')) {
+                obj['represented_product'] = ProductRef.constructFromObject(data['represented_product'])
+            }
+            if (data.hasOwnProperty('represented_products')) {
+                obj['represented_products'] = ApiClient.convertToType(data['represented_products'], [ProductRef])
             }
             if (data.hasOwnProperty('variation_attributes')) {
                 obj['variation_attributes'] = ApiClient.convertToType(data['variation_attributes'], [VariationAttribute])
