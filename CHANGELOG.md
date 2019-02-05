@@ -1,5 +1,5 @@
 ## To be released
-- Add relevant properties to `VariationAttributeValue` modal and some others. [#15](https://github.com/mobify/commercecloud-ocapi-client/pull/15)
+- Add relevant properties to `VariationAttributeValue` model and some others. [#15](https://github.com/mobify/commercecloud-ocapi-client/pull/15)
 
 ## v0.1.6 (October 16, 2018)
 - Fix `overrideHttpPut` logic invocation
