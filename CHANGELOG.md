@@ -1,3 +1,6 @@
+## To be released
+- Update `Fault` model to have `arguments` property. [#18](https://github.com/mobify/commercecloud-ocapi-client/pull/18)
+
 ## v0.1.7 (February 5, 2019)
 - Add relevant properties to `VariationAttributeValue` model and some others. [#15](https://github.com/mobify/commercecloud-ocapi-client/pull/15)
 
