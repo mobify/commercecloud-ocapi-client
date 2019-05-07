@@ -75,6 +75,14 @@ describe('StoresApi', () => {
                     expect(store.constructor.name).to.be('Store')
                 })
         )
+
+        it('should throw Fault when calling getStoresByID with unknown store id', () => {
+            instance.getStoresByID('badstoreid')
+                .catch((fault) => {
+                    expect(fault.constructor.name).to.be('Fault')
+                    console.log('fault: ', fault)
+                })
+        })
     })
 
     describe('getStoresByIDs', () => {
