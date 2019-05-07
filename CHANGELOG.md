@@ -1,4 +1,4 @@
-## To be released
+## v0.1.8 (May 7, 2019)
 - Update `Fault` model to have `arguments` property. [#18](https://github.com/mobify/commercecloud-ocapi-client/pull/18)
 
 ## v0.1.7 (February 5, 2019)
