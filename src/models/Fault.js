@@ -46,7 +46,7 @@ export default class Fault {
         * These are optional arguments returned with fault
         * @member {Object} arguments
         */
-       this.arguments = undefined
+        this.arguments = undefined
     }
 
     /**
