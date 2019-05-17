@@ -1,7 +1,8 @@
 {
   "name": "commercecloud-ocapi-client",
-  "version": "0.1.8",
+  "version": "0.1.9",
   "description": "An ES6 JavaScript Client for Salesforce Open Commerce API",
+  "repository": "https://github.com/mobify/commercecloud-ocapi-client",
   "license": "SEE LICENSE IN LICENSE",
   "main": "dist/commercecloud-ocapi-client.cjs.js",
   "module": "dist/commercecloud-ocapi-client.es.js",
@@ -30,7 +31,6 @@
     "superagent": "3.5.2"
   },
   "devDependencies": {
-    "babel": "^6.23.0",
     "babel-cli": "^6.24.1",
     "babel-core": "6.18.0",
     "babel-plugin-external-helpers": "^6.22.0",
