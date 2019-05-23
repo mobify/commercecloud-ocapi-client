@@ -19,7 +19,7 @@
     "lint": "npm run lint:js && npm run copyright:lint",
     "lint:js": "eslint '**/*.js'",
     "lint:fix": "npm run lint:js -- --fix",
-    "test": "NODE_ENV=test mocha --require babel-core/register $(find test/api -name '*.spec.js')",
+    "test": "NODE_ENV=test mocha --require @babel/register $(find test/api -name '*.spec.js')",
     "prebuild": "npm run lint",
     "build": "NODE_ENV=production rollup -c",
     "prepack": "npm run build"
@@ -33,9 +33,9 @@
   "devDependencies": {
     "@babel/cli": "^7.4.4",
     "@babel/core": "^7.4.5",
-    "@babel/plugin-external-helpers": "^7.2.0",
     "@babel/plugin-transform-parameters": "^7.4.4",
     "@babel/preset-env": "^7.4.5",
+    "@babel/register": "^7.4.4",
     "eslint": "^5.16.0",
     "eslint-import-resolver-webpack": "^0.11.1",
     "eslint-plugin-import": "^2.17.2",
