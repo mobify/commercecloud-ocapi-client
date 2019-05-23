@@ -15,14 +15,14 @@
  * Do not edit the class manually.
  *
  */
- import ApiClient from '../ApiClient'
+import ApiClient from '../ApiClient'
 
 /**
 * The OptionValue model module.
 * @module models/OptionValue
 * @version 17.8
 */
- export default class OptionValue {
+export default class OptionValue {
     /**
     * Constructs a new <code>OptionValue</code>.
     * Document representing an option value.
@@ -30,31 +30,31 @@
     * @class
     * @param id {String} The id of the option value.
     */
-     constructor(id) {
+    constructor(id) {
         /**
         * A flag indicating whether this option value is the default one.
         * @member {Boolean} default
         */
-         this.default = undefined
+        this.default = undefined
 
         /**
         * The id of the option value.
         * @member {String} id
         */
-         this.id = id
+        this.id = id
 
         /**
         * The localized name of the option value.
         * @member {String} name
         */
-         this.name = undefined
+        this.name = undefined
 
         /**
         * The effective price of this option value.
         * @member {Number} price
         */
-         this.price = undefined
-     }
+        this.price = undefined
+    }
 
     /**
     * Constructs a <code>OptionValue</code> from a plain JavaScript object, optionally creating a new instance.
@@ -63,24 +63,24 @@
     * @param {module:models/OptionValue} obj Optional instance to populate.
     * @return {module:models/OptionValue} The populated <code>OptionValue</code> instance.
     */
-     static constructFromObject(data, obj) {
-         if (data) {
-             obj = obj || new OptionValue()
+    static constructFromObject(data, obj) {
+        if (data) {
+            obj = obj || new OptionValue()
 
-             if (data.hasOwnProperty('default')) {
-                 obj['default'] = ApiClient.convertToType(data['default'], 'Boolean')
-             }
-             if (data.hasOwnProperty('id')) {
-                 obj['id'] = ApiClient.convertToType(data['id'], 'String')
-             }
-             if (data.hasOwnProperty('name')) {
-                 obj['name'] = ApiClient.convertToType(data['name'], 'String')
-             }
-             if (data.hasOwnProperty('price')) {
-                 obj['price'] = ApiClient.convertToType(data['price'], 'Number')
-             }
-         }
+            if (data.hasOwnProperty('default')) {
+                obj['default'] = ApiClient.convertToType(data['default'], 'Boolean')
+            }
+            if (data.hasOwnProperty('id')) {
+                obj['id'] = ApiClient.convertToType(data['id'], 'String')
+            }
+            if (data.hasOwnProperty('name')) {
+                obj['name'] = ApiClient.convertToType(data['name'], 'String')
+            }
+            if (data.hasOwnProperty('price')) {
+                obj['price'] = ApiClient.convertToType(data['price'], 'Number')
+            }
+        }
 
-         return obj
-     }
+        return obj
+    }
 }
