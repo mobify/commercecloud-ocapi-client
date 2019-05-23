@@ -2,14 +2,22 @@
     "env": {
         "production": {
             "presets": [
-                ["env", {"modules": false}]
+                [
+                  "@babel/preset-env",
+                  {
+                    "modules": false
+                  }
+                ]
             ],
             "plugins": [
-                "external-helpers"
+                "@babel/plugin-transform-parameters"
             ]
         },
         "test": {
-            "presets": ["env"]
+            "presets": 
+            [
+              "@babel/preset-env"
+            ]
         }
     }
 }

@@ -5,8 +5,8 @@ import pkg from './package.json'
 
 export default [{
     input: 'src/index.js',
-    name: 'ocapi-client',
     output: {
+        name: 'ocapi-client',
         file: 'dist/commercecloud-ocapi-client.umd.js',
         format: 'umd'
     },
