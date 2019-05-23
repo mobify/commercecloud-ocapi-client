@@ -350,10 +350,10 @@ describe('CustomersApi', () => {
     // })
 
     describe('postCustomersPasswordReset', () => {
-        it('calling postCustomersPasswordReset with an valid request should return successfully', (done) =>
+        it('calling postCustomersPasswordReset with an valid request should return successfully', () =>
             instance.postCustomersPasswordReset(dataSamples.validPasswordReset)
                 .then((something) => {
-                    done()
+                    expect(something)
                 })
         )
 
@@ -366,10 +366,10 @@ describe('CustomersApi', () => {
     })
 
     describe('putCustomersByIDPassword', () => {
-        it('calling putCustomersByIDPassword with a valid request should return successfully', (done) =>
+        it('calling putCustomersByIDPassword with a valid request should return successfully', () =>
             instance.putCustomersByIDPassword(newCustomer.customer_id, dataSamples.validPasswordChangeRequest)
-                .then(() => {
-                    done()
+                .then((something) => {
+                    expect(something)
                 })
         )
 
