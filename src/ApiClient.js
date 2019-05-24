@@ -17,6 +17,7 @@
 import superagent from 'superagent'
 import querystring from 'querystring'
 
+import LocalStorageFactory from './factories/LocalStorageFactory'
 import Fault from './models/Fault'
 
 /**
@@ -28,9 +29,24 @@ const defaultConfig = {
     basePath: 'https://localhost/s/siteId/dw/shop/v17_8',
     cache: true,
     defaultHeaders: {},
+    storage: new LocalStorageFactory(),
     enableCookies: false,
     overrideHttpPut: true,
     timeout: 60000,
+}
+
+
+const transformToken = (accessCredentials, token) => {
+    // input {"access_token":"XXX-YYYY-YYYY-YYYY-ZZZZYYYYZZZZ","expires_in":111,"token_type":"Bearer"}
+    // output {"client_id": accessCredentials.clientId, "access_token":"XXX-YYYY-YYYY-YYYY-ZZZZYYYYZZZZ","expires":now + 111,"token_type":"Bearer"}
+    const now = Date.now() / 1000
+    return {
+        client_id: accessCredentials.clientId,
+        access_token: token.access_token,
+        created: now,
+        expires: now + token.expires_in,
+        token_type: token.token_type
+    }
 }
 
 /**
@@ -51,7 +67,10 @@ export default class ApiClient {
             enableCookies,
             clientUsername,
             clientPassword,
+            clientId,
+            clientSecret,
             oauth2AccessToken,
+            storage,
             overrideHttpPut
         } = Object.assign(defaultConfig, config)
 
@@ -66,6 +85,14 @@ export default class ApiClient {
          * @default https://localhost/s/siteId/dw/shop/v17_8
          */
         this.basePath = basePath.replace(/\/+$/, '')
+        this.authBasePath = this.basePath.match('^(https?://[^:/?#]*(?::[0-9]+)?).*$')[1]
+
+        /**
+         * The storage mechanism used for oAuth credentials (in browser user window.localstorage but also falls back to node-localstorage and supports alternative InMemoryStorage temporary)
+         * @type {StorageFactory}
+         * @default LocalStorageFactory
+         */
+        this.storage = storage
 
         /**
          * The authentication methods to be included for all API calls.
@@ -86,8 +113,15 @@ export default class ApiClient {
         }
 
         if (oauth2AccessToken) {
-            const oauth2_application = this.authentications.oauth2_application
-            oauth2_application.accessToken = oauth2AccessToken
+            this.authentications.oauth2_application.accessToken = oauth2AccessToken
+        } else if (clientId && clientSecret && clientUsername && clientPassword) {
+            this.authentications.oauth2_application.accessCredentials = {
+                clientId,
+                clientSecret,
+                clientUsername,
+                clientPassword,
+                storage
+            }
         }
 
         if (clientUsername && clientPassword) {
@@ -188,14 +222,16 @@ export default class ApiClient {
      * NOTE: query parameters are not handled here.
      * @param {String} path The path to append to the base URL.
      * @param {Object} pathParams The parameter values to append.
+     * @param {String} basePath The base URL path to prepend with.
+     * @default this.basePath
      * @returns {String} The encoded path with parameter values substituted.
      */
-    buildUrl(path, pathParams) {
+    buildUrl(path, pathParams = {}, basePath = this.basePath) {
         if (!path.match(/^\//)) {
             path = `/${path}`
         }
 
-        let url = this.basePath + path
+        let url = basePath + path
         url = url.replace(/\{([\w-]+)\}/g, (fullMatch, key) => {
             let value
             if (pathParams.hasOwnProperty(key)) {
@@ -336,43 +372,52 @@ export default class ApiClient {
      * @param {Array.<String>} authNames An array of authentication method names.
      */
     applyAuthToRequest(request, authNames) {
-        authNames.forEach((authName) => {
-            const auth = this.authentications[authName]
-            switch (auth.type) {
-                case 'basic':
-                    if (auth.username || auth.password) {
-                        request.auth(auth.username || '', auth.password || '')
-                    }
-
-                    break
-                case 'apiKey':
-                    if (auth.apiKey) {
-                        const data = {}
-                        if (auth.apiKeyPrefix) {
-                            data[auth.name] = `${auth.apiKeyPrefix} ${auth.apiKey}`
-                        } else {
-                            data[auth.name] = auth.apiKey
+        return new Promise((resolve, reject) => {
+            const authorizations = []
+            authNames.forEach((authName) => {
+                const auth = this.authentications[authName]
+                switch (auth.type) {
+                    case 'basic': {
+                        if (auth.username || auth.password) {
+                            request.auth(auth.username || '', auth.password || '')
+                            authorizations.push(Promise.resolve(auth.type))
                         }
 
-                        if (auth.in === 'header') {
-                            request.set(data)
-                        } else {
-                            request.query(data)
+                        break
+                    }
+                    case 'apiKey': {
+                        if (auth.apiKey) {
+                            const data = {}
+                            if (auth.apiKeyPrefix) {
+                                data[auth.name] = `${auth.apiKeyPrefix} ${auth.apiKey}`
+                            } else {
+                                data[auth.name] = auth.apiKey
+                            }
+
+                            if (auth.in === 'header') {
+                                request.set(data)
+                            } else {
+                                request.query(data)
+                            }
+                            authorizations.push(Promise.resolve(auth.type))
                         }
-                    }
 
-                    break
-                case 'oauth2':
-                    if (auth.accessToken) {
-                        request.set({
-                            Authorization: `Bearer ${auth.accessToken}`
-                        })
+                        break
                     }
+                    case 'oauth2': {
+                        authorizations.push(this.setToken(request, auth.accessToken, auth.accessCredentials))
 
-                    break
-                default:
-                    throw new Error(`Unknown authentication type: ${auth.type}`)
-            }
+                        break
+                    }
+                    default: {
+                        throw new Error(`Unknown authentication type: ${auth.type}`)
+                    }
+                }
+            })
+
+            return Promise.all(authorizations)
+                .then(resolve)
+                .catch(reject)
         })
     }
 
@@ -399,6 +444,102 @@ export default class ApiClient {
         }
 
         return ApiClient.convertToType(data, returnType)
+    }
+
+    authenticate(accessCredentials) {
+        return new Promise((resolve, reject) => {
+            const authURL = this.buildUrl('/dw/oauth2/access_token', null, this.authBasePath)
+
+            const request = superagent('POST', authURL)
+
+            // set request timeout
+            request.timeout(this.timeout)
+
+            // set header parameters
+            const authorization = Buffer // eslint-disable-line no-undef
+                .from(`${accessCredentials.clientUsername}:${accessCredentials.clientPassword}:${accessCredentials.clientSecret}\n`)
+                .toString('base64')
+            request
+                .set({'Content-Type': 'application/x-www-form-urlencoded'})
+                .set({Authorization: `Basic ${authorization}`})
+
+            const data = querystring.stringify({
+                client_id: accessCredentials.clientId,
+                grant_type: 'urn:demandware:params:oauth:grant-type:client-id:dwsid:dwsecuretoken'
+            })
+            const returnType = 'String'
+            request.responseType(returnType)
+
+            request.send(data)
+
+            request.end((error, response) => {
+                if (error) {
+                    // Looks like there was an fault returned from the API
+                    const hasErrorMessage = error.response && error.response.text
+                    if (hasErrorMessage) {
+                        let errorObj = JSON.parse(error.response.text)
+                        if (errorObj.fault) {
+                            errorObj = Fault.constructFromObject(errorObj.fault)
+                        }
+                        reject(errorObj)
+                    }
+
+                    // Most likely a network error has happened here so include entire error.
+                    reject(error)
+                } else {
+                    try {
+                        const data = JSON.parse(this.deserialize(response, returnType))
+                        if (this.enableCookies && typeof window === 'undefined') {
+                            this.agent._saveCookies(response)
+                        }
+
+                        resolve({
+                            data,
+                            response
+                        })
+                    } catch (err) {
+                        reject(err)
+                    }
+                }
+            })
+        })
+    }
+
+    setToken(request, accessToken, accessCredentials) {
+        return new Promise((resolve, reject) => {
+            if (accessToken) {
+                request.set({
+                    Authorization: `Bearer ${accessToken}`
+                })
+                resolve(accessToken)
+            } else if (accessCredentials) {
+                let storedCredentials = JSON.parse(this.storage.get('sfccOAuth'))
+                if (
+                    !storedCredentials ||
+                    !storedCredentials.access_token ||
+                    storedCredentials.client_id !== accessCredentials.clientId ||
+                    Math.floor(Date.now() / 1000) >= storedCredentials.expires
+                ) {
+                    return this.authenticate(accessCredentials)
+                        .then((oAuthToken) => {
+                            storedCredentials = transformToken(accessCredentials, oAuthToken.data)
+                            this.storage.set('sfccOAuth', JSON.stringify(storedCredentials))
+                            request.set({
+                                Authorization: `${storedCredentials.token_type} ${storedCredentials.access_token}`
+                            })
+                            resolve(storedCredentials.access_token)
+                        })
+                        .catch((error) => reject(error))
+                } else {
+                    request.set({
+                        Authorization: `${storedCredentials.token_type} ${storedCredentials.access_token}`
+                    })
+                    resolve(storedCredentials.access_token)
+                }
+            }
+
+            return null
+        })
     }
 
     /**
@@ -431,99 +572,102 @@ export default class ApiClient {
         const request = superagent(httpMethod, url)
 
         // apply authentications
-        this.applyAuthToRequest(request, authNames)
+        // this.applyAuthToRequest(request, authNames)
+        return this.applyAuthToRequest(request, authNames)
+            .then(() => {
 
-        // set query parameters
-        if (httpMethod.toUpperCase() === 'GET' && this.cache === false) {
-            queryParams._ = new Date().getTime()
-        }
-
-        request.query(this.normalizeParams(queryParams))
-
-        // set header parameters
-        request.set(this.defaultHeaders).set(this.normalizeParams(headerParams))
-
-        // set request timeout
-        request.timeout(this.timeout)
-
-        const contentType = this.jsonPreferredMime(contentTypes)
-        if (contentType) {
-            // Issue with superagent and multipart/form-data (https://github.com/visionmedia/superagent/issues/746)
-            if (contentType !== 'multipart/form-data') {
-                request.type(contentType)
-            }
-        } else if (!request.header['Content-Type']) {
-            request.type('application/json')
-        }
-
-        if (contentType === 'application/x-www-form-urlencoded') {
-            request.send(querystring.stringify(this.normalizeParams(formParams)))
-        } else if (contentType === 'multipart/form-data') {
-            const _formParams = this.normalizeParams(formParams)
-            for (const key in _formParams) {
-                if (_formParams.hasOwnProperty(key)) {
-                    if (this.isFileParam(_formParams[key])) {
-                        // file field
-                        request.attach(key, _formParams[key])
-                    } else {
-                        request.field(key, _formParams[key])
-                    }
+                // set query parameters
+                if (httpMethod.toUpperCase() === 'GET' && this.cache === false) {
+                    queryParams._ = new Date().getTime()
                 }
-            }
-        } else if (bodyParam) {
-            request.send(bodyParam)
-        }
 
-        const accept = this.jsonPreferredMime(accepts)
-        if (accept) {
-            request.accept(accept)
-        }
+                request.query(this.normalizeParams(queryParams))
 
-        if (returnType === 'Blob') {
-            request.responseType('blob')
-        } else if (returnType === 'String') {
-            request.responseType('string')
-        }
+                // set header parameters
+                request.set(this.defaultHeaders).set(this.normalizeParams(headerParams))
 
-        // Attach previously saved cookies, if enabled
-        if (this.enableCookies) {
-            if (typeof window === 'undefined') {
-                this.agent._attachCookies(request)
-            } else {
-                request.withCredentials()
-            }
-        }
+                // set request timeout
+                request.timeout(this.timeout)
 
-        return new Promise((resolve, reject) => {
-            request.end((error, response) => {
-                if (error) {
-
-                    // Looks like there was an fault returned from the API
-                    const hasErrorMessage = error.response && error.response.text
-                    if (hasErrorMessage) {
-                        const fault = Fault.constructFromObject(JSON.parse(error.response.text).fault)
-                        reject(fault)
+                const contentType = this.jsonPreferredMime(contentTypes)
+                if (contentType) {
+                    // Issue with superagent and multipart/form-data (https://github.com/visionmedia/superagent/issues/746)
+                    if (contentType !== 'multipart/form-data') {
+                        request.type(contentType)
                     }
+                } else if (!request.header['Content-Type']) {
+                    request.type('application/json')
+                }
 
-                    // Most likely a network error has happened here so include entire error.
-                    reject(error)
-                } else {
-                    try {
-                        const data = this.deserialize(response, returnType)
-                        if (this.enableCookies && typeof window === 'undefined') {
-                            this.agent._saveCookies(response)
+                if (contentType === 'application/x-www-form-urlencoded') {
+                    request.send(querystring.stringify(this.normalizeParams(formParams)))
+                } else if (contentType === 'multipart/form-data') {
+                    const _formParams = this.normalizeParams(formParams)
+                    for (const key in _formParams) {
+                        if (_formParams.hasOwnProperty(key)) {
+                            if (this.isFileParam(_formParams[key])) {
+                                // file field
+                                request.attach(key, _formParams[key])
+                            } else {
+                                request.field(key, _formParams[key])
+                            }
                         }
+                    }
+                } else if (bodyParam) {
+                    request.send(bodyParam)
+                }
 
-                        resolve({
-                            data,
-                            response
-                        })
-                    } catch (err) {
-                        reject(err)
+                const accept = this.jsonPreferredMime(accepts)
+                if (accept) {
+                    request.accept(accept)
+                }
+
+                if (returnType === 'Blob') {
+                    request.responseType('blob')
+                } else if (returnType === 'String') {
+                    request.responseType('string')
+                }
+
+                // Attach previously saved cookies, if enabled
+                if (this.enableCookies) {
+                    if (typeof window === 'undefined') {
+                        this.agent._attachCookies(request)
+                    } else {
+                        request.withCredentials()
                     }
                 }
+
+                return new Promise((resolve, reject) => {
+                    request.end((error, response) => {
+                        if (error) {
+
+                            // Looks like there was an fault returned from the API
+                            const hasErrorMessage = error.response && error.response.text
+                            if (hasErrorMessage) {
+                                const fault = Fault.constructFromObject(JSON.parse(error.response.text).fault)
+                                reject(fault)
+                            }
+
+                            // Most likely a network error has happened here so include entire error.
+                            reject(error)
+                        } else {
+                            try {
+                                const data = this.deserialize(response, returnType)
+                                if (this.enableCookies && typeof window === 'undefined') {
+                                    this.agent._saveCookies(response)
+                                }
+
+                                resolve({
+                                    data,
+                                    response
+                                })
+                            } catch (err) {
+                                reject(err)
+                            }
+                        }
+                    })
+                })
             })
-        })
     }
 
     /**
