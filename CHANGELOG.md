@@ -1,3 +1,6 @@
+## v0.2.0 (May 23, 2019)
+- Updated all majore packages to latest versions
+
 ## v0.1.9 (May 7, 2019)
 - Remove deprecated babel dependency
 
