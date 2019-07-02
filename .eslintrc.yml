@@ -7,3 +7,5 @@ globals:
   DEBUG: false
 rules:
   camelcase: off
+  no-prototype-builtins: 0
+parser: babel-eslint

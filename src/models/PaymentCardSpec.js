@@ -71,7 +71,7 @@ export default class PaymentCardSpec {
         * @member {Array.<String>} number_prefixes
         */
         this
-        .number_prefixes = undefined
+            .number_prefixes = undefined
         /**
         * The length of the security code for this card.
         * @member {Number} security_code_length
