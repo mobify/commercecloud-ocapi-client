@@ -1,3 +1,6 @@
+## To be released
+- Run security audit and upgrade offending npm dependencies. [#23](https://github.com/mobify/commercecloud-ocapi-client/pull/23)
+
 ## v0.1.9 (May 7, 2019)
 - Remove deprecated babel dependency
 
