@@ -501,8 +501,15 @@ export default class ApiClient {
                     // Looks like there was an fault returned from the API
                     const hasErrorMessage = error.response && error.response.text
                     if (hasErrorMessage) {
-                        const fault = Fault.constructFromObject(JSON.parse(error.response.text).fault)
-                        reject(fault)
+                        try {
+                            const fault = Fault.constructFromObject(JSON.parse(error.response.text).fault)
+                            reject(fault)
+                        } catch (e) {
+                            // If the error response text isn't valid JSON (eg. the API
+                            // responded with HTML for some reason), reject the Promise
+                            // here to ensure it settles and doesn't cause a timeout.
+                            reject(e)
+                        }
                     }
 
                     // Most likely a network error has happened here so include entire error.
