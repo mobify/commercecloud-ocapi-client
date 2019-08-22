@@ -1,3 +1,7 @@
+## v0.1.11 (August 22, 2019)
+- Use NPM authentication token for circleci publishing.
+- Fix `callApi` JSON error parsing never settling its Promise.
+
 ## v0.1.10 (July 2, 2019)
 - Run security audit and upgrade offending npm dependencies. [#23](https://github.com/mobify/commercecloud-ocapi-client/pull/23)
 
