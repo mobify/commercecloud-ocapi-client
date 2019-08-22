@@ -494,6 +494,16 @@ export default class ApiClient {
             }
         }
 
+        return this.sendApiRequest(request, returnType)
+    }
+
+    /**
+     * Sends the generated superagent request and deserializes the response.
+     * @param {module:superagent.Request} request The superagent request to send.
+     * @param {String} returnType The type to deserialize the response into.
+     * @returns {Promise} A {@link https://www.promisejs.org/|Promise} object.
+     */
+    sendApiRequest(request, returnType) {
         return new Promise((resolve, reject) => {
             request.end((error, response) => {
                 if (error) {
@@ -501,8 +511,13 @@ export default class ApiClient {
                     // Looks like there was an fault returned from the API
                     const hasErrorMessage = error.response && error.response.text
                     if (hasErrorMessage) {
-                        const fault = Fault.constructFromObject(JSON.parse(error.response.text).fault)
-                        reject(fault)
+                        try {
+                            const fault = Fault.constructFromObject(JSON.parse(error.response.text).fault)
+                            reject(fault)
+                        } catch (err) {
+                            // Reject immediately on parsing error.
+                            reject(err)
+                        }
                     }
 
                     // Most likely a network error has happened here so include entire error.
