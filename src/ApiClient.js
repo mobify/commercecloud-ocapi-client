@@ -494,6 +494,16 @@ export default class ApiClient {
             }
         }
 
+        return this.sendApiRequest(request, returnType)
+    }
+
+    /**
+     * Sends the generated superagent request and deserializes the response.
+     * @param {module:superagent.Request} request The superagent request to send.
+     * @param {String} returnType The type to deserialize the response into.
+     * @returns {Promise} A {@link https://www.promisejs.org/|Promise} object.
+     */
+    sendApiRequest(request, returnType) {
         return new Promise((resolve, reject) => {
             request.end((error, response) => {
                 if (error) {
