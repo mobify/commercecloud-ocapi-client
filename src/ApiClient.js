@@ -514,11 +514,9 @@ export default class ApiClient {
                         try {
                             const fault = Fault.constructFromObject(JSON.parse(error.response.text).fault)
                             reject(fault)
-                        } catch (e) {
-                            // If the error response text isn't valid JSON (eg. the API
-                            // responded with HTML for some reason), reject the Promise
-                            // here to ensure it settles and doesn't cause a timeout.
-                            reject(e)
+                        } catch (err) {
+                            // Reject immediately on parsing error.
+                            reject(err)
                         }
                     }
 
