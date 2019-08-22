@@ -1,4 +1,4 @@
-## To be released
+## v0.1.11 (August 22, 2019)
 - Use NPM authentication token for circleci publishing.
 - Fix `callApi` JSON error parsing never settling its Promise.
 
