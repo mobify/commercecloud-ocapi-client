@@ -76,7 +76,7 @@ export default class ProductSearchApi {
         }
         if (Array.isArray(opts.refine)) {
             opts.refine.forEach((value, index) => {
-              queryParams[`refine_${index + 1}`] = this.apiClient.paramToString(value)
+                queryParams[`refine_${index + 1}`] = this.apiClient.paramToString(value)
             })
         }
         const headerParams = {}
@@ -166,7 +166,7 @@ export default class ProductSearchApi {
         }
         if (Array.isArray(opts.refine)) {
             opts.refine.forEach((value, index) => {
-              queryParams[`refine_${index + 1}`] = this.apiClient.paramToString(value)
+                queryParams[`refine_${index + 1}`] = this.apiClient.paramToString(value)
             })
         }
         const headerParams = {}
@@ -251,7 +251,7 @@ export default class ProductSearchApi {
         }
         if (Array.isArray(opts.refine)) {
             opts.refine.forEach((value, index) => {
-              queryParams[`refine_${index + 1}`] = this.apiClient.paramToString(value)
+                queryParams[`refine_${index + 1}`] = this.apiClient.paramToString(value)
             })
         }
         const headerParams = {}
@@ -338,7 +338,7 @@ export default class ProductSearchApi {
         }
         if (Array.isArray(opts.refine)) {
             opts.refine.forEach((value, index) => {
-              queryParams[`refine_${index + 1}`] = this.apiClient.paramToString(value)
+                queryParams[`refine_${index + 1}`] = this.apiClient.paramToString(value)
             })
         }
         const headerParams = {}
@@ -422,7 +422,7 @@ export default class ProductSearchApi {
         }
         if (Array.isArray(opts.refine)) {
             opts.refine.forEach((value, index) => {
-              queryParams[`refine_${index + 1}`] = this.apiClient.paramToString(value)
+                queryParams[`refine_${index + 1}`] = this.apiClient.paramToString(value)
             })
         }
         const headerParams = {}
