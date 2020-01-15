@@ -18,6 +18,26 @@ beforeEach(() => {
 })
 
 describe('ApiClient', () => {
+    describe('utilities', () => {
+        it('buildRefineParams returns an object with keyed refinements', () => {
+            const tests = new Map()
+            tests.set(undefined, {})
+            tests.set([], {})
+            tests.set(['foo=bar'], {refine: 'foo=bar'})
+            tests.set(
+                ['foo1=bar1', 'foo2=bar2'],
+                {
+                    refine_1: 'foo1=bar1',
+                    refine_2: 'foo2=bar2'
+                }
+            )
+
+            for(let [input, result] of tests) {
+                expect(client.buildRefineParams(input)).to.eql(result)
+            }
+        })
+    })
+
     describe('sendApiRequest', () => {
         let mockRequest
 

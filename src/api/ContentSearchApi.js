@@ -65,7 +65,6 @@ export default class ContentSearchApi {
         const pathParams = {}
         const queryParams = {
             q: opts.q,
-            refine: this.apiClient.buildCollectionParam(opts.refine, 'csv'),
             sort: this.apiClient.buildCollectionParam(opts.sort, 'csv'),
             start: opts.start,
             count: opts.count,
@@ -78,6 +77,9 @@ export default class ContentSearchApi {
         const contentTypes = ['application/json', 'text/xml', 'application/xml']
         const accepts = ['application/json', 'text/xml', 'application/xml']
         const returnType = ContentSearchResult
+
+        // Update queryParams with parsed refinements
+        Object.assign(queryParams, this.apiClient.buildRefineParams(opts.refine))
 
         return this.apiClient.callApi(
             '/content_search', 'GET',
