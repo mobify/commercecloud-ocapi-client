@@ -1,4 +1,4 @@
-## To be released
+## v0.1.12 (January 15, 2020)
 - Fix refine option processing to include refine_1 ... refine_n alternatives
 
 ## v0.1.11 (August 22, 2019)
