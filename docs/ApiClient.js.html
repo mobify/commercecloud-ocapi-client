@@ -341,10 +341,10 @@ export default class ApiClient {
 
         return refinements.length
             ? refinements.reduce(
-                (acc, curr, idx, arr) => ({
-                    ...acc,
-                    [arr.length > 1 ? `refine_${idx + 1}` : 'refine']: this.paramToString(curr)
-                }),
+                (acc, curr, idx, arr) => {
+                    Object.assign(acc, {[arr.length > 1 ? `refine_${idx + 1}` : 'refine']: this.paramToString(curr)})
+                    return acc
+                },
                 {} // Reduce array to populate a new object with formatted key/values.
             )
             : {}
