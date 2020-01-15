@@ -304,7 +304,7 @@ export default class ApiClient {
     /**
      * Builds an object with refinement keys 1..n given a an array of refinements.
      * A numbered suffix will not be applied if the number of refinements is equal to 1.
-     * @param {Array} refinements Optional parameters
+     * @param {Array} refinements Array of refinement strings
      * @returns {Object} An object with refinement keys numbered 1 ... n with their
      * string representation value.
      */
