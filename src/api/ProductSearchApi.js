@@ -72,8 +72,7 @@ export default class ProductSearchApi {
             count: opts.count,
             expand: this.apiClient.buildCollectionParam(opts.expand, 'csv'),
             currency: opts.currency,
-            locale: opts.locale,
-            ...this.apiClient.buildRefineParams(opts.refine)
+            locale: opts.locale
         }
         const headerParams = {}
         const formParams = {}
@@ -82,6 +81,9 @@ export default class ProductSearchApi {
         const contentTypes = ['application/json', 'text/xml', 'application/xml']
         const accepts = ['application/json', 'text/xml', 'application/xml']
         const returnType = ProductSearchResult
+
+        // Update queryParams with parsed refinements
+        Object.assign(queryParams, this.apiClient.buildRefineParams(opts.refine))
 
         return this.apiClient.callApi(
             '/product_search', 'GET',
@@ -158,8 +160,7 @@ export default class ProductSearchApi {
             sort: opts.sort,
             start: opts.start,
             count: opts.count,
-            locale: opts.locale,
-            ...this.apiClient.buildRefineParams(opts.refine)
+            locale: opts.locale
         }
         const headerParams = {}
         const formParams = {}
@@ -168,6 +169,9 @@ export default class ProductSearchApi {
         const contentTypes = ['application/json', 'text/xml', 'application/xml']
         const accepts = ['application/json', 'text/xml', 'application/xml']
         const returnType = ProductSearchResult
+
+        // Update queryParams with parsed refinements
+        Object.assign(queryParams, this.apiClient.buildRefineParams(opts.refine))
 
         return this.apiClient.callApi(
             '/product_search/availability', 'GET',
@@ -239,8 +243,7 @@ export default class ProductSearchApi {
             sort: opts.sort,
             start: opts.start,
             count: opts.count,
-            locale: opts.locale,
-            ...this.apiClient.buildRefineParams(opts.refine)
+            locale: opts.locale
         }
         const headerParams = {}
         const formParams = {}
@@ -249,6 +252,9 @@ export default class ProductSearchApi {
         const contentTypes = ['application/json', 'text/xml', 'application/xml']
         const accepts = ['application/json', 'text/xml', 'application/xml']
         const returnType = ProductSearchResult
+
+        // Update queryParams with parsed refinements
+        Object.assign(queryParams, this.apiClient.buildRefineParams(opts.refine))
 
         return this.apiClient.callApi(
             '/product_search/images', 'GET',
@@ -322,8 +328,7 @@ export default class ProductSearchApi {
             start: opts.start,
             count: opts.count,
             currency: opts.currency,
-            locale: opts.locale,
-            ...this.apiClient.buildRefineParams(opts.refine)
+            locale: opts.locale
         }
         const headerParams = {}
         const formParams = {}
@@ -332,6 +337,9 @@ export default class ProductSearchApi {
         const contentTypes = ['application/json', 'text/xml', 'application/xml']
         const accepts = ['application/json', 'text/xml', 'application/xml']
         const returnType = ProductSearchResult
+
+        // Update queryParams with parsed refinements
+        Object.assign(queryParams, this.apiClient.buildRefineParams(opts.refine))
 
         return this.apiClient.callApi(
             '/product_search/prices', 'GET',
@@ -402,8 +410,7 @@ export default class ProductSearchApi {
             sort: opts.sort,
             start: opts.start,
             count: opts.count,
-            locale: opts.locale,
-            ...this.apiClient.buildRefineParams(opts.refine)
+            locale: opts.locale
         }
         const headerParams = {}
         const formParams = {}
@@ -412,6 +419,9 @@ export default class ProductSearchApi {
         const contentTypes = ['application/json', 'text/xml', 'application/xml']
         const accepts = ['application/json', 'text/xml', 'application/xml']
         const returnType = ProductSearchResult
+
+        // Update queryParams with parsed refinements
+        Object.assign(queryParams, this.apiClient.buildRefineParams(opts.refine))
 
         return this.apiClient.callApi(
             '/product_search/variations', 'GET',
