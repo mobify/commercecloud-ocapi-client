@@ -65,11 +65,11 @@ export default class ContentSearchApi {
         const pathParams = {}
         const queryParams = {
             q: opts.q,
-            refine: this.apiClient.buildCollectionParam(opts.refine, 'csv'),
             sort: this.apiClient.buildCollectionParam(opts.sort, 'csv'),
             start: opts.start,
             count: opts.count,
-            locale: opts.locale
+            locale: opts.locale,
+            ...this.apiClient.buildRefineParams(opts.refine)
         }
         const headerParams = {}
         const formParams = {}

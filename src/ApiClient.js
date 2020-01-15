@@ -302,6 +302,27 @@ export default class ApiClient {
     }
 
     /**
+     * Builds an object with refinement keys 1..n given a an array of refinements.
+     * A numbered suffix will not be applied if the number of refinements is equal to 1.
+     * @param {Array} refinements Optional parameters
+     * @returns {Object} An object with refinement keys numbered 1 ... n with their
+     * string representation value.
+     */
+    buildRefineParams(refinements) {
+        refinements = refinements || []
+
+        return refinements.length
+            ? refinements.reduce(
+                (acc, curr, idx, arr) => ({
+                    ...acc,
+                    [arr.length > 1 ? `refine_${idx + 1}` : 'refine']: curr
+                }),
+                {} // Reduce array to populate a new object with formatted key/values.
+            )
+            : {}
+    }
+
+    /**
      * Builds a string representation of an array-type actual parameter, according to the given collection format.
      * @param {Array} param An array parameter.
      * @param {module:ApiClient.CollectionFormatEnum} collectionFormat The array element separator strategy.
