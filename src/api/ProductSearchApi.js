@@ -405,7 +405,7 @@ export default class ProductSearchApi {
 
         // Update queryParams with parsed refinements
         Object.assign(queryParams, this.apiClient.buildRefineParams(opts.refine))
-        
+
         return this.apiClient.callApi(
             '/product_search/variations', 'GET',
             pathParams, queryParams, headerParams, formParams, postBody,
