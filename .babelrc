@@ -5,11 +5,15 @@
                 ["env", {"modules": false}]
             ],
             "plugins": [
-                "external-helpers"
+                "external-helpers",
+                "transform-class-properties"
             ]
         },
         "test": {
-            "presets": ["env"]
+            "presets": ["env"],
+            "plugins": [
+                "transform-class-properties"
+            ]
         }
     }
 }
