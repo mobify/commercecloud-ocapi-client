@@ -19,7 +19,7 @@ _(___ _(___/_/_/__/_/_/__/_(___ _/_____(___ _(___ _(___ _/___(___/_(___(__(___/_
 
 Salesforce Commerce Cloud Open Commerce API (OCAPI) for Node and browsers.
 
-- API version: 17.8
+- API version: 20.4
 
 ### ⚒ Installation
 

@@ -23,7 +23,7 @@ export const validProduct = ShopApi.Product.constructFromObject({
 })
 
 export const validCustomerProductListItemLink = ShopApi.CustomerProductListItemLink.constructFromObject({
-    link: `https://mobify-tech-prtnr-na03-dw.demandware.net/s/2017refresh/dw/shop/v17_8/products/${validProduct.id}`,
+    link: `https://mobify-tech-prtnr-na03-dw.demandware.net/s/2017refresh/dw/shop/v20_4/products/${validProduct.id}`,
     title: 'Platinum Blue Stripes Easy Care Fitted Shirt'
 })
 
