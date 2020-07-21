@@ -1,4 +1,4 @@
-## To Be Released
+## To be released
 - Regenerate client using version 20.4 of the OCAPI swagger definition. [#37](https://github.com/mobify/commercecloud-ocapi-client/pull/37)
 
 ## v0.1.12 (January 15, 2020)
