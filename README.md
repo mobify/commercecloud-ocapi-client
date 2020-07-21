@@ -19,7 +19,7 @@ _(___ _(___/_/_/__/_/_/__/_(___ _/_____(___ _(___ _(___ _/___(___/_(___(__(___/_
 
 Salesforce Commerce Cloud Open Commerce API (OCAPI) for Node and browsers.
 
-- API version: 17.8
+- API version: 20.4
 
 ### ⚒ Installation
 
@@ -78,7 +78,7 @@ The API client accepts an configuration object, example:
 import ShopApi from 'commercecloud-ocapi-client'
 
 const config = {
-  basePath: 'https://localhost/s/siteId/dw/shop/v17_8',
+  basePath: 'https://localhost/s/siteId/dw/shop/v20_4',
   defaultHeaders: {}, // HTTP header for all requests
   timeout: 60000, // Request timeout in milliseconds
   cache: true, // If set to false an additional timestamp parameter is added to all API GET calls to prevent browser caching
@@ -126,7 +126,7 @@ Example:
 ```json
 {
   "clientId": "5640cc6b-f5e9-466e-9134-9853e9f9db93",
-  "baseUrl": "https://localhost/s/siteId/dw/shop/v17_8"
+  "baseUrl": "https://localhost/s/siteId/dw/shop/v20_4"
 }
 ```
 Then run the following command:

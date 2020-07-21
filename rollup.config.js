@@ -11,6 +11,9 @@ export default [{
         format: 'umd'
     },
     plugins: [
+        babel({
+            exclude: ['node_modules/**']
+        }),
         commonjs({
             namedExports: {
                 './node_modules/superagent/superagent.js': ['superagent'],
@@ -20,9 +23,6 @@ export default [{
             preferBuiltins: false,
             querystring: true,
             browser: true,
-        }),
-        babel({
-            exclude: ['node_modules/**']
         })
     ]
 },

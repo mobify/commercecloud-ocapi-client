@@ -94,7 +94,7 @@ Document representing a shipment.</p>
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="models_Shipment.js.html">models/Shipment.js</a>, <a href="models_Shipment.js.html#line34">line 34</a>
+        <a href="models_Shipment.js.html">models/Shipment.js</a>, <a href="models_Shipment.js.html#line40">line 40</a>
     </li></ul></dd>
     
 
@@ -144,16 +144,85 @@ Document representing a shipment.</p>
 
         
             
+<h4 class="name" id="ShippingStatusEnum"><span class="type-signature">(readonly) </span>ShippingStatusEnum<span class="type-signature"> :String</span></h4>
+
+
+
+
+<div class="description">
+    <p>Allowed values for the <code>shipping_status</code> property.</p>
+</div>
+
+
+
+    <h5>Type:</h5>
+    <ul>
+        <li>
+            
+<span class="param-type">String</span>
+
+
+        </li>
+    </ul>
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="models_Shipment.js.html">models/Shipment.js</a>, <a href="models_Shipment.js.html#line240">line 240</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+        
+            
 <h4 class="name" id="~adjusted_merchandize_total_tax"><span class="type-signature">(inner) </span>adjusted_merchandize_total_tax<span class="type-signature"> :Number</span></h4>
 
 
 
 
 <div class="description">
-    <p>The products tax after discounts applying in purchase currency. Adjusted merchandize prices
-represent the sum of  product prices before services such as shipping have been added, but after
-adjustment from promotions have been  added.   Note that order level adjustments are considered
-if Discount Taxation preference is set to  &quot;Tax Products and Shipping Only Based on Adjusted Price&quot;.</p>
+    <p>The products tax after discounts applying in purchase currency. Adjusted merchandize prices represent the sum of  product prices before services such as shipping have been added, but after adjustment from promotions have been  added.   Note that order level adjustments are considered if Discount Taxation preference is set to  &quot;Tax Products and Shipping Only Based on Adjusted Price&quot;.</p>
 </div>
 
 
@@ -201,7 +270,7 @@ if Discount Taxation preference is set to  &quot;Tax Products and Shipping Only 
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="models_Shipment.js.html">models/Shipment.js</a>, <a href="models_Shipment.js.html#line35">line 35</a>
+        <a href="models_Shipment.js.html">models/Shipment.js</a>, <a href="models_Shipment.js.html#line130">line 130</a>
     </li></ul></dd>
     
 
@@ -273,7 +342,219 @@ if Discount Taxation preference is set to  &quot;Tax Products and Shipping Only 
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="models_Shipment.js.html">models/Shipment.js</a>, <a href="models_Shipment.js.html#line44">line 44</a>
+        <a href="models_Shipment.js.html">models/Shipment.js</a>, <a href="models_Shipment.js.html#line135">line 135</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+        
+            
+<h4 class="name" id="~c_fromStoreId"><span class="type-signature">(inner) </span>c_fromStoreId<span class="type-signature"> :String</span></h4>
+
+
+
+
+<div class="description">
+    <p>Used to map the shipment to a  brick and mortar store.</p>
+</div>
+
+
+
+    <h5>Type:</h5>
+    <ul>
+        <li>
+            
+<span class="param-type">String</span>
+
+
+        </li>
+    </ul>
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="models_Shipment.js.html">models/Shipment.js</a>, <a href="models_Shipment.js.html#line140">line 140</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+        
+            
+<h4 class="name" id="~c_shipmentType"><span class="type-signature">(inner) </span>c_shipmentType<span class="type-signature"> :String</span></h4>
+
+
+
+
+
+
+    <h5>Type:</h5>
+    <ul>
+        <li>
+            
+<span class="param-type">String</span>
+
+
+        </li>
+    </ul>
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="models_Shipment.js.html">models/Shipment.js</a>, <a href="models_Shipment.js.html#line145">line 145</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+        
+            
+<h4 class="name" id="~c_storePickupMessage"><span class="type-signature">(inner) </span>c_storePickupMessage<span class="type-signature"> :String</span></h4>
+
+
+
+
+<div class="description">
+    <p>This is text used by the end user when sending a message to the brick and mortar store about the shipment.  This is reflected in the order export.</p>
+</div>
+
+
+
+    <h5>Type:</h5>
+    <ul>
+        <li>
+            
+<span class="param-type">String</span>
+
+
+        </li>
+    </ul>
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="models_Shipment.js.html">models/Shipment.js</a>, <a href="models_Shipment.js.html#line149">line 149</a>
     </li></ul></dd>
     
 
@@ -345,7 +626,7 @@ if Discount Taxation preference is set to  &quot;Tax Products and Shipping Only 
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="models_Shipment.js.html">models/Shipment.js</a>, <a href="models_Shipment.js.html#line50">line 50</a>
+        <a href="models_Shipment.js.html">models/Shipment.js</a>, <a href="models_Shipment.js.html#line154">line 154</a>
     </li></ul></dd>
     
 
@@ -417,7 +698,7 @@ if Discount Taxation preference is set to  &quot;Tax Products and Shipping Only 
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="models_Shipment.js.html">models/Shipment.js</a>, <a href="models_Shipment.js.html#line56">line 56</a>
+        <a href="models_Shipment.js.html">models/Shipment.js</a>, <a href="models_Shipment.js.html#line159">line 159</a>
     </li></ul></dd>
     
 
@@ -441,8 +722,7 @@ if Discount Taxation preference is set to  &quot;Tax Products and Shipping Only 
 
 
 <div class="description">
-    <p>The products total tax in purchase currency. Merchandize total prices represent the sum of
-product prices before  services such as shipping or adjustment from promotions have been added.</p>
+    <p>The products total tax in purchase currency. Merchandize total prices represent the sum of product prices before  services such as shipping or adjustment from promotions have been added.</p>
 </div>
 
 
@@ -490,7 +770,69 @@ product prices before  services such as shipping or adjustment from promotions h
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="models_Shipment.js.html">models/Shipment.js</a>, <a href="models_Shipment.js.html#line62">line 62</a>
+        <a href="models_Shipment.js.html">models/Shipment.js</a>, <a href="models_Shipment.js.html#line164">line 164</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+        
+            
+<h4 class="name" id="~not_shipped"><span class="type-signature">(inner, constant) </span>not_shipped<span class="type-signature"></span></h4>
+
+
+
+
+<div class="description">
+    <p>value: &quot;not_shipped&quot;</p>
+</div>
+
+
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="models_Shipment.js.html">models/Shipment.js</a>, <a href="models_Shipment.js.html#line246">line 246</a>
     </li></ul></dd>
     
 
@@ -514,8 +856,7 @@ product prices before  services such as shipping or adjustment from promotions h
 
 
 <div class="description">
-    <p>The total price of all product items after all product discounts. Depending on taxation
-policy the returned price  is net or gross.</p>
+    <p>The total price of all product items after all product discounts. Depending on taxation policy the returned price  is net or gross.</p>
 </div>
 
 
@@ -563,7 +904,7 @@ policy the returned price  is net or gross.</p>
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="models_Shipment.js.html">models/Shipment.js</a>, <a href="models_Shipment.js.html#line69">line 69</a>
+        <a href="models_Shipment.js.html">models/Shipment.js</a>, <a href="models_Shipment.js.html#line169">line 169</a>
     </li></ul></dd>
     
 
@@ -587,8 +928,7 @@ policy the returned price  is net or gross.</p>
 
 
 <div class="description">
-    <p>The total price of all product items after all product and order discounts. Depending on
-taxation policy the  returned price is net or gross.</p>
+    <p>The total price of all product items after all product and order discounts. Depending on taxation policy the  returned price is net or gross.</p>
 </div>
 
 
@@ -636,7 +976,7 @@ taxation policy the  returned price is net or gross.</p>
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="models_Shipment.js.html">models/Shipment.js</a>, <a href="models_Shipment.js.html#line76">line 76</a>
+        <a href="models_Shipment.js.html">models/Shipment.js</a>, <a href="models_Shipment.js.html#line174">line 174</a>
     </li></ul></dd>
     
 
@@ -708,7 +1048,7 @@ taxation policy the  returned price is net or gross.</p>
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="models_Shipment.js.html">models/Shipment.js</a>, <a href="models_Shipment.js.html#line83">line 83</a>
+        <a href="models_Shipment.js.html">models/Shipment.js</a>, <a href="models_Shipment.js.html#line179">line 179</a>
     </li></ul></dd>
     
 
@@ -780,7 +1120,7 @@ taxation policy the  returned price is net or gross.</p>
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="models_Shipment.js.html">models/Shipment.js</a>, <a href="models_Shipment.js.html#line89">line 89</a>
+        <a href="models_Shipment.js.html">models/Shipment.js</a>, <a href="models_Shipment.js.html#line184">line 184</a>
     </li></ul></dd>
     
 
@@ -804,8 +1144,7 @@ taxation policy the  returned price is net or gross.</p>
 
 
 <div class="description">
-    <p>The total price of the shipment, including products, shipping and tax.   Note that order
-level adjustments are not considered.</p>
+    <p>The total price of the shipment, including products, shipping and tax.   Note that order level adjustments are not considered.</p>
 </div>
 
 
@@ -853,7 +1192,69 @@ level adjustments are not considered.</p>
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="models_Shipment.js.html">models/Shipment.js</a>, <a href="models_Shipment.js.html#line95">line 95</a>
+        <a href="models_Shipment.js.html">models/Shipment.js</a>, <a href="models_Shipment.js.html#line189">line 189</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+        
+            
+<h4 class="name" id="~shipped"><span class="type-signature">(inner, constant) </span>shipped<span class="type-signature"></span></h4>
+
+
+
+
+<div class="description">
+    <p>value: &quot;shipped&quot;</p>
+</div>
+
+
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="models_Shipment.js.html">models/Shipment.js</a>, <a href="models_Shipment.js.html#line252">line 252</a>
     </li></ul></dd>
     
 
@@ -925,7 +1326,7 @@ level adjustments are not considered.</p>
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="models_Shipment.js.html">models/Shipment.js</a>, <a href="models_Shipment.js.html#line102">line 102</a>
+        <a href="models_Shipment.js.html">models/Shipment.js</a>, <a href="models_Shipment.js.html#line194">line 194</a>
     </li></ul></dd>
     
 
@@ -997,7 +1398,7 @@ level adjustments are not considered.</p>
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="models_Shipment.js.html">models/Shipment.js</a>, <a href="models_Shipment.js.html#line108">line 108</a>
+        <a href="models_Shipment.js.html">models/Shipment.js</a>, <a href="models_Shipment.js.html#line199">line 199</a>
     </li></ul></dd>
     
 
@@ -1069,7 +1470,7 @@ level adjustments are not considered.</p>
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="models_Shipment.js.html">models/Shipment.js</a>, <a href="models_Shipment.js.html#line114">line 114</a>
+        <a href="models_Shipment.js.html">models/Shipment.js</a>, <a href="models_Shipment.js.html#line204">line 204</a>
     </li></ul></dd>
     
 
@@ -1093,8 +1494,7 @@ level adjustments are not considered.</p>
 
 
 <div class="description">
-    <p>The total shipping price of the shipment after all shipping discounts. Excludes tax if
-taxation policy is net.  Includes tax if taxation policy is gross.</p>
+    <p>The total shipping price of the shipment after all shipping discounts. Excludes tax if taxation policy is net.  Includes tax if taxation policy is gross.</p>
 </div>
 
 
@@ -1142,7 +1542,7 @@ taxation policy is net.  Includes tax if taxation policy is gross.</p>
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="models_Shipment.js.html">models/Shipment.js</a>, <a href="models_Shipment.js.html#line120">line 120</a>
+        <a href="models_Shipment.js.html">models/Shipment.js</a>, <a href="models_Shipment.js.html#line209">line 209</a>
     </li></ul></dd>
     
 
@@ -1166,8 +1566,7 @@ taxation policy is net.  Includes tax if taxation policy is gross.</p>
 
 
 <div class="description">
-    <p>The tax of all shipping line items of the line item container before shipping adjustments
-have been applied.</p>
+    <p>The tax of all shipping line items of the line item container before shipping adjustments have been applied.</p>
 </div>
 
 
@@ -1215,7 +1614,7 @@ have been applied.</p>
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="models_Shipment.js.html">models/Shipment.js</a>, <a href="models_Shipment.js.html#line127">line 127</a>
+        <a href="models_Shipment.js.html">models/Shipment.js</a>, <a href="models_Shipment.js.html#line214">line 214</a>
     </li></ul></dd>
     
 
@@ -1239,9 +1638,7 @@ have been applied.</p>
 
 
 <div class="description">
-    <p>The total tax amount of the shipment.   Note that order level adjustments are
-considered if Discount Taxation preference is set to  &quot;Tax Products and Shipping Only
-Based on Adjusted Price&quot;.</p>
+    <p>The total tax amount of the shipment.   Note that order level adjustments are considered if Discount Taxation preference is set to  &quot;Tax Products and Shipping Only Based on Adjusted Price&quot;.</p>
 </div>
 
 
@@ -1289,7 +1686,7 @@ Based on Adjusted Price&quot;.</p>
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="models_Shipment.js.html">models/Shipment.js</a>, <a href="models_Shipment.js.html#line134">line 134</a>
+        <a href="models_Shipment.js.html">models/Shipment.js</a>, <a href="models_Shipment.js.html#line219">line 219</a>
     </li></ul></dd>
     
 
@@ -1361,7 +1758,7 @@ Based on Adjusted Price&quot;.</p>
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="models_Shipment.js.html">models/Shipment.js</a>, <a href="models_Shipment.js.html#line142">line 142</a>
+        <a href="models_Shipment.js.html">models/Shipment.js</a>, <a href="models_Shipment.js.html#line224">line 224</a>
     </li></ul></dd>
     
 
@@ -1514,7 +1911,7 @@ Copies all relevant properties from <code>data</code> to <code>obj</code> if sup
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="models_Shipment.js.html">models/Shipment.js</a>, <a href="models_Shipment.js.html#line156">line 156</a>
+        <a href="models_Shipment.js.html">models/Shipment.js</a>, <a href="models_Shipment.js.html#line58">line 58</a>
     </li></ul></dd>
     
 
@@ -1582,7 +1979,7 @@ Copies all relevant properties from <code>data</code> to <code>obj</code> if sup
 </div>
 
 <nav>
-    <h2><a href="index.html">Home</a></h2><h3>Modules</h3><ul><li><a href="module-api_BasketsApi.html">api/BasketsApi</a></li><li><a href="module-api_CategoriesApi.html">api/CategoriesApi</a></li><li><a href="module-api_ContentApi.html">api/ContentApi</a></li><li><a href="module-api_ContentSearchApi.html">api/ContentSearchApi</a></li><li><a href="module-api_CustomersApi.html">api/CustomersApi</a></li><li><a href="module-api_CustomObjectsApi.html">api/CustomObjectsApi</a></li><li><a href="module-api_FoldersApi.html">api/FoldersApi</a></li><li><a href="module-api_GiftCertificateApi.html">api/GiftCertificateApi</a></li><li><a href="module-api_OrdersApi.html">api/OrdersApi</a></li><li><a href="module-api_OrderSearchApi.html">api/OrderSearchApi</a></li><li><a href="module-api_PriceAdjustmentLimitsApi.html">api/PriceAdjustmentLimitsApi</a></li><li><a href="module-api_ProductListsApi.html">api/ProductListsApi</a></li><li><a href="module-api_ProductsApi.html">api/ProductsApi</a></li><li><a href="module-api_ProductSearchApi.html">api/ProductSearchApi</a></li><li><a href="module-api_PromotionsApi.html">api/PromotionsApi</a></li><li><a href="module-api_SearchSuggestionApi.html">api/SearchSuggestionApi</a></li><li><a href="module-api_SessionsApi.html">api/SessionsApi</a></li><li><a href="module-api_SiteApi.html">api/SiteApi</a></li><li><a href="module-api_StoresApi.html">api/StoresApi</a></li><li><a href="module-ApiClient.html">ApiClient</a></li><li><a href="module-index.html">index</a></li><li><a href="module-models_AuthRequest.html">models/AuthRequest</a></li><li><a href="module-models_Basket.html">models/Basket</a></li><li><a href="module-models_BasketPaymentInstrumentRequest.html">models/BasketPaymentInstrumentRequest</a></li><li><a href="module-models_BasketsResult.html">models/BasketsResult</a></li><li><a href="module-models_BonusDiscountLineItem.html">models/BonusDiscountLineItem</a></li><li><a href="module-models_BoolFilter.html">models/BoolFilter</a></li><li><a href="module-models_BoolQuery.html">models/BoolQuery</a></li><li><a href="module-models_BundledProduct.html">models/BundledProduct</a></li><li><a href="module-models_Category.html">models/Category</a></li><li><a href="module-models_CategoryResult.html">models/CategoryResult</a></li><li><a href="module-models_Content.html">models/Content</a></li><li><a href="module-models_ContentFolder.html">models/ContentFolder</a></li><li><a href="module-models_ContentFolderResult.html">models/ContentFolderResult</a></li><li><a href="module-models_ContentResult.html">models/ContentResult</a></li><li><a href="module-models_ContentSearchRefinement.html">models/ContentSearchRefinement</a></li><li><a href="module-models_ContentSearchRefinementValue.html">models/ContentSearchRefinementValue</a></li><li><a href="module-models_ContentSearchResult.html">models/ContentSearchResult</a></li><li><a href="module-models_CouponItem.html">models/CouponItem</a></li><li><a href="module-models_Customer.html">models/Customer</a></li><li><a href="module-models_CustomerAddress.html">models/CustomerAddress</a></li><li><a href="module-models_CustomerAddressLink.html">models/CustomerAddressLink</a></li><li><a href="module-models_CustomerAddressResult.html">models/CustomerAddressResult</a></li><li><a href="module-models_CustomerInfo.html">models/CustomerInfo</a></li><li><a href="module-models_CustomerOrderResult.html">models/CustomerOrderResult</a></li><li><a href="module-models_CustomerPaymentCardRequest.html">models/CustomerPaymentCardRequest</a></li><li><a href="module-models_CustomerPaymentInstrument.html">models/CustomerPaymentInstrument</a></li><li><a href="module-models_CustomerPaymentInstrumentRequest.html">models/CustomerPaymentInstrumentRequest</a></li><li><a href="module-models_CustomerPaymentInstrumentResult.html">models/CustomerPaymentInstrumentResult</a></li><li><a href="module-models_CustomerProductList.html">models/CustomerProductList</a></li><li><a href="module-models_CustomerProductListItem.html">models/CustomerProductListItem</a></li><li><a href="module-models_CustomerProductListItemLink.html">models/CustomerProductListItemLink</a></li><li><a href="module-models_CustomerProductListItemResult.html">models/CustomerProductListItemResult</a></li><li><a href="module-models_CustomerProductListRegistrant.html">models/CustomerProductListRegistrant</a></li><li><a href="module-models_CustomerProductListResult.html">models/CustomerProductListResult</a></li><li><a href="module-models_CustomerRegistration.html">models/CustomerRegistration</a></li><li><a href="module-models_CustomObject.html">models/CustomObject</a></li><li><a href="module-models_Discount.html">models/Discount</a></li><li><a href="module-models_Fault.html">models/Fault</a></li><li><a href="module-models_Filter.html">models/Filter</a></li><li><a href="module-models_FilteredQuery.html">models/FilteredQuery</a></li><li><a href="module-models_GiftCertificate.html">models/GiftCertificate</a></li><li><a href="module-models_GiftCertificateItem.html">models/GiftCertificateItem</a></li><li><a href="module-models_GiftCertificateRequest.html">models/GiftCertificateRequest</a></li><li><a href="module-models_Image.html">models/Image</a></li><li><a href="module-models_ImageGroup.html">models/ImageGroup</a></li><li><a href="module-models_Inventory.html">models/Inventory</a></li><li><a href="module-models_Locale.html">models/Locale</a></li><li><a href="module-models_Master.html">models/Master</a></li><li><a href="module-models_NestedQuery.html">models/NestedQuery</a></li><li><a href="module-models_Note.html">models/Note</a></li><li><a href="module-models_NotesResult.html">models/NotesResult</a></li><li><a href="module-models_Option.html">models/Option</a></li><li><a href="module-models_OptionItem.html">models/OptionItem</a></li><li><a href="module-models_OptionValue.html">models/OptionValue</a></li><li><a href="module-models_Order.html">models/Order</a></li><li><a href="module-models_OrderAddress.html">models/OrderAddress</a></li><li><a href="module-models_OrderPaymentCardRequest.html">models/OrderPaymentCardRequest</a></li><li><a href="module-models_OrderPaymentInstrument.html">models/OrderPaymentInstrument</a></li><li><a href="module-models_OrderPaymentInstrumentRequest.html">models/OrderPaymentInstrumentRequest</a></li><li><a href="module-models_OrderSearchHit.html">models/OrderSearchHit</a></li><li><a href="module-models_OrderSearchRequest.html">models/OrderSearchRequest</a></li><li><a href="module-models_OrderSearchResult.html">models/OrderSearchResult</a></li><li><a href="module-models_PasswordChangeRequest.html">models/PasswordChangeRequest</a></li><li><a href="module-models_PasswordReset.html">models/PasswordReset</a></li><li><a href="module-models_PaymentBankAccount.html">models/PaymentBankAccount</a></li><li><a href="module-models_PaymentBankAccountRequest.html">models/PaymentBankAccountRequest</a></li><li><a href="module-models_PaymentCard.html">models/PaymentCard</a></li><li><a href="module-models_PaymentCardSpec.html">models/PaymentCardSpec</a></li><li><a href="module-models_PaymentMethod.html">models/PaymentMethod</a></li><li><a href="module-models_PaymentMethodResult.html">models/PaymentMethodResult</a></li><li><a href="module-models_PriceAdjustment.html">models/PriceAdjustment</a></li><li><a href="module-models_PriceAdjustmentLimit.html">models/PriceAdjustmentLimit</a></li><li><a href="module-models_PriceAdjustmentLimits.html">models/PriceAdjustmentLimits</a></li><li><a href="module-models_Product.html">models/Product</a></li><li><a href="module-models_ProductDetailsLink.html">models/ProductDetailsLink</a></li><li><a href="module-models_ProductItem.html">models/ProductItem</a></li><li><a href="module-models_ProductLink.html">models/ProductLink</a></li><li><a href="module-models_ProductListEvent.html">models/ProductListEvent</a></li><li><a href="module-models_ProductListItemReference.html">models/ProductListItemReference</a></li><li><a href="module-models_ProductListLink.html">models/ProductListLink</a></li><li><a href="module-models_ProductListRegistrant.html">models/ProductListRegistrant</a></li><li><a href="module-models_ProductListShippingAddress.html">models/ProductListShippingAddress</a></li><li><a href="module-models_ProductPromotion.html">models/ProductPromotion</a></li><li><a href="module-models_ProductRef.html">models/ProductRef</a></li><li><a href="module-models_ProductResult.html">models/ProductResult</a></li><li><a href="module-models_ProductSearchHit.html">models/ProductSearchHit</a></li><li><a href="module-models_ProductSearchRefinement.html">models/ProductSearchRefinement</a></li><li><a href="module-models_ProductSearchRefinementValue.html">models/ProductSearchRefinementValue</a></li><li><a href="module-models_ProductSearchResult.html">models/ProductSearchResult</a></li><li><a href="module-models_ProductSearchSortingOption.html">models/ProductSearchSortingOption</a></li><li><a href="module-models_ProductSimpleLink.html">models/ProductSimpleLink</a></li><li><a href="module-models_ProductType.html">models/ProductType</a></li><li><a href="module-models_Promotion.html">models/Promotion</a></li><li><a href="module-models_PromotionResult.html">models/PromotionResult</a></li><li><a href="module-models_PublicProductList.html">models/PublicProductList</a></li><li><a href="module-models_PublicProductListItem.html">models/PublicProductListItem</a></li><li><a href="module-models_PublicProductListItemResult.html">models/PublicProductListItemResult</a></li><li><a href="module-models_PublicProductListLink.html">models/PublicProductListLink</a></li><li><a href="module-models_PublicProductListResult.html">models/PublicProductListResult</a></li><li><a href="module-models_Query.html">models/Query</a></li><li><a href="module-models_QueryFilter.html">models/QueryFilter</a></li><li><a href="module-models_Range2Filter.html">models/Range2Filter</a></li><li><a href="module-models_RangeFilter.html">models/RangeFilter</a></li><li><a href="module-models_Recommendation.html">models/Recommendation</a></li><li><a href="module-models_RecommendationType.html">models/RecommendationType</a></li><li><a href="module-models_ResultPage.html">models/ResultPage</a></li><li><a href="module-models_Shipment.html">models/Shipment</a></li><li><a href="module-models_ShippingItem.html">models/ShippingItem</a></li><li><a href="module-models_ShippingMethod.html">models/ShippingMethod</a></li><li><a href="module-models_ShippingMethodResult.html">models/ShippingMethodResult</a></li><li><a href="module-models_ShippingPromotion.html">models/ShippingPromotion</a></li><li><a href="module-models_SimpleLink.html">models/SimpleLink</a></li><li><a href="module-models_Site.html">models/Site</a></li><li><a href="module-models_Sort.html">models/Sort</a></li><li><a href="module-models_Status.html">models/Status</a></li><li><a href="module-models_Store.html">models/Store</a></li><li><a href="module-models_StoreResult.html">models/StoreResult</a></li><li><a href="module-models_SuggestedCategory.html">models/SuggestedCategory</a></li><li><a href="module-models_SuggestedContent.html">models/SuggestedContent</a></li><li><a href="module-models_SuggestedPhrase.html">models/SuggestedPhrase</a></li><li><a href="module-models_SuggestedProduct.html">models/SuggestedProduct</a></li><li><a href="module-models_SuggestedTerm.html">models/SuggestedTerm</a></li><li><a href="module-models_SuggestedTerms.html">models/SuggestedTerms</a></li><li><a href="module-models_Suggestion.html">models/Suggestion</a></li><li><a href="module-models_SuggestionResult.html">models/SuggestionResult</a></li><li><a href="module-models_TermFilter.html">models/TermFilter</a></li><li><a href="module-models_TermQuery.html">models/TermQuery</a></li><li><a href="module-models_TextQuery.html">models/TextQuery</a></li><li><a href="module-models_Variant.html">models/Variant</a></li><li><a href="module-models_VariationAttribute.html">models/VariationAttribute</a></li><li><a href="module-models_VariationAttributeValue.html">models/VariationAttributeValue</a></li><li><a href="module-models_VariationGroup.html">models/VariationGroup</a></li></ul><h3>Classes</h3><ul><li><a href="module-api_BasketsApi.html">api/BasketsApi</a></li><li><a href="module-api_CategoriesApi.html">api/CategoriesApi</a></li><li><a href="module-api_ContentApi.html">api/ContentApi</a></li><li><a href="module-api_ContentSearchApi.html">api/ContentSearchApi</a></li><li><a href="module-api_CustomersApi.html">api/CustomersApi</a></li><li><a href="module-api_CustomObjectsApi.html">api/CustomObjectsApi</a></li><li><a href="module-api_FoldersApi.html">api/FoldersApi</a></li><li><a href="module-api_GiftCertificateApi.html">api/GiftCertificateApi</a></li><li><a href="module-api_OrdersApi.html">api/OrdersApi</a></li><li><a href="module-api_OrderSearchApi.html">api/OrderSearchApi</a></li><li><a href="module-api_PriceAdjustmentLimitsApi.html">api/PriceAdjustmentLimitsApi</a></li><li><a href="module-api_ProductListsApi.html">api/ProductListsApi</a></li><li><a href="module-api_ProductsApi.html">api/ProductsApi</a></li><li><a href="module-api_ProductSearchApi.html">api/ProductSearchApi</a></li><li><a href="module-api_PromotionsApi.html">api/PromotionsApi</a></li><li><a href="module-api_SearchSuggestionApi.html">api/SearchSuggestionApi</a></li><li><a href="module-api_SessionsApi.html">api/SessionsApi</a></li><li><a href="module-api_SiteApi.html">api/SiteApi</a></li><li><a href="module-api_StoresApi.html">api/StoresApi</a></li><li><a href="module-ApiClient.html">ApiClient</a></li><li><a href="module-models_AuthRequest.html">models/AuthRequest</a></li><li><a href="module-models_Basket.html">models/Basket</a></li><li><a href="module-models_BasketPaymentInstrumentRequest.html">models/BasketPaymentInstrumentRequest</a></li><li><a href="module-models_BasketsResult.html">models/BasketsResult</a></li><li><a href="module-models_BonusDiscountLineItem.html">models/BonusDiscountLineItem</a></li><li><a href="module-models_BoolFilter.html">models/BoolFilter</a></li><li><a href="module-models_BoolQuery.html">models/BoolQuery</a></li><li><a href="module-models_BundledProduct.html">models/BundledProduct</a></li><li><a href="module-models_Category.html">models/Category</a></li><li><a href="module-models_CategoryResult.html">models/CategoryResult</a></li><li><a href="module-models_Content.html">models/Content</a></li><li><a href="module-models_ContentFolder.html">models/ContentFolder</a></li><li><a href="module-models_ContentFolderResult.html">models/ContentFolderResult</a></li><li><a href="module-models_ContentResult.html">models/ContentResult</a></li><li><a href="module-models_ContentSearchRefinement.html">models/ContentSearchRefinement</a></li><li><a href="module-models_ContentSearchRefinementValue.html">models/ContentSearchRefinementValue</a></li><li><a href="module-models_ContentSearchResult.html">models/ContentSearchResult</a></li><li><a href="module-models_CouponItem.html">models/CouponItem</a></li><li><a href="module-models_Customer.html">models/Customer</a></li><li><a href="module-models_CustomerAddress.html">models/CustomerAddress</a></li><li><a href="module-models_CustomerAddressLink.html">models/CustomerAddressLink</a></li><li><a href="module-models_CustomerAddressResult.html">models/CustomerAddressResult</a></li><li><a href="module-models_CustomerInfo.html">models/CustomerInfo</a></li><li><a href="module-models_CustomerOrderResult.html">models/CustomerOrderResult</a></li><li><a href="module-models_CustomerPaymentCardRequest.html">models/CustomerPaymentCardRequest</a></li><li><a href="module-models_CustomerPaymentInstrument.html">models/CustomerPaymentInstrument</a></li><li><a href="module-models_CustomerPaymentInstrumentRequest.html">models/CustomerPaymentInstrumentRequest</a></li><li><a href="module-models_CustomerPaymentInstrumentResult.html">models/CustomerPaymentInstrumentResult</a></li><li><a href="module-models_CustomerProductList.html">models/CustomerProductList</a></li><li><a href="module-models_CustomerProductListItem.html">models/CustomerProductListItem</a></li><li><a href="module-models_CustomerProductListItemLink.html">models/CustomerProductListItemLink</a></li><li><a href="module-models_CustomerProductListItemResult.html">models/CustomerProductListItemResult</a></li><li><a href="module-models_CustomerProductListRegistrant.html">models/CustomerProductListRegistrant</a></li><li><a href="module-models_CustomerProductListResult.html">models/CustomerProductListResult</a></li><li><a href="module-models_CustomerRegistration.html">models/CustomerRegistration</a></li><li><a href="module-models_CustomObject.html">models/CustomObject</a></li><li><a href="module-models_Discount.html">models/Discount</a></li><li><a href="module-models_Fault.html">models/Fault</a></li><li><a href="module-models_Filter.html">models/Filter</a></li><li><a href="module-models_FilteredQuery.html">models/FilteredQuery</a></li><li><a href="module-models_GiftCertificate.html">models/GiftCertificate</a></li><li><a href="module-models_GiftCertificateItem.html">models/GiftCertificateItem</a></li><li><a href="module-models_GiftCertificateRequest.html">models/GiftCertificateRequest</a></li><li><a href="module-models_Image.html">models/Image</a></li><li><a href="module-models_ImageGroup.html">models/ImageGroup</a></li><li><a href="module-models_Inventory.html">models/Inventory</a></li><li><a href="module-models_Locale.html">models/Locale</a></li><li><a href="module-models_Master.html">models/Master</a></li><li><a href="module-models_NestedQuery.html">models/NestedQuery</a></li><li><a href="module-models_Note.html">models/Note</a></li><li><a href="module-models_NotesResult.html">models/NotesResult</a></li><li><a href="module-models_Option.html">models/Option</a></li><li><a href="module-models_OptionItem.html">models/OptionItem</a></li><li><a href="module-models_OptionValue.html">models/OptionValue</a></li><li><a href="module-models_Order.html">models/Order</a></li><li><a href="module-models_OrderAddress.html">models/OrderAddress</a></li><li><a href="module-models_OrderPaymentCardRequest.html">models/OrderPaymentCardRequest</a></li><li><a href="module-models_OrderPaymentInstrument.html">models/OrderPaymentInstrument</a></li><li><a href="module-models_OrderPaymentInstrumentRequest.html">models/OrderPaymentInstrumentRequest</a></li><li><a href="module-models_OrderSearchHit.html">models/OrderSearchHit</a></li><li><a href="module-models_OrderSearchRequest.html">models/OrderSearchRequest</a></li><li><a href="module-models_OrderSearchResult.html">models/OrderSearchResult</a></li><li><a href="module-models_PasswordChangeRequest.html">models/PasswordChangeRequest</a></li><li><a href="module-models_PasswordReset.html">models/PasswordReset</a></li><li><a href="module-models_PaymentBankAccount.html">models/PaymentBankAccount</a></li><li><a href="module-models_PaymentBankAccountRequest.html">models/PaymentBankAccountRequest</a></li><li><a href="module-models_PaymentCard.html">models/PaymentCard</a></li><li><a href="module-models_PaymentCardSpec.html">models/PaymentCardSpec</a></li><li><a href="module-models_PaymentMethod.html">models/PaymentMethod</a></li><li><a href="module-models_PaymentMethodResult.html">models/PaymentMethodResult</a></li><li><a href="module-models_PriceAdjustment.html">models/PriceAdjustment</a></li><li><a href="module-models_PriceAdjustmentLimit.html">models/PriceAdjustmentLimit</a></li><li><a href="module-models_PriceAdjustmentLimits.html">models/PriceAdjustmentLimits</a></li><li><a href="module-models_Product.html">models/Product</a></li><li><a href="module-models_ProductDetailsLink.html">models/ProductDetailsLink</a></li><li><a href="module-models_ProductItem.html">models/ProductItem</a></li><li><a href="module-models_ProductLink.html">models/ProductLink</a></li><li><a href="module-models_ProductListEvent.html">models/ProductListEvent</a></li><li><a href="module-models_ProductListItemReference.html">models/ProductListItemReference</a></li><li><a href="module-models_ProductListLink.html">models/ProductListLink</a></li><li><a href="module-models_ProductListRegistrant.html">models/ProductListRegistrant</a></li><li><a href="module-models_ProductListShippingAddress.html">models/ProductListShippingAddress</a></li><li><a href="module-models_ProductPromotion.html">models/ProductPromotion</a></li><li><a href="module-models_ProductRef.html">models/ProductRef</a></li><li><a href="module-models_ProductResult.html">models/ProductResult</a></li><li><a href="module-models_ProductSearchHit.html">models/ProductSearchHit</a></li><li><a href="module-models_ProductSearchRefinement.html">models/ProductSearchRefinement</a></li><li><a href="module-models_ProductSearchRefinementValue.html">models/ProductSearchRefinementValue</a></li><li><a href="module-models_ProductSearchResult.html">models/ProductSearchResult</a></li><li><a href="module-models_ProductSearchSortingOption.html">models/ProductSearchSortingOption</a></li><li><a href="module-models_ProductSimpleLink.html">models/ProductSimpleLink</a></li><li><a href="module-models_ProductType.html">models/ProductType</a></li><li><a href="module-models_Promotion.html">models/Promotion</a></li><li><a href="module-models_PromotionResult.html">models/PromotionResult</a></li><li><a href="module-models_PublicProductList.html">models/PublicProductList</a></li><li><a href="module-models_PublicProductListItem.html">models/PublicProductListItem</a></li><li><a href="module-models_PublicProductListItemResult.html">models/PublicProductListItemResult</a></li><li><a href="module-models_PublicProductListLink.html">models/PublicProductListLink</a></li><li><a href="module-models_PublicProductListResult.html">models/PublicProductListResult</a></li><li><a href="module-models_Query.html">models/Query</a></li><li><a href="module-models_QueryFilter.html">models/QueryFilter</a></li><li><a href="module-models_Range2Filter.html">models/Range2Filter</a></li><li><a href="module-models_RangeFilter.html">models/RangeFilter</a></li><li><a href="module-models_Recommendation.html">models/Recommendation</a></li><li><a href="module-models_RecommendationType.html">models/RecommendationType</a></li><li><a href="module-models_ResultPage.html">models/ResultPage</a></li><li><a href="module-models_Shipment.html">models/Shipment</a></li><li><a href="module-models_ShippingItem.html">models/ShippingItem</a></li><li><a href="module-models_ShippingMethod.html">models/ShippingMethod</a></li><li><a href="module-models_ShippingMethodResult.html">models/ShippingMethodResult</a></li><li><a href="module-models_ShippingPromotion.html">models/ShippingPromotion</a></li><li><a href="module-models_SimpleLink.html">models/SimpleLink</a></li><li><a href="module-models_Site.html">models/Site</a></li><li><a href="module-models_Sort.html">models/Sort</a></li><li><a href="module-models_Status.html">models/Status</a></li><li><a href="module-models_Store.html">models/Store</a></li><li><a href="module-models_StoreResult.html">models/StoreResult</a></li><li><a href="module-models_SuggestedCategory.html">models/SuggestedCategory</a></li><li><a href="module-models_SuggestedContent.html">models/SuggestedContent</a></li><li><a href="module-models_SuggestedPhrase.html">models/SuggestedPhrase</a></li><li><a href="module-models_SuggestedProduct.html">models/SuggestedProduct</a></li><li><a href="module-models_SuggestedTerm.html">models/SuggestedTerm</a></li><li><a href="module-models_SuggestedTerms.html">models/SuggestedTerms</a></li><li><a href="module-models_Suggestion.html">models/Suggestion</a></li><li><a href="module-models_SuggestionResult.html">models/SuggestionResult</a></li><li><a href="module-models_TermFilter.html">models/TermFilter</a></li><li><a href="module-models_TermQuery.html">models/TermQuery</a></li><li><a href="module-models_TextQuery.html">models/TextQuery</a></li><li><a href="module-models_Variant.html">models/Variant</a></li><li><a href="module-models_VariationAttribute.html">models/VariationAttribute</a></li><li><a href="module-models_VariationAttributeValue.html">models/VariationAttributeValue</a></li><li><a href="module-models_VariationGroup.html">models/VariationGroup</a></li></ul>
+    <h2><a href="index.html">Home</a></h2><h3>Modules</h3><ul><li><a href="module-api_AiApi.html">api/AiApi</a></li><li><a href="module-api_BasketsApi.html">api/BasketsApi</a></li><li><a href="module-api_CategoriesApi.html">api/CategoriesApi</a></li><li><a href="module-api_ContentApi.html">api/ContentApi</a></li><li><a href="module-api_ContentSearchApi.html">api/ContentSearchApi</a></li><li><a href="module-api_CustomersApi.html">api/CustomersApi</a></li><li><a href="module-api_CustomObjectsApi.html">api/CustomObjectsApi</a></li><li><a href="module-api_FoldersApi.html">api/FoldersApi</a></li><li><a href="module-api_GiftCertificateApi.html">api/GiftCertificateApi</a></li><li><a href="module-api_OrdersApi.html">api/OrdersApi</a></li><li><a href="module-api_OrderSearchApi.html">api/OrderSearchApi</a></li><li><a href="module-api_PriceAdjustmentLimitsApi.html">api/PriceAdjustmentLimitsApi</a></li><li><a href="module-api_ProductListsApi.html">api/ProductListsApi</a></li><li><a href="module-api_ProductsApi.html">api/ProductsApi</a></li><li><a href="module-api_ProductSearchApi.html">api/ProductSearchApi</a></li><li><a href="module-api_PromotionsApi.html">api/PromotionsApi</a></li><li><a href="module-api_SearchSuggestionApi.html">api/SearchSuggestionApi</a></li><li><a href="module-api_SessionsApi.html">api/SessionsApi</a></li><li><a href="module-api_SiteApi.html">api/SiteApi</a></li><li><a href="module-api_StoresApi.html">api/StoresApi</a></li><li><a href="module-ApiClient.html">ApiClient</a></li><li><a href="module-index.html">index</a></li><li><a href="module-models_ApproachingDiscount.html">models/ApproachingDiscount</a></li><li><a href="module-models_ApproachingDiscountResult.html">models/ApproachingDiscountResult</a></li><li><a href="module-models_AuthRequest.html">models/AuthRequest</a></li><li><a href="module-models_Basket.html">models/Basket</a></li><li><a href="module-models_BasketPaymentInstrumentRequest.html">models/BasketPaymentInstrumentRequest</a></li><li><a href="module-models_BasketReference.html">models/BasketReference</a></li><li><a href="module-models_BasketsResult.html">models/BasketsResult</a></li><li><a href="module-models_BonusDiscountLineItem.html">models/BonusDiscountLineItem</a></li><li><a href="module-models_BoolFilter.html">models/BoolFilter</a></li><li><a href="module-models_BoolQuery.html">models/BoolQuery</a></li><li><a href="module-models_BundledProduct.html">models/BundledProduct</a></li><li><a href="module-models_Category.html">models/Category</a></li><li><a href="module-models_CategoryResult.html">models/CategoryResult</a></li><li><a href="module-models_Content.html">models/Content</a></li><li><a href="module-models_ContentFolder.html">models/ContentFolder</a></li><li><a href="module-models_ContentFolderResult.html">models/ContentFolderResult</a></li><li><a href="module-models_ContentResult.html">models/ContentResult</a></li><li><a href="module-models_ContentSearchRefinement.html">models/ContentSearchRefinement</a></li><li><a href="module-models_ContentSearchRefinementValue.html">models/ContentSearchRefinementValue</a></li><li><a href="module-models_ContentSearchResult.html">models/ContentSearchResult</a></li><li><a href="module-models_CouponItem.html">models/CouponItem</a></li><li><a href="module-models_Customer.html">models/Customer</a></li><li><a href="module-models_CustomerAddress.html">models/CustomerAddress</a></li><li><a href="module-models_CustomerAddressLink.html">models/CustomerAddressLink</a></li><li><a href="module-models_CustomerAddressResult.html">models/CustomerAddressResult</a></li><li><a href="module-models_CustomerInfo.html">models/CustomerInfo</a></li><li><a href="module-models_CustomerOrderResult.html">models/CustomerOrderResult</a></li><li><a href="module-models_CustomerPaymentCardRequest.html">models/CustomerPaymentCardRequest</a></li><li><a href="module-models_CustomerPaymentInstrument.html">models/CustomerPaymentInstrument</a></li><li><a href="module-models_CustomerPaymentInstrumentRequest.html">models/CustomerPaymentInstrumentRequest</a></li><li><a href="module-models_CustomerPaymentInstrumentResult.html">models/CustomerPaymentInstrumentResult</a></li><li><a href="module-models_CustomerProductList.html">models/CustomerProductList</a></li><li><a href="module-models_CustomerProductListItem.html">models/CustomerProductListItem</a></li><li><a href="module-models_CustomerProductListItemLink.html">models/CustomerProductListItemLink</a></li><li><a href="module-models_CustomerProductListItemPurchase.html">models/CustomerProductListItemPurchase</a></li><li><a href="module-models_CustomerProductListItemPurchaseResult.html">models/CustomerProductListItemPurchaseResult</a></li><li><a href="module-models_CustomerProductListItemResult.html">models/CustomerProductListItemResult</a></li><li><a href="module-models_CustomerProductListRegistrant.html">models/CustomerProductListRegistrant</a></li><li><a href="module-models_CustomerProductListResult.html">models/CustomerProductListResult</a></li><li><a href="module-models_CustomerRegistration.html">models/CustomerRegistration</a></li><li><a href="module-models_CustomObject.html">models/CustomObject</a></li><li><a href="module-models_Discount.html">models/Discount</a></li><li><a href="module-models_DiscountRequest.html">models/DiscountRequest</a></li><li><a href="module-models_Fault.html">models/Fault</a></li><li><a href="module-models_Filter.html">models/Filter</a></li><li><a href="module-models_FilteredQuery.html">models/FilteredQuery</a></li><li><a href="module-models_GiftCertificate.html">models/GiftCertificate</a></li><li><a href="module-models_GiftCertificateItem.html">models/GiftCertificateItem</a></li><li><a href="module-models_GiftCertificateRequest.html">models/GiftCertificateRequest</a></li><li><a href="module-models_Image.html">models/Image</a></li><li><a href="module-models_ImageGroup.html">models/ImageGroup</a></li><li><a href="module-models_Inventory.html">models/Inventory</a></li><li><a href="module-models_Locale.html">models/Locale</a></li><li><a href="module-models_Master.html">models/Master</a></li><li><a href="module-models_NestedQuery.html">models/NestedQuery</a></li><li><a href="module-models_Note.html">models/Note</a></li><li><a href="module-models_NotesResult.html">models/NotesResult</a></li><li><a href="module-models_Option.html">models/Option</a></li><li><a href="module-models_OptionItem.html">models/OptionItem</a></li><li><a href="module-models_OptionValue.html">models/OptionValue</a></li><li><a href="module-models_Order.html">models/Order</a></li><li><a href="module-models_OrderAddress.html">models/OrderAddress</a></li><li><a href="module-models_OrderPaymentCardRequest.html">models/OrderPaymentCardRequest</a></li><li><a href="module-models_OrderPaymentInstrument.html">models/OrderPaymentInstrument</a></li><li><a href="module-models_OrderPaymentInstrumentRequest.html">models/OrderPaymentInstrumentRequest</a></li><li><a href="module-models_OrderSearchHit.html">models/OrderSearchHit</a></li><li><a href="module-models_OrderSearchRequest.html">models/OrderSearchRequest</a></li><li><a href="module-models_OrderSearchResult.html">models/OrderSearchResult</a></li><li><a href="module-models_PasswordChangeRequest.html">models/PasswordChangeRequest</a></li><li><a href="module-models_PasswordReset.html">models/PasswordReset</a></li><li><a href="module-models_PaymentBankAccount.html">models/PaymentBankAccount</a></li><li><a href="module-models_PaymentBankAccountRequest.html">models/PaymentBankAccountRequest</a></li><li><a href="module-models_PaymentCard.html">models/PaymentCard</a></li><li><a href="module-models_PaymentCardSpec.html">models/PaymentCardSpec</a></li><li><a href="module-models_PaymentMethod.html">models/PaymentMethod</a></li><li><a href="module-models_PaymentMethodResult.html">models/PaymentMethodResult</a></li><li><a href="module-models_PriceAdjustment.html">models/PriceAdjustment</a></li><li><a href="module-models_PriceAdjustmentLimit.html">models/PriceAdjustmentLimit</a></li><li><a href="module-models_PriceAdjustmentLimits.html">models/PriceAdjustmentLimits</a></li><li><a href="module-models_PriceAdjustmentRequest.html">models/PriceAdjustmentRequest</a></li><li><a href="module-models_Product.html">models/Product</a></li><li><a href="module-models_ProductDetailsLink.html">models/ProductDetailsLink</a></li><li><a href="module-models_ProductItem.html">models/ProductItem</a></li><li><a href="module-models_ProductLink.html">models/ProductLink</a></li><li><a href="module-models_ProductListEvent.html">models/ProductListEvent</a></li><li><a href="module-models_ProductListItemReference.html">models/ProductListItemReference</a></li><li><a href="module-models_ProductListLink.html">models/ProductListLink</a></li><li><a href="module-models_ProductListRegistrant.html">models/ProductListRegistrant</a></li><li><a href="module-models_ProductListShippingAddress.html">models/ProductListShippingAddress</a></li><li><a href="module-models_ProductPromotion.html">models/ProductPromotion</a></li><li><a href="module-models_ProductRecommendationsResult.html">models/ProductRecommendationsResult</a></li><li><a href="module-models_ProductRef.html">models/ProductRef</a></li><li><a href="module-models_ProductResult.html">models/ProductResult</a></li><li><a href="module-models_ProductSearchHit.html">models/ProductSearchHit</a></li><li><a href="module-models_ProductSearchRefinement.html">models/ProductSearchRefinement</a></li><li><a href="module-models_ProductSearchRefinementValue.html">models/ProductSearchRefinementValue</a></li><li><a href="module-models_ProductSearchResult.html">models/ProductSearchResult</a></li><li><a href="module-models_ProductSearchSortingOption.html">models/ProductSearchSortingOption</a></li><li><a href="module-models_ProductSimpleLink.html">models/ProductSimpleLink</a></li><li><a href="module-models_ProductType.html">models/ProductType</a></li><li><a href="module-models_Promotion.html">models/Promotion</a></li><li><a href="module-models_PromotionLink.html">models/PromotionLink</a></li><li><a href="module-models_PromotionResult.html">models/PromotionResult</a></li><li><a href="module-models_PublicProductList.html">models/PublicProductList</a></li><li><a href="module-models_PublicProductListItem.html">models/PublicProductListItem</a></li><li><a href="module-models_PublicProductListItemResult.html">models/PublicProductListItemResult</a></li><li><a href="module-models_PublicProductListLink.html">models/PublicProductListLink</a></li><li><a href="module-models_PublicProductListResult.html">models/PublicProductListResult</a></li><li><a href="module-models_Query.html">models/Query</a></li><li><a href="module-models_QueryFilter.html">models/QueryFilter</a></li><li><a href="module-models_Range2Filter.html">models/Range2Filter</a></li><li><a href="module-models_RangeFilter.html">models/RangeFilter</a></li><li><a href="module-models_Recommendation.html">models/Recommendation</a></li><li><a href="module-models_RecommendationType.html">models/RecommendationType</a></li><li><a href="module-models_ResetPasswordRequest.html">models/ResetPasswordRequest</a></li><li><a href="module-models_ResetPasswordTokenRequest.html">models/ResetPasswordTokenRequest</a></li><li><a href="module-models_ResetPasswordTokenResult.html">models/ResetPasswordTokenResult</a></li><li><a href="module-models_ResultPage.html">models/ResultPage</a></li><li><a href="module-models_Shipment.html">models/Shipment</a></li><li><a href="module-models_ShippingItem.html">models/ShippingItem</a></li><li><a href="module-models_ShippingMethod.html">models/ShippingMethod</a></li><li><a href="module-models_ShippingMethodResult.html">models/ShippingMethodResult</a></li><li><a href="module-models_ShippingPromotion.html">models/ShippingPromotion</a></li><li><a href="module-models_SimpleLink.html">models/SimpleLink</a></li><li><a href="module-models_Site.html">models/Site</a></li><li><a href="module-models_Sort.html">models/Sort</a></li><li><a href="module-models_Status.html">models/Status</a></li><li><a href="module-models_Store.html">models/Store</a></li><li><a href="module-models_StoreResult.html">models/StoreResult</a></li><li><a href="module-models_SuggestedCategory.html">models/SuggestedCategory</a></li><li><a href="module-models_SuggestedContent.html">models/SuggestedContent</a></li><li><a href="module-models_SuggestedPhrase.html">models/SuggestedPhrase</a></li><li><a href="module-models_SuggestedProduct.html">models/SuggestedProduct</a></li><li><a href="module-models_SuggestedTerm.html">models/SuggestedTerm</a></li><li><a href="module-models_SuggestedTerms.html">models/SuggestedTerms</a></li><li><a href="module-models_Suggestion.html">models/Suggestion</a></li><li><a href="module-models_SuggestionResult.html">models/SuggestionResult</a></li><li><a href="module-models_TermFilter.html">models/TermFilter</a></li><li><a href="module-models_TermQuery.html">models/TermQuery</a></li><li><a href="module-models_TextQuery.html">models/TextQuery</a></li><li><a href="module-models_TrustedSystemAuthRequest.html">models/TrustedSystemAuthRequest</a></li><li><a href="module-models_Variant.html">models/Variant</a></li><li><a href="module-models_VariationAttribute.html">models/VariationAttribute</a></li><li><a href="module-models_VariationAttributeValue.html">models/VariationAttributeValue</a></li><li><a href="module-models_VariationGroup.html">models/VariationGroup</a></li></ul><h3>Classes</h3><ul><li><a href="module-api_AiApi.html">api/AiApi</a></li><li><a href="module-api_BasketsApi.html">api/BasketsApi</a></li><li><a href="module-api_CategoriesApi.html">api/CategoriesApi</a></li><li><a href="module-api_ContentApi.html">api/ContentApi</a></li><li><a href="module-api_ContentSearchApi.html">api/ContentSearchApi</a></li><li><a href="module-api_CustomersApi.html">api/CustomersApi</a></li><li><a href="module-api_CustomObjectsApi.html">api/CustomObjectsApi</a></li><li><a href="module-api_FoldersApi.html">api/FoldersApi</a></li><li><a href="module-api_GiftCertificateApi.html">api/GiftCertificateApi</a></li><li><a href="module-api_OrdersApi.html">api/OrdersApi</a></li><li><a href="module-api_OrderSearchApi.html">api/OrderSearchApi</a></li><li><a href="module-api_PriceAdjustmentLimitsApi.html">api/PriceAdjustmentLimitsApi</a></li><li><a href="module-api_ProductListsApi.html">api/ProductListsApi</a></li><li><a href="module-api_ProductsApi.html">api/ProductsApi</a></li><li><a href="module-api_ProductSearchApi.html">api/ProductSearchApi</a></li><li><a href="module-api_PromotionsApi.html">api/PromotionsApi</a></li><li><a href="module-api_SearchSuggestionApi.html">api/SearchSuggestionApi</a></li><li><a href="module-api_SessionsApi.html">api/SessionsApi</a></li><li><a href="module-api_SiteApi.html">api/SiteApi</a></li><li><a href="module-api_StoresApi.html">api/StoresApi</a></li><li><a href="module-ApiClient.html">ApiClient</a></li><li><a href="module-models_ApproachingDiscount.html">models/ApproachingDiscount</a></li><li><a href="module-models_ApproachingDiscountResult.html">models/ApproachingDiscountResult</a></li><li><a href="module-models_AuthRequest.html">models/AuthRequest</a></li><li><a href="module-models_Basket.html">models/Basket</a></li><li><a href="module-models_BasketPaymentInstrumentRequest.html">models/BasketPaymentInstrumentRequest</a></li><li><a href="module-models_BasketReference.html">models/BasketReference</a></li><li><a href="module-models_BasketsResult.html">models/BasketsResult</a></li><li><a href="module-models_BonusDiscountLineItem.html">models/BonusDiscountLineItem</a></li><li><a href="module-models_BoolFilter.html">models/BoolFilter</a></li><li><a href="module-models_BoolQuery.html">models/BoolQuery</a></li><li><a href="module-models_BundledProduct.html">models/BundledProduct</a></li><li><a href="module-models_Category.html">models/Category</a></li><li><a href="module-models_CategoryResult.html">models/CategoryResult</a></li><li><a href="module-models_Content.html">models/Content</a></li><li><a href="module-models_ContentFolder.html">models/ContentFolder</a></li><li><a href="module-models_ContentFolderResult.html">models/ContentFolderResult</a></li><li><a href="module-models_ContentResult.html">models/ContentResult</a></li><li><a href="module-models_ContentSearchRefinement.html">models/ContentSearchRefinement</a></li><li><a href="module-models_ContentSearchRefinementValue.html">models/ContentSearchRefinementValue</a></li><li><a href="module-models_ContentSearchResult.html">models/ContentSearchResult</a></li><li><a href="module-models_CouponItem.html">models/CouponItem</a></li><li><a href="module-models_Customer.html">models/Customer</a></li><li><a href="module-models_CustomerAddress.html">models/CustomerAddress</a></li><li><a href="module-models_CustomerAddressLink.html">models/CustomerAddressLink</a></li><li><a href="module-models_CustomerAddressResult.html">models/CustomerAddressResult</a></li><li><a href="module-models_CustomerInfo.html">models/CustomerInfo</a></li><li><a href="module-models_CustomerOrderResult.html">models/CustomerOrderResult</a></li><li><a href="module-models_CustomerPaymentCardRequest.html">models/CustomerPaymentCardRequest</a></li><li><a href="module-models_CustomerPaymentInstrument.html">models/CustomerPaymentInstrument</a></li><li><a href="module-models_CustomerPaymentInstrumentRequest.html">models/CustomerPaymentInstrumentRequest</a></li><li><a href="module-models_CustomerPaymentInstrumentResult.html">models/CustomerPaymentInstrumentResult</a></li><li><a href="module-models_CustomerProductList.html">models/CustomerProductList</a></li><li><a href="module-models_CustomerProductListItem.html">models/CustomerProductListItem</a></li><li><a href="module-models_CustomerProductListItemLink.html">models/CustomerProductListItemLink</a></li><li><a href="module-models_CustomerProductListItemPurchase.html">models/CustomerProductListItemPurchase</a></li><li><a href="module-models_CustomerProductListItemPurchaseResult.html">models/CustomerProductListItemPurchaseResult</a></li><li><a href="module-models_CustomerProductListItemResult.html">models/CustomerProductListItemResult</a></li><li><a href="module-models_CustomerProductListRegistrant.html">models/CustomerProductListRegistrant</a></li><li><a href="module-models_CustomerProductListResult.html">models/CustomerProductListResult</a></li><li><a href="module-models_CustomerRegistration.html">models/CustomerRegistration</a></li><li><a href="module-models_CustomObject.html">models/CustomObject</a></li><li><a href="module-models_Discount.html">models/Discount</a></li><li><a href="module-models_DiscountRequest.html">models/DiscountRequest</a></li><li><a href="module-models_Fault.html">models/Fault</a></li><li><a href="module-models_Filter.html">models/Filter</a></li><li><a href="module-models_FilteredQuery.html">models/FilteredQuery</a></li><li><a href="module-models_GiftCertificate.html">models/GiftCertificate</a></li><li><a href="module-models_GiftCertificateItem.html">models/GiftCertificateItem</a></li><li><a href="module-models_GiftCertificateRequest.html">models/GiftCertificateRequest</a></li><li><a href="module-models_Image.html">models/Image</a></li><li><a href="module-models_ImageGroup.html">models/ImageGroup</a></li><li><a href="module-models_Inventory.html">models/Inventory</a></li><li><a href="module-models_Locale.html">models/Locale</a></li><li><a href="module-models_Master.html">models/Master</a></li><li><a href="module-models_NestedQuery.html">models/NestedQuery</a></li><li><a href="module-models_Note.html">models/Note</a></li><li><a href="module-models_NotesResult.html">models/NotesResult</a></li><li><a href="module-models_Option.html">models/Option</a></li><li><a href="module-models_OptionItem.html">models/OptionItem</a></li><li><a href="module-models_OptionValue.html">models/OptionValue</a></li><li><a href="module-models_Order.html">models/Order</a></li><li><a href="module-models_OrderAddress.html">models/OrderAddress</a></li><li><a href="module-models_OrderPaymentCardRequest.html">models/OrderPaymentCardRequest</a></li><li><a href="module-models_OrderPaymentInstrument.html">models/OrderPaymentInstrument</a></li><li><a href="module-models_OrderPaymentInstrumentRequest.html">models/OrderPaymentInstrumentRequest</a></li><li><a href="module-models_OrderSearchHit.html">models/OrderSearchHit</a></li><li><a href="module-models_OrderSearchRequest.html">models/OrderSearchRequest</a></li><li><a href="module-models_OrderSearchResult.html">models/OrderSearchResult</a></li><li><a href="module-models_PasswordChangeRequest.html">models/PasswordChangeRequest</a></li><li><a href="module-models_PasswordReset.html">models/PasswordReset</a></li><li><a href="module-models_PaymentBankAccount.html">models/PaymentBankAccount</a></li><li><a href="module-models_PaymentBankAccountRequest.html">models/PaymentBankAccountRequest</a></li><li><a href="module-models_PaymentCard.html">models/PaymentCard</a></li><li><a href="module-models_PaymentCardSpec.html">models/PaymentCardSpec</a></li><li><a href="module-models_PaymentMethod.html">models/PaymentMethod</a></li><li><a href="module-models_PaymentMethodResult.html">models/PaymentMethodResult</a></li><li><a href="module-models_PriceAdjustment.html">models/PriceAdjustment</a></li><li><a href="module-models_PriceAdjustmentLimit.html">models/PriceAdjustmentLimit</a></li><li><a href="module-models_PriceAdjustmentLimits.html">models/PriceAdjustmentLimits</a></li><li><a href="module-models_PriceAdjustmentRequest.html">models/PriceAdjustmentRequest</a></li><li><a href="module-models_Product.html">models/Product</a></li><li><a href="module-models_ProductDetailsLink.html">models/ProductDetailsLink</a></li><li><a href="module-models_ProductItem.html">models/ProductItem</a></li><li><a href="module-models_ProductLink.html">models/ProductLink</a></li><li><a href="module-models_ProductListEvent.html">models/ProductListEvent</a></li><li><a href="module-models_ProductListItemReference.html">models/ProductListItemReference</a></li><li><a href="module-models_ProductListLink.html">models/ProductListLink</a></li><li><a href="module-models_ProductListRegistrant.html">models/ProductListRegistrant</a></li><li><a href="module-models_ProductListShippingAddress.html">models/ProductListShippingAddress</a></li><li><a href="module-models_ProductPromotion.html">models/ProductPromotion</a></li><li><a href="module-models_ProductRecommendationsResult.html">models/ProductRecommendationsResult</a></li><li><a href="module-models_ProductRef.html">models/ProductRef</a></li><li><a href="module-models_ProductResult.html">models/ProductResult</a></li><li><a href="module-models_ProductSearchHit.html">models/ProductSearchHit</a></li><li><a href="module-models_ProductSearchRefinement.html">models/ProductSearchRefinement</a></li><li><a href="module-models_ProductSearchRefinementValue.html">models/ProductSearchRefinementValue</a></li><li><a href="module-models_ProductSearchResult.html">models/ProductSearchResult</a></li><li><a href="module-models_ProductSearchSortingOption.html">models/ProductSearchSortingOption</a></li><li><a href="module-models_ProductSimpleLink.html">models/ProductSimpleLink</a></li><li><a href="module-models_ProductType.html">models/ProductType</a></li><li><a href="module-models_Promotion.html">models/Promotion</a></li><li><a href="module-models_PromotionLink.html">models/PromotionLink</a></li><li><a href="module-models_PromotionResult.html">models/PromotionResult</a></li><li><a href="module-models_PublicProductList.html">models/PublicProductList</a></li><li><a href="module-models_PublicProductListItem.html">models/PublicProductListItem</a></li><li><a href="module-models_PublicProductListItemResult.html">models/PublicProductListItemResult</a></li><li><a href="module-models_PublicProductListLink.html">models/PublicProductListLink</a></li><li><a href="module-models_PublicProductListResult.html">models/PublicProductListResult</a></li><li><a href="module-models_Query.html">models/Query</a></li><li><a href="module-models_QueryFilter.html">models/QueryFilter</a></li><li><a href="module-models_Range2Filter.html">models/Range2Filter</a></li><li><a href="module-models_RangeFilter.html">models/RangeFilter</a></li><li><a href="module-models_Recommendation.html">models/Recommendation</a></li><li><a href="module-models_RecommendationType.html">models/RecommendationType</a></li><li><a href="module-models_ResetPasswordRequest.html">models/ResetPasswordRequest</a></li><li><a href="module-models_ResetPasswordTokenRequest.html">models/ResetPasswordTokenRequest</a></li><li><a href="module-models_ResetPasswordTokenResult.html">models/ResetPasswordTokenResult</a></li><li><a href="module-models_ResultPage.html">models/ResultPage</a></li><li><a href="module-models_Shipment.html">models/Shipment</a></li><li><a href="module-models_ShippingItem.html">models/ShippingItem</a></li><li><a href="module-models_ShippingMethod.html">models/ShippingMethod</a></li><li><a href="module-models_ShippingMethodResult.html">models/ShippingMethodResult</a></li><li><a href="module-models_ShippingPromotion.html">models/ShippingPromotion</a></li><li><a href="module-models_SimpleLink.html">models/SimpleLink</a></li><li><a href="module-models_Site.html">models/Site</a></li><li><a href="module-models_Sort.html">models/Sort</a></li><li><a href="module-models_Status.html">models/Status</a></li><li><a href="module-models_Store.html">models/Store</a></li><li><a href="module-models_StoreResult.html">models/StoreResult</a></li><li><a href="module-models_SuggestedCategory.html">models/SuggestedCategory</a></li><li><a href="module-models_SuggestedContent.html">models/SuggestedContent</a></li><li><a href="module-models_SuggestedPhrase.html">models/SuggestedPhrase</a></li><li><a href="module-models_SuggestedProduct.html">models/SuggestedProduct</a></li><li><a href="module-models_SuggestedTerm.html">models/SuggestedTerm</a></li><li><a href="module-models_SuggestedTerms.html">models/SuggestedTerms</a></li><li><a href="module-models_Suggestion.html">models/Suggestion</a></li><li><a href="module-models_SuggestionResult.html">models/SuggestionResult</a></li><li><a href="module-models_TermFilter.html">models/TermFilter</a></li><li><a href="module-models_TermQuery.html">models/TermQuery</a></li><li><a href="module-models_TextQuery.html">models/TextQuery</a></li><li><a href="module-models_TrustedSystemAuthRequest.html">models/TrustedSystemAuthRequest</a></li><li><a href="module-models_Variant.html">models/Variant</a></li><li><a href="module-models_VariationAttribute.html">models/VariationAttribute</a></li><li><a href="module-models_VariationAttributeValue.html">models/VariationAttributeValue</a></li><li><a href="module-models_VariationGroup.html">models/VariationGroup</a></li></ul>
 </nav>
 
 <br class="clear">
