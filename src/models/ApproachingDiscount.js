@@ -22,9 +22,6 @@ import PromotionLink from './PromotionLink'
 import ShippingMethod from './ShippingMethod'
 
 
-
-
-
 /**
 * The ApproachingDiscount model module.
 * @module models/ApproachingDiscount
