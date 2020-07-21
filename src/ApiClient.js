@@ -25,7 +25,7 @@ import Fault from './models/Fault'
  */
 
 const defaultConfig = {
-    basePath: 'https://localhost/s/siteId/dw/shop/v17_8',
+    basePath: 'https://localhost/s/siteId/dw/shop/v20_4',
     cache: true,
     defaultHeaders: {},
     enableCookies: false,
@@ -63,7 +63,7 @@ export default class ApiClient {
         /**
          * The base URL against which to resolve every API call's (relative) path.
          * @type {String}
-         * @default https://localhost/s/siteId/dw/shop/v17_8
+         * @default https://localhost/s/siteId/dw/shop/v20_4
          */
         this.basePath = basePath.replace(/\/+$/, '')
 
