@@ -8,4 +8,5 @@ globals:
 rules:
   camelcase: off
   no-prototype-builtins: 0
+  no-useless-constructor: off
 parser: babel-eslint
