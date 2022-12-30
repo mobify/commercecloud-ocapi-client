@@ -44,7 +44,7 @@
     "express": "^4.16.2",
     "jsdoc": "^3.6.2",
     "mobify-code-style": "^2.8.5",
-    "mocha": "^6.1.4",
+    "mocha": "^10.2.0",
     "rollup": "^0.49.3",
     "rollup-plugin-babel": "^3.0.2",
     "rollup-plugin-commonjs": "^8.2.6",
